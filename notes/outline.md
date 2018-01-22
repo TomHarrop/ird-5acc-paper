@@ -77,28 +77,15 @@
 
 ### 5. Something general
 
-* Would be good to finish the results/discussion with some general analysis of the dataset. These are some ideas, please add more
+* Would be good to finish the results/discussion with something general. These are ideas, please add more:
     - Can we see any TF family-level effects? z-score / enrichment, etc.
-    - 
+    - Is there anything interesting about redundancy? Different subsets of genes from the same family being selected in the different domestications? Tree of genes from family x and the selection response in different accessions?
 
 
 ##  Conclusion
 
-?
+Reshaping of the ~maize~ rice transcriptome by domestication :P
 
-## Points à discuter (not necessarily in the paper)
+## To discuss (not necessarily in the paper)
 
 * Which journal
-
-### Metabolites
-
-* Metabolite results suggest that the Asian species are more divergent than the African species. Is this because the domestication of African rice happened more recently, so there has been less phenotypic evolution? How would the effects of evolution be different between gene regulation and metabolic pathways? Evo devo suggests that regulatory changes produce morphological change, but how does this apply to metabolism?
-
-* In the African species' transcriptomes, the clustering is **within** species, so this might support the 'faster evolution of transcriptomes than metabolomes' idea. It might also suggest that the metabolic differences do not relate to differences in inflorescence development *per se*, because they seem to be more about organismal differences than stage-specific differences. 
-
-### RNAseq
-
-* How can we present "sets" of genes? Some Wald tests result in hundreds of DE genes.
-    - option 1: filter aggressively (*p*~adj~, L~2~FC threshold etc.)
-    - option 2: some sort of geneset-level overview like KEGG pathways, pfam...?
-    - other options?
