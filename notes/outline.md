@@ -31,9 +31,11 @@
 * **Supplementary figure/table 2**:
     - General RNAseq stuff:
         + Mapping QC, to justify mapping against *O. sativa japonica* (mapping stats for all libraries against OS, mapping stats for each library against draft genome)
+    - "Validation" of stages by qPCR
 * **Figure 2**:
     - Sample clustering & heatmap
     - species cluster together, stages cluster within species
+    - african species cluster together, asian species cluster together -> domestication changes have been small compared to species-level changes
 * **Supplementary figure/table 3**:
     - Differential expression between species (either by comparing stages between species or comparing species)
     - these results are not necessarily related to branching
@@ -51,10 +53,9 @@
     - These are the "basal" TFs involved in branch meristem maturation in Oryza spp.
 * **Figure 4**:
     - Interaction between continent and stage (TFs where the DE between stages is different for African and Asian rice).
-    - Discuss these TFs wrt. phenotypic differences between African and Asian rice that could be related to differential expression of these genes
-    - I'm not sure about this section, maybe supplementary data, or remove
+    - Discuss these TFs wrt. phenotypic differences between African and Asian rice that could be related to differential expression of these genes. African species have fewer secondary branches.
 * **Figure 5**:
-    - Each domesticated accession wrt. to its wild relative (interaction between stage and accession)
+    - Each domesticated accession wrt. to its wild relative (interaction between stage and accession). The wild accessions have fewer primary branches compared to the domesticated accessions.
         + rufipogon vs. indica
         + barthii vs. glaberrima
         + rufipogon vs. japonica (*maybe*)
@@ -64,10 +65,11 @@
     - Parallel evolution: interaction between stage and domestication (+/- japonica)
     - These are essentially the TFs from **figure 3** where the DE between stages is dependent on whether the species is domesticated or wild
     - This analysis treats rufipogon and barthii as a wild "pool" and indica and glaberrima (+/- japonica) as the domesticated "pool". Logically, this does not make sense because rufipogon and barthii are not the same. However, it's statistically valid, and it gives us some interesting genes.
+    - We only have two domestications to compare. Anything we pick out of this analysis will be "associated" with domestication, but we can't make functional / mechanistic claims. This goes for all the comparisons in our paper, e.g. rufipogon vs. glaberrima we are only comparing one accession of each, we don't know what's happening in all the other glaberrima accessions.
 
 ### 4. qPCR screen of TFs
 
-* Pick 1/2 families from **3** and test their expression over the whole range of samples (RM, BM, SM, FM). AP2? MADS?
+* Pick 1/2 TF families from **3** and test their expression over the whole range of samples (RM, BM, SM, FM). AP2? MADS?
 * **Figure 7**:
     - qPCR results from family X
     - which families do we have qPCR results for?
@@ -80,7 +82,6 @@
 * Would be good to finish the results/discussion with something general. These are ideas, please add more:
     - Can we see any TF family-level effects? z-score / enrichment, etc.
     - Is there anything interesting about redundancy? Different subsets of genes from the same family being selected in the different domestications? Tree of genes from family x and the selection response in different accessions?
-
 
 ##  Conclusion
 
