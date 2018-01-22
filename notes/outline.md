@@ -24,7 +24,7 @@
     - phenotyping IR64/Nipponbare/W1654/Tog5681/B88 (Hélène's data from IRD)
 * **Supplementary figure/table 1**:
     - Timing of developmental transitions (did not detect heterochrony)
-    - investigate gene expression
+    - How does the lack of heterochrony relate to gene expression?
 
 ### 2. General RNAseq Results
 
@@ -45,33 +45,42 @@
 
 ### 3. Evolution of transcription factor expression
 
-* We have to decide how to present this. Do we look at individual genes, or talk on the family level? 
+* We have to decide how to discuss this. Do we present individual genes, or talk on the family level? 
 * **Figure 3**:
     - TFs differentially expressed between stages in all species.
     - These are the "basal" TFs involved in branch meristem maturation in Oryza spp.
 * **Figure 4**:
     - Interaction between continent and stage (TFs where the DE between stages is different for African and Asian rice).
     - Discuss these TFs wrt. phenotypic differences between African and Asian rice that could be related to differential expression of these genes
-    - I'm not sure about this section, maybe supplementary data, or remove completely
-* Figure 9: Each domestication wrt. to its wild relative (interaction between stage and species)
-    - These are genes that may have been selected in domestication of japonica, indica and glaberrima
-    - Any or all of these comparisons:
-        + rufipogon vs. japonica
+    - I'm not sure about this section, maybe supplementary data, or remove
+* **Figure 5**:
+    - Each domesticated accession wrt. to its wild relative (interaction between stage and accession)
         + rufipogon vs. indica
-        + rufipogon vs. (indica + japonica)
         + barthii vs. glaberrima
-* Figure 10: Parallel evolution: interaction between stage and domestication
-    - These are the genes where the DE between stages is dependent on the species is domesticated or wild, treating rufipogon and barthii as a wild "pool" and japonica, indica and glaberrima as the derived "pool"
-    - n.b. logically this is weird, because rufipogon and barthii are not the same (Yves's point), but statistically it is OK, and it gives us some interesting genes.
+        + rufipogon vs. japonica (*maybe*)
+        + rufipogon vs. indica + japonica (*maybe*)
+    - These TFs are putative targets of selection in domestication of indica and glaberrima (+/- japonica)
+* **Figure 6**:
+    - Parallel evolution: interaction between stage and domestication (+/- japonica)
+    - These are essentially the TFs from **figure 3** where the DE between stages is dependent on whether the species is domesticated or wild
+    - This analysis treats rufipogon and barthii as a wild "pool" and indica and glaberrima (+/- japonica) as the domesticated "pool". Logically, this does not make sense because rufipogon and barthii are not the same. However, it's statistically valid, and it gives us some interesting genes.
 
+### 4. qPCR screen of TFs
 
-### 2. Gene expression 1: qPCR screen
+* Pick 1/2 families from **3** and test their expression over the whole range of samples (RM, BM, SM, FM). AP2? MADS?
+* **Figure 7**:
+    - qPCR results from family X
+    - which families do we have qPCR results for?
+* **Supplementary figure/table 5**:
+    - qPCR of certain candidate genes identified in LMD paper
+    - do we have this data already?
 
-* Figure 2 / table 1: qPCR of certain candidate genes identified in LMD paper
-    - Which genes? Highlight some genes DE between stages PBM and SM to justify focus on these stages for RNAseq
+### 5. Something general
 
+* Would be good to finish the results/discussion with some general analysis of the dataset. These are some ideas, please add more
+    - Can we see any TF family-level effects? z-score / enrichment, etc.
+    - 
 
-### AP2 genes?
 
 ##  Conclusion
 

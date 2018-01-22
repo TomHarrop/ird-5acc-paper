@@ -1,10 +1,10 @@
-all: dot_points
+all: outline
 
-dot_points: notes/dot_points.docx
+outline: notes/outline.docx
 
-notes/dot_points.docx: notes/dot_points.md template/reference.docx
+notes/outline.docx: notes/outline.md template/reference.docx
 	pandoc --reference-docx=template/reference.docx \
 		--from=markdown \
 		--to=docx \
-		--output=notes/dot_points.docx \
-		notes/dot_points.md
+		--output=notes/outline.docx \
+		notes/outline.md
