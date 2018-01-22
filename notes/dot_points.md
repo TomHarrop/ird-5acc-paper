@@ -2,12 +2,14 @@
 ## Introduction
 
 * evo devo and gene expression
+* transcription factors / evolution of gene regulation
 * domestication and gene expression (maize, tomato transcriptomes)
 * details about rice domestication
 * **aims**:
-    - changes in phenotype, gene expression and metabolism caused by / associated with domestication
+    - changes in phenotype, gene expression caused by / associated with domestication
     - common genes that respond to selection in different domestications
-    - genes underlying the branching process in oryza spp.
+    - evolution of transcription factor family expression
+    - does selection for the same phenotype affect expression of the same genes / sets of genes
 
 ## Results/discussion
 
@@ -15,38 +17,42 @@
 
 * Parallel evolution of phenotype during African and Asian domestications
 * Correlations between *e.g.* spikelet number and branching complexity
-    - because of these correlations we can justify PBM and SM
-* Figure 1:
+    - these correlations justify the choice of PBM and SM for sequencing
+* **Figure 1**:
     - phenotyping 20 accessions / species (Hélène, CIAT data)
     - PCA: separation of the 4 species, overlap of the phenotype between African/Asian and separation wild/cultivated
     - phenotyping IR64/Nipponbare/W1654/Tog5681/B88 (Hélène's data from IRD)
-* Timing of developmental transitions:
-    - did not detect heterochrony (Supp Data/ Supp Figure)
-    - therefore investigate gene expression
+* **Supplementary figure/table 1**:
+    - Timing of developmental transitions (did not detect heterochrony)
+    - investigate gene expression
 
-### 2. Gene expression 1: qPCR screen
+### 2. General RNAseq Results
 
-* Figure 2 / table 1: qPCR of certain candidate genes identified in LMD paper
-    - Which genes? Highlight some genes DE between stages PBM and SM to justify focus on these stages for RNAseq
+* **Supplementary figure/table 2**:
+    - General RNAseq stuff:
+        + Mapping QC, to justify mapping against *O. sativa japonica* (mapping stats for all libraries against OS, mapping stats for each library against draft genome)
+* **Figure 2**:
+    - Sample clustering & heatmap
+    - species cluster together, stages cluster within species
+* **Supplementary figure/table 3**:
+    - Differential expression between species (either by comparing stages between species or comparing species)
+    - these results are not necessarily related to branching
+    - There are 1000s of DE genes between species, but this analysis is confounded by mapping bias against the O. sativa japonica reference
+    - Can we detect coding differences between genes from the RNAseq data? (Tom has done this analysis)
+* **Supplementary figure/tables 4**:
+    - DE analysis, all genes
+    - use one of these comparisons (e.g. stage:domestication interaction) to justify focus on TF families
 
-### 3. Gene expression 2: RNAseq Results
+### 3. Evolution of transcription factor expression
 
-* General RNAseq stuff (in supp data):
-    - qc results figure: Justify mapping against *O. sativa japonica* (read mapping stats, for each genome?)
-    - Sample clustering/heatmap: species cluster together, stages cluster within species (compare with metabolite clustering for African species)
-* Figure 5: RNAseq analysis of metabolite pathways. Heatmap / something else showing expression differences of genes involved in one/two of the pathways we discussed in 3.
-* Figure 6 (or supp data): Differential expression between species (either by comparing stages between species or just comparing species)
-    - we're ignoring branching, but maybe that fits with the metabolic data
-    - Link this to metabolites by focussing on differences in genes from a metabolic pathway.
-    - Can we detect coding differences between genes in these pathways from the RNAseq data? (n.b. we've done this experiment, I just have to find the results...)
-    - Too many genes to go into a lot of detail in this section.
-    - RNAseq mapping also problematic here
-* Figure 7: Genes differentially expressed between stages in all species.
-    - These are the "basal" genes involved in branch meristem maturation in Oryza.
-* Figure 8: Interaction between continent and stage.
-    - Genes where the DE between stages is different for African and Asian rice.
-    - What are the phenotypic differences between African and Asian rice that could be related to differential expression of these genes?
-    - Not sure about this section, maybe supplementary data, or remove completely?
+* We have to decide how to present this. Do we look at individual genes, or talk on the family level? 
+* **Figure 3**:
+    - TFs differentially expressed between stages in all species.
+    - These are the "basal" TFs involved in branch meristem maturation in Oryza spp.
+* **Figure 4**:
+    - Interaction between continent and stage (TFs where the DE between stages is different for African and Asian rice).
+    - Discuss these TFs wrt. phenotypic differences between African and Asian rice that could be related to differential expression of these genes
+    - I'm not sure about this section, maybe supplementary data, or remove completely
 * Figure 9: Each domestication wrt. to its wild relative (interaction between stage and species)
     - These are genes that may have been selected in domestication of japonica, indica and glaberrima
     - Any or all of these comparisons:
@@ -57,6 +63,13 @@
 * Figure 10: Parallel evolution: interaction between stage and domestication
     - These are the genes where the DE between stages is dependent on the species is domesticated or wild, treating rufipogon and barthii as a wild "pool" and japonica, indica and glaberrima as the derived "pool"
     - n.b. logically this is weird, because rufipogon and barthii are not the same (Yves's point), but statistically it is OK, and it gives us some interesting genes.
+
+
+### 2. Gene expression 1: qPCR screen
+
+* Figure 2 / table 1: qPCR of certain candidate genes identified in LMD paper
+    - Which genes? Highlight some genes DE between stages PBM and SM to justify focus on these stages for RNAseq
+
 
 ### AP2 genes?
 
