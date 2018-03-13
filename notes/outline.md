@@ -18,7 +18,7 @@
 * Parallel evolution of phenotype during African and Asian domestications
 * Correlations between *e.g.* spikelet number and branching complexity
     - these correlations justify the choice of PBM and SM for sequencing
-    - also, "evolutionary diversity in Solanaceae inflorescence complexity is determined by subtle modifications of transcriptional programs during a critical transitional window of meristem maturation" [@Lemmon_Evolutioninflorescencediversity_2016]
+    - also, "evolutionary diversity in Solanaceae inflorescence complexity is determined by subtle modifications of transcriptional programs during a critical transitional window of meristem maturation" [@lemmon2016evolution]
 * **Figure 1**:
     - phenotyping 20 accessions / species (Hélène, CIAT data)
     - PCA: separation of the 4 species, overlap of the phenotype between African/Asian and separation wild/cultivated
@@ -48,7 +48,7 @@
 
 ### 3. Evolution of transcription factor expression
 
-* We have to decide how to discuss this. Do we present individual genes, or talk on the family level? 
+* We have to decide how to discuss this. Do we present individual genes, or talk on the family level?
 * **Figure 3**:
     - TFs differentially expressed between stages in all species.
     - These are the "basal" TFs involved in branch meristem maturation in Oryza spp.
