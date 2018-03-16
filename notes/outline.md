@@ -76,7 +76,7 @@
 
 ### 3. Evolution of transcription factor expression
 
-* We have to decide how to discuss this. Do we present individual genes, or talk on the family level? 
+* We have to decide how to discuss this. Do we present individual genes, or talk on the family level?
 * **Figure 3**:
     - TFs differentially expressed between stages in all species.
     - These are the "basal" TFs involved in branch meristem maturation in Oryza spp.
