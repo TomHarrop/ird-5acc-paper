@@ -13,6 +13,34 @@
 
 ## Results/discussion
 
+**hypothesis**
+
+- there is a group of genes that are repressed at the SM stage in wild species (-ve L2FC PBM vs. SM). These genes "promote indeterminate state". These genes are *not* repressed in the domesticated species, therefore the indeterminate state is maintained for longer.
+
+**evidence**
+
+1. Phenotype-L2FC correlation
+
+- not sure yet...
+
+2. PC5
+
+- This component splits the two stages and it is mostly driven by the wild species: while nipponbare and especially indica are much closer to 0.
+- The wild species display a much stronger burst of MADS-box related to differientiation
+- The AP2 story might be more complicated, but indeed many of them are strongly down-regulated in most species, but they behave differently in indica, nipponbare
+
+3. clustering of TF genes
+
+- note that we are not necessarily limited to family-level comparisons. e.g. AP2 could regulate MADS etc.
+- Hélène is currently looking for biologically significant stuff in the clusters
+- no family survives bonferroni correction in cluster 6
+- AP2 genes are enriched in cluster with high +ve L2FC in indica
+
+4. differential expression
+
+- note non-overlap of glab / indica genes. Of course selection could have acted on different genes in different domestications
+- genes with a +ve L2FC for the stage:species interaction fit this category
+
 ### 1. Phenotypic analyses of African and Asian domesticated and wild rice
 
 * Parallel evolution of phenotype during African and Asian domestications
