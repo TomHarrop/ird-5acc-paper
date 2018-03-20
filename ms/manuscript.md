@@ -1,3 +1,8 @@
+---
+title: "Temporary - Determination of Inflorescence Architecture in Wild and Domesticated Rices"
+bibliography: ../bib/references.bib
+---
+
 ## Results
 
 ## discussion

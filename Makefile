@@ -1,23 +1,23 @@
 all: outline manuscript
 
-outline: notes/outline.docx
+outline: docx/outline.docx
 
-manuscript: ms/manuscript.docx
+manuscript: docx/manuscript.docx
 
-notes/outline.docx: notes/outline.md template/reference.docx
+docx/outline.docx: notes/outline.md template/reference.docx
 	pandoc --reference-doc=template/reference.docx \
 		--from=markdown \
 		--to=docx \
 		--csl=template/genome-research.csl \
 		--bibliography=bib/references.bib \
-		--output=notes/outline.docx \
+		--output=docx/outline.docx \
 		notes/outline.md
 
-ms/manuscript.docx: ms/manuscript.md template/reference.docx
+docx/manuscript.docx: ms/manuscript.md template/reference.docx
 	pandoc --reference-doc=template/reference.docx \
 		--from=markdown \
 		--to=docx \
 		--csl=template/genome-research.csl \
 		--bibliography=bib/references.bib \
-		--output=ms/manuscript.docx \
+		--output=docx/manuscript.docx \
 		ms/manuscript.md
