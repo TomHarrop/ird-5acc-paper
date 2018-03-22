@@ -39,6 +39,8 @@ We have used Principal Component Analysis (PCA) in order to explore and detect p
 
 Further components display patterns that can be explained by differences between the two developmental stages, PBM and SM, shared by all or some species. Above all, the 5^th^ component splits PBM and SM in all species (figure here).   
 
+![fig. PC5](fig/fig-pc5.svg)
+
 ## Discussion
 
 Inflorescence branching in Solanaceae is modulated by subtle modifications of transcriptional programs [@Lemmon_Evolutioninflorescencediversity_2016].
