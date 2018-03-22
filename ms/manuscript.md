@@ -33,7 +33,13 @@ To identify those traits we have performed linear model selection.
 
 The two first principal components of this dataset explain 28.6% and 16.3% of variance
 
-## discussion
+### PCA: the 5th component splits developmental stages
+
+We have used Principal Component Analysis (PCA) in order to explore and detect patterns of gene expression across different species and stages. The first pattern that we detect are explained by clade (Asian vs African Rice in the 1^st^ and 2^nd^ components), and then by species within the same clade (Rufipogon vs. Sativa in the 3^rd^; Barthii vs. Glaberrima in the 4^th^). Species are unsurprisingly the first source of variation, but this kind of variation could be confounded with mapping bias.
+
+Further components display patterns that can be explained by differences between the two developmental stages, PBM and SM, shared by all or some species. Above all, the 5^th^ component splits PBM and SM in all species (figure here).   
+
+## Discussion
 
 Inflorescence branching in Solanaceae is modulated by subtle modifications of transcriptional programs [@Lemmon_Evolutioninflorescencediversity_2016].
 
