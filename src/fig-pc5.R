@@ -1,35 +1,29 @@
 library(tidyverse)
 library(ggfortify)
 library(DESeq2)
+load("../data/rld.Rdata")
 
-load("../data/03-rld.Rdata")
-colData(rld)
+
+# PCA on rlog counts ------------------------------------------------------
+
+# is rlog counts the best choice?
+# pca on transposed dataset, as they do it in DESeq2
 
 rlog_counts <- assay(rld)
 
 pc <- prcomp(t(rlog_counts ), center = TRUE)
-
 pcx <- as.data.frame(pc$x)
 pcx$ID <- rownames(pcx)
 pcx <- as_tibble(pcx)
 
+# Sample description for plotting PCA
 samples <- colData(rld)
 samples$ID <- rownames(samples)
 samples <- as_tibble(as.data.frame(samples))
-
 pcx <- inner_join(samples, pcx, by = "ID")
 
-new_theme_empty <- theme_bw()
-new_theme_empty$line <- element_blank()
-new_theme_empty$rect <- element_blank()
-new_theme_empty$strip.text <- element_blank()
-new_theme_empty$axis.text <- element_blank()
-new_theme_empty$plot.title <- element_blank()
-new_theme_empty$axis.title <- element_blank()
-new_theme_empty$plot.margin <- structure(c(0, 0, -1, -1),
-                                         unit = "lines",
-                                         valid.unit = 3L,
-                                         class = "unit")
+
+# One-dimentional plot PC5 (splits species) -------------------------------
 
 fig_pc5 <- ggplot(pcx, aes(x = PC5, y = 0, 
                          colour = stage, 
@@ -46,7 +40,4 @@ svg("../fig/fig-pc5.svg",
     width = 7,
     height = 1.8)
 fig_pc5
-
 dev.off()
-
-

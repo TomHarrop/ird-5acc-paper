@@ -25,5 +25,8 @@ docx/manuscript.docx: ms/manuscript.md template/reference.docx fig/fig-pc5.svg
 #fig/fig-pc5.svg: src/fig-pc5.R
 #	cd src; R CMD BATCH fig-pc5.R
 
-fig/%.svg: src/%.R
+fig/%.svg: src/%.R data/rld.Rdata
 	cd $(<D); Rscript --vanilla $(<F)
+
+data/rld.Rdata: src/get-rlog.R data/dds.Rds
+	cd src; Rscript --vanilla get-rlog.R
