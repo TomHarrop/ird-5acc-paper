@@ -1,0 +1,18 @@
+# Output docx
+*.docx
+
+# Output html
+*.html
+
+# data
+data/*
+
+# figures
+fig/*
+
+# Session Data files
+*.RData
+
+# RStudio files
+*.Rproj
+.Rproj.user/
