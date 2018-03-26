@@ -33,13 +33,21 @@ To identify those traits we have performed linear model selection.
 
 The two first principal components of this dataset explain 28.6% and 16.3% of variance
 
-### PCA: the 5th component splits developmental stages
+### PCA: the 5^th^ component splits developmental stages
 
-We have used Principal Component Analysis (PCA) in order to explore and detect patterns of gene expression across different species and stages. The first pattern that we detect are explained by clade (Asian vs African Rice in the 1^st^ and 2^nd^ components), and then by species within the same clade (Rufipogon vs. Sativa in the 3^rd^; Barthii vs. Glaberrima in the 4^th^). Species are unsurprisingly the first source of variation, but this kind of variation could be confounded with mapping bias.
+We have used Principal Component Analysis (PCA) in order to explore and detect patterns of gene expression across different species and stages. The first two component split clades (Asian vs African Rice in the 1^st^ and 2^nd^ components); the next two components split species within the same clade (Rufipogon vs. Sativa in the 3^rd^; Barthii vs. Glaberrima in the 4^th^). Indeed species are the first source of variation, but this source of variation could be confounded with mapping bias.
 
-Further components display patterns that can be explained by differences between the two developmental stages, PBM and SM, shared by all or some species. Above all, the 5^th^ component splits PBM and SM in all species (figure here).   
+Further components display patterns that can be explained by differences between the two developmental stages: PBM and SM.  Above all, the 5^th^ component splits PBM and SM in all species (*fig-pc5*).
 
-![fig. PC5](fig/fig-pc5.svg)
+![fig-pc5](../fig/fig-pc5.svg)
+
+### PCA: master regulators of development are enriched in the loadings of the 5^th^ component
+
+The 5^th^ principal component must be driven by gene expression patterns that identify the **primary branch meristem** and the **spikelet meristem** in all or most species. Are those pattern biologically significant? We have described those pattern using the loading of each gene on the 5^th^ component as ranking and checking if those rankings enrich functional categories.  
+
+The rankings of the 5^th^ component enrich multiple mapman bins (*table-pc5-mapman*). Many of the enriched mapman bins are related to inflorescence development
+
+![table-pc5-mapman](../tables/table-pc5-mapman.svg)
 
 ## Discussion
 
