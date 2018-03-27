@@ -1,14 +1,22 @@
 # Output docx
 *.docx
 
-# Output html
-*.html
-
 # data
 data/*
 
 # figures
 fig/*
+
+# html
+*.html
+
+# tables
+tables/*
+
+# R generics
+# History files
+.Rhistory
+.Rapp.history
 
 # Session Data files
 *.RData
@@ -16,3 +24,11 @@ fig/*
 # RStudio files
 *.Rproj
 .Rproj.user/
+
+# knitr and R markdown default cache directories
+/*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
