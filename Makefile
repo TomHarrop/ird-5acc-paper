@@ -1,10 +1,23 @@
+# The outline is just for us
 all: outline manuscript
 
 outline: docx/outline.docx
 
+# The official manuscript is in docx, but the html version is much easier to use
 manuscript: docx/manuscript.docx html/manuscript.html
 
-docx/outline.docx: notes/outline.md template/reference.docx
+# For simplicity, specify common dependencies for both the manuscript and the
+# outline
+
+TEXT_DEPEND = \
+	template/reference.docx \
+	fig/fig-pc5.svg \
+	tables/table-pc5-mapman.svg \
+	bib/references.bib \
+	template/genome-research.csl \
+	css/pandoc.css
+
+docx/outline.docx: notes/outline.md $(TEXT_DEPEND)
 	pandoc --reference-doc=template/reference.docx \
 		--from=markdown \
 		--to=docx \
@@ -13,7 +26,7 @@ docx/outline.docx: notes/outline.md template/reference.docx
 		--output=docx/outline.docx \
 		notes/outline.md
 
-docx/manuscript.docx: ms/manuscript.md template/reference.docx fig/fig-pc5.svg
+docx/manuscript.docx: ms/manuscript.md $(TEXT_DEPEND)
 	pandoc --reference-doc=template/reference.docx \
 		--from=markdown \
 		--to=docx \
@@ -25,8 +38,7 @@ docx/manuscript.docx: ms/manuscript.md template/reference.docx fig/fig-pc5.svg
 # Produce an html manuscript in the main folder
 # the html manuscript is just for us
 # It is much nicer to read than the docx
-# css from https://gist.github.com/killercup/5917178
-html/manuscript.html: ms/manuscript.md template/reference.docx fig/fig-pc5.svg tables/table-pc5-mapman.svg
+html/manuscript.html: ms/manuscript.md $(TEXT_DEPEND)
 	pandoc --from=markdown \
 		--to=html \
 		--css=../css/pandoc.css \
@@ -35,13 +47,22 @@ html/manuscript.html: ms/manuscript.md template/reference.docx fig/fig-pc5.svg t
 		--output=html/manuscript.html \
 		ms/manuscript.md
 
-fig/%.svg: src/%.R data/pca-rlog.Rdata
+# For simplicity, specify common DATA dependecies for figures and tables
+FIG_TAB_DEPEND = \
+	data/pca-rlog.Rdata \
+	data/mapman.Rdata \
+	src/helper-functions.R
+
+fig/%.svg: src/%.R $(FIG_TAB_DEPEND)
 	cd $(<D); Rscript --vanilla $(<F)
 
-tables/%.svg: src/%.R data/pca-rlog.Rdata data/mapman.Rdata
+tables/%.svg: src/%.R $(FIG_TAB_DEPEND)
 	cd $(<D); Rscript --vanilla $(<F)
+
+# Starting point of the analysis from which everything else depends
 
 data/pca-rlog.Rdata: src/get-rlog-pca.R data/dds.Rds
-	cd src; Rscript --vanilla get-rlog-pca.R
+	cd $(<D); Rscript --vanilla $(<F)
 
-data/mapman.Rdata: src/get-mapman.R data/MAPMAN\ BIN-Osa_MSU_v7.xlsx
+data/mapman.Rdata: src/get-mapman.R data/MAPMAN\ BIN-Osa_MSU_v7.xlsx src/helper-functions.R
+	cd $(<D); Rscript --vanilla $(<F)
