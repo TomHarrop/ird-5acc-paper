@@ -1,10 +1,10 @@
 # Set up environment ------------------------------------------------------
 
 library(tidyverse)
-library(kableExtra)
+# library(kableExtra)
 library(fgsea)
 library(DESeq2)
-library(knitr)
+# library(knitr)
 library(gridExtra)
 load("../data/pca-rlog.Rdata")
 load("../data/mapman.Rdata")
@@ -28,12 +28,12 @@ svg("../tables/table-pc5-mapman.svg",
     height = 2)
 gsea_pc5 %>% select(pathway, padj) %>%
   filter(pathway %in% c("RNA.regulation of transcription.AP2/EREBP, APETALA2/ethylene-responsive element binding protein family",
-                        "RNA.regulation of transcription.C2C2(Zn) Constans-like zinc finger family (CO-like)",                   
-                        "RNA.regulation of transcription.general transcription",                                           
+                        "RNA.regulation of transcription.C2C2(Zn) Constans-like zinc finger family (CO-like)",
+                        "RNA.regulation of transcription.general transcription",
                         "RNA.regulation of transcription.MADS box transcription factor family",
                         "RNA.regulation of transcription.MYB domain transcription factor family")) %>%
   grid.table()
 dev.off()
   # kable("html") %>%
   # kable_styling(bootstrap_options = c("striped", "hover")) %>%
-  # # write("../tables/table-pc5-mapman.html") 
+  # # write("../tables/table-pc5-mapman.html")
