@@ -17,6 +17,7 @@ fig_pc5 <- ggplot(pcx, aes(x = PC5, y = 0,
   geom_point(size = 2, alpha = .5) +
   ggrepel::geom_text_repel() +
   scale_color_manual(values = color_palette) +
+  theme_bw() +
   theme(line = element_blank(),
         axis.text.y = element_blank(),
         axis.title.y = element_blank()) +

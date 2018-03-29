@@ -14,6 +14,7 @@ TEXT_DEPEND = \
 	fig/fig-branches-boxplot.svg \
 	fig/fig-spn-prediction.svg \
 	fig/fig-pc5.svg \
+	fig/fig-ap2-selected-expr.svg \
 	tables/table-pc5-mapman.svg \
 	bib/references.bib \
 	template/genome-research.csl \

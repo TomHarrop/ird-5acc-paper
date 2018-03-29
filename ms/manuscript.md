@@ -51,6 +51,14 @@ The rankings of the 5^th^ component enrich multiple mapman bins (*table-pc5-mapm
 
 ![table-pc5-mapman](../tables/table-pc5-mapman.svg)
 
+### Functional characterization of three AP2 genes
+
+Three AP2 genes were selected because they are differentially expressed across species and their mutant were publicly available. *EXTEND!*
+
+Those genes are *ERF48*, *ERF142* and *PLT8* (*fig-ap2-selected-expr*).
+
+![Expression of selected AP2 genes](../fig/fig-ap2-selected-expr.svg)
+
 ## Discussion
 
 Inflorescence branching in Solanaceae is modulated by subtle modifications of transcriptional programs [@Lemmon_Evolutioninflorescencediversity_2016].
