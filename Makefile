@@ -11,6 +11,8 @@ manuscript: docx/manuscript.docx html/manuscript.html
 
 TEXT_DEPEND = \
 	template/reference.docx \
+	fig/fig-branches-boxplot.svg \
+	fig/fig-spn-prediction.svg \
 	fig/fig-pc5.svg \
 	tables/table-pc5-mapman.svg \
 	bib/references.bib \
@@ -49,6 +51,7 @@ html/manuscript.html: ms/manuscript.md $(TEXT_DEPEND)
 
 # For simplicity, specify common DATA dependecies for figures and tables
 FIG_TAB_DEPEND = \
+  data/phenotype-tidy.Rdata \
 	data/pca-rlog.Rdata \
 	data/mapman.Rdata \
 	src/helper-functions.R
@@ -61,8 +64,17 @@ tables/%.svg: src/%.R $(FIG_TAB_DEPEND)
 
 # Starting point of the analysis from which everything else depends
 
-data/pca-rlog.Rdata: src/get-rlog-pca.R data/dds.Rds
+data/pca-rlog.Rdata: \
+ src/get-rlog-pca.R data/dds.Rds
 	cd $(<D); Rscript --vanilla $(<F)
 
-data/mapman.Rdata: src/get-mapman.R data/MAPMAN\ BIN-Osa_MSU_v7.xlsx src/helper-functions.R
+data/mapman.Rdata: \
+ src/get-mapman.R data/MAPMAN\ BIN-Osa_MSU_v7.xlsx \
+ src/helper-functions.R
+	cd $(<D); Rscript --vanilla $(<F)
+
+data/phenotype-tidy.Rdata: \
+ src/wrangle-phenotypes.R \
+ data/Phenotype_PanicleSequenced_corrected.xlsx\
+ data/OsOgObOrPTRAPdata_PaperTom.txt
 	cd $(<D); Rscript --vanilla $(<F)
