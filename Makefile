@@ -24,7 +24,6 @@ docx/outline.docx: notes/outline.md $(TEXT_DEPEND)
 	pandoc --reference-doc=template/reference.docx \
 		--from=markdown \
 		--to=docx \
-		--csl=template/genome-research.csl \
 		--bibliography=bib/references.bib \
 		--output=docx/outline.docx \
 		notes/outline.md
@@ -33,7 +32,6 @@ docx/manuscript.docx: ms/manuscript.md $(TEXT_DEPEND)
 	pandoc --reference-doc=template/reference.docx \
 		--from=markdown \
 		--to=docx \
-		--csl=template/genome-research.csl \
 		--bibliography=bib/references.bib \
 		--output=docx/manuscript.docx \
 		ms/manuscript.md
@@ -45,7 +43,6 @@ html/manuscript.html: ms/manuscript.md $(TEXT_DEPEND)
 	pandoc --from=markdown \
 		--to=html \
 		--css=../css/pandoc.css \
-		--csl=template/genome-research.csl \
 		--bibliography=bib/references.bib \
 		--output=html/manuscript.html \
 		ms/manuscript.md
