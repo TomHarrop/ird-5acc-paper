@@ -44,5 +44,20 @@ pcro <- as.data.frame(pcro); pcro$locus_id <- rownames(pcro)
 
 
 # save everything ---------------------------------------------------------
+
 save(rld, pc, pcx, pcro, file = "../data/pca-rlog.Rdata")
 
+
+# Add annos and save table ------------------------------------------------
+
+load("../data/mapman.Rdata")
+
+mapman <- mapman %>% 
+  select_at(vars(BINCODE:DESCRIPTION)) %>% 
+  dplyr::rename(locus_id = IDENTIFIER)
+
+pcro_out <- pcro %>%
+  left_join(mapman)
+
+write.csv2(pcro_out, file = "../data/pca_ranks_all.csv")
+save(pcro_out, file = "../data/pca_ranks_all.Rdata")
