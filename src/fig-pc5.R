@@ -28,3 +28,56 @@ svg("../fig/fig-pc5.svg",
     height = 1.8)
 fig_pc5
 dev.off()
+
+# 2-dimensional plots -----------------------------------------------------
+
+# Plot PC
+
+plot_pc <- function(pc_x, pc_y)
+{
+  ggplot(pcx, aes_string(x = pc_x, y = pc_y,
+                         colour = "accession",
+                         pch = "stage")) +
+    geom_point(size = 3, alpha = .7) +
+    theme_bw()
+}
+
+pdf("../fig/fig-pc-all.pdf",
+    width = 7,
+    height = 6)
+# Define a set of alternate pairs of components that must be plotted
+to_plot <- tibble(pc_x = paste0("PC", (1:7)*2 - 1),
+                  pc_y = paste0("PC", (1:7)*2))
+# And plot them all
+to_plot %>% pmap(plot_pc)
+dev.off()
+
+# One-dimentional plot (PC5 splits species) -------------------------------
+
+pcx <- pcx %>%
+  gather(PC1:PC30, key = pc_id, value = pcx) %>%
+  filter(pc_id %in% paste0("PC", 1:8))
+
+fig_pc <- ggplot(pcx, aes(x = pcx, y = 0,
+                          colour = accession,
+                          pch = stage,
+                          label = ID)) +
+  geom_hline(aes(yintercept=0), colour = "grey") +
+  geom_point(size = 2, alpha = .5) +
+  ggrepel::geom_text_repel() +
+  # scale_color_manual(values = color_palette) +
+  facet_wrap(facets = "pc_id",
+             scales = "free_x",
+             ncol = 1) +
+  theme_bw() +
+  theme(line = element_blank(),
+        axis.text.y = element_blank(),
+        axis.title.y = element_blank()) +
+  # ggtitle(expression(~5^th~Component))
+  ggtitle("Main Components")
+
+# svg("../fig/fig-pc5.svg",
+#     width = 7,
+#     height = 9)
+# fig_pc
+# dev.off()
