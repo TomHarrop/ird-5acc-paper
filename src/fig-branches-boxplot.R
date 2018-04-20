@@ -1,7 +1,7 @@
 library(tidyverse)
 library(gridExtra)
 
-load("../data/phenotype-tidy.Rdata")
+load("../data/phenotypes.Rdata")
 
 
 # Plot pbn sbn and spn together -------------------------------------------

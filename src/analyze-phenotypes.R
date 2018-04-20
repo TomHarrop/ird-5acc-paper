@@ -4,7 +4,7 @@ library(readxl)
 
 # Wrangle Montpellier Phenotype data --------------------------------------
 
-pheno_mnp <- read_excel("../data/Phenotype_PanicleSequenced_corrected.xlsx")
+pheno_mnp <- read_excel("../data-raw/Phenotype_PanicleSequenced_corrected.xlsx")
 
 # Assign descriptive names to accessions
 
@@ -34,7 +34,7 @@ pheno_mnp <-  pheno_mnp %>%
 
 # Wrangle Cali Phenotype data ---------------------------------------------
 
-pheno_cali <- read.table(file = "../data/OsOgObOrPTRAPdata_PaperTom.txt",
+pheno_cali <- read.table(file = "../data-raw/OsOgObOrPTRAPdata_PaperTom.txt",
                         header=T, sep="\t",
                         na.strings="NA",
                         dec=",",
@@ -65,5 +65,5 @@ pheno_cali <- pheno_cali %>%
 
 # Save Tidy Phenotype -----------------------------------------------------
 
-save(pheno_cali, pheno_mnp, file = "../data/phenotype-tidy.Rdata")
+save(pheno_cali, pheno_mnp, file = "../data/phenotypes.Rdata")
 

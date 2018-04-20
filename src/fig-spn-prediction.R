@@ -3,7 +3,7 @@ library(readxl)
 library(gridExtra)
 library(leaps)
 
-load("../data/phenotype-tidy.Rdata")
+load("../data/phenotypes.Rdata")
 
 
 # Search for the best model on mnp data -----------------------------------
@@ -15,8 +15,8 @@ reg_mnp <- regsubsets(spn ~ . + 0, pheno_mnp %>%
                         select(-`Tb_nb (TbN)`))
 
 reg_mnp <- summary(reg_mnp)
-plot (reg_mnp$cp, xlab = "Number of Variables" , ylab ="Cp" ,
-      type = "l")
+# plot (reg_mnp$cp, xlab = "Number of Variables" , ylab ="Cp" ,
+#       type = "l")
 which.min(reg_mnp$cp)
 reg_mnp$which[which.min(reg_mnp$cp), ]
 

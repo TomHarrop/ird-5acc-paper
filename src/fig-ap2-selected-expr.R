@@ -7,7 +7,7 @@ genes <- c(LOC_Os08g31580 ="ERF48",
            LOC_Os05g32270 = "ERF142",
            LOC_Os07g03250 = "PLT8")
 
-dds <- readRDS("../data/dds.Rds")
+dds <- readRDS("../data-raw/dds.Rds")
 
 expr <- get_expression(locus_ids = names(genes), dds = dds)
 

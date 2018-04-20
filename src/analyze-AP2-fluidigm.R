@@ -3,14 +3,13 @@ library(readxl)
 library(pheatmap)
 source("helper_functions_fluidigm.R")
 
-
 # load data
 # from Tom's edi-hk-check/calculate_relq.R
 headers <- c("Chamber", "Sample_Name", "Sample_Type", "Sample_rConc",
              "target_name", "target_type", "Ct_Value", "Ct_Calibrated_rConc",
              "Ct_Quality", "Ct_Call", "Ct_Threshold",
              "tm_in_range", "tm_out_range", "tm_peak_ratio")
-dat <- read_excel(path = "../data/AP2_data9696n°2.xlsx",
+dat <- read_excel(path = "../data-raw/AP2_data9696n°2.xlsx",
                   range = "A12:N8172") 
 colnames(dat) <- headers
 
@@ -124,7 +123,7 @@ save(ap2_fluidigm, file = "../data/AP2-fluidigm.Rdata")
 
 # Select only high quality genes ------------------------------------------
 
-ap2_good <- read_excel("../data/ListAP2_OKFLUIDGM.xlsx",
+ap2_good <- read_excel("../data-raw/ListAP2_OKFLUIDGM.xlsx",
                        range = "A3:F55")
 
 colnames(ap2_good) <- c("msu", "rap", "symbol", "primer_f", "primer_r", "ha_primers")
@@ -150,12 +149,12 @@ dat <- dat %>%
 
 rownames(dat) <- dat$target_name
 
-pheatmap(mat = dat[, 2:ncol(dat)],
-         # scale = "row",
-         # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
-         color = colorRampPalette(c( "white", "blue4"))(50),
-         cluster_cols = F,
-         gaps_col = 1:5*4,
-         cellwidth = 9,
-         cellheight = 9, 
-         filename = "../fig/figure-heatmap-fluidigm-ap2.pdf")
+# pheatmap(mat = dat[, 2:ncol(dat)],
+#          # scale = "row",
+#          # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
+#          color = colorRampPalette(c( "white", "blue4"))(50),
+#          cluster_cols = F,
+#          gaps_col = 1:5*4,
+#          cellwidth = 9,
+#          cellheight = 9, 
+#          filename = "../fig/figure-heatmap-fluidigm-ap2.pdf")

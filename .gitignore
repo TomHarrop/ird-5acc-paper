@@ -2,6 +2,7 @@
 *.docx
 
 # data
+data-raw/*
 data/*
 
 # figures
@@ -12,6 +13,9 @@ fig/*
 
 # tables
 tables/*
+
+# accidental plots
+src/Rplots.*
 
 # R generics
 # History files
