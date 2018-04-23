@@ -4,7 +4,7 @@
 library(tidyverse)
 library(ggfortify)
 library(DESeq2)
-load("../data/pca-rlog.Rdata")
+load("../data/rlog-pca.Rdata")
 # Set an enstablished colour palette
 color_palette <- c("blue", "goldenrod")
 
