@@ -11,13 +11,13 @@ Besides the reference *Oryza sativa nipponbare*, we have selected 4 other rice a
 
 On those accessions, we have measured systematically 9 panicle traits [@faroq2013p]. These traits are:
 
-- Rachis Lengths,
+- Rachis Length,
 - Primary Branch Numbers,
-- Primary Branch Average Lengths,
-- Primary Branch Internode Average lengths,
+- Primary Branch Average Length,
+- Primary Branch Internode Average length,
 - Secondary Branch Numbers,
 - Secondary Branch Numbers,
-- Secondary Branch Average Lengths,
+- Secondary Branch Average Length,
 - Tertiary Branch Numbers,
 - Spikelet Numbers.
 
