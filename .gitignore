@@ -37,3 +37,6 @@ src/Rplots.*
 *.utf8.md
 *.knit.md
 .Rproj.user
+
+# mac
+.DS_Store
