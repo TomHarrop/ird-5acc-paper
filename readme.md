@@ -21,6 +21,7 @@ Moreover you need to install these R packages from CRAN:
 - `gridExtra`,
 - `leaps`
 - `pheatmap`
+- `ggpubr`
 
 And these from Bioconductor:
 
