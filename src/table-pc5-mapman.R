@@ -6,7 +6,7 @@ library(fgsea)
 library(DESeq2)
 # library(knitr)
 library(gridExtra)
-load("../data/pca-rlog.Rdata")
+load("../data/rlog-pca.Rdata")
 load("../data/mapman.Rdata")
 source("helper-functions.R")
 
