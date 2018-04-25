@@ -1,68 +1,100 @@
-# The outline is just for us
-all: outline manuscript
+DATA_RAW=$(wildcard data-raw/*)
+ANALYZE_SRC=$(wildcard src/analyze*.R)
+DATA_TIDY=$(patsubst src/analyze-%.R, data/%.Rdata, $(ANALYZE_SRC))
+FIGS_SRC=$(wildcard src/fig*.R)
+FIGS=$(patsubst src/%.R, fig/%.svg, $(FIGS_SRC))
+TABS_SRC=$(wildcard src/table*.R)
+TABS=$(patsubst src/%.R, tables/%.svg, $(TABS_SRC))
 
-outline: docx/outline.docx
-
-# The official manuscript is in docx, but the html version is much easier to use
-manuscript: docx/manuscript.docx html/manuscript.html
+# For simplicity, specify common DATA dependecies for figures and tables
+FIG_TAB_DEPEND = \
+  $(DATA_TIDY) \
+  src/helper-functions.R
 
 # For simplicity, specify common dependencies for both the manuscript and the
 # outline
-
 TEXT_DEPEND = \
-	template/reference.docx \
-	fig/fig-pc5.svg \
-	tables/table-pc5-mapman.svg \
-	bib/references.bib \
-	template/genome-research.csl \
-	css/pandoc.css
+  $(FIGS) \
+  $(TABS) \
+  template/reference.docx \
+  bib/references.bib \
+  template/genome-research.csl \
+  css/pandoc.css
+
+# pandoc commands
+DOCX_EXE = pandoc --reference-doc=template/reference.docx \
+	--from=markdown \
+	--to=docx \
+	--bibliography=bib/references.bib \
+	--output=$@ \
+
+## all: make outline and manuscript
+# the outline is just for us
+all: outline manuscript
+
+## outline: outline
+outline: docx/outline.docx
 
 docx/outline.docx: notes/outline.md $(TEXT_DEPEND)
-	pandoc --reference-doc=template/reference.docx \
-		--from=markdown \
-		--to=docx \
-		--csl=template/genome-research.csl \
-		--bibliography=bib/references.bib \
-		--output=docx/outline.docx \
-		notes/outline.md
+	$(DOCX_EXE) $<
+
+## manuscript:: make manuscript in docx and html
+# The official manuscript is in docx, but the html version is much easier to use
+.PHONY: manuscript
+manuscript: docx/manuscript.docx html/manuscript.html
 
 docx/manuscript.docx: ms/manuscript.md $(TEXT_DEPEND)
-	pandoc --reference-doc=template/reference.docx \
-		--from=markdown \
-		--to=docx \
-		--csl=template/genome-research.csl \
-		--bibliography=bib/references.bib \
-		--output=docx/manuscript.docx \
-		ms/manuscript.md
+	$(DOCX_EXE) $<
 
-# Produce an html manuscript in the main folder
-# the html manuscript is just for us
-# It is much nicer to read than the docx
 html/manuscript.html: ms/manuscript.md $(TEXT_DEPEND)
 	pandoc --from=markdown \
 		--to=html \
 		--css=../css/pandoc.css \
-		--csl=template/genome-research.csl \
 		--bibliography=bib/references.bib \
-		--output=html/manuscript.html \
-		ms/manuscript.md
+		--output=$@ \
+		$<
 
-# For simplicity, specify common DATA dependecies for figures and tables
-FIG_TAB_DEPEND = \
-	data/pca-rlog.Rdata \
-	data/mapman.Rdata \
-	src/helper-functions.R
+## figs: read tidy data and make figures
+.PHONY: figs
+figs: $(FIGS)
 
-fig/%.svg: src/%.R $(FIG_TAB_DEPEND)
+fig/fig-%.svg: src/fig-%.R $(FIG_TAB_DEPEND)
 	cd $(<D); Rscript --vanilla $(<F)
 
-tables/%.svg: src/%.R $(FIG_TAB_DEPEND)
+## tabs: read tidy data and make tables
+.PHONY: tabs
+tabs: $(TABS)
+
+tables/table-%.svg: src/table-%.R $(FIG_TAB_DEPEND)
 	cd $(<D); Rscript --vanilla $(<F)
 
-# Starting point of the analysis from which everything else depends
+## dats: analyze raw data and save tidy data inn Rdata format
+#  Starting point of the analysis from which everything else depends
+.PHONY: dats
+dats: $(DATA_TIDY)
 
-data/pca-rlog.Rdata: src/get-rlog-pca.R data/dds.Rds
+data/%.Rdata: src/analyze-%.R $(DATA-RAW)
 	cd $(<D); Rscript --vanilla $(<F)
 
-data/mapman.Rdata: src/get-mapman.R data/MAPMAN\ BIN-Osa_MSU_v7.xlsx src/helper-functions.R
-	cd $(<D); Rscript --vanilla $(<F)
+## variables   : Print variables.
+.PHONY : variables
+variables:
+	@echo DATA-RAW: $(DATA_RAW)
+	@echo ANALYZE_SRC: $(ANALYZE_SRC)
+	@echo DATA_TIDY: $(DATA_TIDY)
+	@echo FIGS_SRC: $(FIGS_SRC)
+	@echo FIGS: $(FIGS)
+	@echo TABS_SRC: $(TABS_SRC)
+	@echo TABS: $(TABS)
+
+## clean       : Remove auto-generated files.
+.PHONY : clean
+clean :
+	rm -f $(DATA_TIDY)
+	rm -f $(FIGS)
+	rm -f $(TABS)
+	rm -f html/manuscript.html
+
+.PHONY : help
+help : Makefile
+	@sed -n 's/^##//p' $<

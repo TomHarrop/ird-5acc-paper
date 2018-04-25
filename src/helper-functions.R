@@ -234,10 +234,12 @@ plot_norm_expr <- function(dat) {
                position = position_dodge(width = .5),
                alpha = .8) +
     scale_color_manual(values = color_palette) +
-    facet_wrap(facets = c("locus_id", "DESCRIPTION"),
-               scales = "free_y",
-               ncol = 5,
-               labeller = label_wrap_gen(width = 50)) +
+    # facet_wrap(facets = c("locus_id", "DESCRIPTION"),
+    #            scales = "free_y",
+    #            ncol = 5,
+    #            labeller = label_wrap_gen(width = 50)) +
+    facet_wrap(facets = "locus_id") +
+    expand_limits(y=0) +
     theme_bw() +
     theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
     annotate("rect",

@@ -6,7 +6,7 @@ library(DESeq2)
 
 # Load deseqdataset and calculate rlog ------------------------------------
 
-dds <- readRDS("../data/dds.Rds")
+dds <- readRDS("../data-raw/dds.Rds")
 design(dds) <- ~ accession + stage + accession:stage
 dds <- DESeq(dds,
              test = "LRT",
@@ -44,5 +44,20 @@ pcro <- as.data.frame(pcro); pcro$locus_id <- rownames(pcro)
 
 
 # save everything ---------------------------------------------------------
-save(rld, pc, pcx, pcro, file = "../data/pca-rlog.Rdata")
 
+save(rld, pc, pcx, pcro, file = "../data/rlog-pca.Rdata")
+
+
+# Add annos and save table ------------------------------------------------
+
+# load("../data/mapman.Rdata")
+# 
+# mapman <- mapman %>% 
+#   select_at(vars(BINCODE:DESCRIPTION)) %>% 
+#   dplyr::rename(locus_id = IDENTIFIER)
+# 
+# pcro_out <- pcro %>%
+#   left_join(mapman)
+# 
+# write.csv2(pcro_out, file = "../data/pca_ranks_all.csv")
+# save(pcro_out, file = "../data/pca_ranks_all.Rdata")

@@ -51,5 +51,5 @@ load_mapman <- function(path)
 
 
 
-mapman <- load_mapman("../data/MAPMAN BIN-Osa_MSU_v7.xlsx")
+mapman <- load_mapman("../data-raw/MAPMAN BIN-Osa_MSU_v7.xlsx")
 save(mapman, file = "../data/mapman.Rdata")
