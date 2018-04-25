@@ -6,7 +6,7 @@ bibliography: ../bib/references.bib
 ## Results
 
 ### Panicule traits that influence spikelet number
-
+gsdkgqskjdghqksjhdkqjshdksdjhfgkqjs
 Besides the reference *Oryza sativa nipponbare*, we have selected 4 other rice accessions, one per species: B88 [*Oryza barthii*], Tog5681 [*Oryza glaberrima*], W1654 [*Oryza Rufipogon*], IR64 [*Oryza sativa indica*], because they are easily grown in greenhouse, because they have sequenced or nearly sequenced genomes and most important because they display representative phenotypic traits.
 
 On those accessions, we have measured systematically 9 panicle traits [@faroq2013p]. These traits are:
