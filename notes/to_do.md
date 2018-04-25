@@ -16,3 +16,6 @@
 
 - promoter analysis AP2 genes DE
 - cluster all genes (e.g. filtered on FDR from interaction)
+- general qc stuff
+
+- 
