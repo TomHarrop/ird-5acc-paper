@@ -238,7 +238,9 @@ plot_norm_expr <- function(dat) {
     #            scales = "free_y",
     #            ncol = 5,
     #            labeller = label_wrap_gen(width = 50)) +
-    facet_wrap(facets = "locus_id") +
+    facet_wrap(facets = "locus_id",
+               scales = "free_y",
+                          ncol = 5) +
     expand_limits(y=0) +
     theme_bw() +
     theme(axis.text.x = element_text(angle = 90, hjust = 1)) +

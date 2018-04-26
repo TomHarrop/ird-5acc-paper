@@ -1,6 +1,7 @@
 library(tidyverse)
 library(pheatmap)
-library(ggpubr) 
+library(ggpubr)
+color_palette <- c("blue", "goldenrod")
 
 source("helper-functions.R")
 dds <- readRDS("../data-raw/dds.Rds")
@@ -13,8 +14,7 @@ annos <- annos %>%
   select(symbol, locus_id)
 
 pc5 <- pcro %>%
-  select(PC5, locus_id) %>%
-  arrange(PC5)
+  select(PC5, locus_id)
 
 prepare_for_plot <- function(dats) {
   dats <- get_expression(locus_ids = dats$locus_id,
@@ -29,37 +29,118 @@ prepare_for_plot <- function(dats) {
     select(locus_id, stage_species, by_locus_species) %>%
     spread(key = stage_species, value = by_locus_species) %>%
     left_join(annos) %>%
-    mutate(locus_id = paste(locus_id, symbol, sep = "_")) %>%
+    mutate(locus_name = paste(locus_id, symbol, sep = "_")) %>%
     select(-symbol) %>%
+    distinct() %>%
     as.data.frame(.)
   
-  rownames(dats) <- dats$locus_id
+  rownames(dats) <- dats$locus_name
   return(dats)
 }
 
-top_pc5 <- prepare_for_plot(pc5[1:50, ])
+
+pc5 <- pc5 %>% arrange(PC5)
+bot_pc5 <- prepare_for_plot(pc5[1:200, ])
 
 pc5 <- pc5 %>% arrange(desc(PC5))
-bot_pc5 <- prepare_for_plot(pc5[1:50, ])
+top_pc5 <- prepare_for_plot(pc5[1:200, ])
 
-
-tp <- pheatmap(top_pc5[, 2:ncol(top_pc5)], 
+tp <- pheatmap(top_pc5[, 2:11],
+               main = "pc5, top 200 genes",
                color = colorRampPalette(c( "white", "blue4"))(50),
-               cluster_cols = F,
+               show_rownames = F,
+               cutree_cols = 2,
+               # cluster_cols = F,
                gaps_col = 5,
                cellwidth = 9,
-               cellheight = 9)
+               cellheight = .2,
+               filename = "../fig/heatmap-dump.pdf")
 
-bt <- pheatmap(bot_pc5[, 2:ncol(bot_pc5)], 
+bt <- pheatmap(bot_pc5[, 2:11], 
+               main = "pc5, last 200 genes",
                color = colorRampPalette(c( "white", "blue4"))(50),
-               cluster_cols = F,
+               show_rownames = F,
+               cutree_cols = 2,
+               # cluster_cols = F,
                gaps_col = 5,
                cellwidth = 9,
-               cellheight = 9)
-
+               cellheight = .2,
+               filename = "../fig/heatmap-dump.pdf")
 
 svg("../fig/fig-genes-of-pc5.svg",
-    width = 12, height = 8)
+    width = 5.4, height = 3)
 ggarrange(plotlist = list(tp[[4]],
                           bt[[4]]))
 dev.off()
+
+
+cut_tp <- 9
+cut_bt <- 6
+tp <- pheatmap(top_pc5[, 2:11],
+               main = "pc5, top 200 genes",
+               color = colorRampPalette(c( "white", "blue4"))(50),
+               cutree_rows = cut_tp,
+               cluster_cols = F,
+               gaps_col = 5,
+               cellwidth = 9,
+               cellheight = 9,
+               filename = "../fig/heatmap-dump.pdf")
+
+bt <- pheatmap(bot_pc5[, 2:11], 
+               main = "pc5, last 200 genes",
+               color = colorRampPalette(c( "white", "blue4"))(50),
+               cutree_rows = cut_bt,
+               cluster_cols = F,
+               gaps_col = 5,
+               cellwidth = 9,
+               cellheight = 9,
+               filename = "../fig/heatmap-dump.pdf")
+
+pdf("../fig/fig-genes-of-pc5-explore.pdf",
+    width = 12, height = 27)
+ggarrange(plotlist = list(tp[[4]],
+                          bt[[4]]))
+dev.off()
+
+top_pc5_clust <- cbind(top_pc5,
+                       cluster = cutree(tp$tree_row, cut_tp))
+bot_pc5_clust <- cbind(bot_pc5, 
+                       cluster = cutree(bt$tree_row, cut_bt))
+
+tmp <- get_expression(top_pc5_clust %>%
+                        filter(cluster == 2) %>%
+                        .$locus_id,
+                      dds = dds) %>%
+  left_join(annos) %>%
+  mutate(species = factor(species,
+                          levels = c("japonica",
+                                     "barthii",
+                                     "glaberrima",
+                                     "rufipogon",
+                                     "indica")))
+  
+
+pdf("../fig/tmp_genes_pc5.pdf",
+    height = 20,
+    width = 12)
+ggplot(tmp, aes(x = species,
+                y = `normalized expression`,
+                colour = stage,
+                pch = domestication)) +
+  geom_point(size = 3, 
+             position = position_dodge(width = .5),
+             alpha = .8) +
+  scale_color_manual(values = color_palette) +
+  facet_wrap(facets = c("locus_id",
+                        "symbol"),
+             scales = "free_y",
+             ncol = 5) +
+  expand_limits(y=0) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  annotate("rect",
+           xmin = 1.5, xmax = 3.5,
+           ymin = -Inf, ymax = Inf,
+           alpha = .1)
+dev.off()
+

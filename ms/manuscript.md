@@ -3,10 +3,10 @@ title: "Temporary - Determination of Inflorescence Architecture in Wild and Dome
 bibliography: ../bib/references.bib
 ---
 
-## Results
+# Results
 
-### Panicule traits that influence spikelet number
-gsdkgqskjdghqksjhdkqjshdksdjhfgkqjs
+## Panicule traits that influence spikelet number
+
 Besides the reference *Oryza sativa nipponbare*, we have selected 4 other rice accessions, one per species: B88 [*Oryza barthii*], Tog5681 [*Oryza glaberrima*], W1654 [*Oryza Rufipogon*], IR64 [*Oryza sativa indica*], because they are easily grown in greenhouse, because they have sequenced or nearly sequenced genomes and most important because they display representative phenotypic traits.
 
 On those accessions, we have measured systematically 9 panicle traits [@faroq2013p]. These traits are:
@@ -35,15 +35,15 @@ Thus, we have fitted a linear model on primary and secondary branch number. The 
 
 The two first principal components of this dataset explain 28.6% and 16.3% of variance
 
-### PCA: the 5^th^ component splits developmental stages
+## The 5^th^ principal component splits developmental stages
 
-We have used Principal Component Analysis (PCA) in order to explore and detect patterns of gene expression across different species and stages. The first two component split clades (Asian vs African Rice in the 1^st^ and 2^nd^ components); the next two components split species within the same clade (Rufipogon vs. Sativa in the 3^rd^; Barthii vs. Glaberrima in the 4^th^). Indeed species are the first source of variation, but this source of variation could be confounded with mapping bias.
+We have used Principal Component Analysis (PCA) in order to explore and detect patterns of gene expression across different species and stages. The first two component split clades (Asian vs African Rice in the 1^st^ and 2^nd^ components); the next two components split species within the same clade (Rufipogon vs. Sativa in the 3^rd^; Barthii vs. Glaberrima in the 4^th^). This indicates that species are the first source of variation of genes expression, but this source of variation could be confounded with mapping bias.
 
 Further components can be explained by differences between the two developmental stages: PBM and SM.  Above all, the 5^th^ component splits PBM and SM in all species (*fig-pc5*).
 
 ![fig-pc5: The 5^th^ component splits developmental stages ](../fig/fig-pc5.svg)
 
-### PCA: master regulators of development are enriched in the loadings of the 5^th^ component
+## The 5^th^ principal component is driven by master regulators of development
 
 The 5^th^ principal component must be driven by gene expression patterns that identify the **primary branch meristem** and the **spikelet meristem** in all or most species. Are those pattern biologically significant? We have described those pattern by using the loading of each gene on the 5^th^ component as rankings and checking if they enrich mapman functional categories [@thimm2004mapman].
 
@@ -51,7 +51,63 @@ The rankings of the 5^th^ component enrich multiple mapman bins (*table-pc5-mapm
 
 ![table-pc5-mapman](../tables/table-pc5-mapman.svg)
 
-### Functional characterization of three AP2 genes
+### Within the 5^th^ component, *indica* IR64 is an outlier
+
+![](../fig/fig-genes-of-pc5.svg)
+
+The other species cluster together randomly
+
+## The genes that drive PC5 might determine spikelet development and its divergence
+
+Are the differences determined in the PBM (top pc5 genes) or in the SM (bottom pc5 genes)?
+
+### PBM - Top PC5 - Indica diff
+
+OsLHY, RDD1, **Circadian Clock** behaves different in indica, but also in other asian species.
+
+OsRBCS4, **Photosynthesis** behaves differently in indica, different development timing? Also: OsPORA,
+
+OsCML16,  **enhances root growth** flat in indica and japonica
+
+OsABA8ox1 **ABA hydrolase** regulates growth, behaves opposite in indica
+
+OsDREB1E, AP2-like **Osmotic stress / Downstream of Gigantea?**,
+OSISAP1, **resistance to dehyd.**,
+
+OsNAC9, **Root structure**,
+
+OsACO1, **Internode elongation**
+
+OsRAV2, **regulated by salt?**
+
+OsBIERF4, **Something stress again??**
+
+AP37, Stress again, **programmed cell death**
+
+OsMYL1, bHLH something **cell identity**.
+
+Other cluster, still ***Indica*** peculiar:
+
+OsDOS: CCCH **Senescence** Something AP2s network???
+
+IAA6|OsIAA6: **auxin throuh PIN1?** tiller outgrow + **stress**
+
+OsPIP1: **stress** auquaporin
+
+GLN1;2|GS1;2|OsGS1;2: **high temperature** tolerance
+
+OsGASR1: **Differentiation of panicle**
+
+cZOGT1: **Citokinin related**
+
+OsMADS16: **mads B-class**
+
+OsSAP11: **citokinin - cell elongation**
+
+### PBM - Top PC5 - Indica same
+
+
+## Functional characterization of three AP2 genes
 
 Three AP2 genes were selected because they are differentially expressed across species and their mutant were publicly available. *EXTEND!*
 
@@ -59,10 +115,10 @@ Those genes are *ERF48*, *ERF142* and *PLT8* (*fig-ap2-selected-expr*).
 
 ![Expression of selected AP2 genes](../fig/fig-ap2-selected-expr.svg)
 
-## Discussion
+# Discussion
 
 Inflorescence branching in Solanaceae is modulated by subtle modifications of transcriptional programs [@Lemmon_Evolutioninflorescencediversity_2016].
 
-## References
+# References
 
 <div id="refs"></div>
