@@ -1,3 +1,7 @@
+# Requirements
+
+## Raw Data
+
 To generate the analysis, you have to place these files into the `data-raw/` folder :
 
 ```
@@ -13,6 +17,8 @@ data-raw/
 └── Phenotype_PanicleSequenced_corrected.xlsx
 ```
 
+## R packages
+
 Moreover you need to install these R packages from CRAN:
 
 - `tidyverse`,
@@ -23,10 +29,14 @@ Moreover you need to install these R packages from CRAN:
 - `pheatmap`
 - `ggpubr`
 
-And these from Bioconductor:
+These from Bioconductor:
 
 - `DESeq2`,
 - `fgsea`
+
+And these from GitHub with devtools:
+
+- `oryzr` --- type `devtools::install_github("TomHarrop/oryzr")`
 
 You might have to initiate some folder manually. This is my folder structure for the compiled paper.
 

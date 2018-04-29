@@ -63,7 +63,11 @@ Are the differences determined in the PBM (top pc5 genes) or in the SM (bottom p
 
 ### PBM - Top PC5 - Indica diff
 
+![](../fig/fig-TMP-pc5-top200-cl1.jpeg)
+
 OsLHY, RDD1, **Circadian Clock** behaves different in indica, but also in other asian species.
+
+![](../fig/fig-TMP-pc5-top200-cl4.jpeg)
 
 OsRBCS4, **Photosynthesis** behaves differently in indica, different development timing? Also: OsPORA,
 
@@ -88,6 +92,8 @@ OsMYL1, bHLH something **cell identity**.
 
 Other cluster, still ***Indica*** peculiar:
 
+![](../fig/fig-TMP-pc5-top200-cl5.jpeg)
+
 OsDOS: CCCH **Senescence** Something AP2s network???
 
 IAA6|OsIAA6: **auxin throuh PIN1?** tiller outgrow + **stress**
@@ -106,6 +112,7 @@ OsSAP11: **citokinin - cell elongation**
 
 ### PBM - Top PC5 - Indica same
 
+![](../fig/fig-TMP-pc5-top200-cl3.jpeg)
 
 ## Functional characterization of three AP2 genes
 

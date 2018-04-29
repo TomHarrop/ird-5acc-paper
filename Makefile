@@ -49,6 +49,7 @@ docx/manuscript.docx: ms/manuscript.md $(TEXT_DEPEND)
 html/manuscript.html: ms/manuscript.md $(TEXT_DEPEND)
 	pandoc --from=markdown \
 		--to=html \
+		--toc\
 		--css=../css/pandoc.css \
 		--bibliography=bib/references.bib \
 		--output=$@ \
