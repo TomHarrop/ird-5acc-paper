@@ -2,7 +2,7 @@
 title: "Temporary - Determination of Inflorescence Architecture in Wild and Domesticated Rices"
 bibliography: ../bib/references.bib
 ---
-## Introduction
+# Introduction
 
 * evo devo and gene expression
 * transcription factors / evolution of gene regulation
@@ -18,11 +18,10 @@ bibliography: ../bib/references.bib
     - evolution of transcription factor family expression
     - does selection for the same phenotype affect expression of the same genes / sets of genes
 
-## Results
+# Results
 
-=======
+## Diversity of panicle architecture in the Asian and African Rices
 
-###Diversity of panicle architecture in the Asian and African Rices
 Phenotyping of the 20 accessions in the 4/5 species : PCA and correlation analysis
 [fig-PCA diversity: Panicle traits architecturehcitectire](../fig/Test FigPCA.pdf)
 2 conclusions :
@@ -30,7 +29,8 @@ Phenotyping of the 20 accessions in the 4/5 species : PCA and correlation analys
  - Panicle traits correlated with Sp nb
  - Obersvation of panicle architecture similarity between the 2 domestications process
 
-###Presentation of the transcriptomics parts - Phenotype of the 5 accessions  : Let's see how to introduce this/ it will depend also if we include or not the analysis by graph from the modelisation group
+> **Presentation of the transcriptomics parts - Phenotype of the 5 accessions  : Let's see how to introduce this/ it will depend also if we include or not the analysis by graph from the modelisation group**
+
 
 Besides the reference *Oryza sativa nipponbare*, we have selected 5 other rice accessions, one per species: B88 [*Oryza barthii*], Tog5681 [*Oryza glaberrima*], W1654 [*Oryza Rufipogon*], Niponbarre [*Oryza sativa japonica], IR64 [*Oryza sativa indica*], because they are easily grown in greenhouse, because they have sequenced or nearly sequenced genomes and most important because they display representative phenotypic traits.
 
@@ -64,8 +64,9 @@ The two first principal components of this dataset explain 28.6% and 16.3% of va
 
 Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)
 
-### What are the genes/patwhay involved in the meristem state in rice inflorescence Undeterminate vs determinate
-PCA: the 5^th^ component splits developmental stages
+> **What are the genes/patwhay involved in the meristem state in rice inflorescence Undeterminate vs determinate**
+
+## PCA: the 5^th^ component splits developmental stages
 
 We have used Principal Component Analysis (PCA) in order to explore and detect patterns of gene expression across different species and stages. The first two component split clades (Asian vs African Rice in the 1^st^ and 2^nd^ components); the next two components split species within the same clade (Rufipogon vs. Sativa in the 3^rd^; Barthii vs. Glaberrima in the 4^th^). Indeed species are the first source of variation, but this source of variation could be confounded with mapping bias.
 
@@ -86,7 +87,10 @@ Interesting genes highlighed : AP2/ALOG on one side and MADS box genes in the ot
 Interestingly, some genes seems to have a a variant pattern in indica (some AP2 and MADS box) : these genes are present on cluster3 and 4
 Maybe make a bridge with phenotype (high and low branching) that could be explained by these genes.
 
-### Cluster analysis  : the different pattern could be link to phenotype (correlation test) and or are interesting based on the gene enrichment and composition
+### Cluster analysis
+
+> **the different pattern could be link to phenotype (correlation test) and or are interesting based on the gene enrichment and composition**
+
 ![fig-cluster: TF cluster ](../fig/cluster.pdf)
 Cluster3 : high branching phenotype; divergence of slope for indica (positive slope in indica, negative for the other). This cluster is enriched in AP2 genes (gsea analysis) and most of these genes are positively correlated with Sb/sp nb
 Cluster 4 : branching phenotype; divergence of slope for indica (negative slope in indica), this cluster is enriched in HB TF, are present also some genes known to be involved in sp determination (LHS1, MADS14, MFO1, OsIDS1). Enriched also in SWI/SNF-SW
@@ -108,15 +112,15 @@ different slope between asian and african... find a link with PCA analysis and/o
 
 The difficulties is to represent the merging of the data all together : how to do it?
 
-### Next work to finalize
+> **Next work to finalize
 Analyse along time course AP2/HB genes presents in cluster 3 and 4 to evaluate if there is a delay in expression that could explain the phenotype...
 I propose to do a new fluidgm on the time course 1(same samples as transcriptom samples) and not on time course 2 as the previous analysis to avoid difference and see more a effect on time course diversity
 
-SNP-promoter diversity : make a short coherent list of genes to link it with domestication process?
+SNP-promoter diversity : make a short coherent list of genes to link it with domestication process?**
 
 
 
-### Functional characterization of three AP2 genes
+## Functional characterization of three AP2 genes
 
 Three AP2 genes were selected because they are differentially expressed across species and their mutant were publicly available. *EXTEND!*
 
@@ -130,10 +134,10 @@ ERF48 : present in cluster 2 and expression highly correlated with phenotype...b
 ERF142 : clear effect on panicule phenotype but in any modelisationPLT8 : effect on pbNb and SpNB..present in Cluster4..
 
 
-## Discussion
+# Discussion
 
 Inflorescence branching in Solanaceae is modulated by subtle modifications of transcriptional programs [@Lemmon_Evolutioninflorescencediversity_2016].
 
-## References
+# References
 
 <div id="refs"></div>
