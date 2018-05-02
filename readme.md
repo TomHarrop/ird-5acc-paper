@@ -23,6 +23,7 @@ Moreover you need to install these R packages from CRAN:
 
 - `tidyverse`,
 - `ggfortify`,
+- `ggrepel`
 - `readxl`,
 - `gridExtra`,
 - `leaps`
