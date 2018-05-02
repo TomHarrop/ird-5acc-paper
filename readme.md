@@ -1,3 +1,9 @@
+# Note
+
+**Do not base your work on commits in the `devel` branches, because we might amend them**
+
+# Reproduce the analysis
+
 To generate the analysis, you have to place these files into the `data-raw/` folder :
 
 ```
