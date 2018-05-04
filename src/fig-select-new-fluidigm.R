@@ -2,15 +2,14 @@ library(tidyverse)
 library(readxl)
 library(DESeq2)
 source("helper-functions.R")
+dds <- readRDS("../data-raw/dds.Rds")
 
 
 # selected <- read_excel("../data-raw/candidate_new_fluidigm.xlsx") %>%
 #   arrange(locus_id)
 selected <- read_csv("../selected_genes/candidate_new_fluidigm.csv") %>%
-  arrange(locus_id) %>%
-  select(-X1)
+  arrange(locus_id)
 
-dds <- readRDS("../data-raw/dds.Rds")
 
 selected_expr <- get_expression(locus_ids = selected$locus_id,
                            dds = dds) %>%
@@ -29,3 +28,4 @@ plot_norm_expr(selected_expr) +
              labeller = label_wrap_gen(width = 42))
 dev.off()
 
+# write_csv(selected, "../selected_genes/candidate_new_fluidigm2.csv")

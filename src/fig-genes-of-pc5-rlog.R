@@ -145,7 +145,7 @@ ggarrange(plotlist = list(tp[[4]],
                           bt[[4]]))
 dev.off()
 
-top_pc5_clust <- cbind(top_pc5,
-                       cluster = cutree(tp$tree_row, cut_tp))
-bot_pc5_clust <- cbind(bot_pc5, 
-                       cluster = cutree(bt$tree_row, cut_bt))
+# top_pc5_clust <- cbind(top_pc5,
+#                        cluster = cutree(tp$tree_row, cut_tp))
+# bot_pc5_clust <- cbind(bot_pc5, 
+#                        cluster = cutree(bt$tree_row, cut_bt))
