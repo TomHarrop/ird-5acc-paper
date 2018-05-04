@@ -43,12 +43,18 @@ prepare_for_plot <- function(dats) {
 
 
 pc5 <- pc5 %>% arrange(PC5)
-bot_pc5 <- prepare_for_plot(pc5[1:200, ])
+bot_pc5 <- pc5 %>%
+  # like this they are ordered by ranking
+  .[1:200, ]  %>%
+  left_join(prepare_for_plot(pc5[1:200, ])); rownames(bot_pc5) <- bot_pc5$locus_name
 
 pc5 <- pc5 %>% arrange(desc(PC5))
-top_pc5 <- prepare_for_plot(pc5[1:200, ])
+top_pc5 <- pc5 %>% 
+  # like this they are ordered by ranking
+  .[1:200, ] %>%
+  left_join(prepare_for_plot(pc5[1:200, ])); rownames(top_pc5) <- top_pc5$locus_name
 
-tp <- pheatmap(top_pc5[, 2:11],
+tp <- pheatmap(top_pc5[, 3:12],
                main = "pc5, top 200 genes",
                color = colorRampPalette(c( "white", "blue4"))(50),
                show_rownames = F,
@@ -59,7 +65,7 @@ tp <- pheatmap(top_pc5[, 2:11],
                cellheight = .2,
                filename = "../fig/heatmap-dump.pdf")
 
-bt <- pheatmap(bot_pc5[, 2:11], 
+bt <- pheatmap(bot_pc5[, 3:12], 
                main = "pc5, last 200 genes",
                color = colorRampPalette(c( "white", "blue4"))(50),
                show_rownames = F,
@@ -79,21 +85,23 @@ dev.off()
 
 cut_tp <- 9
 cut_bt <- 6
-tp <- pheatmap(top_pc5[, 2:11],
+tp <- pheatmap(top_pc5[, 3:12],
                main = "pc5, top 200 genes",
                color = colorRampPalette(c( "white", "blue4"))(50),
-               cutree_rows = cut_tp,
+               # cutree_rows = cut_tp,
                cluster_cols = F,
+               cluster_rows = F,
                gaps_col = 5,
                cellwidth = 9,
                cellheight = 9,
                filename = "../fig/heatmap-dump.pdf")
 
-bt <- pheatmap(bot_pc5[, 2:11], 
+bt <- pheatmap(bot_pc5[, 3:12], 
                main = "pc5, last 200 genes",
                color = colorRampPalette(c( "white", "blue4"))(50),
-               cutree_rows = cut_bt,
+               # cutree_rows = cut_bt,
                cluster_cols = F,
+               cluster_rows = F,
                gaps_col = 5,
                cellwidth = 9,
                cellheight = 9,
@@ -110,8 +118,8 @@ top_pc5_clust <- cbind(top_pc5,
 bot_pc5_clust <- cbind(bot_pc5, 
                        cluster = cutree(bt$tree_row, cut_bt))
 
-tmp <- get_expression(top_pc5_clust %>%
-                        filter(cluster == 3) %>%
+tmp <- get_expression(bot_pc5_clust %>%
+                        filter(cluster == 1) %>%
                         .$locus_id,
                       dds = dds) %>%
   left_join(annos) %>%
@@ -147,13 +155,13 @@ ggplot(tmp, aes(x = species,
            alpha = .1)
 dev.off()
 
-heat_by_clust <- function(dat) {
+heat_by_clust <- function(dat, selection = "top") {
   # tmp <- top_pc5_clust %>%
   #   filter(cluster == 3)
   if(nrow(dat) > 1) {
     pheatmap(dat %>%
                select_at(vars(PBM_barthii:SM_rufipogon)), #%>% t(.),
-             main = paste("pc5, top 200 genes - cluster", unique(dat$cluster)),
+             main = paste("pc5,", selection,  "200 genes - cluster", unique(dat$cluster)),
              color = colorRampPalette(c( "white", "blue4"))(50),
              labels_row = dat %>% .$locus_name,
              # labels_col = oryzr::LocToGeneName(tmp$locus_id)$symbols,
@@ -161,10 +169,11 @@ heat_by_clust <- function(dat) {
              gaps_col = 5,
              cellwidth = 9,
              cellheight = 9,
-             filename = paste0("../fig/fig-TMP-pc5-top200-cl",
+             filename = paste0("../fig/fig-TMP-pc5-", selection, "200-cl",
                               unique(dat$cluster),
                               ".jpeg"))
   }
 }
 top_pc5_clust %>% split(.$cluster) %>% walk(heat_by_clust)
+bot_pc5_clust %>% split(.$cluster) %>% walk(heat_by_clust, selection = "last")
 tst <- oryzr::LocToGeneName(tmp$locus_id)$symbols
