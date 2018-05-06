@@ -28,6 +28,8 @@ src/Rplots.*
 # RStudio files
 *.Rproj
 .Rproj.user/
+# The Rproject in src is actually useful
+!src/ird-acc-paper-src.Rproj
 
 # knitr and R markdown default cache directories
 /*_cache/

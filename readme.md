@@ -1,4 +1,8 @@
-# Requirements
+# Note
+
+**Do not base your work on commits in the `devel` branches, because we might amend them**
+
+# Reproduce the analysis - requirements
 
 ## Raw Data
 
@@ -23,6 +27,7 @@ Moreover you need to install these R packages from CRAN:
 
 - `tidyverse`,
 - `ggfortify`,
+- `ggrepel`
 - `readxl`,
 - `gridExtra`,
 - `leaps`
@@ -37,6 +42,8 @@ These from Bioconductor:
 And these from GitHub with devtools:
 
 - `oryzr` --- type `devtools::install_github("TomHarrop/oryzr")`
+
+## Folder structure
 
 You might have to initiate some folder manually. This is my folder structure for the compiled paper.
 
