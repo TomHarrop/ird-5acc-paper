@@ -9,7 +9,7 @@ dds <- readRDS("../data-raw/dds.Rds")
 load("../data/rlog-pca.Rdata")
 load("../data/func-anno.Rdata")
 tf_fam <- readRDS("../data-raw/tfdb_os.Rds") %>%
-  rename(locus_id = "Protein.ID") %>%
+  dplyr::rename(locus_id = "Protein.ID") %>%
   filter(locus_id %in% rownames(dds)) %>%
   filter(!duplicated(locus_id))
 
@@ -211,4 +211,3 @@ plot_family(top_pc5, family = "AP2-EREBP")
 plot_family(bot_pc5, "C2C2-YABBY", height = 9)
 plot_family(top_pc5, "MADS")
 plot_family(top_pc5, "NAC")
-

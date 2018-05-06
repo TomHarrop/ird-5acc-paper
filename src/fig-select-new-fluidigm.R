@@ -18,7 +18,7 @@ selected_expr <- get_expression(locus_ids = selected$locus_id,
 
 
 pdf(file = "../fig/fig-select-new-fluidigm.pdf",
-    width = 16, height = 14)
+    width = 16, height = 22)
 plot_norm_expr(selected_expr) +
   facet_wrap(facets = c("locus_id",
                         "gene_name",

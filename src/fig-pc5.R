@@ -29,6 +29,15 @@ svg("../fig/fig-pc5.svg",
 fig_pc5
 dev.off()
 
+
+# Explore loadings of pc5 -------------------------------------------------
+
+
+tst <- pcx %>% group_by(accession, stage) %>% nest(PC5) %>%
+  mutate(range = map(.x = .$data, .f = range))
+tst
+tst$range
+
 # 2-dimensional plots -----------------------------------------------------
 
 # Plot PC
@@ -75,6 +84,7 @@ fig_pc <- ggplot(pcx, aes(x = pcx, y = 0,
         axis.title.y = element_blank()) +
   # ggtitle(expression(~5^th~Component))
   ggtitle("Main Components")
+
 
 # svg("../fig/fig-pc5.svg",
 #     width = 7,
