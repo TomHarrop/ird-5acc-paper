@@ -66,6 +66,17 @@ Presentation of the stage/time course, checking some genes by Q-PCR (perhaps oth
 
 > **What are the genes/patwhay involved in the meristem state in rice inflorescence Undeterminate vs determinate**
 
+## Transtition from PBM to SM in the 5 species
+
+We have compared the transcriptomes of PBM and SM separately in those 5 rice species and we have detected with a significance level of alpha = .05:
+
+- 1942 differentially expressed genes in ***O. barthii***.
+- 1848 differentially expressed genes in ***O. glaberrima***.
+- 742 differentially expressed genes in ***O. rufipogon***.
+- 387 differentially expressed genes in ***O. indica***.
+- 831 differentially expressed genes in ***O. japonica***
+
+
 ## Transcriptome: the 5^th^ principal component splits developmental stages
 
 We have used Principal Component (PC) Analysis in order to isolate and explore patterns of gene expression across different species and stages.

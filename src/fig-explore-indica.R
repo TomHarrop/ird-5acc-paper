@@ -35,7 +35,8 @@ p <- get_expression(tst$locus_id, dds = dds) %>%
              ncol = 5,
              labeller = label_wrap_gen(width = 50))
 
-svg(file = "../fig/fig-explore-indica.svg",
+pdf(file = "../fig/fig-explore-indica.pdf",
+# svg(file = "../fig/fig-explore-indica.svg",
     height = 90,
     # height = 30,
     width = 17)
@@ -44,14 +45,15 @@ dev.off()
 
 # plot(tt_indica$stat, tt_indica$pvalue)
 
-mapman_list <- c(#split(mapman$locus_id, mapman$level1),
-                 # split(mapman$locus_id, mapman$level2),
-                 split(mapman$locus_id, mapman$level3)
-                 # split(mapman$locus_id, mapman$level4),
-                 # split(mapman$locus_id, mapman$level4),
-                 # split(mapman$locus_id, mapman$level6),
-                 # split(mapman$locus_id, mapman$level7))
-)
+mapman_list <- c(
+  split(mapman$locus_id, mapman$level1),
+  split(mapman$locus_id, mapman$level2),
+  split(mapman$locus_id, mapman$level3)
+  # split(mapman$locus_id, mapman$level4),
+  # split(mapman$locus_id, mapman$level5),
+  # split(mapman$locus_id, mapman$level6),
+  # split(mapman$locus_id, mapman$level7)
+  )
 
 ge <- test_gsea(rnk = set_names(tt_indica$stat,
                                 nm = tt_indica$locus_id), 

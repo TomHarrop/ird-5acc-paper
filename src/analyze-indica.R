@@ -3,8 +3,10 @@ library(DESeq2)
 
 dds <- readRDS("../data-raw/dds.Rds")
 
-dds <- dds[, dds@colData$accession == "indica" &  colnames(dds) != "I5"]
-cdata <- colData(dds)[dds@colData$accession == "indica", -5]
+spc <- "indica"
+
+dds <- dds[, dds@colData$accession == spc &  colnames(dds) != "I5"]
+cdata <- colData(dds)[dds@colData$accession == spc, -5]
 
 c_indica <- DESeq2::counts(dds, normalized = FALSE)
 
