@@ -116,11 +116,26 @@ The rankings of the 5^th^ component enrich multiple mapman bins (*table-pc5-mapm
 
 ![](../fig/fig-genes-of-pc5.svg)
 
-The other species cluster together randomly
+The other species cluster together randomly.
 
 ## The genes that drive PC5 might determine spikelet development and its divergence
 
-Are the differences determined in the PBM (top pc5 genes) or in the SM (bottom pc5 genes)?
+Are the phenotypic differences determined in the PBM (top pc5 genes) or in the SM (bottom pc5 genes)?
+
+### Gene families related to differentiation are enriched in the SM
+
+Those genes that are expressed preferentially in the SM, rank negatively in the loadings 5^th^ PC. Those genes are often linked to organ differentiation.
+
+Among those, 8 MADS-box genes are among the 100 genes that rank most negatively.
+
+![](../fig/fig-tmp-MADS-bot_pc5.pdf)
+
+- 7 of them: *OsMADS32* [@sang2012chimeric], *OsMADS6* [@ohmori2009mosaic] *OsMADS1* [@prasad2005osmads1], *OsMADS14* and *OsMADS15* [@wu2017abcs], *OsMADS34* [@kobayashi2009panicle], *OsMADS5* [@cui2010functional] determine floral organ identity and spikelet development.
+
+- 1 of them, *LOC_Os04g49150* is uncharacterized and it is a new candidate for the same role as the genes mentioned above.
+
+> **Although it is expressed at lower level? can it be a mapping artifact?**
+
 
 ### PBM - Top PC5 - Indica diff
 
@@ -230,6 +245,12 @@ ERF142 : clear effect on panicule phenotype but in any modelisationPLT8 : effect
 # Discussion
 
 Inflorescence branching in Solanaceae is modulated by subtle modifications of transcriptional programs [@Lemmon_Evolutioninflorescencediversity_2016].
+
+# Materials and Methods
+
+## Gene IDs and Names
+
+Gene names were retrieved from [FunRiceGenes](https://funricegenes.github.io/) [@doi:10.1093/gigascience/gix119]
 
 # References
 
