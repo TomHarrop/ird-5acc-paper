@@ -76,6 +76,7 @@ We have compared the transcriptomes of PBM and SM separately in those 5 rice spe
 - 387 differentially expressed genes in ***O. indica***.
 - 831 differentially expressed genes in ***O. japonica***
 
+> **Why does the number of differentially expressed genes slightly correlates with spikelet number? Maybe the species that produce less spikelets (and the african species) differentiate quicker. But it also might be a mapping or sampling issue.**
 
 ## Transcriptome: the 5^th^ principal component splits developmental stages
 
