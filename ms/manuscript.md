@@ -128,13 +128,19 @@ Those genes that are expressed preferentially in the SM, rank negatively in the 
 
 Among those, 8 MADS-box genes are among the 100 genes that rank most negatively.
 
-![](../fig/fig-tmp-MADS-bot_pc5.pdf)
+![](../fig/fig-tmp-MADS-bot_pc5.svg)
 
 - 7 of them: *OsMADS32* [@sang2012chimeric], *OsMADS6* [@ohmori2009mosaic] *OsMADS1* [@prasad2005osmads1], *OsMADS14* and *OsMADS15* [@wu2017abcs], *OsMADS34* [@kobayashi2009panicle], *OsMADS5* [@cui2010functional] determine floral organ identity and spikelet development.
 
 - 1 of them, *LOC_Os04g49150* is uncharacterized and it is a new candidate for the same role as the genes mentioned above.
 
 > **Although it is expressed at lower level? can it be a mapping artifact?**
+
+Also three YABBY genes are expressed preferentially in the SM: *OsYABBY4* [@yang2016rice], *OsYABBY5* and *OsYABBY3*. Among those *OsYABBY5* determines the identity of the spikelet meristem [@tanaka2012yabby].
+
+![](../fig/fig-tmp-C2C2-YABBY-bot_pc5.svg)
+
+
 
 
 ### PBM - Top PC5 - Indica diff
