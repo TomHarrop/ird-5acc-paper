@@ -8,6 +8,8 @@ dds <- readRDS("../data-raw/dds.Rds")
 
 load("../data/rlog-pca.Rdata")
 load("../data/func-anno.Rdata")
+load("../data/mapman.Rdata")
+
 tf_fam <- readRDS("../data-raw/tfdb_os.Rds") %>%
   dplyr::rename(locus_id = "Protein.ID") %>%
   filter(locus_id %in% rownames(dds)) %>%
@@ -16,6 +18,10 @@ tf_fam <- readRDS("../data-raw/tfdb_os.Rds") %>%
 annos <- annos %>%
   dplyr::rename(locus_id = "MSU") %>%
   select(symbol, locus_id)
+
+mapman <- mapman %>%
+  dplyr::rename(locus_id = "IDENTIFIER") %>%
+  filter(!duplicated(locus_id))
 
 pc5 <- pcro %>%
   select(PC5, locus_id)
@@ -34,9 +40,11 @@ prepare_for_plot <- function(dats) {
     spread(key = stage_species, value = by_locus_species) %>%
     left_join(annos) %>%
     left_join(tf_fam) %>%
+    left_join(mapman) %>%
     mutate(locus_name = paste(locus_id,
                               symbol,
                               Family,
+                              DESCRIPTION,
                               # oryzr::LocToGeneName(.$locus_id)$symbols,
                               sep = "-")) %>%
     # select(-symbol) %>%
@@ -114,7 +122,8 @@ bt <- pheatmap(bot_pc5[, 3:12],
                filename = "../fig/heatmap-dump.pdf")
 
 pdf("../fig/fig-genes-of-pc5-explore.pdf",
-    width = 14, height = 27)
+    # width = 14, height = 27)
+    width = 27, height = 27)
 ggarrange(plotlist = list(tp[[4]],
                           bt[[4]]))
 dev.off()
@@ -196,10 +205,11 @@ plot_family <- function(dats, family, height = 4) {
                scales = "free_y",
                ncol = 5)
   
-  pdf(file = paste0("../fig/fig-tmp-",
+  # pdf(file = paste0("../fig/fig-tmp-",
+  svg(file = paste0("../fig/fig-tmp-",
                     family, "-",
                     substitute(dats),
-                    ".pdf"),
+                    ".svg"),
       height = height,
       width = 12)
   print(p)
@@ -208,6 +218,6 @@ plot_family <- function(dats, family, height = 4) {
 
 plot_family(bot_pc5, "MADS")
 plot_family(top_pc5, family = "AP2-EREBP")
-plot_family(bot_pc5, "C2C2-YABBY", height = 9)
+plot_family(bot_pc5, "C2C2-YABBY")
 plot_family(top_pc5, "MADS")
 plot_family(top_pc5, "NAC")
