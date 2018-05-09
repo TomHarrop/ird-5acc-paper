@@ -140,7 +140,6 @@ Also three YABBY genes are expressed preferentially in the SM: *OsYABBY4* [@yang
 
 ![](../fig/fig-tmp-C2C2-YABBY-bot_pc5.svg)
 
-
 ### PBM - Top PC5 - Indica diff
 
 ![](../fig/fig-TMP-pc5-top200-cl1.jpeg)
