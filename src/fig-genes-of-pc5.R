@@ -195,7 +195,8 @@ dev.off()
 
 plot_family <- function(dats, family, height = 4) {
   p <- dats %>%
-    filter(Family == family) %>%
+    # filter(Family == family) %>%
+    filter(grepl(family, Family)) %>% #& !is.na(Family)) %>%
     .$locus_id %>%
     get_expression(dds) %>%
     left_join(annos) %>%
@@ -216,8 +217,101 @@ plot_family <- function(dats, family, height = 4) {
   dev.off()
 }
 
+
+plot_all <- function(dats, height = 100) {
+  p <- dats %>%
+    # filter(Family == family) %>%
+    # filter(grepl(family, Family)) %>% #& !is.na(Family)) %>%
+    .$locus_id %>%
+    get_expression(dds) %>%
+    left_join(annos) %>%
+    left_join(tf_fam) %>%
+    left_join(mapman) %>%
+    mutate(locus_id = as_factor(locus_id)) %>%
+    plot_norm_expr() +
+    facet_wrap(facets = c("locus_id",
+                          "symbol",
+                          "Family",
+                          "DESCRIPTION"),
+               scales = "free_y",
+               ncol = 5,
+               labeller = label_wrap_gen(width = 50,
+                                         multi_line = T))
+
+  # pdf(file = paste0("../fig/fig-tmp-",
+  pdf(file = paste0("../fig/fig-tmp-",
+                    substitute(dats),
+                    ".pdf"),
+      height = height,
+      width = 18)
+  print(p)
+  dev.off()
+}
+
+
+plot_mapman <- function(dats, mapman_word, height = 10) {
+  p <- dats %>%
+    # filter( == family) %>%
+    filter(grepl(mapman_word, DESCRIPTION)) %>% #& !is.na(Family)) %>%
+    .$locus_id %>%
+    get_expression(dds) %>%
+    left_join(annos) %>%
+    left_join(tf_fam) %>%
+    left_join(mapman) %>%
+    mutate(locus_id = as_factor(locus_id)) %>%
+    plot_norm_expr() +
+    facet_wrap(facets = c("locus_id",
+                          "symbol",
+                          "Family",
+                          "DESCRIPTION"),
+               scales = "free_y",
+               ncol = 5,
+               labeller = label_wrap_gen(width = 50,
+                                         multi_line = T))
+
+  # pdf(file = paste0("../fig/fig-tmp-",
+  pdf(file = paste0("../fig/fig-tmp-",
+                    mapman_word, "-",
+                    ".pdf"),
+                    substitute(dats),
+      height = height,
+      width = 18)
+  print(p)
+  dev.off()
+}
+
+
 plot_family(bot_pc5, "MADS")
 plot_family(top_pc5, family = "AP2-EREBP")
 plot_family(bot_pc5, "C2C2-YABBY")
 plot_family(top_pc5, "MADS")
 plot_family(top_pc5, "NAC")
+plot_family(bot_pc5, "bHLH")
+
+plot_family(top_pc5, "bHLH")
+plot_family(top_pc5, "WRKY")
+plot_family(top_pc5, "TRAF")
+
+plot_all(top_pc5)
+
+plot_all(bot_pc5)
+
+plot_mapman(bot_pc5, "POEI", height = 6)
+plot_mapman(bot_pc5, "LTPL", height = 6)
+plot_mapman(bot_pc5, "ankyrin", height = 6)
+plot_mapman(bot_pc5, "SPL", height = 6)
+plot_mapman(bot_pc5, "zinc", height = 6)
+plot_mapman(bot_pc5, "HD", height = 6)
+plot_mapman(bot_pc5, "TCP", height = 6)
+plot_mapman(bot_pc5, "YUC", height = 6)
+plot_mapman(bot_pc5, "[Aa]uxin", height = 6)
+
+
+plot_mapman(top_pc5, "zinc", height = 6)
+plot_mapman(top_pc5, "TFL", height = 6)
+plot_mapman(top_pc5, "LTPL", height = 6)
+plot_mapman(top_pc5, "MYB", height = 6)
+plot_mapman(top_pc5, "[Aa]uxin", height = 6)
+plot_mapman(top_pc5, "[Gg]ibberellin", height = 6)
+plot_mapman(top_pc5, "B3", height = 6)
+plot_mapman(top_pc5, "DNA", height = 12)
