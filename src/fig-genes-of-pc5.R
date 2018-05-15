@@ -55,18 +55,19 @@ prepare_for_plot <- function(dats) {
   return(dats)
 }
 
+cutoff <- 400
 
 pc5 <- pc5 %>% arrange(PC5)
 bot_pc5 <- pc5 %>%
   # like this they are ordered by ranking
-  .[1:200, ]  %>%
-  left_join(prepare_for_plot(pc5[1:200, ])); rownames(bot_pc5) <- bot_pc5$locus_name
+  .[1:cutoff, ]  %>%
+  left_join(prepare_for_plot(pc5[1:cutoff, ])); rownames(bot_pc5) <- bot_pc5$locus_name
 
 pc5 <- pc5 %>% arrange(desc(PC5))
 top_pc5 <- pc5 %>% 
   # like this they are ordered by ranking
-  .[1:200, ] %>%
-  left_join(prepare_for_plot(pc5[1:200, ])); rownames(top_pc5) <- top_pc5$locus_name
+  .[1:cutoff, ] %>%
+  left_join(prepare_for_plot(pc5[1:cutoff, ])); rownames(top_pc5) <- top_pc5$locus_name
 
 tp <- pheatmap(top_pc5[, 3:12],
                main = "pc5, top 200 genes",
@@ -193,32 +194,41 @@ dev.off()
 # bot_pc5_clust %>% split(.$cluster) %>% walk(heat_by_clust, selection = "last")
 # # tst <- oryzr::LocToGeneName(tmp$locus_id)$symbols
 
-plot_family <- function(dats, family, height = 4) {
+plot_family <- function(dats, family, height = 8) {
   p <- dats %>%
     # filter(Family == family) %>%
     filter(grepl(family, Family)) %>% #& !is.na(Family)) %>%
     .$locus_id %>%
     get_expression(dds) %>%
     left_join(annos) %>%
+    left_join(tf_fam) %>%
+    left_join(mapman) %>%
+    mutate(locus_id = as_factor(locus_id)) %>%
     plot_norm_expr() +
     facet_wrap(facets = c("locus_id",
-                          "symbol"),
+                          "symbol",
+                          "Family",
+                          "DESCRIPTION"),
                scales = "free_y",
-               ncol = 5)
+               ncol = 5,
+               labeller = label_wrap_gen(width = 50,
+                                         multi_line = T))
   
-  # pdf(file = paste0("../fig/fig-tmp-",
-  svg(file = paste0("../fig/fig-tmp-",
+  nplots <- length(levels(p$data$locus_id))
+  pdf(file = paste0("../fig/fig-tmp-",
+                    # svg(file = paste0("../fig/fig-tmp-",
                     family, "-",
                     substitute(dats),
-                    ".svg"),
-      height = height,
-      width = 12)
+                    ".pdf"),
+                    # ".svg"),
+      height = ceiling(nplots/5)*4,
+      width = ifelse(nplots < 5, nplots * 4, 20))
   print(p)
   dev.off()
 }
 
 
-plot_all <- function(dats, height = 100) {
+plot_all <- function(dats, height = cutoff/2) {
   p <- dats %>%
     # filter(Family == family) %>%
     # filter(grepl(family, Family)) %>% #& !is.na(Family)) %>%
@@ -267,33 +277,35 @@ plot_mapman <- function(dats, mapman_word, height = 10) {
                scales = "free_y",
                ncol = 5,
                labeller = label_wrap_gen(width = 50,
-                                         multi_line = T))
+                                         multi_line = T)) 
 
+  nplots <- length(levels(p$data$locus_id))
   # pdf(file = paste0("../fig/fig-tmp-",
   pdf(file = paste0("../fig/fig-tmp-",
                     mapman_word, "-",
-                    ".pdf"),
                     substitute(dats),
-      height = height,
-      width = 18)
+                    ".pdf"),
+      height = ceiling(nplots/5)*4,
+      width = ifelse(nplots < 5, nplots * 4, 20))
   print(p)
   dev.off()
 }
 
 
+plot_family(bot_pc5, "AP2-EREBP")
 plot_family(bot_pc5, "MADS")
-plot_family(top_pc5, family = "AP2-EREBP")
 plot_family(bot_pc5, "C2C2-YABBY")
+
+plot_family(top_pc5, "AP2-EREBP")
 plot_family(top_pc5, "MADS")
 plot_family(top_pc5, "NAC")
 plot_family(bot_pc5, "bHLH")
-
 plot_family(top_pc5, "bHLH")
 plot_family(top_pc5, "WRKY")
 plot_family(top_pc5, "TRAF")
 
-plot_all(top_pc5)
 
+plot_all(top_pc5)
 plot_all(bot_pc5)
 
 plot_mapman(bot_pc5, "POEI", height = 6)
@@ -307,7 +319,7 @@ plot_mapman(bot_pc5, "YUC", height = 6)
 plot_mapman(bot_pc5, "[Aa]uxin", height = 6)
 
 
-plot_mapman(top_pc5, "zinc", height = 6)
+plot_mapman(top_pc5, "zinc", height = 14)
 plot_mapman(top_pc5, "TFL", height = 6)
 plot_mapman(top_pc5, "LTPL", height = 6)
 plot_mapman(top_pc5, "MYB", height = 6)
