@@ -3,24 +3,26 @@ library(tidyverse)
 
 load("../data/all-sep-deseq.Rdata")
 
-spc_res <- spc_res %>%
-  map(~.[, c("locus_id", "stat")]) %>%
-  map(as.data.frame) 
+# spc_res <- spc_res %>%
+#   map(~.[, c("locus_id", "stat")]) %>%
+#   map(as.data.frame) 
+# 
+# change_name <- function(i) {
+#   colnames(spc_res[[i]])[2] <- paste("stat", i, sep = "_")
+#   return(spc_res[[i]])
+# }
+# 
+# spc_res <- names(spc_res) %>% map(change_name) 
+# 
+# spc_res <- spc_res %>% reduce(full_join, by = "locus_id")
+# 
+# rownames(spc_res) <- spc_res$locus_id
+# spc_res$locus_id <- NULL
+# spc_res[is.na(spc_res)] <- 0
+# 
+# pc <- prcomp(spc_res, scale. = T)
 
-change_name <- function(i) {
-  colnames(spc_res[[i]])[2] <- paste("stat", i, sep = "_")
-  return(spc_res[[i]])
-}
-
-spc_res <- names(spc_res) %>% map(change_name) 
-
-spc_res <- spc_res %>% reduce(full_join, by = "locus_id")
-
-rownames(spc_res) <- spc_res$locus_id
-spc_res$locus_id <- NULL
-spc_res[is.na(spc_res)] <- 0
-
-pc <- prcomp(spc_res, scale. = T)
+pc <- pc_spc
 
 pc$rotation
 
@@ -70,9 +72,6 @@ mapman <- mapman %>%
 
 cutoff <- 200
 
-pc3 <- pcx  %>%
-  select(PC3, locus_id)
-
 plot_all <- function(locus_ids,
                      tag = "PC3",
                      height = cutoff/1.3) {
@@ -102,4 +101,4 @@ plot_all <- function(locus_ids,
   dev.off()
 }
 
-plot_all(pcx %>% arrange(desc(PC2)) %>% .$locus_id %>% .[1:cutoff])
+plot_all(pcx %>% arrange(desc(PC1)) %>% .$locus_id %>% .[1:cutoff])

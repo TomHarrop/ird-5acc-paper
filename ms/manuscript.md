@@ -78,6 +78,28 @@ We have compared the transcriptomes of PBM and SM separately in those 5 rice spe
 
 > **Why does the number of differentially expressed genes slightly correlates with spikelet number? Maybe the species that produce less spikelets (and the african species) differentiate quicker. But it also might be a mapping or sampling issue.**
 
+> **Even better, it correlates with secondary branch numbers. Those branches are developing while the top spikelet differentiate.**
+
+## Three patterns are evident in the differentially expressed genes
+
+We transformed the differential expression statistics from DESeq2 with Principal Component (PC) analysis.
+
+![](../fig/fig-pca-stat-top-three.svg)
+
+The rotations of the first three PC reveal three gene expression patterns that might be connected to:
+
+1. Generic development of Branch Meristems vs. Spikelet Meristem.
+2. Continent or Secondary Branching (secondary branching is strictly related Asian rice).
+3. Primary branching and domestication.
+
+### PC1: Genes that define Branching or Spikelet meristems
+
+The extremes of the loadings of the first Principal Component (PC1) collect genes that are expressed distinctively in the Branching or in the Spikelet meristems. Both extremes highly enrich development related genes, especially transcription factors.
+
+The negative extreme collects genes that are distintively expressed in the Branching Meristem.
+
+
+
 ## Transcriptome: the 5^th^ principal component splits developmental stages
 
 We have used Principal Component (PC) Analysis in order to isolate and explore patterns of gene expression across different species and stages.
@@ -223,11 +245,10 @@ different slope between asian and african... find a link with PCA analysis and/o
 
 The difficulties is to represent the merging of the data all together : how to do it?
 
-> **Next work to finalize
-Analyse along time course AP2/HB genes presents in cluster 3 and 4 to evaluate if there is a delay in expression that could explain the phenotype...
-I propose to do a new fluidgm on the time course 1(same samples as transcriptom samples) and not on time course 2 as the previous analysis to avoid difference and see more a effect on time course diversity
+> **Next work to finalize: Analyse along time course AP2/HB genes presents in cluster 3 and 4 to evaluate if there is a delay in expression that could explain the phenotype...
+I propose to do a new fluidgm on the time course 1(same samples as transcriptom samples) and not on time course 2 as the previous analysis to avoid difference and see more a effect on time course diversity**
 
-SNP-promoter diversity : make a short coherent list of genes to link it with domestication process?**
+> **SNP-promoter diversity : make a short coherent list of genes to link it with domestication process?**
 
 
 
