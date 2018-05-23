@@ -71,5 +71,5 @@ pc_spc <- prcomp(spc_res_df, scale. = T)
 
 
 
-save(dds_spc, spc_res, pc_spc, file = "../data/all-sep-deseq.Rdata")
+save(dds_spc, spc_res, spc_res_df, pc_spc, file = "../data/all-sep-deseq.Rdata")
 

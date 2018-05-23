@@ -23,7 +23,9 @@ bibliography: ../bib/references.bib
 ## Diversity of panicle architecture in the Asian and African Rices
 
 Phenotyping of the 20 accessions in the 4/5 species : PCA and correlation analysis
-[fig-PCA diversity: Panicle traits architecturehcitectire](../fig/Test FigPCA.pdf)
+
+![fig-PCA diversity: Panicle traits architecturehcitectire](../fig/Test FigPCA.pdf)
+
 2 conclusions :
  - Panicle traits that influences panicle architecture Diversity and spikelet number
  - Panicle traits correlated with Sp nb
@@ -96,14 +98,17 @@ The rotations of the first three PC reveal three gene expression patterns that m
 
 The extremes of the loadings of the first Principal Component (PC1) collect genes that are expressed distinctively in the Branching or in the Spikelet meristems. Both extremes highly enrich development related genes, especially transcription factors.
 
-The negative extreme collects genes that are distintively expressed in the Branching Meristem.
+![](../fig/fig-tfs-in-pc1.svg)
 
+The positive extreme collects genes that are distinctively expressed in the Branching Meristem.
 
+This PC1 enriches many families of transcription factors.
+
+Many genes that belong to the AP2-EREBP family are expressed distinctively in the Branching Meristem. 
 
 ## Transcriptome: the 5^th^ principal component splits developmental stages
 
 We have used Principal Component (PC) Analysis in order to isolate and explore patterns of gene expression across different species and stages.
-
 
 The first four components are driven by differences among species. The first two  component split clades (Asian vs African Rice in the 1^st^ and 2^nd^ components); the next two components split species within the same clade (Rufipogon vs. Sativa in the 3^rd^; Barthii vs. Glaberrima in the 4^th^). This indicates that species are the first source of variation of genes expression, but this source of variation could be confounded with mapping bias.
 
