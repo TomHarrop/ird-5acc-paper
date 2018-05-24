@@ -29,7 +29,7 @@ tst <- spc_res_df %>%
   mutate(annos = paste(locus_id, Family, symbol, DESCRIPTION, sep = "--"))
 
 
-pdf("../fig/fig-hclust-deseq-stat.pdf", height = 250, width = 20)
+pdf("../fig/fig-hclust-deseq-stat.pdf", height = 210, width = 20)
 pheatmap(tst %>%
            select(stat_japonica,
                   stat_barthii,
