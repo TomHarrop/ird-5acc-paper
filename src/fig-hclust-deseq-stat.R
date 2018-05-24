@@ -29,11 +29,16 @@ tst <- spc_res_df %>%
   mutate(annos = paste(locus_id, Family, symbol, DESCRIPTION, sep = "--"))
 
 
-pdf("../fig/fig-hclust-deseq-stat.pdf", height = 200, width = 20)
+pdf("../fig/fig-hclust-deseq-stat.pdf", height = 250, width = 20)
 pheatmap(tst %>%
-           select_at(vars(stat_barthii:stat_japonica)),
-         scale = "column", 
+           select(stat_japonica,
+                  stat_barthii,
+                  stat_glaberrima,
+                  stat_rufipogon,
+                  stat_indica),
+         scale = "column", cellwidth = 10, cellheight = 10,
          treeheight_row = 200,
          labels_row = tst$annos,
-         cluster_cols = F, cutree_rows = 7)
+         cluster_cols = F, cutree_rows = 20)
 dev.off()
+
