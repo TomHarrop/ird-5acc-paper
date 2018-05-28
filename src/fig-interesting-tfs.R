@@ -29,6 +29,7 @@ pcx <- pc_spc$x %>%
   rownames_to_column() %>%
   dplyr::rename(locus_id = "rowname") %>%
   left_join(tf_fam) %>%
+  left_join(mapman) %>%
   mutate(Family = ifelse(is.na(Family), "none", Family))
 
 # Plot selected -----------------------------------------------------------
@@ -56,6 +57,28 @@ plot_kword <- function(kword = "AP2-EREBP") {
   return(p)
 }
 
+plot_mapman <- function(kword = "zinc finger") {
+  p <- pcx %>%
+    arrange(PC1) %>%
+    filter(str_detect(DESCRIPTION, kword)) %>%
+    .$locus_id %>%
+    # as_factor(.) %>%
+    get_expression(dds) %>%
+    left_join(tf_fam)%>%
+    left_join(annos) %>%
+    left_join(mapman) %>%
+    mutate(locus_id = as_factor(locus_id)) %>%
+    plot_norm_expr() +
+    facet_wrap(facets = c("locus_id",
+                          "symbol",
+                          "Family",
+                          "DESCRIPTION"),
+               scales = "free_y",
+               ncol = 5,
+               labeller = label_wrap_gen(width = 50,
+                                         multi_line = T))
+  return(p)
+}
 
 pdf("../fig/fig_ap2_from_pc1.pdf",
     width = 20,
@@ -92,6 +115,12 @@ pdf("../fig/fig_SPB_from_pc1.pdf",
     width = 20,
     height = 20)
 print(plot_kword("SBP"))
+dev.off()
+
+pdf("../fig/fig_zinc_finger_from_pc1.pdf",
+    width = 20,
+    height = 500)
+print(plot_mapman())
 dev.off()
 
 
@@ -173,6 +202,14 @@ pcx %>%
   mutate(why = "NAC expressed in Branch Meristem - they influence root architecture?") %>%
   write.csv2(., file = "../selected_genes/NAC-top-1000-pc1.csv")
 
+pcx %>% 
+  arrange(desc(PC1)) %>%
+  .[1:1000, ] %>%
+  filter(Family == "NAC") %>%
+  left_join(annos) %>%
+  select(locus_id, symbol) %>%
+  mutate(why = "NAC expressed in Spike Meristem - organ diff? Boundaries? CUC among them") %>%
+  write.csv2(., file = "../selected_genes/NAC-last-1000-pc1.csv")
 
 ### HOMEOBOX - but the list might be uncomplete
 # HB top 1000 fluidigm
@@ -216,3 +253,22 @@ pcx %>%
   select(locus_id, symbol) %>%
   mutate(why = "MADS strange behaviour") %>%
   write.csv2(., file = "../selected_genes/MADS-last-1000-pc3.csv")
+
+#zinc finger top
+pcx %>% 
+  arrange(desc(PC1)) %>%
+  .[1:1000, ] %>%
+  filter(str_detect(DESCRIPTION, "zinc finger")) %>%
+  left_join(annos) %>%
+  select(locus_id, symbol, DESCRIPTION) %>%
+  mutate(why = "zinc finger, many - different") %>%
+  write.csv2(., file = "../selected_genes/zinc-finger-top-1000-pc1.csv")
+
+pcx %>% 
+  arrange(PC1) %>%
+  .[1:1000, ] %>%
+  filter(str_detect(DESCRIPTION, "zinc finger")) %>%
+  left_join(annos) %>%
+  select(locus_id, symbol, DESCRIPTION) %>%
+  mutate(why = "zinc finger, many - different") %>%
+  write.csv2(., file = "../selected_genes/zinc-finger-last-1000-pc1.csv")
