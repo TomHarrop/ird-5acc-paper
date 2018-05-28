@@ -9,7 +9,6 @@ bibliography: ../bib/references.bib
 * domestication and gene expression (maize, tomato transcriptomes)
 * branching development in rice : undeterminated vs determinate meristem
 * details about rice domestication
-
 * **aims**:
     - Genes/pathway involved in the inflorescence determination in rice  
     - changes in phenotype, gene expression caused by / associated changes/switch/delay in determination of inflorescence
@@ -20,7 +19,23 @@ bibliography: ../bib/references.bib
 
 # Results
 
-## Diversity of panicle architecture in the Asian and African Rices
+## Rice lodges more primary branches on the Rachis by both lengthening rachis and shortening internode length.
+
+In order to lodge more primary branches on the rachis, rice could implement two strategies:
+
+1. Shortening internode length.
+2. Lengthening the rachis.
+
+Our measurement indicates that rice implements both strategy, with non of them being preferential, because both rachis length and internode length correlate with primary branch number, one positively and one negatively.
+
+Apparently domesticated species shorten their intenodes more than wild species, probably because they already reach the reasonable limit of rachis length.
+
+## Primary branch and secondary branch number do not correlate, suggesting independent regulatory mechanism
+
+
+
+## Diversity of panicle architecture in the Asian and African Rice
+
 
 Phenotyping of the 20 accessions in the 4/5 species : PCA and correlation analysis
 [fig-PCA diversity: Panicle traits architecturehcitectire](../fig/Test FigPCA.pdf)
