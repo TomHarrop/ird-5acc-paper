@@ -3,24 +3,26 @@ library(tidyverse)
 
 load("../data/all-sep-deseq.Rdata")
 
-spc_res <- spc_res %>%
-  map(~.[, c("locus_id", "stat")]) %>%
-  map(as.data.frame) 
+# spc_res <- spc_res %>%
+#   map(~.[, c("locus_id", "stat")]) %>%
+#   map(as.data.frame) 
+# 
+# change_name <- function(i) {
+#   colnames(spc_res[[i]])[2] <- paste("stat", i, sep = "_")
+#   return(spc_res[[i]])
+# }
+# 
+# spc_res <- names(spc_res) %>% map(change_name) 
+# 
+# spc_res <- spc_res %>% reduce(full_join, by = "locus_id")
+# 
+# rownames(spc_res) <- spc_res$locus_id
+# spc_res$locus_id <- NULL
+# spc_res[is.na(spc_res)] <- 0
+# 
+# pc <- prcomp(spc_res, scale. = T)
 
-change_name <- function(i) {
-  colnames(spc_res[[i]])[2] <- paste("stat", i, sep = "_")
-  return(spc_res[[i]])
-}
-
-spc_res <- names(spc_res) %>% map(change_name) 
-
-spc_res <- spc_res %>% reduce(full_join, by = "locus_id")
-
-rownames(spc_res) <- spc_res$locus_id
-spc_res$locus_id <- NULL
-spc_res[is.na(spc_res)] <- 0
-
-pc <- prcomp(spc_res, scale. = T)
+pc <- pc_spc
 
 pc$rotation
 
@@ -70,12 +72,15 @@ mapman <- mapman %>%
 
 cutoff <- 200
 
-pc3 <- pcx  %>%
-  select(PC3, locus_id)
-
 plot_all <- function(locus_ids,
-                     tag = "PC3",
+                     pc = "PC1",
+                     decr = FALSE,
                      height = cutoff/1.3) {
+  # locus_ids <- pcx %>% 
+  #   {if(decr) arrange_(pc)
+  # else arrange_(desc(pc))} %>%
+  #   .$locus_id %>%
+  #   .[1:cutoff]
   p <- locus_ids %>%
     get_expression(dds) %>%
     left_join(annos) %>%
@@ -93,13 +98,61 @@ plot_all <- function(locus_ids,
                                          multi_line = T))
   
   # pdf(file = paste0("../fig/fig-tmp-",
-  pdf(file = paste0("../fig/fig-tmp-pc-stat-deseq-",
-                    tag,
-                    ".pdf"),
-      height = height,
-      width = 18)
-  print(p)
-  dev.off()
+  # pdf(file = paste0("../fig/fig-tmp-pc-stat-deseq-",
+  #                   tag,
+  #                   ".pdf"),
+  #     height = height,
+  #     width = 18)
+  # print(p)
+  # dev.off()
+  return(p)
 }
 
+
+pdf("../fig/fig-tmp-pc-stat-deseq-PC1.pdf",
+    height = cutoff/1.3,
+    width = 18)
+plot_all(pcx %>% arrange(PC1) %>% .$locus_id %>% .[1:cutoff])
+dev.off()
+
+pdf("../fig/fig-tmp-pc-stat-deseq-PC2.pdf",
+    height = cutoff/1.3,
+    width = 18)
+plot_all(pcx %>% arrange(PC2) %>% .$locus_id %>% .[1:cutoff])
+dev.off()
+
+pdf("../fig/fig-tmp-pc-stat-deseq-PC3.pdf",
+    height = cutoff/1.3,
+    width = 18)
+plot_all(pcx %>% arrange(PC3) %>% .$locus_id %>% .[1:cutoff])
+dev.off()
+
+pdf("../fig/fig-tmp-pc-stat-deseq-PC1-desc.pdf",
+    height = cutoff/1.3,
+    width = 18)
+plot_all(pcx %>% arrange(desc(PC1)) %>% .$locus_id %>% .[1:cutoff])
+dev.off()
+
+pdf("../fig/fig-tmp-pc-stat-deseq-PC2-desc.pdf",
+    height = cutoff/1.3,
+    width = 18)
 plot_all(pcx %>% arrange(desc(PC2)) %>% .$locus_id %>% .[1:cutoff])
+dev.off()
+
+pdf("../fig/fig-tmp-pc-stat-deseq-PC3-desc.pdf",
+    height = cutoff/1.3,
+    width = 18)
+plot_all(pcx %>% arrange(desc(PC3)) %>% .$locus_id %>% .[1:cutoff])
+dev.off()
+
+
+# plot_all <- function(pcx,
+#                      pc = quo(PC1),
+#                      decr = FALSE,
+#                      height = cutoff/1.3) {
+#   # pc <- enquo(!! pc)
+#   pcx %>% arrange(!! pc)
+# }
+# 
+# plot_all(pcx = pcx)
+

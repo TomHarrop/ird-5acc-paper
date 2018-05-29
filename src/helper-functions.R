@@ -282,3 +282,38 @@ test_gsea <- function(rnk, mapman_list, plot_top = FALSE)
   }
   return(gsea_res)
 }
+
+plot_family <- function(dats,
+                        family,
+                        height = 8) {
+  p <- dats %>%
+    # filter(Family == family) %>%
+    filter(grepl(family, Family)) %>% #& !is.na(Family)) %>%
+    .$locus_id %>%
+    get_expression(dds) %>%
+    left_join(annos) %>%
+    left_join(tf_fam) %>%
+    left_join(mapman) %>%
+    mutate(locus_id = as_factor(locus_id)) %>%
+    plot_norm_expr() +
+    facet_wrap(facets = c("locus_id",
+                          "symbol",
+                          "Family",
+                          "DESCRIPTION"),
+               scales = "free_y",
+               ncol = 5,
+               labeller = label_wrap_gen(width = 50,
+                                         multi_line = T))
+  
+  nplots <- length(levels(p$data$locus_id))
+  pdf(file = paste0("../fig/fig-tmp-",
+                    # svg(file = paste0("../fig/fig-tmp-",
+                    family, "-",
+                    substitute(dats),
+                    ".pdf"),
+      # ".svg"),
+      height = ceiling(nplots/5)*4,
+      width = ifelse(nplots < 5, nplots * 4, 20))
+  print(p)
+  dev.off()
+}
