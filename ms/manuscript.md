@@ -9,6 +9,7 @@ bibliography: ../bib/references.bib
 * domestication and gene expression (maize, tomato transcriptomes)
 * branching development in rice : undeterminated vs determinate meristem
 * details about rice domestication
+
 * **aims**:
     - Genes/pathway involved in the inflorescence determination in rice  
     - changes in phenotype, gene expression caused by / associated changes/switch/delay in determination of inflorescence
@@ -19,28 +20,37 @@ bibliography: ../bib/references.bib
 
 # Results
 
-## Rice lodges more primary branches on the Rachis by both lengthening rachis and shortening internode length.
+> *Notes on phenotype:*
 
-In order to lodge more primary branches on the rachis, rice could implement two strategies:
+> *More primary branch do not correlate with increased rachis length but with reduced internode length.*
 
-1. Shortening internode length.
-2. Lengthening the rachis.
+Domesticated rice produces more seeds. In detail, each panicle of domesticated rice produces more spikelets, each extra spikelet translates to one more seed. Those extra spikelet must be lodged on the panicle, which, in domesticated rice, satisfies this requirement by producing complex branch structures.
 
-Our measurement indicates that rice implements both strategy, with non of them being preferential, because both rachis length and internode length correlate with primary branch number, one positively and one negatively.
+Hereby we explore and describe how domesticated rice lodges more spikelets on its panicles, at the phenotypic and genetic level.
 
-Apparently domesticated species shorten their intenodes more than wild species, probably because they already reach the reasonable limit of rachis length.
+## Farmer selected a similar phenotype in panicles of Asian and African rice
 
-## Primary branch and secondary branch number do not correlate, suggesting independent regulatory mechanism
+We have measured panicle traits in 100 rice accessions of African and Asian rice. We show that independently domesticated accessions have similar phenotypes.
 
+The 100 rice accessions that we have measured belong to 4 rice species: the wild African rice *Oryza barthii*, the wild Asian rice *Oryza Rufipogon*, and the domesticated African rice *Oryza glaberrima* and the domesticated Asian rice,  *Oryza sativa*. Each species contributed 25 accessions that sum up to a total of 100 accessions
 
+The phenotypic traits were measured as reported by [@faroq2013p], and they are:
 
-## Diversity of panicle architecture in the Asian and African Rice
+- Rachis Length,
+- Primary Branch Numbers,
+- Primary Branch Average Length,
+- Primary Branch Internode Average length,
+- Secondary Branch Numbers,
+- Secondary Branch Numbers,
+- Secondary Branch Average Length,
+- Tertiary Branch Numbers,
+- Spikelet Numbers.
+
+We have explored those phenotypic trait with Principal Component Analysis. The first principal component captures n% of the variance and splits domesticated and wild species.
 
 
 Phenotyping of the 20 accessions in the 4/5 species : PCA and correlation analysis
-
-![fig-PCA diversity: Panicle traits architecturehcitectire](../fig/Test FigPCA.pdf)
-
+[fig-PCA diversity: Panicle traits architecturehcitectire](../fig/Test FigPCA.pdf)
 2 conclusions :
  - Panicle traits that influences panicle architecture Diversity and spikelet number
  - Panicle traits correlated with Sp nb
@@ -95,35 +105,10 @@ We have compared the transcriptomes of PBM and SM separately in those 5 rice spe
 
 > **Why does the number of differentially expressed genes slightly correlates with spikelet number? Maybe the species that produce less spikelets (and the african species) differentiate quicker. But it also might be a mapping or sampling issue.**
 
-> **Even better, it correlates with secondary branch numbers. Those branches are developing while the top spikelet differentiate.**
-
-## Three patterns are evident in the differentially expressed genes
-
-We transformed the differential expression statistics from DESeq2 with Principal Component (PC) analysis.
-
-![](../fig/fig-pca-stat-top-three.svg)
-
-The rotations of the first three PC reveal three gene expression patterns that might be connected to:
-
-1. Generic development of Branch Meristems vs. Spikelet Meristem.
-2. Continent or Secondary Branching (secondary branching is strictly related Asian rice).
-3. Primary branching and domestication.
-
-### PC1: Genes that define Branching or Spikelet meristems
-
-The extremes of the loadings of the first Principal Component (PC1) collect genes that are expressed distinctively in the Branching or in the Spikelet meristems. Both extremes highly enrich development related genes, especially transcription factors.
-
-![](../fig/fig-tfs-in-pc1.svg)
-
-The positive extreme collects genes that are distinctively expressed in the Branching Meristem.
-
-This PC1 enriches many families of transcription factors.
-
-Many genes that belong to the AP2-EREBP family are expressed distinctively in the Branching Meristem. 
-
 ## Transcriptome: the 5^th^ principal component splits developmental stages
 
 We have used Principal Component (PC) Analysis in order to isolate and explore patterns of gene expression across different species and stages.
+
 
 The first four components are driven by differences among species. The first two  component split clades (Asian vs African Rice in the 1^st^ and 2^nd^ components); the next two components split species within the same clade (Rufipogon vs. Sativa in the 3^rd^; Barthii vs. Glaberrima in the 4^th^). This indicates that species are the first source of variation of genes expression, but this source of variation could be confounded with mapping bias.
 
@@ -265,10 +250,11 @@ different slope between asian and african... find a link with PCA analysis and/o
 
 The difficulties is to represent the merging of the data all together : how to do it?
 
-> **Next work to finalize: Analyse along time course AP2/HB genes presents in cluster 3 and 4 to evaluate if there is a delay in expression that could explain the phenotype...
-I propose to do a new fluidgm on the time course 1(same samples as transcriptom samples) and not on time course 2 as the previous analysis to avoid difference and see more a effect on time course diversity**
+> **Next work to finalize
+Analyse along time course AP2/HB genes presents in cluster 3 and 4 to evaluate if there is a delay in expression that could explain the phenotype...
+I propose to do a new fluidgm on the time course 1(same samples as transcriptom samples) and not on time course 2 as the previous analysis to avoid difference and see more a effect on time course diversity
 
-> **SNP-promoter diversity : make a short coherent list of genes to link it with domestication process?**
+SNP-promoter diversity : make a short coherent list of genes to link it with domestication process?**
 
 
 
