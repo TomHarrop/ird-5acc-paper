@@ -24,17 +24,20 @@ bibliography: ../bib/references.bib
 
 > *More primary branch do not correlate with increased rachis length but with reduced internode length.*
 
-Domesticated rice produces more seeds. In detail, each panicle of domesticated rice produces more spikelets, each extra spikelet translates to one more seed. Those extra spikelet must be lodged on the panicle, which, in domesticated rice, satisfies this requirement by producing complex branch structures.
+Domesticated rice produces more seeds. To do so, domesticated rice has to produce more spikelet, since each rice spikelet produces one single seed.
+Those extra spikelet on the panicle and rice, satisfies this requirement by producing complex panicle branch structures.
 
-Hereby we explore and describe how domesticated rice lodges more spikelets on its panicles, at the phenotypic and genetic level.
+Hereby we describe how domesticated rice lodges more spikelets on its panicles at the phenotypic level. We also explore how those phenotypes are determined transcriptomically.
 
-## Farmer selected a similar phenotype in panicles of Asian and African rice
+## In panicles of Asian and African rice, farmers selected for a similar phenotype
 
-We have measured panicle traits in 100 rice accessions of African and Asian rice. We show that independently domesticated accessions have similar phenotypes.
+We have measured panicle traits in 100 rice accessions of African and Asian rice. We show that accessions that have been domesticated independently have similar phenotypes.
 
-The 100 rice accessions that we have measured belong to 4 rice species: the wild African rice *Oryza barthii*, the wild Asian rice *Oryza Rufipogon*, and the domesticated African rice *Oryza glaberrima* and the domesticated Asian rice,  *Oryza sativa*. Each species contributed 25 accessions that sum up to a total of 100 accessions
+Those 100 rice accessions belong to 4 rice species: the wild African rice *Oryza barthii*, the wild Asian rice *Oryza Rufipogon*, the domesticated African rice *Oryza glaberrima* and the domesticated Asian rice,  *Oryza sativa*. We have measured 25 accessions per species and 10 plants per accession.
 
-The phenotypic traits were measured as reported by [@faroq2013p], and they are:
+> **No, species per accession go in a table**
+
+For each plant, we have measured phenotypic traits as reported by [@faroq2013p], and they are:
 
 - Rachis Length,
 - Primary Branch Numbers,
@@ -46,7 +49,11 @@ The phenotypic traits were measured as reported by [@faroq2013p], and they are:
 - Tertiary Branch Numbers,
 - Spikelet Numbers.
 
-We have explored those phenotypic trait with Principal Component Analysis. The first principal component captures n% of the variance and splits domesticated and wild species.
+The resulting datasets stores measurements for those traits for 1140 plants.
+
+For each plant we treat the spikelet number as the outcome and the other measurement as the input and every other trait as the phenotypic solution that the plant has adopted to support that many spikelets. We treat the spikelet number as input because is the one phenotypic trait that has been selected by farmers, since it easily translates in yield output. All the other phenotypic have unlikely been actively selected by farmers. Thus they represent the structural solution that the plant has adopted to support the increasing number of spikelets
+
+On that dataset we have searched for recurrent patterns of phenotypic traits with Principal Component Analysis. This exploratory method conveniently collects  The first principal component captures n% of the variance and splits domesticated and wild species.
 
 
 Phenotyping of the 20 accessions in the 4/5 species : PCA and correlation analysis

@@ -10,6 +10,13 @@ pc <- pheno_cali %>%
          scale. = T,
          center = T)
 
+tst <- pheno_cali %>% 
+  select(Bar_Code, Species) %>%
+  distinct() %>%
+  split(.$Species)
+
+table(tst$Bar_Code, tst$Species)
+
 ggplot(as.data.frame(pc$x)  %>%
          cbind(Origin = pheno_cali$Origin),
        aes(x = PC1, y = PC2, colour = Origin)) +
