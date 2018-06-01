@@ -24,17 +24,19 @@ bibliography: ../bib/references.bib
 
 > *More primary branch do not correlate with increased rachis length but with reduced internode length.*
 
-Domesticated rice produces more seeds, and more spikelet, since in rice  each spikelet produces one single seed.
+Domesticated rice, when compared to wild rice, produces more seeds. It also produces more spikelets, since in rice each spikelet produces one single seed.
 
-Too lodge those extra spikelet on the panicle domesticated rice produces complex panicle branch structures.
+Please remind that: since seed and spikelet number are the same in rice, hereafter we always refer to spikelet number, because  this is the trait that we have explicitly measured.
 
-Hereby we describe how the panicle oif domesticated rice evolved to lodge more spikelets on its panicles at the phenotypic level. We also explore how those phenotypes are determined transcriptomically.
+To lodge those extra spikelet on its panicle domesticated rice produces complex panicle branch structures.
+
+Hereby we describe how the panicle of domesticated rice evolved to lodge more spikelets at the phenotypic level. We also explore how those phenotypes are determined transcriptomically.
 
 ## In panicles of Asian and African rice, farmers selected for a similar phenotype
 
 We have measured panicle traits in 100 rice accessions of African and Asian rice. We show that accessions that have been domesticated independently have similar phenotypes.
 
-Those 100 rice accessions belong to 4 rice species: the wild African rice *Oryza barthii*, the wild Asian rice *Oryza Rufipogon*, the domesticated African rice *Oryza glaberrima* and the domesticated Asian rice,  *Oryza sativa*. We have measured 25 accessions per species and 10 plants per accession.
+The 100 rice accessions belong to 4 rice species: the wild African rice *Oryza barthii*, the wild Asian rice *Oryza Rufipogon*, the domesticated African rice *Oryza glaberrima* and the domesticated Asian rice,  *Oryza sativa*. We have measured 25 accessions per species and 10 plants per accession.
 
 > **No, species per accession go in a table**
 
@@ -50,14 +52,26 @@ For each plant, we have measured phenotypic traits as reported by [@faroq2013p],
 - Tertiary Branch Numbers,
 - Spikelet Numbers.
 
-The resulting datasets stores measurements of those traits for each of 1140 plants.
+The resulting datasets records those traits for each of 1140 plants.
 
-We treat the spikelet number as the outcome of domestication and any other spikelet trait as the phenotypic solution that the plant has adopted to support that many spikelets. We treat the spikelet number as input because this is the phenotypic trait that has been selected by farmers, since it easily translates in yield output. It's unlikely that any other trait have been actively selected by farmers. Thus those traits represent the structural solution that plants use to produce more spikelets.
+We treat the spikelet number as the outcome of domestication and any other panicle trait as the phenotypic solution that the plant has adopted to support that many spikelets. We treat the spikelet number as input because this is the trait that has been selected by farmers, since it easily translates in yield output. It's unlikely that any other trait have been actively selected by farmers. Thus we treat any other trait as the structural solution that plants use to produce more spikelets.
 
-We have searched for recurrent patterns of phenotypic traits with Principal Component Analysis. This exploratory method collects 50% of traits variability in first principal component.
-This component splits wild and domesticated species, suggesting that African and Asian rice adopted similar phenotypic solutions to increase spikelet number.
+Since it is well too obvious that spikelet number is different in domesticated species, we have explored exclusively the other phenotypic traits for diverse domesticated patterns.
 
-The first principal component also sp
+We have searched for recurrent patterns of phenotypic traits with Principal Component (PC) Analysis. This exploratory method collects 50% of traits variability in first PC. This PC splits wild and domesticated species, suggesting that African and Asian rice adopted similar phenotypic solutions to increase spikelet number.
+
+The first PC also splits those traits that are expected to increase with spikelet number from those that are expected to decrease with spikelet number; indicating that all panicle traits are adapted to increase productivity. Indeed PbN, SbN, RL, PbL SbL PanL and TbN, all increase with spikelet number, and PbIntl and SbIntL decrease with Spikelet number. The trait that correlates the most with Spikelet number and that seems to account for most of the adaptation is Secondary Branch number.
+
+## Branches produce the same number of spikelets, but the number and identity of branches changes.
+
+The PC analysis shows that one variable is enough to explain most of trait variability of rice panicles. This variable is mostly approximated by Secondary Branch Number, that alone explains most of the variation of spikelet number across species. Though we show that another variable is needed to explain spikelet number, especially in wild rice; this variable is primary branch number. Indeed, a model that assigns 7 spikelets for each primary branch and 4 spikelets for each secondary branch accurately predicts spikelet number in most species.
+
+Secondary branch alone does not accurately predicts spikelet number in all species, because wild species rely much more on primary branches. Unfortunately spikelet number is not comparable between wild and domesticated species, with the wild species producing around 0-100 spikelet per plant and the domesticated species producing 100-400 spikelets per plants. Adding primary branch number to the model achieves acceptable predictive power also for low producing wild species.
+
+This shows that control of two processes, primary and secondary branching determination, can be responsible for reshaping the spikelet structure in order to fit more spikelets on it. And that Production of Spikelet per branch remains remarkably constant across all rice species
+
+Assuming that primary branching and secondary branching are two separate mechanism, a natural question regards what genes determines the one and the other
+
 
 Phenotyping of the 20 accessions in the 4/5 species : PCA and correlation analysis
 [fig-PCA diversity: Panicle traits architecturehcitectire](../fig/Test FigPCA.pdf)
@@ -82,7 +96,7 @@ On those accessions, we have measured systematically 9 panicle traits [@faroq201
 - Secondary Branch Average Length,
 - Tertiary Branch Numbers,
 - Spikelet Numbers.
-
+/
 Panicule architecture influences spikelet number (***This is kind of obvious, but do we have a good reference?***),  which is strongly increased during domestication. Different species might use different strategies to lodge more spikelets on one panicule. For example sativa indica relies more on secondary branches, while sativa japonica relies on both on primary and secondary branches and glaberrima relies more on primary branches (*fig-branches-boxplot*).
 
 ![fig-branches-boxplot: Different species use different panicule architecture to lodge more spikelets](../fig/fig-branches-boxplot.svg)
