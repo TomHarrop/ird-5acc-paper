@@ -32,6 +32,10 @@ ggplot(pc$rotation %>%
 
 summary(lm(pheno_cali$spn ~ pc$x[, 1]))
 plot(pheno_cali$spn ~ pc$x[, 1])
+ggplot(pheno_cali, aes(x = pbn, y = spn)) +
+  geom_hex(bins = 20)
+ggplot(pheno_cali, aes(x = sbn, y = spn)) +
+  geom_hex(bins = 30)
 plot(pheno_cali$spn ~ pheno_cali$pbn)
 plot(pheno_cali$spn ~ pheno_cali$sbn)
 

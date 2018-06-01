@@ -24,10 +24,11 @@ bibliography: ../bib/references.bib
 
 > *More primary branch do not correlate with increased rachis length but with reduced internode length.*
 
-Domesticated rice produces more seeds. To do so, domesticated rice has to produce more spikelet, since each rice spikelet produces one single seed.
-Those extra spikelet on the panicle and rice, satisfies this requirement by producing complex panicle branch structures.
+Domesticated rice produces more seeds, and more spikelet, since in rice  each spikelet produces one single seed.
 
-Hereby we describe how domesticated rice lodges more spikelets on its panicles at the phenotypic level. We also explore how those phenotypes are determined transcriptomically.
+Too lodge those extra spikelet on the panicle domesticated rice produces complex panicle branch structures.
+
+Hereby we describe how the panicle oif domesticated rice evolved to lodge more spikelets on its panicles at the phenotypic level. We also explore how those phenotypes are determined transcriptomically.
 
 ## In panicles of Asian and African rice, farmers selected for a similar phenotype
 
@@ -49,12 +50,14 @@ For each plant, we have measured phenotypic traits as reported by [@faroq2013p],
 - Tertiary Branch Numbers,
 - Spikelet Numbers.
 
-The resulting datasets stores measurements for those traits for 1140 plants.
+The resulting datasets stores measurements of those traits for each of 1140 plants.
 
-For each plant we treat the spikelet number as the outcome and the other measurement as the input and every other trait as the phenotypic solution that the plant has adopted to support that many spikelets. We treat the spikelet number as input because is the one phenotypic trait that has been selected by farmers, since it easily translates in yield output. All the other phenotypic have unlikely been actively selected by farmers. Thus they represent the structural solution that the plant has adopted to support the increasing number of spikelets
+We treat the spikelet number as the outcome of domestication and any other spikelet trait as the phenotypic solution that the plant has adopted to support that many spikelets. We treat the spikelet number as input because this is the phenotypic trait that has been selected by farmers, since it easily translates in yield output. It's unlikely that any other trait have been actively selected by farmers. Thus those traits represent the structural solution that plants use to produce more spikelets.
 
-On that dataset we have searched for recurrent patterns of phenotypic traits with Principal Component Analysis. This exploratory method conveniently collects  The first principal component captures n% of the variance and splits domesticated and wild species.
+We have searched for recurrent patterns of phenotypic traits with Principal Component Analysis. This exploratory method collects 50% of traits variability in first principal component.
+This component splits wild and domesticated species, suggesting that African and Asian rice adopted similar phenotypic solutions to increase spikelet number.
 
+The first principal component also sp
 
 Phenotyping of the 20 accessions in the 4/5 species : PCA and correlation analysis
 [fig-PCA diversity: Panicle traits architecturehcitectire](../fig/Test FigPCA.pdf)
