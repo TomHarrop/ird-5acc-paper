@@ -6,13 +6,27 @@ load("../data/phenotypes.Rdata")
 
 pheno_cali <- pheno_cali %>%
   mutate(bn = pbn + sbn + TbN)
-  
+
+
+
+# 01 - Domesticated species produce more primary branches -----------------
+
+t.test(pbn ~ Type, data = pheno_cali) 
+
+# 02 - A model with 
+
 fit_cali <- pheno_cali %>% lm(spn ~ pbn + sbn + TbN + 0,
                                   data = .)
+summary(fit_cali)
 
 fit_cali_int <- pheno_cali %>% lm(spn ~ pbn + sbn + pbn*sbn + 0,
                    data = .)
 summary(fit_cali_int)
+
+fit_cali_all <- pheno_cali %>% lm(spn ~ pbn + sbn + pbn*sbn + TbN + 0,
+                                  data = .)
+summary(fit_cali_all)
+
 
 fit_cali_bn <- pheno_cali %>% lm(spn ~ bn + 0,
                                  data = .)
@@ -62,3 +76,4 @@ pheno_mnp %>%
 pheno_mnp%>% lm(spn ~ pbn + sbn + 0,
                 data = .) %>%
   summary()
+

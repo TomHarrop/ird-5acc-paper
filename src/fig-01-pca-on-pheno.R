@@ -1,7 +1,7 @@
 library(tidyverse)
 library(ggfortify)
 library(gridExtra)
-
+  
 load("../data/phenotypes.Rdata")
 
 pc <- pheno_cali %>%
@@ -50,6 +50,16 @@ ggplot(pheno_cali, aes(x = pbn, y = sbn)) +
   geom_hex(bins = 20) +
   facet_wrap(facets =  "Species")
 
+pheno_cali %>%
+  split(.$Species) %>%
+  map(~cor(.$pbn, .$sbn))
+
+
+pheno_cali %>%
+  split(.$Species) %>%
+  map(~c(range(.$pbn), range(.$sbn)))
+
+cor(pheno_cali$spn, pheno_cali$sbn)
 
 plot(pheno_cali$spn ~ pheno_cali$pbn)
 plot(pheno_cali$spn ~ pheno_cali$sbn)
@@ -85,8 +95,25 @@ pheno_cali %>%
 
 pheno_cali %>%
   mutate(naxil = (spn - pbn)/(pbn + sbn +TbN)) %>%
-  ggplot(aes(x = spn, y = naxil)) + 
+  ggplot(aes(x = spn, y = naxil, colour = Species)) + 
   geom_point(alpha = .5) +
-  facet_wrap(facets = "Species") +
+  # facet_wrap(facets = "Species") +
   theme_bw()
 
+pheno_cali %>%
+  mutate(naxil = (spn - pbn)/(pbn + sbn +TbN)) %>%
+  split(.$Species) %>%
+  map(~mean(.$naxil))
+
+
+pheno_mnp %>%
+  mutate(naxil = (spn - pbn)/(pbn + sbn + `Tb_nb (TbN)`)) %>%
+  ggplot(aes(x = spn, y = naxil, colour = Species)) + 
+  geom_point(alpha = .5) +
+  # facet_wrap(facets = "Species") +
+  theme_bw()
+
+pheno_mnp %>%
+  mutate(naxil = (spn - pbn)/(pbn + sbn + `Tb_nb (TbN)`)) %>%
+  split(.$Species) %>%
+  map(~mean(.$naxil))
