@@ -6,7 +6,8 @@ load("../data/phenotypes.Rdata")
 
 pc <- pheno_cali %>%
   select_at(vars(RL:TbN)) %>%
-  as.data.frame() %>%
+  select(-PanL) %>%
+   as.data.frame() %>%
   prcomp(.,
          scale. = T,
          center = T)
@@ -75,4 +76,17 @@ pc_mnp$sdev
 plot(pheno_mnp$spn ~ pc_mnp$x[,1])
 plot(pheno_mnp$spn ~ pheno_mnp$sbn)
 plot(pheno_mnp$spn ~ pheno_mnp$pbn)
+
+pheno_cali %>%
+  mutate(naxil = (spn - pbn)/(pbn + sbn +TbN)) %>%
+  ggplot(aes(x = Species, y = naxil)) + 
+  geom_boxplot()
+
+
+pheno_cali %>%
+  mutate(naxil = (spn - pbn)/(pbn + sbn +TbN)) %>%
+  ggplot(aes(x = spn, y = naxil)) + 
+  geom_point(alpha = .5) +
+  facet_wrap(facets = "Species") +
+  theme_bw()
 

@@ -62,9 +62,13 @@ We have searched for recurrent patterns of phenotypic traits with Principal Comp
 
 The first PC also splits those traits that are expected to increase with spikelet number from those that are expected to decrease with spikelet number; indicating that all panicle traits are adapted to increase productivity. Indeed PbN, SbN, RL, PbL SbL PanL and TbN, all increase with spikelet number, and PbIntl and SbIntL decrease with Spikelet number. The trait that correlates the most with Spikelet number and that seems to account for most of the adaptation is Secondary Branch number.
 
+> **Can we remove PanL, I don't know exaclty what it is and I'm not sure that it is relevant**
+
 ## Branches produce the same number of spikelets, but the number and identity of branches changes.
 
-The PC analysis shows that one variable is enough to explain most of trait variability of rice panicles. This variable is mostly approximated by Secondary Branch Number, that alone explains most of the variation of spikelet number across species. Though we show that another variable is needed to explain spikelet number, especially in wild rice; this variable is primary branch number. Indeed, a model that assigns 7 spikelets for each primary branch and 4 spikelets for each secondary branch accurately predicts spikelet number in most species.
+The PC analysis shows that one variable is enough to explain most of trait variability of rice panicles. This variable is mostly approximated by Secondary Branch Number, that alone explains most of the variation of spikelet number across species.
+
+Though we show that another variable is needed, expecially in wild rice spikelet number, especially in wild rice; this variable is primary branch number. Indeed, a model that assigns 7 spikelets for each primary branch and 4 spikelets for each secondary branch accurately predicts spikelet number in most species.
 
 Secondary branch alone does not accurately predicts spikelet number in all species, because wild species rely much more on primary branches. Unfortunately spikelet number is not comparable between wild and domesticated species, with the wild species producing around 0-100 spikelet per plant and the domesticated species producing 100-400 spikelets per plants. Adding primary branch number to the model achieves acceptable predictive power also for low producing wild species.
 
