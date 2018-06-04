@@ -13,7 +13,7 @@ pheno_cali <- pheno_cali %>%
 
 t.test(pbn ~ Type, data = pheno_cali) 
 
-# 02 - A model with 
+# 02 - Fit many models
 
 fit_cali <- pheno_cali %>% lm(spn ~ pbn + sbn + TbN + 0,
                                   data = .)
@@ -34,19 +34,23 @@ fit_cali_bn <- pheno_cali %>% lm(spn ~ bn + 0,
 fit_sbn <- pheno_cali %>% lm(spn ~ sbn + 0,
                              data = .)
 
-
-
 pheno_mnp <- pheno_mnp %>%
   dplyr::rename(TbN = "Tb_nb (TbN)") %>%
   mutate(bn = pbn + sbn + TbN)
 
+
+pdf(file = "../fig/fig-02-prediction-on-pheno.pdf", 
+    width = 10,
+    height = 3)
 pheno_mnp %>% 
   mutate(spn_pred = predict(fit_cali, newdata = pheno_mnp)) %>%
   ggplot(aes(x = spn, y = spn_pred)) +
   geom_point() +
   geom_abline(slope = 1, intercept = 0) +
-  facet_wrap(facets = "Species") + 
+  facet_wrap(facets = "Species", nrow = 1) + 
   theme_bw()
+dev.off()
+
 pheno_mnp %>% 
   mutate(spn_pred = predict(fit_cali_int, newdata = pheno_mnp)) %>%
   ggplot(aes(x = spn, y = spn_pred)) +

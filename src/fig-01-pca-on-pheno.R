@@ -4,6 +4,9 @@ library(gridExtra)
   
 load("../data/phenotypes.Rdata")
 
+
+# PCA ---------------------------------------------------------------------
+
 pc <- pheno_cali %>%
   select_at(vars(RL:TbN)) %>%
   select(-PanL) %>%
@@ -12,28 +15,42 @@ pc <- pheno_cali %>%
          scale. = T,
          center = T)
 
-tst <- pheno_cali %>% 
-  select(Bar_Code, Species) %>%
-  distinct() %>%
-  split(.$Species)
-
-table(tst$Bar_Code, tst$Species)
-
-ggplot(as.data.frame(pc$x)  %>%
-         cbind(Origin = pheno_cali$Origin),
-       aes(x = PC1, y = PC2, colour = Origin)) +
-  geom_point() +
+pdf(file = "../fig/fig-01-pca-on-pheno.pdf")
+autoplot(pc, data = pheno_cali, 
+         colour = "Type",
+         shape = "Species",
+         loadings = TRUE,
+         loadings.label = TRUE) +
+  # geom_point(alpha = .3) +
   theme_bw()
+dev.off()
 
-ggplot(pc$rotation %>%
-         as.data.frame(.) %>%
-         rownames_to_column(),
-       aes(x = PC1, y = PC2, label = rowname)) +
-  geom_text() +
-  theme_bw()
+plot(pheno_cali$spn ~ pc$x[, 1])
+
+# PCA old ----------------------------------------------------------------
+
+
+# ggplot(as.data.frame(pc$x)  %>%
+#          cbind(Origin = pheno_cali$Origin),
+#        aes(x = PC1, y = PC2, colour = Origin)) +
+#   geom_point() +
+#   theme_bw()
+# 
+# ggplot(pc$rotation %>%
+#          as.data.frame(.) %>%
+#          rownames_to_column(),
+#        aes(x = PC1, y = PC2, label = rowname)) +
+#   geom_text() +
+#   theme_bw()
+
+# Correlation and linear model --------------------------------------------
 
 summary(lm(pheno_cali$spn ~ pc$x[, 1]))
-plot(pheno_cali$spn ~ pc$x[, 1])
+ggplot(pheno_cali, aes(x = sbn, y = spn)) +
+  geom_hex(bins = 30) +
+  facet_wrap(facets =  "Species") +
+  theme_bw() +
+  scale_fill_gradient(high = "#001a33", low = "#cce6ff") 
 ggplot(pheno_cali, aes(x = pbn, y = spn)) +
   geom_hex(bins = 20) +
   facet_wrap(facets =  "Species")
@@ -43,12 +60,11 @@ ggplot(pheno_cali, aes(x = PanL, y = spn)) +
 ggplot(pheno_cali, aes(x = PanL, y = pbn)) +
   geom_hex(bins = 20) +
   facet_wrap(facets =  "Species")
-ggplot(pheno_cali, aes(x = sbn, y = spn)) +
-  geom_hex(bins = 30) +
-  facet_wrap(facets =  "Species") 
 ggplot(pheno_cali, aes(x = pbn, y = sbn)) +
   geom_hex(bins = 20) +
-  facet_wrap(facets =  "Species")
+  facet_wrap(facets =  "Species") +
+  theme_bw() +
+  scale_fill_gradient(high = "#001a33", low = "#cce6ff") 
 
 pheno_cali %>%
   split(.$Species) %>%
