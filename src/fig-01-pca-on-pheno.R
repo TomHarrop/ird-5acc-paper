@@ -1,7 +1,9 @@
 library(tidyverse)
 library(ggfortify)
+library(grid)
 library(gridExtra)
-  
+library(ggpubr)  
+
 load("../data/phenotypes.Rdata")
 
 
@@ -17,15 +19,25 @@ pc <- pheno_cali %>%
 
 pdf(file = "../fig/fig-01-pca-on-pheno.pdf")
 autoplot(pc, data = pheno_cali, 
-         colour = "Type",
-         shape = "Species",
-         loadings = TRUE,
-         loadings.label = TRUE) +
+                     colour = "Type",
+                     shape = "Species",
+                     loadings = TRUE,
+                     loadings.label = TRUE) +
   # geom_point(alpha = .3) +
-  theme_bw()
-dev.off()
-
+  labs(caption = str_wrap("Fig. 1: PC Analysis of the scaled and centered 
+                    panicle phenotype dataset
+                    The first component explains 40% of the variance and splits wild and
+                    cultivated species.
+                    The first component splits traits that are intuitively related to high
+                    yield, such as branch number and branch length, from traits that 
+                    intuitively should correlate inversely with yield, such as
+                    internode lenght.",
+                          width = 70)) +
+  theme_bw() +
+  theme(plot.caption = element_text(size = 15, hjust = 0, lineheight = 1))
+  dev.off()
 plot(pheno_cali$spn ~ pc$x[, 1])
+
 
 # PCA old ----------------------------------------------------------------
 
