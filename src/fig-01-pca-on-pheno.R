@@ -10,7 +10,7 @@ load("../data/phenotypes.Rdata")
 # PCA ---------------------------------------------------------------------
 
 pc <- pheno_cali %>%
-  select_at(vars(RL:TbN)) %>%
+  select_at(vars(RL:spn)) %>%
   select(-PanL) %>%
    as.data.frame() %>%
   prcomp(.,
@@ -19,25 +19,24 @@ pc <- pheno_cali %>%
 
 pdf(file = "../fig/fig-01-pca-on-pheno.pdf")
 autoplot(pc, data = pheno_cali, 
-                     colour = "Type",
-                     shape = "Species",
-                     loadings = TRUE,
-                     loadings.label = TRUE) +
+         colour = "Type",
+         shape = "Species",
+         loadings = TRUE,
+         loadings.label = TRUE) +
   # geom_point(alpha = .3) +
   labs(caption = str_wrap("Fig. 1: PC Analysis of the scaled and centered 
                     panicle phenotype dataset
-                    The first component explains 40% of the variance and splits wild and
+                    The first component explains almost half of the variance and splits wild and
                     cultivated species.
                     The first component splits traits that are intuitively related to high
-                    yield, such as branch number and branch length, from traits that 
+                    spikelet number, such as branch number and branch length, from traits that 
                     intuitively should correlate inversely with yield, such as
-                    internode lenght.",
+                    internode lenght. The highest loading given to secondary branch number and
+                    spikelet number, which almost overlap.",
                           width = 70)) +
   theme_bw() +
   theme(plot.caption = element_text(size = 15, hjust = 0, lineheight = 1))
-  dev.off()
-plot(pheno_cali$spn ~ pc$x[, 1])
-
+dev.off()
 
 # PCA old ----------------------------------------------------------------
 
