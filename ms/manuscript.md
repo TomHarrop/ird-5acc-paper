@@ -74,8 +74,6 @@ We have confirmed these parameters on an independent dataset and we were able to
 Thus number of branches is the main phenotypic variable that allows to adapt panicles structure to high productivity. Primary and secondary branches are probably two independent mechanism.
 
 
-
-
 Phenotyping of the 20 accessions in the 4/5 species : PCA and correlation analysis
 [fig-PCA diversity: Panicle traits architecturehcitectire](../fig/Test FigPCA.pdf)
 2 conclusions :
