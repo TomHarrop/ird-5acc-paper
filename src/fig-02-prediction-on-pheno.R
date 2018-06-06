@@ -49,6 +49,16 @@ grid.arrange(pbn_spn,
              pbn_sbn,
              layout_matrix = matrix(c(1,1 ,2,2,3,3,3), ncol = 1))
 dev.off()
+
+
+# Correlation estimates ---------------------------------------------------
+
+pheno_cali %>%
+  group_by(Species) %>%
+  summarize(corr_spn_sbn = cor(spn, sbn),
+            corr_spn_pbn = cor(spn, pbn),
+            corr_pbn_sbn = cor(pbn, sbn))
+
 # # Old ----------------------------------------------------
 
 # 

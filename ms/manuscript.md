@@ -40,81 +40,23 @@ For each plant, we have measured these phenotypic traits using the software pTra
 
 The resulting datasets records those traits for each of 1140 plants (Supplementary Table 1).
 
-We have searched recurrent patterns of phenotypic traits in our dataset using Principal Component (PC) Analysis ***(Fig. 01)***. The PC analysis collects almost half of traits variability in the first PC, which also splits wild and domesticated rice species. Interestingly, those domesticated species belong to both African and Asian rice lineages, which have been domesticated independently. This shows that African and Asian rice have adopted independently a similar phenotypic which involve an increase in primary branch number and even more of secondary branch number and of spikelet number.
+We have searched recurrent patterns of phenotypic traits in our dataset using Principal Component (PC) Analysis ***(Fig. 01)***. The PC analysis collects almost half of traits variability in the first PC, which also splits wild and domesticated rice species. Interestingly, those domesticated species belong to both African and Asian rice lineages, which have been domesticated independently.
 
-The rotations of the first PC splits those traits that are expected to increase with spikelet number of those that are expected to decrease with spikelet number ***(Fig. 01)***; showing that all panicle traits have slightly adapted to increase spikelet number. Indeed PbN, SbN, RL, PbL, SbL, PanL and TbN, all increase with spikelet number, and PbIntl and SbIntL decrease with Spikelet number
-
+The rotations of the first PC ***(Fig. 01)*** shows that all panicle traits have adapted have slightly adapted to lodge more spikelet number. Indeed those rotations split those traits that are expected to increase with spikelet number (PbN, SbN, RL, PbL, SbL, PanL and TbN) from those that are expected to decrease with spikelet number ( PbIntl and SbIntL).
 
 ## Branches produce the same number of spikelets, but the number and identity of branches changes.
 
-The PC analysis shows that one variable is enough to explain most of trait variability of rice panicles. This variable is approximated by Secondary Branch Number (which correlates with spikelet number r = 0.96). Thus independently domesticated rice species, when they are required to carry more spikelets on their panicles, they produce more branches, especially secondary branches.
+We have used our trait dataset to explore the phenotype of wild and domesticated rice panicles. We concentrated on the traits that influence most the first PC: PbN, SbN and SpN (Fig. 2).
 
-We wanted to confirm this and to measure the extent of this effect.
+Spikelet Number is highly different between wild and domesticated species. This traits ranges between 6 and 186 spikelets in the wild type and between 62 and 391 in the domesticated species.
 
-Indeed the average number of spikelet per branch is remarkably similar across species, averaging at 3.9 spikelet per branches in *O. barthii*, at 3.8 in *O. sativa*, at 4.0 in *O. rufipogon* and also in *O. glaberrima*.
+The trait that correlates the most to spikelet number is secondary branch number (Fig. 2). Indeed the linear correlation coefficients in the four species range between 0.83 and 0.93. The lowest correlation coefficient belongs to *O. rufipogon*. In this species, a close inspection of the scatter plots reveals that at low SpN, the linear relationship between SbN and SpN is lost. Probably because many accessions of this species rely more on primary branching.
 
-Those estimates does not take into account of the identity of different branches. Branches of different order or also at different distances from the apex could have different productivity.
+Primary branch correlates with spikelet number with coefficients ranging between 0.33 and 0.86. In *O. sativa* is the one that correlates less, probably because cultivated species rely more heavily on secondary branches.
 
-Different species tend to produce not only different number of branches, but also different ratio of primary and secondary branches. Instead, tertiary branches tend to be rarer and relagated to *O. sativa*. While in wild species primary and secondary branch number slightly correlates (r = 0.63 in *O.barthii* and r = 0.52 in *O. rufipogon*), correlation scores plummet in domesticated species (r = 0.40 in *O. glaberrima* and r = 0.3 in *O. sativa*).
+Primary and Secondary branch number correlate poorly, with correlation coefficients that range between 0.30 and 0.63. This suggests that SpN and SbN are controlled by distinct genetic mechanism.
 
-Also, in domesticated species, the number of secondary branches is in average much higher than the number of primary branches. The number of primary branches ranges between 6 and 23, while the number of secondary branches ranges between 6 and 81.
-
-This differences between primary and secondary branch number suggest that the two are controlled by independent genetic mechanisms.
-
-### Branch number predicts spikelet number
-
-As last proof that panicles lodge more spikelet through increased branching, we have decided to estimate the contribution of primary, secondary and tertiary branches to the spikelet number with a linear model. Those estimates can be used to predict spikelet number in an independent dataset.
-
-Even if secondary branch number correlates strongly with spikelet number, a model that takes into account exclusively of secondary branch number fails to predicts spikelet numbers of low producing wild species, since those species rely heavily on primary branching..
-
-Thus we have decided to use all primary secondary and tertiary branch number as predictor the linear model. In this way we have estimated an average contribution of 5 spikelets for each primary branch, 4 spikelets for each secondary branch and 7.5 spikelets for each of the rare tertiary branches.
-
-We have confirmed these parameters on an independent dataset and we were able to predict spikelet number with precision. While this model tends to slightly underestimate spikelet number in   *O, barthii*, (MSE = ), it predicts spikelet number in *O. sativa*, *O. rufipogon* and in n *O. glaberrima*.
-
-Thus number of branches is the main phenotypic variable that allows to adapt panicles structure to high productivity. Primary and secondary branches are probably two independent mechanism.
-
-
-Phenotyping of the 20 accessions in the 4/5 species : PCA and correlation analysis
-[fig-PCA diversity: Panicle traits architecturehcitectire](../fig/Test FigPCA.pdf)
-2 conclusions :
- - Panicle traits that influences panicle architecture Diversity and spikelet number
- - Panicle traits correlated with Sp nb
- - Obersvation of panicle architecture similarity between the 2 domestications process
-
-> **Presentation of the transcriptomics parts - Phenotype of the 5 accessions  : Let's see how to introduce this/ it will depend also if we include or not the analysis by graph from the modelisation group**
-
-
-Besides the reference *Oryza sativa nipponbare*, we have selected 5 other rice accessions, one per species: B88 [*Oryza barthii*], Tog5681 [*Oryza glaberrima*], W1654 [*Oryza Rufipogon*], Niponbarre [*Oryza sativa japonica], IR64 [*Oryza sativa indica*], because they are easily grown in greenhouse, because they have sequenced or nearly sequenced genomes and most important because they display representative phenotypic traits.
-
-On those accessions, we have measured systematically 9 panicle traits [@faroq2013p]. These traits are:
-
-- Rachis Length,
-- Primary Branch Numbers,
-- Primary Branch Average Length,
-- Primary Branch Internode Average length,
-- Secondary Branch Numbers,
-- Secondary Branch Numbers,
-- Secondary Branch Average Length,
-- Tertiary Branch Numbers,
-- Spikelet Numbers.
-/
-Panicule architecture influences spikelet number (***This is kind of obvious, but do we have a good reference?***),  which is strongly increased during domestication. Different species might use different strategies to lodge more spikelets on one panicule. For example sativa indica relies more on secondary branches, while sativa japonica relies on both on primary and secondary branches and glaberrima relies more on primary branches (*fig-branches-boxplot*).
-
-![fig-branches-boxplot: Different species use different panicule architecture to lodge more spikelets](../fig/fig-branches-boxplot.svg)
-also the previous [fig-phenotype: panicle traits in the 5 accessions]fig (../fig/traits_corrected.pdf)
-
-We asked: what are the panicule traits that most influence spikelet number in all species? Thus we considered spikelet number as an outcome and all the other phenotypic traits as potential predictor of a linear model and we have rephrased our question in stricter statistical terms as what is the minimum optimal number of predictor needed to explain and predict the outcome?
-
-We have answered that question with linear model subset selection [@miller2002subset, @lumey2017leapspackage]. This algorithm searches for the combination of predictor that it is likely to provide the most accurate prediction of the outcome. The suggested combination is: primary branch number, secondary branch number and primary branch length, with the effect of the last term being small.
-
-Thus, we have fitted a linear model on primary and secondary branch number. The coefficients of that linear model successfully predict spikelet number in an independent dataset. This independent dataset reports the same parameters for 100 rice accession from the 4 species taken in consideration (*barthii*, *glaberrima*, *rufipogon* and *sativa*). Since in 100 accessions we are able to predict spikelet number from only three parameters we show that the rules that determine the spikelet number within panicules of different rice species have the same basis (*fig-spn-prediction*).
-
-![Spikelet number is predicted by primary and secondary branch number](../fig/fig-spn-prediction.svg)
-
-The two first principal components of this dataset explain 28.6% and 16.3% of variance
-
-
-Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)
+. **Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)**
 
 > **What are the genes/patwhay involved in the meristem state in rice inflorescence Undeterminate vs determinate**
 
