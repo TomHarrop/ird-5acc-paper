@@ -106,15 +106,6 @@ The rankings of the 5^th^ component enrich multiple mapman bins (*table-pc5-mapm
 
 ![table-pc5-mapman](../tables/table-pc5-mapman.svg)
 
-### Within the 5^th^ component, *indica* IR64 is an outlier
-
-![](../fig/fig-genes-of-pc5.svg)
-
-The other species cluster together randomly.
-
-## The genes that drive PC5 might determine spikelet development and its divergence
-
-Are the phenotypic differences determined in the PBM (top pc5 genes) or in the SM (bottom pc5 genes)?
 
 ### Gene families related to differentiation are enriched in the SM
 
@@ -131,57 +122,6 @@ Among those, 8 MADS-box genes are among the 100 genes that rank most negatively.
 > **Although it is expressed at lower level? can it be a mapping artifact?**
 
 Also three YABBY genes are expressed preferentially in the SM: *OsYABBY4* [@yang2016rice], *OsYABBY5* and *OsYABBY3*. Among those *OsYABBY5* determines the identity of the spikelet meristem [@tanaka2012yabby].
-
-![](../fig/fig-tmp-C2C2-YABBY-bot_pc5.svg)
-
-### PBM - Top PC5 - Indica diff
-
-![](../fig/fig-TMP-pc5-top200-cl1.jpeg)
-
-OsLHY, RDD1, **Circadian Clock** behaves different in indica, but also in other asian species.
-
-![](../fig/fig-TMP-pc5-top200-cl4.jpeg)
-
-OsRBCS4, **Photosynthesis** behaves differently in indica, different development timing? Also: OsPORA,
-
-OsCML16,  **enhances root growth** flat in indica and japonica
-
-OsABA8ox1 **ABA hydrolase** regulates growth, behaves opposite in indica
-
-OsDREB1E, AP2-like **Osmotic stress / Downstream of Gigantea?**,
-OSISAP1, **resistance to dehyd.**,
-
-OsNAC9, **Root structure**,
-
-OsACO1, **Internode elongation**
-
-OsRAV2, **regulated by salt?**
-
-OsBIERF4, **Something stress again??**
-
-AP37, Stress again, **programmed cell death**
-
-OsMYL1, bHLH something **cell identity**.
-
-Other cluster, still ***Indica*** peculiar:
-
-![](../fig/fig-TMP-pc5-top200-cl5.jpeg)
-
-OsDOS: CCCH **Senescence** Something AP2s network???
-
-IAA6|OsIAA6: **auxin throuh PIN1?** tiller outgrow + **stress**
-
-OsPIP1: **stress** auquaporin
-
-GLN1;2|GS1;2|OsGS1;2: **high temperature** tolerance
-
-OsGASR1: **Differentiation of panicle**
-
-cZOGT1: **Citokinin related**
-
-OsMADS16: **mads B-class**
-
-OsSAP11: **citokinin - cell elongation**
 
 ### PBM - Top PC5 - Indica same
 
@@ -227,9 +167,9 @@ SNP-promoter diversity : make a short coherent list of genes to link it with dom
 
 ## Functional characterization of three AP2 genes
 
-Three AP2 genes were selected because they are differentially expressed across species and their mutant were publicly available. *EXTEND!*
+Three AP2 genes were selected because they are differentially expressed across species and their mutant were publicly available.
 
-Those genes are *ERF48*, *ERF142* and *PLT8* (*fig-ap2-selected-expr*).
+Those genes are *ERF48*, *ERF142* and *PLT8*.
 
 ![Expression of selected AP2 genes](../fig/fig-ap2-selected-expr.svg)
 ![Phenotype of Mutants selected AP2 genes](../fig/mutantAP2-boxplots.pdf)
