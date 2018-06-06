@@ -52,10 +52,5 @@ plot_cluster <- function(cl) {
   dev.off()
 }
 
-cls <- read_csv("../data-raw/annotated_clusters_scaled_l2fc.csv") %>%
-  dplyr::rename(locus_id = "MsuID") %>%
-  split(.$cluster)
-
-names(cls) %>% walk(plot_cluster)
 
 
