@@ -20,11 +20,11 @@ bibliography: ../bib/references.bib
 
 # Results
 
-## In panicles traits of independently domesticated rice species are similar
+## Panicle traits of independently domesticated rice species are similar
 
 We have measured panicle traits of 91 African and Asian rice accessions (Supplementary Dataset 1). We show that the main traits that differ among accessions are branch number and spikelet number, and that those traits split wild and domesticated species.
 
-The 91 rice accessions belong to 4 rice species: the wild African rice *Oryza barthii*, the wild Asian rice *Oryza Rufipogon*, the domesticated African rice *Oryza glaberrima* and the domesticated Asian rice,  *Oryza sativa*. We have measured ***approximatively???*** 20 accessions per species and 10 plants per accession for a total of 1140 ***panicles/plants???***.
+Those 91 rice accessions belong to 4 rice species: the wild African rice *Oryza barthii*, the wild Asian rice *Oryza Rufipogon*, the domesticated African rice *Oryza glaberrima* and the domesticated Asian rice,  *Oryza sativa*. We have measured ***approximatively???*** 20 accessions per species and 10 plants per accession for a total of 1140 ***panicles/plants???***.
 
 For each plant, we have measured these phenotypic traits using the software pTrap as reported by [@faroq2013p]:
 
@@ -38,23 +38,23 @@ For each plant, we have measured these phenotypic traits using the software pTra
 - Tertiary Branch Numbers (TbN),
 - Spikelet Numbers (SpN).
 
-The resulting datasets records those traits for each of 1140 plants (Supplementary Table 1).
+The recorded traits are in Supplementary Table 1.
 
-We have searched recurrent patterns of phenotypic traits in our dataset using Principal Component (PC) Analysis ***(Fig. 01)***. The PC analysis collects almost half of traits variability in the first PC, which also splits wild and domesticated rice species. Interestingly, those domesticated species belong to both African and Asian rice lineages, which have been domesticated independently.
+In that dataset, we have searched for recurrent patterns of phenotypic traits using Principal Component (PC) Analysis ***(Fig. 01)***. The PC analysis shows that most of the variability in the dataset is explained by the domestication factor, because the first PCs, that collects almost half of traits variability, perfectly splits wild and domesticated rice species. Interestingly, those domesticated species belong to both African and Asian rice lineages, which have been domesticated independently. Indeed, independent lineage seems to have little effects on the results of PC analysis, suggesting that the domestication has a much greater effect on panicle traits the origin lineage of different accessions.
 
-The rotations of the first PC ***(Fig. 01)*** shows that all panicle traits have adapted have slightly adapted to lodge more spikelet number. Indeed those rotations split those traits that are expected to increase with spikelet number (PbN, SbN, RL, PbL, SbL, PanL and TbN) from those that are expected to decrease with spikelet number ( PbIntl and SbIntL).
+The rotations of the first PC ***(Fig. 01)*** shows that all panicle traits have adapted have slightly adapted with domestication. Indeed those rotations split traits that are expected to increase with spikelet number (PbN, SbN, RL, PbL, SbL, PanL and TbN) from those that are expected to decrease with spikelet number (PbIntl and SbIntL).
 
 ## Branches produce the same number of spikelets, but the number and identity of branches changes.
 
 We have used our trait dataset to explore the phenotype of wild and domesticated rice panicles. We concentrated on the traits that influence most the first PC: PbN, SbN and SpN (Fig. 2).
 
-Spikelet Number is highly different between wild and domesticated species. This traits ranges between 6 and 186 spikelets in the wild type and between 62 and 391 in the domesticated species.
+SpN is highly different between wild and domesticated species; with wild rice accessions producing between 6 and 186 spikelets per panicle and cultivated accessions producing between 62 and 391 spikelets per panicle (Fig. 2).
 
-The trait that correlates the most to spikelet number is secondary branch number (Fig. 2). Indeed the linear correlation coefficients in the four species range between 0.83 and 0.93. The lowest correlation coefficient belongs to *O. rufipogon*. In this species, a close inspection of the scatter plots reveals that at low SpN, the linear relationship between SbN and SpN is lost. Probably because many accessions of this species rely more on primary branching.
+The trait that correlates most with SpN is SbN (Fig. 2). Indeed the linear correlation coefficients between the two, in the four species, range between 0.83 and 0.93. The lowest correlation coefficient belongs to *O. rufipogon*. Indeed, a close inspection of the scatter plots of this species reveals that at low SpN, the linear relationship between SbN and SpN is lost. Probably because many accessions of *O. rufipogon* rely more heavily on primary branching.
 
-Primary branch correlates with spikelet number with coefficients ranging between 0.33 and 0.86. In *O. sativa* is the one that correlates less, probably because cultivated species rely more heavily on secondary branches.
+PbN correlates with SpN with coefficients ranging between 0.33 and 0.86. The lowest coefficient belongs to *O. sativa*, probably because this species produces the highest and the most variation in SbN. A similar behaviour is displayed by *O. glaberrima*: the other domesticated species.
 
-Primary and Secondary branch number correlate poorly, with correlation coefficients that range between 0.30 and 0.63. This suggests that SpN and SbN are controlled by distinct genetic mechanism.
+Primary and Secondary branch number correlate poorly, with correlation coefficients ranging between 0.30 and 0.63. The lowest coefficients belong to domesticated species. This suggests that SpN and SbN are controlled by distinct genetic mechanism.
 
 . **Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)**
 
