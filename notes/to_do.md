@@ -13,7 +13,8 @@
 
 - link DE genes to SNP data from IRRIGEN
 - promoter analysis AP2 genes DE
+- use clusters to choose genes for promotor analysis
 
 - cluster all genes (e.g. filtered on FDR from interaction)
 - general qc stuff
- 
+- cluster z-stats
