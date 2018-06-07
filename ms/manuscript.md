@@ -44,7 +44,7 @@ In that dataset, we have searched for recurrent patterns of phenotypic traits us
 
 The rotations of the first PC ***(Fig. 01)*** shows that all panicle traits have adapted have slightly adapted with domestication. Indeed those rotations split traits that are expected to increase with spikelet number (PbN, SbN, RL, PbL, SbL, PanL and TbN) from those that are expected to decrease with spikelet number (PbIntl and SbIntL).
 
-## Branches produce the same number of spikelets, but the number and identity of branches changes.
+## PbN and SbN are independent and they both correlate with SpN
 
 We have used our trait dataset to explore the phenotype of wild and domesticated rice panicles. We concentrated on the traits that influence most the first PC: PbN, SbN and SpN (Fig. 2).
 
