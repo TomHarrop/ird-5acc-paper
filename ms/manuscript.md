@@ -56,6 +56,22 @@ PbN correlates with SpN with coefficients ranging between 0.33 and 0.86. The low
 
 Primary and Secondary branch number correlate poorly, with correlation coefficients ranging between 0.30 and 0.63. The lowest coefficients belong to domesticated species. This suggests that SpN and SbN are controlled by distinct genetic mechanism.
 
+## Selection of 5 accessions for RNAseq
+
+To investigate what determines branching, we have selected five rice accessions. Those accessions were selected because they are easy to grow in greenhouse and/or because they carry distinctive traits:
+
+- The model accession ??? *Oryza sativa nipponbare*.
+- The super yielding accession  *Oryza sativa indica* IR64.
+- Their wild relative *Oryza Rufipogon* W1654.
+- The domesticated African *Oryza glaberrima* Tog5681.
+- The wild Afican accession *Oryza barthii* B88.
+
+> **No, this goes as table.**
+
+
+##
+
+
 . **Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)**
 
 > **What are the genes/patwhay involved in the meristem state in rice inflorescence Undeterminate vs determinate**
