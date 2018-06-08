@@ -13,6 +13,7 @@ fig/*
 
 # tables
 tables/*
+!tables/table-01-selected-accessions.csv
 
 # accidental plots
 src/Rplots.*

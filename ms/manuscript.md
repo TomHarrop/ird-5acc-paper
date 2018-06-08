@@ -58,7 +58,7 @@ Primary and Secondary branch number correlate poorly, with correlation coefficie
 
 ## Selection of 5 accessions for RNAseq
 
-To investigate what determines branching, we have selected five rice accessions. Those accessions were selected because they are easy to grow in greenhouse and/or because they carry distinctive traits:
+To investigate what determines branching, we have selected five rice accessions. Those accessions were selected because they grow easily in greenhouse and/or because they carry distinctive traits. Details on those 5 species are in table 1.  
 
 - The model accession ??? *Oryza sativa nipponbare*.
 - The super yielding accession  *Oryza sativa indica* IR64.
@@ -66,7 +66,8 @@ To investigate what determines branching, we have selected five rice accessions.
 - The domesticated African *Oryza glaberrima* Tog5681.
 - The wild Afican accession *Oryza barthii* B88.
 
-> **No, this goes as table.**
+> **No, this goes as table**
+
 
 
 ##
