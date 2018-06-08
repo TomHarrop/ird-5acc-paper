@@ -22,7 +22,7 @@ bibliography: ../bib/references.bib
 
 ## Panicle traits of independently domesticated rice species are similar
 
-We have measured panicle traits of 91 African and Asian rice accessions (Supplementary Dataset 1). We show that the main traits that differ among accessions are branch number and spikelet number, and that those traits split wild and domesticated species.
+We have measured panicle traits of 91 African and Asian rice accessions ***(Supplementary Dataset 1)***. We show that the main traits that differ among accessions are branch number and spikelet number, and that those traits split wild and domesticated species.
 
 Those 91 rice accessions belong to 4 rice species: the wild African rice *Oryza barthii*, the wild Asian rice *Oryza Rufipogon*, the domesticated African rice *Oryza glaberrima* and the domesticated Asian rice,  *Oryza sativa*. We have measured ***approximatively???*** 20 accessions per species and 10 plants per accession for a total of 1140 ***panicles/plants???***.
 
@@ -46,9 +46,9 @@ The rotations of the first PC ***(Fig. 01)*** shows that all panicle traits have
 
 ## PbN and SbN are independent and they both correlate with SpN
 
-We have used our trait dataset to explore the phenotype of wild and domesticated rice panicles. We concentrated on the traits that influence most the first PC: PbN, SbN and SpN (Fig. 2).
+We have used our trait dataset to explore the phenotype of wild and domesticated rice panicles. We concentrated on the traits that influence most the first PC: PbN, SbN and SpN ***(Fig. 2)***.
 
-SpN is highly different between wild and domesticated species; with wild rice accessions producing between 6 and 186 spikelets per panicle and cultivated accessions producing between 62 and 391 spikelets per panicle (Fig. 2).
+SpN is highly different between wild and domesticated species; with wild rice accessions producing between 6 and 186 spikelets per panicle and cultivated accessions producing between 62 and 391 spikelets per panicle ***(Fig. 2)***.
 
 The trait that correlates most with SpN is SbN (Fig. 2). Indeed the linear correlation coefficients between the two, in the four species, range between 0.83 and 0.93. The lowest correlation coefficient belongs to *O. rufipogon*. Indeed, a close inspection of the scatter plots of this species reveals that at low SpN, the linear relationship between SbN and SpN is lost. Probably because many accessions of *O. rufipogon* rely more heavily on primary branching.
 
@@ -56,19 +56,13 @@ PbN correlates with SpN with coefficients ranging between 0.33 and 0.86. The low
 
 Primary and Secondary branch number correlate poorly, with correlation coefficients ranging between 0.30 and 0.63. The lowest coefficients belong to domesticated species. This suggests that SpN and SbN are controlled by distinct genetic mechanism.
 
-## Selection of 5 accessions for RNAseq
+## We have selected 5 rice accessions for RNAseq
 
 To investigate what determines branching, we have selected five rice accessions. Those accessions were selected because they grow easily in greenhouse and/or because they carry distinctive traits. Details on those 5 species are in table 1.  
 
-- The model accession ??? *Oryza sativa nipponbare*.
-- The super yielding accession  *Oryza sativa indica* IR64.
-- Their wild relative *Oryza Rufipogon* W1654.
-- The domesticated African *Oryza glaberrima* Tog5681.
-- The wild Afican accession *Oryza barthii* B88.
+> **Details on RNAseq here? Sampling, number of reads, mapping efficiency**
 
-> **No, this goes as table**
-
-
+On the same exact plants that we have used for RNAseq, we have measured panicle phenotypic traits ***(Supplementary Dataset 3)***.  Those phenotypic traits match what expected from earlier measurements ***(Fig-03)***
 
 ##
 
@@ -208,7 +202,8 @@ Gene names were retrieved from [FunRiceGenes](https://funricegenes.github.io/) [
 
 # Supplementary Material
 
-Supplementary Table 1: Panicle traits for 91 rice accessions
+Supplementary Table 1: Panicle traits for 91 rice accessions.
+Supplementary Table 3: Independent measurements of panicle traits for 5 selected rice accessions.
 
 # References
 
