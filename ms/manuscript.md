@@ -18,6 +18,17 @@ bibliography: ../bib/references.bib
     - evolution of transcription factor family expression
     - does selection for the same phenotype affect expression of the same genes / sets of genes
 
+#Materials and Methods
+
+##Plant Material and Growth Conditions
+
+For Phenotyping, 20 accessions (Table XX) of O. sativa, O. glaberrima, O. barthii , plants were grown in cali (Colombia) and in Montpellier (France) for O. rufipogon. 
+At panicle maturity, the 3 main panicle from 3 plants per accession per repeat were collected (i.e 18 panicles/ accession). Each panicle was spread out and fixed on a white paper by tape. Panicle structure and seed number were analyses using P-TRAP software (Al-Tam et al., 2013). The quantified panicle traits included rachis length (RL in cm), total panicle length (PanL in cm), primary branch number (PbN), primary branch average length (PbL in cm), primary branch internode average length (PbintL in cm), secondary branch number (SbN), secondary branch average length (SBL in cm), secondary branch internode average length (SbintL in cm) and spikelet number (SpN). (Need a figure??). Phenotype description and statistical analysis of variance were performed by using functions in R software.
+
+For plant sequenced, 9 panicle per accessions have been phenotyped in Montpellier : table (phenotype_paniculesequeneced corrected.xls on folder Accession phenotype)
+
+
+
 # Results
 
 ## Panicle traits of independently domesticated rice species are similar

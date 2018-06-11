@@ -15,11 +15,13 @@ bibliography: ../bib/references.bib
 
 * **aims**:
     - Genes/pathway involved in the inflorescence determination in rice  
-    - changes in phenotype, gene expression caused by / associated changes/switch/delay in determination of inflorescence 
+    - changes in phenotype, gene expression caused by / associated changes/switch/delay in determination of inflorescence
     - Changes in phenotype link to domestication
     - common genes that respond to selection in different domestications
     - evolution of transcription factor family expression
     - does selection for the same phenotype affect expression of the same genes / sets of genes
+
+
     ## Results
 
     =======
