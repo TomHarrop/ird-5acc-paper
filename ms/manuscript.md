@@ -22,7 +22,7 @@ bibliography: ../bib/references.bib
 
 ## Plant Material and Growth Conditions
 
-For Phenotyping, 20 accessions ***(Supplementary Dataset 1)*** of *O. sativa*, *O. glaberrima*, *O. barthii* , plants were grown in cali (Colombia) and in Montpellier (France) for *O. rufipogon*. 
+For Phenotyping, 20 accessions ***(Supplementary Dataset 1)*** of *O. sativa*, *O. glaberrima*, *O. barthii* , plants were grown in the field of CIAT in Cali (Colombia) and in the greenhouse of IRD at Montpellier (France) for *O. rufipogon*. 
 At panicle maturity, the 3 main panicle from 3 plants per accession per repeat were collected (i.e 18 panicles/ accession). Each panicle was spread out and fixed on a white paper by tape. Panicle structure and seed number were analyses using P-TRAP software (Al-Tam et al., 2013). The quantified panicle traits included rachis length (RL in cm), total panicle length (PanL in cm), primary branch number (PbN), primary branch average length (PbL in cm), primary branch internode average length (PbintL in cm), secondary branch number (SbN), secondary branch average length (SBL in cm), secondary branch internode average length (SbintL in cm) and spikelet number (SpN). (Need a figure??). Phenotype description and statistical analysis of variance were performed by using functions in R software.
 For expression analysis, plants were growth in greenhouse in Montpellier ...7 weeks in LD days and the shift to SD. 9 panicle mature per accessions have been phenotyped in Montpellier : table (phenotype_paniculesequeneced corrected.xls on folder Accession phenotype)
 
