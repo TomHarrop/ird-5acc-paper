@@ -22,12 +22,12 @@ bibliography: ../bib/references.bib
 
 ## Plant Material and Growth Conditions
 
-For Phenotyping, 20 accessions ***(Supplementary Dataset 1)*** of *O. sativa*, *O. glaberrima*, *O. barthii* , plants were grown in the field of CIAT in Cali (Colombia) and in the greenhouse of IRD at Montpellier (France) for *O. rufipogon*. 
+For Phenotyping, 20 accessions ***(Supplementary Dataset 1)*** of *O. sativa*, *O. glaberrima*, *O. barthii* , plants were grown in the field of CIAT in Cali (Colombia) and in the greenhouse of IRD at Montpellier (France) for *O. rufipogon*.
 At panicle maturity, the 3 main panicle from 3 plants per accession per repeat were collected (i.e 18 panicles/ accession). Each panicle was spread out and fixed on a white paper by tape. Panicle structure and seed number were analyses using P-TRAP software (Al-Tam et al., 2013). The quantified panicle traits included rachis length (RL in cm), total panicle length (PanL in cm), primary branch number (PbN), primary branch average length (PbL in cm), primary branch internode average length (PbintL in cm), secondary branch number (SbN), secondary branch average length (SBL in cm), secondary branch internode average length (SbintL in cm) and spikelet number (SpN). (Need a figure??). Phenotype description and statistical analysis of variance were performed by using functions in R software.
 For expression analysis, plants were growth in greenhouse in Montpellier ...7 weeks in LD days and the shift to SD. 9 panicle mature per accessions have been phenotyped in Montpellier : table (phenotype_paniculesequeneced corrected.xls on folder Accession phenotype)
 
 ## Tissue collection and RNA sequencing
-For expression analysis, around 15 panicles from each accession (IR64 for O. sativa indica, Niponbarre for O. sativa japonica, W1654 for O. rufipogon, Tog5681 for O. Glaberima, and B88 for O. Barthii) were collected from 4 days to 15 days after induction in 3 biological replicates for each repetition (kinetic 1 and 2). 
+For expression analysis, around 15 panicles from each accession (IR64 for O. sativa indica, Niponbarre for O. sativa japonica, W1654 for O. rufipogon, Tog5681 for O. Glaberima, and B88 for O. Barthii) were collected from 4 days to 15 days after induction in 3 biological replicates for each repetition (kinetic 1 and 2).
 Panicles were collected at 4 different morphological stages: stage 1, inflorescence (rachis ) meristem stage;  stage 2, branching stage (i.e, initiation of primary branches, panicles with elongated primary and higher order branch development); stage 3, spikelet differentiation; stage4, Floret differentiation and early flower organ development.
 
 
@@ -78,7 +78,7 @@ To investigate what determines branching, we have selected five rice accessions.
 
 > **Details on RNAseq here? Sampling, number of reads, mapping efficiency**
 
-On the same exact plants that we have used for RNAseq, we have measured panicle phenotypic traits ***(Supplementary Dataset 2)***.  Those phenotypic traits match what expected from earlier measurements ***(Fig-03)***
+On the same exact plants that we have used for RNAseq, we have measured panicle phenotypic traits ***(Supplementary Dataset 2)***.  Those phenotypic traits match what expected from earlier measurements ***(Fig-03)***.
 
 ## Transition to the Spikelet Meristem is sharper in low branching species
 
@@ -94,7 +94,7 @@ We have compared the transcriptomes of PBM and SM separately in those 5 rice spe
 
 ## Multiple transcription factor families are co-expressed in the branch meristems across species
 
-We have used principal component (PC) analysis to group genes that behave similarly in the various species. The first PC successfully groups genes that are co-expressed across the species. Many transcription factor families are enriched among those genes (Fig. 5).
+We have used principal component (PC) analysis to group genes that behave similarly in the various species. The first PC successfully groups genes that are co-expressed across the species. Many transcription factor families are enriched among those genes ***(Fig-04, Suppl-Fig-01)***.
 
 
 
