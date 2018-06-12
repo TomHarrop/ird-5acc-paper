@@ -1,6 +1,9 @@
 library(tidyverse)
-source("helper-functions.R")
 library(fgsea)
+library(pheatmap)
+library(gridExtra)
+source("helper-functions.R")
+dds <- readRDS("../data-raw/dds.Rds")
 
 
 # Load PCA and TF families ------------------------------------------------
@@ -38,18 +41,75 @@ pcx_tf <- pcx %>%
 
 # Plot Enrichement --------------------------------------------------------
 
-p_enr <- ggplot(pcx_tf,
-                # filter(Family %in% c("AP2-EREBP", "MADS", "WRKY")),
+families <- c("AP2-EREBP", "WRKY", 
+              "MADS", "HB")
+
+p_enr <- ggplot(pcx_tf %>%
+                filter(Family %in% families),
                 aes(x = rank_pc1,
                     y = PC1)) + 
   # geom_point(alpha = .01) + 
-  geom_linerange(aes(ymin = 0, ymax = PC1), lwd = .5) + 
-  geom_hline(yintercept = 0, lwd = .05) +
-  geom_rug(aes(x = rank_pc1, y = NULL), alpha = .5) +
-  facet_wrap(facets = c( "padj", "Family"), ncol = 1) +
-  theme_bw()
+  geom_linerange(aes(ymin = 0, ymax = PC1), lwd = 1) + 
+  geom_hline(yintercept = 0,
+             lwd = .05,
+             colour = "grey") +
+  # geom_rug(aes(x = rank_pc1, y = NULL), alpha = .5) +
+  facet_wrap(facets = "Family", ncol = 1) +
+  theme_bw() 
+
+
+# Define functions for heatmap --------------------------------------------
+
+plot_heatmap <- function(family = "AP2-EREBP") {
+  to_heat <- pcx_tf %>%
+    filter(Family == family) %>%
+    mutate(abs_pc1 = abs(PC1)) %>%
+    # arrange(desc(abs_pc1)) %>%
+    filter(abs_pc1 > 2) %>%
+    .$locus_id %>%
+    get_expression(dds) %>%
+    group_by(locus_id, species, stage) %>%
+    summarise(by_locus_species = median(by_locus_species)) %>%
+    ungroup() %>%
+    mutate(stage_species = paste(stage, species, sep = "_")) %>%
+    select(locus_id, stage_species, by_locus_species) %>%
+    spread(key = stage_species, value = by_locus_species) %>%
+    as.data.frame() %>%
+    column_to_rownames("locus_id") 
+  
+  
+  p <- pheatmap(to_heat,
+           color = colorRampPalette(c( "white", "blue4"))(50),
+           show_rownames = F,
+           cutree_cols = 2,
+           cluster_cols = F,
+           # cluster_rows = F,
+           gaps_col = 5,
+           cutree_rows = 2,
+           cellwidth = 9,
+           cellheight = 5,
+           main = family)
+  
+  return(p)
+}
+
+# Plot families -----------------------------------------------------------
+
+heat_ap2 <- plot_heatmap("AP2-EREBP")
+heat_mads <- plot_heatmap("MADS")
+plot_heatmap("WRKY")
+heat_hb <- plot_heatmap("HB")
+
+# Save plots --------------------------------------------------------------
 
 pdf("../fig/fig-04-TFs-in-PCA.pdf",
-    height = 50, width = 6)
-print(p_enr)
+    height = length(families)*1.2,
+    width = 12)
+grid.arrange(grobs = list(p_enr,
+                          heat_ap2[[4]],
+                          heat_hb[[4]],
+                          heat_mads[[4]]),
+             nrow = 1)
+
 dev.off()
+
