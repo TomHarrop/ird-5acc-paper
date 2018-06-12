@@ -60,7 +60,9 @@ p_enr <- ggplot(pcx_tf %>%
 
 # Define functions for heatmap --------------------------------------------
 
-plot_heatmap <- function(family = "AP2-EREBP") {
+plot_heatmap <- function(family = "AP2-EREBP",
+                         norm = by_locus_species) {
+  norm <- enquo(norm)
   to_heat <- pcx_tf %>%
     filter(Family == family) %>%
     mutate(abs_pc1 = abs(PC1)) %>%
@@ -69,11 +71,11 @@ plot_heatmap <- function(family = "AP2-EREBP") {
     .$locus_id %>%
     get_expression(dds) %>%
     group_by(locus_id, species, stage) %>%
-    summarise(by_locus_species = median(by_locus_species)) %>%
+    summarise(to_plot = median(!!norm)) %>%
     ungroup() %>%
     mutate(stage_species = paste(stage, species, sep = "_")) %>%
-    select(locus_id, stage_species, by_locus_species) %>%
-    spread(key = stage_species, value = by_locus_species) %>%
+    select(locus_id, stage_species, to_plot) %>%
+    spread(key = stage_species, value = to_plot) %>%
     as.data.frame() %>%
     column_to_rownames("locus_id") 
   
@@ -113,3 +115,19 @@ grid.arrange(grobs = list(p_enr,
 
 dev.off()
 
+
+# Save Locus_ids ----------------------------------------------------------
+fam_to_csv <- function(fam = "AP2-EREBP") {
+  pcx_tf %>%
+    filter(Family == fam) %>%
+    mutate(abs_pc1 = abs(PC1)) %>%
+    # arrange(desc(abs_pc1)) %>%
+    filter(abs_pc1 > 2) %>%
+    select(locus_id) %>%
+    write_excel_csv(path = paste0("../tables/table-tfs-fig04-",
+                                  fam,
+                                  ".csv"))
+}
+
+walk(.x = c("AP2-EREBP", "HB", "MADS"),
+     .f = fam_to_csv)
