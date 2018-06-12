@@ -74,20 +74,13 @@ Primary and Secondary branch number correlate poorly, with correlation coefficie
 
 ## We have selected 5 rice accessions for RNAseq
 
-To investigate what determines branching, we have selected five rice accessions. Those accessions were selected because they grow easily in greenhouse and/or because they carry distinctive traits. Details on those 5 species are in table 1.  
+To investigate what determines branching, we have selected five rice accessions. Those accessions were selected because they grow easily in greenhouse and/or because they carry distinctive traits. Details on those 5 species are in ***table 1***.  
 
 > **Details on RNAseq here? Sampling, number of reads, mapping efficiency**
 
-On the same exact plants that we have used for RNAseq, we have measured panicle phenotypic traits ***(Supplementary Dataset 3)***.  Those phenotypic traits match what expected from earlier measurements ***(Fig-03)***
+On the same exact plants that we have used for RNAseq, we have measured panicle phenotypic traits ***(Supplementary Dataset 2)***.  Those phenotypic traits match what expected from earlier measurements ***(Fig-03)***
 
-##
-
-
-. **Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)**
-
-> **What are the genes/patwhay involved in the meristem state in rice inflorescence Undeterminate vs determinate**
-
-## Transtition from PBM to SM in the 5 species
+## Transition to the Spikelet Meristem is sharper in low branching species
 
 We have compared the transcriptomes of PBM and SM separately in those 5 rice species and we have detected with a significance level of alpha = .05:
 
@@ -97,7 +90,21 @@ We have compared the transcriptomes of PBM and SM separately in those 5 rice spe
 - 387 differentially expressed genes in ***O. indica***.
 - 831 differentially expressed genes in ***O. japonica***
 
-> **Why does the number of differentially expressed genes slightly correlates with spikelet number? Maybe the species that produce less spikelets (and the african species) differentiate quicker. But it also might be a mapping or sampling issue.**
+> **The number of DE genes is lower in species that make more SbN. Still secondary branches  How do we discuss this?**
+
+## Multiple transcription factor families are co-expressed in the branch meristems across species
+
+We have used principal component (PC) analysis to group genes that behave similarly in the various species. The first PC successfully groups genes that are co-expressed across the species. Many transcription factor families are enriched among those genes (Fig. 5).
+
+
+
+
+
+. **Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)**
+
+> **What are the genes/patwhay involved in the meristem state in rice inflorescence Undeterminate vs determinate**
+
+
 
 ## Transcriptome: the 5^th^ principal component splits developmental stages
 
@@ -203,7 +210,7 @@ Those genes are *ERF48*, *ERF142* and *PLT8*.
 
 But, it seems difficult ti finish with this point as :
 ERF48 : present in cluster 2 and expression highly correlated with phenotype...but no phenotype observed in the Ox mutant
-ERF142 : clear effect on panicule phenotype but in any modelisationPLT8 : effect on pbNb and SpNB..present in Cluster4..
+ERF142 : clear effect on panicle phenotype but in any modelisationPLT8 : effect on pbNb and SpNB..present in Cluster4..
 
 
 # Discussion
@@ -219,7 +226,7 @@ Gene names were retrieved from [FunRiceGenes](https://funricegenes.github.io/) [
 # Supplementary Material
 
 Supplementary Table 1: Panicle traits for 91 rice accessions.
-Supplementary Table 3: Independent measurements of panicle traits for 5 selected rice accessions.
+Supplementary Table 2: Independent measurements of panicle traits for 5 selected rice accessions.
 
 # References
 
