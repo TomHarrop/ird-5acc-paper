@@ -92,6 +92,14 @@ We have compared the transcriptomes of PBM and SM separately in those 5 rice spe
 
 > **The number of DE genes is lower in species that make more SbN. Still secondary branches  How do we discuss this?**
 
+## Transcriptomic patterns can in multispecies experiments can be detected with PCA
+
+In RNAseq experiment that compares multiple conditions from multiple species, like ours, mapping bias and species specific expression are always mixed together. This issue could be addressed by avoiding to directly compare samples from different species. Interaction factor in linear models instead can help performing indirect comparison.
+
+OR
+
+In RNAseq experiment that compares multiple conditions from multiple species, useful and reliable expression pattern are often layered under various sources of noise or of unreliable information: a mix of mapping bias and species specific expression unrelated to the conditions of interest.
+
 ## Multiple transcription factor families are co-expressed in the branch meristems across species
 
 We have used principal component (PC) analysis to group genes that behave similarly in the various species. The first PC successfully groups genes that are co-expressed across the species. Many transcription factor families are enriched among those genes ***(Fig-04, Suppl-Fig-01)***.
