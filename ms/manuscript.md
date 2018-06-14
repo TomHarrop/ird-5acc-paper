@@ -100,6 +100,8 @@ We have successfully used principal component analysis (PCA) to detect and remov
 
 We have achieved this by running PCA on rlog transformed and normalized counts [***rlog deseq2 citation***] ***(Fig-05)***.
 
+The rotations of first 4 PC split different combinations of rice species: PC1 splits African and Asian species, PC2 splits *O. Nipponbare* (which was used as mapping reference) from the two other Asian species, PC3 splits *O. indica* from *O. rufipogon*, PC4 splits *O glaberrima* from *O. barthii*. These four component do not enrich functional categories. Possibly, because they mix differential expression with mapping bias and unrelated species specific differences.
+
 
 
 ## Multiple transcription factor families are co-expressed in the branch meristems across species
