@@ -8,7 +8,8 @@ dds <- readRDS("../data-raw/dds.Rds")
 
 # Load PCA and TF families ------------------------------------------------
 
-load("../data/all-sep-deseq.Rdata")
+# load("../data/all-sep-deseq.Rdata")
+load("../data/rlog-pca.Rdata")
 
 tf_fam <- readRDS("../data-raw/tfdb_os.Rds") %>%
   dplyr::rename(locus_id = "Protein.ID") %>%
@@ -18,24 +19,25 @@ tf_fam <- readRDS("../data-raw/tfdb_os.Rds") %>%
 
 # Prepare data - merge PC and TF ------------------------------------------
 
-pcx <- pc_spc$x %>% 
+# pcx <- pc_spc$x %>%
+pcx <- pcro %>%
   as.data.frame(.) %>%
-  rownames_to_column() %>%
-  dplyr::rename(locus_id = "rowname") %>%
+  # rownames_to_column() %>%
+  # dplyr::rename(locus_id = "rowname") %>%
   left_join(tf_fam) %>%
-  arrange(desc(PC1)) %>%
-  mutate(rank_pc1 = 1:nrow(.)) %>%
+  arrange(desc(PC5)) %>%
+  mutate(rank_pc5 = 1:nrow(.)) %>%
   mutate(Family = ifelse(is.na(Family), "none", Family))
 
 # Test Enrichment ---------------------------------------------------------
 
-gsea_pc1 <- test_gsea(set_names(pcx$PC1, 
+gsea_pc5 <- test_gsea(set_names(pcx$PC5, 
                     nm = pcx$locus_id),
           mapman = split(pcx$locus_id, pcx$Family)) %>%
   dplyr::rename(Family = "pathway")
 
 pcx_tf <- pcx %>%
-  left_join(gsea_pc1) %>%
+  left_join(gsea_pc5) %>%
   filter(Family != "none")
 
 
@@ -46,17 +48,17 @@ families <- c("AP2-EREBP", "WRKY",
 
 p_enr <- ggplot(pcx_tf %>%
                 filter(Family %in% families),
-                aes(x = rank_pc1,
-                    y = PC1)) + 
+                aes(x = rank_pc5,
+                    y = PC5)) + 
   # geom_point(alpha = .01) + 
-  geom_linerange(aes(ymin = 0, ymax = PC1), lwd = 1) + 
+  geom_linerange(aes(ymin = 0, ymax = PC5), lwd = 1) + 
   geom_hline(yintercept = 0,
              lwd = .05,
              colour = "grey") +
   # geom_rug(aes(x = rank_pc1, y = NULL), alpha = .5) +
   facet_wrap(facets = "Family", ncol = 1) +
   theme_bw() 
-
+p_enr
 
 # Define functions for heatmap --------------------------------------------
 
@@ -65,9 +67,9 @@ plot_heatmap <- function(family = "AP2-EREBP",
   norm <- enquo(norm)
   to_heat <- pcx_tf %>%
     filter(Family == family) %>%
-    mutate(abs_pc1 = abs(PC1)) %>%
+    mutate(abs_pc5 = abs(PC5)) %>%
     # arrange(desc(abs_pc1)) %>%
-    filter(abs_pc1 > 2) %>%
+    filter(abs_pc5 > .0015) %>%
     .$locus_id %>%
     get_expression(dds) %>%
     group_by(locus_id, species, stage) %>%
@@ -131,3 +133,26 @@ fam_to_csv <- function(fam = "AP2-EREBP") {
 
 walk(.x = c("AP2-EREBP", "HB", "MADS"),
      .f = fam_to_csv)
+
+
+# suppl figure 1 ----------------------------------------------------------
+
+p_enr <- ggplot(pcx_tf %>%
+                  arrange(padj) %>%
+                  mutate(facet = paste0(Family,
+                                        ", adjusted p-value = ",
+                                        round(padj, 3))) %>%
+                  mutate(facet = as_factor(facet)),
+                aes(x = rank_pc5,
+                    y = PC5)) +
+  geom_linerange(aes(ymin = 0, ymax = PC5), lwd = 1) + 
+  geom_hline(yintercept = 0,
+             lwd = .05,
+             colour = "grey") +
+  facet_wrap(facets = "facet", ncol = 3) +
+  theme_bw() 
+
+pdf("../fig/suppl-fig-01-tfs-of-pc5.pdf",
+    width = 9, height = 30)
+p_enr
+dev.off()

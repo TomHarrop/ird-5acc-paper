@@ -94,11 +94,11 @@ We have compared the transcriptomes of PBM and SM separately in those 5 rice spe
 
 ## Transcriptomic patterns can in multispecies experiments can be detected with PCA
 
-In RNAseq experiments that compare (multiple conditions from) multiple species, useful and reliable expression pattern are often layered under various sources of noise or of unreliable information: thoat noise is a mix of mapping bias and species specific expression values that are unrelated to the conditions of interest.
+In RNAseq experiments that compare (multiple conditions from) multiple species, useful and reliable expression pattern are often layered under various sources of noise or of unreliable information: that noise is a mix of mapping bias and species specific expression values that are unrelated to the conditions of interest.
 
 We have successfully used PCA to detect and remove those layers of unreliable information and to reveal expression patterns that are concealed underneath them.
 
-We have achieved this by running PCA on rlog transformed and normalized counts [***rlog deseq2 citation***].
+We have achieved this by running PCA on rlog transformed and normalized counts [***rlog deseq2 citation***] ***(Fig-04)***.
 
 ## Multiple transcription factor families are co-expressed in the branch meristems across species
 
