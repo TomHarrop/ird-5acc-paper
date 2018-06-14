@@ -98,56 +98,21 @@ In RNAseq experiments that compare (multiple conditions from) multiple species, 
 
 We have successfully used principal component analysis (PCA) to detect and remove those layers of unreliable information and to reveal expression patterns that are concealed underneath them.
 
-We have achieved this by running PCA on rlog transformed and normalized counts [***rlog deseq2 citation***] ***(Fig-05)***.
+We have achieved this by running PCA on rlog transformed and normalized counts [***rlog deseq2 citation***] ***(Fig-04)***.
 
 The rotations of first 4 PC split different combinations of rice species: PC1 splits African and Asian species, PC2 splits *O. Nipponbare* (which was used as mapping reference) from the two other Asian species, PC3 splits *O. indica* from *O. rufipogon*, PC4 splits *O glaberrima* from *O. barthii*. These four component do not enrich functional categories. Possibly, because they mix differential expression with mapping bias and unrelated species specific differences.
 
-
+The PC5 instead splits developmental stages across all species but *O. indica*, and also enriches functional categories. We have decided to explore the PC5 more in detail
 
 ## Multiple transcription factor families are co-expressed in the branch meristems across species
 
-We have used principal component (PC) analysis to group genes that behave similarly in the various species. The first PC successfully groups genes that are co-expressed across the species. Many transcription factor families are enriched among those genes ***(Fig-04, Suppl-Fig-01)***.
+We have used principal component (PC) analysis to group genes that behave similarly in the various species. The first PC successfully groups genes that are co-expressed across the species. Many transcription factor families are enriched among those genes ***(Fig-05, Suppl-Fig-01)***.
 
 
 . **Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)**
 
 > **What are the genes/patwhay involved in the meristem state in rice inflorescence Undeterminate vs determinate**
 
-
-
-## Transcriptome: the 5^th^ principal component splits developmental stages
-
-We have used Principal Component (PC) Analysis in order to isolate and explore patterns of gene expression across different species and stages.
-
-
-The first four components are driven by differences among species. The first two  component split clades (Asian vs African Rice in the 1^st^ and 2^nd^ components); the next two components split species within the same clade (Rufipogon vs. Sativa in the 3^rd^; Barthii vs. Glaberrima in the 4^th^). This indicates that species are the first source of variation of genes expression, but this source of variation could be confounded with mapping bias.
-
-Further components can be explained by differences between the two developmental stages: PBM and SM.  Above all, the 5^th^ component splits PBM and SM in all species (*fig-pc5*). We think that those components are biologically significant, because they enrich functional categories (mapman bins [@thimm2004mapman]).
-
-![fig-pc5: The 5^th^ component splits developmental stages ](../fig/fig-pc5.svg)
-
-## The 5^th^ PC is driven by master regulators of development
-
-The 5^th^ PC must be driven by gene expression patterns that identify the **primary branch meristem/axillary meristem** and the **spikelet meristem** in all or most species. In order to identify those genes, we explore the 5^th^ component in detail.
-
-The **magnitude of the loadings** of the samples on the 5^th^ components is higher for the **wild Asian** species and for **African species**. In detail:
-
-- The loadings for ***O. barthii*** samples range between -17.5 and -12.6 in the PBM, and between 15.8 and 19.1, in the SM.
-- The loadings for ***O. Glaberrima*** range between -22.7 and -12.2 in the PBM and between 8.1 and 22.3 in the SM.
-- The loadings for ***O. Rufipogon*** range between -15.8 and  -5.0 in the PBM and between 4.0 and 15.0 in the SM.
-
-The magnitude of the loading of the asian domesticated species average low. In detail:
-
-- The loadings of ***O. japonica*** samples range between -13.7 and -8.2 in the PBM and between 2.8 and 13.8 in the SM.
-- The loadings of ***O. indica*** range between -1.3 and  3.8 in the PBM and between -8.7 and 4.6 in the SM.
-
-This hints to a strategy to increase branching that is particularly evident in indica IR64, a rice accession that has been bred in the last decade for extremely high yield.
-
-Are those pattern biologically significant? We have described those pattern by using the loading of each gene on the 5^th^ component as rankings and checking if they enrich mapman functional categories [@thimm2004mapman].
-
-The rankings of the 5^th^ component enrich multiple mapman bins (*table-pc5-mapman*). Many of the enriched mapman bins are related to inflorescence development.
-
-![table-pc5-mapman](../tables/table-pc5-mapman.svg)
 
 
 ### Gene families related to differentiation are enriched in the SM
