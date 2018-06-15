@@ -199,8 +199,8 @@ Gene names were retrieved from [FunRiceGenes](https://funricegenes.github.io/) [
 
 # Supplementary Material
 
-Supplementary Table 1: Panicle traits for 91 rice accessions.
-Supplementary Table 2: Independent measurements of panicle traits for 5 selected rice accessions.
+- Supplementary Table 1: Panicle traits for 91 rice accessions.
+- Supplementary Table 2: Independent measurements of panicle traits for 5 selected rice accessions.
 
 # References
 
