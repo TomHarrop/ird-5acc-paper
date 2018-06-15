@@ -5,7 +5,7 @@ library(gridExtra)
 library(ggpubr)  
 
 load("../data/phenotypes.Rdata")
-
+color_palette <- c("blue", "goldenrod")
 
 # PCA ---------------------------------------------------------------------
 
@@ -16,13 +16,60 @@ pc <- pheno_cali %>%
   prcomp(.,
          scale. = T,
          center = T)
+p <- autoplot(pc, data = pheno_cali, 
+              loadings = TRUE,
+              loadings.label = TRUE) 
+# Get PC1 and  2 ready for plot -------------------------------------------
 
+
+# pcx <- pc$x %>%
+#   as.data.frame() %>%
+#   bind_cols(pheno_cali) %>%
+#   select(PC1, PC2, Species, Type, Species)
+
+### the annotations from autoplot are in $layers[[3]]$data
+# 
+# pcx <- fortify(pc, data = pheno_cali) 
+# 
+# pcro <- pc$rotation %>%
+#   as.data.frame() %>%
+#   rownames_to_column() %>%
+#   select(rowname, PC1, PC2) 
+# %>%
+#   mutate(PC1 = PC1*10, 
+#          PC2 = PC2*7)
+
+p_load <- p$layers[[3]]$data
+
+p$data %>%
+  ggplot(aes(x = PC1,
+             y = PC2,
+             colour = Type,
+             pch = Species)) +
+  geom_point() +
+  annotate("segment",
+           x = 0, xend = p_load$PC1,
+           y = 0, yend = p_load$PC2,
+           colour = "darkgrey",
+           size = .4, alpha = 1,
+           arrow = arrow(length = unit(0.3, "cm"))) +
+  annotate("text",
+           x = p_load$PC1*1.1,
+           y = p_load$PC2*1.1, 
+           label = p_load$rownames,
+           colour = "darkgrey") +
+  theme_bw() +
+  scale_color_manual(values = color_palette)
 pdf(file = "../fig/fig-01-pca-on-pheno.pdf")
+
+
 autoplot(pc, data = pheno_cali, 
          colour = "Type",
          shape = "Species",
          loadings = TRUE,
-         loadings.label = TRUE) +
+         loadings.label = TRUE,
+         loadings.colour = "black",
+         loadings.label.colour = "black") +
   # geom_point(alpha = .3) +
   labs(caption = str_wrap("Fig. 1: PC Analysis of the scaled and centered 
                     panicle phenotype dataset
@@ -35,7 +82,8 @@ autoplot(pc, data = pheno_cali,
                     spikelet number, which almost overlap.",
                           width = 70)) +
   theme_bw() +
-  theme(plot.caption = element_text(size = 15, hjust = 0, lineheight = 1))
+  theme(plot.caption = element_text(size = 15, hjust = 0, lineheight = 1)) +
+  scale_color_manual(values = color_palette)
 dev.off()
 
 # PCA old ----------------------------------------------------------------

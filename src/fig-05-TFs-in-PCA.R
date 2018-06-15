@@ -106,7 +106,7 @@ heat_hb <- plot_heatmap("HB")
 
 # Save plots --------------------------------------------------------------
 
-pdf("../fig/fig-04-TFs-in-PCA.pdf",
+pdf("../fig/fig-05-TFs-in-PCA.pdf",
     height = length(families)*1.2,
     width = 12)
 grid.arrange(grobs = list(p_enr,
