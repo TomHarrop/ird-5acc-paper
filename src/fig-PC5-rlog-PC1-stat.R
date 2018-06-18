@@ -14,13 +14,18 @@ to_plot <- pcro %>%
   inner_join(pc_spc)
 
 
-pdf(file = "../fig/fig-PC5-rlog-PC1-stat.pdf")
+# pdf(file = "../fig/fig-PC5-rlog-PC1-stat.pdf")
+jpeg(filename = "plots/fig-tst.jpg",
+     width = 9, 
+     height = 9,
+     units = "in",
+     res = 200)
 ggplot(to_plot,
        aes(x = PC5,
            y = PC1)) + 
   geom_hex(bins = 80) +
   theme_bw() +
-  xlab("PC5 - rlog") +
-  ylab("PC1 - stat") +
+  xlab("Var 1") +
+  ylab("Var 2") +
   scale_fill_gradient(high = "#001a33", low = "#cce6ff")
 dev.off()

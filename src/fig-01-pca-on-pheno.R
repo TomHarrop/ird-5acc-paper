@@ -5,7 +5,9 @@ library(gridExtra)
 library(ggpubr)  
 
 load("../data/phenotypes.Rdata")
-color_palette <- c("blue", "goldenrod")
+color_palette <- c("#DAA520", "#0000F9",
+                   "#FFE224", "#008AF9",
+                   "#494949")
 
 # PCA ---------------------------------------------------------------------
 
@@ -41,27 +43,39 @@ p <- autoplot(pc, data = pheno_cali,
 
 p_load <- p$layers[[3]]$data
 
-p$data %>%
+p_1 <- p$data %>%
   ggplot(aes(x = PC1,
              y = PC2,
-             colour = Type,
+             colour = Species,
              pch = Species)) +
-  geom_point() +
+  geom_point(size = 2, alpha = .5) +
   annotate("segment",
            x = 0, xend = p_load$PC1,
            y = 0, yend = p_load$PC2,
-           colour = "darkgrey",
+           colour = color_palette[5],
            size = .4, alpha = 1,
            arrow = arrow(length = unit(0.3, "cm"))) +
   annotate("text",
            x = p_load$PC1*1.1,
            y = p_load$PC2*1.1, 
            label = p_load$rownames,
-           colour = "darkgrey") +
+           colour = color_palette[5]) +
+  labs(caption = str_wrap("Fig. 1: PC Analysis of the scaled and centered 
+                    panicle phenotype dataset
+                    The first component explains almost half of the variance and splits wild and
+                    cultivated species.
+                    The first component splits traits that are intuitively related to high
+                    spikelet number, such as branch number and branch length, from traits that 
+                    intuitively should correlate inversely with yield, such as
+                    internode lenght. The highest loading given to secondary branch number and
+                    spikelet number, which almost overlap.",
+                          width = 70)) +
   theme_bw() +
+  theme(plot.caption = element_text(size = 15, hjust = 0, lineheight = 1)) +
   scale_color_manual(values = color_palette)
 pdf(file = "../fig/fig-01-pca-on-pheno.pdf")
-
+p_1
+dev.off()
 
 autoplot(pc, data = pheno_cali, 
          colour = "Type",
