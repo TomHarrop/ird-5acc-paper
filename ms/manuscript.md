@@ -128,37 +128,60 @@ Maybe make a bridge with phenotype (high and low branching) that could be explai
 ### Cluster analysis : This part have to be update with the last clustering data
 
 > **the different pattern could be link to phenotype (correlation test) and or are interesting based on the gene enrichment and composition**
+fig to update based on the last tom analyses - and try to merge with other analayses
 
-![fig-cluster: TF cluster ](../fig/cluster.pdf)
-Cluster3 : high branching phenotype; divergence of slope for indica (positive slope in indica, negative for the other). This cluster is enriched in AP2 genes (gsea analysis) and most of these genes are positively correlated with Sb/sp nb
-Cluster 4 : branching phenotype; divergence of slope for indica (negative slope in indica), this cluster is enriched in HB TF, are present also some genes known to be involved in sp determination (LHS1, MADS14, MFO1, OsIDS1). Enriched also in SWI/SNF-SW
-The HB are not negatively correlated with SP, but it seems to have a pattern for other genes.
 
-Cluster 1 : related to domestication/Phenotype; positive slope in wild species vs negaive slope in domesticated
-This cluster is enriched in genes related to chromatin regulation (PHD, CCP, SNF2..).
-These genes are negatively correlated with SpNb.
-Cluster6 : inverse pattern to cluster 1 and positive correlation with SpNB...At this time, i don't see clear interesting genes  enrichisment
+Cluster 1 & 2  : opposite pattern - relative to domestication change with the same tendancy in both domestication
+Cluster 1 : Slope between the 2 stages in Positive in domesticated compraed to Wild species
+Enriched in AUX/IAA - MYB-related - WRKY - AP2 EREBP and bHLH 
+Among the 18 genes, expression of the 6 genes are positively correlated with Pb number and 6 genes with Sb number and 9 with Sp number : Meaning expression of these genes are positvely correlated with th phenotype
 
-Cluster 5 : related to domestication. For both domestication process, we observe a change of slope between wild and domesticated but with different level between asian and african.
-In this cluster : LAX1, APO2, MOC1, SHAT5
-no correlation with Phenotype
-Link with PC3 and PC4 which split the wild/domesticated in asian and african separatly
+Cluster 2 : Slope between the 2 stages in Positive in wild compraed to domesticated species
+Enriched in GRF (Growth response factor) , ARF (Auxin Response factor) and bZIP genes
+Among the 18 genes, expression 4 genes are negatively correlated with pb number, 5 negatively correlated with Sb number, 10 with Sp number
+interesting gene : 
+OsGRF6 10.1104/pp.114.235564 , the target OsJMJ706 belong to cluster 4.
+CGA1 (CYTOKININ-RESPONSIVE GATA TRANSCRIPTION FACTOR1/GNC-like (CGA1/GNL)  : 10.1104/pp.113.217265, plant architecture and cytokinin
 
-Cluster 2 : related to continent?
-different slope between asian and african... find a link with PCA analysis and/or DE analysis (stage~continent)
+Cluster 3 : Divergent relation between wild/cultivated in the 2 continent.
+Enriched on ef-HD and AB13VP1
+known gene : LAX1 - RFL/APO2 - OsMADS4 - IAA2
+No correlation with phenotype..
+TF DEgene-continent
+
+Cluster 4 : Slope Chnage in Indica and Glaberrima BUT in opposite
+Interpretation : genes that promote spikelet differentiation but opposite regulation in Asian and Africa dommesticated rice 
+Enriched in HB, G2-like, bZIP, MADS, bHLH, (less AP2-EREBP)
+8 genes (on 31) negatively correlated with Sb number
+genes known : IDS1 (10.1111/j.1365-313X.2011.04804.x) , MFO1 (10.1105/tpc.109.068742, 10.1111/j.1365-313X.2010.04354.x) , OsMADS14 (10.1105/tpc.112.097105), HOX14
+See the gene OsJMJ706 targetted by OsGRF6
+
+Cluster 5 : slope change in indica...Yiel Potential
+Enriched in AP2 and NAC
+13 genes (on 17) positively correlated with Sn nb, 4 positively correleted with Pb nb, 
+
+
+Cluster6 : different pattern 
+10 genes (on 15) positively correlated with Sbnb
+Enriched on MYB and MADS box genes
+10 genes ( on 15) positively correlated with Sb nb
+Some TF DE stage~continent
+Genes known : OsMADS47 and an isoform OsMADS47, SPL2
+ETR2 gene : 10.1105/tpc.108.065391
+MYB : 10.1111/tpj.12286
 
 
 The difficulties is to represent the merging of the data all together : how to do it?
 
 > **Next work to finalize
-Analyse along time course AP2/HB genes presents in cluster 3 and 4 to evaluate if there is a delay in expression that could explain the phenotype...
-I propose to do a new fluidgm on the time course 1(same samples as transcriptom samples) and not on time course 2 as the previous analysis to avoid difference and see more a effect on time course diversity
+Analyse along time course AP2/HB genes presents to evaluate if there is a delay in expression that could explain the phenotype...And Also some genes present on cluster 1 &2...
+I propose to do a new fluidgm on the time course 1(same samples as transcriptom samples) 
 
 SNP-promoter diversity : make a short coherent list of genes to link it with domestication process?**
 
 
 
-## Functional characterization of three AP2 genes
+## Functional characterization of three AP2 genes : not on the paper
 
 Three AP2 genes were selected because they are differentially expressed across species and their mutant were publicly available.
 
