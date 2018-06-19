@@ -93,6 +93,12 @@ The PC5 instead splits developmental stages across all species but *O. indica*, 
 
 We have used principal component (PC) analysis to group genes that behave similarly in the various species. The first PC successfully groups genes that are co-expressed across the species. Many transcription factor families are enriched among those genes ***(Fig-05, Suppl-Fig-01)***.
 
+### AP2
+
+AP2 genes [***here a good review of ap2s?***] are the most differentially expressed between Branch and Spikelet meristems.
+Many AP2 genes are upregulated in the branch meristem. 
+
+
 
 . **Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)**
 
