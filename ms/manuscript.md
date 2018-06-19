@@ -18,21 +18,6 @@ bibliography: ../bib/references.bib
     - evolution of transcription factor family expression
     - does selection for the same phenotype affect expression of the same genes / sets of genes
 
-# Materials and Methods
-
-## Plant Material and Growth Conditions
-
-For Phenotyping, 20 accessions ***(Supplementary Dataset 1)*** of *O. sativa*, *O. glaberrima*, *O. barthii* , plants were grown in the field of CIAT in Cali (Colombia) and in the greenhouse of IRD at Montpellier (France) for *O. rufipogon*.
-At panicle maturity, the 3 main panicle from 3 plants per accession per repeat were collected (i.e 18 panicles/ accession). Each panicle was spread out and fixed on a white paper by tape. Panicle structure and seed number were analyses using P-TRAP software (Al-Tam et al., 2013). The quantified panicle traits included rachis length (RL in cm), total panicle length (PanL in cm), primary branch number (PbN), primary branch average length (PbL in cm), primary branch internode average length (PbintL in cm), secondary branch number (SbN), secondary branch average length (SBL in cm), secondary branch internode average length (SbintL in cm) and spikelet number (SpN). (Need a figure??). Phenotype description and statistical analysis of variance were performed by using functions in R software.
-For expression analysis, plants were growth in greenhouse in Montpellier ...7 weeks in LD days and the shift to SD. 9 panicle mature per accessions have been phenotyped in Montpellier : table (phenotype_paniculesequeneced corrected.xls on folder Accession phenotype)
-
-## Tissue collection and RNA sequencing
-For expression analysis, around 15 panicles from each accession (IR64 for O. sativa indica, Niponbarre for O. sativa japonica, W1654 for O. rufipogon, Tog5681 for O. Glaberima, and B88 for O. Barthii) were collected from 4 days to 15 days after induction in 3 biological replicates for each repetition (kinetic 1 and 2).
-Panicles were collected at 4 different morphological stages: stage 1, inflorescence (rachis ) meristem stage;  stage 2, branching stage (i.e, initiation of primary branches, panicles with elongated primary and higher order branch development); stage 3, spikelet differentiation; stage4, Floret differentiation and early flower organ development.
-
-
-Total RNAs (including small RNAs) were extracted using RNeasy Plant Mini Kit with RLT and RWT buffers (Qiaegn, France). DNAse treatments were performed using the RNAeasy-free DNase set (Qiagen, France).
-
 
 # Results
 
@@ -108,6 +93,12 @@ The PC5 instead splits developmental stages across all species but *O. indica*, 
 
 We have used principal component (PC) analysis to group genes that behave similarly in the various species. The first PC successfully groups genes that are co-expressed across the species. Many transcription factor families are enriched among those genes ***(Fig-05, Suppl-Fig-01)***.
 
+### AP2
+
+AP2 genes [***here a good review of ap2s?***] are the most differentially expressed between Branch and Spikelet meristems.
+Many AP2 genes are upregulated in the branch meristem. 
+
+
 
 . **Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)**
 
@@ -140,7 +131,7 @@ Interesting genes highlighed : AP2/ALOG on one side and MADS box genes in the ot
 Interestingly, some genes seems to have a a variant pattern in indica (some AP2 and MADS box) : these genes are present on cluster3 and 4
 Maybe make a bridge with phenotype (high and low branching) that could be explained by these genes.
 
-### Cluster analysis
+### Cluster analysis : This part have to be update with the last clustering data
 
 > **the different pattern could be link to phenotype (correlation test) and or are interesting based on the gene enrichment and composition**
 
@@ -193,14 +184,29 @@ Inflorescence branching in Solanaceae is modulated by subtle modifications of tr
 
 # Materials and Methods
 
+## Plant Material and Growth Conditions
+
+For Phenotyping, 20 accessions ***(Supplementary Dataset 1)*** of *O. sativa*, *O. glaberrima*, *O. barthii* , plants were grown in the field of CIAT in Cali (Colombia) and in the greenhouse of IRD at Montpellier (France) for *O. rufipogon*.
+At panicle maturity, the 3 main panicle from 3 plants per accession per repeat were collected (i.e 18 panicles/ accession). Each panicle was spread out and fixed on a white paper by tape. Panicle structure and seed number were analyses using P-TRAP software (Al-Tam et al., 2013). The quantified panicle traits included rachis length (RL in cm), total panicle length (PanL in cm), primary branch number (PbN), primary branch average length (PbL in cm), primary branch internode average length (PbintL in cm), secondary branch number (SbN), secondary branch average length (SBL in cm), secondary branch internode average length (SbintL in cm) and spikelet number (SpN). (Need a figure??). Phenotype description and statistical analysis of variance were performed by using functions in R software.
+For expression analysis, plants were growth in greenhouse in Montpellier ...7 weeks in LD days and the shift to SD. 9 panicle mature per accessions have been phenotyped in Montpellier : table (phenotype_paniculesequeneced corrected.xls on folder Accession phenotype)
+
+## Tissue collection and RNA sequencing
+For expression analysis, around 15 panicles from each accession (IR64 for O. sativa indica, Niponbarre for O. sativa japonica, W1654 for O. rufipogon, Tog5681 for O. Glaberima, and B88 for O. Barthii) were collected from 4 days to 15 days after induction in 3 biological replicates for each repetition (kinetic 1 and 2).
+Panicles were collected at 4 different morphological stages: stage 1, inflorescence (rachis ) meristem stage;  stage 2, branching stage (i.e, initiation of primary branches, panicles with elongated primary and higher order branch development); stage 3, spikelet differentiation; stage4, Floret differentiation and early flower organ development.
+
+
+Total RNAs (including small RNAs) were extracted using RNeasy Plant Mini Kit with RLT and RWT buffers (Qiaegn, France). DNAse treatments were performed using the RNAeasy-free DNase set (Qiagen, France).
+
+s
+
 ## Gene IDs and Names
 
 Gene names were retrieved from [FunRiceGenes](https://funricegenes.github.io/) [@doi:10.1093/gigascience/gix119]
 
 # Supplementary Material
 
-Supplementary Table 1: Panicle traits for 91 rice accessions.
-Supplementary Table 2: Independent measurements of panicle traits for 5 selected rice accessions.
+- Supplementary Table 1: Panicle traits for 91 rice accessions.
+- Supplementary Table 2: Independent measurements of panicle traits for 5 selected rice accessions.
 
 # References
 

@@ -1,6 +1,32 @@
-# Note
+# Graphical parameters
 
-**Do not base your work on commits in the `devel` branches, because we might amend them**
+This are the graphical parameters that I am trying to use right now.
+
+### Categorical variables
+
+```
+color_palette <- c("blue", "goldenrod")
+```
+
+### Continuous variables and scales
+
+```
+c(high = "#001a33",
+ low = "#cce6ff")
+```
+
+### Order of species
+
+Reference - African (wild - domesticated) - Asian (wild - domesticated)
+
+```
+species <- factor(species,
+                  levels = c("O. japonica",
+                             "O. barthii",
+                             "O. glaberrima",
+                             "O. rufipogon",
+                             "O. indica")))
+```
 
 # Reproduce the analysis - requirements
 
@@ -62,3 +88,7 @@ ird-5acc-paper
 ├── tables
 └── template
 ```
+
+# Note
+
+**Do not base your work on commits in the `devel` branches, because we might amend them**
