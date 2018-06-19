@@ -43,8 +43,12 @@ pcx_tf <- pcx %>%
 
 # Plot Enrichement --------------------------------------------------------
 
-families <- c("AP2-EREBP", "WRKY", 
-              "MADS", "HB")
+families <- c(ap2 = "AP2-EREBP", 
+              mads = "MADS",
+              nac = "NAC",
+              hb = "HB",
+              sbp = "SBP",
+              bhlh = "bHLH")
 
 p_enr <- ggplot(pcx_tf %>%
                 filter(Family %in% families),
@@ -56,20 +60,22 @@ p_enr <- ggplot(pcx_tf %>%
              lwd = .05,
              colour = "grey") +
   # geom_rug(aes(x = rank_pc1, y = NULL), alpha = .5) +
-  facet_wrap(facets = "Family", ncol = 1) +
-  theme_bw() 
+  facet_grid(Family ~ .) +
+  theme_bw()
 p_enr
 
 # Define functions for heatmap --------------------------------------------
 
 plot_heatmap <- function(family = "AP2-EREBP",
-                         norm = by_locus_species) {
+                         norm = by_locus_species,
+                         cutree_rows = 2,
+                         filter_abs_pc = .003) {
   norm <- enquo(norm)
   to_heat <- pcx_tf %>%
     filter(Family == family) %>%
     mutate(abs_pc5 = abs(PC5)) %>%
     # arrange(desc(abs_pc1)) %>%
-    filter(abs_pc5 > .0015) %>%
+    filter(abs_pc5 > filter_abs_pc) %>%
     .$locus_id %>%
     get_expression(dds) %>%
     group_by(locus_id, species, stage) %>%
@@ -85,11 +91,12 @@ plot_heatmap <- function(family = "AP2-EREBP",
   p <- pheatmap(to_heat,
            color = colorRampPalette(c( "white", "blue4"))(50),
            show_rownames = F,
+           # fontsize = 5,
            cutree_cols = 2,
            cluster_cols = F,
            # cluster_rows = F,
            gaps_col = 5,
-           cutree_rows = 2,
+           cutree_rows = cutree_rows,
            cellwidth = 9,
            cellheight = 5,
            main = family)
@@ -103,6 +110,13 @@ heat_ap2 <- plot_heatmap("AP2-EREBP")
 heat_mads <- plot_heatmap("MADS")
 plot_heatmap("WRKY")
 heat_hb <- plot_heatmap("HB")
+heat_nac <- plot_heatmap("NAC")
+heat_spb <- plot_heatmap("SBP", cutree_rows = 1)
+heat_tcp <- plot_heatmap("TCP", cutree_rows = 1)
+heat_bhlh <- plot_heatmap("bHLH")
+heat_zfhd <- plot_heatmap("zf-HD", cutree_rows = 1)
+
+tst <- families %>% map(plot_heatmap)
 
 # Save plots --------------------------------------------------------------
 
@@ -112,8 +126,13 @@ pdf("../fig/fig-05-TFs-in-PCA.pdf",
 grid.arrange(grobs = list(p_enr,
                           heat_ap2[[4]],
                           heat_hb[[4]],
-                          heat_mads[[4]]),
-             nrow = 1)
+                          heat_mads[[4]],
+                          heat_nac[[4]],
+                          heat_sbp[[4]]),
+             layout_matrix = cbind(c(1,1,1,1),
+                                   c(2,2,5,5),
+                                   c(3,3,6,6),
+                                   c(4,4,7,7)))
 
 dev.off()
 

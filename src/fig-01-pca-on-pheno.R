@@ -60,8 +60,8 @@ p_1 <- p$data %>%
              fill = Species,
              colour = Species,
              pch = Species)) +
-  geom_point(size = 1,
-             alpha = .5) +
+  geom_point(size = 1.2,
+             alpha = .7) +
   annotate("segment",
            x = 0, xend = p_load$PC1,
            y = 0, yend = p_load$PC2,
