@@ -111,7 +111,7 @@ heat_mads <- plot_heatmap("MADS")
 plot_heatmap("WRKY")
 heat_hb <- plot_heatmap("HB")
 heat_nac <- plot_heatmap("NAC")
-heat_spb <- plot_heatmap("SBP", cutree_rows = 1)
+heat_sbp <- plot_heatmap("SBP", cutree_rows = 1)
 heat_tcp <- plot_heatmap("TCP", cutree_rows = 1)
 heat_bhlh <- plot_heatmap("bHLH")
 heat_zfhd <- plot_heatmap("zf-HD", cutree_rows = 1)
@@ -128,7 +128,8 @@ grid.arrange(grobs = list(p_enr,
                           heat_hb[[4]],
                           heat_mads[[4]],
                           heat_nac[[4]],
-                          heat_sbp[[4]]),
+                          heat_sbp[[4]],
+                          heat_bhlh[[4]]),
              layout_matrix = cbind(c(1,1,1,1),
                                    c(2,2,5,5),
                                    c(3,3,6,6),

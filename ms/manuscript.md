@@ -75,9 +75,9 @@ We have compared the transcriptomes of PBM and SM separately in those 5 rice spe
 - 387 differentially expressed genes in ***O. indica***.
 - 831 differentially expressed genes in ***O. japonica***
 
-> **The number of DE genes is lower in species that make more SbN. Still secondary branches  How do we discuss this?**
+> **The number of DE genes is lower in species that make more SbN. How do we discuss this?**
 
-## Transcriptomic patterns can in multispecies experiments can be detected with PCA
+## Transcriptomic patterns in multispecies experiments can be detected with PCA
 
 In RNAseq experiments that compare (multiple conditions from) multiple species, useful and reliable expression pattern are often layered under various sources of noise or of unreliable information: that noise is a mix of mapping bias and species specific expression values that are unrelated to the conditions of interest.
 
@@ -91,14 +91,32 @@ The PC5 instead splits developmental stages across all species but *O. indica*, 
 
 ## Multiple transcription factor families are co-expressed in the branch meristems across species
 
-We have used principal component (PC) analysis to group genes that behave similarly in the various species. The first PC successfully groups genes that are co-expressed across the species. Many transcription factor families are enriched among those genes ***(Fig-05, Suppl-Fig-01)***.
+We have used principal component (PC) analysis to group genes that behave similarly in the various species. The fifth PC (PC5) successfully groups genes that are co-expressed across the species. Many transcription factor families are enriched among those genes ***(Fig-05, Suppl-Fig-01)***.
 
 ### AP2
 
-AP2 genes [***here a good review of ap2s?***] are the most differentially expressed between Branch and Spikelet meristems.
-Many AP2 genes are upregulated in the branch meristem. 
+AP2 genes [***here a good review of ap2s?***] are the most differentially expressed between BM and SM. While only 2 AP2 genes are upregulated in the SM, at least 20 AP2 genes are upregulated in the BM.
 
+> ***Extend***
 
+### MADS
+
+Eight MADS-box genes, many of which are confirmed to be involved in spikelet development, are upregulated in the SM. Among them *AFO*, *PAP2*, *OsMADS15 - DEP*, *OsMADS55*, *OsMADS6 - MFO*, *OsMDS14*, *OsMADS17*, *OsMADS32 - CFO1*. Other four could be over-expressed specifically in African species: *OsMADS4*,*OsMADS45*, *OsMADS20*, *OsMADS2*, *OsMADS18*.
+
+Five MADS-box genes are upregulated instead in the BM. Among them: *MADS16 - SPW1*, *LOC_Os06g01890*, *OsMADS47 - OsMDP1*, *OsMADS26*, *OsMADS50*
+
+> ***Reshape, extend***
+
+### zf-HD
+
+Six zf-HD genes are upregulated in the SM, especially in African species. Among them *osZHD4* and *osZHF8*.
+One zf-HD gene is upregulated in the BM, also especially in African species.
+
+zf-HD proteins seems to have a specific function in African Species.
+
+### Homeobox
+
+Several homeobox are upregulated in the SM. Among them *LSY1* (regulator of adaxial/abaxial? trichome? interacts with AP2s) and several *HB - START domain* (They interact with Lipids - also several Lipid Binding Proteins are Upregulated).
 
 . **Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)**
 
