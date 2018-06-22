@@ -103,20 +103,36 @@ AP2 genes [***here a good review of ap2s?***] are the most differentially expres
 
 Eight MADS-box genes, many of which are confirmed to be involved in spikelet development, are upregulated in the SM. Among them *AFO*, *PAP2*, *OsMADS15 - DEP*, *OsMADS55*, *OsMADS6 - MFO*, *OsMDS14*, *OsMADS17*, *OsMADS32 - CFO1*. Other four could be over-expressed specifically in African species: *OsMADS4*,*OsMADS45*, *OsMADS20*, *OsMADS2*, *OsMADS18*.
 
-Five MADS-box genes are upregulated instead in the BM. Among them: *MADS16 - SPW1*, *LOC_Os06g01890*, *OsMADS47 - OsMDP1*, *OsMADS26*, *OsMADS50*
+Five MADS-box genes are upregulated instead in the BM. Among them: *MADS16 - SPW1*, *LOC_Os06g01890*, *OsMADS47 - OsMDP1* [root elongation], *OsMADS26*, *OsMADS50*
 
 > ***Reshape, extend***
 
 ### zf-HD
 
-Six zf-HD genes are upregulated in the SM, especially in African species. Among them *osZHD4* and *osZHF8*.
+Six *zf-HD* genes are upregulated in the SM, especially in African species. Among them *osZHD4* and *osZHF8*.
 One zf-HD gene is upregulated in the BM, also especially in African species.
 
 zf-HD proteins seems to have a specific function in African Species.
 
+> ***Extend***
+
 ### Homeobox
 
-Several homeobox are upregulated in the SM. Among them *LSY1* (regulator of adaxial/abaxial? trichome? interacts with AP2s) and several *HB - START domain* (They interact with Lipids - also several Lipid Binding Proteins are Upregulated).
+Several *Homeobox* are upregulated in the SM. Among them *LSY1* (regulator of adaxial/abaxial? trichome? interacts with AP2s) and several *HB - START domain* (They interact with Lipids - also several Lipid Binding Proteins are Upregulated, or maybe same annotations for the same genes).
+
+Also one *Homeobox* gene is upregulated in the BM of African species: *LOC_Os10g26500*
+
+> ***Extend, revise: get better functional annotation for HB subfamilies***
+
+### SPB
+
+At least four *SPB* genes are upregulated in the SM: *SPL10*, *SPL13*, *SPL8-SGL1*, *SPL7*, *SPL10*.
+
+*SPL 3*, instead is upregulated in the BM.
+
+### NAC
+
+At least eight *NAC* genes are upregulated in the SM: among the *NAC9*, *NAC3*, *NAC14*, *NAC22*, *OMTN1*; (some are involved in root system architecture).
 
 . **Presentation of the stage/time course, checking some genes by Q-PCR (perhaps other genes necessary which could be include in the next fluidgm)**
 

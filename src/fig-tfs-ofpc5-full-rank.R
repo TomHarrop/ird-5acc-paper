@@ -101,7 +101,7 @@ dev.off()
 
 pdf("../fig/fig_NAC_from_pc5.pdf",
     width = 20,
-    height = 30)
+    height = 50)
 print(plot_kword("NAC"))
 dev.off()
 
