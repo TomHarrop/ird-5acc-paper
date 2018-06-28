@@ -2,8 +2,9 @@
 *.docx
 
 # data
-data-raw/*
 data/*
+data-raw/*
+seq/*
 
 # figures
 fig/*

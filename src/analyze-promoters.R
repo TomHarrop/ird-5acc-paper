@@ -1,31 +1,9 @@
 library(tidyverse)
-library(biomaRt)
+library(httr)
+library(jsonlite)
+library(RMySQL)
 
-
-# Connect to gramene ------------------------------------------------------
-
-# tried different options but I get curl errors
-
-# listMarts(host = "gramene.org")
-# gramene <- useMart(biomart = "ENSEMBL_MART_PLANT",
-#                    host = "gramene.org")
-# # listDatasets(gramene)
-# 
-# # dataset: japonica IRGSP-1.0
-# # japonica <- useDataset(dataset = "osativa_eg_gene",
-# #                        mart = gramene)
-# sativa <- useMart(biomart = "ENSEMBL_MART_PLANT",
-#                   host = "http://ensembl.gramene.org",
-#                   dataset = "osativa_eg_gene")
-
-# 
-
-
-# View(listFilters(japonica))
-# View(listAttributes(japonica))
-
-
-# get MSU to RAPDB --------------------------------------------------------
+# Download MSU to RAPDB ---------------------------------------------------
 
 dict_url <-  "http://rapdb.dna.affrc.go.jp/download/archive/RAP-MSU_2018-03-29.txt.gz"
 
@@ -40,44 +18,113 @@ if(!file.exists(dict_path)) {
   load(dict_path)
 }  
 
-id <- "LOC_Os03g12950"
+id <- c("LOC_Os03g12950", "LOC_Os03g60430")
 id_rap <- dict %>%
-  filter(grepl(id, msu)) %>%
+  filter(grepl(paste(id, collapse = "|"), msu)) %>%
   pull(rapdb)
 
-# getBM(attributes = "ensembl_gene_id",
-#       mart = sativa) 
 
-# getBM(filters = "chromosome_name",
-#       values = 1,
-#       attributes = "ensembl_gene_id",
-#       mart = sativa)
+# connect to gramene REST server ------------------------------------------
+
+server <- "http://rest.ensemblgenomes.org"
+
+ext <- paste0("/sequence/id/", "LOC_Os12g36040.1",
+              "?object_type=transcript;",
+              "db_type=otherfeatures;",
+              "type=cds;",
+              "species=oryza_sativa")
 
 
-# Try direct XML query ----------------------------------------------------
 
-tst <- getXML(host = "http://ensembl.gramene.org/biomart/martservice?",
-              xmlquery = '<?xml version="1.0" encoding="UTF-8"?>
-         <!DOCTYPE Query>
-         <Query  virtualSchemaName = "default" formatter = "TSV" header = "0" uniqueRows = "0" count = "" datasetConfigVersion = "0.6" >
-         
-         <Dataset name = "osativa_eg_gene" interface = "default" >
-         <Filter name = "chromosome_name" value = "1"/>
-         <Attribute name = "ensembl_gene_id" />
-         <Attribute name = "ensembl_transcript_id" />
-         </Dataset>
-         </Query>')
+server <- "http://rest.ensemblgenomes.org"
+ext <- "/sequence/id"
+r <- POST(paste(server, ext, sep = ""),
+          content_type("application/json"),
+          accept("application/json"),
+          # body = '{ "ids" : ["Os03g0232200", "Os03g0818800"],
+          body = '{ "ids" : ["Os03g0232200"],
+          "format" : "fasta"}')
 
-tst <- getXML(host = "http://ensembl.gramene.org/biomart/martservice?",
-              xmlquery = '<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE Query>
-<Query  virtualSchemaName = "default" formatter = "FASTA" header = "0" uniqueRows = "0" count = "" datasetConfigVersion = "0.6" >
-			
-	<Dataset name = "osativa_eg_gene" interface = "default" >
-		<Filter name = "upstream_flank" value = "2000"/>
-		<Filter name = "ensembl_gene_id" value = "Os03g0232200"/>
-		<Attribute name = "ensembl_gene_id" />
-		<Attribute name = "ensembl_transcript_id" />
-		<Attribute name = "gene_flank" />
-	</Dataset>
-</Query>')
+content(r)
+
+# this downloads promoter [2000 before TSS]
+# and gene sequence
+
+r_ext <- POST(paste(server, ext, sep = ""),
+              content_type("application/json"),
+              accept("application/json"),
+              # body = '{ "ids" : ["Os03g0232200"],
+              body = '{ "ids" : ["Os03g0232200", "Os03g0818800"],
+                        "expand_5prime" : [2000],
+          "format" : "fasta"}')
+
+tst <- content(r_ext) %>%
+  purrr::reduce(., .f = bind_rows) %>%
+  mutate(coord = str_split_fixed(string = desc,
+                                 pattern = ":",
+                                 n = 3)[,3])
+  
+
+# write(content(r), file = "tst.fasta")
+
+Biostrings::DNAStringSet(x = tst$seq)
+
+
+
+# Get alignments ----------------------------------------------------------
+
+server <- "http://rest.ensemblgenomes.org"
+
+get_alignment <- function(region) {
+  ext <- paste0("/alignment/region/oryza_sativa/",
+                region, "?",
+                "method=LASTZ_NET;",
+                "species_set=", "oryza_sativa",";",
+                # "species_set=oryza_indica;",
+                "species_set=oryza_barthii")  
+  
+  r <- GET(paste(server, ext, sep = ""),
+           content_type("application/json"))
+  
+  return(r)
+}
+
+tst$coord %>% map(get_alignment)
+
+r <- GET(paste(server, ext, sep = ""),
+         content_type("application/json"))
+
+
+stop_for_status(r)
+content(r)
+
+# with mysql
+
+con <- dbConnect(RMySQL::MySQL(),
+                 host = "mysql-eg-publicsql.ebi.ac.uk",
+                 port = 4157,
+                 username = "anonymous")
+res <- dbSendQuery(con, "use family;")
+dbFetch(res)
+dbClearResult(res)
+
+dbDisconnect(con)
+
+
+con <- dbConnect(RMySQL::MySQL(),
+                 host = "ensembldb.ensembl.org",
+                 port = 5306,
+                 username = "anonymous")
+dbGetInfo(con)
+rs <- dbSendQuery(con, "SHOW SCHEMAS LIKE '%compara%'")
+dbFetch(rs)
+dbClearResult(rs)
+dbDisconnect(con)
+con <- dbConnect(RMySQL::MySQL(),
+                 host = "ensembldb.ensembl.org",
+                 port = 5306,
+                 username = "anonymous", 
+                 dbname = "ensembl_compara_92")
+dbGetInfo(con)
+tst <- dbListTables(con)
+dbDisconnect(con)
