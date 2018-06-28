@@ -1,7 +1,7 @@
 library(tidyverse)
 library(httr)
 library(jsonlite)
-library(RMySQL)
+# library(RMySQL)
 
 # Download MSU to RAPDB ---------------------------------------------------
 
@@ -27,61 +27,36 @@ id_rap <- dict %>%
 # connect to gramene REST server ------------------------------------------
 
 server <- "http://rest.ensemblgenomes.org"
-
-ext <- paste0("/sequence/id/", "LOC_Os12g36040.1",
-              "?object_type=transcript;",
-              "db_type=otherfeatures;",
-              "type=cds;",
-              "species=oryza_sativa")
-
-
-
-server <- "http://rest.ensemblgenomes.org"
 ext <- "/sequence/id"
-r <- POST(paste(server, ext, sep = ""),
-          content_type("application/json"),
-          accept("application/json"),
-          # body = '{ "ids" : ["Os03g0232200", "Os03g0818800"],
-          body = '{ "ids" : ["Os03g0232200"],
-          "format" : "fasta"}')
-
-content(r)
 
 # this downloads promoter [2000 before TSS]
 # and gene sequence
-
-r_ext <- POST(paste(server, ext, sep = ""),
+r <- POST(paste(server, ext, sep = ""),
               content_type("application/json"),
               accept("application/json"),
               # body = '{ "ids" : ["Os03g0232200"],
               body = '{ "ids" : ["Os03g0232200", "Os03g0818800"],
                         "expand_5prime" : [2000],
-          "format" : "fasta"}')
-
-tst <- content(r_ext) %>%
+          "format" : "fasta"}') %>%
+  # At this point I just need the coordinates
+  content() %>%
   purrr::reduce(., .f = bind_rows) %>%
   mutate(coord = str_split_fixed(string = desc,
                                  pattern = ":",
-                                 n = 3)[,3])
-  
+                                 n = 3)[,3]) 
 
-# write(content(r), file = "tst.fasta")
-
-Biostrings::DNAStringSet(x = tst$seq)
-
-
+coord <- set_names(x = r$coord, nm = r$id)
 
 # Get alignments ----------------------------------------------------------
 
-server <- "http://rest.ensemblgenomes.org"
-
-get_alignment <- function(region) {
+# get synteny from coordinates in sativa
+get_alignment <- function(region, species) {
   ext <- paste0("/alignment/region/oryza_sativa/",
                 region, "?",
                 "method=LASTZ_NET;",
                 "species_set=", "oryza_sativa",";",
                 # "species_set=oryza_indica;",
-                "species_set=oryza_barthii")  
+                "species_set=", species)  
   
   r <- GET(paste(server, ext, sep = ""),
            content_type("application/json"))
@@ -89,42 +64,53 @@ get_alignment <- function(region) {
   return(r)
 }
 
-tst$coord %>% map(get_alignment)
+# aligs <- map(coord, get_alignment) %>%
+#   map(content)
 
-r <- GET(paste(server, ext, sep = ""),
-         content_type("application/json"))
+species <- c(barthii = "oryza_barthii",
+             indica = "oryza_indica")
 
+alig <- coord[2] %>%
+  get_alignment(species = "oryza_barthii") %>%
+  content()
 
-stop_for_status(r)
-content(r)
+alig_df <- purrr:::reduce(alig[[1]]$alignments,
+                          .f = bind_rows) %>%
+  mutate(names_desc = paste(species,seq_region,
+                            start, end, strand, sep = ":"))
 
-# with mysql
+tst <- set_names(alig_df$seq, nm = alig_df$names_desc)
+tst <- Biostrings::DNAStringSet(tst)
 
-con <- dbConnect(RMySQL::MySQL(),
-                 host = "mysql-eg-publicsql.ebi.ac.uk",
-                 port = 4157,
-                 username = "anonymous")
-res <- dbSendQuery(con, "use family;")
-dbFetch(res)
-dbClearResult(res)
+Biostrings::writeXStringSet(tst, filepath = "../seq/tst.fasta")
 
-dbDisconnect(con)
-
-
-con <- dbConnect(RMySQL::MySQL(),
-                 host = "ensembldb.ensembl.org",
-                 port = 5306,
-                 username = "anonymous")
-dbGetInfo(con)
-rs <- dbSendQuery(con, "SHOW SCHEMAS LIKE '%compara%'")
-dbFetch(rs)
-dbClearResult(rs)
-dbDisconnect(con)
-con <- dbConnect(RMySQL::MySQL(),
-                 host = "ensembldb.ensembl.org",
-                 port = 5306,
-                 username = "anonymous", 
-                 dbname = "ensembl_compara_92")
-dbGetInfo(con)
-tst <- dbListTables(con)
-dbDisconnect(con)
+# # with mysql
+# 
+# con <- dbConnect(RMySQL::MySQL(),
+#                  host = "mysql-eg-publicsql.ebi.ac.uk",
+#                  port = 4157,
+#                  username = "anonymous")
+# res <- dbSendQuery(con, "use family;")
+# dbFetch(res)
+# dbClearResult(res)
+# 
+# dbDisconnect(con)
+# 
+# 
+# con <- dbConnect(RMySQL::MySQL(),
+#                  host = "ensembldb.ensembl.org",
+#                  port = 5306,
+#                  username = "anonymous")
+# dbGetInfo(con)
+# rs <- dbSendQuery(con, "SHOW SCHEMAS LIKE '%compara%'")
+# dbFetch(rs)
+# dbClearResult(rs)
+# dbDisconnect(con)
+# con <- dbConnect(RMySQL::MySQL(),
+#                  host = "ensembldb.ensembl.org",
+#                  port = 5306,
+#                  username = "anonymous", 
+#                  dbname = "ensembl_compara_92")
+# dbGetInfo(con)
+# tst <- dbListTables(con)
+# dbDisconnect(con)
