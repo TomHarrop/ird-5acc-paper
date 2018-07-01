@@ -4,12 +4,11 @@ library(jsonlite)
 # library(RMySQL)
 
 # Download MSU to RAPDB ---------------------------------------------------
-
-dict_url <-  "http://rapdb.dna.affrc.go.jp/download/archive/RAP-MSU_2018-03-29.txt.gz"
-
-
 dict_path <- "../data/msu-to-rapdb.Rdata"
+
+
 if(!file.exists(dict_path)) {
+  dict_url <-  "http://rapdb.dna.affrc.go.jp/download/archive/RAP-MSU_2018-03-29.txt.gz"
   dict <- read_delim(dict_url,
                      delim = "\t", 
                      col_names = c("rapdb", "msu"))
@@ -54,6 +53,7 @@ get_alignment <- function(region, species) {
   ext <- paste0("/alignment/region/oryza_sativa/",
                 region, "?",
                 "method=LASTZ_NET;",
+                "aligned=0;",
                 "species_set=", "oryza_sativa",";",
                 # "species_set=oryza_indica;",
                 "species_set=", species)  
@@ -68,21 +68,31 @@ get_alignment <- function(region, species) {
 #   map(content)
 
 species <- c(barthii = "oryza_barthii",
-             indica = "oryza_indica")
+             indica = "oryza_indica",
+             rufipogon = "oryza_rufipogon",
+             glaberrima = "oryza_glaberrima")
 
-alig <- coord[2] %>%
-  get_alignment(species = "oryza_barthii") %>%
-  content()
+alig <- species %>%
+  map(., ~get_alignment(region = coord[2],
+                     species = .)) %>%
+  map(content)
 
-alig_df <- purrr:::reduce(alig[[1]]$alignments,
-                          .f = bind_rows) %>%
-  mutate(names_desc = paste(species,seq_region,
-                            start, end, strand, sep = ":"))
+make_alignment_df <- function(alignments) {
+  alig_df <- purrr:::reduce(alignments[[1]]$alignments,
+                            .f = bind_rows) %>%
+    mutate(names_desc = paste(species,seq_region,
+                              start, end, strand, sep = ":"))
+  return(alig_df)
+}
 
-tst <- set_names(alig_df$seq, nm = alig_df$names_desc)
-tst <- Biostrings::DNAStringSet(tst)
+alig_df <- map(alig, make_alignment_df) %>%
+  purrr::reduce(.f = bind_rows) %>%
+  distinct()
 
-Biostrings::writeXStringSet(tst, filepath = "../seq/tst.fasta")
+alig_df <- set_names(alig_df$seq, nm = alig_df$names_desc) %>%
+  Biostrings::DNAStringSet()
+
+Biostrings::writeXStringSet(alig_df, filepath = "../seq/tst.fasta")
 
 # # with mysql
 # 
