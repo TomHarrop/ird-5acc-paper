@@ -30,26 +30,39 @@ ext <- "/sequence/id"
 
 # this downloads promoter [2000 before TSS]
 # and gene sequence
-r <- POST(paste(server, ext, sep = ""),
-              content_type("application/json"),
-              accept("application/json"),
-              # body = '{ "ids" : ["Os03g0232200"],
-              body = '{ "ids" : ["Os03g0232200", "Os03g0818800"],
-                        "expand_5prime" : [2000],
-          "format" : "fasta"}') %>%
-  # At this point I just need the coordinates
-  content() %>%
-  purrr::reduce(., .f = bind_rows) %>%
-  mutate(coord = str_split_fixed(string = desc,
-                                 pattern = ":",
-                                 n = 3)[,3]) 
 
-coord <- set_names(x = r$coord, nm = r$id)
+get_coords <- function(id) {
+  
+  # get coordinates
+  r <- POST(paste(server, ext, sep = ""),
+            content_type("application/json"),
+            accept("application/json"),
+            # body = '{ "ids" : ["Os03g0232200"],
+            body = paste0('{ "ids" : ["',
+                          id,
+                          '"], "expand_5prime" : [2000],
+          "format" : "fasta"}')) %>%
+    # At this point I just need the coordinates
+    content() %>%
+    purrr::flatten() %>%
+    # purrr::reduce(., .f = bind_rows) %>%
+    .$desc %>% 
+    str_split_fixed(pattern = ":",
+                    n = 3) %>% .[3] 
+  
+  # coords better stored in named character
+  coords <- set_names(x = r, nm = id)
+  
+  return(coords)
+}
 
-# Get alignments ----------------------------------------------------------
+coords <- get_coords(id_rap[1])
+
+
+# Define useful functions ----------------------------------------------------------
 
 # get synteny from coordinates in sativa
-get_alignment <- function(region, species) {
+get_synteny <- function(region, species) {
   ext <- paste0("/alignment/region/oryza_sativa/",
                 region, "?",
                 "method=LASTZ_NET;",
@@ -64,19 +77,6 @@ get_alignment <- function(region, species) {
   return(r)
 }
 
-# aligs <- map(coord, get_alignment) %>%
-#   map(content)
-
-species <- c(barthii = "oryza_barthii",
-             indica = "oryza_indica",
-             rufipogon = "oryza_rufipogon",
-             glaberrima = "oryza_glaberrima")
-
-alig <- species %>%
-  map(., ~get_alignment(region = coord[2],
-                     species = .)) %>%
-  map(content)
-
 make_alignment_df <- function(alignments) {
   alig_df <- purrr:::reduce(alignments[[1]]$alignments,
                             .f = bind_rows) %>%
@@ -85,12 +85,44 @@ make_alignment_df <- function(alignments) {
   return(alig_df)
 }
 
-alig_df <- map(alig, make_alignment_df) %>%
-  purrr::reduce(.f = bind_rows) %>%
-  distinct()
+# aligs <- map(coord, get_alignment) %>%
+#   map(content)
 
-alig_df <- set_names(alig_df$seq, nm = alig_df$names_desc) %>%
-  Biostrings::DNAStringSet()
+get_sequences <- function(coords, species) 
+{
+  # get syntenies for all species
+  alig <- species %>%
+    map(., ~get_synteny(region = coords,
+                        species = .)) %>%
+    map(content)
+  
+  # turn them into a tibble
+  alig_df <- map(alig, make_alignment_df) %>%
+    purrr::reduce(.f = bind_rows) %>%
+    distinct()
+  
+  # and into a biostring object
+  alig_df <- set_names(alig_df$seq, nm = alig_df$names_desc) %>%
+    Biostrings::DNAStringSet()
+}
+
+# test workflow
+
+species <- c(barthii = "oryza_barthii",
+             indica = "oryza_indica",
+             rufipogon = "oryza_rufipogon",
+             glaberrima = "oryza_glaberrima")
+
+
+tst <- id_rap[1] %>%
+  get_coords() %>%
+  get_sequences(species = species)
+
+
+
+
+
+
 
 Biostrings::writeXStringSet(alig_df, filepath = "../seq/tst.fasta")
 
