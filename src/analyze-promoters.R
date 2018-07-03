@@ -1,7 +1,7 @@
 library(tidyverse)
 library(httr)
 library(jsonlite)
-# library(RMySQL)
+library(Biostrings)
 
 # Download MSU to RAPDB ---------------------------------------------------
 dict_path <- "../data/msu-to-rapdb.Rdata"
@@ -17,31 +17,43 @@ if(!file.exists(dict_path)) {
   load(dict_path)
 }  
 
+
+# Functions that convert MSU tu RAP ---------------------------------------
+
+
 id <- c("LOC_Os03g12950", "LOC_Os03g60430")
 id_rap <- dict %>%
   filter(grepl(paste(id, collapse = "|"), msu)) %>%
   pull(rapdb)
 
+pull_rap <- function(ids) {
+  id_rap <- dict %>%
+    filter(grepl(paste(ids, collapse = "|"), msu)) %>%
+    pull(rapdb)
+  return(id_rap)
+}
 
-# connect to gramene REST server ------------------------------------------
+# gramene / Ensembl REST server ------------------------------------------
 
 server <- "http://rest.ensemblgenomes.org"
 ext <- "/sequence/id"
 
+
+# Define useful functions ----------------------------------------------------------
+
 # this downloads promoter [2000 before TSS]
 # and gene sequence
 
-get_coords <- function(id) {
-  
+get_coords <- function(id) 
+{
   # get coordinates
   r <- POST(paste(server, ext, sep = ""),
             content_type("application/json"),
             accept("application/json"),
             # body = '{ "ids" : ["Os03g0232200"],
-            body = paste0('{ "ids" : ["',
-                          id,
-                          '"], "expand_5prime" : [2000],
-          "format" : "fasta"}')) %>%
+            body = paste0('{ "ids" : ["', id,'"],',
+                          '"expand_5prime" : [2000],',
+          '"format" : "fasta"}')) %>%
     # At this point I just need the coordinates
     content() %>%
     purrr::flatten() %>%
@@ -56,12 +68,9 @@ get_coords <- function(id) {
   return(coords)
 }
 
-coords <- get_coords(id_rap[1])
-
-
-# Define useful functions ----------------------------------------------------------
 
 # get synteny from coordinates in sativa
+
 get_synteny <- function(region, species) {
   ext <- paste0("/alignment/region/oryza_sativa/",
                 region, "?",
@@ -77,6 +86,8 @@ get_synteny <- function(region, species) {
   return(r)
 }
 
+
+
 make_alignment_df <- function(alignments) {
   alig_df <- purrr:::reduce(alignments[[1]]$alignments,
                             .f = bind_rows) %>%
@@ -87,6 +98,9 @@ make_alignment_df <- function(alignments) {
 
 # aligs <- map(coord, get_alignment) %>%
 #   map(content)
+
+
+# Wrapper that downloads synteny groups -----------------------------------
 
 get_sequences <- function(coords, species) 
 {
@@ -106,7 +120,8 @@ get_sequences <- function(coords, species)
     Biostrings::DNAStringSet()
 }
 
-# test workflow
+
+# Test  workflow ----------------------------------------------------------
 
 species <- c(barthii = "oryza_barthii",
              indica = "oryza_indica",
@@ -114,17 +129,48 @@ species <- c(barthii = "oryza_barthii",
              glaberrima = "oryza_glaberrima")
 
 
-tst <- id_rap[1] %>%
+tst <- id_rap[2] %>%
   get_coords() %>%
-  get_sequences(species = species)
+  get_sequences(species = species) 
+# %>%
+#   subseq(1, 2000)
+
+# Run on selected genes ---------------------------------------------------
+
+
+"LOC_Os03g60430" %>%
+  pull_rap() %>%
+  get_coords() %>%
+  get_sequences(species = species) %>%
+  writeXStringSet(filepath = "../seq/LOC_Os03g60430.fasta")
+
+# osZHD4 upregulated in SM in africans LOC_Os11g13930
+# interesting, promoter not in synteny on african rice
+
+"LOC_Os11g13930" %>%
+  pull_rap() %>%
+  get_coords() %>%
+  get_sequences(species = species) %>%
+  writeXStringSet(filepath = "../seq/LOC_Os11g13930.fasta")
+
+# OsMADS4 - LOC_Os05g34940
+# up in SM, expecially in african species (duh!)
+
+osmads4 <- "LOC_Os05g34940" 
+
+osmads4 %>%
+  pull_rap() %>%
+  get_coords() %>%
+  get_sequences(species = species) %>%
+  msa(method = "ClustalOmega") %>%
+  DNAStringSet() %>%
+  writeXStringSet(filepath = paste0("../seq/",
+                                    osmads4, "-",
+                                    quote(osmads4),
+                                    ".fasta"))
 
 
 
-
-
-
-
-Biostrings::writeXStringSet(alig_df, filepath = "../seq/tst.fasta")
 
 # # with mysql
 # 
