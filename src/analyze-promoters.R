@@ -52,7 +52,7 @@ get_coords <- function(id)
             accept("application/json"),
             # body = '{ "ids" : ["Os03g0232200"],
             body = paste0('{ "ids" : ["', id,'"],',
-                          '"expand_5prime" : [2000],',
+                          # '"expand_5prime" : [2000],',
           '"format" : "fasta"}')) %>%
     # At this point I just need the coordinates
     content() %>%
@@ -111,13 +111,16 @@ get_sequences <- function(coords, species)
     map(content)
   
   # turn them into a tibble
-  alig_df <- map(alig, make_alignment_df) %>%
-    purrr::reduce(.f = bind_rows) %>%
-    distinct()
+  # alig_df <- map(alig, make_alignment_df) %>%
+  #   purrr::reduce(.f = bind_rows) %>%
+  #   distinct() %>%
+  #   mutate(TSS = case_when(strand > 0 ~ start,
+  #                          strand < 0 ~ end))
+  # 
   
   # and into a biostring object
-  alig_df <- set_names(alig_df$seq, nm = alig_df$names_desc) %>%
-    Biostrings::DNAStringSet()
+  # alig_df <- set_names(alig_df$seq, nm = alig_df$names_desc) %>%
+  #   Biostrings::DNAStringSet()
 }
 
 
@@ -129,11 +132,13 @@ species <- c(barthii = "oryza_barthii",
              glaberrima = "oryza_glaberrima")
 
 
-tst <- id_rap[2] %>%
+tst <- "LOC_Os11g13930" %>% pull_rap() %>%
   get_coords() %>%
   get_sequences(species = species) 
 # %>%
 #   subseq(1, 2000)
+
+tst %>% mutate(diff = end - start)
 
 # Run on selected genes ---------------------------------------------------
 
@@ -171,6 +176,20 @@ osmads4 %>%
 
 
 
+# Try to get more features ------------------------------------------------
+
+# gff3
+
+# server <- "http://rest.ensemblgenomes.org"
+# ext <- "/overlap/region/oryza_sativa/3:6992879:6999181:-1?feature=gene;feature=transcript;feature=cds;feature=exon"
+# 
+# r <- GET(paste(server, ext, sep = ""), content_type("text/x-gff3"))
+# 
+# stop_for_status(r)
+# 
+# 
+# print(content(r))
+# write(content(r), file = "../seq/tst.gff")
 
 # # with mysql
 # 
