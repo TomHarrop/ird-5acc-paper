@@ -5,6 +5,7 @@ library(Biostrings)
 library(msa)
 
 # Download MSU to RAPDB ---------------------------------------------------
+
 dict_path <- "../data/msu-to-rapdb.Rdata"
 
 if(!file.exists(dict_path)) {
@@ -95,7 +96,7 @@ get_seq("Os03g0232200")
 
 # Wrapper for the full function -------------------------------------------
 
-some_ap2 <- "LOC_Os03g12950" %>% pull_rap()
+# some_ap2 <- "LOC_Os03g12950" %>% pull_rap()
 
 get_orthoseq <- function(id) 
 {
@@ -133,10 +134,13 @@ make_path <- function(gene) {
          ".fasta")
 }
 
-make_path(osmads4)
 
-get_orthoseq(some_ap2) %>%
-  writeXStringSet(filepath = "../seq/LOC_Os03g12950.fasta")
+some_ap2 <- "LOC_Os03g12950"
+
+some_ap2 %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(some_ap2))
 
 # OsMADS4 - LOC_Os05g34940
 # up in SM, expecially in african species (duh!)
@@ -167,6 +171,39 @@ spw1 %>%
   pull_rap() %>%
   get_orthoseq() %>%
   writeXStringSet(filepath = make_path(spw1))
+
+# Homeobox LOC_Os10g26500 
+# up in BM in african species
+
+hb_something <- "LOC_Os10g26500"
+
+hb_something %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(hb_something))
+
+# LSY1 LOC_Os05g02730
+# up in SM
+
+lsy1 <- "LOC_Os05g02730"
+
+lsy1 %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(lsy1))
+
+# LOC_Os06g44860
+# SPL10 according to some annotation
+# up in the sm
+
+maybe_spl10 <- "LOC_Os06g44860"
+
+maybe_spl10 %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(maybe_spl10))
+
+
 
 # fetch orthologs method 2 ------------------------------------------------
 

@@ -1,0 +1,98 @@
+library(tidyverse)
+library(httr)
+library(jsonlite)
+library(Biostrings)
+library(msa)
+
+# Download MSU to RAPDB ---------------------------------------------------
+
+dict_path <- "../data/msu-to-rapdb.Rdata"
+
+if(!file.exists(dict_path)) {
+  dict_url <-  "http://rapdb.dna.affrc.go.jp/download/archive/RAP-MSU_2018-03-29.txt.gz"
+  dict <- read_delim(dict_url,
+                     delim = "\t", 
+                     col_names = c("rapdb", "msu"))
+  save(dict, file = dict_path)
+} else {
+  load(dict_path)
+}
+
+
+# Function that converts MSU to RAP ---------------------------------------
+
+pull_rap <- function(ids) {
+  id_rap <- dict %>%
+    filter(grepl(paste(ids, collapse = "|"), msu)) %>%
+    filter(rapdb != "None") %>%
+    pull(rapdb)
+  return(id_rap)
+}
+
+# Genes of SM and BM ------------------------------------------------------
+
+load(file = "../data/rlog-pca.Rdata")
+
+pc5 <- pcro %>%
+  select(PC5, locus_id) %>%
+  arrange(PC5)
+
+last_pc5 <- pc5 %>%
+  top_n(-100, wt = PC5) %>%
+  pull(locus_id) 
+
+top_pc5 <- pc5 %>%
+  top_n(100, wt = PC5) %>%
+  pull(locus_id)
+
+# define function that downloads sequences --------------------------------
+
+id <- "Os03g0215400"
+
+get_seq <- function(id) 
+{
+  server <- "http://rest.ensemblgenomes.org"
+  ext <- "/sequence/id"
+  
+  # get coordinates
+  r <- POST(paste(server, ext, sep = ""),
+            content_type("application/json"),
+            accept("application/json"),
+            # body = '{ "ids" : ["Os03g0232200"],
+            body = paste0('{ "ids" : ["', id,'"],',
+                          '"expand_5prime" : [2000],',
+                          '"format" : "fasta"}')) 
+  if(status_code(r) != 200) {
+    return(NA)
+  } else {
+    # ready for dataframe
+    r <- r %>% httr::content() %>%
+      purrr::flatten()
+    
+    return(r)
+    }
+}
+
+# download sequences -------------------------------------------------------
+
+tst <- last_pc5 %>%
+  pull_rap() %>%
+  map(get_seq)
+
+sum(is.na(tst))
+
+last_pc5_df <- tst[!is.na(tst)] %>%
+  purrr::reduce(.f = bind_rows) %>%
+  mutate(id = paste(id, desc))
+
+set_names(x = last_pc5_df$seq,
+                         nm  = last_pc5_df$id) %>%
+  Biostrings::DNAStringSet() %>%
+  Biostrings::subseq(start = 1, end = 2000) %>%
+  writeXStringSet(filepath = "../seq/last_pc5_2000TSS.fasta")
+
+system("./meme/bin/meme \
+       ~/Desktop/ird-5acc-paper/seq/last_pc5_2000TSS.fasta \
+       -dna \
+       -nmotifs 10\
+       -p 4")
