@@ -75,24 +75,49 @@ get_seq <- function(id)
 
 # download sequences -------------------------------------------------------
 
-tst <- last_pc5 %>%
-  pull_rap() %>%
-  map(get_seq)
+get_top_seq <- function(ids) 
+  {
+  tst <- ids %>%
+    pull_rap() %>%
+    map(get_seq)
+  
+  sum(is.na(tst))
+  
+  n_pc5_df <- tst[!is.na(tst)] %>%
+    purrr::reduce(.f = bind_rows) %>%
+    mutate(id = paste(id, desc))
+  
+  path <- paste0("../seq/",
+                 deparse(substitute(ids)),
+                 "_2000TSS.fasta")
+  
+  set_names(x = n_pc5_df$seq,
+            nm  = n_pc5_df$id) %>%
+    Biostrings::DNAStringSet() %>%
+    Biostrings::subseq(start = 1, end = 2000) %>%
+    writeXStringSet(filepath = path)
+}
 
-sum(is.na(tst))
+get_top_seq(ids = top_pc5)
+# get some random promoters as background
 
-last_pc5_df <- tst[!is.na(tst)] %>%
-  purrr::reduce(.f = bind_rows) %>%
-  mutate(id = paste(id, desc))
+set.seed(1)
+random_genes <- sample(pcro$locus_id, size = 100)
 
-set_names(x = last_pc5_df$seq,
-                         nm  = last_pc5_df$id) %>%
-  Biostrings::DNAStringSet() %>%
-  Biostrings::subseq(start = 1, end = 2000) %>%
-  writeXStringSet(filepath = "../seq/last_pc5_2000TSS.fasta")
+get_top_seq(random_genes)
 
-system("./meme/bin/meme \
-       ~/Desktop/ird-5acc-paper/seq/last_pc5_2000TSS.fasta \
-       -dna \
-       -nmotifs 10\
-       -p 4")
+a <- function(ids) {
+  paste0("../seq/",
+          deparse(substitute(ids)),
+          "_2000TSS.fasta")
+}
+
+p <- "ciao"
+
+b <- a(top_pc5)
+
+# system("./meme/bin/meme \
+#        ~/Desktop/ird-5acc-paper/seq/last_pc5_2000TSS.fasta \
+#        -dna \
+#        -nmotifs 10\
+#        -p 4")
