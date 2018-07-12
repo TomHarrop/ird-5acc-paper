@@ -45,6 +45,14 @@ top_pc5 <- pc5 %>%
   top_n(100, wt = PC5) %>%
   pull(locus_id)
 
+last_pc5_400 <-  pc5 %>%
+  top_n(400, wt = PC5) %>%
+  pull(locus_id)
+
+top_pc5_400 <- pc5 %>%
+  top_n(400, wt = PC5) %>%
+  pull(locus_id)
+
 # define function that downloads sequences --------------------------------
 
 id <- "Os03g0215400"
@@ -73,7 +81,7 @@ get_seq <- function(id)
     }
 }
 
-# download sequences -------------------------------------------------------
+# wrapper download sequences -------------------------------------------------------
 
 get_top_seq <- function(ids) 
   {
@@ -98,9 +106,16 @@ get_top_seq <- function(ids)
     writeXStringSet(filepath = path)
 }
 
-get_top_seq(ids = top_pc5)
-# get some random promoters as background
 
+# Download sequences ------------------------------------------------------
+
+get_top_seq(ids = top_pc5)
+
+get_top_seq(ids = top_pc5_400)
+
+get_top_seq(ids = last_pc5_400)
+
+# get some random promoters as background
 set.seed(1)
 random_genes <- sample(pcro$locus_id, size = 100)
 

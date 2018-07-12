@@ -9,6 +9,7 @@ dds <- readRDS("../data-raw/dds.Rds")
 load("../data/rlog-pca.Rdata")
 load("../data/func-anno.Rdata")
 load("../data/mapman.Rdata")
+load("../data/msu-to-rapdb.Rdata"); rap2msu <- dict; rm(dict)
 
 tf_fam <- readRDS("../data-raw/tfdb_os.Rds") %>%
   dplyr::rename(locus_id = "Protein.ID") %>%
@@ -22,6 +23,7 @@ annos <- annos %>%
 mapman <- mapman %>%
   dplyr::rename(locus_id = "IDENTIFIER") %>%
   filter(!duplicated(locus_id))
+
 
 pc5 <- pcro %>%
   select(PC5, locus_id)
@@ -228,7 +230,12 @@ plot_family <- function(dats, family, height = 8) {
 }
 
 
+top_pc5$locus_id %>%
+  pull_rap()
+
 plot_all <- function(dats, height = cutoff/2) {
+  
+  
   p <- dats %>%
     # filter(Family == family) %>%
     # filter(grepl(family, Family)) %>% #& !is.na(Family)) %>%
