@@ -138,7 +138,13 @@ At least eight *NAC* genes are upregulated in the SM: among the *NAC9*, *NAC3*, 
 
 > **What are the genes/patwhay involved in the meristem state in rice inflorescence Undeterminate vs determinate**
 
-## Putative regulatory sites
+## Putative regulatory sites  
+
+We have searched DNA motives in the promoters of 100 genes upregulated in the Branch Meristem and viceversa.
+
+We have selected those genes using the PC5 and we have scanned the promoters using MEME.
+
+In the genes upregulated in the
 
 ### Gene families related to differentiation are enriched in the SM
 

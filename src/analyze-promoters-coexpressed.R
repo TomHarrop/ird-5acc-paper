@@ -46,7 +46,7 @@ top_pc5 <- pc5 %>%
   pull(locus_id)
 
 last_pc5_400 <-  pc5 %>%
-  top_n(400, wt = PC5) %>%
+  top_n(-400, wt = PC5) %>%
   pull(locus_id)
 
 top_pc5_400 <- pc5 %>%
@@ -77,11 +77,14 @@ get_seq <- function(id)
     r <- r %>% httr::content() %>%
       purrr::flatten()
     
+    r <- r[c("desc", "query", "id", "seq", "molecule")]
     return(r)
     }
 }
 
 # wrapper download sequences -------------------------------------------------------
+
+ids <- top_pc5
 
 get_top_seq <- function(ids) 
   {
@@ -117,7 +120,7 @@ get_top_seq(ids = last_pc5_400)
 
 # get some random promoters as background
 set.seed(1)
-random_genes <- sample(pcro$locus_id, size = 100)
+random_genes <- sample(pcro$locus_id, size = 400)
 
 get_top_seq(random_genes)
 
@@ -131,8 +134,18 @@ p <- "ciao"
 
 b <- a(top_pc5)
 
+
+# Get sequences of genes with nice patterns -------------------------------
+
+nice_pattern <- c("Os10g0472900", "Os07g0136300", 
+                  "Os04g0656500",
+                  "Os10g0403000", "Os02g0492900", "Os03g0680200",
+                  "Os01g0201600", "Os07g0683600", "Os01g0726400",
+                  "Os04g0569100", "Os01g0832600")
+
 # system("./meme/bin/meme \
 #        ~/Desktop/ird-5acc-paper/seq/last_pc5_2000TSS.fasta \
 #        -dna \
 #        -nmotifs 10\
 #        -p 4")
+

@@ -55,16 +55,40 @@
 
 # top 400 forward strand
 
-./meme/bin/meme \
-       ~/Desktop/ird-5acc-paper/seq/top_pc5_400_2000TSS.fasta \
-       -dna \
-       -nmotifs 20\
-       -p 4 \
-       -o ~/Desktop/ird-5acc-paper/seq/top_pc5_400_2000TSS-memeOUT-norev
+# ./meme/bin/meme \
+#        ~/Desktop/ird-5acc-paper/seq/top_pc5_400_2000TSS.fasta \
+#        -dna \
+#        -nmotifs 20\
+#        -p 4 \
+#        -o ~/Desktop/ird-5acc-paper/seq/top_pc5_400_2000TSS-memeOUT-norev
+# 
+# ./meme/bin/meme \
+#        ~/Desktop/ird-5acc-paper/seq/last_pc5_400_2000TSS.fasta \
+#        -dna \
+#        -nmotifs 20\
+#        -p 4 \
+#        -o ~/Desktop/ird-5acc-paper/seq/last_pc5_400_2000TSS-memeOUT-norev
+#        
+# send output to tomotom
 
-./meme/bin/meme \
-       ~/Desktop/ird-5acc-paper/seq/last_pc5_400_2000TSS.fasta \
-       -dna \
-       -nmotifs 20\
-       -p 4 \
-       -o ~/Desktop/ird-5acc-paper/seq/last_pc5_400_2000TSS-memeOUT-norev
+# ./meme/bin/tomtom \
+#     -oc ~/Desktop/ird-5acc-paper/seq/last_pc5_2000TSS_tomtomOUT \
+#     ~/Desktop/ird-5acc-paper/seq/last_pc5_2000TSS-memeOUT-norev/meme.txt \
+#     ~/Desktop/ird-5acc-paper/seq/JASPAR2018_CORE_plants_non-redundant.meme
+
+# Mast
+
+# ./meme/bin/mast \
+#      -oc ~/Desktop/ird-5acc-paper/seq/last-pc5-mast-out \
+#      ~/Desktop/ird-5acc-paper/seq/last_pc5_2000TSS-memeOUT-norev/meme.txt \
+#      ~/Desktop/ird-5acc-paper/seq/last_pc5_400_2000TSS.fasta
+#      
+# ./meme/bin/mast \
+#      -oc ~/Desktop/ird-5acc-paper/seq/top-pc5-mast-out \
+#      ~/Desktop/ird-5acc-paper/seq/last_pc5_2000TSS-memeOUT-norev/meme.txt \
+#      ~/Desktop/ird-5acc-paper/seq/top_pc5_400_2000TSS.fasta
+#      
+# ./meme/bin/mast \
+#      -oc ~/Desktop/ird-5acc-paper/seq/random-mast-out \
+#      ~/Desktop/ird-5acc-paper/seq/last_pc5_2000TSS-memeOUT-norev/meme.txt \
+#      ~/Desktop/ird-5acc-paper/seq/random_genes_2000TSS.fasta

@@ -230,8 +230,8 @@ plot_family <- function(dats, family, height = 8) {
 }
 
 
-top_pc5$locus_id %>%
-  pull_rap()
+# top_pc5$locus_id %>%
+#   pull_rap()
 
 plot_all <- function(dats, height = cutoff/2) {
   
@@ -334,3 +334,5 @@ plot_mapman(top_pc5, "[Aa]uxin", height = 6)
 plot_mapman(top_pc5, "[Gg]ibberellin", height = 6)
 plot_mapman(top_pc5, "B3", height = 6)
 plot_mapman(top_pc5, "DNA", height = 12)
+
+
