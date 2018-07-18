@@ -1,7 +1,14 @@
+# this script:
+# - Selects genes that do pass DESeq2 quality cutoff
+# - rlog transform them
+# - takes the PCA
+
+# and saves both rlog and PCA
+
+
 # Set up environment ------------------------------------------------------
 
 library(tidyverse)
-library(ggfortify)
 library(DESeq2)
 
 # Load deseqdataset and calculate rlog ------------------------------------
@@ -21,7 +28,6 @@ rld <- rlog(dds, blind = FALSE)
 
 # PCA on rlog counts ------------------------------------------------------
 
-# is rlog counts the best choice?
 # pca on transposed dataset, as they do it in DESeq2
 
 rlog_counts <- assay(rld)
@@ -48,16 +54,4 @@ pcro <- as.data.frame(pcro); pcro$locus_id <- rownames(pcro)
 save(rld, pc, pcx, pcro, file = "../data/rlog-pca.Rdata")
 
 
-# Add annos and save table ------------------------------------------------
 
-# load("../data/mapman.Rdata")
-# 
-# mapman <- mapman %>% 
-#   select_at(vars(BINCODE:DESCRIPTION)) %>% 
-#   dplyr::rename(locus_id = IDENTIFIER)
-# 
-# pcro_out <- pcro %>%
-#   left_join(mapman)
-# 
-# write.csv2(pcro_out, file = "../data/pca_ranks_all.csv")
-# save(pcro_out, file = "../data/pca_ranks_all.Rdata")

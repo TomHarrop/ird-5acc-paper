@@ -5,6 +5,7 @@
 data/*
 data-raw/*
 seq/*
+old-data/*
 
 # figures
 fig/*
