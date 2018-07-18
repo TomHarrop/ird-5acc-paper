@@ -203,6 +203,37 @@ maybe_spl10 %>%
   get_orthoseq() %>%
   writeXStringSet(filepath = make_path(maybe_spl10))
 
+# Growth factors
+# cluster 2 domestication
+
+# LOC_Os03g47140	OsGRF9
+
+os_grf9 <- "LOC_Os03g47140"
+
+os_grf9 %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(os_grf9))
+
+# LOC_Os03g51970	OsGRF6
+
+os_grf6 <- "LOC_Os03g51970"
+
+os_grf6 %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(os_grf6))
+
+
+# LOC_Os06g02560	OsGRF5
+
+os_grf5 <- "LOC_Os06g02560"
+
+os_grf5 %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(os_grf5))
+
 
 
 # fetch orthologs method 2 ------------------------------------------------
