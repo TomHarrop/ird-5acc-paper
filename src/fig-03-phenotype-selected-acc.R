@@ -2,12 +2,6 @@ library(tidyverse)
 library(gridExtra)
 load("../data/phenotypes.Rdata")
 
-# acc <- c(B88 = "barthii",
-#          IR64 = "indica",
-#          Niponbarre = "japonica",
-#          Tog5681 = "glaberrima",
-#          W1654 = "rufipogon")
-
 pheno_mnp <- pheno_mnp %>%
   mutate(Species = factor(Species,
                           levels = c("Oryza sativa japonica temp",
@@ -15,13 +9,6 @@ pheno_mnp <- pheno_mnp %>%
                                      "Oryza glaberrima",
                                      "Oryza rufipogon",
                                      "Oryza sativa indica")))
-#   mutate(species = factor(unname(acc[species]),
-#                           levels = c("japonica",
-#                                      "barthii",
-#                                      "glaberrima",
-#                                      "rufipogon",
-#                                      "indica")))
-
 
 # Plot --------------------------------------------------------------------
 
