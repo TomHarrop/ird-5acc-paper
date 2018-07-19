@@ -62,7 +62,7 @@ p_enr <- ggplot(pcx_tf %>%
   # geom_rug(aes(x = rank_pc1, y = NULL), alpha = .5) +
   facet_grid(Family ~ .) +
   theme_bw()
-p_enr
+# p_enr
 
 # Define functions for heatmap --------------------------------------------
 
@@ -108,7 +108,7 @@ plot_heatmap <- function(family = "AP2-EREBP",
 
 heat_ap2 <- plot_heatmap("AP2-EREBP")
 heat_mads <- plot_heatmap("MADS")
-plot_heatmap("WRKY")
+# plot_heatmap("WRKY")
 heat_hb <- plot_heatmap("HB")
 heat_nac <- plot_heatmap("NAC")
 heat_sbp <- plot_heatmap("SBP", cutree_rows = 1)
@@ -116,7 +116,7 @@ heat_tcp <- plot_heatmap("TCP", cutree_rows = 1)
 heat_bhlh <- plot_heatmap("bHLH")
 heat_zfhd <- plot_heatmap("zf-HD", cutree_rows = 1)
 
-tst <- families %>% map(plot_heatmap)
+# tst <- families %>% map(plot_heatmap)
 
 # Save plots --------------------------------------------------------------
 
@@ -139,20 +139,20 @@ dev.off()
 
 
 # Save Locus_ids ----------------------------------------------------------
-fam_to_csv <- function(fam = "AP2-EREBP") {
-  pcx_tf %>%
-    filter(Family == fam) %>%
-    mutate(abs_pc1 = abs(PC1)) %>%
-    # arrange(desc(abs_pc1)) %>%
-    filter(abs_pc1 > 2) %>%
-    select(locus_id) %>%
-    write_excel_csv(path = paste0("../tables/table-tfs-fig04-",
-                                  fam,
-                                  ".csv"))
-}
-
-walk(.x = c("AP2-EREBP", "HB", "MADS"),
-     .f = fam_to_csv)
+# fam_to_csv <- function(fam = "AP2-EREBP") {
+#   pcx_tf %>%
+#     filter(Family == fam) %>%
+#     mutate(abs_pc1 = abs(PC1)) %>%
+#     # arrange(desc(abs_pc1)) %>%
+#     filter(abs_pc1 > 2) %>%
+#     select(locus_id) %>%
+#     write_excel_csv(path = paste0("../tables/table-tfs-fig04-",
+#                                   fam,
+#                                   ".csv"))
+# }
+# 
+# walk(.x = c("AP2-EREBP", "HB", "MADS"),
+#      .f = fam_to_csv)
 
 
 # suppl figure 1 ----------------------------------------------------------
@@ -174,5 +174,5 @@ p_enr <- ggplot(pcx_tf %>%
 
 pdf("../fig/suppl-fig-01-tfs-of-pc5.pdf",
     width = 9, height = 30)
-p_enr
+print(p_enr)
 dev.off()

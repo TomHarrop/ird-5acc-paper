@@ -66,31 +66,32 @@ plot_tfs_pc <- function(pc = PC5)
   dev.off()
 }
 
-plot_tfs_pc(PC1)
-plot_tfs_pc(PC2)
-plot_tfs_pc(PC3)
-plot_tfs_pc(PC4)
-plot_tfs_pc()
+# plot_tfs_pc(PC1)
+# plot_tfs_pc(PC2)
+# plot_tfs_pc(PC3)
+# plot_tfs_pc(PC4)
+# plot_tfs_pc()
 
+plot_tfs_pc()
 
 # Plot enrichement --------------------------------------------------------
 
-p_enr <- ggplot(pcx_tf %>%
-                  arrange(padj) %>%
-                  mutate(facet = paste0(Family,
-                                        ", adjusted p-value = ",
-                                        round(padj, 3))) %>%
-                  mutate(facet = as_factor(facet)),
-                aes(x = rank_pc1,
-                    y = PC1)) +
-  geom_linerange(aes(ymin = 0, ymax = PC1), lwd = 1) + 
-  geom_hline(yintercept = 0,
-             lwd = .05,
-             colour = "grey") +
-  facet_wrap(facets = "facet", ncol = 3) +
-  theme_bw() 
-
-pdf("../fig/suppl-fig-01-tfs-of-pc1.pdf",
-    width = 9, height = 30)
-p_enr
-dev.off()
+# p_enr <- ggplot(pcx_tf %>%
+#                   arrange(padj) %>%
+#                   mutate(facet = paste0(Family,
+#                                         ", adjusted p-value = ",
+#                                         round(padj, 3))) %>%
+#                   mutate(facet = as_factor(facet)),
+#                 aes(x = rank_pc5,
+#                     y = PC5)) +
+#   geom_linerange(aes(ymin = 0, ymax = PC1), lwd = 1) + 
+#   geom_hline(yintercept = 0,
+#              lwd = .05,
+#              colour = "grey") +
+#   facet_wrap(facets = "facet", ncol = 3) +
+#   theme_bw() 
+# 
+# pdf("../fig/suppl-fig-01-tfs-of-pc1.pdf",
+#     width = 9, height = 30)
+# print(p_enr)
+# dev.off()
