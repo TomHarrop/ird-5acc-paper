@@ -22,6 +22,7 @@ table(dat$Sample_Name)
 summary(dat %>%
           filter(Sample_Name == "H20") %>%
           select(Ct_Value))
+
 # for now remove.
 dat <- dat %>% filter(Sample_Name != "H20")
 
