@@ -43,18 +43,18 @@ scale_tidy_fluidigm <- function(dat) {
   
   # Store descriptive names for stages
   
-  stage_names <- c(N1 = "Rachis_Meristem",
-                   N2 = "Primary_Branch_Meristem",
-                   N3 = "Spikelet_meristem",
-                   N4 = "Young_Flower_Development")
+  stage_names <- c(N1 = "stage_1",
+                   N2 = "stage_2",
+                   N3 = "stage_3",
+                   N4 = "stage_4")
   
   # Store descriptive names for species
   
-  species_names <- c(B = "Barthii",
-                     G = "Glaberrima",
-                     I = "Indica",
-                     J = "Japonica",
-                     R = "Rufipogon")
+  species_names <- c(B = "Ob",
+                     G = "Og",
+                     I = "Osi",
+                     J = "Osj",
+                     R = "Or")
   
   # Scale gene expression and scale gene expression separating 
   
@@ -76,11 +76,11 @@ scale_tidy_fluidigm <- function(dat) {
     mutate(expr_scale_gene_spec = ifelse(is.na(expr_scale_gene_spec), 0, expr_scale_gene_spec)) %>%
     # last, save descriptive names for stages and species
     mutate(stage = stage_names[stage]) %>%
-    mutate(stage = factor(stage, 
-                          levels = c("Rachis_Meristem",
-                                     "Primary_Branch_Meristem",
-                                     "Spikelet_meristem",
-                                     "Young_Flower_Development"))) %>%
+    # mutate(stage = factor(stage, 
+    #                       levels = c("Rachis_Meristem",
+    #                                  "Primary_Branch_Meristem",
+    #                                  "Spikelet_meristem",
+    #                                  "Young_Flower_Development"))) %>%
     mutate(species = species_names[species])
   
   return(dat)
@@ -103,26 +103,32 @@ prepare_for_heat <- function(dat){
     spread(key = species_stage, value = median_expr) %>%
     # reorder columns
     select(target_name,
-           Japonica_Rachis_Meristem,
-           Japonica_Primary_Branch_Meristem,
-           Japonica_Spikelet_meristem,
-           Japonica_Young_Flower_Development,
-           Barthii_Rachis_Meristem,
-           Barthii_Primary_Branch_Meristem,
-           Barthii_Spikelet_meristem,
-           Barthii_Young_Flower_Development,
-           Glaberrima_Rachis_Meristem,
-           Glaberrima_Primary_Branch_Meristem,
-           Glaberrima_Spikelet_meristem,
-           Glaberrima_Young_Flower_Development,
-           Rufipogon_Rachis_Meristem,
-           Rufipogon_Primary_Branch_Meristem,
-           Rufipogon_Spikelet_meristem,
-           Rufipogon_Young_Flower_Development,
-           Indica_Rachis_Meristem,
-           Indica_Primary_Branch_Meristem,
-           Indica_Spikelet_meristem,
-           Indica_Young_Flower_Development) %>%
+           Osj_stage_1, Osj_stage_2, Osj_stage_3, Osj_stage_4,
+           Ob_stage_1,  Ob_stage_2,  Ob_stage_3,  Ob_stage_4,
+           Og_stage_1,  Og_stage_2,  Og_stage_3,  Og_stage_4,
+           Or_stage_1,  Or_stage_2,  Or_stage_3,  Or_stage_4,
+           Osi_stage_1, Osi_stage_2, Osi_stage_3, Osi_stage_4) %>%
+    # select(target_name,
+    #        Japonica_Rachis_Meristem,
+    #        Japonica_Primary_Branch_Meristem,
+    #        Japonica_Spikelet_meristem,
+    #        Japonica_Young_Flower_Development,
+    #        Barthii_Rachis_Meristem,
+    #        Barthii_Primary_Branch_Meristem,
+    #        Barthii_Spikelet_meristem,
+    #        Barthii_Young_Flower_Development,
+    #        Glaberrima_Rachis_Meristem,
+    #        Glaberrima_Primary_Branch_Meristem,
+    #        Glaberrima_Spikelet_meristem,
+    #        Glaberrima_Young_Flower_Development,
+    #        Rufipogon_Rachis_Meristem,
+    #        Rufipogon_Primary_Branch_Meristem,
+    #        Rufipogon_Spikelet_meristem,
+    #        Rufipogon_Young_Flower_Development,
+    #        Indica_Rachis_Meristem,
+    #        Indica_Primary_Branch_Meristem,
+    #        Indica_Spikelet_meristem,
+    #        Indica_Young_Flower_Development) %>%
     as.data.frame(.)
   
   return(dat)
