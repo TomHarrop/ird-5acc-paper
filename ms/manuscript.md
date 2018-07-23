@@ -6,9 +6,9 @@ Harrop Thomas, Mantegazza Otho, Luong Ai My, Bethume Kevin, Lorieux Mathias, Oth
 bibliography: ../bib/references.bib
 ---
 
-Main Idea : 
+Main Idea :
 -common regulator of indeterminate/determinate pathway
-- regulator which explain difference : 
+- regulator which explain difference :
 # Introduction
 
 •	evo devo and gene expression
@@ -187,15 +187,15 @@ fig to update based on the last tom analyses - and try to merge with other anala
 Cluster 1 & 2  : opposite pattern - relative to domestication change with the same tendancy in both domestication
 
 Cluster 1 : Slope between the 2 stages in Positive in domesticated compraed to Wild species
-Enriched in AUX/IAA - MYB-related - WRKY - AP2 EREBP and bHLH 
+Enriched in AUX/IAA - MYB-related - WRKY - AP2 EREBP and bHLH
 Among the 18 genes, expression of the 6 genes are positively correlated with Pb number and 6 genes with Sb number and 9 with Sp number : Meaning expression of these genes are positvely correlated with th phenotype
 
-Cluster 2 : Slope between the 2 stages in Positive in wild compared to domesticated species 
-Enriched in GRF (Growth response factor) , ARF (Auxin Response factor) and bZIP genes Among the 18 genes, expression 4 genes are negatively correlated with pb number, 5 negatively correlated with Sb number, 10 with Sp number 
+Cluster 2 : Slope between the 2 stages in Positive in wild compared to domesticated species
+Enriched in GRF (Growth response factor) , ARF (Auxin Response factor) and bZIP genes Among the 18 genes, expression 4 genes are negatively correlated with pb number, 5 negatively correlated with Sb number, 10 with Sp number
 interesting gene : OsGRF6 10.1104/pp.114.235564 , DOI: 10.1038/NPLANTS.2015.196 , OsmiR396 regulate OsGRF6. The the Upregulation of OsGRF6 results in the coordinated activation of several immediate dowstream biological clades : including aucin IAA biosynthesis, auxin response factor and branch and spikelet development-related trancsription factors. GFR are upstream of KNOX genes.
 Link with cell proliferation
-the target OsJMJ706 belong to cluster 4. 
-GRF-interacting factor1 Regulates Shoot Architecture and Meristem Determinacy in Maize. : /10.1105/tpc.17.00791 
+the target OsJMJ706 belong to cluster 4.
+GRF-interacting factor1 Regulates Shoot Architecture and Meristem Determinacy in Maize. : /10.1105/tpc.17.00791
 DOI: https://doi.org/10.1104/pp.113.222836 : Interaction between the GROWTH-REGULATING FACTOR and KNOTTED1-LIKE HOMEOBOX Families of Transcription Factors
 
 CGA1 (CYTOKININ-RESPONSIVE GATA TRANSCRIPTION FACTOR1/GNC-like (CGA1/GNL) : 10.1104/pp.113.217265, plant architecture and cytokinin. Overexpression of CGA1 induced reduced tillering and inversely, CGA1 interference knowndown results in tillering increased.
@@ -207,7 +207,7 @@ No correlation with phenotype..
 TF DEgene-continent
 
 Cluster 4 : Slope Chnage in Indica and Glaberrima BUT in opposite
-Interpretation : genes that promote spikelet differentiation but opposite regulation in Asian and Africa dommesticated rice 
+Interpretation : genes that promote spikelet differentiation but opposite regulation in Asian and Africa dommesticated rice
 Enriched in HB, G2-like, bZIP, MADS, bHLH, (less AP2-EREBP)
 8 genes (on 31) negatively correlated with Sb number
 genes known : IDS1 (10.1111/j.1365-313X.2011.04804.x) , MFO1 (10.1105/tpc.109.068742, 10.1111/j.1365-313X.2010.04354.x) , OsMADS14 (10.1105/tpc.112.097105), HOX14
@@ -215,10 +215,10 @@ See the gene OsJMJ706 targetted by OsGRF6
 
 Cluster 5 : slope change in indica...Yiel Potential
 Enriched in AP2 and NAC
-13 genes (on 17) positively correlated with Sn nb, 4 positively correleted with Pb nb, 
+13 genes (on 17) positively correlated with Sn nb, 4 positively correleted with Pb nb,
 
 
-Cluster6 : different pattern 
+Cluster6 : different pattern
 10 genes (on 15) positively correlated with Sbnb
 Enriched on MYB and MADS box genes
 10 genes ( on 15) positively correlated with Sb nb
@@ -232,7 +232,7 @@ The difficulties is to represent the merging of the data all together : how to d
 
 > **Next work to finalize
 Analyse along time course AP2/HB genes presents to evaluate if there is a delay in expression that could explain the phenotype...And Also some genes present on cluster 1 &2...
-I propose to do a new fluidgm on the time course 1(same samples as transcriptom samples) 
+I propose to do a new fluidgm on the time course 1(same samples as transcriptom samples)
 
 SNP-promoter diversity : make a short coherent list of genes to link it with domestication process?**
 
@@ -271,7 +271,9 @@ Panicles were collected at 4 different morphological stages: stage 1, infloresce
 
 Total RNAs (including small RNAs) were extracted using RNeasy Plant Mini Kit with RLT and RWT buffers (Qiaegn, France). DNAse treatments were performed using the RNAeasy-free DNase set (Qiagen, France).
 
-s
+## qPCR data
+
+We have analyzed qPCR data in R. Expression levels from each sample were estimated and normalized on the geometric mean of four different genes (LOC_Os01g16970, LOC_Os03g61680, LOC_Os06g11170, LOC_Os06g48970) with the formula (2^(-(Ct - geom_mean(Ctnorm))) [**render with ?**]. For heatmaps, the measurements for each gene in each species were z-score normalized separately, in order to highlight species-specific expression dynamics.
 
 ## Gene IDs and Names
 

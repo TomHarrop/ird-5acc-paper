@@ -76,7 +76,8 @@ plot_both("LOC_Os04g36054",
           fluidigm_dat = clust_exp,
           rnaseq_dat = clust_rnaseq)
 
-pdf(file = "../fig/cluster-fluidigm-rnaseq.pdf")
+pdf(file = "../fig/cluster-fluidigm-rnaseq.pdf",
+    height = 7)
 unique(clust_exp$locus_id) %>% map(~plot_both(.,
                                              fluidigm_dat = clust_exp,
                                              rnaseq_dat = clust_rnaseq))
