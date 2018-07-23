@@ -1,22 +1,25 @@
 ---
 title: "Temporary - Determination of Inflorescence Architecture in Wild and Domesticated Rices"
+
+Harrop Thomas, Mantegazza Otho, Luong Ai My, Bethume Kevin, Lorieux Mathias, Other person from CIAT, Jouannic Stephane, Hélène ADAM
+
 bibliography: ../bib/references.bib
 ---
 # Introduction
 
-* evo devo and gene expression
-* transcription factors / evolution of gene regulation
-* domestication and gene expression (maize, tomato transcriptomes)
-* branching development in rice : undeterminated vs determinate meristem
-* details about rice domestication
+•	evo devo and gene expression
+•	transcription factors / evolution of gene regulation
+•	domestication and gene expression (maize, tomato transcriptomes)
+•	branching development in rice : undeterminated vs determinate meristem
+•	details about rice domestication
+•	aims:
+o	Genes/pathway involved in the inflorescence determination in rice : MAIN conclusion of the PCA analysis . WITH new regulators as AP2 – HB – MADS - ALOG (Complete also with genes related to auxin tested in CHIP4)
+o	changes in phenotype (Hight yiel potetial), gene expression caused by / associated changes/switch/delay in determination of inflorescence : Have to be more clear with AP2 genes expression in Cluster 5
+o	Changes in phenotype link to domestication : Cluster 1 and 2. GRF regulation (10.1038/NPLANTS.2015.196) regulated auxin patway and branch and spikelet developmental-related transcription factors. OsGRF6. Would be nice to see gene diff in the promoter or gene between the species. This regulation is link to cell proliferation/ KNOX genes/ Auxin Pathway
 
-* **aims**:
-    - Genes/pathway involved in the inflorescence determination in rice  
-    - changes in phenotype, gene expression caused by / associated changes/switch/delay in determination of inflorescence
-    - Changes in phenotype link to domestication
-    - common genes that respond to selection in different domestications
-    - evolution of transcription factor family expression
-    - does selection for the same phenotype affect expression of the same genes / sets of genes
+o	common genes that respond to selection in different domestications
+o	evolution of transcription factor family expression
+o	does selection for the same phenotype affect expression of the same genes / sets of genes
 
 
 # Results
@@ -183,13 +186,15 @@ Cluster 1 : Slope between the 2 stages in Positive in domesticated compraed to W
 Enriched in AUX/IAA - MYB-related - WRKY - AP2 EREBP and bHLH 
 Among the 18 genes, expression of the 6 genes are positively correlated with Pb number and 6 genes with Sb number and 9 with Sp number : Meaning expression of these genes are positvely correlated with th phenotype
 
-Cluster 2 : Slope between the 2 stages in Positive in wild compraed to domesticated species
-Enriched in GRF (Growth response factor) , ARF (Auxin Response factor) and bZIP genes
-Among the 18 genes, expression 4 genes are negatively correlated with pb number, 5 negatively correlated with Sb number, 10 with Sp number
-interesting gene : 
-OsGRF6  : 10.1104/pp.114.235564 , 10.1038/NPLANTS.2015.196 , OsmiR396 regulate OsGRF6. The the Upregulation of OsGRF6 results in the coordinated activation of several immediate dowstream biological clades : including aucin IAA biosynthesis, auxin response factor and branch and spikelet development-related trancsription factors. Overexpression of OsGRF6 induces more pb and Sb branches. Putative targets of GRF6 : OsARF2 (LOC_Os01g70270), OsARF7 (LOC_Os02g35140) ARF11(LOC_Os04g56850), OsYACCAlike (LOC_Os06g23800), OsYUCCA1 (LOC_Os01g45760), OsMADS34 (LOC_Os03g54170), OsTAWAWA1 (LOC_Os10g33780).
-Oner target of OsGRF6 is OsJMJ706 belong to cluster 4 (10.1104/pp.114.235564).
-CGA1 (CYTOKININ-RESPONSIVE GATA TRANSCRIPTION FACTOR1/GNC-like (CGA1/GNL)  : 10.1104/pp.113.217265, plant architecture and cytokinin
+Cluster 2 : Slope between the 2 stages in Positive in wild compared to domesticated species 
+Enriched in GRF (Growth response factor) , ARF (Auxin Response factor) and bZIP genes Among the 18 genes, expression 4 genes are negatively correlated with pb number, 5 negatively correlated with Sb number, 10 with Sp number 
+interesting gene : OsGRF6 10.1104/pp.114.235564 , DOI: 10.1038/NPLANTS.2015.196 , OsmiR396 regulate OsGRF6. The the Upregulation of OsGRF6 results in the coordinated activation of several immediate dowstream biological clades : including aucin IAA biosynthesis, auxin response factor and branch and spikelet development-related trancsription factors. GFR are upstream of KNOX genes.
+Link with cell proliferation
+the target OsJMJ706 belong to cluster 4. 
+GRF-interacting factor1 Regulates Shoot Architecture and Meristem Determinacy in Maize. : /10.1105/tpc.17.00791 
+DOI: https://doi.org/10.1104/pp.113.222836 : Interaction between the GROWTH-REGULATING FACTOR and KNOTTED1-LIKE HOMEOBOX Families of Transcription Factors
+
+CGA1 (CYTOKININ-RESPONSIVE GATA TRANSCRIPTION FACTOR1/GNC-like (CGA1/GNL) : 10.1104/pp.113.217265, plant architecture and cytokinin. Overexpression of CGA1 induced reduced tillering and inversely, CGA1 interference knowndown results in tillering increased.
 
 Cluster 3 : Divergent relation between wild/cultivated in the 2 continent.
 Enriched on ef-HD and AB13VP1
