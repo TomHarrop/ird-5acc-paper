@@ -178,6 +178,7 @@ fig to update based on the last tom analyses - and try to merge with other anala
 
 
 Cluster 1 & 2  : opposite pattern - relative to domestication change with the same tendancy in both domestication
+
 Cluster 1 : Slope between the 2 stages in Positive in domesticated compraed to Wild species
 Enriched in AUX/IAA - MYB-related - WRKY - AP2 EREBP and bHLH 
 Among the 18 genes, expression of the 6 genes are positively correlated with Pb number and 6 genes with Sb number and 9 with Sp number : Meaning expression of these genes are positvely correlated with th phenotype
@@ -186,7 +187,8 @@ Cluster 2 : Slope between the 2 stages in Positive in wild compraed to domestica
 Enriched in GRF (Growth response factor) , ARF (Auxin Response factor) and bZIP genes
 Among the 18 genes, expression 4 genes are negatively correlated with pb number, 5 negatively correlated with Sb number, 10 with Sp number
 interesting gene : 
-OsGRF6 10.1104/pp.114.235564 , the target OsJMJ706 belong to cluster 4.
+OsGRF6 10.1104/pp.114.235564 , 10.1038/NPLANTS.2015.196 , OsmiR396 regulate OsGRF6. The the Upregulation of OsGRF6 results in the coordinated activation of several immediate dowstream biological clades : including aucin IAA biosynthesis, auxin response factor and branch and spikelet development-related trancsription factors.
+the target OsJMJ706 belong to cluster 4.
 CGA1 (CYTOKININ-RESPONSIVE GATA TRANSCRIPTION FACTOR1/GNC-like (CGA1/GNL)  : 10.1104/pp.113.217265, plant architecture and cytokinin
 
 Cluster 3 : Divergent relation between wild/cultivated in the 2 continent.
