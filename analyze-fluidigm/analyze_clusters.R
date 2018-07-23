@@ -19,6 +19,7 @@ norms <- fluidigms$ref_exp %>%
   summarize(norm_geom_mean = gm_mean(ct_value))
 
 
+
 # merge normalizers and estimate expression -------------------------------
 
 clust_exp <- fluidigms$clust_exp %>%
@@ -51,4 +52,32 @@ pheatmap(mat = clust_heat %>% select(-locus_id),
          cellwidth = 9,
          cellheight = 9,
          labels_row = clust_heat$locus_id)
+dev.off()
+
+
+# Plot both RNAseq and fluidigm -------------------------------------------
+
+library(DESeq2)
+library(gridExtra)
+library(grid)
+
+source("../src/helper-functions.R")
+
+dds <- readRDS("../data-raw/dds.Rds")
+
+clust_rnaseq <- unique(clust_exp$locus_id) %>%
+  get_expression(dds = dds)
+
+clust_exp <- clust_exp %>% scale_tidy_fluidigm()
+id_fluidigm <- "LOC_Os06g47150"
+rnaseq_dat <- clust_rnaseq
+
+plot_both("LOC_Os04g36054",
+          fluidigm_dat = clust_exp,
+          rnaseq_dat = clust_rnaseq)
+
+pdf(file = "../fig/cluster-fluidigm-rnaseq.pdf")
+unique(clust_exp$locus_id) %>% map(~plot_both(.,
+                                             fluidigm_dat = clust_exp,
+                                             rnaseq_dat = clust_rnaseq))
 dev.off()

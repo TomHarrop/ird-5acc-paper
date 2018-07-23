@@ -24,7 +24,7 @@ read_fluidigm <- function(path) {
   out <- read_excel(path) %>%
     select(sampleName, GeneName,
            LOC_Name, Value, Type__1) %>%
-    rename(sample_name = sampleName,
+    dplyr::rename(sample_name = sampleName,
            target_name = GeneName,
            locus_id = LOC_Name,
            ct_value = Value,
@@ -154,6 +154,48 @@ prepare_for_heat <- function(dat){
     as.data.frame(.)
   
   return(dat)
+}
+
+
+# Plot RNAseq and fluidigms -----------------------------------------------
+
+#' Plot both
+#' 
+#' requires tidyverse grid and gridextra
+
+plot_both <- function(id_fluidigm,
+                      rnaseq_dat,
+                      fluidigm_dat) {
+  print(id_fluidigm)
+  p_fluid <- ggplot(fluidigm_dat %>% filter(locus_id == id_fluidigm),
+                    aes(x = stage,
+                         y = expr_scale_gene_spec)) +
+    geom_point() +
+    geom_smooth(aes(group = 1), se = FALSE) +
+    # stat_summary(fun.y=mean, colour="red", geom="line") +
+    ggtitle(id_fluidigm) +
+    facet_wrap(facets = "species", ncol = 5) +
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  
+  p_rnaseq <- ggplot(rnaseq_dat %>% filter(locus_id == id_fluidigm), 
+                     aes(x = stage,
+                         y = by_locus_species))  +
+    geom_point() +
+    geom_smooth(aes(group = 1), se = FALSE) +
+    ggtitle(id_fluidigm) +
+    facet_wrap(facets = "species", ncol = 5) +
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  
+  # tt <- textGrob(paste("id", unique(rnaseq_dat$DESCRIPTION[rnaseq_dat$locus_id == id])))
+  lay <- rbind(c(1, 1, 1, 1, 1),
+               c(1, 1, 1, 1, 1),
+               c(1, 1, 1, 1, 1),
+               c(2, 2, 2, 2, 2),
+               c(2, 2, 2, 2, 2))
+  grid.arrange(grobs = list(p_fluid, p_rnaseq),
+               layout_matrix = lay)
 }
 
 
@@ -290,72 +332,3 @@ normalize_fluidigm <- function(dat, normalizers)
   
   return(dat)
 } 
-
-#' Plot both
-#' 
-#' requires tidyverse grid and gridextra
-
-plot_both <- function(id_fluidigm,
-                      mappings,
-                      rnaseq_dat,
-                      fluidigm_dat,
-                      x = "stage",
-                      fluidigm_y,
-                      rnaseq_y,
-                      facets = "species") {
-  if(!id_fluidigm %in% mappings$`Gene Name`) {
-    print("locus id not in datasets")
-    return(NULL)
-  }
-  
-  id <- mappings$LOC[mappings$`Gene Name` == id_fluidigm]
-  
-  if((!id %in% mappings$LOC) || !(id %in% rnaseq_dat$locus_id)) {
-    print("locus id not in datasets")
-    return(NULL)
-  } 
-  
-  # The fluidigm datasets have custom IDS
-  fluidigm_in <- fluidigm_dat %>%
-    filter(target_name == id_fluidigm)
-  
-  rnaseq_in <- rnaseq_dat %>% 
-    filter(locus_id == id)  %>%
-    mutate(species = factor(species,
-                            levels = c("japonica",
-                                       "barthii",
-                                       "glaberrima",
-                                       "rufipogon",
-                                       "indica")))
-  
-  p_fluid <- ggplot(fluidigm_in,
-                    aes_(x = as.name(x),
-                         y = as.name(fluidigm_y))) +
-    geom_point() +
-    geom_smooth(aes(group = 1), se = FALSE) +
-    # stat_summary(fun.y=mean, colour="red", geom="line") +
-    ggtitle(unique(fluidigm_in$target_name)) +
-    facet_wrap(facets = facets, ncol = 5) +
-    theme_bw() +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1))
-  
-  p_rnaseq <- ggplot(rnaseq_in, 
-                     aes_string(x = x,
-                                y = rnaseq_y))  +
-    geom_point() +
-    geom_smooth(aes(group = 1), se = FALSE) +
-    ggtitle(id) +
-    facet_wrap(facets = facets, ncol = 5) +
-    theme_bw() +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1))
-  
-  # tt <- textGrob(paste("id", unique(rnaseq_dat$DESCRIPTION[rnaseq_dat$locus_id == id])))
-  lay <- rbind(c(1, 1, 1, 1, 1),
-               c(1, 1, 1, 1, 1),
-               c(1, 1, 1, 1, 1),
-               c(2, 2, 2, 2, 2),
-               c(2, 2, 2, 2, 2))
-  grid.arrange(grobs = list(p_fluid, p_rnaseq),
-               layout_matrix = lay)
-}
-

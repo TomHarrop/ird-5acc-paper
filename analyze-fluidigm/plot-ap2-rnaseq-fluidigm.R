@@ -37,3 +37,4 @@ ap2_fluid <- fluidigms$ap2_exp %>%
 
 ap2_rnaseq <- unique(ap2_fluid$locus_id) %>%
   get_expression(dds = dds)
+
