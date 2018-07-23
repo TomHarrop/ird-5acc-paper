@@ -8,7 +8,7 @@ source("helper_functions_fluidigm.R")
 
 # load fluidigms -------------------------------------------------------
 
-fluidigms <- c(alog_exp = "../data-raw/fluidigm/ALOG_CHIP3.xlsx",
+fluidigms <- c(clust_exp = "../data-raw/fluidigm/VariousCluster_CHIP3.xlsx",
                ref_exp = "../data-raw/fluidigm/HK_CHIP3.xlsx") %>%
   map(., read_fluidigm)
 
@@ -19,9 +19,10 @@ norms <- fluidigms$ref_exp %>%
   summarize(norm_geom_mean = gm_mean(ct_value))
 
 
+
 # merge normalizers and estimate expression -------------------------------
 
-alog_exp <- fluidigms$alog_exp %>%
+clust_exp <- fluidigms$clust_exp %>%
   left_join(norms)  %>%
   # subtract normalizer and take exponential to estimate expression
   # note!!! Skip calibration, is it legit????
@@ -32,15 +33,16 @@ alog_exp <- fluidigms$alog_exp %>%
 
 # Scale -------------------------------------------------------------------
 
-alog_heat <- alog_exp %>%
+clust_heat <- clust_exp %>%
   scale_tidy_fluidigm() %>%
   prepare_for_heat()
-  
+
 
 # Plot heatmap ------------------------------------------------------------
 
-pdf("../fig/alog_fluidigm.pdf")
-pheatmap(mat = alog_heat %>% select(-locus_id),
+pdf("../fig/cluster_fluidigm.pdf",
+    width = 12)
+pheatmap(mat = clust_heat %>% select(-locus_id),
          # scale = "row",
          # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
          # color = colorRampPalette(c( "white", "blue4"))(50),
@@ -49,5 +51,33 @@ pheatmap(mat = alog_heat %>% select(-locus_id),
          gaps_col = 1:4*5,
          cellwidth = 9,
          cellheight = 9,
-         labels_row = alog_heat$locus_id)
+         labels_row = clust_heat$locus_id)
+dev.off()
+
+
+# Plot both RNAseq and fluidigm -------------------------------------------
+
+library(DESeq2)
+library(gridExtra)
+library(grid)
+
+source("../src/helper-functions.R")
+
+dds <- readRDS("../data-raw/dds.Rds")
+
+clust_rnaseq <- unique(clust_exp$locus_id) %>%
+  get_expression(dds = dds)
+
+clust_exp <- clust_exp %>% scale_tidy_fluidigm()
+id_fluidigm <- "LOC_Os06g47150"
+rnaseq_dat <- clust_rnaseq
+
+plot_both("LOC_Os04g36054",
+          fluidigm_dat = clust_exp,
+          rnaseq_dat = clust_rnaseq)
+
+pdf(file = "../fig/cluster-fluidigm-rnaseq.pdf")
+unique(clust_exp$locus_id) %>% map(~plot_both(.,
+                                             fluidigm_dat = clust_exp,
+                                             rnaseq_dat = clust_rnaseq))
 dev.off()
