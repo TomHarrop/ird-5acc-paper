@@ -8,7 +8,7 @@ source("helper_functions_fluidigm.R")
 
 # load fluidigms -------------------------------------------------------
 
-fluidigms <- c(alog_exp = "../data-raw/fluidigm/ALOG_CHIP3.xlsx",
+fluidigms <- c(known_exp = "../data-raw/fluidigm/VariousKnown_CHIP3.xlsx",
                ref_exp = "../data-raw/fluidigm/HK_CHIP3.xlsx") %>%
   map(., read_fluidigm)
 
@@ -21,7 +21,7 @@ norms <- fluidigms$ref_exp %>%
 
 # merge normalizers and estimate expression -------------------------------
 
-alog_exp <- fluidigms$alog_exp %>%
+known_exp <- fluidigms$known_exp %>%
   left_join(norms)  %>%
   # subtract normalizer and take exponential to estimate expression
   # note!!! Skip calibration, is it legit????
@@ -32,15 +32,16 @@ alog_exp <- fluidigms$alog_exp %>%
 
 # Scale -------------------------------------------------------------------
 
-alog_heat <- alog_exp %>%
+known_heat <- known_exp %>%
   scale_tidy_fluidigm() %>%
   prepare_for_heat()
-  
+
 
 # Plot heatmap ------------------------------------------------------------
 
-pdf("../fig/alog_fluidigm.pdf")
-pheatmap(mat = alog_heat %>% select(-locus_id),
+pdf("../fig/known_fluidigm.pdf",
+    width = 12)
+pheatmap(mat = known_heat %>% select(-locus_id),
          # scale = "row",
          # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
          # color = colorRampPalette(c( "white", "blue4"))(50),
@@ -49,5 +50,5 @@ pheatmap(mat = alog_heat %>% select(-locus_id),
          gaps_col = 1:4*5,
          cellwidth = 9,
          cellheight = 9,
-         labels_row = alog_heat$locus_id)
+         labels_row = known_heat$locus_id)
 dev.off()

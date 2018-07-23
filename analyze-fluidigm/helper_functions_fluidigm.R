@@ -94,6 +94,7 @@ prepare_for_heat <- function(dat){
   
   dat <- dat %>%
     # use median of spec-scaled
+    mutate(locus_id = paste(locus_id, target_name)) %>%
     group_by(locus_id, species, stage) %>%
     summarise(median_expr = median(expr_scale_gene_spec)) %>%
     ungroup() %>% 
