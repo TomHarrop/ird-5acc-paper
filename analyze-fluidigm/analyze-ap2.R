@@ -40,7 +40,7 @@ ap2_heat <- ap2_exp %>%
 
 pdf("../fig/ap2_fluidigm.pdf",
     height = 10)
-pheatmap(mat = ap2_heat %>% select(-target_name),
+pheatmap(mat = ap2_heat %>% select(-locus_id),
          # scale = "row",
          # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
          # color = colorRampPalette(c( "white", "blue4"))(50),
@@ -49,7 +49,34 @@ pheatmap(mat = ap2_heat %>% select(-target_name),
          gaps_col = 1:5*4,
          cellwidth = 9,
          cellheight = 9,
-         labels_row = ap2_heat$target_name)
+         labels_row = ap2_heat$locus_id)
+
+dev.off()
+
+# Cutoff by PC5 -----------------------------------------------------------
+
+load("../data/rlog-pca.Rdata")
+
+good_locs <- pcro %>%
+  filter(PC5 < -.003 | PC5 > .003) %>%
+  pull(locus_id)
+
+ap2_heat_pc5 <- ap2_heat %>%
+  filter(locus_id %in% good_locs)
+
+pdf("../fig/ap2_fluidigm_pc5.pdf",
+    height = 10)
+pheatmap(mat = ap2_heat_pc5 %>% select(-locus_id),
+         # scale = "row",
+         # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
+         # color = colorRampPalette(c( "white", "blue4"))(50),
+         color = viridis_pal()(50),
+         cluster_cols = F,
+         gaps_col = 1:5*4,
+         cutree_rows = 2,
+         cellwidth = 9,
+         cellheight = 9,
+         labels_row = ap2_heat$locus_id)
 
 dev.off()
 

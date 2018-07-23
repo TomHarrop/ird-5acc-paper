@@ -94,20 +94,41 @@ prepare_for_heat <- function(dat){
   
   dat <- dat %>%
     # use median of spec-scaled
-    group_by(target_name, species, stage) %>%
+    group_by(locus_id, species, stage) %>%
     summarise(median_expr = median(expr_scale_gene_spec)) %>%
     ungroup() %>% 
     # spread for heatmap
     mutate(species_stage = paste(species, stage, sep = "_")) %>%
-    select(target_name, species_stage, median_expr) %>% 
+    select(locus_id, species_stage, median_expr) %>% 
     spread(key = species_stage, value = median_expr) %>%
     # reorder columns
-    select(target_name,
-           Osj_stage_1, Osj_stage_2, Osj_stage_3, Osj_stage_4,
-           Ob_stage_1,  Ob_stage_2,  Ob_stage_3,  Ob_stage_4,
-           Og_stage_1,  Og_stage_2,  Og_stage_3,  Og_stage_4,
-           Or_stage_1,  Or_stage_2,  Or_stage_3,  Or_stage_4,
-           Osi_stage_1, Osi_stage_2, Osi_stage_3, Osi_stage_4) %>%
+    # select(locus_id,
+    #        Osj_stage_1, Osj_stage_2, Osj_stage_3, Osj_stage_4,
+    #        Ob_stage_1,  Ob_stage_2,  Ob_stage_3,  Ob_stage_4,
+    #        Og_stage_1,  Og_stage_2,  Og_stage_3,  Og_stage_4,
+    #        Or_stage_1,  Or_stage_2,  Or_stage_3,  Or_stage_4,
+    #        Osi_stage_1, Osi_stage_2, Osi_stage_3, Osi_stage_4) %>%
+    select(locus_id,
+           Osj_stage_1,
+           Ob_stage_1,  
+           Og_stage_1,  
+           Or_stage_1,  
+           Osi_stage_1,
+           Osj_stage_2, 
+           Ob_stage_2,  
+           Og_stage_2,  
+           Or_stage_2,  
+           Osi_stage_2, 
+           Osj_stage_3,
+           Ob_stage_3,  
+           Og_stage_3,  
+           Or_stage_3,  
+           Osi_stage_3,
+           Osj_stage_4,
+           Ob_stage_4,
+           Og_stage_4,
+           Or_stage_4,
+           Osi_stage_4) %>%
     # select(target_name,
     #        Japonica_Rachis_Meristem,
     #        Japonica_Primary_Branch_Meristem,

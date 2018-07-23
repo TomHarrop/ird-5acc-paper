@@ -1,3 +1,10 @@
+# Parameters
+
+Good genes (conserved) : 
+
+PC5 > .003
+PC5 < .003
+
 # Graphical parameters
 
 This are the graphical parameters that I am trying to use right now.
