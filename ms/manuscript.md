@@ -187,8 +187,8 @@ Cluster 2 : Slope between the 2 stages in Positive in wild compraed to domestica
 Enriched in GRF (Growth response factor) , ARF (Auxin Response factor) and bZIP genes
 Among the 18 genes, expression 4 genes are negatively correlated with pb number, 5 negatively correlated with Sb number, 10 with Sp number
 interesting gene : 
-OsGRF6 10.1104/pp.114.235564 , 10.1038/NPLANTS.2015.196 , OsmiR396 regulate OsGRF6. The the Upregulation of OsGRF6 results in the coordinated activation of several immediate dowstream biological clades : including aucin IAA biosynthesis, auxin response factor and branch and spikelet development-related trancsription factors.
-the target OsJMJ706 belong to cluster 4.
+OsGRF6  : 10.1104/pp.114.235564 , 10.1038/NPLANTS.2015.196 , OsmiR396 regulate OsGRF6. The the Upregulation of OsGRF6 results in the coordinated activation of several immediate dowstream biological clades : including aucin IAA biosynthesis, auxin response factor and branch and spikelet development-related trancsription factors. Overexpression of OsGRF6 induces more pb and Sb branches. Putative targets of GRF6 : OsARF2 (LOC_Os01g70270), OsARF7 (LOC_Os02g35140) ARF11(LOC_Os04g56850), OsYACCAlike (LOC_Os06g23800), OsYUCCA1 (LOC_Os01g45760), OsMADS34 (LOC_Os03g54170), OsTAWAWA1 (LOC_Os10g33780).
+Oner target of OsGRF6 is OsJMJ706 belong to cluster 4 (10.1104/pp.114.235564).
 CGA1 (CYTOKININ-RESPONSIVE GATA TRANSCRIPTION FACTOR1/GNC-like (CGA1/GNL)  : 10.1104/pp.113.217265, plant architecture and cytokinin
 
 Cluster 3 : Divergent relation between wild/cultivated in the 2 continent.
