@@ -169,7 +169,7 @@ plot_both <- function(id_fluidigm,
   print(id_fluidigm)
   p_fluid <- ggplot(fluidigm_dat %>% filter(locus_id == id_fluidigm),
                     aes(x = stage,
-                         y = expr_scale_gene_spec)) +
+                         y = expr_scale_gene)) +
     geom_point() +
     geom_smooth(aes(group = 1), se = FALSE) +
     # stat_summary(fun.y=mean, colour="red", geom="line") +
@@ -180,7 +180,7 @@ plot_both <- function(id_fluidigm,
   
   p_rnaseq <- ggplot(rnaseq_dat %>% filter(locus_id == id_fluidigm), 
                      aes(x = stage,
-                         y = by_locus_species))  +
+                         y = by_locus))  +
     geom_point() +
     geom_smooth(aes(group = 1), se = FALSE) +
     ggtitle(id_fluidigm) +
@@ -198,6 +198,9 @@ plot_both <- function(id_fluidigm,
                layout_matrix = lay)
 }
 
+
+
+# old ---------------------------------------------------------------------
 
 
 

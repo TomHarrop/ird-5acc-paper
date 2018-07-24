@@ -66,15 +66,31 @@ source("../src/helper-functions.R")
 dds <- readRDS("../data-raw/dds.Rds")
 
 clust_rnaseq <- unique(clust_exp$locus_id) %>%
-  get_expression(dds = dds)
+  get_expression(dds = dds) %>%
+  mutate(species = factor(species,
+                          levels = c("japonica", 
+                                     "barthii",
+                                     "rufipogon", 
+                                     "glaberrima", 
+                                     "indica"))) 
 
-clust_exp <- clust_exp %>% scale_tidy_fluidigm()
-id_fluidigm <- "LOC_Os06g47150"
-rnaseq_dat <- clust_rnaseq
+clust_exp <- clust_exp %>% 
+  scale_tidy_fluidigm() %>%
+  mutate(species = factor(species,
+                          levels = c("Osj", 
+                                     "Ob",
+                                     "Or", 
+                                     "Og", 
+                                     "Osi"))) 
 
-plot_both("LOC_Os04g36054",
-          fluidigm_dat = clust_exp,
-          rnaseq_dat = clust_rnaseq)
+
+  
+# id_fluidigm <- "LOC_Os06g47150"
+# rnaseq_dat <- clust_rnaseq
+
+# plot_both("LOC_Os04g36054",
+#           fluidigm_dat = clust_exp,
+#           rnaseq_dat = clust_rnaseq)
 
 pdf(file = "../fig/cluster-fluidigm-rnaseq.pdf",
     height = 7)
