@@ -167,13 +167,20 @@ plot_both <- function(id_fluidigm,
                       rnaseq_dat,
                       fluidigm_dat) {
   print(id_fluidigm)
-  p_fluid <- ggplot(fluidigm_dat %>% filter(locus_id == id_fluidigm),
+  
+  fluidigm_dat <- fluidigm_dat %>% 
+    filter(locus_id == id_fluidigm)
+
+  locus_id <- unique(fluidigm_dat$locus_id)
+  target_name <- unique(fluidigm_dat$target_name)
+    
+  p_fluid <- ggplot(fluidigm_dat,
                     aes(x = stage,
                          y = expr_scale_gene)) +
     geom_point() +
     geom_smooth(aes(group = 1), se = FALSE) +
     # stat_summary(fun.y=mean, colour="red", geom="line") +
-    ggtitle(id_fluidigm) +
+    ggtitle(paste(locus_id, target_name)) +
     facet_wrap(facets = "species", ncol = 5) +
     theme_bw() +
     theme(axis.text.x = element_text(angle = 90, hjust = 1))
