@@ -1,58 +1,9 @@
-# Parameters
-
-Good genes (conserved) : 
-
-PC5 > .003
-PC5 < .003
-
-# Graphical parameters
-
-This are the graphical parameters that I am trying to use right now.
-
-### Categorical variables
-
-```
-color_palette <- c("blue", "goldenrod")
-```
-
-### Continuous variables and scales
-
-```
-c(high = "#001a33",
- low = "#cce6ff")
-```
-
-### Order of species
-
-Reference - African (wild - domesticated) - Asian (wild - domesticated)
-
-```
-species <- factor(species,
-                  levels = c("O. japonica",
-                             "O. barthii",
-                             "O. glaberrima",
-                             "O. rufipogon",
-                             "O. indica")))
-```
-
 # Reproduce the analysis - requirements
 
 ## Raw Data
 
-To generate the analysis, you have to place these files into the `data-raw/` folder :
+To generate the analysis you need to download the `data-raw` folder from Dropbox.
 
-```
-data-raw/
-├── AP2_data9696n°2.xlsx
-├── dds.Rds
-├── famInfo.table.txt
-├── geneInfo.table.txt
-├── geneKeyword.table.txt
-├── ListAP2_OKFLUIDGM.xlsx
-├── MAPMAN BIN-Osa_MSU_v7.xlsx
-├── OsOgObOrPTRAPdata_PaperTom.txt
-└── Phenotype_PanicleSequenced_corrected.xlsx
-```
 
 ## R packages
 
@@ -81,7 +32,9 @@ And these from GitHub with devtools:
 You might have to initiate some folder manually. This is my folder structure for the compiled paper.
 
 ```
-ird-5acc-paper
+├── analyze-data
+├── analyze-fluidigm
+├── analyze-promoters
 ├── bib
 ├── css
 ├── data
@@ -89,12 +42,67 @@ ird-5acc-paper
 ├── docx
 ├── fig
 ├── html
+├── Makefile
 ├── ms
 ├── notes
+├── old
+├── old-data
+├── old-data-raw
+├── readme.md
+├── seq
 ├── src
 ├── tables
 └── template
 ```
+
+# Reproduce the analysis - transcriptomes
+
+Run `make analysis` to analyze data, `make figures` to reproduce the figures and `make manuscript` to reproduce the mansucript.
+
+Otherwise run the single individual scripts in folders.
+
+# Parameters
+
+Good genes (conserved) :
+
+PC5 > .003
+PC5 < .003
+
+Good genes (DESeq2)
+
+padj < 0.1 ?
+
+# Graphical parameters
+
+This are the graphical parameters that I am trying to use right now.
+
+### Categorical variables
+
+```
+color_palette <- c("blue", "goldenrod")
+```
+
+### Continuous variables and scales
+
+```
+library(viridis)
+viridis_pal()(50)
+```
+
+### Order of species
+
+Reference - African (wild - domesticated) - Asian (wild - domesticated)
+
+```
+species <- factor(species,
+                  levels = c("O. japonica",
+                             "O. barthii",
+                             "O. glaberrima",
+                             "O. rufipogon",
+                             "O. indica")))
+```
+
+
 
 # Note
 
