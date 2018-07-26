@@ -6,10 +6,11 @@ Harrop Thomas, Mantegazza Otho, Luong Ai My, Bethume Kevin, Lorieux Mathias, Oth
 bibliography: ../bib/references.bib
 ---
 
+# Notes
+
 Main Idea :
 -common regulator of indeterminate/determinate pathway
 - regulator which explain difference :
-# Introduction
 
 •	evo devo and gene expression
 •	transcription factors / evolution of gene regulation
