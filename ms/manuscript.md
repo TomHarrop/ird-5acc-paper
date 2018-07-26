@@ -26,6 +26,16 @@ o	common genes that respond to selection in different domestications
 o	evolution of transcription factor family expression
 o	does selection for the same phenotype affect expression of the same genes / sets of genes
 
+# Introduction
+
+Rice has a wonderful and variated domestication history.
+
+When rice was domesticated, the structure of its panicle changed; producing more branches and eventually hosting more seeds.
+
+We have used the phenotypic variation of African and Asian, wild and domesticated rice panicles, to explore the genetic basis of panicle development branching.
+
+Hereby we use an image analysis software to characterize systematically the panicle phenotypes of different types of rice. We also use RNA-seq to of the developing panicle of 5 rice species to describe the genetic mechanism that determine panicle structure and its diversity.
+
 
 # Results
 
