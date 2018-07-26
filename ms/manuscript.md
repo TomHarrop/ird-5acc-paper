@@ -28,7 +28,7 @@ o	does selection for the same phenotype affect expression of the same genes / se
 
 # Introduction
 
-Rice has a wonderful and variated domestication history.
+Rice has a varied domestication history that involves two clades, domesticated independently in two separated continents: Asia and Africa. Asian and African rice split around two millions years ago [@zhu2005phylogenetic]. The Asian rice *O. Sativa*, was domesticated first around 10.000 years ago and from there has a convoluted history that involves a network subspecies, most importantly *indica* and *sativa* and frequent introgressions of its wild relative *O rufipogon*. Instead, the african rice *O. glaberrima* has simpler history: it was domesticated only 3000 years ago and doesn't show signs of introgressions from its wild relative *O. barthii* [Reviewed by @vaughan2008evolving]. ***some newer review?***
 
 When rice was domesticated, the structure of its panicle changed; producing more branches and eventually hosting more seeds.
 
