@@ -156,6 +156,72 @@ prepare_for_heat <- function(dat){
   return(dat)
 }
 
+prepare_for_heat_spec <- function(dat){
+  
+  dat <- dat %>%
+    # use median of spec-scaled
+    mutate(locus_id = paste(locus_id, target_name)) %>%
+    group_by(locus_id, species, stage) %>%
+    summarise(median_expr = median(expr_scale_gene_spec)) %>%
+    ungroup() %>% 
+    # spread for heatmap
+    mutate(species_stage = paste(species, stage, sep = "_")) %>%
+    select(locus_id, species_stage, median_expr) %>% 
+    spread(key = species_stage, value = median_expr) %>%
+    # reorder columns
+    select(locus_id,
+           Osj_stage_1, Osj_stage_2, Osj_stage_3, Osj_stage_4,
+           Ob_stage_1,  Ob_stage_2,  Ob_stage_3,  Ob_stage_4,
+           Og_stage_1,  Og_stage_2,  Og_stage_3,  Og_stage_4,
+           Or_stage_1,  Or_stage_2,  Or_stage_3,  Or_stage_4,
+           Osi_stage_1, Osi_stage_2, Osi_stage_3, Osi_stage_4) %>%
+    # select(locus_id,
+    #        Osj_stage_1,
+    #        Ob_stage_1,  
+    #        Og_stage_1,  
+    #        Or_stage_1,  
+    #        Osi_stage_1,
+    #        Osj_stage_2, 
+    #        Ob_stage_2,  
+    #        Og_stage_2,  
+    #        Or_stage_2,  
+    #        Osi_stage_2, 
+    #        Osj_stage_3,
+    #        Ob_stage_3,  
+    #        Og_stage_3,  
+    #        Or_stage_3,  
+    #        Osi_stage_3,
+    #        Osj_stage_4,
+    #        Ob_stage_4,
+    #        Og_stage_4,
+    #        Or_stage_4,
+    #        Osi_stage_4) %>%
+    # select(target_name,
+    #        Japonica_Rachis_Meristem,
+    #        Japonica_Primary_Branch_Meristem,
+    #        Japonica_Spikelet_meristem,
+    #        Japonica_Young_Flower_Development,
+    #        Barthii_Rachis_Meristem,
+    #        Barthii_Primary_Branch_Meristem,
+    #        Barthii_Spikelet_meristem,
+    #        Barthii_Young_Flower_Development,
+    #        Glaberrima_Rachis_Meristem,
+    #        Glaberrima_Primary_Branch_Meristem,
+  #        Glaberrima_Spikelet_meristem,
+  #        Glaberrima_Young_Flower_Development,
+  #        Rufipogon_Rachis_Meristem,
+  #        Rufipogon_Primary_Branch_Meristem,
+  #        Rufipogon_Spikelet_meristem,
+  #        Rufipogon_Young_Flower_Development,
+  #        Indica_Rachis_Meristem,
+  #        Indica_Primary_Branch_Meristem,
+  #        Indica_Spikelet_meristem,
+  #        Indica_Young_Flower_Development) %>%
+  as.data.frame(.)
+  
+  return(dat)
+}
+
 
 # Plot RNAseq and fluidigms -----------------------------------------------
 

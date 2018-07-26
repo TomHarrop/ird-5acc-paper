@@ -105,3 +105,49 @@ unique(clust_exp$locus_id) %>% map(~plot_both(.,
                                               fluidigm_dat = clust_exp,
                                               rnaseq_dat = clust_rnaseq))
 dev.off()
+
+
+# fluidigm heatmap --------------------------------------------------------
+
+clust_exp <- bind_rows(chip3_exp, chip4_exp) %>%
+  filter(locus_id %in% keep$LOC_Name) %>%
+  scale_tidy_fluidigm() %>%
+  prepare_for_heat_spec()
+
+keep <- keep %>%
+  dplyr::rename(locus_id2 = "LOC_Name")
+
+clust_heat <- clust_exp %>%
+  mutate(locus_id2 = str_split_fixed(string = locus_id, pattern = " ", 2)[, 1]) %>%
+  left_join(keep %>% select(locus_id2, Cluster)) %>%
+  dplyr::arrange(Cluster) %>%
+  mutate(Cluster = as.factor(Cluster)) %>%
+  column_to_rownames("locus_id2")
+
+get_gaps <- function(iter) {
+  out <- numeric()
+  for(i in 1:(length(iter)-1)) {
+    if(iter[i] != iter[i+1]) {
+      out <- c(out, i) 
+    }
+  }
+  return(out)
+}
+
+pdf("../fig/cluster_fluidigm_others.pdf",
+    width = 12)
+pheatmap(mat = clust_heat %>%
+           select(-locus_id, -Cluster),
+         # scale = "row",
+         # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
+         # color = colorRampPalette(c( "white", "blue4"))(50),
+         color = viridis_pal()(50),
+         cluster_cols = F,
+         cluster_rows = F,
+         gaps_col = 1:5*4,
+         gaps_row = get_gaps(clust_heat$Cluster),
+         cellwidth = 9,
+         cellheight = 9, 
+         annotation_row = clust_heat[, "Cluster", drop = FALSE],
+         labels_row = clust_heat$locus_id)
+dev.off()
