@@ -37,6 +37,8 @@ to_heat <- expr %>%
   mutate(locus_id_fact = as_factor(locus_id)) %>%
   column_to_rownames("locus_id") 
 
+write_csv(to_heat, path = "../tables/ap2_exp_scaled.csv")
+
 # Plot heatmap ------------------------------------------------------------
 
 p <- pheatmap(to_heat %>% select(-locus_id_fact),

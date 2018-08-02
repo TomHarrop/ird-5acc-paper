@@ -224,7 +224,7 @@ CGA1 (CYTOKININ-RESPONSIVE GATA TRANSCRIPTION FACTOR1/GNC-like (CGA1/GNL) : 10.1
 Cluster 3 : Divergent relation between wild/cultivated in the 2 continent.
 Enriched on ef-HD and AB13VP1
 known gene : LAX1 - RFL/APO2 - OsMADS4 - IAA2
-No correlation with phenotype..
+No correlation with phenotype.
 TF DEgene-continent
 
 Cluster 4 : Slope Chnage in Indica and Glaberrima BUT in opposite

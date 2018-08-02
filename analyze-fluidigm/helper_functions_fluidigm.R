@@ -242,7 +242,7 @@ plot_both <- function(id_fluidigm,
     
   p_fluid <- ggplot(fluidigm_dat,
                     aes(x = stage,
-                         y = expr_scale_gene)) +
+                        y = expression)) +
     geom_point() +
     geom_smooth(aes(group = 1), se = FALSE) +
     # stat_summary(fun.y=mean, colour="red", geom="line") +

@@ -19,6 +19,9 @@ norms <- fluidigms$ref_exp %>%
   summarize(norm_geom_mean = gm_mean(ct_value))
 
 
+# Merge results -----------------------------------------------------------
+
+chip3_exp <- fluidigms %>% select(-norms)
 
 # merge normalizers and estimate expression -------------------------------
 
