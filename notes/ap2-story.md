@@ -76,3 +76,71 @@ Defenitely expressed, higher in spikelets
 Spikelet to flower meristem? (Ren et al., 2013)
 
 **Not detected? Check better**
+
+### DREB - Multiple
+
+https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-313X.2003.01661.x
+
+### SHAT1 LOC_Os04g55560
+
+https://funricegenes.github.io/SHAT1/
+
+Seed shattering / abscission
+
+**Definitely up in BM**
+
+Not in clusters
+
+### OsRAV2 LOC_Os01g04800
+
+https://funricegenes.github.io/OsRAV2/
+
+Activated by salt stress
+
+**Most interesting gene? Up in BM, opposite in indica**
+
+In cluster 5
+
+### RAVL1 LOC_Os04g49230
+
+https://funricegenes.github.io/RAVL1/
+
+activates brassinosteroid and ethilene signalling
+
+expressed but not DE (maybe up in SM)
+
+### RAV6 LOC_Os02g45850
+
+https://funricegenes.github.io/RAV6/
+
+Leaf angle seed Size
+
+expressed but not DE (maybe up in SM)
+
+
+# Observations
+
+## in Branch meristems
+
+At least 18 up in BM (PC5), they tend to be flat in Indica, maybe morphological.
+
+Most of them are not characterized.
+
+LOC_Os01g04750: not characterizated, maybe stress
+LOC_Os08g31580: DRAP1 - abio stress
+LOC_Os04g46440: OsDERF2 - abio stress (Guo 2017)
+LOC_Os04g52090: not characterized
+LOC_Os05g41780: not characterized?
+LOC_Os01g04800: RAV2 - abio stress
+LOC_Os03g08500: BIERF4 abio stress (Cao, 2016)
+LOC_Os04g48350: GIGANTEA, abio stress? tillering?
+LOC_Os01g58420: AP37 cell death, interacts with NAc2
+LOC_Os09g35010: OsDREB1B, stress stress stress
+LOC_Os04g55560: SHAT1 seed shattering
+LOC_Os09g35030: OsDREB1A stress, interacxts with NAC1
+LOC_Os04g57340: abio stress
+LOC_Os09g35020: DREB abio (srivasta 2010)
+LOC_Os04g46220: ERF1 abio stress / development
+LOC_Os02g45450: DREB abio (see above)
+LOC_Os03g07940: PLT uncharacterized?
+LOC_Os02g43940: DREB4, dehydration?
