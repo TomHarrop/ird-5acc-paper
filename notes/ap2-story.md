@@ -188,5 +188,5 @@ Cluster 5: up in Indica
 ## Others
 
 - LOC_Os05g29810: ERF61, up in indica, not characteried
--  LOC_Os07g03250: Crl5-PLT2 formatio of crown root primordia, DE in Indica
--
+- LOC_Os07g03250: Crl5-PLT2 formatio of crown root primordia, DE in Indica
+- LOC_Os03g56050: PLT7, other ortholog of AINTEGUMENTA, uncharacterized?
