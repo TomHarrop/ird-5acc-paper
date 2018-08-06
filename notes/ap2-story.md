@@ -71,11 +71,11 @@ Something stress regulated
 
 Defenitely expressed, higher in spikelets
 
-### MULTI-FLORET SPIKELET1 LOC_Os05g041760
+### MULTI-FLORET SPIKELET1 LOC_Os05g41760
 
 Spikelet to flower meristem? (Ren et al., 2013)
 
-**Not detected? Check better**
+**DE between Domesticated and wild!!!!!!!**
 
 ### DREB - Multiple
 
@@ -124,23 +124,69 @@ expressed but not DE (maybe up in SM)
 
 At least 18 up in BM (PC5), they tend to be flat in Indica, maybe morphological.
 
-Most of them are not characterized.
+Many of them are not characterized.
 
-LOC_Os01g04750: not characterizated, maybe stress
-LOC_Os08g31580: DRAP1 - abio stress
-LOC_Os04g46440: OsDERF2 - abio stress (Guo 2017)
-LOC_Os04g52090: not characterized
-LOC_Os05g41780: not characterized?
-LOC_Os01g04800: RAV2 - abio stress
-LOC_Os03g08500: BIERF4 abio stress (Cao, 2016)
-LOC_Os04g48350: GIGANTEA, abio stress? tillering?
-LOC_Os01g58420: AP37 cell death, interacts with NAc2
-LOC_Os09g35010: OsDREB1B, stress stress stress
-LOC_Os04g55560: SHAT1 seed shattering
-LOC_Os09g35030: OsDREB1A stress, interacxts with NAC1
-LOC_Os04g57340: abio stress
-LOC_Os09g35020: DREB abio (srivasta 2010)
-LOC_Os04g46220: ERF1 abio stress / development
-LOC_Os02g45450: DREB abio (see above)
-LOC_Os03g07940: PLT uncharacterized?
-LOC_Os02g43940: DREB4, dehydration?
+Many characterized as response to abiotic stress. Stress triggers reproductive phase. Is it possible that these are reproductive genes that are mis-annotated as stress?
+
+- LOC_Os01g04750: not characterizated, maybe stress
+- LOC_Os08g31580: DRAP1 - abio stress
+- LOC_Os04g46440: OsDERF2 - abio stress (Guo 2017)
+- LOC_Os04g52090: not characterized
+- LOC_Os05g41780: not characterized?
+- LOC_Os01g04800: RAV2 - abio stress
+- LOC_Os03g08500: BIERF4 abio stress (Cao, 2016)
+- LOC_Os04g48350: GIGANTEA, abio stress? tillering?
+- LOC_Os01g58420: AP37 cell death, interacts with NAc2
+- LOC_Os09g35010: OsDREB1B, stress stress stress
+- LOC_Os04g55560: SHAT1 seed shattering
+- LOC_Os09g35030: OsDREB1A stress, interacts with NAC1
+- LOC_Os04g57340: abio stress
+- LOC_Os09g35020: DREB abio stress (srivasta 2010)
+- LOC_Os04g46220: ERF1 abio stress / development
+- LOC_Os02g45450: DREB abio (see above)
+- LOC_Os03g07940: PLT uncharacterized?
+- LOC_Os02g43940: DREB4-1, dehydration?
+
+## in spikelet meristems
+
+Less genes / many have been characterized as branching (a bit late) + FM identity + seed filling.
+
+Some stress related - see above.
+
+- LOC_Os03g12950: PLT9, ortholog of arabidopsis ANT, uncharacterized
+-  LOC_Os03g60430: IDS1 - inflorescencde arch, FM identity
+- LOC_Os07g47330: FZP Formation of axyllary meristems
+- LOC_Os03g19900: Not characterized?
+- LOC_Os05g03040: RSR1 seed development
+- LOC_Os02g54160: OsEREBP1 more erebp close
+
+## in clusters
+
+Cluster 1: up in Domesticated
+
+- LOC_Os02g43970: ARAG1 - stress - abscissic acid in seed, higher in SM
+
+Cluster 2: up in wild, low in Indica
+
+- LOC_Os03g19900: EREBP86 not characterized? Up in SM.
+
+Cluster 4: up in Glaberrima down in indica
+
+- LOC_Os03g12950: PLT9, bottom pc5? Not characterized
+- LOC_Os03g60430: IDS1
+- LOC_Os09g25600: EREBP153, not characterized
+
+Cluster 5: up in Indica
+
+
+- LOC_Os01g58420: AP37/ERF3 cell death, interacts with NAC2, up in BM
+- LOC_Os02g43940: DREB4-1, dehydration? Up in BM
+- LOC_Os04g46400: DREB4-2 same as above. Up in BM , up in Africans, crossmapping?
+
+## In fluidigm
+
+## Others
+
+- LOC_Os05g29810: ERF61, up in indica, not characteried
+-  LOC_Os07g03250: Crl5-PLT2 formatio of crown root primordia, DE in Indica
+-
