@@ -48,12 +48,41 @@ library(DESeq2)
 source("../src/helper-functions.R")
 dds <- readRDS(file = "../data-raw/dds.Rds")
 
-pdf("../fig/more_ap2s.pdf", height = 50, width = 20)
+load("../data/func-anno.Rdata")
+load("../data/mapman.Rdata")
+load("../data/msu-to-rapdb.Rdata"); rap2msu <- dict; rm(dict)
+
+tf_fam <- readRDS("../data-raw/tfdb_os.Rds") %>%
+  dplyr::rename(locus_id = "Protein.ID") %>%
+  filter(locus_id %in% rownames(dds)) %>%
+  filter(!duplicated(locus_id))
+
+annos <- annos %>%
+  dplyr::rename(locus_id = "MSU") %>%
+  select(symbol, locus_id)
+
+mapman <- mapman %>%
+  dplyr::rename(locus_id = "IDENTIFIER") %>%
+  filter(!duplicated(locus_id))
+
+
+
+pdf("../fig/more_ap2s.pdf", height = 80, width = 20)
 all_ap2s %$%
   get_expression(locus_id, dds = dds) %>%
   left_join(all_ap2s) %>%
+  left_join(annos) %>%
+  left_join(tf_fam) %>%
+  left_join(mapman) %>%
   plot_norm_expr() +
-  facet_wrap(facets = c("locus_id", "Name", "generic_name"),
+  facet_wrap(facets = c("locus_id",
+                        "Name",
+                        "generic_name",
+                        "symbol",
+                        "Family",
+                        "DESCRIPTION"),
              scales = "free_y",
-             ncol = 5)
+             ncol = 5,
+             labeller = label_wrap_gen(width = 50,
+                                       multi_line = T))
 dev.off()  

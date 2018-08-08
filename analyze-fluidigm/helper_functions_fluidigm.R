@@ -253,7 +253,7 @@ plot_both <- function(id_fluidigm,
   
   p_rnaseq <- ggplot(rnaseq_dat %>% filter(locus_id == id_fluidigm), 
                      aes(x = stage,
-                         y = by_locus))  +
+                         y = `normalized expression`))  +
     geom_point() +
     geom_smooth(aes(group = 1), se = FALSE) +
     ggtitle(id_fluidigm) +

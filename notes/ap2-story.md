@@ -117,6 +117,9 @@ Leaf angle seed Size
 
 expressed but not DE (maybe up in SM)
 
+### Sub1a, Sub1b, sub1c LOC_Os09g11480 LOC_Os09g11460
+
+Plant survives when submerged (through flowering inhibition)
 
 # Observations
 
@@ -184,6 +187,48 @@ Cluster 5: up in Indica
 - LOC_Os04g46400: DREB4-2 same as above. Up in BM , up in Africans, crossmapping?
 
 ## In fluidigm
+
+- LOC_Os01g04800: RAV2, MOST interesting, indica goes up while in all other species goes down.
+- LOC_Os01g58420: AP37, similar, flat in indica
+- LOC_Os09g25600: EREBP153, opposiste in Rufipogon and Indica? Hard to say.
+- LOC_Os03g19900: EREBP86, Up in everything but indica? Hard to say.
+- LOC_Os03g08500: ERF 64 / OsBIERF4, upregulated in BM
+- LOC_Os09g13940: ERF109, Out in japonica?
+- LOC_Os06g36000: ERF122, expressed higher in indica?
+- LOC_Os05g32270: ERF142, expressed higher in non-domesticated species?
+- LOC_Os02g45420: ERF20, expressed higher in Indica (SM)?
+- LOC_Os02g43970: ERF35 − ARAG1, expressed higher in African SM?
+- LOC_Os10g41130: ERF36, higher in Indica SM? Hard to say,
+- LOC_Os04g52090 ERF77 OsAP2−39, Higher in BM, smaller effect in Indica.
+- LOC_Os02g43790 ERF91 AP59|OsBIERF3|OsAP59, high in Barthii
+- LOC_Os04g46220 ERF93 / OsERF1, Up in African, in BM.
+- LOC_Os07g47330 FZP|BFL1|SGDP7 Up in SM in Asian species.
+- LOC_Os05g41760 MSF1/ ERF130 Strange low in Sm in domesticated
+- LOC_Os08g31580 OsERF48|OsDRAP1, up in SM, flat in indica and japonica
+- LOC_Os03g60430 OsIDS1, up in BM in African
+- LOC_Os03g12950 PLT9, up in SM in African and Japonica
+- LOC_Os05g03040 RSR1, Up in Glaberrima, not sure,
+- LOC_Os04g55560 SHAT1 maybe up in African, flat in indica
+- LOC_Os07g13170 SNB, Opposite in African (up) and Asian (up earlier then down)
+- LOC_Os09g11480 sub1b, in SM only in Rufipogon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Others
 
