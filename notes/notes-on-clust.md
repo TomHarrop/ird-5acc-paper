@@ -1,3 +1,8 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
 # Cluster 7 - indica up
 
 RAV2 - ERF48 - DREB4

@@ -1,3 +1,9 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
+
 If we draft the paper on AP2s-ERF
 
 # AP2-ERF - what is known?
@@ -131,7 +137,7 @@ Many of them are not characterized.
 
 Many characterized as response to abiotic stress. Stress triggers reproductive phase. Is it possible that these are reproductive genes that are mis-annotated as stress?
 
-- LOC_Os01g04750: not characterizated, maybe stress
+- LOC_Os01g04750: not characterized, maybe stress
 - LOC_Os08g31580: DRAP1 - abio stress
 - LOC_Os04g46440: OsDERF2 - abio stress (Guo 2017)
 - LOC_Os04g52090: not characterized
@@ -139,7 +145,7 @@ Many characterized as response to abiotic stress. Stress triggers reproductive p
 - LOC_Os01g04800: RAV2 - abio stress
 - LOC_Os03g08500: BIERF4 abio stress (Cao, 2016)
 - LOC_Os04g48350: GIGANTEA, abio stress? tillering?
-- LOC_Os01g58420: AP37 cell death, interacts with NAc2
+- LOC_Os01g58420: AP37 cell death, interacts with NAC2
 - LOC_Os09g35010: OsDREB1B, stress stress stress
 - LOC_Os04g55560: SHAT1 seed shattering
 - LOC_Os09g35030: OsDREB1A stress, interacts with NAC1
@@ -181,7 +187,6 @@ Cluster 4: up in Glaberrima down in indica
 
 Cluster 5: up in Indica
 
-
 - LOC_Os01g58420: AP37/ERF3 cell death, interacts with NAC2, up in BM
 - LOC_Os02g43940: DREB4-1, dehydration? Up in BM
 - LOC_Os04g46400: DREB4-2 same as above. Up in BM , up in Africans, crossmapping?
@@ -210,22 +215,8 @@ Cluster 5: up in Indica
 - LOC_Os05g03040 RSR1, Up in Glaberrima, not sure,
 - LOC_Os04g55560 SHAT1 maybe up in African, flat in indica
 - LOC_Os07g13170 SNB, Opposite in African (up) and Asian (up earlier then down)
-- LOC_Os09g11480 sub1b, in SM only in Rufipogon
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- LOC_Os09g11480 sub1b, in SM only in Rufipogon,
+- LOC_Os09g11460 Sub1C, only in Asian, opposite in Rufipogon (up)
 
 
 
