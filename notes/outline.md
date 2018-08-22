@@ -1,5 +1,5 @@
 
-# AP2 gene expression regulates inflorescence architecture 
+# Panicle architecture in domesticated and wild rice: an AP2 story?
 
 ## Introduction
 
@@ -9,22 +9,26 @@
 
 3. How are Ap2 genes involved in meristem identity, architecture etc (maybe also stress)? (maybe in discussion)
 
-4. Here we investigate the role of AP2 genes by blah blah, and find blah blah.
+> I agree to discuss AP2s (at least partially) in the introduction
+
+4. Here we investigate the architecture of wild and domesticated rices panicles and their transcriptomes. We then focus and further characterize the AP2-EREBP family.
 
 ## Results
 
 ### 1. Methods summary
 
-### 2. Panicle traits of domesticated Asian and African rice are similar.     Panicles of domesticated species produce more primary and secondary branches and more spikelets. 
+### 2. Panicle traits of domesticated Asian and African rice are similar. Panicles of domesticated species produce more primary and secondary branches and more spikelets.
 - **Figure 1a**: photo of mature panicles
 - **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA
 - correlation between spikelet number and branching complexity justifies transcriptome samples
 - "evolutionary diversity in Solanaceae inflorescence complexity is determined by subtle modifications of transcriptional programs during a critical transitional window of meristem maturation" [@Lemmon_Evolutioninflorescencediversity_2016]
 - Topology / mathematics
 
-### 3. Difference in gene expression between indeterminate and determinate meristem stages is different between high yield/low  yield, high branching/low branching accessions.
+### 3. Difference in gene expression between indeterminate and determinate meristem stages is different between high wild and domesticated varieties, high branching/low branching accessions.
 - **Figure 2**: global view of transcriptome *e.g.* PCA, distance heatmap, DE genes table, something else?
 - african species cluster together, asian species cluster together -> domestication changes are minor compared to species-level changes
+
+> Comment OM: I wouldn't stress "yield" too much
 
 ### 4. AP2-EREBP are the most prominently DE family in transcriptomes of developing panicles.
 - **Figure 3a**: PCA enrichment + AP2 heatmap.
@@ -42,7 +46,7 @@
 - does this fit here?
 
 ### 7. Differences in AP2 gene promoter regions are associated with differences in expression
-- **Figure 6**: 
+- **Figure 6**:
 - sounds good but how?
 
 ### 8. AP2-EREBP genes are associated with yield / domestication.
@@ -67,3 +71,5 @@
 ## Notes
 
 - What about the ARF genes?
+
+> Note OM: While AP2s stand out, we have nice observations on many other families. Shall we draft the paper fully on AP2 and then try to add in the most interesting observations about the other families and see how they fit?
