@@ -18,3 +18,13 @@
 - cluster all genes (e.g. filtered on FDR from interaction)
 - general qc stuff
 - cluster z-stats
+
+10.1104/pp.17.00694 figure 4b for clustering
+
+Otho prefers viridis palette
+
+ERF142 : reduce PBN SBN
+PLT8 : reduce PBN
+
+Categories of gene function? AM identity, SB elongation
+
