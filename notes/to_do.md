@@ -28,3 +28,7 @@ PLT8 : reduce PBN
 
 Categories of gene function? AM identity, SB elongation
 
+Tidy up results point three, not clearly written.
+Results 6: 
+Results clusters: break AP2 into family and re-try enrichment analysis.
+Intersperse HB and ARF genes into results

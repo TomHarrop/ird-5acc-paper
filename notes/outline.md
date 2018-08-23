@@ -1,5 +1,6 @@
 
-# Panicle architecture in domesticated and wild rice: an AP2 story?
+# AP2 gene expression regulates inflorescence architecture
+> Working title
 
 ## Introduction
 
@@ -18,45 +19,50 @@
 ### 1. Methods summary
 
 ### 2. Panicle traits of domesticated Asian and African rice are similar. Panicles of domesticated species produce more primary and secondary branches and more spikelets.
-- **Figure 1a**: photo of mature panicles
-- **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA
+- **Figure 1a**: photo of mature panicles (images panicle spread) Tom
+- **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) Tom
 - correlation between spikelet number and branching complexity justifies transcriptome samples
 - "evolutionary diversity in Solanaceae inflorescence complexity is determined by subtle modifications of transcriptional programs during a critical transitional window of meristem maturation" [@Lemmon_Evolutioninflorescencediversity_2016]
 - Topology / mathematics
 
 ### 3. Difference in gene expression between indeterminate and determinate meristem stages is different between high wild and domesticated varieties, high branching/low branching accessions.
-- **Figure 2**: global view of transcriptome *e.g.* PCA, distance heatmap, DE genes table, something else?
+- **Figure 2**: global view of transcriptome *e.g.* PCA (Otho)
+- **SF 1**: Montpellier phenotyping (Tom)
+- **SF 2**: distance heatmap (Tom)
+- **SI**: DE genes table
 - african species cluster together, asian species cluster together -> domestication changes are minor compared to species-level changes
 
 > Comment OM: I wouldn't stress "yield" too much
 
 ### 4. AP2-EREBP are the most prominently DE family in transcriptomes of developing panicles.
-- **Figure 3a**: PCA enrichment + AP2 heatmap.
-- **Figure 3b / Table 1**: TFs differentially expressed between stages in all species (featuring AP2 genes).
+- **Table 1**: TFs differentially expressed between stages in all species (featuring AP2 genes). Try z-score for AP2s (Tom).
+- **Figure 3a**: PCA enrichment + AP2 heatmap (Otho).
 - PCA splits genes expressed in BM and SM on component 5, AP2/ERF are the most enriched across PC5
 - at least 20 AP2 are among the 400 genes preferentially expressed in BM, at least.
 - DREB ERF and RAV peak earlier, and AP2 peaks later
+- Can mention HB / NAC here
 
 ### 5. AP2-EREBP genes are differentially expressed over a timecourse of panicle development
-- **Figure 4**: fluidigm results for AP2
+- **Figure 4**: fluidigm results for AP2 (Otho)
 - If this only confirms 4., we could move it to supp. If the different stages add something new, keep it in the main paper.
 
 ### 6. [Differential] Expression of AP2 genes can be grouped by family
-- **Figure 5**: AP2-EREBP phylogeny with gene expression
+- **Figure 5**: AP2-EREBP phylogeny with gene expression (Otho + My)
 - does this fit here?
 
 ### 7. Differences in AP2 gene promoter regions are associated with differences in expression
-- **Figure 6**:
+- **Figure 6**: (?)
 - sounds good but how?
 
 ### 8. AP2-EREBP genes are associated with yield / domestication.
-- **Figure 7a / Table 2**: clusters and correlation with phenotypes (or PCA?)
-- **Figure 7b / Table 3**. DE genes for interaction between stage and domestication. (enriched for AP2s).
+- **Figure 7**: clusters and correlation with phenotypes (or PCA?) (Tom)
+- **Figure 7b / Table 3**. DE genes for interaction between stage and species (African and Asian) (Tom). (enriched for AP2s).
 - AP2s in cluster 4 & 5, generally they behave opposite in indica, some of them also in PC5
 - Cluster1: Arag1; Cluster2: EREBP86; Cluster4: PLT9, IDS1, EREBP153; Cluster5; AP37/ERF3, DREB4-1, DREB4-2
 
 ### 9. AP2 mutants have defects in panicle branching.
-- **Figure 8**: mutant characterisation
+- **Figure 8**: mutant characterisation (Otho / Hélène)
+- Also check LMD data for these (Tom). There's already an AP2 figure from the LMD data, Tom will find it and send it out.
 
 ## Discussion
 
