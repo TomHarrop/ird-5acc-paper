@@ -7,6 +7,7 @@
 1. Why is inflorescence architecture / branching important (yield etc)? How is architecture different between domesticated and wild species?
 
 2. How does gene expression regulate transitions in meristem identity? How do transitions in meristem identity relate to inflorescence architecture, yield?
+    - "evolutionary diversity in Solanaceae inflorescence complexity is determined by subtle modifications of transcriptional programs during a critical transitional window of meristem maturation" [@Lemmon_Evolutioninflorescencediversity_2016]
 
 3. How are Ap2 genes involved in meristem identity, architecture etc (maybe also stress)? (maybe in discussion)
 
@@ -22,10 +23,9 @@
 - **Figure 1a**: photo of mature panicles (images panicle spread) Tom
 - **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) Tom
 - correlation between spikelet number and branching complexity justifies transcriptome samples
-- "evolutionary diversity in Solanaceae inflorescence complexity is determined by subtle modifications of transcriptional programs during a critical transitional window of meristem maturation" [@Lemmon_Evolutioninflorescencediversity_2016]
 - Topology / mathematics
 
-### 3. Difference in gene expression between indeterminate and determinate meristem stages is different between high wild and domesticated varieties, high branching/low branching accessions.
+### 3. There are "transcriptomic differences" between [domesticated and wild] varieties.
 - **Figure 2**: global view of transcriptome *e.g.* PCA (Otho)
 - **SF 1**: Montpellier phenotyping (Tom)
 - **SF 2**: distance heatmap (Tom)
@@ -54,7 +54,7 @@
 - **Figure 6**: (?)
 - sounds good but how?
 
-### 8. AP2-EREBP genes are associated with yield / domestication.
+### 8. AP2-EREBP genes are associated with domestication.
 - **Figure 7**: clusters and correlation with phenotypes (or PCA?) (Tom)
 - **Figure 7b / Table 3**. DE genes for interaction between stage and species (African and Asian) (Tom). (enriched for AP2s).
 - AP2s in cluster 4 & 5, generally they behave opposite in indica, some of them also in PC5
