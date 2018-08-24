@@ -40,7 +40,7 @@
 - PCA splits genes expressed in BM and SM on component 5, AP2/ERF are the most enriched across PC5
 - at least 20 AP2 are among the 400 genes preferentially expressed in BM, at least.
 - DREB ERF and RAV peak earlier, and AP2 peaks later
-- Can mention HB / NAC here
+- Can mention HB / NAC, other families here
 
 ### 5. AP2-EREBP genes are differentially expressed over a timecourse of panicle development
 - **Figure 4**: fluidigm results for AP2 (Otho)
@@ -48,11 +48,9 @@
 
 ### 6. [Differential] Expression of AP2 genes can be grouped by family
 - **Figure 5**: AP2-EREBP phylogeny with gene expression (Otho + My)
-- does this fit here?
 
 ### 7. Differences in AP2 gene promoter regions are associated with differences in expression
-- **Figure 6**: (?)
-- sounds good but how?
+- **Figure 6**: (Otho and Hélène will try this experiment)
 
 ### 8. AP2-EREBP genes are associated with domestication.
 - **Figure 7**: clusters and correlation with phenotypes (or PCA?) (Tom)
