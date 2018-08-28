@@ -18,3 +18,17 @@
 - cluster all genes (e.g. filtered on FDR from interaction)
 - general qc stuff
 - cluster z-stats
+
+10.1104/pp.17.00694 figure 4b for clustering
+
+Otho prefers viridis palette
+
+ERF142 : reduce PBN SBN
+PLT8 : reduce PBN
+
+Categories of gene function? AM identity, SB elongation
+
+Tidy up results point three, not clearly written.
+Results 6: 
+Results clusters: break AP2 into family and re-try enrichment analysis.
+Intersperse HB and ARF genes into results
