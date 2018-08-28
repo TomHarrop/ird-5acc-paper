@@ -95,6 +95,18 @@ ap2_exp <- ap2_exp %>%
 #           fluidigm_dat = clust_exp,
 #           rnaseq_dat = clust_rnaseq)
 
+
+# order ids as in PC5 
+
+load("../data/rlog-pca.Rdata")
+pc5 <- pcro %>%
+  select(PC5, locus_id)
+
+ap2_exp <- ap2_exp %>%
+  left_join(pc5) %>%
+  arrange(desc(PC5)) %>%
+  select(-PC5)
+
 pdf(file = "../fig/ap2-fluidigm-rnaseq.pdf",
     height = 7)
 unique(ap2_exp$locus_id) %>% map(~plot_both(.,

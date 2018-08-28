@@ -106,3 +106,56 @@ dev.off()
 
 
 # Interesting ones --------------------------------------------------------
+
+# Load cluster data -------------------------------------------------------
+
+cls <- read_csv(file = "../data-raw/annotated_clusters_scaled_l2fc.csv") %>%
+  dplyr::rename(locus_id2 = "MsuID") %>%
+  select(locus_id2, cluster)
+
+
+
+# Merge cluster and fluidigm ----------------------------------------------
+
+clust_heat <- chip4_exp %>%
+  scale_tidy_fluidigm() %>%
+  prepare_for_heat_spec() %>%
+  mutate(locus_id2 = str_split_fixed(string = locus_id,
+                                     pattern = " ",
+                                     2)[, 1]) %>%
+  inner_join(cls) %>%
+  dplyr::arrange(cluster) %>%
+  mutate(cluster = as.factor(cluster)) %>%
+  column_to_rownames("locus_id2")
+
+
+# heatmap -----------------------------------------------------------------
+
+get_gaps <- function(iter) {
+  out <- numeric()
+  for(i in 1:(length(iter)-1)) {
+    if(iter[i] != iter[i+1]) {
+      out <- c(out, i) 
+    }
+  }
+  return(out)
+}
+
+pdf("../fig/fluidigm_chip4_clusters.pdf",
+    width = 12)
+pheatmap(mat = clust_heat %>%
+           select(-locus_id, -cluster),
+         # scale = "row",
+         # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
+         # color = colorRampPalette(c( "white", "blue4"))(50),
+         color = viridis_pal()(50),
+         cluster_cols = F,
+         cluster_rows = F,
+         gaps_col = 1:5*4,
+         gaps_row = get_gaps(clust_heat$cluster),
+         cellwidth = 9,
+         cellheight = 9, 
+         annotation_row = clust_heat[, "cluster", drop = FALSE],
+         labels_row = clust_heat$locus_id)
+dev.off()
+

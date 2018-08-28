@@ -187,10 +187,15 @@ Cluster 4: up in Glaberrima down in indica
 
 Cluster 5: up in Indica
 
+- LOC_Os01g04800: RAV
 - LOC_Os01g58420: AP37/ERF3 cell death, interacts with NAC2, up in BM
 - LOC_Os02g43940: DREB4-1, dehydration? Up in BM
+- LOC_Os04g46220: ERF1 abio stress / development
 - LOC_Os04g46400: DREB4-2 same as above. Up in BM , up in Africans, crossmapping?
 
+Cluster 6
+
+- LOC_Os01g04750: RAV
 ## In fluidigm
 
 - LOC_Os01g04800: RAV2, MOST interesting, indica goes up while in all other species goes down.
