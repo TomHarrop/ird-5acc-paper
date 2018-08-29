@@ -90,13 +90,15 @@ scale_tidy_fluidigm <- function(dat) {
 # Prepare for heatmap -----------------------------------------------------
 
 
-prepare_for_heat <- function(dat){
+prepare_for_heat <- function(dat, scaled_val = expr_scale_gene_spec){
+  
+  scaled_val <- enquo(scaled_val)
   
   dat <- dat %>%
     # use median of spec-scaled
     mutate(locus_id = paste(locus_id, target_name)) %>%
     group_by(locus_id, species, stage) %>%
-    summarise(median_expr = median(expr_scale_gene_spec)) %>%
+    summarise(median_expr = median(!!scaled_val)) %>%
     ungroup() %>% 
     # spread for heatmap
     mutate(species_stage = paste(species, stage, sep = "_")) %>%
@@ -272,6 +274,18 @@ plot_both <- function(id_fluidigm,
 }
 
 
+# Line plot fluidigm ------------------------------------------------------
+
+lineplot_fluidigm <- function(dat) {
+  ggplot(dat,
+         aes(x = stage,
+             y = expr_scale_gene_spec)) +
+    geom_point() +
+    geom_smooth(aes(x = stage %>% as_factor(.) %>% as.numeric(.)),
+                se = FALSE) +
+    facet_grid(target_name ~ species, scales = "free_y") +
+    theme_bw()
+}
 
 # old ---------------------------------------------------------------------
 

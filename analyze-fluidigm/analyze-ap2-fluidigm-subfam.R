@@ -27,7 +27,7 @@ ap2_exp <- fluidigms$ap2_exp %>%
 
 ap2_heat <- ap2_exp %>%
   scale_tidy_fluidigm() %>%
-  prepare_for_heat() %>%
+  prepare_for_heat(scaled_val = expr_scale_gene_spec) %>%
   filter(complete.cases(.))
 
 
@@ -90,5 +90,19 @@ pheatmap(mat = ap2_heat_sfam %>% select(-locus_id, -subfam),
          cellheight = 9,
          labels_row = ap2_heat_sfam$locus_id,
          annotation_row = ap2_heat_sfam[, "subfam", drop = FALSE])
+dev.off()
+
+
+# line plot ap2 -----------------------------------------------------------
+
+pdf("../fig/ap2-fludigm-lineplot.pdf",
+    height = 50,
+    width = 10)
+ap2_exp %>%
+  scale_tidy_fluidigm() %>%
+  # pull(stage) %>%
+  # as_factor() %>% 
+  # as.numeric()
+  lineplot_fluidigm()
 dev.off()
 

@@ -107,7 +107,7 @@ ap2_exp <- ap2_exp %>%
   arrange(desc(PC5)) %>%
   select(-PC5)
 
-pdf(file = "../fig/ap2-fluidigm-rnaseq.pdf",
+pdf(file = "../fig/ap2-fluidigm-rnaseq-noscale.pdf",
     height = 7)
 unique(ap2_exp$locus_id) %>% map(~plot_both(.,
                                               fluidigm_dat = ap2_exp,

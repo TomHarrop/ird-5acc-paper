@@ -142,6 +142,14 @@ some_ap2 %>%
   get_orthoseq() %>%
   writeXStringSet(filepath = make_path(some_ap2))
 
+rav2 <- "LOC_Os01g04800"
+
+rav2 %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(rav2))
+
+
 # OsMADS4 - LOC_Os05g34940
 # up in SM, expecially in african species (duh!)
 
