@@ -23,6 +23,11 @@ hb_exp <- fluidigms$hb_exp %>%
   # Low expressed genes (Ct 999) to 0
   mutate(expression = round(expression, digits = 5))
 
+
+# Save --------------------------------------------------------------------
+
+save(hb_exp, file = "../data/hb_fluidigm.R")
+
 # Scale -------------------------------------------------------------------
 
 hb_heat <- hb_exp %>%
