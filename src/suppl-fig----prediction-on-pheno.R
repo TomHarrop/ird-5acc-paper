@@ -46,13 +46,13 @@ pbn_sbn <- pheno_cali %>%
 
 # Arrange and save plots --------------------------------------------------------------
 
-pdf(file = "../fig/fig-02-descript-pheno-stat.pdf", 
+pdf(file = "../fig/suppl-fig----descript-pheno-stat.pdf", 
     width = 8,
     height = 9)
 grid.arrange(pbn_spn,
              sbn_spn,
              pbn_sbn,
-             layout_matrix = matrix(c(1,1 ,2,2,3,3,3), ncol = 1))
+             layout_matrix = matrix(c(1,1,2,2,3,3,3), ncol = 1))
 dev.off()
 
 

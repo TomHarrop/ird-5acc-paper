@@ -22,7 +22,7 @@ pcx <- pcx %>%
                                        "glaberrima",
                                        "rufipogon",
                                        "indica")),
-         PC_id = paste0(PC_id, "-", var, "%"))
+         PC_id = paste0(PC_id, "~", var, "%"))
 
 
 # Plot and save -----------------------------------------------------------
