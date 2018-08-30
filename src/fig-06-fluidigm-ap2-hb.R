@@ -66,3 +66,9 @@ c4h <- pheatmap(mat = hb_heat4 %>% select(-locus_id),
 pdf("../fig/fig-06-fludigm-ap2-hb-DRAFT.pdf")
 grid.arrange(c4h[[4]], c4a[[4]], c5a[[4]])
 dev.off()
+
+hb_exp %>%
+  filter(locus_id %in% cl4$locus_id) %>%
+  scale_tidy_fluidigm() %>%
+  lineplot_fluidigm()
+

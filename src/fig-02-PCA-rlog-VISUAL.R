@@ -1,4 +1,6 @@
 library(tidyverse)
+library(glue)
+
 load("../data/rlog-pca.Rdata")
 # color_palette <- c("blue", "goldenrod")
 
@@ -42,8 +44,13 @@ p <- ggplot(pcx,
   labs(x = "Sample ID",
        y = "Loading",
        fill = "Stage",
-       caption = str_wrap("",
-                          width = 70)) +
+       caption = glue("Fig 2: Grafical representation of PC loadings
+                       for all RNA-seq samples. The first 4 components
+                       explain {sum(pc_var$var[1:4])}% of the variance
+                       which might be determined by species specific 
+                      differences. Only the 5th component, which explains
+                      {pc_var$var[5]}% of the splits stages.") %>%
+         str_wrap(width = 70)) +
   theme(axis.text.x = element_text(hjust = 0,
                                    vjust = .5,
                                    angle = 270)) 
@@ -52,3 +59,4 @@ p <- ggplot(pcx,
 pdf("../fig/fig-02-PCA-rlog-VISUAL.pdf")
 print(p)
 dev.off()
+
