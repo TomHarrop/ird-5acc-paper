@@ -73,7 +73,7 @@ ap2_sharoni <- bind_cols(read_excel(ap2_sharoni_path,
   mutate(locus_id = paste0("LOC_", locus_id),
          subfam = paste(subfamily, subgroub, sep = " - ")) %>%
   left_join(pc5) %>%
-  filter(!is.na(PC5)) %>%
+  # filter(!is.na(PC5)) %>%
   arrange(desc(PC5))
 
 tst <- ap2_sharoni %>%
