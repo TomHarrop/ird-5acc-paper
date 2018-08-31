@@ -82,3 +82,57 @@ p_1 <- p$data %>%
 pdf(file = "../fig/fig-01-pca-on-pheno.pdf", height = 8)
 print(p_1)
 dev.off()
+
+# PCA with labels ----------------------------------------------------------
+
+pc <- pheno_cali %>%
+  select_at(vars(Name, RL:spn)) %>%
+  # select(-PanL) %>%
+  as.data.frame() %>%
+  group_by(Name) %>%
+  mutate(cnt = 1:n()) %>%
+  ungroup() %>%
+  mutate(cnt = paste(Name, cnt, sep = "-")) %>%
+  as.data.frame() %>%
+  column_to_rownames("cnt") %>%
+  select(-Name) %>%
+  prcomp(.,
+         scale. = T,
+         center = T)
+
+p <- autoplot(pc, data = pheno_cali, 
+              loadings = TRUE,
+              loadings.label = TRUE) 
+
+pos <- position_jitter(width = .4,
+                       height = 0, 
+                       seed = 1)
+
+p$data %>%
+  mutate(sequenced = case_when(Name %in% pheno_mnp$species ~ "in rnaseq",
+                               TRUE ~ "no")) %>%
+  ggplot(aes(x = Origin, 
+             y = PC1)) +
+  geom_boxplot(outlier.alpha = 0, colour = "black") +
+  geom_jitter(data = . %>%
+                filter(sequenced == "no"),
+              height = 0,
+              alpha = .5,
+              colour = "darkgrey") +
+  geom_point(data = . %>%
+               filter(sequenced == "in rnaseq"),
+             # alpha = .5,
+             colour = "red",
+             position = pos) + 
+  # scale_color_manual(values = c("red", "grey")) +
+  ggrepel::geom_label_repel(data = . %>%
+                              filter(sequenced == "in rnaseq"),
+                            aes(label = Name),
+                            position = pos) +
+  theme_bw() 
+  
+pheno_mnp$species
+  
+
+ p$data %>%
+  filter(sequenced == "no")
