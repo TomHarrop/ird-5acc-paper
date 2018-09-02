@@ -14,6 +14,7 @@ p_ch <- c(22, 24, 23, 25)
 
 pheno_cali <- pheno_cali %>%
   mutate(Species = paste0("O. ", Species))
+  
 
 # PCA ---------------------------------------------------------------------
 
@@ -108,6 +109,11 @@ pos <- position_jitter(width = .4,
                        height = 0, 
                        seed = 1)
 
+
+# Plot PCA with labels ----------------------------------------------------
+
+
+
 p$data %>%
   mutate(sequenced = case_when(Name %in% pheno_mnp$species ~ "in rnaseq",
                                TRUE ~ "no")) %>%
@@ -129,10 +135,31 @@ p$data %>%
                               filter(sequenced == "in rnaseq"),
                             aes(label = Name),
                             position = pos) +
-  theme_bw() 
-  
-pheno_mnp$species
-  
+  theme_bw()
 
- p$data %>%
-  filter(sequenced == "no")
+# Plot boxplot by accession -----------------------------------------------
+
+
+pdf(file = "../fig/fig-01-pca-on-pheno-BOXPLOT-LABEL.pdf",
+    width = 11, height = 5)  
+p$data %>%
+  mutate(Name = case_when(Name == "Nipponbare" ~ "Niponbarre",
+                          Name == "W1654 (2) / B" ~ "W1654",
+                          TRUE ~ Name)) %>%
+  mutate(in_rnaseq = case_when(Name %in%
+                                 pheno_mnp$species ~ "yes",
+                               TRUE ~ "no")) %>%
+  ggplot(aes(x = reorder(Name, PC1), 
+             y = PC1,
+             fill = in_rnaseq)) +
+  geom_boxplot() +
+  facet_grid(. ~ Origin,
+             scales = "free_x", space = "free_x") +
+  theme_bw() +
+  theme(axis.text.x = element_text(hjust = 0,
+                                   vjust = .5,
+                                   angle = 270)) +
+  scale_fill_manual(values = c("white", "red"))
+dev.off()
+
+ 
