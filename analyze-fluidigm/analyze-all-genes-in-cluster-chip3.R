@@ -191,26 +191,9 @@ tst <- chip3_exp %>%
   inner_join(cls) %>%
   dplyr::arrange(cluster) %>%
   split(., .$cluster) 
-names(tst) %>% 
-  map(~ggplot(tst[[.]], aes(x = stage,
-                            y = expression)) +
-        geom_point(size = 2, col = "darkgrey") +
-        geom_smooth(aes(x = stage %>%
-                          as_factor(.) %>%
-                          as.numeric(.)),
-                    se = FALSE,
-                    colour = "black") +
-        facet_grid(target_name ~ species,
-                   scales = "free_y") +
-        # facet_grid(species ~ target_name,
-        #            scales = "free_x") +
-        theme_bw() +
-        theme(axis.text.x = element_text(hjust = 0,
-                                         vjust = .5,
-                                         angle = 270)) +
-        labs(title = paste("cluster", .),
-             y = "Relative Expression")
-  ) %>%
+names(tst) %>%
+  map(~lineplot_fluidigm(nm = .,
+                         dat = tst[[.]])) %>%
   map(., ggplotGrob) %>%
   purrr::reduce(., rbind, size = "first") %>%
   grid.draw()
