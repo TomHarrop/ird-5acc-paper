@@ -243,6 +243,50 @@ os_grf5 %>%
   writeXStringSet(filepath = make_path(os_grf5))
 
 
+# GRF in Cluster 2 --------------------------------------------------------
+
+cluster2_grf9 <- "LOC_Os03g47140"
+
+cluster2_grf9 %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(cluster2_grf9))
+
+cluster2_grf6 <- "LOC_Os03g51970"
+
+cluster2_grf6 %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(cluster2_grf6))
+
+
+# alignments for helen ----------------------------------------------------
+
+make_path2 <- function(gene) {
+  paste0("../seq/",
+         gene, "-",
+         "al",
+         ".fasta")
+}
+
+to_align_df <- readxl::read_excel("../data-raw/helen-alignment.xlsx") %>% 
+  mutate(object = LOC_Name,
+         nm = paste(LOC_Name, X__1, "cluster", Cluster, sep = "_")) %>%
+  mutate(nm = str_replace(nm, "/", "_")) %>%
+  mutate(nm = str_replace(nm, " ", "_"))
+ 
+to_align <- setNames(object = to_align_df$object,
+           nm = to_align_df$nm)
+
+get_alig <- function(nm) {
+  print(nm)
+  pull_rap(to_align[[nm]]) %>%
+    get_orthoseq() %>%
+    writeXStringSet(filepath = make_path2(as.character(nm)))
+}
+
+names(to_align) %>% 
+  map(get_alig)
 
 # fetch orthologs method 2 ------------------------------------------------
 
