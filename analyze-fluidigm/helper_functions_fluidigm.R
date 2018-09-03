@@ -276,15 +276,35 @@ plot_both <- function(id_fluidigm,
 
 # Line plot fluidigm ------------------------------------------------------
 
-lineplot_fluidigm <- function(dat) {
-  ggplot(dat,
-         aes(x = stage,
-             y = expr_scale_gene_spec)) +
-    geom_point() +
-    geom_smooth(aes(x = stage %>% as_factor(.) %>% as.numeric(.)),
-                se = FALSE) +
-    facet_grid(target_name ~ species, scales = "free_y") +
-    theme_bw()
+lineplot_fluidigm <- function(nm, dat) {
+  p <- ggplot(dat, aes(x = stage,
+                       y = expression)) +
+    geom_point(size = 2,
+               col = "darkgrey",
+               alpha = .5) +
+    # geom_smooth(aes(x = stage %>%
+    #                   as_factor(.) %>%
+    #                   as.numeric(.)),
+    #             se = FALSE,
+    #             colour = "black") +
+    stat_summary(aes(x = stage %>%
+                       as_factor(.) %>%
+                       as.numeric(.)),
+                 fun.y = mean,
+                 geom="line",
+                 size = 1.2,
+                 linejoin = "round") +
+    facet_grid(target_name ~ species,
+               scales = "free_y") +
+    # facet_grid(species ~ target_name,
+    #            scales = "free_x") +
+    theme_bw() +
+    theme(axis.text.x = element_text(hjust = 0,
+                                     vjust = .5,
+                                     angle = 270)) +
+    labs(title = paste("cluster", nm),
+         y = "Relative Expression")
+  return(p)
 }
 
 # old ---------------------------------------------------------------------

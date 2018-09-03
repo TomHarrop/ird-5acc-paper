@@ -167,3 +167,51 @@ ints <- c(g1l2 = "LOC_Os06g46030",
           APO2 = "LOC_Os04g51000",
           valid11 = "LOC_Os05g01940",
           valid06 = "LOC_Os05g03760")
+
+# Dot plot ----------------------------------------------------------------
+
+library(grid)
+
+cls <- read_csv(file = "../data-raw/annotated_clusters_scaled_l2fc.csv") %>%
+  dplyr::rename(locus_id2 = "MsuID") %>%
+  select(locus_id2, cluster)
+
+
+pdf("../fig/fuidigm-chip-3-cluster-dotplot.pdf",
+    height = 40)
+tst <- chip3_exp %>%
+  scale_tidy_fluidigm() %>%
+  mutate(species = factor(species,
+                          levels = c("Osj",
+                                     "Ob", "Og",
+                                     "Or", "Osi"))) %>%
+  mutate(locus_id2 = str_split_fixed(string = locus_id,
+                                     pattern = " ",
+                                     2)[, 1]) %>%
+  inner_join(cls) %>%
+  dplyr::arrange(cluster) %>%
+  split(., .$cluster) 
+names(tst) %>% 
+  map(~ggplot(tst[[.]], aes(x = stage,
+                            y = expression)) +
+        geom_point(size = 2, col = "darkgrey") +
+        geom_smooth(aes(x = stage %>%
+                          as_factor(.) %>%
+                          as.numeric(.)),
+                    se = FALSE,
+                    colour = "black") +
+        facet_grid(target_name ~ species,
+                   scales = "free_y") +
+        # facet_grid(species ~ target_name,
+        #            scales = "free_x") +
+        theme_bw() +
+        theme(axis.text.x = element_text(hjust = 0,
+                                         vjust = .5,
+                                         angle = 270)) +
+        labs(title = paste("cluster", .),
+             y = "Relative Expression")
+  ) %>%
+  map(., ggplotGrob) %>%
+  purrr::reduce(., rbind, size = "first") %>%
+  grid.draw()
+dev.off()  

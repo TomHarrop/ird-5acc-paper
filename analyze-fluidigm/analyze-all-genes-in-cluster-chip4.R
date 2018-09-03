@@ -159,3 +159,101 @@ pheatmap(mat = clust_heat %>%
          labels_row = clust_heat$locus_id)
 dev.off()
 
+
+
+# Dot plot ----------------------------------------------------------------
+
+library(grid)
+
+cls <- read_csv(file = "../data-raw/annotated_clusters_scaled_l2fc.csv") %>%
+  dplyr::rename(locus_id2 = "MsuID") %>%
+  select(locus_id2, cluster)
+
+
+pdf("../fig/fuidigm-chip-4-cluster-dotplot.pdf",
+    height = 20)
+tst <- chip4_exp %>%
+  scale_tidy_fluidigm() %>%
+  mutate(species = factor(species,
+                          levels = c("Osj",
+                                     "Ob", "Og",
+                                     "Or", "Osi"))) %>%
+  mutate(locus_id2 = str_split_fixed(string = locus_id,
+                                     pattern = " ",
+                                     2)[, 1]) %>%
+  inner_join(cls) %>%
+  dplyr::arrange(cluster) %>%
+  split(., .$cluster) 
+names(tst) %>% 
+  map(~ggplot(tst[[.]], aes(x = stage,
+                            y = expression)) +
+        geom_point(size = 2,
+                   col = "darkgrey",
+                   alpha = .5) +
+        # geom_smooth(aes(x = stage %>%
+        #                   as_factor(.) %>%
+        #                   as.numeric(.)),
+        #             se = FALSE,
+        #             colour = "black") +
+        stat_summary(aes(x = stage %>%
+                           as_factor(.) %>%
+                           as.numeric(.)),
+                     fun.y = mean,
+                     geom="line",
+                     size = 1.2,
+                     linejoin = "round") +
+        facet_grid(target_name ~ species,
+                   scales = "free_y") +
+        # facet_grid(species ~ target_name,
+        #            scales = "free_x") +
+        theme_bw() +
+        theme(axis.text.x = element_text(hjust = 0,
+                                         vjust = .5,
+                                         angle = 270)) +
+        labs(title = paste("cluster", .),
+             y = "Relative Expression")
+  ) %>%
+  map(., ggplotGrob) %>%
+  purrr::reduce(., rbind, size = "first") %>%
+  grid.draw()
+dev.off()  
+
+#   map(., ~scale_tidy_fluidigm(.) %>%
+#         mutate(species = factor(species,
+#                                 levels = c("Osj",
+#                                            "Ob", "Og",
+#                                            "Or", "Osi"))))
+# 
+# dat <- map(names(dat), .f = ~mutate(dat[[.]],
+#                                     new_var = .))
+# 
+# plts <- map(dat, ~ggplot(., aes(x = stage,
+#                                 y = expression)) +
+#               geom_point(size = 2, col = "darkgrey") +
+#               geom_smooth(aes(x = stage %>%
+#                                 as_factor(.) %>%
+#                                 as.numeric(.)),
+#                           se = FALSE,
+#                           colour = "black") +
+#               facet_grid(target_name ~ species,
+#                          scales = "free_y") +
+#               # facet_grid(species ~ target_name, 
+#               #            scales = "free_x") +
+#               theme_bw() +
+#               theme(axis.text.x = element_text(hjust = 0,
+#                                                vjust = .5,
+#                                                angle = 270)) +
+#               labs(title = unique(.$new_var),
+#                    y = "Relative Expression")
+# ) %>%
+#   map(., ggplotGrob)
+# 
+# pdf("../fig/fig-06-fluidigm-ap2-hb-dotline.pdf",
+#     height = 14)
+# # width = 12)
+# g <- rbind(plts[[1]], plts[[2]], plts[[3]],
+#            size = "first")
+# # g <- cbind(plts[[1]], plts[[2]], plts[[3]],
+# #            size = "first")
+# grid.draw(g)
+# dev.off()
