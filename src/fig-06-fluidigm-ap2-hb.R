@@ -67,8 +67,102 @@ pdf("../fig/fig-06-fludigm-ap2-hb-DRAFT.pdf")
 grid.arrange(c4h[[4]], c4a[[4]], c5a[[4]])
 dev.off()
 
-hb_exp %>%
-  filter(locus_id %in% cl4$locus_id) %>%
-  scale_tidy_fluidigm() %>%
-  lineplot_fluidigm()
 
+# Dot plot ---------------------------------------------------------------
+
+dat <- list(hb_cl4 = hb_exp %>%
+              filter(locus_id %in% cl4$locus_id),
+            ap2_cl4 = ap2_exp %>%
+              filter(locus_id %in% cl4$locus_id),
+            ap2_cl5 = ap2_exp %>%
+              filter(locus_id %in% cl5$locus_id)) %>%
+  map(., ~scale_tidy_fluidigm(.) %>%
+        mutate(species = factor(species,
+                                levels = c("Osj",
+                                           "Ob", "Og",
+                                           "Or", "Osi"))))
+
+dat <- map(names(dat), .f = ~mutate(dat[[.]],
+                           new_var = .))
+
+plts <- map(dat, ~ggplot(., aes(x = stage,
+                                y = expression)) +
+              geom_point(size = 2, col = "darkgrey") +
+              geom_smooth(aes(x = stage %>%
+                                as_factor(.) %>%
+                                as.numeric(.)),
+                          se = FALSE,
+                          colour = "black") +
+              facet_grid(target_name ~ species,
+                         scales = "free_y") +
+              # facet_grid(species ~ target_name, 
+              #            scales = "free_x") +
+              theme_bw() +
+              theme(axis.text.x = element_text(hjust = 0,
+                                               vjust = .5,
+                                               angle = 270)) +
+              labs(title = unique(.$new_var),
+                   y = "Relative Expression")
+            ) %>%
+  map(., ggplotGrob)
+
+pdf("../fig/fig-06-fluidigm-ap2-hb-dotline.pdf",
+    height = 14)
+    # width = 12)
+g <- rbind(plts[[1]], plts[[2]], plts[[3]],
+           size = "first")
+# g <- cbind(plts[[1]], plts[[2]], plts[[3]],
+#            size = "first")
+grid.draw(g)
+dev.off()
+
+# ggpubr::ggarrange(plts[[1]], plts[[2]], plts[[3]], ncol = 3)
+# 
+# # grid.arrange(plts[[1]], plts[[2]], plts[[3]])
+# 
+# grid.draw(gtable:::rbind_gtable(plts[[1]],
+#                                 plts[[2]], "first"))
+# 
+# 
+# pdf("../fig/fig-06-TEST.pdf", height = 20)
+# grid.arrange(grobs = lapply(
+#   list(plts[[1]],
+#        plts[[2]],
+#        plts[[3]]),
+#   egg::set_panel_size,
+#   width = unit(2, "cm"),
+#   height = unit(1, "in")
+# ))
+# dev.off()
+# 
+# library(grid)
+# library(gtable)
+# g1 <- ggplotGrob(plts[[1]])
+# g2 <- ggplotGrob(plts[[2]])
+# g <- cbind(g1, g2, size = "first")
+# 
+# tst <- hb_exp %>%
+#   filter(locus_id %in% cl4$locus_id) %>%
+#   scale_tidy_fluidigm() %>%
+#   mutate(species = factor(species,
+#                           levels = c("Osj",
+#                                      "Ob", "Og",
+#                                      "Or", "Osi")))
+# 
+# 
+#   ggplot(tst, aes(x = stage,
+#              y = expression)) +
+#   geom_point(size = 2, col = "darkgrey") +
+#   geom_smooth(aes(x = stage %>%
+#                     as_factor(.) %>%
+#                     as.numeric(.)),
+#               se = FALSE,
+#               colour = "black") +
+#   facet_grid(target_name ~ species, scales = "free_y") +
+#   theme_bw() +
+#   theme(axis.text.x = element_text(hjust = 0,
+#                                    vjust = .5,
+#                                    angle = 270))
+# 
+
+  
