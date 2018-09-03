@@ -16,14 +16,25 @@ pcx <- pcx %>%
   select_at(vars(accession:PC5)) %>%
   gather(PC1:PC5, key = "PC_id", value = "pc_x") %>%
   left_join(pc_var) %>%
+  mutate(stage = as.character(stage),
+         accession = as.character(accession)) %>%
+  mutate(stage = case_when(stage == "PBM" ~ "BM",
+                           stage == "SM" ~ "SM",
+                           TRUE ~ stage),
+         accession = case_when(accession == "japonica" ~ "O. japonica",
+                               accession == "barthii" ~ "O. barthii",
+                               accession == "glaberrima" ~ "O. glaberrima",
+                               accession == "rufipogon" ~ "O. rufipogon",
+                               accession == "indica" ~ "O. indica",
+                               TRUE ~ accession)) %>%
   mutate(ID = paste0(ID, " (",
                     stage, ")"),
          accession = factor(accession,
-                            levels = c("japonica",
-                                       "barthii",
-                                       "glaberrima",
-                                       "rufipogon",
-                                       "indica")),
+                            levels = c("O. japonica",
+                                       "O. barthii",
+                                       "O. glaberrima",
+                                       "O. rufipogon",
+                                       "O. indica")),
          PC_id = paste0(PC_id, "~", var, "%"))
 
 
@@ -54,7 +65,8 @@ p <- ggplot(pcx,
          str_wrap(width = 70)) +
   theme(axis.text.x = element_text(hjust = 0,
                                    vjust = .5,
-                                   angle = 270)) 
+                                   angle = 270),
+        strip.text.x = element_text(face = "italic")) 
   
 
 pdf("../fig/fig-02-PCA-rlog-VISUAL.pdf")
