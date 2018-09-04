@@ -278,7 +278,7 @@ to_align_df <- readxl::read_excel("../data-raw/helen-alignment.xlsx") %>%
 to_align <- setNames(object = to_align_df$object,
            nm = to_align_df$nm)
 
-get_alig <- function(nm) {
+get_al_seq <- function(nm) {
   print(nm)
   pull_rap(to_align[[nm]]) %>%
     get_orthoseq() %>%
@@ -286,8 +286,18 @@ get_alig <- function(nm) {
 }
 
 names(to_align) %>% 
-  map(get_alig)
+  map(get_al_seq)
 
+# ISSUE with OsGR5
+# "LOC_Os06g02560_OsGRF5_cluster_2" %>% map(get_al_seq)
+# to_align["LOC_Os06g02560_OsGRF5_cluster_2"]
+
+which(names(to_align) == "LOC_Os06g02560_OsGRF5_cluster_2")
+
+to_align <- to_align[(which(names(to_align) == "LOC_Os06g02560_OsGRF5_cluster_2") + 1):length(to_align)]
+
+names(to_align) %>% 
+  map(get_al_seq)
 # fetch orthologs method 2 ------------------------------------------------
 
 # 
