@@ -49,7 +49,7 @@ spn <- ggplot(pheno_mnp, aes(x = Species, y = spn)) +
            ymin = -Inf, ymax = Inf,
            alpha = .1)
 
-pdf(file = "../fig/fig-03-phenotype-selected-acc.pdf",
+pdf(file = "../fig/suppl-fig-01-phenotype-selected-acc-MNP.pdf",
     width = 7, height = 6)
 grid.arrange(grobs = list(pbn, sbn, spn),
              layout_matrix = matrix(c(1,2,3), nrow = 1))

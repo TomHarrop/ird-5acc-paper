@@ -2,6 +2,7 @@ library(tidyverse)
 library(fgsea)
 library(pheatmap)
 library(gridExtra)
+library(viridis)
 source("helper-functions.R")
 dds <- readRDS("../data-raw/dds.Rds")
 
@@ -45,13 +46,17 @@ pcx_tf <- pcx %>%
 
 families <- c(ap2 = "AP2-EREBP", 
               mads = "MADS",
-              nac = "NAC",
-              hb = "HB",
-              sbp = "SBP",
-              bhlh = "bHLH")
+              # nac = "NAC",
+              hb = "HB")#,
+              # sbp = "SBP",
+              # bhlh = "bHLH")
 
 p_enr <- ggplot(pcx_tf %>%
-                filter(Family %in% families),
+                filter(Family %in% families) %>%
+                  mutate(facet = paste0(Family,
+                                        ", adjusted p-value = ",
+                                        round(padj, 3))) %>%
+                  mutate(facet = as_factor(facet)),
                 aes(x = rank_pc5,
                     y = PC5)) + 
   # geom_point(alpha = .01) + 
@@ -60,7 +65,8 @@ p_enr <- ggplot(pcx_tf %>%
              lwd = .05,
              colour = "grey") +
   # geom_rug(aes(x = rank_pc1, y = NULL), alpha = .5) +
-  facet_grid(Family ~ .) +
+  # facet_grid(Family ~ .) +
+  facet_grid(. ~ facet) +
   theme_bw()
 # p_enr
 
@@ -69,7 +75,7 @@ p_enr <- ggplot(pcx_tf %>%
 plot_heatmap <- function(family = "AP2-EREBP",
                          norm = by_locus_species,
                          cutree_rows = 2,
-                         filter_abs_pc = .003) {
+                         filter_abs_pc = .002) {
   norm <- enquo(norm)
   to_heat <- pcx_tf %>%
     filter(Family == family) %>%
@@ -81,6 +87,9 @@ plot_heatmap <- function(family = "AP2-EREBP",
     group_by(locus_id, species, stage) %>%
     summarise(to_plot = median(!!norm)) %>%
     ungroup() %>%
+    mutate(stage = as.character(stage)) %>%
+    mutate(stage = case_when(stage == "PBM" ~ "BM",
+                             TRUE ~ stage)) %>%
     mutate(stage_species = paste(stage, species, sep = "_")) %>%
     select(locus_id, stage_species, to_plot) %>%
     spread(key = stage_species, value = to_plot) %>%
@@ -89,8 +98,8 @@ plot_heatmap <- function(family = "AP2-EREBP",
   
   
   p <- pheatmap(to_heat,
-           color = colorRampPalette(c( "white", "blue4"))(50),
-           show_rownames = F,
+           color = viridis_pal()(50),
+           show_rownames = T,
            # fontsize = 5,
            cutree_cols = 2,
            cluster_cols = F,
@@ -99,7 +108,8 @@ plot_heatmap <- function(family = "AP2-EREBP",
            cutree_rows = cutree_rows,
            cellwidth = 9,
            cellheight = 5,
-           main = family)
+           main = family,
+           fontsize_row = 5)
   
   return(p)
 }
@@ -120,20 +130,29 @@ heat_zfhd <- plot_heatmap("zf-HD", cutree_rows = 1)
 
 # Save plots --------------------------------------------------------------
 
-pdf("../fig/fig-05-TFs-in-PCA.pdf",
-    height = length(families)*1.2,
-    width = 12)
+pdf("../fig/fig-05-TFs-in-PCA-locusid.pdf",
+    height = 6,
+    width = 10)
 grid.arrange(grobs = list(p_enr,
                           heat_ap2[[4]],
-                          heat_hb[[4]],
                           heat_mads[[4]],
-                          heat_nac[[4]],
-                          heat_sbp[[4]],
-                          heat_bhlh[[4]]),
-             layout_matrix = cbind(c(1,1,1,1),
-                                   c(2,2,5,5),
-                                   c(3,3,6,6),
-                                   c(4,4,7,7)))
+                          heat_hb[[4]]),#,
+                          # heat_nac[[4]],
+                          # heat_sbp[[4]],
+                          # heat_bhlh[[4]]),
+             # ncol = 4)
+             layout_matrix = rbind(c(1,1,1),
+                                   c(1,1,1),
+                                   2:4,
+                                   2:4,
+                                   2:4,
+                                   2:4,
+                                   # 2:4,
+                                   2:4))
+             # layout_matrix = cbind(c(1,1,1,1),
+             #                       c(2,2,5,5),
+             #                       c(3,3,6,6),
+             #                       c(4,4,7,7)))
 
 dev.off()
 
