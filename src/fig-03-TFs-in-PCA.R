@@ -70,6 +70,32 @@ p_enr <- ggplot(pcx_tf %>%
   theme_bw()
 # p_enr
 
+
+# Load subfamilies --------------------------------------------------------
+
+ap2_sharoni_path <- "../data-raw/ap2s-sharoni/Supplementary_Table_S1.xls"
+
+ap2_sharoni <- bind_cols(read_excel(ap2_sharoni_path,
+                                    range = "A4:A166",
+                                    col_names = "locus_id"),
+                         read_excel(ap2_sharoni_path,
+                                    range = "N4:O166",
+                                    col_names = c("subgroub", "subfamily"))) %>%
+  mutate(locus_id = paste0("LOC_", locus_id),
+         subfam = paste(subfamily, subgroub, sep = " - ")) %>%
+  select(locus_id, subfamily)
+
+hb_shain <- read_csv("../data-raw/hb_genes_jain2008.csv") %>%
+  dplyr::rename(subfamily = "class",
+                locus_id = "msuId") %>%
+  select(locus_id, subfamily) 
+
+mads_arora <- read_excel("../data-raw/mads_subfam-copyandpasted_arora_2007.xlsx") %>%
+  select(locus_id, subfamily)
+
+subfams <- bind_rows(ap2_sharoni, hb_shain, mads_arora)
+
+
 # Define functions for heatmap --------------------------------------------
 
 plot_heatmap <- function(family = "AP2-EREBP",
@@ -93,11 +119,12 @@ plot_heatmap <- function(family = "AP2-EREBP",
     mutate(stage_species = paste(stage, species, sep = "_")) %>%
     select(locus_id, stage_species, to_plot) %>%
     spread(key = stage_species, value = to_plot) %>%
+    left_join(subfams) %>% #### ADD SUBFAMILY!
     as.data.frame() %>%
-    column_to_rownames("locus_id") 
+    column_to_rownames("locus_id")
   
   
-  p <- pheatmap(to_heat,
+  p <- pheatmap(to_heat %>% select(-subfamily),
            color = viridis_pal()(50),
            show_rownames = T,
            # fontsize = 5,
@@ -109,7 +136,8 @@ plot_heatmap <- function(family = "AP2-EREBP",
            cellwidth = 9,
            cellheight = 5,
            main = family,
-           fontsize_row = 5)
+           fontsize_row = 5,
+           annotation_row = to_heat[, "subfamily", drop = F]) #### ADD SUBFAMILY!
   
   return(p)
 }
@@ -130,9 +158,11 @@ heat_zfhd <- plot_heatmap("zf-HD", cutree_rows = 1)
 
 # Save plots --------------------------------------------------------------
 
-pdf("../fig/fig-05-TFs-in-PCA-locusid.pdf",
+pdf("../fig/fig-05-TFs-in-PCA-locusid_subfams.pdf",
+    # height = 6,
+    # width = 10)
     height = 6,
-    width = 10)
+    width = 14)
 grid.arrange(grobs = list(p_enr,
                           heat_ap2[[4]],
                           heat_mads[[4]],
