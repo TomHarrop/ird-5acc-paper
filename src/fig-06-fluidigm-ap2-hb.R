@@ -1,6 +1,7 @@
 library(tidyverse)
 library(viridis)
 library(pheatmap)
+library(grid)
 library(gridExtra)
 source("../analyze-fluidigm/helper_functions_fluidigm.R")  
 
@@ -115,6 +116,52 @@ g <- rbind(plts[[1]], plts[[2]], plts[[3]],
 #            size = "first")
 grid.draw(g)
 dev.off()
+
+
+# Test coord fixed --------------------------------------------------------
+
+
+plts_2 <- map(dat, ~ggplot(., aes(x = stage,
+                                y = expression)) +
+              geom_point(size = 2, col = "darkgrey") +
+              geom_smooth(aes(x = stage %>%
+                                as_factor(.) %>%
+                                as.numeric(.)),
+                          se = FALSE,
+                          colour = "black") +
+              facet_grid(target_name ~ species,
+                         scales = "free_y", ) +
+              # coord_fixed() +  
+              # facet_grid(species ~ target_name, 
+              #            scales = "free_x") +
+              theme_bw() +
+              theme(axis.text.x = element_text(hjust = 0,
+                                               vjust = .5,
+                                               angle = 270)) +
+              labs(title = unique(.$new_var),
+                   y = "Relative Expression")
+) 
+
+ph  <- 4
+
+pdf("../fig/fig-06-fluidigm-ap2-hb-TEST-ratio.pdf",
+    height = 8)
+# width = 12)
+grid.arrange(plts_2[[1]],
+             plts_2[[2]],
+             plts_2[[3]], 
+             layout_matrix = rbind(c(rep(1, 4), rep(2, 4)),
+                                   c(rep(1, 4), rep(2, 4)),
+                                   c(rep(1, 4), rep(2, 4)),
+                                   c(rep(1, 4), rep(3, 4)),
+                                   c(rep(1, 4), rep(3, 4)),
+                                   c(rep(1, 4), rep(3, 4)),
+                                   c(rep(1, 4), rep(3, 4))))
+# g <- cbind(plts[[1]], plts[[2]], plts[[3]],
+#            size = "first")
+# print(p)
+dev.off()
+
 
 # ggpubr::ggarrange(plts[[1]], plts[[2]], plts[[3]], ncol = 3)
 # 
