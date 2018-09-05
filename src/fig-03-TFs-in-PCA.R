@@ -5,12 +5,17 @@ library(gridExtra)
 library(viridis)
 source("helper-functions.R")
 dds <- readRDS("../data-raw/dds.Rds")
-
+filter_abs_pc <- .002
 
 # Load PCA and TF families ------------------------------------------------
 
 # load("../data/all-sep-deseq.Rdata")
 load("../data/rlog-pca.Rdata")
+
+load("../data/func-anno.Rdata") 
+annos <- annos %>% 
+  dplyr::rename(locus_id = "MSU") %>%
+  select(symbol, locus_id)
 
 tf_fam <- readRDS("../data-raw/tfdb_os.Rds") %>%
   dplyr::rename(locus_id = "Protein.ID") %>%
@@ -120,9 +125,16 @@ plot_heatmap <- function(family = "AP2-EREBP",
     select(locus_id, stage_species, to_plot) %>%
     spread(key = stage_species, value = to_plot) %>%
     left_join(subfams) %>% #### ADD SUBFAMILY!
+    left_join(annos) %>% #### ADD GENE NAME
     as.data.frame() %>%
+    mutate(locus_id = paste(locus_id, symbol)) %>%
+    select(-symbol) %>%
+    distinct() %>%
+    # print(.)
     column_to_rownames("locus_id")
-  
+  # 
+  # print(data.frame(tst = rownames(to_heat))) %>%
+  #   write_csv(path = "~/Desktop/mads.csv")
   
   p <- pheatmap(to_heat %>% select(-subfamily),
            color = viridis_pal()(50),
