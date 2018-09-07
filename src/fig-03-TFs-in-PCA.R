@@ -57,18 +57,33 @@ families <- c(ap2 = "AP2-EREBP",
               # bhlh = "bHLH")
 
 p_enr <- ggplot(pcx_tf %>%
-                filter(Family %in% families) %>%
+                  filter(Family %in% families) %>%
+                  mutate(relevant = case_when(PC5 > filter_abs_pc ~ "Yes",
+                                              PC5 < -filter_abs_pc ~ "Yes",
+                                              TRUE ~ "No")) %>%
                   mutate(facet = paste0(Family,
                                         ", adjusted p-value = ",
                                         round(padj, 3))) %>%
                   mutate(facet = as_factor(facet)),
                 aes(x = rank_pc5,
-                    y = PC5)) + 
+                    y = PC5,
+                    colour = relevant)) + 
   # geom_point(alpha = .01) + 
   geom_linerange(aes(ymin = 0, ymax = PC5), lwd = 1) + 
   geom_hline(yintercept = 0,
              lwd = .05,
              colour = "grey") +
+  scale_color_manual(values = c("black", "red")) +
+  # annotate("rect",
+  #          fill = "red",
+  #          xmin = -Inf, xmax = Inf,
+  #          ymin = filter_abs_pc, ymax = Inf,
+  #          alpha = .05) +
+  # annotate("rect",
+  #          fill = "red",
+  #          xmin = -Inf, xmax = Inf,
+  #          ymin = -Inf, ymax = -filter_abs_pc,
+  #          alpha = .05) +
   # geom_rug(aes(x = rank_pc1, y = NULL), alpha = .5) +
   # facet_grid(Family ~ .) +
   facet_grid(. ~ facet) +
@@ -160,11 +175,11 @@ heat_ap2 <- plot_heatmap("AP2-EREBP")
 heat_mads <- plot_heatmap("MADS")
 # plot_heatmap("WRKY")
 heat_hb <- plot_heatmap("HB")
-heat_nac <- plot_heatmap("NAC")
-heat_sbp <- plot_heatmap("SBP", cutree_rows = 1)
-heat_tcp <- plot_heatmap("TCP", cutree_rows = 1)
-heat_bhlh <- plot_heatmap("bHLH")
-heat_zfhd <- plot_heatmap("zf-HD", cutree_rows = 1)
+# heat_nac <- plot_heatmap("NAC")
+# heat_sbp <- plot_heatmap("SBP", cutree_rows = 1)
+# heat_tcp <- plot_heatmap("TCP", cutree_rows = 1)
+# heat_bhlh <- plot_heatmap("bHLH")
+# heat_zfhd <- plot_heatmap("zf-HD", cutree_rows = 1)
 
 # tst <- families %>% map(plot_heatmap)
 
