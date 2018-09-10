@@ -23,13 +23,16 @@
 - **Figure 1a**: photo of mature panicles (images panicle spread) Tom
 - **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) Tom
 - correlation between spikelet number and branching complexity justifies transcriptome samples
-- Topology / mathematics
+- 
 
 ### 3. There are "transcriptomic differences" between [domesticated and wild] varieties.
 - **Figure 2**: global view of transcriptome *e.g.* PCA (Otho)
 - **SF 1**: Montpellier phenotyping (Tom)
+    + re-order phenotypes
 - **SF 2**: distance heatmap (Tom)
+- **SF 3**: panicle samples
 - **SI**: DE genes table
+- Topology / mathematics
 - african species cluster together, asian species cluster together -> domestication changes are minor compared to species-level changes
 
 > Comment OM: I wouldn't stress "yield" too much
@@ -47,6 +50,7 @@
 ### 5. AP2-EREBP expression is associated with high yielding indica.
 - **Figure 5**: clusters and correlation with phenotypes (or PCA?) (Tom)
 - **Figure 5b / Table 3**. DE genes for interaction between stage and species (African and Asian) (Tom). (enriched for AP2s).
+- **SF**: Cluster 5 only
 - AP2s in cluster 4 & 5, generally they behave opposite in indica, some of them also in PC5
 - Cluster1: Arag1; Cluster2: EREBP86; Cluster4: PLT9, IDS1, EREBP153; Cluster5; AP37/ERF3, DREB4-1, DREB4-2
 
@@ -60,6 +64,7 @@
 ### 8. AP2 mutants have defects in panicle branching.
 - **Figure 8**: mutant characterisation (Otho / Hélène)
 - Also check LMD data for these (Tom). There's already an AP2 figure from the LMD data, Tom will find it and send it out.
+- PLT8 TPM in supplementary
 
 ## Discussion
 
