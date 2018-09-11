@@ -2,6 +2,7 @@ library(tidyverse)
 library(readxl)
 library(ggpubr)
 library(gridExtra)
+library(ggbeeswarm)
 
 dat <- read_excel(path = "../data-raw/Mutant_AP2_PhenotypingData.xlsx")
 gene_names <- c(LOC_Os07g03250 = "plt8",
@@ -17,49 +18,130 @@ dat <- dat %>%
   gather(RL:SpN, key = "measure", value = "value")
 
 
-# Plot every mutant -------------------------------------------------------
+# Plot every mutant - Flipped -------------------------------------------------
 
-# pdf("mutants/mutants-boxplot.pdf", height = 14, width = 5)
-ggplot(dat, aes(x = ID, y = value)) +
-  geom_boxplot(varwidth = T) +
-  facet_grid(measure ~ Accession, scales = "free") +
+pdf("../fig/fig-08-mutant-TEST-flipped.pdf",
+    height = 4,
+    width = 12)
+dat %>%
+  filter(Accession != "Kitake",
+         measure != "TbN") %>%
+  mutate(is_wt = case_when(`Target Gene` == "WT" ~ "WT",
+                           TRUE ~ "mutant")) %>%
+ggplot(aes(x = ID,
+           y = value, 
+           colour = is_wt)) +
+  geom_boxplot(varwidth = T,
+               colour = "black",
+               outlier.alpha = 0) +
+  # geom_jitter(height = 0,
+  #             alpha = .2) +
+  geom_quasirandom(alpha = .7
+                   # colour = "blue"
+                   ) +
+  facet_grid(Accession ~ measure,
+             scales = "free",
+             space = "free_y") +
+  coord_flip() +
   theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-# dev.off()
+  # theme(axis.text.x = element_text(hjust = 1,
+  #                                  vjust = .5)) +
+  scale_color_viridis_d(begin = .2, end = .8) +
+  labs(x = "Value",
+       y = "Accession_mutant",
+       caption = "")
+  # ylim(0, NA)
+dev.off()
 
 
-# Test --------------------------------------------------------------------
+# Plot every mutant - standard --------------------------------------------
 
-tst <- dat %>%
-  filter(Accession != "Kitake") %>%
-  arrange(desc(mutant_gene)) %>%
-  mutate(mutant_gene = as_factor(mutant_gene)) %>%
-  split(paste(.$measure, .$Accession)) %>%
-  map(~lm(value ~ mutant_gene, data = .)) %>%
-  map(summary)
+pdf("../fig/fig-08-mutant-TEST.pdf",
+    height = 12,
+    width = 5)
+dat %>%
+  filter(Accession != "Kitake",
+         measure != "TbN") %>%
+  mutate(is_wt = case_when(`Target Gene` == "WT" ~ "WT",
+                           TRUE ~ "mutant")) %>%
+  ggplot(aes(x = ID,
+             y = value, 
+             colour = is_wt)) +
+  geom_boxplot(varwidth = T,
+               colour = "black",
+               outlier.alpha = 0) +
+  # geom_jitter(height = 0,
+  #             alpha = .2) +
+  geom_quasirandom(alpha = .7
+                   # colour = "blue"
+  ) +
+  facet_grid(measure ~ Accession,
+             scales = "free",
+             space = "free_x") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 270,
+                                   hjust = 0,
+                                   vjust = .5)) +
+  scale_color_viridis_d(begin = .2, end = .8) +
+  labs(y = "Value",
+       x = "Accession_mutant",
+       caption = "")
+# ylim(0, NA)
+dev.off()
 
-# save(tst, file = "mutants/tests.Rdata")
+# Plot every mutant - selected --------------------------------------------
+
+pdf("../fig/fig-08-mutant-TEST-reduced.pdf",
+    height = 6,
+    width = 5)
+dat %>%
+  filter(Accession != "Kitake",
+         measure %in% c("PbN", "SbN", "SpN")) %>%
+  mutate(is_wt = case_when(`Target Gene` == "WT" ~ "WT",
+                           TRUE ~ "mutant")) %>%
+  ggplot(aes(x = ID,
+             y = value, 
+             colour = is_wt)) +
+  geom_boxplot(varwidth = T,
+               colour = "black",
+               outlier.alpha = 0) +
+  # geom_jitter(height = 0,
+  #             alpha = .2) +
+  geom_quasirandom(alpha = .7
+                   # colour = "blue"
+  ) +
+  facet_grid(measure ~ Accession,
+             scales = "free",
+             space = "free_x") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 310,
+                                   hjust = 0,
+                                   vjust = .5)) +
+  scale_color_viridis_d(begin = .2, end = .8) +
+  labs(y = "Value",
+       x = "Accession_mutant",
+       caption = "")
+# ylim(0, NA)
+dev.off()
 
 
-# Test with r4ds functions ------------------------------------------------
 
-test_pheno <- function(df) {
-  lm(value ~ mutant_gene, data = df)
-}
+# Plot expression of selected genes ---------------------------------------
 
-# Not sure how to extract coefficients systematically
+source("helper-functions.R")
+dds <- readRDS("../data-raw/dds.Rds")
 
-tst <- dat %>%
-  filter(Accession != "Kitake") %>%
-  arrange(desc(mutant_gene)) %>%
-  mutate(mutant_gene = as_factor(mutant_gene)) %>%
-  group_by(measure, Accession) %>%
-  nest() %>%
-  mutate(model = map(data, test_pheno)) %>%
-  mutate(model_summ = map(model, summary))
-# mutate(pvals = map(model_summ, .f = function(i) i$a$coefficients[, "Pr(>|t|)"]))
-# mutate(pval)
-
+dat %>%
+  filter(dat$`Target Gene` != "WT") %>%
+  pull(`Target Gene`) %>%
+  unique() %>%
+  get_expression(dds = dds) %>%
+  plot_norm_expr()
+  
+# dat %>%
+#   filter(dat$`Target Gene` != "WT") %>%
+#   select(`Target Gene`, mutant_gene) %>%
+#   distinct()
 
 # How to add pvalue to a plot? (ggpubr)--------------------------------------
 
@@ -106,41 +188,8 @@ arrange_plots <- function(name) {
             heights = c(1, 9))
 }
 
-# pdf(file = "mutants/mutants_with_stats.pdf",
-    # width = 12,
-    # height = 14)
+pdf(file = "../fig/fig-08-mutants_with_stats.pdf",
+    width = 12,
+    height = 14)
 map(names(p), arrange_plots)
-# dev.off()
-
-# Check prediction --------------------------------------------------------
-
-load("data/phenotype-fit.Rdata")
-
-dat <- read_excel(path = "data/Mutant_AP2_PhenotypingData.xlsx")
-
-dat <- dat %>% 
-  mutate_at(vars(RL:SpN), as.numeric) %>%
-  rename(pbn = PbN,
-         sbn = SbN,
-         spn = SpN) %>%
-  mutate(spn_pred = predict(fit, .))
-
-ggplot(dat, aes(x = spn_pred,
-                y = spn)) +
-  geom_point(alpha = .3) +
-  geom_abline(intercept = 0, slope = 1, lty = 2) +
-  facet_grid(`Target Gene` ~ Accession) +
-  theme_bw()
-# dat <- dat %>%
-#   split(.$measure)
-# pdf("figures/mutants-boxplot.pdf", height = 4)
-# names(dat) %>% 
-#   map(~ggplot(dat[[.]], aes(x = `Target Gene`, y = value)) +
-#         geom_boxplot() +
-#         # geom_point(size = 2, alpha = .2) +
-#         facet_wrap(facets = "Accession",
-#                    nrow = 1) +
-#         ggtitle(.) +
-#         theme_bw() +
-#         theme(axis.text.x = element_text(angle = 90, hjust = 1)))
-# dev.off()
+dev.off()
