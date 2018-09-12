@@ -50,7 +50,7 @@ pcx_tf <- pcx %>%
 # Plot Enrichement --------------------------------------------------------
 
 families <- c(ap2 = "AP2-EREBP", 
-              mads = "MADS",
+              # mads = "MADS",
               # nac = "NAC",
               hb = "HB")#,
               # sbp = "SBP",
@@ -115,7 +115,6 @@ mads_arora <- read_excel("../data-raw/mads_subfam-copyandpasted_arora_2007.xlsx"
 
 subfams <- bind_rows(ap2_sharoni, hb_shain, mads_arora)
 
-
 # Define functions for heatmap --------------------------------------------
 
 plot_heatmap <- function(family = "AP2-EREBP",
@@ -141,25 +140,32 @@ plot_heatmap <- function(family = "AP2-EREBP",
     spread(key = stage_species, value = to_plot) %>%
     left_join(subfams) %>% #### ADD SUBFAMILY!
     left_join(annos) %>% #### ADD GENE NAME
+    left_join(pcx %>% select(locus_id, PC5)) %>%
     as.data.frame() %>%
     mutate(locus_id = paste(locus_id, symbol)) %>%
     select(-symbol) %>%
+    arrange(PC5) %>%
     distinct() %>%
     # print(.)
     column_to_rownames("locus_id")
   # 
   # print(data.frame(tst = rownames(to_heat))) %>%
   #   write_csv(path = "~/Desktop/mads.csv")
+  rows_cut <- to_heat %>% 
+    mutate(counter = case_when(PC5 < 0 ~ 1,
+                               TRUE ~ 0)) %$%
+    sum(counter)
+  print(rows_cut)
   
-  p <- pheatmap(to_heat %>% select(-subfamily),
+  p <- pheatmap(to_heat %>% select(-subfamily, -PC5),
            color = viridis_pal()(50),
            show_rownames = T,
            # fontsize = 5,
            cutree_cols = 2,
            cluster_cols = F,
-           # cluster_rows = F,
+           cluster_rows = F,
            gaps_col = 5,
-           cutree_rows = cutree_rows,
+           gaps_row = rows_cut,
            cellwidth = 9,
            cellheight = 5,
            main = family,
@@ -172,7 +178,7 @@ plot_heatmap <- function(family = "AP2-EREBP",
 # Plot families -----------------------------------------------------------
 
 heat_ap2 <- plot_heatmap("AP2-EREBP")
-heat_mads <- plot_heatmap("MADS")
+# heat_mads <- plot_heatmap("MADS")
 # plot_heatmap("WRKY")
 heat_hb <- plot_heatmap("HB")
 # heat_nac <- plot_heatmap("NAC")
@@ -185,27 +191,34 @@ heat_hb <- plot_heatmap("HB")
 
 # Save plots --------------------------------------------------------------
 
-pdf("../fig/fig-05-TFs-in-PCA-locusid_subfams.pdf",
+pdf("../fig/fig-03-TFs-in-PCA-locusid_subfams.pdf",
     # height = 6,
     # width = 10)
     height = 6,
-    width = 14)
+    # width = 14)
+    width = 12)
 grid.arrange(grobs = list(p_enr,
                           heat_ap2[[4]],
-                          heat_mads[[4]],
+                          # heat_mads[[4]],
                           heat_hb[[4]]),#,
                           # heat_nac[[4]],
                           # heat_sbp[[4]],
                           # heat_bhlh[[4]]),
              # ncol = 4)
-             layout_matrix = rbind(c(1,1,1),
-                                   c(1,1,1),
-                                   2:4,
-                                   2:4,
-                                   2:4,
-                                   2:4,
-                                   # 2:4,
-                                   2:4))
+             layout_matrix = rbind(c(1, 1),
+                                   c(1, 1),
+                                   2:3,
+                                   2:3,
+                                   2:3,
+                                   2:3,
+                                   2:3))
+             # layout_matrix = rbind(c(1,1,1),
+             #                       c(1,1,1),
+             #                       2:4,
+             #                       2:4,
+             #                       2:4,
+             #                       2:4,
+             #                       2:4))
              # layout_matrix = cbind(c(1,1,1,1),
              #                       c(2,2,5,5),
              #                       c(3,3,6,6),
