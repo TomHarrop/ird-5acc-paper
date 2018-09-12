@@ -1,4 +1,5 @@
 library(tidyverse)
+library(magrittr)
 library(fgsea)
 library(pheatmap)
 library(gridExtra)
@@ -74,6 +75,10 @@ p_enr <- ggplot(pcx_tf %>%
              lwd = .05,
              colour = "grey") +
   scale_color_manual(values = c("black", "red")) +
+  scale_x_continuous(limits = c(1, max(pcx_tf$rank_pc5)),
+                     breaks = c(1, 5000, 10000, 15000, 20000, max(pcx_tf$rank_pc5)),
+                     labels = c("1\n [BM]", "5000", "10000", "15000", "20000",
+                                paste0(max(pcx_tf$rank_pc5), "\n [SM]"))) +
   # annotate("rect",
   #          fill = "red",
   #          xmin = -Inf, xmax = Inf,
@@ -88,6 +93,7 @@ p_enr <- ggplot(pcx_tf %>%
   # facet_grid(Family ~ .) +
   facet_grid(. ~ facet) +
   theme_bw()
+
 # p_enr
 
 
@@ -140,11 +146,11 @@ plot_heatmap <- function(family = "AP2-EREBP",
     spread(key = stage_species, value = to_plot) %>%
     left_join(subfams) %>% #### ADD SUBFAMILY!
     left_join(annos) %>% #### ADD GENE NAME
-    left_join(pcx %>% select(locus_id, PC5)) %>%
+    left_join(pcx_tf %>% select(locus_id, PC5, rank_pc5)) %>%
     as.data.frame() %>%
-    mutate(locus_id = paste(locus_id, symbol)) %>%
+    mutate(locus_id = paste(rank_pc5, locus_id, symbol)) %>%
     select(-symbol) %>%
-    arrange(PC5) %>%
+    arrange(desc(PC5)) %>%
     distinct() %>%
     # print(.)
     column_to_rownames("locus_id")
@@ -152,12 +158,12 @@ plot_heatmap <- function(family = "AP2-EREBP",
   # print(data.frame(tst = rownames(to_heat))) %>%
   #   write_csv(path = "~/Desktop/mads.csv")
   rows_cut <- to_heat %>% 
-    mutate(counter = case_when(PC5 < 0 ~ 1,
+    mutate(counter = case_when(PC5 > 0 ~ 1,
                                TRUE ~ 0)) %$%
     sum(counter)
   print(rows_cut)
   
-  p <- pheatmap(to_heat %>% select(-subfamily, -PC5),
+  p <- pheatmap(to_heat %>% select(-subfamily, -PC5, -rank_pc5),
            color = viridis_pal()(50),
            show_rownames = T,
            # fontsize = 5,
