@@ -26,11 +26,8 @@ tf_fam <- readRDS("../data-raw/tfdb_os.Rds") %>%
 
 # Prepare data - merge PC and TF ------------------------------------------
 
-# pcx <- pc_spc$x %>%
 pcx <- pcro %>%
   as.data.frame(.) %>%
-  # rownames_to_column() %>%
-  # dplyr::rename(locus_id = "rowname") %>%
   left_join(tf_fam) %>%
   arrange(desc(PC5)) %>%
   mutate(rank_pc5 = 1:nrow(.)) %>%
@@ -69,7 +66,6 @@ p_enr <- ggplot(pcx_tf %>%
                 aes(x = rank_pc5,
                     y = PC5,
                     colour = relevant)) + 
-  # geom_point(alpha = .01) + 
   geom_linerange(aes(ymin = 0, ymax = PC5), lwd = 1) + 
   geom_hline(yintercept = 0,
              lwd = .05,
@@ -79,18 +75,6 @@ p_enr <- ggplot(pcx_tf %>%
                      breaks = c(1, 5000, 10000, 15000, 20000, max(pcx_tf$rank_pc5)),
                      labels = c("1\n [BM]", "5000", "10000", "15000", "20000",
                                 paste0(max(pcx_tf$rank_pc5), "\n [SM]"))) +
-  # annotate("rect",
-  #          fill = "red",
-  #          xmin = -Inf, xmax = Inf,
-  #          ymin = filter_abs_pc, ymax = Inf,
-  #          alpha = .05) +
-  # annotate("rect",
-  #          fill = "red",
-  #          xmin = -Inf, xmax = Inf,
-  #          ymin = -Inf, ymax = -filter_abs_pc,
-  #          alpha = .05) +
-  # geom_rug(aes(x = rank_pc1, y = NULL), alpha = .5) +
-  # facet_grid(Family ~ .) +
   facet_grid(. ~ facet) +
   theme_bw()
 
@@ -131,7 +115,6 @@ plot_heatmap <- function(family = "AP2-EREBP",
   to_heat <- pcx_tf %>%
     filter(Family == family) %>%
     mutate(abs_pc5 = abs(PC5)) %>%
-    # arrange(desc(abs_pc1)) %>%
     filter(abs_pc5 > filter_abs_pc) %>%
     .$locus_id %>%
     get_expression(dds) %>%
@@ -152,11 +135,8 @@ plot_heatmap <- function(family = "AP2-EREBP",
     select(-symbol) %>%
     arrange(desc(PC5)) %>%
     distinct() %>%
-    # print(.)
     column_to_rownames("locus_id")
-  # 
-  # print(data.frame(tst = rownames(to_heat))) %>%
-  #   write_csv(path = "~/Desktop/mads.csv")
+
   rows_cut <- to_heat %>% 
     mutate(counter = case_when(PC5 > 0 ~ 1,
                                TRUE ~ 0)) %$%
@@ -166,7 +146,6 @@ plot_heatmap <- function(family = "AP2-EREBP",
   p <- pheatmap(to_heat %>% select(-subfamily, -PC5, -rank_pc5),
            color = viridis_pal()(50),
            show_rownames = T,
-           # fontsize = 5,
            cutree_cols = 2,
            cluster_cols = F,
            cluster_rows = F,
@@ -198,10 +177,7 @@ heat_hb <- plot_heatmap("HB")
 # Save plots --------------------------------------------------------------
 
 pdf("../fig/fig-03-TFs-in-PCA-locusid_subfams.pdf",
-    # height = 6,
-    # width = 10)
     height = 6,
-    # width = 14)
     width = 12)
 grid.arrange(grobs = list(p_enr,
                           heat_ap2[[4]],
@@ -231,24 +207,6 @@ grid.arrange(grobs = list(p_enr,
              #                       c(4,4,7,7)))
 
 dev.off()
-
-
-# Save Locus_ids ----------------------------------------------------------
-# fam_to_csv <- function(fam = "AP2-EREBP") {
-#   pcx_tf %>%
-#     filter(Family == fam) %>%
-#     mutate(abs_pc1 = abs(PC1)) %>%
-#     # arrange(desc(abs_pc1)) %>%
-#     filter(abs_pc1 > 2) %>%
-#     select(locus_id) %>%
-#     write_excel_csv(path = paste0("../tables/table-tfs-fig04-",
-#                                   fam,
-#                                   ".csv"))
-# }
-# 
-# walk(.x = c("AP2-EREBP", "HB", "MADS"),
-#      .f = fam_to_csv)
-
 
 # suppl figure 1 ----------------------------------------------------------
 
