@@ -92,14 +92,18 @@ dev.off()
 # Plot every mutant - selected --------------------------------------------
 
 pdf("../fig/fig-08-mutant-TEST-reduced.pdf",
-    height = 6,
-    width = 5)
+    height = 7,
+    width = 6)
 dat %>%
   filter(Accession != "Kitake",
          measure %in% c("PbN", "SbN", "SpN")) %>%
   mutate(is_wt = case_when(`Target Gene` == "WT" ~ "WT",
-                           TRUE ~ "mutant")) %>%
-  ggplot(aes(x = ID,
+                           TRUE ~ "mutant"),
+         mutant_gene = case_when(mutant_gene != "WT" ~ paste(mutant_gene, 
+                                                             `Target Gene`,
+                                                             sep = "\n"),
+                                 TRUE ~ "WT")) %>%
+  ggplot(aes(x = mutant_gene,
              y = value, 
              colour = is_wt)) +
   geom_boxplot(varwidth = T,
@@ -114,13 +118,23 @@ dat %>%
              scales = "free",
              space = "free_x") +
   theme_bw() +
-  theme(axis.text.x = element_text(angle = 310,
+  theme(axis.text.x = element_text(angle = 270,
                                    hjust = 0,
                                    vjust = .5)) +
   scale_color_viridis_d(begin = .2, end = .8) +
-  labs(y = "Value",
-       x = "Accession_mutant",
-       caption = "")
+  labs(x = "Genotype",
+       y = "Counts [n]",
+       caption = str_wrap("Mutants of four AP2 genes have panicle
+                          phenotypes. When compared to the wild Type
+                          Erf48 produces slightly more primary
+                          branches.
+                          Instead, plt8 produces less primary branches and 
+                          slightly less spikelets. The mutants of the two 
+                          homologs erf142 (smos1) both produce less primary
+                          and secondary branches, and less spikelets (and
+                          overall smaller panicles - not shown).",
+                          width = 80),
+       colour = "")
 # ylim(0, NA)
 dev.off()
 
