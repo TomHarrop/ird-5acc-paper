@@ -184,32 +184,6 @@ heat_hb <- plot_heatmap("HB")
 pdf("../fig/fig-03-TFs-in-PCA-locusid_subfams.pdf",
     height = 6,
     width = 12)
-# grid.arrange(grobs = list(p_enr,
-#                           heat_ap2[[4]],
-#                           # heat_mads[[4]],
-#                           heat_hb[[4]]),#,
-#                           # heat_nac[[4]],
-#                           # heat_sbp[[4]],
-#                           # heat_bhlh[[4]]),
-#              # ncol = 4)
-#              layout_matrix = rbind(c(1, 1),
-#                                    c(1, 1),
-#                                    2:3,
-#                                    2:3,
-#                                    2:3,
-#                                    2:3,
-#                                    2:3))
-#              # layout_matrix = rbind(c(1,1,1),
-#              #                       c(1,1,1),
-#              #                       2:4,
-#              #                       2:4,
-#              #                       2:4,
-#              #                       2:4,
-#              #                       2:4))
-#              # layout_matrix = cbind(c(1,1,1,1),
-#              #                       c(2,2,5,5),
-#              #                       c(3,3,6,6),
-#              #                       c(4,4,7,7)))
 heats <- cowplot::plot_grid(heat_ap2[[4]],
                             heat_hb[[4]],
                             labels = c("B", "C"))
@@ -217,7 +191,12 @@ cowplot::plot_grid(p_enr, heats,
                    nrow = 2,
                    rel_heights = c(2,5),
                    labels = c("A", "")) %>%
-  cowplot::add_sub(., "AP2-EREBP and HB transcription factor change expression between BM and SM") %>%
+  cowplot::add_sub(., str_wrap("AP2-EREBP and HB transcription factor change expression 
+                               between BM and SM. 
+                               A. AP2 and HB genes are enriched at the extremes of PC5 
+                               (with adjusted p-values of 0.004 and 0.021 from a GSEA test).
+                               B. ",
+                   width = 80)) %>%
   cowplot::ggdraw()
 
 dev.off()
