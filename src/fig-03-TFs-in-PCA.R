@@ -6,6 +6,7 @@ library(gridExtra)
 library(viridis)
 source("helper-functions.R")
 dds <- readRDS("../data-raw/dds.Rds")
+# filter_abs_pc <- .00185
 filter_abs_pc <- .002
 
 # Load PCA and TF families ------------------------------------------------
@@ -32,6 +33,16 @@ pcx <- pcro %>%
   arrange(desc(PC5)) %>%
   mutate(rank_pc5 = 1:nrow(.)) %>%
   mutate(Family = ifelse(is.na(Family), "none", Family))
+
+
+# How many genes pass cutoff ----------------------------------------------
+
+
+
+# pcx %>% 
+#   # filter(PC5 > filter_abs_pc | PC5 < -filter_abs_pc) %>%
+#   filter(PC5 > filter_abs_pc) %>%
+#   nrow()
 
 # Test Enrichment ---------------------------------------------------------
 
@@ -103,8 +114,8 @@ hb_shain <- read_csv("../data-raw/hb_genes_jain2008.csv") %>%
                 locus_id = "msuId") %>%
   select(locus_id, subfamily, symbol) 
 
-mads_arora <- read_excel("../data-raw/mads_subfam-copyandpasted_arora_2007.xlsx") %>%
-  select(locus_id, subfamily)
+# mads_arora <- read_excel("../data-raw/mads_subfam-copyandpasted_arora_2007.xlsx") %>%
+#   select(locus_id, subfamily)
 
 subfams <- bind_rows(ap2_sharoni,
                      # mads_arora,
@@ -182,7 +193,7 @@ heat_hb <- plot_heatmap("HB")
 # Save plots --------------------------------------------------------------
 
 pdf("../fig/fig-03-TFs-in-PCA-locusid_subfams.pdf",
-    height = 6,
+    height = 9,
     width = 12)
 heats <- cowplot::plot_grid(heat_ap2[[4]],
                             heat_hb[[4]],
@@ -193,9 +204,18 @@ cowplot::plot_grid(p_enr, heats,
                    labels = c("A", "")) %>%
   cowplot::add_sub(., str_wrap("AP2-EREBP and HB transcription factor change expression 
                                between BM and SM. 
-                               A. AP2 and HB genes are enriched at the extremes of PC5 
+                               A. AP2 and HB genes are distributed toward the extremes ofPC5 
                                (with adjusted p-values of 0.004 and 0.021 from a GSEA test).
-                               B. ",
+                               We set an experimental cutoff that retains approximately 10% of
+                               genes from any of the two extremes (in red).
+                               B. Most of AP2-EREBP genes that pass the cutoff are more expressed
+                               in the BM. Although only four AP2-EREBP genes are more expressed in
+                               the SM, three of them belong to the AP2 subfamily. Instead, genes
+                               at the opposite extreme of PC5 belong preferentially to RAV, DREB
+                               and ERF subfamilies.
+                               C. HB genes that pass the cutoff are prefertially more expressed
+                               in the SM. Those genes belong preferentially to the HD-ZIP IV 
+                               subfamily",
                    width = 80)) %>%
   cowplot::ggdraw()
 
