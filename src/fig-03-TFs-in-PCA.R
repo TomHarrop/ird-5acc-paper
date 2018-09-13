@@ -76,7 +76,9 @@ p_enr <- ggplot(pcx_tf %>%
                      labels = c("1\n [BM]", "5000", "10000", "15000", "20000",
                                 paste0(max(pcx_tf$rank_pc5), "\n [SM]"))) +
   facet_grid(. ~ facet) +
-  theme_bw()
+  theme_bw() +
+  labs(x = "Ranks of genes on PC5",
+       y = "PC5 Value")
 
 # p_enr
 
@@ -93,17 +95,20 @@ ap2_sharoni <- bind_cols(read_excel(ap2_sharoni_path,
                                     col_names = c("subgroub", "subfamily"))) %>%
   mutate(locus_id = paste0("LOC_", locus_id),
          subfam = paste(subfamily, subgroub, sep = " - ")) %>%
-  select(locus_id, subfamily)
+  select(locus_id, subfamily) %>%
+  left_join(annos %>% select(locus_id, symbol))
 
 hb_shain <- read_csv("../data-raw/hb_genes_jain2008.csv") %>%
   dplyr::rename(subfamily = "class",
                 locus_id = "msuId") %>%
-  select(locus_id, subfamily) 
+  select(locus_id, subfamily, symbol) 
 
 mads_arora <- read_excel("../data-raw/mads_subfam-copyandpasted_arora_2007.xlsx") %>%
   select(locus_id, subfamily)
 
-subfams <- bind_rows(ap2_sharoni, hb_shain, mads_arora)
+subfams <- bind_rows(ap2_sharoni,
+                     # mads_arora,
+                     hb_shain)
 
 # Define functions for heatmap --------------------------------------------
 
@@ -128,7 +133,7 @@ plot_heatmap <- function(family = "AP2-EREBP",
     select(locus_id, stage_species, to_plot) %>%
     spread(key = stage_species, value = to_plot) %>%
     left_join(subfams) %>% #### ADD SUBFAMILY!
-    left_join(annos) %>% #### ADD GENE NAME
+    # left_join(annos) %>% #### ADD GENE NAME
     left_join(pcx_tf %>% select(locus_id, PC5, rank_pc5)) %>%
     as.data.frame() %>%
     mutate(locus_id = paste(rank_pc5, locus_id, symbol)) %>%
@@ -179,34 +184,45 @@ heat_hb <- plot_heatmap("HB")
 pdf("../fig/fig-03-TFs-in-PCA-locusid_subfams.pdf",
     height = 6,
     width = 12)
-grid.arrange(grobs = list(p_enr,
-                          heat_ap2[[4]],
-                          # heat_mads[[4]],
-                          heat_hb[[4]]),#,
-                          # heat_nac[[4]],
-                          # heat_sbp[[4]],
-                          # heat_bhlh[[4]]),
-             # ncol = 4)
-             layout_matrix = rbind(c(1, 1),
-                                   c(1, 1),
-                                   2:3,
-                                   2:3,
-                                   2:3,
-                                   2:3,
-                                   2:3))
-             # layout_matrix = rbind(c(1,1,1),
-             #                       c(1,1,1),
-             #                       2:4,
-             #                       2:4,
-             #                       2:4,
-             #                       2:4,
-             #                       2:4))
-             # layout_matrix = cbind(c(1,1,1,1),
-             #                       c(2,2,5,5),
-             #                       c(3,3,6,6),
-             #                       c(4,4,7,7)))
+# grid.arrange(grobs = list(p_enr,
+#                           heat_ap2[[4]],
+#                           # heat_mads[[4]],
+#                           heat_hb[[4]]),#,
+#                           # heat_nac[[4]],
+#                           # heat_sbp[[4]],
+#                           # heat_bhlh[[4]]),
+#              # ncol = 4)
+#              layout_matrix = rbind(c(1, 1),
+#                                    c(1, 1),
+#                                    2:3,
+#                                    2:3,
+#                                    2:3,
+#                                    2:3,
+#                                    2:3))
+#              # layout_matrix = rbind(c(1,1,1),
+#              #                       c(1,1,1),
+#              #                       2:4,
+#              #                       2:4,
+#              #                       2:4,
+#              #                       2:4,
+#              #                       2:4))
+#              # layout_matrix = cbind(c(1,1,1,1),
+#              #                       c(2,2,5,5),
+#              #                       c(3,3,6,6),
+#              #                       c(4,4,7,7)))
+heats <- cowplot::plot_grid(heat_ap2[[4]],
+                            heat_hb[[4]],
+                            labels = c("B", "C"))
+cowplot::plot_grid(p_enr, heats,
+                   nrow = 2,
+                   rel_heights = c(2,5),
+                   labels = c("A", "")) %>%
+  cowplot::add_sub(., "AP2-EREBP and HB transcription factor change expression between BM and SM") %>%
+  cowplot::ggdraw()
 
 dev.off()
+
+
 
 # suppl figure 1 ----------------------------------------------------------
 
