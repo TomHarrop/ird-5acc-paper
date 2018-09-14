@@ -193,7 +193,7 @@ heat_hb <- plot_heatmap("HB")
 # Save plots --------------------------------------------------------------
 
 pdf("../fig/fig-03-TFs-in-PCA-locusid_subfams.pdf",
-    height = 9,
+    height = 8,
     width = 12)
 heats <- cowplot::plot_grid(heat_ap2[[4]],
                             heat_hb[[4]],

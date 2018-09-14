@@ -91,7 +91,7 @@ dev.off()
 
 # Plot every mutant - selected --------------------------------------------
 
-pdf("../fig/fig-08-mutant-TEST-reduced.pdf",
+pdf("../fig/fig-07-mutant-TEST-reduced.pdf",
     height = 7,
     width = 6)
 dat %>%
@@ -124,7 +124,7 @@ dat %>%
   scale_color_viridis_d(begin = .2, end = .8) +
   labs(x = "Genotype",
        y = "Counts [n]",
-       caption = str_wrap("Mutants of four AP2 genes have panicle
+       caption = str_wrap("Mutants of four AP2-EREBP genes have panicle
                           phenotypes. When compared to the wild Type
                           Erf48 produces slightly more primary
                           branches.

@@ -144,7 +144,7 @@ plts_2 <- map(dat, ~ggplot(., aes(x = stage,
 
 ph  <- 4
 
-pdf("../fig/fig-06-fluidigm-ap2-hb-TEST-ratio.pdf",
+pdf("../fig/fig-05-fluidigm-ap2-hb-TEST-ratio.pdf",
     height = 8)
 # width = 12)
 grid.arrange(plts_2[[1]],

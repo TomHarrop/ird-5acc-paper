@@ -44,25 +44,25 @@
 - at least 20 AP2 are among the 400 genes preferentially expressed in BM, at least.
 - DREB ERF and RAV peak earlier, and AP2 peaks later
 - Can mention HB / NAC, other families here
-- [Differential] Expression of AP2 genes can be grouped by subfamily **Figure 4**: AP2-EREBP phylogeny with gene expression (Otho + My)
+- [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  ????**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s**
 
 
 ### 5. AP2-EREBP expression is associated with high yielding indica.
-- **Figure 5**: clusters and correlation with phenotypes (or PCA?) (Tom)
+- **Figure 4**: clusters and correlation with phenotypes (or PCA?) (Tom)
 - **Figure 5b / Table 3**. DE genes for interaction between stage and species (African and Asian) (Tom). (enriched for AP2s).
 - **SF**: Cluster 5 only
 - AP2s in cluster 4 & 5, generally they behave opposite in indica, some of them also in PC5
 - Cluster1: Arag1; Cluster2: EREBP86; Cluster4: PLT9, IDS1, EREBP153; Cluster5; AP37/ERF3, DREB4-1, DREB4-2
 
 ### 6. AP2-EREBP genes are differentially expressed over a timecourse of panicle development:
-- **Figure 6**: fluidigm results for AP2 (Otho)
+- **Figure 5**: fluidigm results for AP2 (Otho)
 - If this only confirms 4., we could move it to supp. If the different stages add something new, keep it in the main paper.
 
 ### 7. Differences in AP2 gene (promoter regions+CDS) are associated with differences in expression
-- **Figure 7**: (Otho and Hélène will try this experiment)
+- **Figure 6**: (Otho and Hélène will try this experiment)
 
 ### 8. AP2 mutants have defects in panicle branching.
-- **Figure 8**: mutant characterisation (Otho / Hélène)
+- **Figure 7**: mutant characterisation (Otho / Hélène)
 - Also check LMD data for these (Tom). There's already an AP2 figure from the LMD data, Tom will find it and send it out.
 - PLT8 TPM in supplementary
 
