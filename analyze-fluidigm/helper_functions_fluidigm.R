@@ -302,7 +302,8 @@ lineplot_fluidigm <- function(nm, dat,
     theme_bw() +
     theme(axis.text.x = element_text(hjust = 0,
                                      vjust = .5,
-                                     angle = 270)) +
+                                     angle = 270),
+          strip.text = element_text(size = 6)) +
     labs(title = paste("cluster", nm),
          y = "Relative Expression")
   return(p)

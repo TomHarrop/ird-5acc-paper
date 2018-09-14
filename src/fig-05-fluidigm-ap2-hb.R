@@ -50,21 +50,24 @@ rbind(g[[1]], g[[2]], g[[3]],
 
 dev.off()
 
-ph  <- 4
-
-
 # two columns -------------------------------------------------------------
 
 
 pdf("../fig/fig-05-fluidigm-ap2-hb-TEST-ratio.pdf",
-    height = 8)
+    height = 9, width = 9)
 cowplot::plot_grid(plts[[2]], plts[[3]],
                    nrow = 2,
                    rel_heights = c(3, 4) + 1.5,
                    labels = c("A", "C")) %>%
   cowplot::plot_grid(., plts[[1]],
                      labels = c("", "B")) %>%
-  cowplot::add_sub(., str_wrap("")) %>%
+  cowplot::add_sub(., str_wrap("qPCR confirms the behaviour of selected
+                               genes of cluster 4 and cluster 5.
+                               We have also measured gene expressio in two
+                               additional developmental stages. Stage 1 is a Rachis
+                               Meristem, Stage2 is a Branch Meristem, Stage 3
+                               is a Spikelet Meristem, Stage 4 is a Developing
+                               Spikelet.")) %>%
   cowplot::ggdraw()
 dev.off()
 
