@@ -64,7 +64,7 @@ c4h <- pheatmap(mat = hb_heat4 %>% select(-locus_id),
                 cellheight = 9,
                 labels_row = hb_heat4$locus_id)
 
-pdf("../fig/fig-06-fludigm-ap2-hb-DRAFT.pdf")
+pdf("../fig/fig-05-fludigm-ap2-hb-HEATMAP.pdf")
 grid.arrange(c4h[[4]], c4a[[4]], c5a[[4]])
 dev.off()
 
@@ -107,7 +107,7 @@ plts <- map(dat, ~ggplot(., aes(x = stage,
             ) %>%
   map(., ggplotGrob)
 
-pdf("../fig/fig-06-fluidigm-ap2-hb-dotline.pdf",
+pdf("../fig/fig-05-fluidigm-ap2-hb-dotline.pdf",
     height = 14)
     # width = 12)
 g <- rbind(plts[[1]], plts[[2]], plts[[3]],
@@ -147,19 +147,27 @@ ph  <- 4
 pdf("../fig/fig-05-fluidigm-ap2-hb-TEST-ratio.pdf",
     height = 8)
 # width = 12)
-grid.arrange(plts_2[[1]],
-             plts_2[[2]],
-             plts_2[[3]], 
-             layout_matrix = rbind(c(rep(1, 4), rep(2, 4)),
-                                   c(rep(1, 4), rep(2, 4)),
-                                   c(rep(1, 4), rep(2, 4)),
-                                   c(rep(1, 4), rep(3, 4)),
-                                   c(rep(1, 4), rep(3, 4)),
-                                   c(rep(1, 4), rep(3, 4)),
-                                   c(rep(1, 4), rep(3, 4))))
+# grid.arrange(plts_2[[1]],
+#              plts_2[[2]],
+#              plts_2[[3]], 
+#              layout_matrix = rbind(c(rep(1, 4), rep(2, 4)),
+#                                    c(rep(1, 4), rep(2, 4)),
+#                                    c(rep(1, 4), rep(2, 4)),
+#                                    c(rep(1, 4), rep(3, 4)),
+#                                    c(rep(1, 4), rep(3, 4)),
+#                                    c(rep(1, 4), rep(3, 4)),
+#                                    c(rep(1, 4), rep(3, 4))))
 # g <- cbind(plts[[1]], plts[[2]], plts[[3]],
 #            size = "first")
 # print(p)
+cowplot::plot_grid(plts_2[[2]], plts_2[[3]],
+                   nrow = 2,
+                   rel_heights = c(3, 4) + 1.5,
+                   labels = c("A", "C")) %>%
+  cowplot::plot_grid(., plts_2[[1]],
+                     labels = c("", "B")) %>%
+  cowplot::add_sub(., str_wrap("")) %>%
+  cowplot::ggdraw()
 dev.off()
 
 
