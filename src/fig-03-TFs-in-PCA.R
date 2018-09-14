@@ -6,8 +6,8 @@ library(gridExtra)
 library(viridis)
 source("helper-functions.R")
 dds <- readRDS("../data-raw/dds.Rds")
-# filter_abs_pc <- .00185
-filter_abs_pc <- .002
+filter_abs_pc <- .00185
+# filter_abs_pc <- .002
 
 # Load PCA and TF families ------------------------------------------------
 
