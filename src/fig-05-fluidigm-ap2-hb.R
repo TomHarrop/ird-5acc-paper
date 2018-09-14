@@ -15,60 +15,6 @@ cls <- read_csv("../data-raw/annotated_clusters_scaled_l2fc.csv") %>%
 cl4 <- cls %>% filter(cluster == 4)
 cl5 <- cls %>% filter(cluster == 5)
 
-ap2_heat5 <- ap2_exp %>%
-  filter(locus_id %in% cl5$locus_id) %>%
-  scale_tidy_fluidigm() %>%
-  prepare_for_heat()
-
-c5a <- pheatmap(mat = ap2_heat5 %>% select(-locus_id),
-         # scale = "row",
-         # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
-         # color = colorRampPalette(c( "white", "blue4"))(50),
-         color = viridis_pal()(50), main = "AP2 cluster5",
-         cluster_cols = F,
-         gaps_col = 1:4*5,
-         cellwidth = 9,
-         cellheight = 9,
-         labels_row = ap2_heat5$locus_id)
-
-
-ap2_heat4 <- ap2_exp %>%
-  filter(locus_id %in% cl4$locus_id) %>%
-  scale_tidy_fluidigm() %>%
-  prepare_for_heat()
-
-c4a <- pheatmap(mat = ap2_heat4 %>% select(-locus_id),
-         # scale = "row",
-         # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
-         # color = colorRampPalette(c( "white", "blue4"))(50),
-         color = viridis_pal()(50), main = "AP2 cluster4",
-         cluster_cols = F,
-         gaps_col = 1:4*5,
-         cellwidth = 9,
-         cellheight = 9,
-         labels_row = ap2_heat4$locus_id)
-
-hb_heat4 <- hb_exp %>%
-  filter(locus_id %in% cl4$locus_id) %>%
-  scale_tidy_fluidigm() %>%
-  prepare_for_heat()
-
-c4h <- pheatmap(mat = hb_heat4 %>% select(-locus_id),
-                # scale = "row",
-                # color = colorRampPalette(c("navy", "white", "goldenrod"))(50),
-                # color = colorRampPalette(c( "white", "blue4"))(50),
-                color = viridis_pal()(50), main = "HB cluster4",
-                cluster_cols = F,
-                gaps_col = 1:4*5,
-                cellwidth = 9,
-                cellheight = 9,
-                labels_row = hb_heat4$locus_id)
-
-pdf("../fig/fig-05-fludigm-ap2-hb-HEATMAP.pdf")
-grid.arrange(c4h[[4]], c4a[[4]], c5a[[4]])
-dev.off()
-
-
 # Dot plot ---------------------------------------------------------------
 
 dat <- list(hb_cl4 = hb_exp %>%
@@ -83,88 +29,40 @@ dat <- list(hb_cl4 = hb_exp %>%
                                            "Ob", "Og",
                                            "Or", "Osi"))))
 
-dat <- map(names(dat), .f = ~mutate(dat[[.]],
-                           new_var = .))
 
-plts <- map(dat, ~ggplot(., aes(x = stage,
-                                y = expression)) +
-              geom_point(size = 2, col = "darkgrey") +
-              geom_smooth(aes(x = stage %>%
-                                as_factor(.) %>%
-                                as.numeric(.)),
-                          se = FALSE,
-                          colour = "black") +
-              facet_grid(target_name ~ species,
-                         scales = "free_y") +
-              # facet_grid(species ~ target_name, 
-              #            scales = "free_x") +
-              theme_bw() +
-              theme(axis.text.x = element_text(hjust = 0,
-                                               vjust = .5,
-                                               angle = 270)) +
-              labs(title = unique(.$new_var),
-                   y = "Relative Expression")
-            ) %>%
-  map(., ggplotGrob)
+# Vertical arrangement ----------------------------------------------------
+
+
+plts <- names(dat) %>%
+  map(., ~lineplot_fluidigm(nm = .,
+                            dat = dat[[.]],
+                            alpha = .8))
+
 
 pdf("../fig/fig-05-fluidigm-ap2-hb-dotline.pdf",
     height = 14)
-    # width = 12)
-g <- rbind(plts[[1]], plts[[2]], plts[[3]],
-           size = "first")
-# g <- cbind(plts[[1]], plts[[2]], plts[[3]],
-#            size = "first")
-grid.draw(g)
+
+g <- plts %>%
+  map(., ggplotGrob) 
+rbind(g[[1]], g[[2]], g[[3]],
+           size = "first") %>%
+  grid.draw()
+
 dev.off()
-
-
-# Test coord fixed --------------------------------------------------------
-
-
-plts_2 <- map(dat, ~ggplot(., aes(x = stage,
-                                y = expression)) +
-              geom_point(size = 2, col = "darkgrey") +
-              geom_smooth(aes(x = stage %>%
-                                as_factor(.) %>%
-                                as.numeric(.)),
-                          se = FALSE,
-                          colour = "black") +
-              facet_grid(target_name ~ species,
-                         scales = "free_y", ) +
-              # coord_fixed() +  
-              # facet_grid(species ~ target_name, 
-              #            scales = "free_x") +
-              theme_bw() +
-              theme(axis.text.x = element_text(hjust = 0,
-                                               vjust = .5,
-                                               angle = 270)) +
-              labs(title = unique(.$new_var),
-                   y = "Relative Expression")
-) 
 
 ph  <- 4
 
+
+# two columns -------------------------------------------------------------
+
+
 pdf("../fig/fig-05-fluidigm-ap2-hb-TEST-ratio.pdf",
     height = 8)
-# width = 12)
-# grid.arrange(plts_2[[1]],
-#              plts_2[[2]],
-#              plts_2[[3]], 
-#              layout_matrix = rbind(c(rep(1, 4), rep(2, 4)),
-#                                    c(rep(1, 4), rep(2, 4)),
-#                                    c(rep(1, 4), rep(2, 4)),
-#                                    c(rep(1, 4), rep(3, 4)),
-#                                    c(rep(1, 4), rep(3, 4)),
-#                                    c(rep(1, 4), rep(3, 4)),
-#                                    c(rep(1, 4), rep(3, 4))))
-# g <- cbind(plts[[1]], plts[[2]], plts[[3]],
-#            size = "first")
-# print(p)
-cowplot::plot_grid(plts_2[[2]], plts_2[[3]],
+cowplot::plot_grid(plts[[2]], plts[[3]],
                    nrow = 2,
                    rel_heights = c(3, 4) + 1.5,
                    labels = c("A", "C")) %>%
-  cowplot::plot_grid(., plts_2[[1]],
+  cowplot::plot_grid(., plts[[1]],
                      labels = c("", "B")) %>%
   cowplot::add_sub(., str_wrap("")) %>%
   cowplot::ggdraw()

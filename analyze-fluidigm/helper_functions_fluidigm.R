@@ -276,12 +276,13 @@ plot_both <- function(id_fluidigm,
 
 # Line plot fluidigm ------------------------------------------------------
 
-lineplot_fluidigm <- function(nm, dat) {
+lineplot_fluidigm <- function(nm, dat,
+                              alpha = .5) {
   p <- ggplot(dat, aes(x = stage,
                        y = expression)) +
     geom_point(size = 2,
                col = "darkgrey",
-               alpha = .5) +
+               alpha = alpha) +
     # geom_smooth(aes(x = stage %>%
     #                   as_factor(.) %>%
     #                   as.numeric(.)),
