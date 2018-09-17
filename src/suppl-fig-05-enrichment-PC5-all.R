@@ -2,7 +2,7 @@ library(tidyverse)
 library(fgsea)
 dds <- readRDS("../data-raw/dds.Rds")
 source("helper-functions.R")
-
+filter_abs_pc <- .00185
 
 # Load PCA and TF families ------------------------------------------------
 
@@ -46,23 +46,37 @@ pcx_tf <- pcx %>%
 
 p_enr <- pcx_tf %>%
   arrange(padj) %>%
-  mutate(facet = paste0(Family,
+  mutate(relevant = case_when(PC5 > filter_abs_pc ~ "Yes",
+                                     PC5 < -filter_abs_pc ~ "Yes",
+                                     TRUE ~ "No"),
+           facet = paste0(Family,
                         ", adjusted p-value = ",
                         round(padj, 5))) %>%
   mutate(facet = as_factor(facet)) %>%
-  select(rank_pc5, PC5, facet) %>%
-  View()
+  select(rank_pc5, PC5, facet, relevant) %>%
   ggplot(aes(x = rank_pc5,
-             y = PC5)) +
-  geom_linerange(aes(ymin = 0, ymax = PC5), lwd = 1) + 
+             y = PC5,
+             colour = relevant)) +
+  geom_linerange(aes(ymin = 0, ymax = PC5), lwd = .4) + 
   geom_hline(yintercept = 0,
              lwd = .05,
              colour = "grey") +
+  scale_color_manual(values = c("black", "red")) +
   facet_grid(facet ~ .) +
   theme_minimal() +
-  theme(strip.text.y = element_text(angle = 0))
+  theme(strip.text.y = element_text(angle = 0),
+        legend.position = "bottom") +
+  labs(x = "Ranks of genes on PC5",
+       y = "PC5 Value",
+       caption = str_wrap("Gene loading and ranking across PC5.
+                  P-value for family-wise enrichement was estimated with the GSEA
+                  method.
+                  We set an experimental cutoff that retains approximately 10% of
+                  genes from any of the two extremes (in red)",
+                          width = 40))
 
 pdf("../fig/suppl-fig-05-tfs-of-pc5.pdf",
-    width = 5, height = 50)
+    width = 6, height = 50)
 print(p_enr)
 dev.off()
+
