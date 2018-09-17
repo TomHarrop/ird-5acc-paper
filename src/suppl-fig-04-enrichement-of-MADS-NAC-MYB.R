@@ -65,9 +65,11 @@ families <- c(mads = "MADS",
 
 p_enr <- ggplot(pcx_tf %>%
                   filter(Family %in% families) %>%
+                  arrange(padj) %>%
                   mutate(relevant = case_when(PC5 > filter_abs_pc ~ "Yes",
                                               PC5 < -filter_abs_pc ~ "Yes",
-                                              TRUE ~ "No")) %>%
+                                              TRUE ~ "No"),
+                         Family = as_factor(Family)) %>%
                   mutate(facet = paste0(Family,
                                         ", adjusted p-value = ",
                                         round(padj, 4))) %>%
@@ -90,7 +92,7 @@ p_enr <- ggplot(pcx_tf %>%
   labs(x = "Ranks of genes on PC5",
        y = "PC5 Value")
 
-p_enr
+# p_enr
 
 
 # Define functions for heatmap --------------------------------------------

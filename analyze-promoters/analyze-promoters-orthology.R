@@ -260,6 +260,22 @@ cluster2_grf6 %>%
   writeXStringSet(filepath = make_path(cluster2_grf6))
 
 
+
+# RAV2 and homologs -------------------------------------------------------
+
+rav2 <- "LOC_Os01g04800"
+
+rav2 %>%
+  pull_rap() %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(rav2))
+
+erf_77_next_to_RAV2 <- " LOC_Os01g04750"
+
+"Os01g0140700" %>%
+  get_orthoseq() %>%
+  writeXStringSet(filepath = make_path(erf_77_next_to_RAV2))
+
 # alignments for helen ----------------------------------------------------
 
 make_path2 <- function(gene) {
