@@ -2,7 +2,7 @@ library(tidyverse)
 library(glue)
 
 load("../data/rlog-pca.Rdata")
-# color_palette <- c("blue", "goldenrod")
+color_palette <- c("blue", "goldenrod")
 
 # Only the first 5 PC are interesting? ------------------------------------
 
@@ -49,8 +49,8 @@ p <- ggplot(pcx,
   # geom_point(size = 4) +
   geom_hline(yintercept = 0) +
   facet_grid(PC_id ~ accession, scales = "free") +
-  # scale_fill_manual(values = color_palette) +
-  scale_fill_viridis_d(begin = .2, end = .8) +
+  scale_fill_manual(values = color_palette) +
+  # scale_fill_viridis_d(begin = .2, end = .8) +
   theme_bw() +
   labs(x = "Sample ID",
        y = "Loading Vector",
