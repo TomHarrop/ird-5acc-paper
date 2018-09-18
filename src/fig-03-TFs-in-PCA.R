@@ -24,6 +24,48 @@ tf_fam <- readRDS("../data-raw/tfdb_os.Rds") %>%
   filter(locus_id %in% rownames(dds)) %>%
   filter(!duplicated(locus_id))
 
+# Load subfamilies --------------------------------------------------------
+
+ap2_sharoni_path <- "../data-raw/ap2s-sharoni/Supplementary_Table_S1.xls"
+
+ap2_sharoni <- bind_cols(read_excel(ap2_sharoni_path,
+                                    range = "A4:A166",
+                                    col_names = "locus_id"),
+                         read_excel(ap2_sharoni_path,
+                                    range = "N4:O166",
+                                    col_names = c("subgroub", "subfamily"))) %>%
+  mutate(locus_id = paste0("LOC_", locus_id),
+         subfam = paste(subfamily, subgroub, sep = " - ")) %>%
+  select(locus_id, subfamily)
+# left_join(annos %>% select(locus_id, symbol))
+
+
+ap2_symbols <- ap2_sharoni$locus_id %>%
+  oryzr::LocToGeneName() %>%
+  filter(!duplicated(MsuID)) %>%
+  rename(locus_id = "MsuID",
+         symbol = "symbols") %>%
+  select(locus_id, symbol)
+
+ap2_sharoni %<>%
+  left_join(ap2_symbols)
+
+
+# https://www.ncbi.nlm.nih.gov/pubmed/18430022
+hb_shain <- read_csv("../data-raw/hb_genes_jain2008.csv") %>%
+  dplyr::rename(subfamily = "class",
+                locus_id = "msuId") %>%
+  select(locus_id, subfamily, symbol) 
+
+
+# mads_arora <- read_excel("../data-raw/mads_subfam-copyandpasted_arora_2007.xlsx") %>%
+#   select(locus_id, subfamily)
+
+subfams <- bind_rows(ap2_sharoni,
+                     # mads_arora,
+                     hb_shain)
+
+
 
 # Prepare data - merge PC and TF ------------------------------------------
 
@@ -32,7 +74,9 @@ pcx <- pcro %>%
   left_join(tf_fam) %>%
   arrange(desc(PC5)) %>%
   mutate(rank_pc5 = 1:nrow(.)) %>%
-  mutate(Family = ifelse(is.na(Family), "none", Family))
+  mutate(Family = ifelse(is.na(Family), "none", Family)) %>%
+  mutate(Family = case_when(locus_id %in% hb_shain$locus_id ~ "Homeobox",
+                            TRUE ~ Family))
 
 
 # How many genes pass cutoff ----------------------------------------------
@@ -44,6 +88,8 @@ pcx <- pcro %>%
 #   filter(PC5 > filter_abs_pc) %>%
 #   nrow()
 
+
+
 # Test Enrichment ---------------------------------------------------------
 
 gsea_pc5 <- test_gsea(set_names(pcx$PC5, 
@@ -54,6 +100,8 @@ gsea_pc5 <- test_gsea(set_names(pcx$PC5,
 pcx_tf <- pcx %>%
   left_join(gsea_pc5) %>%
   filter(Family != "none")
+  
+# Family = case_when(Family == "Homeobox"),
 
 
 # Plot Enrichement --------------------------------------------------------
@@ -61,7 +109,7 @@ pcx_tf <- pcx %>%
 families <- c(ap2 = "AP2-EREBP", 
               # mads = "MADS",
               # nac = "NAC",
-              hb = "HB")#,
+              hb = "Homeobox")#,
               # sbp = "SBP",
               # bhlh = "bHLH")
 
@@ -93,44 +141,6 @@ p_enr <- ggplot(pcx_tf %>%
 
 # p_enr
 
-
-# Load subfamilies --------------------------------------------------------
-
-ap2_sharoni_path <- "../data-raw/ap2s-sharoni/Supplementary_Table_S1.xls"
-
-ap2_sharoni <- bind_cols(read_excel(ap2_sharoni_path,
-                                    range = "A4:A166",
-                                    col_names = "locus_id"),
-                         read_excel(ap2_sharoni_path,
-                                    range = "N4:O166",
-                                    col_names = c("subgroub", "subfamily"))) %>%
-  mutate(locus_id = paste0("LOC_", locus_id),
-         subfam = paste(subfamily, subgroub, sep = " - ")) %>%
-  select(locus_id, subfamily)
-  # left_join(annos %>% select(locus_id, symbol))
-
-
-ap2_symbols <- ap2_sharoni$locus_id %>%
-  oryzr::LocToGeneName() %>%
-  filter(!duplicated(MsuID)) %>%
-  rename(locus_id = "MsuID",
-         symbol = "symbols") %>%
-  select(locus_id, symbol)
-
-ap2_sharoni %<>%
-  left_join(ap2_symbols)
-
-hb_shain <- read_csv("../data-raw/hb_genes_jain2008.csv") %>%
-  dplyr::rename(subfamily = "class",
-                locus_id = "msuId") %>%
-  select(locus_id, subfamily, symbol) 
-
-# mads_arora <- read_excel("../data-raw/mads_subfam-copyandpasted_arora_2007.xlsx") %>%
-#   select(locus_id, subfamily)
-
-subfams <- bind_rows(ap2_sharoni,
-                     # mads_arora,
-                     hb_shain)
 
 # Define functions for heatmap --------------------------------------------
 
@@ -192,7 +202,7 @@ plot_heatmap <- function(family = "AP2-EREBP",
 heat_ap2 <- plot_heatmap("AP2-EREBP")
 # heat_mads <- plot_heatmap("MADS")
 # plot_heatmap("WRKY")
-heat_hb <- plot_heatmap("HB")
+heat_hb <- plot_heatmap("Homeobox")
 # heat_nac <- plot_heatmap("NAC")
 # heat_sbp <- plot_heatmap("SBP", cutree_rows = 1)
 # heat_tcp <- plot_heatmap("TCP", cutree_rows = 1)
