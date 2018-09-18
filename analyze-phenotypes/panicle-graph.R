@@ -45,5 +45,29 @@ ggraph(tst) +
 #   geom_point() +
 #   theme_bw()
 
+
+# Read XML file with seeds ------------------------------------------------
+
+seeds <- read_xml("../data-raw/pheno-xml/Nip_1_1_6307.ricegr") %>%
+  xml_find_all(".//particle") 
+
+seeds <- tibble(x = as.numeric(xml_attr(seeds, "cx")),
+                y = as.numeric(xml_attr(seeds, "cy")))
+
+ggraph(tst) + 
+  geom_edge_link() + 
+  geom_node_point(aes(colour = type),
+                  size = 2) +
+  geom_point(data = seeds, 
+             aes(x = x, 
+                 y = y)) +
+  coord_fixed() +
+  # coord_flip() +
+  theme_minimal()
 # check
 # https://www.data-imaginist.com/2017/introducing-tidygraph/
+
+# how to guess path
+# spatial network
+# spatial network add vertex to edge
+# points2network() ?
