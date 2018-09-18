@@ -50,9 +50,15 @@ Global to TF enrichment : supp data
 - at least 20 AP2 are among the 400 genes preferentially expressed in BM, at least.
 - DREB ERF and RAV peak earlier, and AP2 peaks later
 - Can mention HB / NAC, other families here
+<<<<<<< HEAD
 - **SF 4** PCA enrichement + MADS (add subfamillies), NAC, MYB.
-- **SF 5** PCA enrichement all families. 
+- **SF 5** PCA enrichement all families.
 - [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  5**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s (phylogeny of subclas in each species will be done later)**
+=======
+- **SF 4** PCA enrichement + MADS, NAC, MYB.
+- **SF 5** PCA enrichement all families.
+- [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  5**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s**
+>>>>>>> om_devel
 
 
 ### 5. AP2-EREBP expression is associated with high yielding indica.
