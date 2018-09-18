@@ -23,14 +23,14 @@
 - **Figure 1a**: photo of mature panicles (images panicle spread) Tom
 - **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) Tom
 - correlation between spikelet number and branching complexity justifies transcriptome samples
--
+- **SF 1** phenotype correlations.
 
 ### 3. There are "transcriptomic differences" between [domesticated and wild] varieties.
 - **Figure 2**: global view of transcriptome *e.g.* PCA (Otho)
-- **SF 1**: Montpellier phenotyping (Tom)
+- **SF 2**: Montpellier phenotyping (Tom)
     + re-order phenotypes
-- **SF 2**: distance heatmap (Tom)
-- **SF 3**: panicle samples
+- **SF 2b**: panicle samples
+- **SF 3**: distance heatmap (Tom)
 - **SI**: DE genes table
 - Topology / mathematics
 - african species cluster together, asian species cluster together -> domestication changes are minor compared to species-level changes
@@ -45,7 +45,7 @@
 - DREB ERF and RAV peak earlier, and AP2 peaks later
 - Can mention HB / NAC, other families here
 - **SF 4** PCA enrichement + MADS, NAC, MYB.
-- **SF 5** PCA enrichement all families. 
+- **SF 5** PCA enrichement all families.
 - [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  5**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s**
 
 
