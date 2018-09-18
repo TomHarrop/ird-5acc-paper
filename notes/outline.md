@@ -17,22 +17,24 @@
 
 ## Results
 
+### 1. Methods overview
 
-
-### 1. Panicle traits of domesticated Asian and African rice are similar. Panicles of domesticated species produce more primary and secondary branches and more spikelets.
+### 2. Panicle traits of domesticated Asian and African rice are similar. Panicles of domesticated species produce more primary and secondary branches and more spikelets.
 - **Figure 1a**: photo of mature panicles (images panicle spread) Tom
 - **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) : just present PC1
-- **SF 1** : correlation between spN/Pbn/SbN
+- **SF 1** : other components
+- **SF 2** : correlation between spN/Pbn/SbN
+ 
 
 correlation between spikelet number and branching complexity justifies transcriptome samples
 
 ### 3. There are "transcriptomic differences" between [domesticated and wild] varieties.
 - **Figure 2**: global view of transcriptome *e.g.* PCA (Otho) (note : change color code of stages, blue/green are the one used for species in Fig1)
-- **SF 2**: Montpellier phenotyping (Tom)
+- **SF 3**: Montpellier phenotyping (Tom)
     + re-order phenotypes
-- **SF 3a**: distance heatmap (Tom)
-- **SF 3b**: panicle samples + Samples validation by QPCR using LHS1 & TAW
-- **SI**: DE genes table
+- **SF 4a**: distance heatmap (Tom)
+- **SF 4b**: panicle samples + Samples validation by QPCR using LHS1 & TAW
+- **Table S1**: DE genes table
 - Topology / mathematics : Figure prepared by helene
 
 - african species cluster together, asian species cluster together -> domestication changes are minor compared to species-level changes
@@ -51,20 +53,20 @@ Global to TF enrichment : supp data
 - DREB ERF and RAV peak earlier, and AP2 peaks later
 - Can mention HB / NAC, other families here
 <<<<<<< HEAD
-- **SF 4** PCA enrichement + MADS (add subfamillies), NAC, MYB.
-- **SF 5** PCA enrichement all families.
-- [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  5**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s (phylogeny of subclas in each species will be done later)**
+- **SF 5** PCA enrichement + MADS (add subfamillies), NAC, MYB.
+- **SF 6** PCA enrichement all families.
+- [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  7**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s (phylogeny of subclas in each species will be done later)**
 =======
-- **SF 4** PCA enrichement + MADS, NAC, MYB.
-- **SF 5** PCA enrichement all families.
-- [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  5**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s**
+- **SF 5** PCA enrichement + MADS, NAC, MYB.
+- **SF 6** PCA enrichement all families.
+- [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  7**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s**
 >>>>>>> om_devel
 
 
 ### 5. AP2-EREBP expression is associated with high yielding indica.
 - **Figure 4**: clusters and correlation with phenotypes (or PCA?) (Tom) / on the figure, remove r-enrichment fig and place just the name
-- **Figure 5b / Table 3**. DE genes for interaction between stage and species (African and Asian) (Tom). (enriched for AP2s).
-- **SF**: Cluster 5 only
+- **Table 2**. DE genes for interaction between stage and species (African and Asian) (Tom). (enriched for AP2s).
+- **SF 8**: Cluster 5 only
 - AP2s in cluster 4 & 5, generally they behave opposite in indica, some of them also in PC5
 - Cluster1: Arag1; Cluster2: EREBP86; Cluster4: PLT9, IDS1, EREBP153; Cluster5; AP37/ERF3, DREB4-1, DREB4-2
 
