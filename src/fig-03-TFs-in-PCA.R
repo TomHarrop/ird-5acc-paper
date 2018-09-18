@@ -106,8 +106,19 @@ ap2_sharoni <- bind_cols(read_excel(ap2_sharoni_path,
                                     col_names = c("subgroub", "subfamily"))) %>%
   mutate(locus_id = paste0("LOC_", locus_id),
          subfam = paste(subfamily, subgroub, sep = " - ")) %>%
-  select(locus_id, subfamily) %>%
-  left_join(annos %>% select(locus_id, symbol))
+  select(locus_id, subfamily)
+  # left_join(annos %>% select(locus_id, symbol))
+
+
+ap2_symbols <- ap2_sharoni$locus_id %>%
+  oryzr::LocToGeneName() %>%
+  filter(!duplicated(MsuID)) %>%
+  rename(locus_id = "MsuID",
+         symbol = "symbols") %>%
+  select(locus_id, symbol)
+
+ap2_sharoni %<>%
+  left_join(ap2_symbols)
 
 hb_shain <- read_csv("../data-raw/hb_genes_jain2008.csv") %>%
   dplyr::rename(subfamily = "class",
@@ -223,24 +234,3 @@ dev.off()
 
 
 
-# suppl figure 1 ----------------------------------------------------------
-
-p_enr <- ggplot(pcx_tf %>%
-                  arrange(padj) %>%
-                  mutate(facet = paste0(Family,
-                                        ", adjusted p-value = ",
-                                        round(padj, 3))) %>%
-                  mutate(facet = as_factor(facet)),
-                aes(x = rank_pc5,
-                    y = PC5)) +
-  geom_linerange(aes(ymin = 0, ymax = PC5), lwd = 1) + 
-  geom_hline(yintercept = 0,
-             lwd = .05,
-             colour = "grey") +
-  facet_wrap(facets = "facet", ncol = 3) +
-  theme_bw() 
-
-pdf("../fig/suppl-fig-01-tfs-of-pc5.pdf",
-    width = 9, height = 30)
-print(p_enr)
-dev.off()
