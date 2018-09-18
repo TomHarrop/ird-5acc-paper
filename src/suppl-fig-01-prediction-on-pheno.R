@@ -46,7 +46,7 @@ pbn_sbn <- pheno_cali %>%
 
 # Arrange and save plots --------------------------------------------------------------
 
-pdf(file = "../fig/suppl-fig----descript-pheno-stat.pdf", 
+pdf(file = "../fig/suppl-fig-01-descript-pheno-stat.pdf", 
     width = 8,
     height = 9)
 grid.arrange(pbn_spn,
@@ -56,11 +56,4 @@ grid.arrange(pbn_spn,
 dev.off()
 
 
-# Correlation estimates ---------------------------------------------------
-
-pheno_cali %>%
-  group_by(Species) %>%
-  summarize(corr_spn_sbn = cor(spn, sbn),
-            corr_spn_pbn = cor(spn, pbn),
-            corr_pbn_sbn = cor(pbn, sbn))
 
