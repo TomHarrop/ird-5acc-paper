@@ -71,3 +71,46 @@ ggraph(tst) +
 # spatial network
 # spatial network add vertex to edge
 # points2network() ?
+
+
+# Test --------------------------------------------------------------------
+# SpatialLinesDataFrame 
+
+tst_df <- tst %>%
+  igraph::as_long_data_frame() %>%
+  remove_rownames() %>%
+  column_to_rownames("to_rank")
+
+tst_sp <-  tst %>%
+  igraph::as_long_data_frame() %>%
+  pmap(., ~sp::Line(matrix(c(..3, ..8, ..4, ..9), ncol = 2)) %>%
+         sp::Lines(ID = ..12)) %>%
+  sp::SpatialLines() %>%
+  sp::SpatialLinesDataFrame(data = tst_df, ) %T>%
+  plot()
+
+library(shp2graph)
+tst_seeds <- points2network(ntdata = tst_sp,
+                          pointsxy = seeds) %>%
+  shp2graph::nel2igraph()
+
+# from http://r-sig-geo.2731867.n2.nabble.com/igraph-and-spatial-td7589564.html
+makeLineFromCoords <- function(coords, i) { 
+  Sl1 = Line(coords) 
+  S1 = Lines(list(Sl1), ID=as.character(i)) 
+  Sl = SpatialLines(list(S1)) 
+  return(Sl) 
+} 
+
+
+# or ----------------------------------------------------------------------
+
+# from https://stackoverflow.com/questions/35194048/
+# using-r-how-to-calculate-the-distance-from-one-point-to-a-line
+# https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line
+dist2d <- function(a,b,c) {
+  v1 <- b - c
+  v2 <- a - b
+  m <- cbind(v1,v2)
+  d <- abs(det(m))/sqrt(sum(v1*v1))
+} 
