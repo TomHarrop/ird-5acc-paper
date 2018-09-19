@@ -22,95 +22,97 @@
 ### 1. Panicle traits of domesticated Asian and African rice are similar. Panicles of domesticated species produce more primary and secondary branches and more spikelets.
 - **Figure 1a**: photo of mature panicles (images panicle spread) Tom
 - **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) : just present PC1
-- **SF 1** : other components
-- **SF 2** : suppl-fig----descript-pheno-stat.pdf , correlation between spikelet number and branching complexity justifies transcriptome samples. Analyses done with the global phenotyping dataset
+- **SF 1** : correlation between spN/Pbn/SbN
 
-general conclusion : 
-Description of Asia/africa, could we show the cultivated rice do more Pb to compensate Sp nb?
-Similar phenotype between the 2 domestication process
+Correlation between spikelet number and branching complexity justifies transcriptome samples
 
-
-### 2. There are "transcriptomic differences" between [domesticated and wild] varieties.
-- **Figure 2**: global view of transcriptome *e.g.* PCA (Otho) (note : change color code of stages, blue/green are the one used for species in Fig1) - 
-- **SF 3**: Montpellier phenotyping (Tom)- - branching pattern in trhe 5 accessions : Figure prepared by helene, see if it is necessary
+### 3. There are "transcriptomic differences" between [domesticated and wild] varieties.
+- **Figure 2**: global view of transcriptome *e.g.* PCA (Otho).
+    - Improve colors
+- **SF 2**: Montpellier phenotyping (Tom)
     + re-order phenotypes
-  **SF suppl-fig-MAYBE-pca-on-pheno-BOXPLOT-LABEL.pdf** : Show the position of sequenced accession among the 20 explored before. Arguments for our choice. 
-- **SF 4a**: distance heatmap (Tom)
-- **SF 4b**: panicle samples + Samples validation by QPCR using LHS1 & TAW (or other,i will prepare something). Heterochrony..just mention that there is nore major difference in the time course?
-- **Table S1**: DE genes table
+- **SF 3a**: distance heatmap (Tom)
+- **SF 3b**: panicle samples + Samples validation by QPCR using LHS1 & TAW
+- **Suppl table 01**: DE genes table
+- Topology / mathematics : Figure prepared by helene
 
-- global description of each components (Global gene to TF?)
 - african species cluster together, asian species cluster together -> domestication changes are minor compared to species-level changes
 - description of the dataset of each PC..and the finish by PC5
 
 > Comment OM: I wouldn't stress "yield" too much
 
-### 3. AP2-EREBP are the most prominently DE family in transcriptomes of developing panicles.
+### 4. AP2-EREBP are the most prominently DE family in transcriptomes of developing panicles.
 
 Global to TF enrichment : supp data
 
 - **Table 1**: TFs differentially expressed between stages in all species (featuring AP2 genes). Try z-score for AP2s (Tom).
-- **SF 6** PCA enrichement all families.
-- **Figure 3a**: PCA enrichment + AP2 amd HB heatmap (Otho) : justification of HB presentation and nopt MADS/NAC or other most statistically strong
+- **Figure 3**: PCA enrichment + AP2 amd HB heatmap (Otho) : justification of HB presentation and nopt MADS/NAC or other most statistically strong
 - PCA splits genes expressed in BM and SM on component 5, AP2/ERF are the most enriched across PC5
 - at least 20 AP2 are among the 400 genes preferentially expressed in BM, at least.
-- DREB ERF and RAV peak earlier, and AP2 peaks later. A lot of AP2 genes are expressed on this dataset (Nb og genes among 160 AP2 genes : mention the phylogeny analysis in subdata(fig Domain1dst.pdf))
-
+- DREB ERF and RAV peak earlier, and AP2 peaks later
 - Can mention HB / NAC, other families here
-- **SF 5** PCA enrichement + MADS (add subfamillies), NAC, MYB.
+- **SF 4** PCA enrichement + MADS (add subfamillies), NAC, MYB.
+- **SF 5** PCA enrichement all families.
+- [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  5**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s (phylogeny of subclass in each species will be done later)**
 
-=- [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  7**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s** See note before
->>>>>>> om_devel
 
 
-### 4. AP2-EREBP expression is associated with high yielding indica.
+### 5. AP2-EREBP expression is associated with high yielding indica.
 - **Figure 4**: clusters and correlation with phenotypes (or PCA?) (Tom) / on the figure, remove r-enrichment fig and place just the name
-- **Table 2**. DE genes for interaction between stage and species (African and Asian) (Tom). (enriched for AP2s).
-- **SF 8**: Cluster 5 only
+- **Figure 5b / Table 3**. DE genes for interaction between stage and species (African and Asian) (Tom). (enriched for AP2s).
+- **SF 6**: Cluster 5 only
 - AP2s in cluster 4 & 5, generally they behave opposite in indica, some of them also in PC5
 - Cluster1: Arag1; Cluster2: EREBP86; Cluster4: PLT9, IDS1, EREBP153; Cluster5; AP37/ERF3, DREB4-1, DREB4-2
 
-### 5. AP2-EREBP genes are differentially expressed over a timecourse of panicle development:
-- **Figure 5**: fluidigm results for AP2 (Otho) : remove japonica
+### 6. AP2-EREBP genes are differentially expressed over a timecourse of panicle development:
+- **Figure 6**: fluidigm results for AP2 (Otho) : remove japonica
 - If this only confirms 4., we could move it to supp. If the different stages add something new, keep it in the main paper.
+- What are the conclusions?
 
-### 6. Differences in AP2 gene (promoter regions+CDS) are associated with differences in expression
-- **Figure 6**: (Otho and Hélène will try this experiment) : RAV2 duplication/check in 3000genomes
+### 7. Differences in AP2 gene (promoter regions+CDS) are associated with differences in expression
+- **Figure 7**: (Otho and Hélène will try this experiment) : **RAV2** duplication/check in 3000genomes.
+  - More details: Can we detect which read comes from the each of the two duplicated genes? Can we detect this duplication in other indicas?
+- **LAX1** also?
 
-### 7. AP2 mutants have defects in panicle branching.
-- **Figure 7**: mutant characterisation (Otho / Hélène) : just keep PLT8 and ERF48..see if branching pattern will be add.
+### 8. AP2 mutants have defects in panicle branching.
+- **Figure 8**: mutant characterisation (Otho / Hélène)
 - Also check LMD data for these (Tom). There's already an AP2 figure from the LMD data, Tom will find it and send it out.
-- PLT8 TPM in supplementary
-LOC_Os08g31580 / erf48
+- PLT8 TPM in supplementary.
+- Remove erf48. Show gene expression in fluidigm and rnaseq.
 
-    Typical expression pattern of PC5, high ranking, mostly expressed in BM, (Generally, does indica starts developing earlier?)
-    DREB gene,
-    effect on RACHIS and PRIMARY branches:
-        Rachis shorter,
-        More Primary Branches (Maybe???),
-        Primary branches shorter,
-        Primary branch internodes shorter,
-        No effect on secondary branches,
-    Also less variance in all features in the mutants
+**Mutant summary:**
 
-LOC_Os07g03250 plt8 / crl 5
+**LOC_Os08g31580 / erf48**
 
-    DE only in indica, Higher in BM,
-    ERF gene,
-    Always less variance in the mutant,
-    Effect on Rachis and primary branches:
-        Rachis shorter,
-        Less primary branches,
-        Both order branches longer?
-        Maybe more secondary branches and more spikelet? Small effect,
+- Typical expression pattern of PC5, high ranking, mostly expressed in BM, (Generally, does indica starts developing earlier?)
+- DREB gene,
+- effect on RACHIS and PRIMARY branches:
+    - Rachis shorter,
+    - More Primary Branches (Maybe???),
+    - Primary branches shorter,
+    - Primary branch internodes shorter,
+    - No effect on secondary branches,
+- Also less variance in all features in the mutants
 
-LOC_Os05g32270 erf142 &&& LOC_Os06g03710 smo2 ???
+**LOC_Os07g03250 plt8 / crl 5**
+
+- DE only in indica, Higher in BM,
+- ERF gene,
+- Always less variance in the mutant,
+- Effect on Rachis and primary branches:
+    - Rachis shorter,
+    - Less primary branches,
+    - Both order branches longer?
+    - Maybe more secondary branches and more spikelet? Small effect,
+
+**LOC_Os05g32270 erf142 &&& LOC_Os06g03710 smo2 ???**
 
 They behave always the same, erf142 has more extreme values.
 
-    erf142 classified as DREB by Sharoni et al and as Unusual AP2 by Aya et al, 2014, which is the one that reported the mutant.
-    Everything is smaller, besides, strangely, SbIntL, which gets longer.
-    It makes significantly less Sb and Sp, which fits with its function in Auxin signalling pathway.
+- erf142 classified as DREB by Sharoni et al and as Unusual AP2 by Aya et al, 2014, which is the one that reported the mutant.
+- Everything is smaller, besides, strangely, SbIntL, which gets longer.
+-  It makes significantly less Sb and Sp, which fits with its function in Auxin signalling pathway.
+
 
 
 ## Discussion
