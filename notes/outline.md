@@ -71,9 +71,12 @@ Global to TF enrichment : supp data
 ### 6. AP2-EREBP genes are differentially expressed over a timecourse of panicle development:
 - **Figure 5**: fluidigm results for AP2 (Otho) : remove japonica
 - If this only confirms 4., we could move it to supp. If the different stages add something new, keep it in the main paper.
+- What are the conclusions?
 
 ### 7. Differences in AP2 gene (promoter regions+CDS) are associated with differences in expression
-- **Figure 6**: (Otho and Hélène will try this experiment) : RAV2 duplication/check in 3000genomes
+- **Figure 6**: (Otho and Hélène will try this experiment) : **RAV2** duplication/check in 3000genomes.
+  - More details: Can we detect which read comes from the each of the two duplicated genes? Can we detect this duplication in other indicas?
+- **LAX1** also?
 
 ### 8. AP2 mutants have defects in panicle branching.
 - **Figure 7**: mutant characterisation (Otho / Hélène)

@@ -95,11 +95,11 @@ Reference - African (wild - domesticated) - Asian (wild - domesticated)
 
 ```
 species <- factor(species,
-                  levels = c("O. japonica",
+                  levels = c("O. rufipogon",
+                             "O. indica",
+                             "O. japonica",
                              "O. barthii",
-                             "O. glaberrima",
-                             "O. rufipogon",
-                             "O. indica")))
+                             "O. glaberrima"))
 ```
 
 
