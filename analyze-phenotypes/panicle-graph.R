@@ -67,45 +67,11 @@ ggraph(tst) +
 # check
 # https://www.data-imaginist.com/2017/introducing-tidygraph/
 
-# how to guess path
-# spatial network
-# spatial network add vertex to edge
-# points2network() ?
+# with Spatial and gDistance ----------------------------------------------
 
-
-# Test Spatial --------------------------------------------------------------
-# SpatialLinesDataFrame 
-
-# tst_df <- tst %>%
-#   igraph::as_long_data_frame() %>%
-#   remove_rownames() %>%
-#   column_to_rownames("to_rank")
-# 
-# tst_sp <-  tst %>%
-#   igraph::as_long_data_frame() %>%
-#   pmap(., ~sp::Line(matrix(c(..3, ..8, ..4, ..9), ncol = 2)) %>%
-#          sp::Lines(ID = ..12)) %>%
-#   sp::SpatialLines() %>%
-#   sp::SpatialLinesDataFrame(data = tst_df, ) %T>%
-#   plot()
-# 
-# library(shp2graph)
-# tst_seeds <- points2network(ntdata = tst_sp,
-#                           pointsxy = seeds) %>%
-#   shp2graph::nel2igraph()
-# 
-# # from http://r-sig-geo.2731867.n2.nabble.com/igraph-and-spatial-td7589564.html
-# makeLineFromCoords <- function(coords, i) { 
-#   Sl1 = Line(coords) 
-#   S1 = Lines(list(Sl1), ID=as.character(i)) 
-#   Sl = SpatialLines(list(S1)) 
-#   return(Sl) 
-# } 
-
-# overcomplicated for what we have to achieve
-
-
-# Spatial with gDistance --------------------------------------------------
+tst_df <- tst %>% igraph::as_long_data_frame()
+new_vert <- 10
+new_vert_coord <- as.numeric(seeds[new_vert, 1:2])
 
 get_distance <- function(x0, y0,
                          x1, y1,
@@ -118,9 +84,9 @@ get_distance <- function(x0, y0,
     sp::SpatialLines()
   pn <- sp::SpatialPoints(coords = matrix(c(x0, y0),
                                           ncol = 2))
-  print(ln)
-  print(pn)
-  rgeos::gDistance(ln, pn)
+  # print(ln)
+  # print(pn)
+  return(rgeos::gDistance(ln, pn))
 }
 
 get_distance(1328,  712, 1284,  688, 1329,  579)
@@ -153,103 +119,11 @@ edge_out %>%
   theme_minimal()
 
 
-# or ----------------------------------------------------------------------
-
-# from https://stackoverflow.com/questions/35194048/
-# using-r-how-to-calculate-the-distance-from-one-point-to-a-line
-# https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line
-# dist2d <- function(a,b,c) {
-#   print(c(a, b, c))
-#   v1 <- b - c
-#   v2 <- a - b
-#   m <- cbind(v1,v2)
-#   d <- abs(det(m))/sqrt(sum(v1*v1))
-# } 
-
-# recode function
-eu_dist <- function(p0, p1, p2) {
-  print(c(p0, p1, p2))
-  # p0 is the point
-  # the line goes through p1 and p1
-  # every point is p <- c(x, y)
-  N <- abs(((p2[2] - p1[2])*p0[1]) -
-             ((p2[1] - p1[1])*p0[2]) +
-             (p2[1]*p1[2]) -
-             (p2[2]*p1[1]))
-  D <- sqrt(((p2[2] - p1[2])^2) +
-              ((p2[1] - p1[1])^2))
-  print(N)
-  print(D)
-  distance <- N/D
-  print(distance)
-  return(N/D)
-}
-
-
-tst_df <- tst %>% igraph::as_long_data_frame()
-
-new_vert <- 10
-new_vert_coord <- as.numeric(seeds[new_vert, 1:2])
-
-# nearest_edge <- tst_df %>%
-#   pmap(.,
-#        ~dist2d(a = as.numeric(seeds[new_vert, 1:2]),
-#                b = c(..3, ..4),
-#                c = c(..8, ..9))) %>%
-#   purrr::reduce(c) %>%
-#   which.min()
-
-nearest_edge <- tst_df %>%
-  pmap(.,
-       ~eu_dist(p0 = as.numeric(seeds[new_vert, 1:2]),
-                p1 = c(..3, ..4),
-                p2 = c(..8, ..9))) %>%
-  purrr::reduce(c) %>%
-  which.min()
-
-
-# this is not vectorized
-# nearest_edge <- tst_df %>% 
-#   mutate(dist = dist2d(a = c(1328,  712),
-#                        b = c(from_x, from_y),
-#                        c = c(to_x, to_y))) %>%
-#   purrr::reduce(c) %>%
-#   which.min()
-
-
-edge_out <- tst %>%
-  igraph::add_vertices(nv = 1, 
-                       attr = list(x = as.numeric(seeds[new_vert, 1]),
-                                   y = as.numeric(seeds[new_vert, 2]),
-                                   type = "spikelet")) %>%
-  igraph::delete_edges(nearest_edge)
-
-edge_out %>%
-  ggraph() + 
-  geom_edge_link() + 
-  geom_node_point(aes(colour = type),
-                  size = 2) +
-  coord_fixed() +
-  # coord_flip() +
-  theme_minimal()
-
-
-
-new_graph <- tst %>% 
-  igraph::add_vertices(nv = 1, 
-                       attr = list(x = as.numeric(seeds[new_vert, 1]),
-                                   y = as.numeric(seeds[new_vert, 2]),
-                                   type = "spikelet")) %>%
-  # igraph::as_long_data_frame()
-  igraph::add_edges(edges = c(as.numeric(tst_df[20, "from"]), 50,
-                              50, as.numeric(tst_df[20, "to"])))
-
-
-ggraph(new_graph) + 
-  geom_edge_link() + 
-  geom_node_point(aes(colour = type),
-                  size = 2) +
-  coord_fixed() +
-  # coord_flip() +
-  theme_minimal()
-
+# new_graph <- tst %>% 
+#   igraph::add_vertices(nv = 1, 
+#                        attr = list(x = as.numeric(seeds[new_vert, 1]),
+#                                    y = as.numeric(seeds[new_vert, 2]),
+#                                    type = "spikelet")) %>%
+#   # igraph::as_long_data_frame()
+#   igraph::add_edges(edges = c(as.numeric(tst_df[20, "from"]), 50,
+#                               50, as.numeric(tst_df[20, "to"])))
