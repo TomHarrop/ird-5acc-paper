@@ -77,39 +77,6 @@ Global to TF enrichment : supp data
 - PLT8 TPM in supplementary.
 - Remove erf48. Show gene expression in fluidigm and rnaseq.
 
-**Mutant summary:**
-
-**LOC_Os08g31580 / erf48**
-
-- Typical expression pattern of PC5, high ranking, mostly expressed in BM, (Generally, does indica starts developing earlier?)
-- DREB gene,
-- effect on RACHIS and PRIMARY branches:
-    - Rachis shorter,
-    - More Primary Branches (Maybe???),
-    - Primary branches shorter,
-    - Primary branch internodes shorter,
-    - No effect on secondary branches,
-- Also less variance in all features in the mutants
-
-**LOC_Os07g03250 plt8 / crl 5**
-
-- DE only in indica, Higher in BM,
-- ERF gene,
-- Always less variance in the mutant,
-- Effect on Rachis and primary branches:
-    - Rachis shorter,
-    - Less primary branches,
-    - Both order branches longer?
-    - Maybe more secondary branches and more spikelet? Small effect,
-
-**LOC_Os05g32270 erf142 &&& LOC_Os06g03710 smo2 ???**
-
-They behave always the same, erf142 has more extreme values.
-
-- erf142 classified as DREB by Sharoni et al and as Unusual AP2 by Aya et al, 2014, which is the one that reported the mutant.
-- Everything is smaller, besides, strangely, SbIntL, which gets longer.
--  It makes significantly less Sb and Sp, which fits with its function in Auxin signalling pathway.
-
 ## Discussion
 
 1. We found lots of evidence that AP2 genes regulate panicle branching. Discuss different mechanisms *e.g.* repression of determinate state, promotion of indeterminate state, control exhaustion of branch meristem and identity / rate of production of axillary meristem and identity of spikelet meristem. Links to stress response. Discuss potential for changes in AP2 gene expression to be involved in evolution of branching phenotype.
