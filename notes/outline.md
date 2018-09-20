@@ -17,20 +17,13 @@
 
 ## Results
 
+### 1. Methods overview
 
-
-### 1. Panicle traits of domesticated Asian and African rice are similar. Panicles of domesticated species produce more primary and secondary branches and more spikelets.
+### 2. Panicle traits of domesticated Asian and African rice are similar. Panicles of domesticated species produce more primary and secondary branches and more spikelets.
 - **Figure 1a**: photo of mature panicles (images panicle spread) Tom
-<<<<<<< HEAD
-- **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) : just present PC1
-- **SF 1** : correlation between spN/Pbn/SbN
-
-Correlation between spikelet number and branching complexity justifies transcriptome samples
-=======
 - **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) : just present PC1. Note the sequenced accessions.
 - **SF 1** : other components
 - **SF 2** : phenotypes from Mtp samples (correlation between spikelet number and branching complexity justifies transcriptome samples)
->>>>>>> minor change
 
 ### 3. There are "transcriptomic differences" between [domesticated and wild] varieties.
 - **Figure 2**: global view of transcriptome *e.g.* PCA (Otho).
@@ -60,8 +53,6 @@ Global to TF enrichment : supp data
 - **SF 4** PCA enrichement + MADS (add subfamillies), NAC, MYB.
 - **SF 5** PCA enrichement all families.
 - [Differential] Expression of AP2 genes can be grouped by subfamily **Figure Supp  5**: AP2-EREBP phylogeny with gene expression (Otho + My) - **It would be nice to have a phylogeny of all ap2s (phylogeny of subclass in each species will be done later)**
-
-
 
 ### 5. AP2-EREBP expression is associated with high yielding indica.
 - **Figure 4**: clusters and correlation with phenotypes (or PCA?) (Tom) / on the figure, remove r-enrichment fig and place just the name
@@ -118,8 +109,6 @@ They behave always the same, erf142 has more extreme values.
 - erf142 classified as DREB by Sharoni et al and as Unusual AP2 by Aya et al, 2014, which is the one that reported the mutant.
 - Everything is smaller, besides, strangely, SbIntL, which gets longer.
 -  It makes significantly less Sb and Sp, which fits with its function in Auxin signalling pathway.
-
-
 
 ## Discussion
 
