@@ -73,35 +73,36 @@ ggraph(tst) +
 # points2network() ?
 
 
-# Test --------------------------------------------------------------------
+# Test Spatial --------------------------------------------------------------
 # SpatialLinesDataFrame 
 
-tst_df <- tst %>%
-  igraph::as_long_data_frame() %>%
-  remove_rownames() %>%
-  column_to_rownames("to_rank")
+# tst_df <- tst %>%
+#   igraph::as_long_data_frame() %>%
+#   remove_rownames() %>%
+#   column_to_rownames("to_rank")
+# 
+# tst_sp <-  tst %>%
+#   igraph::as_long_data_frame() %>%
+#   pmap(., ~sp::Line(matrix(c(..3, ..8, ..4, ..9), ncol = 2)) %>%
+#          sp::Lines(ID = ..12)) %>%
+#   sp::SpatialLines() %>%
+#   sp::SpatialLinesDataFrame(data = tst_df, ) %T>%
+#   plot()
+# 
+# library(shp2graph)
+# tst_seeds <- points2network(ntdata = tst_sp,
+#                           pointsxy = seeds) %>%
+#   shp2graph::nel2igraph()
+# 
+# # from http://r-sig-geo.2731867.n2.nabble.com/igraph-and-spatial-td7589564.html
+# makeLineFromCoords <- function(coords, i) { 
+#   Sl1 = Line(coords) 
+#   S1 = Lines(list(Sl1), ID=as.character(i)) 
+#   Sl = SpatialLines(list(S1)) 
+#   return(Sl) 
+# } 
 
-tst_sp <-  tst %>%
-  igraph::as_long_data_frame() %>%
-  pmap(., ~sp::Line(matrix(c(..3, ..8, ..4, ..9), ncol = 2)) %>%
-         sp::Lines(ID = ..12)) %>%
-  sp::SpatialLines() %>%
-  sp::SpatialLinesDataFrame(data = tst_df, ) %T>%
-  plot()
-
-library(shp2graph)
-tst_seeds <- points2network(ntdata = tst_sp,
-                          pointsxy = seeds) %>%
-  shp2graph::nel2igraph()
-
-# from http://r-sig-geo.2731867.n2.nabble.com/igraph-and-spatial-td7589564.html
-makeLineFromCoords <- function(coords, i) { 
-  Sl1 = Line(coords) 
-  S1 = Lines(list(Sl1), ID=as.character(i)) 
-  Sl = SpatialLines(list(S1)) 
-  return(Sl) 
-} 
-
+# overcomplicated for what we have to achieve
 
 # or ----------------------------------------------------------------------
 
@@ -109,8 +110,40 @@ makeLineFromCoords <- function(coords, i) {
 # using-r-how-to-calculate-the-distance-from-one-point-to-a-line
 # https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line
 dist2d <- function(a,b,c) {
+  # print(c(a, b, c))
   v1 <- b - c
   v2 <- a - b
   m <- cbind(v1,v2)
   d <- abs(det(m))/sqrt(sum(v1*v1))
 } 
+
+tst_df <- tst %>% igraph::as_long_data_frame()
+
+new_vert <- 10
+
+tst_df %>% pmap(., 
+                ~dist2d(a = as.numeric(seeds[new_vert, 1:2]),
+                        b = c(..3, ..4),
+                        c = c(..8, ..9))) %>%
+  purrr::reduce(c) %>%
+  which.min()
+
+
+new_graph <- tst %>% 
+  igraph::add_vertices(nv = 1, 
+                       attr = list(x = as.numeric(seeds[new_vert, 1]),
+                                   y = as.numeric(seeds[new_vert, 2]),
+                                   type = "spikelet")) %>%
+  # igraph::as_long_data_frame()
+  igraph::add_edges(edges = c(as.numeric(tst_df[20, "from"]), 50,
+                              50, as.numeric(tst_df[20, "to"])))
+
+
+ggraph(new_graph) + 
+  geom_edge_link() + 
+  geom_node_point(aes(colour = type),
+                  size = 2) +
+  coord_fixed() +
+  # coord_flip() +
+  theme_minimal()
+
