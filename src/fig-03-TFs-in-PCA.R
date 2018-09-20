@@ -50,6 +50,9 @@ ap2_symbols <- ap2_sharoni$locus_id %>%
 ap2_sharoni %<>%
   left_join(ap2_symbols)
 
+if(FALSE) {
+  write_csv(ap2_sharoni, "../fix_gene_names/ap2.csv")
+}
 
 # https://www.ncbi.nlm.nih.gov/pubmed/18430022
 hb_shain <- read_csv("../data-raw/hb_genes_jain2008.csv") %>%

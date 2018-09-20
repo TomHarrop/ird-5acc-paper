@@ -35,6 +35,14 @@ pcx <- pcro %>%
   mutate(Family = ifelse(is.na(Family), "none", Family))
 
 
+# Load subfamily definition -----------------------------------------------
+
+# mads
+# https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-8-242
+
+# mads_arora <- read_excel("../data-raw/mads_subfam-copyandpasted_arora_2007.xlsx") %>%
+#   select(locus_id, subfamily)
+
 # How many genes pass cutoff ----------------------------------------------
 
 
@@ -55,6 +63,35 @@ pcx_tf <- pcx %>%
   left_join(gsea_pc5) %>%
   filter(Family != "none")
 
+
+
+# Save families -----------------------------------------------------------
+
+if(FALSE) {
+write_family <- function(family_id) {
+  pcx_tf %>%
+    filter(Family == family_id) %>%
+    select(locus_id, Family) %>%
+    mutate(symbol = oryzr::LocToGeneName(locus_id) %$%
+             symbols) %>%
+    write_csv(paste0("../fix_gene_names/",
+                     family_id,
+                     ".csv"))
+}
+
+write_family("MADS")
+write_family("NAC")
+write_family("SBP")             
+
+}
+  
+  pcx_tf %>%
+    filter(Family == "MADS") %>%
+    select(locus_id, Family) %>%
+    mutate(symbol = oryzr::LocToGeneName(locus_id) %$%
+             symbols) %>%
+    write_csv("../fix_gene_names/MADS.csv")
+}
 
 # Plot Enrichement --------------------------------------------------------
 
