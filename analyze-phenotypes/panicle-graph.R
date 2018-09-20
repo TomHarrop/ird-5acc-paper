@@ -104,29 +104,135 @@ ggraph(tst) +
 
 # overcomplicated for what we have to achieve
 
+
+# Spatial with gDistance --------------------------------------------------
+
+get_distance <- function(x0, y0,
+                         x1, y1,
+                         x2, y2) {
+  ln <- sp::Line(matrix(c(x1, x2,
+                    y1, y2),
+                  ncol = 2)) %>%
+    sp::Lines(., ID = "a") %>%
+    list(.) %>%
+    sp::SpatialLines()
+  pn <- sp::SpatialPoints(coords = matrix(c(x0, y0),
+                                          ncol = 2))
+  print(ln)
+  print(pn)
+  rgeos::gDistance(ln, pn)
+}
+
+get_distance(1328,  712, 1284,  688, 1329,  579)
+
+nearest_edge <- tst_df %>%
+  pmap(.,
+       ~get_distance(x0 = as.numeric(seeds[new_vert, 1]),
+                     y0 = as.numeric(seeds[new_vert, 2]),
+                     x1 = ..3,
+                     y1 = ..4,
+                     x2 = ..8,
+                     y2 = ..9)) %>%
+  purrr::reduce(c) %>%
+  which.min()
+
+edge_out <- tst %>%
+  igraph::add_vertices(nv = 1, 
+                       attr = list(x = as.numeric(seeds[new_vert, 1]),
+                                   y = as.numeric(seeds[new_vert, 2]),
+                                   type = "spikelet")) %>%
+  igraph::delete_edges(nearest_edge)
+
+edge_out %>%
+  ggraph() + 
+  geom_edge_link() + 
+  geom_node_point(aes(colour = type),
+                  size = 2) +
+  coord_fixed() +
+  # coord_flip() +
+  theme_minimal()
+
+
 # or ----------------------------------------------------------------------
 
 # from https://stackoverflow.com/questions/35194048/
 # using-r-how-to-calculate-the-distance-from-one-point-to-a-line
 # https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line
-dist2d <- function(a,b,c) {
-  # print(c(a, b, c))
-  v1 <- b - c
-  v2 <- a - b
-  m <- cbind(v1,v2)
-  d <- abs(det(m))/sqrt(sum(v1*v1))
-} 
+# dist2d <- function(a,b,c) {
+#   print(c(a, b, c))
+#   v1 <- b - c
+#   v2 <- a - b
+#   m <- cbind(v1,v2)
+#   d <- abs(det(m))/sqrt(sum(v1*v1))
+# } 
+
+# recode function
+eu_dist <- function(p0, p1, p2) {
+  print(c(p0, p1, p2))
+  # p0 is the point
+  # the line goes through p1 and p1
+  # every point is p <- c(x, y)
+  N <- abs(((p2[2] - p1[2])*p0[1]) -
+             ((p2[1] - p1[1])*p0[2]) +
+             (p2[1]*p1[2]) -
+             (p2[2]*p1[1]))
+  D <- sqrt(((p2[2] - p1[2])^2) +
+              ((p2[1] - p1[1])^2))
+  print(N)
+  print(D)
+  distance <- N/D
+  print(distance)
+  return(N/D)
+}
+
 
 tst_df <- tst %>% igraph::as_long_data_frame()
 
 new_vert <- 10
+new_vert_coord <- as.numeric(seeds[new_vert, 1:2])
 
-tst_df %>% pmap(., 
-                ~dist2d(a = as.numeric(seeds[new_vert, 1:2]),
-                        b = c(..3, ..4),
-                        c = c(..8, ..9))) %>%
+# nearest_edge <- tst_df %>%
+#   pmap(.,
+#        ~dist2d(a = as.numeric(seeds[new_vert, 1:2]),
+#                b = c(..3, ..4),
+#                c = c(..8, ..9))) %>%
+#   purrr::reduce(c) %>%
+#   which.min()
+
+nearest_edge <- tst_df %>%
+  pmap(.,
+       ~eu_dist(p0 = as.numeric(seeds[new_vert, 1:2]),
+                p1 = c(..3, ..4),
+                p2 = c(..8, ..9))) %>%
   purrr::reduce(c) %>%
   which.min()
+
+
+# this is not vectorized
+# nearest_edge <- tst_df %>% 
+#   mutate(dist = dist2d(a = c(1328,  712),
+#                        b = c(from_x, from_y),
+#                        c = c(to_x, to_y))) %>%
+#   purrr::reduce(c) %>%
+#   which.min()
+
+
+edge_out <- tst %>%
+  igraph::add_vertices(nv = 1, 
+                       attr = list(x = as.numeric(seeds[new_vert, 1]),
+                                   y = as.numeric(seeds[new_vert, 2]),
+                                   type = "spikelet")) %>%
+  igraph::delete_edges(nearest_edge)
+
+edge_out %>%
+  ggraph() + 
+  geom_edge_link() + 
+  geom_node_point(aes(colour = type),
+                  size = 2) +
+  coord_fixed() +
+  # coord_flip() +
+  theme_minimal()
+
 
 
 new_graph <- tst %>% 
