@@ -20,18 +20,18 @@
 ### 1. Methods overview
 
 ### 2. Panicle traits of domesticated Asian and African rice are similar. Panicles of domesticated species produce more primary and secondary branches and more spikelets.
-- **Figure 1a**: photo of mature panicles (images panicle spread) Tom
-- **Figure 1b**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) : just present PC1. Note the sequenced accessions.
+- **Figure 1A–D**: photo of mature panicles (images panicle spread) Tom
+- **Figure 1E–F**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) : just present PC1. Note the sequenced accessions.
 - **SF 1** : other components
 - **SF 2** : phenotypes from Mtp samples (correlation between spikelet number and branching complexity justifies transcriptome samples)
 
 ### 3. There are "transcriptomic differences" between [domesticated and wild] varieties.
 - **Figure 2**: global view of transcriptome *e.g.* PCA (Otho).
     - Improve colors
-- **SF 2**: Montpellier phenotyping (Tom)
+- **SF 3**: Montpellier phenotyping (Tom)
     + re-order phenotypes
-- **SF 3a**: distance heatmap (Tom)
-- **SF 3b**: panicle samples + Samples validation by QPCR using LHS1 & TAW
+- **SF 4a**: distance heatmap (Tom)
+- **SF 4b**: panicle samples + Samples validation by QPCR using LHS1 & TAW
 - **Suppl table 01**: DE genes table
 - Topology / mathematics : Figure prepared by helene
 
