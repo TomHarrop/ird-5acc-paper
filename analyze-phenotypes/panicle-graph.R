@@ -4,6 +4,7 @@ library(magrittr)
 library(xml2)
 # library(tidygraph)
 library(ggraph)
+library(igraph)
 
 vertices <- read_xml("../data-raw/pheno-xml/Nip_1_1_6307.ricepr") %>%
   # xml_child("graph")  %>%
@@ -118,12 +119,27 @@ edge_out %>%
   # coord_flip() +
   theme_minimal()
 
+# count edges
+vn <- vcount(tst)
+new_vn <- vn + 1
 
-# new_graph <- tst %>% 
-#   igraph::add_vertices(nv = 1, 
-#                        attr = list(x = as.numeric(seeds[new_vert, 1]),
-#                                    y = as.numeric(seeds[new_vert, 2]),
-#                                    type = "spikelet")) %>%
-#   # igraph::as_long_data_frame()
-#   igraph::add_edges(edges = c(as.numeric(tst_df[20, "from"]), 50,
-#                               50, as.numeric(tst_df[20, "to"])))
+new_graph <- tst %>%
+  igraph::delete_edges(edges = paste0(as.numeric(tst_df[nearest_edge, "from"]),
+                                      "|",
+                                      as.numeric(tst_df[nearest_edge, "to"]))) %>%
+  igraph::add_vertices(nv = 1,
+                       attr = list(x = as.numeric(seeds[new_vert, 1]),
+                                   y = as.numeric(seeds[new_vert, 2]),
+                                   type = "spikelet")) %>%
+  # igraph::as_long_data_frame()
+  igraph::add_edges(edges = c(as.numeric(tst_df[nearest_edge, "from"]), new_vn,
+                              new_vn, as.numeric(tst_df[nearest_edge, "to"])))
+
+new_graph %>% ggraph() +
+  geom_edge_link() +
+  geom_node_point(aes(colour = type),
+                  size = 2) +
+  coord_fixed() +
+  # coord_flip() +
+  theme_minimal()
+  
