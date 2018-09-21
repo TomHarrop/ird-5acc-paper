@@ -138,6 +138,18 @@ add_spikelet <- function(graph_in,
   return(new_graph) 
 }
 
+add_all_spikelets <- function(graph_base, spikelets)
+{
+  # spikelets <- seeds
+  # graph_base <- tst
+  assign_spikelet <- function(graph_base, spikelet) {
+    graph_base <<- add_spikelet(graph_base, spikelet)
+  }
+  pmap(spikelets, ~assign_spikelet(graph_base = graph_base,
+                                   spikelet = c(..1, ..2)))
+  
+  return(graph_base)
+}
 
 # Test function that adds spikelet ----------------------------------------
 
@@ -152,3 +164,13 @@ new_graph %>% ggraph() +
   # coord_flip() +
   theme_minimal()
   
+all_spikelets <- add_all_spikelets(graph_base = tst,
+                                   spikelets = seeds)
+
+all_spikelets %>% ggraph() +
+  geom_edge_link() +
+  geom_node_point(aes(colour = type),
+                  size = 2) +
+  coord_fixed() +
+  # coord_flip() +
+  theme_minimal()
