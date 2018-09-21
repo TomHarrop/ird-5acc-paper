@@ -47,3 +47,6 @@ src/Rplots.*
 
 # mac
 .DS_Store
+
+# temporary files
+fix_gene_names/*
