@@ -70,70 +70,79 @@ ggraph(tst) +
 
 # with Spatial and gDistance ----------------------------------------------
 
-tst_df <- tst %>% igraph::as_long_data_frame()
-new_vert <- 10
-new_vert_coord <- as.numeric(seeds[new_vert, 1:2])
-
-get_distance <- function(x0, y0,
-                         x1, y1,
-                         x2, y2) {
-  ln <- sp::Line(matrix(c(x1, x2,
-                    y1, y2),
-                  ncol = 2)) %>%
-    sp::Lines(., ID = "a") %>%
-    list(.) %>%
-    sp::SpatialLines()
-  pn <- sp::SpatialPoints(coords = matrix(c(x0, y0),
-                                          ncol = 2))
-  # print(ln)
-  # print(pn)
-  return(rgeos::gDistance(ln, pn))
+add_spikelet <- function(graph_in,
+                         new_vert = numeric(2)) 
+  {
+  
+  # new_vert in format c(x, y)
+  
+  # remove this stuff
+  # new_vert_id <- 10
+  # new_vert <- as.numeric(seeds[new_vert_id, 1:2])
+  # graph_in <- tst
+  
+  # Long datagrame easier to subset than graph 
+  graph_long <- graph_in %>% igraph::as_long_data_frame()
+  
+  # function
+  get_distance <- function(x0, y0,
+                           x1, y1,
+                           x2, y2) 
+    {
+    ln <- sp::Line(matrix(c(x1, x2,
+                            y1, y2),
+                          ncol = 2)) %>%
+      sp::Lines(., ID = "a") %>%
+      list(.) %>%
+      sp::SpatialLines()
+    pn <- sp::SpatialPoints(coords = matrix(c(x0, y0),
+                                            ncol = 2))
+    # print(ln)
+    # print(pn)
+    return(rgeos::gDistance(ln, pn))
+  }
+  
+  # test
+  # get_distance(1328,  712, 1284,  688, 1329,  579)
+  
+  # Find edge rank
+  nearest_edge <- graph_long %>%
+    pmap(.,
+         ~get_distance(x0 = new_vert[1],
+                       y0 = new_vert[2],
+                       x1 = ..3,
+                       y1 = ..4,
+                       x2 = ..8,
+                       y2 = ..9)) %>%
+    purrr::reduce(c) %>%
+    which.min()
+  
+  # count edges
+  vn <- vcount(graph_in)
+  new_vn <- vn + 1
+  
+  # add spikelet and new edges
+  new_graph <- graph_in %>%
+    igraph::delete_edges(edges = paste0(as.numeric(graph_long[nearest_edge, "from"]),
+                                        "|",
+                                        as.numeric(graph_long[nearest_edge, "to"]))) %>%
+    igraph::add_vertices(nv = 1,
+                         attr = list(x = new_vert[1],
+                                     y = new_vert[2],
+                                     type = "spikelet")) %>%
+    # igraph::as_long_data_frame()
+    igraph::add_edges(edges = c(as.numeric(graph_long[nearest_edge, "from"]), new_vn,
+                                new_vn, as.numeric(graph_long[nearest_edge, "to"])))
+  
+ 
+  return(new_graph) 
 }
 
-get_distance(1328,  712, 1284,  688, 1329,  579)
 
-nearest_edge <- tst_df %>%
-  pmap(.,
-       ~get_distance(x0 = as.numeric(seeds[new_vert, 1]),
-                     y0 = as.numeric(seeds[new_vert, 2]),
-                     x1 = ..3,
-                     y1 = ..4,
-                     x2 = ..8,
-                     y2 = ..9)) %>%
-  purrr::reduce(c) %>%
-  which.min()
+# Test function that adds spikelet ----------------------------------------
 
-edge_out <- tst %>%
-  igraph::add_vertices(nv = 1, 
-                       attr = list(x = as.numeric(seeds[new_vert, 1]),
-                                   y = as.numeric(seeds[new_vert, 2]),
-                                   type = "spikelet")) %>%
-  igraph::delete_edges(nearest_edge)
-
-edge_out %>%
-  ggraph() + 
-  geom_edge_link() + 
-  geom_node_point(aes(colour = type),
-                  size = 2) +
-  coord_fixed() +
-  # coord_flip() +
-  theme_minimal()
-
-# count edges
-vn <- vcount(tst)
-new_vn <- vn + 1
-
-new_graph <- tst %>%
-  igraph::delete_edges(edges = paste0(as.numeric(tst_df[nearest_edge, "from"]),
-                                      "|",
-                                      as.numeric(tst_df[nearest_edge, "to"]))) %>%
-  igraph::add_vertices(nv = 1,
-                       attr = list(x = as.numeric(seeds[new_vert, 1]),
-                                   y = as.numeric(seeds[new_vert, 2]),
-                                   type = "spikelet")) %>%
-  # igraph::as_long_data_frame()
-  igraph::add_edges(edges = c(as.numeric(tst_df[nearest_edge, "from"]), new_vn,
-                              new_vn, as.numeric(tst_df[nearest_edge, "to"])))
+new_graph <- add_spikelet(graph_in = tst,
+                          new_vert = as.numeric(seeds[10, ]))
 
 new_graph %>% ggraph() +
   geom_edge_link() +
