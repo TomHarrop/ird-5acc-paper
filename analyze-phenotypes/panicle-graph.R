@@ -32,7 +32,9 @@ tst <- tidygraph::tbl_graph(nodes = nodes,
                             edges = edges)
   
 ggraph(tst) + 
-  geom_edge_link() + 
+  geom_edge_link(arrow = grid::arrow(length = unit(0.08,
+                                                   "inches"),
+                                     type = "closed")) + 
   geom_node_point(aes(colour = type),
                   size = 2) +
   coord_fixed() +
@@ -167,10 +169,15 @@ new_graph %>% ggraph() +
 all_spikelets <- add_all_spikelets(graph_base = tst,
                                    spikelets = seeds)
 
-all_spikelets %>% ggraph() +
+all_spikelets %>%
+  ggraph() +
+  # geom_edge_link(arrow = grid::arrow(length = unit(0.08,
+  #                                                  "inches"),
+  #                                    type = "closed")) +
   geom_edge_link() +
   geom_node_point(aes(colour = type),
                   size = 2) +
   coord_fixed() +
   # coord_flip() +
   theme_minimal()
+
