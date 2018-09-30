@@ -23,16 +23,16 @@
 - **Figure 1A–D**: photo of mature panicles (images panicle spread) Tom
 - **Figure 1E–F**: Phenotyping results *e.g.* Cali phenotyping, MTP phenotyping, PCA (put asian domestic together) : just present PC1. Note the sequenced accessions.
 - **SF 1** : other components
-- **SF 2** : phenotypes from Mtp samples (correlation between spikelet number and branching complexity justifies transcriptome samples)
 
 ### 3. There are "transcriptomic differences" between [domesticated and wild] varieties.
 - **Figure 2**: global view of transcriptome *e.g.* PCA (Otho).
     - Improve colors
-- **SF 3**: Montpellier phenotyping (Tom)
-    + re-order phenotypes
-- **SF 4a**: distance heatmap (Tom)
-- **SF 4b**: panicle samples + Samples validation by QPCR using LHS1 & TAW
-- **Suppl table 01**: DE genes table
+- **SF 2**: Montpellier phenotyping (Tom)
+- **SF 3** : phenotypes from Mtp samples (correlation between spikelet number and branching complexity justifies transcriptome samples)
+- **SF 4**: panicle samples + Samples validation by QPCR using LHS1 & TAW
+- **SF 5**: distance heatmap (Tom)
+- **Table S2**: Exonic mapping / qc
+- **Table S2**: all DE genes
 - Topology / mathematics : Figure prepared by helene
 
 - african species cluster together, asian species cluster together -> domestication changes are minor compared to species-level changes
@@ -81,7 +81,7 @@ Global to TF enrichment : supp data
 
 1. We found lots of evidence that AP2 genes regulate panicle branching. Discuss different mechanisms *e.g.* repression of determinate state, promotion of indeterminate state, control exhaustion of branch meristem and identity / rate of production of axillary meristem and identity of spikelet meristem. Links to stress response. Discuss potential for changes in AP2 gene expression to be involved in evolution of branching phenotype.
 
-2. Limitation of these results: lack of functional analysis, mutants etc. Potential for redundancy between genes. Potential contributions by genes from other families to regulatory modules.
+2. Limitation of these results. Limitations of mapping against japonica. Lack of functional analysis, mutants etc. Potential for redundancy between genes. Potential contributions by genes from other families to regulatory modules.
 
 3. How could this apply to [crop] domestication in general? What are the similarities in other branching processes e.g. root development, inflorescence development in other species?
 
