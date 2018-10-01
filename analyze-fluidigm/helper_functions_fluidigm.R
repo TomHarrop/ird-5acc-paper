@@ -69,11 +69,22 @@ scale_tidy_fluidigm <- function(dat) {
     group_by(target_name) %>%
     mutate(expr_scale_gene = scale(expression)) %>%
     ungroup() %>%
-    # scale expression by geme end species
+    # scale expression by gene end species
     group_by(target_name, species) %>%
-    mutate(expr_scale_gene_spec = scale(expression)) %>%
+    mutate(expr_scale_gene_spec = scale(expression),
+           expression_NA = case_when(expression == 0 ~ NA_real_,
+                                     TRUE ~ expression),
+           expr_scale_gene_spec_0_10 = scales::rescale(expression_NA,
+                                                       to = c(0.1, 10),
+                                                       # from = range(c(0, expression_NA),
+                                                       #              na.rm = TRUE,
+                                                       #              finite = TRUE)
+                                                       )
+           ) %>%
     ungroup() %>%
-    mutate(expr_scale_gene_spec = ifelse(is.na(expr_scale_gene_spec), 0, expr_scale_gene_spec)) %>%
+    mutate(expr_scale_gene_spec = ifelse(is.na(expr_scale_gene_spec),
+                                         0,
+                                         expr_scale_gene_spec)) %>%
     # last, save descriptive names for stages and species
     mutate(stage = stage_names[stage]) %>%
     # mutate(stage = factor(stage, 
@@ -277,9 +288,13 @@ plot_both <- function(id_fluidigm,
 # Line plot fluidigm ------------------------------------------------------
 
 lineplot_fluidigm <- function(nm, dat,
-                              alpha = .5) {
+                              alpha = .5,
+                              expr_val = expression)
+  {
+  expr_val <- enquo(expr_val)
+  
   p <- ggplot(dat, aes(x = stage,
-                       y = expression)) +
+                       y = !!expr_val)) +
     geom_point(size = 2,
                col = "darkgrey",
                alpha = alpha) +
