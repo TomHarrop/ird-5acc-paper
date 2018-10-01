@@ -1,7 +1,7 @@
 ---
 title: "Temporary - Determination of Inflorescence Architecture in Wild and Domesticated Rices"
 
-Harrop Thomas, Mantegazza Otho, Luong Ai My, Bethume Kevin, Lorieux Mathias, Other person from CIAT, Jouannic Stephane, Hélène ADAM
+authors: Harrop Thomas, Mantegazza Otho, Luong Ai My, Bethume Kevin, Lorieux Mathias, Other person from CIAT, Jouannic Stephane, Hélène ADAM
 
 bibliography: ../bib/references.bib
 ---
