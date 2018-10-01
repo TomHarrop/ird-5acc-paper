@@ -16,15 +16,15 @@ To measure whole-transcriptome gene expression, we collected developing panicles
 
 ## APETALA2 and ethylene-responsive element binding proteins transcription factors are differentially expressed between stages
 
-We investigated the patterns of variation in the transcriptomes using PCA. The first four PCs split different combinations of rice species (Figure 2). These components may relate to species-specific differences unrelated to panicle architecture, or mapping biases caused by mapping all libraries against the *O. sativa* japonica reference. In contrast, PC5 separates developmental stages across all five accessions except *O. sativa* indica (Figure 2). 
-
-The family of APETALA2 and ethylene-responsive element binding protein (AP2/EREBP)-like 
+We used PCA to investigate the patterns of variation in the transcriptomes. The first four PCs split different combinations of rice species (Figure 2). These components may relate to species-specific differences unrelated to panicle architecture, or mapping biases caused by mapping all libraries against the *O. sativa* japonica reference. In contrast, PC5 separates developmental stages across all five accessions except *O. sativa* indica (Figure 2). The family of APETALA2 and ethylene-responsive element binding protein (AP2/EREBP)-like genes are enriched at the extremes of PC5, suggesting that they contribute to differences between BM and SM (Figure 3). Homeobox, MADS, NAC and SBP genes are also enriched in PC5 (Figure 3; Figure S5). 
 
 ## Figure legends
 
 **Figure 1**. Panicles from domesticated accessions produce more branches and spikelets than panicles from wild accessions. We used spread panicles from **A** *O. rufipogon*, **B** *O. sativa*, **C** *O. barthii* and **D** *O. glaberrima* to measure panicle phenotypes with P-TRAP [@al-tamPTRAPPanicleTrait2013]. The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**E**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 ( **F**). RL: Rachis length; PBL: Primary branch length; PBIL: Primary branch internode length; SBL: Secondary branch length; SBIL: Secondary branch internode length; TBN: Tertiary branch number; PL: Panicle length.
 
 **Figure 2**. Principal component 5 (PC5) separates libraries by developmental stage, and explains 5.4% of total variability. The first four components explain 51.7% of variability, and separate libraries by species.
+
+**Figure 3**. AP2/EREBP and homeobox (HB) transcription factors change expression between BM and SM. **A**. AP2/EREBP and HB genes are distributed at the extremes of genes ranked on PC5 (GSEA test *p*~adj~ 0.004 and 0.021, respectively **which test? hypergeometric?**). We retained the highest 10% of genes by absolute value on PC5 (**check wording**). **B**. Most AP2/EREBP genes that pass the cutoff are more highly expressed (**what's on the scale bar?**) in the BM. Three of the four AP2/EREBP genes that are more highly expressed in the SM belong to the AP2 subfamily. Genes that are more highly expressed in BM mainly belong to RAV, DREB and ERF subfamilies. **C**. Most HB genes that pass the cutoff are more highly expressed in the SM. Ten out of twenty of these genes belong to the HD−ZIP IV subfamily (**are there stats for this?**).
 
 **Figure S1**. Principal component analysis (PCA) of panicle phenotyping data showing components 1–4. PC1 accounts for 46.5% of variability and separates panicles from domesticated and wild accessions. The lower ordinates do not separate panicles by species.
 
@@ -36,6 +36,8 @@ Primary and Secondary Branches poorly correlates, suggesting that they
 are controlled by different genetic mechanisms
 
 **Figure S4**. **A** Photos of panicle samples. **B** *LHS1* / *G1L5* qRT-PCR.
+
+**Figure S5**. MADS and SBP genes are more highly expressed in the SM. NAC genes are more highly expressed in the BM.
 
 ## Tables
 
