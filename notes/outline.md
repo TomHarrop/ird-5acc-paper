@@ -31,7 +31,7 @@
 - **SF 3** : phenotypes from Mtp samples (correlation between spikelet number and branching complexity justifies transcriptome samples)
 - **SF 4**: panicle samples + Samples validation by QPCR using LHS1 & TAW
 - **SF 5**: distance heatmap (Tom)
-- **Table S2**: Exonic mapping / qc
+- **Table S1**: Exonic mapping / qc
 - **Table S2**: all DE genes
 - Topology / mathematics : Figure prepared by helene
 

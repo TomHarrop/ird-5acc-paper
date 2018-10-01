@@ -10,13 +10,21 @@ To measure the diversity of panicle architecture, we phenotyped **n** accessions
 
 To investigate gene expression associated with variation in panicle architecture, we chose a single accession for each of *O. rufipogon*, *O. sativa* japonica (Nipponbare), *O. sativa* indica (IR84), *O. barthii* (**?**) and *O. glaberrima* (**TOG...**) for RNA sequencing (RNAseq).
 
-To test whether these accessions are consistent with species-wide patterns of panicle architecture, we performed further panicle phenotyping on **n** panicles from **m** plants from each accession. The three domesticated accessions produce more spikelets than their wild relatives (Figure S2), and there was a stronger correlation between secondary branch number and spikelet number in the domesticated accessions than in the wild accessions, suggesting **...** (Figure S3).
+To test whether these accessions are consistent with species-wide patterns of panicle architecture, we performed further panicle phenotyping on **n** panicles from **m** plants from each accession. The three domesticated accessions produce more spikelets than their wild relatives (Figure S2), and there was a stronger correlation between secondary branch number and spikelet number in the domesticated accessions than in the wild accessions, suggesting **...** (Figure S3). **Model of panicles goes here.**
 
-To measure whole-transcriptome gene expression, we collected developing panicles from each accession at the rachis meristem (RM), branch meristem (BM), spikelet meristem (SM) and **floret?** meristem (FM) stages (Figure S4a). We extracted RNA from all stages, and measured expression of *LHS1* and *G1L5* (*TAWAWA*) with quantitative RT-PCR (qRT-PCR) to confirm staging (Figure S4b). We used RNA from the BM and SM stages for rRNA depletion and construction of cDNA libraries for RNAseq. We obtained an average of **x** million 100b read pairs per sample (Table S1), which we mapped against the MSU Release 7.0 of the annotation of the *O. sativa* japonica cv. Nipponbare reference genome [@ouyangTIGRRiceGenome2007]. Unique read mapping percentages were above **X**% even for African rice species (Table S1). 
+To measure whole-transcriptome gene expression, we collected developing panicles from each accession at rachis meristem (RM), branch meristem (BM), spikelet meristem (SM) and **floret?** meristem (FM) stages (Figure S4a). We extracted RNA from all stages, and measured expression of *LHS1* and *G1L5* (*TAWAWA*) with quantitative RT-PCR (qRT-PCR) to confirm staging (Figure S4b). We used RNA from the BM and SM stages for rRNA depletion and construction of cDNA libraries for RNAseq. We obtained an average of **x** million 100b read pairs per sample (Table S1), which we mapped against the MSU Release 7.0 of the annotation of the *O. sativa* japonica cv. Nipponbare reference genome [@ouyangTIGRRiceGenome2007]. Unique read mapping percentages were above **X**% even for African rice species (Table S1). Pairwise distances between libraries were lower for samples from the same stage, accession and continent, in that order (Figure S5), indicating that transcriptomic changes during domestication are minor compared to transcriptome differences between species. We used differential expression (DE) analysis to identify genes that were up- or down-regulated between stages across all accessions. 193 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate cutoff 0.1 (Table S2). This list included **genes x, y and z** [e.g. pick from *FZP*, *LHS1*, *LAX1*, *PAP2*, *MFO1*, ...], which control inflorescence architecture in rice [**add citations for chosen genes**]. 
+
+## APETALA2 and ethylene-responsive element binding proteins transcription factors are differentially expressed between stages
+
+We investigated the patterns of variation in the transcriptomes using PCA. The first four PCs split different combinations of rice species (Figure 2). These components may relate to species-specific differences unrelated to panicle architecture, or mapping biases caused by mapping all libraries against the *O. sativa* japonica reference. In contrast, PC5 separates developmental stages across all five accessions except *O. sativa* indica (Figure 2). 
+
+The family of APETALA2 and ethylene-responsive element binding protein (AP2/EREBP)-like 
 
 ## Figure legends
 
 **Figure 1**. Panicles from domesticated accessions produce more branches and spikelets than panicles from wild accessions. We used spread panicles from **A** *O. rufipogon*, **B** *O. sativa*, **C** *O. barthii* and **D** *O. glaberrima* to measure panicle phenotypes with P-TRAP [@al-tamPTRAPPanicleTrait2013]. The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**E**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 ( **F**). RL: Rachis length; PBL: Primary branch length; PBIL: Primary branch internode length; SBL: Secondary branch length; SBIL: Secondary branch internode length; TBN: Tertiary branch number; PL: Panicle length.
+
+**Figure 2**. Principal component 5 (PC5) separates libraries by developmental stage, and explains 5.4% of total variability. The first four components explain 51.7% of variability, and separate libraries by species.
 
 **Figure S1**. Principal component analysis (PCA) of panicle phenotyping data showing components 1–4. PC1 accounts for 46.5% of variability and separates panicles from domesticated and wild accessions. The lower ordinates do not separate panicles by species.
 
@@ -31,4 +39,6 @@ are controlled by different genetic mechanisms
 
 ## Tables
 
+**Table S1**. Read and mapping statistics for all RNAseq libraries.
 
+**Table S2**. Genes diffentially expressed between stages across all species.
