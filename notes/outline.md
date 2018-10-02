@@ -81,7 +81,7 @@ Global to TF enrichment : supp data
 
 1. We found lots of evidence that AP2 genes regulate panicle branching. Discuss different mechanisms *e.g.* repression of determinate state, promotion of indeterminate state, control exhaustion of branch meristem and identity / rate of production of axillary meristem and identity of spikelet meristem. Links to stress response. Discuss potential for changes in AP2 gene expression to be involved in evolution of branching phenotype.
 
-2. Limitation of these results. Limitations of mapping against japonica. Lack of functional analysis, mutants etc. Potential for redundancy between genes. Potential contributions by genes from other families to regulatory modules.
+2. Limitation of these results. Limitations of mapping against japonica, and strategies we used to deal with them, e.g. only looked at L2FCs not raw counts/expression, PCA, etc. Lack of functional analysis, mutants etc. Potential for redundancy between genes. Potential contributions by genes from other families to regulatory modules.
 
 3. How could this apply to [crop] domestication in general? What are the similarities in other branching processes e.g. root development, inflorescence development in other species?
 
