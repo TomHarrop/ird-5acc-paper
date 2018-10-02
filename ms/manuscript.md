@@ -55,7 +55,7 @@ We have measured panicle traits of 91 African and Asian rice accessions ***(Supp
 
 Those 91 rice accessions belong to 4 rice species: the wild African rice *Oryza barthii*, the wild Asian rice *Oryza Rufipogon*, the domesticated African rice *Oryza glaberrima* and the domesticated Asian rice,  *Oryza sativa*. We have measured ***approximatively???*** 20 accessions per species and 10 plants per accession for a total of 1140 ***panicles/plants???***.
 
-For each plant, we have measured these phenotypic traits using the software pTrap as reported by [@faroq2013p]:
+For each plant, we have measured these phenotypic traits using the software pTrap as reported by [@al-tamPTRAPPanicleTrait2013]:
 
 - Rachis Length (RL),
 - Primary Branch Numbers (PbN),
@@ -275,7 +275,7 @@ ERF142 : clear effect on panicle phenotype but in any modelisationPLT8 : effect 
 
 # Discussion
 
-Inflorescence branching in Solanaceae is modulated by subtle modifications of transcriptional programs [@Lemmon_Evolutioninflorescencediversity_2016].
+Inflorescence branching in Solanaceae is modulated by subtle modifications of transcriptional programs [@lemmonEvolutionInflorescenceDiversity2016].
 
 # Materials and Methods
 
