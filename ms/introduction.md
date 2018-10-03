@@ -33,9 +33,8 @@ They control meristem phase transitions; and, when those genes are missing, meri
 While genes that determine panicle branching in rice have been reasonably described, at this moment the diversity of branching across rice species has not been described yet systematically, nor has the genetics that underlies branching diversity.
 
 In this paper we analyze systematically panicle branching for multiple varieties of wild and domesticated African and Asian rice.
-In this way we use genetic diversity to understand branching structure and the underlying molecular genetics.
-To do so we have collected more than 100 varieties of rice from the African wild species *O. barthii*, the African domesticated species *O. glaberrima*, the Asian wild species *O. rufipogon* and the Asian domesticated species *O. sativa indica* and *O. sativa japonica* and we have measured thei panicle traits with the publicly available software p-trap [@al-tamPTRAPPanicleTrait2013]. Hereby we present an exploratory analysis of this dataset.
+To do so we have collected more than 100 varieties of rice from the African wild species *O. barthii*, the African domesticated species *O. glaberrima*, the Asian wild species *O. rufipogon* and the Asian domesticated species *O. sativa indica* and *O. sativa japonica* and we have measured their panicle traits with the publicly available software p-trap [@al-tamPTRAPPanicleTrait2013].
+Hereby we present an exploratory analysis of this dataset.
 
-Hereby we also explore the transcriptome of 5 selected varieties. In order to identify novel genes that determine branching and branching diversity. To do so we select 5 varieties, sequence their transcriptome at two developmental stages before and after differentiation of the panicle axillary meristems.
-
-Hereby we report our finding on rice panicle phenotype and transcriptome.
+We have also selected 5 specific varieties, sampled their developing and branching panicles and analyzed their transcriptomes.
+Hereby we present and report the results of also this analysis and the insight that it has given us on the molecular genetic that underlies rice panicle branching and its diversity.
