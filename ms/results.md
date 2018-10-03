@@ -54,10 +54,10 @@ Next, we wanted to test whether loss-of-function mutants had phenotypes consiste
 
 **Figure S3**. Detailed phenotyping of five Oryza accessions. The three domesticated accessions produce more spikelets than their wild relatives. In comparison to *O. sativa japonica*, *O sativa indica* produces more secondary branches.
 
-**Figure S4** Correlation between the main traits that determine panicle phenotype. A. Primary Branch Number and Spikelet Number correlates only slightly mainly in wild species. B. Secondary Branch Number and Spikelet number
-highly correlates in cultivated species, less in wild species. C.
-Primary and Secondary Branches poorly correlates, suggesting that they
-are controlled by different genetic mechanisms
+**Figure S4** Correlation between the main traits that determine panicle phenotype. Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number
+correlate more in cultivated species than in wild species.
+Primary and secondary branch numbers don't correlate, suggesting that they
+are controlled by different genetic mechanisms.
 
 **Figure S5**. **A** Photos of panicle samples. **B** *LHS1* / *G1L5* qRT-PCR.
 
