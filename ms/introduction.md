@@ -29,3 +29,13 @@ Moreover *Aberrant Panicle Organization 1* and *Aberrant Panicle organization 2*
 They control meristem phase transitions; and, when those genes are missing, meristems tend to spikelets and branching is reduced [@ikeda2012aberrant].
 
 ***I am not sure which other gene to discuss here, which one do we consider focal for our paper? If we include more genes we could consider dividing them in -indeterminate apical meristem, establishment of axyllary meristem, progression to spikelet.***
+
+While genes that determine panicle branching in rice have been reasonably described, at this moment the diversity of branching across rice species has not been described yet systematically, nor has the genetics that underlies branching diversity.
+
+In this paper we analyze systematically panicle branching for multiple varieties of wild and domesticated African and Asian rice.
+In this way we use genetic diversity to understand branching structure and the underlying molecular genetics.
+To do so we have collected more than 100 varieties of rice from the African wild species *O. barthii*, the African domesticated species *O. glaberrima*, the Asian wild species *O. rufipogon* and the Asian domesticated species *O. sativa indica* and *O. sativa japonica* and we have measured thei panicle traits with the publicly available software p-trap [@al-tamPTRAPPanicleTrait2013]. Hereby we present an exploratory analysis of this dataset.
+
+Hereby we also explore the transcriptome of 5 selected varieties. In order to identify novel genes that determine branching and branching diversity. To do so we select 5 varieties, sequence their transcriptome at two developmental stages before and after differentiation of the panicle axillary meristems.
+
+Hereby we report our finding on rice panicle phenotype and transcriptome.
