@@ -1,7 +1,8 @@
 
 # AP2 & HB gene expression pattern associated with inflorescence architecture diversity
-> Working title
 
+> Working title (too vague IMO)
+ 
 ## Introduction
 
 1. Why is inflorescence architecture / branching important (yield etc)? How is architecture different between domesticated and wild species?
