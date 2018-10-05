@@ -70,7 +70,8 @@ p <- ggplot(pcx,
         strip.text.x = element_text(face = "italic")) 
   
 
-pdf("../fig/fig-02-PCA-rlog-VISUAL.pdf")
+pdf("fig/fig-02-PCA-rlog-VISUAL.pdf")
 print(p)
 dev.off()
+
 
