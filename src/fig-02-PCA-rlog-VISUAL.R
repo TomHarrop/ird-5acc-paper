@@ -1,7 +1,8 @@
 library(tidyverse)
 library(glue)
 
-load("../data/rlog-pca.Rdata")
+pc <- readRDS("data/tmp_rlog_pca_output/pc.Rds")
+pcx <- readRDS("data/tmp_rlog_pca_output/pcx.Rds")
 color_palette <- c("blue", "goldenrod")
 
 # Only the first 5 PC are interesting? ------------------------------------
