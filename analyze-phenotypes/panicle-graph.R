@@ -32,9 +32,10 @@ tst <- tidygraph::tbl_graph(nodes = nodes,
                             edges = edges)
   
 ggraph(tst) + 
-  geom_edge_link(arrow = grid::arrow(length = unit(0.08,
-                                                   "inches"),
-                                     type = "closed")) + 
+  # geom_edge_link(arrow = grid::arrow(length = unit(0.08,
+  #                                                  "inches"),
+  #                                    type = "closed")) + 
+  geom_edge_link() +
   geom_node_point(aes(colour = type),
                   size = 2) +
   coord_fixed() +
