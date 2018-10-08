@@ -52,7 +52,7 @@ Next, we wanted to test whether loss-of-function mutants had phenotypes consiste
 
 **Figure 2**. Principal component 5 (PC5) separates RNA-seq samples by developmental stage, and explains 5.4% of total variability. The first four components explain 51.7% of variability, and separate RNA-seq samples by species.
 
-**Figure 3**. AP2/EREBP and homeobox (HB) transcription factors change expression between BM and SM. **A**. AP2/EREBP and HB genes are distributed at the extremes of genes ranked on PC5 (GSEA test *p*~adj~ 0.004 and 0.021, respectively **which test? hypergeometric?**). We retained the highest 10% of genes by absolute value on PC5 (**check wording**). **B**. Most AP2/EREBP genes that pass the cutoff are more highly expressed (**what's on the scale bar?**) in the BM. Three of the four AP2/EREBP genes that are more highly expressed in the SM belong to the AP2 subfamily. Genes that are more highly expressed in BM mainly belong to RAV, DREB and ERF subfamilies. **C**. Most HB genes that pass the cutoff are more highly expressed in the SM. Ten out of twenty of these genes belong to the HD−ZIP IV subfamily (**are there stats for this?**).
+**Figure 3**. AP2/EREBP and homeobox (HB) transcription factors change expression between BM and SM. **A**. AP2/EREBP and HB genes are distributed at the extremes of genes ranked on PC5 (GSEA permutation based test: *p*~adj~ 0.004 both). For the heatmap we have used the 10% of the genes that have the highest absolute loading on PC5 (shown in red in the enrichment plot). **B**. Most AP2/EREBP genes that pass the cutoff are more highly expressed (**what's on the scale bar?**) in the BM. Three of the four AP2/EREBP genes that are more highly expressed in the SM belong to the AP2 subfamily. Genes that are more highly expressed in BM mainly belong to RAV, DREB and ERF subfamilies. **C**. Most HB genes that pass the cutoff are more highly expressed in the SM. Ten out of twenty of these genes belong to the HD−ZIP IV subfamily (**are there stats for this?**).
 
 **Figure 4**. Genes with a high log~2~-fold change (L~2~FC) in *O. sativa indica* are correlated with increased production of primary branches (PBN), secondary branches (SBN) and spikelets (SpN).
 
@@ -60,7 +60,9 @@ Next, we wanted to test whether loss-of-function mutants had phenotypes consiste
 
 **Figure S1**. Principal component analysis (PCA) of panicle phenotyping data showing components 1–4. PC1 accounts for 46.5% of variability and separates panicles from domesticated and wild accessions. The lower ordinates do not separate panicles by species.
 
-**Figure S2**. The accessions used for RNAseq are consistent with species-wide patterns of panicle architecture. Scores on PC1 for the accessions chosen for RNAseq are shown in red. ***O. sativa* japonica cv. Nipponbare was included in RNAseq as the reference accession for *O. sativa* japnica, but it is at the low extreme of the range of PC1 scores for *O. sativa* accessions.** (**Describe what the boxplot shows. How many points are there for each accession?**
+**Figure S2**. The accessions used for RNAseq are consistent with species-wide patterns of panicle architecture. Scores on PC1 for the accessions chosen for RNAseq are shown in red.
+
+> *O. sativa* japonica cv. Nipponbare was included in RNAseq as the reference accession for *O. sativa* japnica, but it is at the low extreme of the range of PC1 scores for *O. sativa* accessions. (**Describe what the boxplot shows. How many points are there for each accession?**
 
 **Figure S3**. Detailed phenotyping of five Oryza accessions. The three domesticated accessions produce more spikelets than their wild relatives. In comparison to *O. sativa japonica*, *O sativa indica* produces more secondary branches.
 
