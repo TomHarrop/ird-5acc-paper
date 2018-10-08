@@ -4,9 +4,9 @@ bibliography: ../bib/references.bib
 
 # Introduction
 
-Rice produces grains on much branched inflorescences called panicles.
-The complexity of panicle branching and the number of grains that grow on it are determined by iterations of two basic developmental decisions on axillary meristems: How many axillary meristems a branch produces, and whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and then a grain.
-In detail, the rice panicle develops from a main stem called the rachis, which produces a small indeterminate number of axillary meristems during elongation.
+Rice produces grains on much-branched inflorescences called panicles.
+The complexity of panicle branching and the number of grains that grow on it are determined by iterations of two basic developmental decisions on axillary meristems: How many axillary meristems are produced by a branch, and whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and then a grain.
+In detail, the rice panicle develops from a main stem called the rachis, which, during elongation, produces a small indeterminate number of axillary meristems .
 The axillary meristems on the rachis all develop as primary branches.
 Primary branches also produce an indeterminate number of axillary meristems. The axillary meristems on the primary branches either grow as secondary branches or differentiate into spikelets.
 Secondary branches also produce an indeterminate but smaller number of axillary meristems, which very rarely grow into tertiary branches and most likely differentiate into spikelets.
