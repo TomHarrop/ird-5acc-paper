@@ -12,7 +12,7 @@ Lower-order components do not separate panicles from different species (Figure S
 There was a stronger correlation between secondary branch number and spikelet number in the domesticated accessions than in the wild accessions (Figure S1 **correlation-pbn-spn**). **be more descriptive in the correlation**
 
 
-### Panicle transcriptome Variation among species (Differences in gene expression profiles between wild and domesticated panicles)
+### Panicle transcriptome Variation (Differences in gene expression profiles between wild and domesticated panicles)
 
 To investigate gene expression associated with variation in panicle architecture, we chose a single accession for each of *O. rufipogon* (W1654), *O. sativa japonica* (Nipponbare), *O. sativa indica* (IR64), *O. barthii* (B88) and *O. glaberrima* (Tog5681) for RNA sequencing (RNAseq). 
 Based on the extensive phenotyping described above, the chosen accessions are consistent with species-wide patterns of panicle architecture (Figure S3 **suppl-phenotype-all-varieties = suppl-fig-MAYBE-pca-on-pheno-BOXPLOT-LABEL in dropbox have to be finalize**), except for *O. sativa japonica* cv. Nipponbare, which we included as the reference accession for *O. sativa japonica*.
@@ -28,17 +28,21 @@ Pairwise distances between libraries were lower for samples from the same stage,
 We used PCA to investigate the patterns of variation in the transcriptomes. 
 The first four PCs split different combinations of rice species (Figure 2 **transcriptome-pca**). 
 These components may relate to species-specific differences unrelated to panicle architecture, or mapping biases caused by mapping all libraries against the *O. sativa japonica* reference. **we have to describe a little bit more the 4 components**
+In contrast, PC5 separates developmental stages across all five accessions except *O. sativa indica* (Figure 2 **transcriptome-pca**). **moderate the less separation in indica**
 
 We used differential expression (DE) analysis to identify genes that were up- or down-regulated between stages across all accessions.
 193 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1 (Table S2 **DE-genes-stages**).
 This list included **TFs x, y and z** [e.g. pick from *FZP*, *LHS1*, *LAX1*, *PAP2*, *MFO1*, ...], which control inflorescence architecture in rice [**add citations for chosen genes**].
 > Shall we discuss the fact that many more genes are differentially expressed in African species? (also supported by the PCA) Or would this make the paper overcomplicated? Shall we discuss differential expression in the single species at all?
-In contrast, PC5 separates developmental stages across all five accessions except *O. sativa indica* (Figure 2 **transcriptome-pca**).
+
+CCL : 
 
 ## AP2/EREBP-like transcription factors are differentially expressed between stages and associated with domesticated accessions
 
 The family of APETALA2 and ethylene-responsive element binding protein (AP2/EREBP)-like genes are enriched at the extremes of PC5, suggesting that they contribute to differences between BM and SM (Figure 3 **HB-AP2-heatmap**).
 Homeobox, MADS, NAC and SBP genes are also enriched in PC5 (Figure 3 **HB-AP2-heatmap**; Figure S7 **NAC-MADS-SPL-heatmap**).
+> what is the link with domesticated here?
+> do we refer to LMD data/AP2-HB in these part?
 
 ## Transcriptome Association with panicle complexity
 Because of the prominence of transcription factor (TF) **we don't show really this prominence..or give a statistic value or comparison between all genne/TF** genes and AP2/EREBP genes in PC5 and in DE genes between stages (Figure 3 **HB-AP2-heatmap**; Table S2 **DE-genes-stages**), we used soft clustering of log~2~-fold change values (L~2~FCs) between BM and SM to find common patterns of expression of the subset of annotated TF genes that were expressed in our RNAseq dataset.
