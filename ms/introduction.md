@@ -5,12 +5,28 @@ bibliography: ../bib/references.bib
 # Introduction
 >suggestion for an introduction plan
 - general sentence about importance of rice and so panicle architecture
-- how the panicle is formed : description of morphological step
+    - OM: I'm not sure that we should discuss general importance of rice. The importance of rice is very well known, and we do not address it directly in this paper.
+    The first paragraph introduces panicle architecture, but I would not be sure how to state its importance. Is it more important then the rest of the plant?
+- how the panicle is formed: description of morphological step
+    - OM: Great ,I'll add that
 - what we know about molecular control
+    - OM: Isn't this in the third paragraph?
 - what about panicle diversity in rice and relation with domestication / refer also to paper in tomato and wheat in transcriptomic analysis (10.1101/gr.207837.116; 10.1104/pp.17.00694)
 
-Rice produces grains on much-branched inflorescences called panicles.The rice panicle consist of several hierachical orders of branchs (**ref to general figure of panicle+ description?**). The architecture of the rice inflorescence (panicle) results from the establishment and activity of apical and axillary meristems derived from the vegetative shoot apical meristem (SAM) (Ikeda et al., 2004; Breeding Science 54, 147-156). 
-The complexity of panicle branching and the number of grains that grow on it are determined by iterations of two basic developmental decisions on axillary meristems: How many axillary meristems are established, and whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and then a grain (**in other word is meristem fate transition from branch/axillary to spiklet meristem**).
+> OM: Hi,this is my reasoning behind Introduction, I was trying to keep it simple and consistent with our analysis:
+- What is a panicle, how is it structured, where does its diversity arises.
+    - To introduce generically the main topic.
+- What is panicle diversity in different rice species and in domestication.
+    - To introduce the fact that panicle diversity has not been described yet systematically and to motivate the first part our work.
+- What is the molecular control of panicle development and panicle diversity
+    - To introduce the second part of our work.
+- What is our aim and what we have done: an exploration of panicle diversity in different species of wild and domesticated rice and of the underlying molecular genetics
+
+
+
+Rice produces grains on much-branched inflorescences called panicles.The rice panicle consist of several hierachical orders of branchs (**ref to general figure of panicle+ description?** - OM - maybe in the supplementary.).
+The architecture of the rice inflorescence (panicle) results from the establishment and activity of apical and axillary meristems derived from the vegetative shoot apical meristem (SAM) (Ikeda et al., 2004; Breeding Science 54, 147-156). *If you write it like this, you put the stress on "vegetative shoot apical meristem, which is not what we are talking about in this paragraph."*
+The complexity of panicle branching and the number of grains that grow on it are determined by iterations of two basic developmental decisions on axillary meristems: How many axillary meristems are produced, and whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and then a grain (**in other word is meristem fate transition from branch/axillary to spiklet meristem**).
 After the floral transition, the vegetative shoot meristem develops into a rachis meristem, which produces axillary meristems until the rachis meristem is active. The axillary meristems on the rachis all develop as primary branches.
 Primary branches produce then an indeterminate number of axillary meristems. The axillary meristems on the primary branches either grow as secondary branches or differentiate into spikelets.
 Secondary branches also produce an indeterminate but smaller number of axillary meristems, which very rarely grow into tertiary branches and most likely differentiate into spikelets. Each rice grain is produced from a single spikelet.
@@ -22,17 +38,14 @@ These developmental decisions shape the complexity of rice panicles.
 
 >HA : Ref to ikeda et al., 2004 (Breeding Science 54, 147-156) ; itho et al. 2005 (doi:10.1093/pcp/pci501 )
 
-The number of grains is one of the important characters specifying rice yield. Panicle branching and the number of grains per panicle is variable among the clades, species and varieties that have evolved during the complex domestication history of rice.(**Panicule diversity (yamaki et al., 2010 10.1270/jsbbs.60.586 ; Taguch)-Shiobara et al., 2011 10.1270/jsbbs.61.52**)
-Two cultivated rice species were domesticated independantly from the AA genome wild Oryza rice in Africa and in Asia (REF..). Compared with wild progenitors, the two cultivated rice species share a common set of morphological traits, such as loss of seed shatering, an erect growth tiller and short awn or awnless seed (…ref). In this context, the panicle architecture is one of the main morphological traits modified during rice domestications (10.1093/aob/mcm128)
->HA : Please ref to recent paper : Stein et al., 2018 (10.1038/s41588-018-0040-0) and cubry et al., 2018 : 10.1016/j.cub.2018.05.066 : Convergent selection occured during African and Aqsian rice domestications 
+The number of grains is one of the important characters specifying rice yield. *Sorry for the many critics, but this is pretty obvious, isn't it?* Panicle branching and the number of grains per panicle is variable among the clades, species and varieties that have evolved during the complex domestication history of rice.(**Panicule diversity (yamaki et al., 2010 10.1270/jsbbs.60.586 ; Taguch)-Shiobara et al., 2011 10.1270/jsbbs.61.52**)
+Two rice species were domesticated independently from the AA genome wild Oryza rice in Africa and in Asia (REF..). Compared with wild progenitors, the two cultivated rice species share a common set of morphological traits, such as loss of seed shatering, an erect growth tiller and short awn or awnless seed (…ref). In this context, the panicle architecture is one of the main morphological traits modified during rice domestications (10.1093/aob/mcm128)
+>HA : Please ref to recent paper : Stein et al., 2018 (10.1038/s41588-018-0040-0) and cubry et al., 2018 : 10.1016/j.cub.2018.05.066 : Convergent selection occured during African and Aqsian rice domestications
 
 
 Asian and African clades of rice split around two millions years ago and were domesticated independently [@zhu2005phylogenetic].
 The domesticated Asian rice *Oryza sativa* appeared 10,000 years ago and went through a convoluted domestication history that involves a network of subspecies, most importantly *O. sativa* ssp. *indica* and *O. sativa* ssp. *japonica*, and frequent introgressions of its wild relative *Oryza rufipogon*.
-
-The domesticated African rice *Oryza glaberrima* has a simpler history. It was domesticated 3000 years ago, and introgressions from its wild relative, *Oryza barthii*, have not been detected [Reviewed by @vaughan2008evolving].
-Rice species in the African clade tend to produce simpler panicles, with mostly primary branches [**I am not sure how much of this is already known and how much is our finding, I'll search bibliography a bit more, any suggestion?**].
-**HA : >i suggest to put this in the results, because our data could show it**
+The domesticated African rice *Oryza glaberrima* has a simpler history. It was domesticated 3000 years ago, without introgressions from its wild relative, *Oryza barthii*[Reviewed by @vaughan2008evolving].
 In both African and Asian clades, when compared to their wild relatives, domesticated species tend to produce panicles that are more complex and ramified (**ref to DOI 10.1186/s13227-017-0065-y and another one for asia; refer also to GWAS paper in vietnamese collecte**).
 
 The topology and quantity of panicle branches are controlled by genes that determine the size, rate of maturation and identity of reproductive and axillary meristems
