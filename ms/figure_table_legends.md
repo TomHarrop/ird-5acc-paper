@@ -10,7 +10,7 @@
 
 **Figure 5 panicle-mutants**. Mutants in three AP2/EREBP-like genes, *PLT8*, *ERF142* and *DLT*, have defects in panicle architecture compared to their background accessions. The *PLT8* mutant produces fewer primary branches and spikelets. The mutants of *ERF142* and *DLT* both produce fewer primary branches, secondary branches and spikelets.
 
-**Figure S1 correlation-pbn-spn** Correlation between the main traits that determine panicle phenotype. Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number
+**Figure S1 correlation-pbn-spn** Correlation between the main panicle traits that contribute to panicle architecture diversity. Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number. ** could you add the correlation value on each panel** 
 correlate more in cultivated species than in wild species.
 Primary and secondary branch numbers don't correlate, suggesting that they
 are controlled by different genetic mechanisms.
