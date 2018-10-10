@@ -38,8 +38,13 @@ are controlled by different genetic mechanisms.
 ## Tables
 
 **supp-table01-Plantinfo**. List of rice accessions phenotyped for panicle diversity
+
 **supp-table02-PanicleTaritsPhenotyping** Panicle Traits mesuared in the 93 accessions from Wild/Cultivated, Asia and African rice species. 
+
 **supp-table03-PanicleTraits PhenotypingPlants sequenced** Panicle traits data from P-TRAP analysis of rice accessions used for sequencing analysis.
+
+**supp-table-PrimerList**. List and sequenced if pirmers used.
+
 **Table S1 mapping-statistics**. Read and mapping statistics for all RNAseq libraries.
 
 **Table S2 DE-genes-stages**. Genes diffentially expressed between stages across all species.
