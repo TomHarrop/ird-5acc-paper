@@ -26,7 +26,8 @@ are controlled by different genetic mechanisms.
 
 **Figure S4 phenotyping-mpl**. Detailed phenotyping of five Oryza accessions. The three domesticated accessions produce more spikelets than their wild relatives. In comparison to *O. sativa japonica*, *O sativa indica* produces more secondary branches.
 
-**Figure S5 qpcr-confirms-sampling**. **A** Photos of panicle samples. **B** *LHS1* / *G1L5* qRT-PCR.
+**Figure S5 qpcr-confirms-sampling**. **A** Photos of immature panicle samples. **B** *FZP/LHS1* / *G1L5* /LAX1/OsMADS14 qRT-PCR.
+> make a mix figure with the figXX meristem collect and suppl-fig04-qpcr sampling.
 
 **Figure S6 distance-heatmap**. Heatmap of pairwise distances between libraries.
 
