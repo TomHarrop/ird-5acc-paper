@@ -2,11 +2,16 @@
 bibliography: ../bib/references.bib
 ---
 
-# Introduction
+
+----
+
+> Resolve and/or move to `outline.md`
+
 >suggestion for an introduction plan
 - general sentence about importance of rice and so panicle architecture
     - OM: I'm not sure that we should discuss general importance of rice. The importance of rice is very well known, and we do not address it directly in this paper.
     The first paragraph introduces panicle architecture, but I would not be sure how to state its importance. Is it more important then the rest of the plant?
+>TH: I agree with including this, if we're going for a general journal we should make the following points in the first paragraph: 1. rice [yield] is important, 2. yield/no. of grains is controlled by panicle architecture, 3. panicle architecture is controlled by branching. If we're going for a plant journal we could skip 1. 
 - how the panicle is formed: description of morphological step
     - OM: Great ,I'll add that
 - what we know about molecular control
@@ -22,8 +27,14 @@ bibliography: ../bib/references.bib
     - To introduce the second part of our work.
 - What is our aim and what we have done: an exploration of panicle diversity in different species of wild and domesticated rice and of the underlying molecular genetics
 
+----
+
+# Introduction
+
 Rice produces grains on complex racemo inflorescences called panicles (**suppl-figure-panicle**).
-The architecture of the rice panicle results from the establishment and activity of apical and axillary meristems derived from the vegetative shoot apical meristem (SAM) (Ikeda et al., 2004; Breeding Science 54, 147-156). *If you close this sentence with "Vegetative shoot apical meristems", it seems that this is going to be the topic of the next sentences. Moreover, we never deal with the vegetative shoot apical meristem, so I don't see why we should mention it*
+The architecture of the rice panicle results from the establishment and activity of apical and axillary meristems derived from the vegetative shoot apical meristem (SAM) (Ikeda et al., 2004; Breeding Science 54, 147-156).
+*If you close this sentence with "Vegetative shoot apical meristems", it seems that this is going to be the topic of the next sentences. Moreover, we never deal with the vegetative shoot apical meristem, so I don't see why we should mention it*
+> TH: I can go either way on this. Maybe the SAM is worth mentioning but the vegetative/reproductive transition is too much detail, for a general audience?
 The complexity of panicle branching and the number of grains that grow on it are determined by iterations of two basic developmental decisions on axillary meristems: How many axillary meristems are produced, and whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and then a grain (**in other word is meristem fate transition from branch/axillary to spikelet meristem**).
 After the floral transition, the vegetative shoot meristem develops into a rachis meristem, which produces axillary meristems until the rachis meristem is active.
 The axillary meristems on the rachis all develop as primary branches.
@@ -37,13 +48,19 @@ Morphologically, the full panicle architecture is developed and determined quick
 The rachis meristem elongates and, starting from its base, it produces an undetermined number of primary branch meristems. In turn the primary branches elongate and produce an undetermined number of axillary meristems which grow into secondary branches or differentiate into spikelets.
 The morphology of panicle development is described by Ikeda et al. (2004  https://doi.org/10.1270/jsbbs.54.147)
 
-The number of grains is one of the important characters specifying rice yield *Sorry for the many critics, but this is pretty obvious, isn't it?*. Panicle branching and the number of grains per panicle change among the clades, species and varieties of rice, especially between wild and domesticated varieties.(**Panicule diversity (yamaki et al., 2010 10.1270/jsbbs.60.586 ; Taguch)-Shiobara et al., 2011 10.1270/jsbbs.61.52**)
+The number of grains is one of the important characters specifying rice yield.
+*Sorry for the many critics, but this is pretty obvious, isn't it?*
+> TH: Worth mentioning explicitly IMO.
+Panicle branching and the number of grains per panicle change among the clades, species and varieties of rice, especially between wild and domesticated varieties.(**Panicule diversity (yamaki et al., 2010 10.1270/jsbbs.60.586 ; Taguch)-Shiobara et al., 2011 10.1270/jsbbs.61.52**)
 Two rice species were domesticated independently from the AA genome wild Oryza rice in Africa and in Asia (REF..).
 Asian and African clades of rice split around two millions years ago and were domesticated independently [@zhu2005phylogenetic].
 The domesticated Asian rice *Oryza sativa* appeared 10,000 years ago and went through a convoluted domestication history that involves a network of subspecies, most importantly *O. sativa* ssp. *indica* and *O. sativa* ssp. *japonica*, and frequent introgressions of its wild relative *Oryza rufipogon*.
 The domesticated African rice *Oryza glaberrima* has a simpler history. It was domesticated 3000 years ago, without introgressions from its wild relative, *Oryza barthii*[Reviewed by @vaughan2008evolving].
 In both African and Asian clades, when compared to their wild relatives, domesticated species tend to produce panicles that are more complex and ramified.
-Compared with wild relatives, domesticated rice species share similar traits, such as loss of seed shattering, an erect growth tiller, short awn or awnless seed (…ref) *Again, we never deal with those traits, I agree that it might be interesting to mention them, but it might also complicate things when not necessary.*. Especially, in both African and Asian clades, the panicles of domesticated species tend to produce more branches and eventually more grains. (10.1093/aob/mcm128). (**ref to DOI 10.1186/s13227-017-0065-y and another one for asia; refer also to GWAS paper in vietnamese collecte**).
+Compared with wild relatives, domesticated rice species share similar traits, such as loss of seed shattering, an erect growth tiller, short awn or awnless seed (…ref)
+*Again, we never deal with those traits, I agree that it might be interesting to mention them, but it might also complicate things when not necessary.*.
+> TH: if we want to discuss these phenotypes, we could fit it in the domestication section of the discussion.
+Especially, in both African and Asian clades, the panicles of domesticated species tend to produce more branches and eventually more grains. (10.1093/aob/mcm128). (**ref to DOI 10.1186/s13227-017-0065-y and another one for asia; refer also to GWAS paper in vietnamese collecte**).
 >HA : Please ref to recent paper : Stein et al., 2018 (10.1038/s41588-018-0040-0) and cubry et al., 2018 : 10.1016/j.cub.2018.05.066 : Convergent selection occured during African and Aqsian rice domestications
 
 The topology and quantity of panicle branches are controlled by genes that determine the size, rate of maturation and identity of reproductive and axillary meristems
@@ -66,9 +83,3 @@ While genes that determine panicle branching in rice have been described, the di
 First, in this paper we measure and summarize panicle features of wild and domesticated, African and Asian rice varieties. We have selected of 93 rice varieties from the African wild species *O. barthii*, the African domesticated species *O. glaberrima*, the Asian wild species *O. rufipogon* and the Asian domesticated species *O. sativa* spp *indica* and *O. sativa* spp *japonica* and hereby we summarize the main differences among continent and domestication groups.
 
 Then, we sample the transcriptome of developing panicles of 5 selected species, to describe the genetic of branching and its diversity. Here we sequence whole-transcriptome RNA of panicles at indeterminate branch meristem (BM) and determined spikelet meristem (SM) stages of development from those varieties and report changes in gene expression relating to panicle branching and domestication.
-
-> OM: I've split the anticipation in two paragraph, because otherwise the transcriptomic part gets lost in the middle of the paragraph. If we want only one paragraph we have to decide what part is more important: phenotype or transcriptome and then we should put that one in evidence.
-
-We found **conclusions**.
-
-> OM: I prefer to keep the conclusions out of the introduction, because I feel that they don't belong there. But if we want to add them, we can, once the results and discussion are done.
