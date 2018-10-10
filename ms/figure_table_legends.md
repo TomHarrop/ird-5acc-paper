@@ -24,8 +24,8 @@ are controlled by different genetic mechanisms.
 
 > *O. sativa* japonica cv. Nipponbare was included in RNAseq as the reference accession for *O. sativa japonica*, but it is at the low extreme of the range of PC1 scores for *O. sativa* accessions. 
 
-**Figure S4 qpcr-confirms-sampling**. **A** Developmental stages of immature panicles collected for expression analysis. Stage 1  : rachis meristem; Stage2 : formation of primary branch meristems, elongation of primary branch meristem and formation of axillary meristem; Stage3, spikelet meristem  and floret differentitaion; Stage 4, floral organ differenciation/development. **B** *FZP/LHS1* / *G1L5* /LAX1/OsMADS14 qRT-PCR.
-AM, axillary merisyem, Fl, flower; Sp, spikelet, RM, Rachis meristem; PbM, primary branch meristem; ePbM, primary branch elongated; Flm, floret meristem; St, stamen; p, palea; l, lemma. 
+**Figure S4 qpcr-confirms-sampling**. **A** Developmental stages of immature panicles collected for expression analysis. Stage 1  : rachis meristem; Stage2 : formation of primary branch meristems, elongation of primary branch meristem and formation of axillary meristem; Stage3, spikelet meristem  and floret differentitaion; Stage 4, floral organ differenciation/development. M, axillary merisyem, Fl, flower; Sp, spikelet, RM, Rachis meristem; PbM, primary branch meristem; ePbM, primary branch elongated; Flm, floret meristem; St, stamen; p, palea; l, lemma. **B** Quantitative RT-PCR using meristem stage specific marker genes for validation of all stages among species. OsMADS1/LHS1 is used as a markers of Spikelet meristem differentiation. FZP is used as... LAX1....TAW .... osMADS14.....
+
 > make a mix figure with the figXX meristem collect and suppl-fig04-qpcr sampling.
 
 **Figure S5 phenotyping-mpl**. Detailed phenotyping of five Oryza accessions. The three domesticated accessions produce more spikelets than their wild relatives. In comparison to *O. sativa japonica*, *O sativa indica* produces more secondary branches.
