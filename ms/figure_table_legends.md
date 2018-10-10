@@ -12,10 +12,11 @@
 
 **Figure SuppFigPanicle Structure**. Spread mature rice panicule.RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBIL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBIL: Secondary branch internode length; Sp : Spikelet. 
 
-**Figure S1 correlation-pbn-spn**. Correlation between the main panicle traits that contribute to panicle architecture diversity. Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number. ** could you add the correlation value on each panel** 
+**Figure S1 correlation-pbn-spn**. Correlation between spikelet number and primary branch number and secondary branch number in each species separatly. Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number. 
 correlate more in cultivated species than in wild species.
 Primary and secondary branch numbers don't correlate, suggesting that they
 are controlled by different genetic mechanisms.
+> could you add the correlation value on each panel
 
 **Figure S2 suppl-phenotype-pca-all-pc**. Principal component analysis (PCA) of panicle phenotyping data showing components 1–4. PC1 accounts for 46.5% of variability and separates panicles from domesticated and wild accessions. The lower ordinates do not separate panicles by species.
 
@@ -54,3 +55,12 @@ are controlled by different genetic mechanisms.
 ## List of abbreviations
 
 PCA, Principal component analysis; SpN, spikelet number per panicle; PBN, primary branch number per panicle; SBN, secondary branch number per panicle; TBN, tertiary branch number per panicle; RL, rachis length average; PBL, primary branch length average; SBL, secondary branch length average; PBintL, rachis internode length average; SBintL, primary branch internode length average.
+
+## Funding. 
+In addition to institutional funding, this research is fsupported by Agropolis Foundation (through the « Investissements d’avenir » programme (ANR-10-LABX-0001-01)) and Fondazione Cariplo under the reference ID EVOREPRICE 1201-004.
+
+## Authors’ contributions
+
+## Acknowledgments. 
+
+
