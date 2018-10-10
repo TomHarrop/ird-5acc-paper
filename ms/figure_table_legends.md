@@ -10,9 +10,9 @@
 
 **Figure 5 panicle-mutants**. Mutants in three AP2/EREBP-like genes, *PLT8*, *ERF142* and *DLT*, have defects in panicle architecture compared to their background accessions. The *PLT8* mutant produces fewer primary branches and spikelets. The mutants of *ERF142* and *DLT* both produce fewer primary branches, secondary branches and spikelets.
 
-**Figure SuppFigPanicle Structure** Spread mature rice panicule.RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBIL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBIL: Secondary branch internode length; Sp : Spikelet. 
+**Figure SuppFigPanicle Structure**. Spread mature rice panicule.RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBIL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBIL: Secondary branch internode length; Sp : Spikelet. 
 
-**Figure S1 correlation-pbn-spn** Correlation between the main panicle traits that contribute to panicle architecture diversity. Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number. ** could you add the correlation value on each panel** 
+**Figure S1 correlation-pbn-spn**. Correlation between the main panicle traits that contribute to panicle architecture diversity. Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number. ** could you add the correlation value on each panel** 
 correlate more in cultivated species than in wild species.
 Primary and secondary branch numbers don't correlate, suggesting that they
 are controlled by different genetic mechanisms.
@@ -39,7 +39,7 @@ are controlled by different genetic mechanisms.
 
 **supp-table01-Plantinfo**. List of rice accessions phenotyped for panicle diversity
 
-**supp-table02-PanicleTaritsPhenotyping** Panicle Traits mesuared in the 93 accessions from Wild/Cultivated, Asia and African rice species. 
+**supp-table02-PanicleTaritsPhenotyping** Panicle Traits data from P-TRAP analysis mesuared in the 93 accessions from Wild/Cultivated, Asia and African rice species. 
 
 **supp-table03-PanicleTraits PhenotypingPlants sequenced** Panicle traits data from P-TRAP analysis of rice accessions used for sequencing analysis.
 
@@ -50,3 +50,7 @@ are controlled by different genetic mechanisms.
 **Table S2 DE-genes-stages**. Genes diffentially expressed between stages across all species.
 
 **Table S3 DE-genes-interaction**. stage × accession DE genes
+
+## List of abbreviations
+
+PCA, Principal component analysis; SpN, spikelet number per panicle; PBN, primary branch number per panicle; SBN, secondary branch number per panicle; TBN, tertiary branch number per panicle; RL, rachis length average; PBL, primary branch length average; SBL, secondary branch length average; PBintL, rachis internode length average; SBintL, primary branch internode length average.
