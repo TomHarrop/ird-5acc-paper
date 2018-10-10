@@ -1,5 +1,7 @@
 ## Figure legends
 
+>general comment : Title of each figure
+
 **Figure 1 phenotype-pca**. Panicle complexity of 93 rice accessions. We used spread panicles from **A** *O. rufipogon*, **B** *O. sativa*, **C** *O. barthii* and **D** *O. glaberrima* to measure panicle phenotypes with P-TRAP [@al-tamPTRAPPanicleTrait2013]. The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**E**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 ( **F**). RL: Rachis length; PBL: Primary branch length; PBIL: Primary branch internode length; SBL: Secondary branch length; SBIL: Secondary branch internode length; TBN: Tertiary branch number; PL: Panicle length.
 Principal Component analysis The main principal component does not distinguish Asian and African accessions, but splits wild and domesticated accessions. Panicles from domesticated accessions produce more branches and spikelets than panicles from wild accessions. 
 
