@@ -3,13 +3,20 @@
 To reveal gene expression patterns associated with diversity of inflorescence architecture, we used detailed phenotyping of panicles from domesticated and wild accessions of Asian and African rice, followed by whole-transcriptome sequencing (RNASeq) [and analysis of single-gene mutants with defects in panicle branching].
 **expand slightly**
 
-### Convergence of panicle architecture between the 2 domestication process. (Panicles from domesticated accessions produce more primary branches, secondary branches and spikelets)
+### Convergence of panicle architecture between the 2 domestications process. (Panicles from domesticated accessions produce more primary branches, secondary branches and spikelets)
 
-We evaluate panicle architecture in 93 accessions of wild Asian rice (*Oryza rufipogon*), domesticated Asian rice (*Oryza sativa*), wild African rice (*Oryza barthii*) and domesticated African rice (*Oryza glaberrima*)(**Supp-Table01-Plantinfo**). Panicles were phenotyped  using `P-TRAP` software for automated measurement of panicle traits [@al-tamPTRAPPanicleTrait2013] (Figure 1A-D - **phenotype-pca**) (**Supp-Table02-PanicleTraitsPhenotyping**).
-The first principal component in the phenotyping data accounts for 46.5% of variability, and separates domesticated and wild accessions but not Asian and African accessions (Figure 1E **phenotype-pca**).
-Spikelet number, secondary branch number and primary branch number have the highest loadings on PC1, suggesting that these factors are the main differences between panicles from wild and domesticated accessions. **add more description** 
-Lower-order components do not separate panicles from different species (Figure S2 **suppl-phenotype-pca-all-pc**).
-There was a stronger correlation between secondary branch number and spikelet number in the domesticated accessions than in the wild accessions (Figure S1 **correlation-pbn-spn**). **be more descriptive in the correlation**
+The panicle architecture was phenotyped in 93 accessions of wild Asian rice (*Oryza rufipogon*), domesticated Asian rice (*Oryza sativa*), wild African rice (*Oryza barthii*) and domesticated African rice (*Oryza glaberrima*)(**Supp-Table01-Plantinfo**). Based on image analysis and `P-TRAP` software for automated measurement of panicle traits [@al-tamPTRAPPanicleTrait2013] (Figure 1A-D - **phenotype-pca**), a total of 10 panicle traits were scored (**Supp-Table02-PanicleTraitsPhenotyping**). Principal components analysis (PCA) was used to elucidate the variation of panicle architecture between these accesssions. These accessions could be grouped depending of several characteristics: species, geographical origin (Asia/Africa) and type (wild/domesticated) . 
+The first principal component (PC1) in the phenotyping data accounts for 46.5% of variability The sum of contributions of the top four components accounted for more than 87% of the total variance. The contributions of PC2, PC3 and PC4 are 18,3%, 12,3% and 10,3% respectively. The most loadings of the PC1 are Spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN). For PC2, the main loadings are Primary branch Number (PBN), and the lenght of Primaryt branch (PBL) and Secondary Branch (SBL). The PC3 is supported by Rachis lengtn (RL), Tertiary Branch number (TBN) and the internode length along the Secondary branch (SBIL) (**SF1**). 
+Projection of the accessions in all four component was used to analyse the relationships between panicle architecture and the differents characteritics of these accessions (species/geographical orifin and type). The first components is the only components able to split the accessions grouped by the type characteristics (wild/domesticated) (Figure 1E **phenotype-pca**). The panicle archtiecture is not able to distinguish clearly the accessions based on the species and/or geographical origin chatcateristics (**SF1** suppl-phenotype-pca-all-pc). 
+>Be sure it is enough clear based on our figures.
+Correlations among most loadings of PC1 (SpN, PBN, SBN) were analyzed separatly in the 4 species (Figure S1 **correlation-pbn-spn**) to evaluate. It was observed a strong correlation between the Spn and SBN in the domesticated accessions that in wild accessions. In contrast, a better correlation is observed between SpN and PBN in the wild accessions. 
+>please add the correlation value in each panel of the figure correlation-pbn-sbn.
+
+CCL of this part : 
+- PC1 (PBN, SBN, SpN) (PBN, SBN, SpN) (which are relative to axillary meristem) are the main contributors of panicle diversity
+- only the relationships between Type and panicle architecture is able to groupe the accession. suggesting a similar branching phenotype beteen the wild and the domesticated accessions. 
+- the differnet correlation between SpN, SBN and PBN between the wild and domesticatexd suggest different control of branching pattern.
+
 
 
 ### Panicle transcriptome Variation (Differences in gene expression profiles between wild and domesticated panicles)
