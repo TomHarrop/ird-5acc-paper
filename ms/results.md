@@ -20,31 +20,32 @@ CCL of this part :
 - the differnet correlation between SpN, SBN and PBN between the wild and domesticatexd suggest different control of branching pattern.
 
 
-### Panicle transcriptome Variation (Differences in gene expression profiles between wild and domesticated panicles)
+### Panicle transcriptome Variation (Differences in gene expression profiles between wild and domesticated panicles : **remove this, we don't show it**)
 
 To investigate gene expression associated with variation in panicle architecture, we chose a single accession for each of *O. rufipogon* (W1654), *O. sativa japonica* (Nipponbare), *O. sativa indica* (IR64), *O. barthii* (B88) and *O. glaberrima* (Tog5681) for RNA sequencing (RNAseq). 
 Based on the extensive phenotyping described above, the chosen accessions are consistent with species-wide patterns of panicle architecture (Figure S3 **suppl-phenotype-all-varieties = suppl-fig-MAYBE-pca-on-pheno-BOXPLOT-LABEL in dropbox have to be finalize**), except for *O. sativa japonica* cv. Nipponbare, which we included as the reference accession for *O. sativa japonica*.
 > OM: Helene, maybe you can extend a bit this part on selecting accessions  (** i'm still waiting the mapping % of rufipogon against IR64 and NIP...and i was thinking that could be interesting to have a SNP diversity analysis also...i'm waiting Francois sabot and Christine to see how to manage this, it will be in suppdata**)
 
 To measure whole-transcriptome gene expression related to panicle branching diversity, we collected immature panicles from each accessions at different developmental stages : stage 1, rachis meristem (RM); stage2, branch meristem (BM) composed by immature panicle displayong primary branch initiation and elongation of these primary branch with axxilary meristem initiation; ; Stage3, spikelet meristem (SpM) which is a mix of early Spikelet meristem differentiation until floret meristem; and stage4, flower meristem (FM) stages (Figure S5a **qpcr-confirms-sampling** **Finalize this figure**).
-We extracted RNA from pooled meristems of the same stage for the 5 accessions in three biological replicates. Staging were validated with quantiative RT-PCR using stage specific marker genes : *LHS1* ; *G1L5* FZP, LAX1, OsMADS14, (*TAWAWA*) (Figure S5b **qpcr-confirms-sampling**) (**add description**). Panicle traits were also investigated for 9 panicles from 3 plants of the accessions chosen for RNAseq and grow in the same conditions. The three domesticated accessions produce more spikelets than their wild relatives **add more details in the description, with variation in Sp, Sb, pb nb between the 5 species** (Figure S4 **phenotyping-mpl** **Supp-table03-panicletrairsPhenotypingPlants Sequenced**).
+We extracted RNA from pooled meristems of the same stage for the 5 accessions in three biological replicates. Staging were validated with quantiative RT-PCR using stage specific marker genes : *LHS1* ; *G1L5* FZP, LAX1, OsMADS14, (*TAWAWA*) (Figure S5b **qpcr-confirms-sampling**) (**add description**). Panicle traits were also investigated for 9 panicles from 3 plants of the accessions chosen for RNAseq and grow in the same conditions. The three domesticated accessions produce more spikelets than their wild relatives **add more details in the description**, with variation in Sp, Sb, pb nb between the 5 species** (Figure S4 **phenotyping-mpl** **Supp-table03-panicletrairsPhenotypingPlants Sequenced**).
 **Model of panicles goes here : HA, i will prepared something and see if it is interesting to add it or not**. 
 
 As the branching pattern is related to the stage of branch meristem establishment and meristem fate transition, we choose to used the RNA from the BM (Stage 2) and SpM (Stage3) stages for performing libraries using the TrueSeq Stranded Total RNA with Ribo-Zero Plant prep Kit and performed illumina sequencing. 
 We mapped reads against the MSU Release 7.0 of the annotation of the *O. sativa japonica* cv. Nipponbare reference genome [@ouyangTIGRRiceGenome2007], and we obtained an average of more than 20 million uniquely mapped reads within exons for each accession per biological replicate, including African rice species (Table S1 **mapping-statistics**). **is it possible to add more information about the % of rRNA is the libaraies..as these libararies are not the common used?**
 Pairwise distances between libraries were lower for samples from the same stage, accession and continent, in that order (Figure S6 **distance-heatmap**), indicating that transcriptomic changes during domestication are subtle compared to differences between species.
 
-We used PCA to investigate the patterns of variation in the transcriptomes. 
-The first four PCs split different combinations of rice species (Figure 2 **transcriptome-pca**). 
-These components may relate to species-specific differences unrelated to panicle architecture, or mapping biases caused by mapping all libraries against the *O. sativa japonica* reference. **we have to describe a little bit more the 4 components**
+To identify patterns variation in transcriptomes of the samples, we used PCA analyses **explained more which raw data were used; raw counts + quantification or not....**
+The first four PCs split different combinations of rice species (Figure 2 **transcriptome-pca**) **describe more variance....**
+These components may relate to species-specific differences unrelated to panicle architecture, or mapping biases caused by mapping all libraries against the *O. sativa japonica* reference. **describe a  more the 4 components**
 In contrast, PC5 separates developmental stages across all five accessions except *O. sativa indica* (Figure 2 **transcriptome-pca**). **moderate the less separation in indica**
 
-We used differential expression (DE) analysis to identify genes that were up- or down-regulated between stages across all accessions.
+Then, we used differential expression (DE) analysis to identify genes that were up- or down-regulated between stages across all accessions.
 193 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1 (Table S2 **DE-genes-stages**).
 This list included **TFs x, y and z** [e.g. pick from *FZP*, *LHS1*, *LAX1*, *PAP2*, *MFO1*, ...], which control inflorescence architecture in rice [**add citations for chosen genes**].
 > Shall we discuss the fact that many more genes are differentially expressed in African species? (also supported by the PCA) Or would this make the paper overcomplicated? Shall we discuss differential expression in the single species at all?
+> descroibe more the resulsts
 
-CCL : 
+CCL : **?**
 
 ## AP2/EREBP-like transcription factors are differentially expressed between stages and associated with domesticated accessions
 
