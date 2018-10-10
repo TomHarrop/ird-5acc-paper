@@ -9,7 +9,9 @@ The panicle architecture was phenotyped in 93 accessions of wild Asian rice (*Or
 The first principal component (PC1) in the phenotyping data accounts for 46.5% of variability The sum of contributions of the top four components accounted for more than 87% of the total variance. The contributions of PC2, PC3 and PC4 are 18,3%, 12,3% and 10,3% respectively. The most loadings of the PC1 are Spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN). For PC2, the main loadings are Primary branch Number (PBN), and the lenght of Primaryt branch (PBL) and Secondary Branch (SBL). The PC3 is supported by Rachis lengtn (RL), Tertiary Branch number (TBN) and the internode length along the Secondary branch (SBIL) (**SF1**). 
 Projection of the accessions in all four component was used to analyse the relationships between panicle architecture and the differents characteritics of these accessions (species/geographical orifin and type). The first components is the only components able to split the accessions grouped by the type characteristics (wild/domesticated) (Figure 1E **phenotype-pca**). The panicle archtiecture is not able to distinguish clearly the accessions based on the species and/or geographical origin chatcateristics (**SF1** suppl-phenotype-pca-all-pc). 
 >Be sure it is enough clear based on our figures.
+
 Correlations among most loadings of PC1 (SpN, PBN, SBN) were analyzed separatly in the 4 species (Figure S1 **correlation-pbn-spn**) to evaluate. It was observed a strong correlation between the Spn and SBN in the domesticated accessions that in wild accessions. In contrast, a better correlation is observed between SpN and PBN in the wild accessions. 
+
 >please add the correlation value in each panel of the figure correlation-pbn-sbn.
 
 CCL of this part : 
