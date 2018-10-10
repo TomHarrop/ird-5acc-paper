@@ -38,16 +38,17 @@ DOCX_EXE = pandoc --reference-doc=template/reference.docx \
 
 manuscript: docx/manuscript.docx 
 
-docx/manuscript.docx: ms/introduction.md ms/results.md ms/methods.md ms/figure_table_legends.md bib/references.bib template/reference.docx template/genome-research.csl
-    pandoc --reference-doc=template/reference.docx \
-    --from=markdown \
-    --to=docx \
-    --bibliography=bib/references.bib \
-    -o docx/manuscript.docx \
-    ms/introduction.md \
-    ms/results.md \
-    ms/methods.md \
-    ms/figure_table_legends.md
+docx/manuscript.docx: ms/front_matter.md ms/introduction.md ms/results.md ms/methods.md ms/figure_table_legends.md bib/references.bib template/reference.docx template/genome-research.csl
+	pandoc --reference-doc=template/reference.docx \
+		--from=markdown \
+		--to=docx \
+		--bibliography=bib/references.bib \
+		-o docx/manuscript.docx \
+		ms/front_matter.md \
+		ms/introduction.md \
+		ms/results.md \
+		ms/methods.md \
+		ms/figure_table_legends.md
 
 
 ################# MAKE FIGURES ####################
