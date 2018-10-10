@@ -48,6 +48,7 @@ This list included **TFs x, y and z** [e.g. pick from *FZP*, *LHS1*, *LAX1*, *PA
 CCL : **?**
 
 ## AP2/EREBP-like transcription factors are differentially expressed between stages and associated with domesticated accessions
+>make the link with the previous part from all genes to TF? supp-fig-05-tfs-of-pc5
 
 The family of APETALA2 and ethylene-responsive element binding protein (AP2/EREBP)-like genes are enriched at the extremes of PC5, suggesting that they contribute to differences between BM and SM (Figure 3 **HB-AP2-heatmap**).
 Homeobox, MADS, NAC and SBP genes are also enriched in PC5 (Figure 3 **HB-AP2-heatmap**; Figure S7 **NAC-MADS-SPL-heatmap**).
@@ -58,7 +59,7 @@ Homeobox, MADS, NAC and SBP genes are also enriched in PC5 (Figure 3 **HB-AP2-he
 Because of the prominence of transcription factor (TF) **we don't show really this prominence..or give a statistic value or comparison between all genne/TF** genes and AP2/EREBP genes in PC5 and in DE genes between stages (Figure 3 **HB-AP2-heatmap**; Table S2 **DE-genes-stages**), we used soft clustering of log~2~-fold change values (L~2~FCs) between BM and SM to find common patterns of expression of the subset of annotated TF genes that were expressed in our RNAseq dataset.
 There were six common patterns, three of which had the highest L2FC, indicating higher expression in SM than in BM, in *O. sativa indica*.
 These three clusters were all correlated with secondary branch number and spikelet number (Figure 4 **cluster-phenotype-corr**).
-Cluster 5, which had the highest core L~2~FC in *O. sativa* and the highest correlations with secondary branch number and spikelet number, had an enrichment of AP2/EREBP genes (two-tailed hypergeometric test; *p*~adj~ == **x**).
+Cluster 5, which had the highest core L~2~FC in *O. sativa indica* and the highest correlations with secondary branch number and spikelet number, had an enrichment of AP2/EREBP genes (two-tailed hypergeometric test; *p*~adj~ == **x**).
 One possibility is that genes in this cluster specify SM, and their delayed repression in *O. sativa indica* results in more spikelets and higher-order branches in this species.
 Most of the genes in cluster 5 have negative L~2~FCs in the other accessions, indicating repression of these genes in the SM stage, and L~2~FCs close to zero in *O. sativa indica*, consistent with lack of repression in that accession (Figure S8 **cluster-5-details**).
 **Mention other clusters**.
