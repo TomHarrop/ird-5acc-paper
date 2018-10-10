@@ -10,7 +10,7 @@
 
 **Figure 5 panicle-mutants**. Mutants in three AP2/EREBP-like genes, *PLT8*, *ERF142* and *DLT*, have defects in panicle architecture compared to their background accessions. The *PLT8* mutant produces fewer primary branches and spikelets. The mutants of *ERF142* and *DLT* both produce fewer primary branches, secondary branches and spikelets.
 
-**Figure SuppFigPanicle Structure**. Spread mature rice panicule.RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBIL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBIL: Secondary branch internode length; Sp : Spikelet. 
+**Figure SuppFigPanicle Structure**. Spread mature rice panicule.RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBintL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBintL: Secondary branch internode length; Sp : Spikelet. 
 
 **Figure S1 correlation-pbn-spn**. Correlation between spikelet number and primary branch number and secondary branch number in each species separatly. Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number. 
 correlate more in cultivated species than in wild species.
@@ -24,10 +24,12 @@ are controlled by different genetic mechanisms.
 
 > *O. sativa* japonica cv. Nipponbare was included in RNAseq as the reference accession for *O. sativa japonica*, but it is at the low extreme of the range of PC1 scores for *O. sativa* accessions. 
 
-**Figure S4 phenotyping-mpl**. Detailed phenotyping of five Oryza accessions. The three domesticated accessions produce more spikelets than their wild relatives. In comparison to *O. sativa japonica*, *O sativa indica* produces more secondary branches.
-
-**Figure S5 qpcr-confirms-sampling**. **A** Photos of immature panicle samples. **B** *FZP/LHS1* / *G1L5* /LAX1/OsMADS14 qRT-PCR.
+**Figure S4 qpcr-confirms-sampling**. **A** Developmental stages of immature panicles collected for expression analysis. Stage 1  : rachis meristem; Stage2 : formation of primary branch meristems, elongation of primary branch meristem and formation of axillary meristem; Stage3, spikelet meristem  and floret differentitaion; Stage 4, floral organ differenciation/development. **B** *FZP/LHS1* / *G1L5* /LAX1/OsMADS14 qRT-PCR.
+AM, axillary merisyem, Fl, flower; Sp, spikelet, RM, Rachis meristem; PbM, primary branch meristem; ePbM, primary branch elongated; Flm, floret meristem; St, stamen; p, palea; l, lemma. 
 > make a mix figure with the figXX meristem collect and suppl-fig04-qpcr sampling.
+
+**Figure S5 phenotyping-mpl**. Detailed phenotyping of five Oryza accessions. The three domesticated accessions produce more spikelets than their wild relatives. In comparison to *O. sativa japonica*, *O sativa indica* produces more secondary branches.
+
 
 **Figure S6 distance-heatmap**. Heatmap of pairwise distances between libraries.
 
@@ -55,7 +57,7 @@ are controlled by different genetic mechanisms.
 
 ## List of abbreviations
 
-PCA, Principal component analysis; SpN, spikelet number per panicle; PBN, primary branch number per panicle; SBN, secondary branch number per panicle; TBN, tertiary branch number per panicle; RL, rachis length average; PBL, primary branch length average; SBL, secondary branch length average; PBintL, rachis internode length average; SBintL, primary branch internode length average. RM, Rachis Meristem; BM, Branching stage; SpM, spikelet meristem; AM, axillary meristem; ePbm, primary branch elongated; Flm, flower meristem; St, stamen; p, palea; l, lemma. 
+PCA, Principal component analysis; SpN, spikelet number per panicle; PBN, primary branch number per panicle; SBN, secondary branch number per panicle; TBN, tertiary branch number per panicle; RL, rachis length average; PBL, primary branch length average; SBL, secondary branch length average; PBintL, rachis internode length average; SBintL, primary branch internode length average. RM, Rachis Meristem; BM, Branching stage; SpM, spikelet meristem; AM, axillary meristem; ePbm, primary branch elongated; Flm, floret meristem; St, stamen; p, palea; l, lemma. 
 
 ## Funding. 
 In addition to institutional funding, this research is fsupported by Agropolis Foundation (through the « Investissements d’avenir » programme (ANR-10-LABX-0001-01)) and Fondazione Cariplo under the reference ID EVOREPRICE 1201-004.
