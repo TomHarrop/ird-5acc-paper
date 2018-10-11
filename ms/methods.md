@@ -3,7 +3,7 @@
 
 ### Plant Material and Growth Conditions
 
-Panicle traits diversity were investigated in accessions (**Supp-Table S1**) of wild and domesticated, Asian and African rice.  O. sativa, O. glaberrima, O. barthii  and o. plants were grown in Cali (Colombia) and in Montpellier (France) for O. rufipogon.
+Panicle traits diversity were investigated in accessions (**Table S1 Plantinfo**;) of wild and domesticated, Asian and African rice.  O. sativa, O. glaberrima, O. barthii  and o. plants were grown in Cali (Colombia) and in Montpellier (France) for O. rufipogon.
 At panicle maturity, the 3 main panicle from 3 plants per accession per repeat were collected (i.e. 18 panicles/ accession). Each panicle was spread out and fixed on a white paper by tape. Panicle structure and seed number were analyses using P-TRAP software (Al-Tam et al., 2013). The quantified panicle traits included rachis length (RL in cm), total panicle length (PanL in cm), primary branch number (PbN), primary branch average length (PbL in cm), primary branch internode average length (PbintL in cm), secondary branch number (SbN), secondary branch average length (SBL in cm), secondary branch internode average length (SbintL in cm) and spikelet number (SpN). Phenotype description and statistical analysis of variance were performed by using functions in R software.
 For expression and sequencing analysis, 5 accessions have been used (Niponbarre for O. sativa japonica, IR64 for O. sativa indica, TOG5681 for O. glaberrima, B88 for O. barthhi and W1654 for O. rufipogon) and were grown in June in the greenhouse at IRD, Montpellier, in Long Day condition (14h light/10h-dark during 6 to 8 weeks at 30°C, 80% relative humidity) and then transferred to Short Day condition (10h light/10h-dark at 30°C, 80% relative humidity) to induced flowering. Evaluation of panicle traits was investigated for 9 panicles per accessions under the same growth conditions and same time.
 
@@ -14,9 +14,8 @@ Immature panicle stages were defined as: Stage 1, Rachis Meristem (RM), Stage 2 
 
 >here: From the exact same plants that were sampled for the RNAseq ?
 
-The reproductive tissues were frozen in liquid nitrogen and total RNAs (including small RNAs) were extracted using RNeasy Plant Mini Kit with RLT and RWT buffers (Qiaegn, France). DNAse treatments were performed using the RNAeasy-free DNase set (Qiagen, France). The RNA integrity numbers (RINs) of the extracted RNA measured by Agilent 2100 Bioanalyzer varied from 8,6 o 10). Stage and meristem specificity were validated with quantitative RT-PCR using stage specific markers genes. Primer sequences are available in Supplemental Table XX.
+The reproductive tissues were frozen in liquid nitrogen and total RNAs (including small RNAs) were extracted using RNeasy Plant Mini Kit with RLT and RWT buffers (Qiaegn, France). DNAse treatments were performed using the RNAeasy-free DNase set (Qiagen, France). The RNA integrity numbers (RINs) of the extracted RNA measured by Agilent 2100 Bioanalyzer varied from 8,6 o 10). Stage and meristem specificity were validated with quantitative RT-PCR using stage specific markers genes. Primer sequences are listed in Table S2 **supp-table-PrimerList**.
 400ng of total RNA from stages 2 and 3 (from the 3 biological replicates) were used for performing libraries using the TrueSeq Stranded Total RNA with Ribo-Zero Plant prep Kit (Illumina) and following the standard protocol.  Libraries of 180 pb were quantified using a Bioanlyzer 2100 (Agilent) and paired-end 125 base sequencing was performed on the Get platform (Toulouse) using HiSeq2500. Samples were randomized across sequencing flow cells in 5 lanes.
-Add a table with reads nb for each librairy, Average input read length/%unique mapped reads/ %reads mapped to multiple loci/ final mapping  and % of reads on ribosomal seq (not removed from the ribodepletion kit)?
 
 ### Read alignment and Gene expression quantification
 
