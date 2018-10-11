@@ -35,7 +35,7 @@ We used differential expression (DE) analysis to identify genes that were up- or
 193 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1 (Table S2 **DE-genes-stages**).
 This list included **TFs x, y and z** [e.g. pick from *FZP*, *LHS1*, *LAX1*, *PAP2*, *MFO1*, ...], which control inflorescence architecture in rice [**add citations for chosen genes**], **indicating that our approach identifies genes that control branching.**
 
-## AP2/EREBP-like transcription factors are differentially expressed between stages and associated with domesticated accessions
+### AP2/EREBP-like transcription factors are differentially expressed between stages and associated with domesticated accessions
 
 We used PCA on transformed raw counts to investigate the patterns of variation in the transcriptomes. 
 The first four PCs split different combinations of rice species (Figure 2 **transcriptome-pca**). **expand?**
@@ -61,7 +61,7 @@ In African accessions, the stage × accession interaction was significant for 50
 The other genes in these lists are candidate targets of artificial selection for changes in panicle architecture.
 Expression of the 10 genes that appear in both comparisons, including *IDS1* and the AP2/EREBP-like gene *ERF74*, may have evolved in parallel in the separate domestication of Asian and African rice.
 
-## AP2/EREBP mutants have defects in panicle branching
+### AP2/EREBP mutants have defects in panicle branching
 
 Next, we wanted to test whether loss-of-function mutants had phenotypes consistent with our hypothesis that changes in expression of AP2/EREBP-like genes control panicle architecture.
 Mutant generation in rice takes up to **x** months/years (**reference**), so we chose to start by phenotyping panicles in mutants that were publicly available.
