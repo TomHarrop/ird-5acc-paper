@@ -3,8 +3,10 @@
 Rice produces grains on complex racemo inflorescences called panicles (**suppl-figure-panicle**).
 The architecture of the rice panicle results from the establishment and activity of apical and axillary meristems derived from the vegetative shoot apical meristem (SAM) (Ikeda et al., 2004; Breeding Science 54, 147-156).
 *If you close this sentence with "Vegetative shoot apical meristems", it seems that this is going to be the topic of the next sentences. Moreover, we never deal with the vegetative shoot apical meristem, so I don't see why we should mention it*
+
 > TH: I can go either way on this. Maybe the SAM is worth mentioning but the vegetative/reproductive transition is too much detail, for a general audience?
 The complexity of panicle branching and the number of grains that grow on it are determined by iterations of two basic developmental decisions on axillary meristems: How many axillary meristems are produced, and whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and then a grain (**in other word is meristem fate transition from branch/axillary to spikelet meristem**).
+
 After the floral transition, the vegetative shoot meristem develops into a rachis meristem, which produces axillary meristems until the rachis meristem is active.
 The axillary meristems on the rachis all develop as primary branches.
 Primary branches produce then an indeterminate number of axillary meristems. The axillary meristems on the primary branches either grow as secondary branches or differentiate into spikelets.
@@ -18,8 +20,10 @@ The rachis meristem elongates and, starting from its base, it produces an undete
 The morphology of panicle development is described by Ikeda et al. (2004  https://doi.org/10.1270/jsbbs.54.147)
 
 The number of grains is one of the important characters specifying rice yield.
+
 > *Sorry for the many critics, but this is pretty obvious, isn't it?*
 > TH: Worth mentioning explicitly IMO.
+
 Panicle branching and the number of grains per panicle change among the clades, species and varieties of rice, especially between wild and domesticated varieties.(**Panicule diversity (yamaki et al., 2010 10.1270/jsbbs.60.586 ; Taguch)-Shiobara et al., 2011 10.1270/jsbbs.61.52**)
 Two rice species were domesticated independently from the AA genome wild Oryza rice in Africa and in Asia (REF..).
 Asian and African clades of rice split around two millions years ago and were domesticated independently [@zhuPhylogeneticRelationshipsAgenome2005].
@@ -27,6 +31,7 @@ The domesticated Asian rice *Oryza sativa* appeared 10,000 years ago and went th
 The domesticated African rice *Oryza glaberrima* has a simpler history. It was domesticated 3000 years ago, without introgressions from its wild relative, *Oryza barthii*[Reviewed by @vaughanEvolvingStoryRice2008].
 In both African and Asian clades, when compared to their wild relatives, domesticated species tend to produce panicles that are more complex and ramified.
 Compared with wild relatives, domesticated rice species share similar traits, such as loss of seed shattering, an erect growth tiller, short awn or awnless seed (…ref)
+
 > *Again, we never deal with those traits, I agree that it might be interesting to mention them, but it might also complicate things when not necessary.*.
 > TH: if we want to discuss these phenotypes, we could fit it in the domestication section of the discussion.
 Especially, in both African and Asian clades, the panicles of domesticated species tend to produce more branches and eventually more grains. (10.1093/aob/mcm128). (**ref to DOI 10.1186/s13227-017-0065-y and another one for asia; refer also to GWAS paper in vietnamese collecte**).
