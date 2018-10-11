@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Rice produces grains on complex racemo inflorescences called panicles (**suppl-figure-panicle**).
 The architecture of the rice panicle results from the establishment and activity of apical and axillary meristems derived from the vegetative shoot apical meristem (SAM) (Ikeda et al., 2004; Breeding Science 54, 147-156).

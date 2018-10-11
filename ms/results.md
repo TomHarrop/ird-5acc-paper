@@ -42,11 +42,11 @@ In contrast, PC5 separates developmental stages across all five accessions, alth
 The family of *APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes are enriched at the extremes of PC5, suggesting that they contribute to phenotypic differences between BM and SM (Figure 3 **HB-AP2-heatmap**).
 Homeobox, MADS, NAC and SBP genes are also enriched in PC5 (Figure 3 **HB-AP2-heatmap**; Figure S7 **NAC-MADS-SPL-heatmap**).
 
-Because of the prominence of transcription factor (TF) genes and AP2/EREBP genes in PC5 and in DE genes between stages (Figure 3 **HB-AP2-heatmap**; Table S6 **DE-genes-stages**), we used soft clustering of scaled log~2~-fold change values (L~2~FCs) between BM and SM to find common patterns of expression of the subset of annotated TF genes that were expressed in our RNAseq dataset.
+Because of the prominence of transcription factor (TF) genes and *AP2/EREBP*-like genes in PC5 and in DE genes between stages (Figure 3 **HB-AP2-heatmap**; Table S6 **DE-genes-stages**), we used soft clustering of scaled log~2~-fold change values (L~2~FCs) between BM and SM to find common patterns of expression of the subset of annotated TF genes that were expressed in our RNAseq dataset.
 We recovered six clusters.
 Three clusters contained genes with the highest L~2~FC in *O. sativa indica*. 
 These three clusters were all correlated with secondary branch number and spikelet number (Figure 4 **cluster-phenotype-corr**).
-Cluster 5, which had the highest core L~2~FC in *O. sativa indica* and the highest correlations with secondary branch number and spikelet number, had an enrichment of *AP2/EREBP* genes (two-tailed hypergeometric test; *p*~adj~ == **x**).
+Cluster 5, which had the highest core L~2~FC in *O. sativa indica* and the highest correlations with secondary branch number and spikelet number, had an enrichment of *AP2/EREBP*-like genes (two-tailed hypergeometric test; *p*~adj~ == **x**).
 Most of the genes in cluster 5 have L~2~FCs close to zero in *O. sativa indica*, and negative L~2~FCs in the other accessions (Figure S8 **cluster-5-details**).
 This suggests that the expression of these genes decreases in SM in all accessions except *O. sativa indica*.
 Delayed or lacking repression in *O. sativa indica* and correlation with spikelets and higher-order branch number could mean that genes in cluster 5 specify SM, and their delayed repression in *O. sativa indica* results in more branching in this species.
@@ -54,17 +54,17 @@ The enrichment of *AP2/EREBP*-like genes in cluster 5 suggests that they are inv
 **Mention other clusters?**.
 
 To find TF genes associated with changes in panicle architecture during domestication, we tested the stage × accession interaction for African and Asian accessions separately at an FDR of 0.1 (Table S7 **DE-genes-interaction**).
-For Asian accessions (*O. rufipogon* and *O. sativa indica*), there was a significant interaction for 85 genes, including 12 AP2/EREBP-like genes.
-In African accessions, the stage × accession interaction was significant for 50 genes, including 8 AP2/EREBP-like genes (**check ap2 numbers**).
+For Asian accessions (*O. rufipogon* and *O. sativa indica*), there was a significant interaction for 85 genes, including 12 *AP2/EREBP*-like genes.
+In African accessions, the stage × accession interaction was significant for 50 genes, including 8 *AP2/EREBP*-like genes (**check ap2 numbers**).
 *INDETERMINATE SPIKELET 1* (*IDS1*), which controls inflorescence architecture (**ref**), was DE in both comparisons, [**consistent with its importance in rice domestication (check if IDS1 paper mentions domestication)**].
 The other genes in these lists are candidate targets of artificial selection for changes in panicle architecture.
 Expression of the 10 genes that appear in both comparisons, including *IDS1* and the *AP2/EREBP*-like gene *ERF74*, may have evolved in parallel in the separate domestication of Asian and African rice.
 
-### AP2/EREBP mutants have defects in panicle branching
+### *AP2/EREBP* mutants have defects in panicle branching
 
-Next, we wanted to test whether loss-of-function mutants had phenotypes consistent with our hypothesis that changes in expression of AP2/EREBP-like genes control panicle architecture.
+Next, we wanted to test whether loss-of-function mutants had phenotypes consistent with our hypothesis that changes in expression of *AP2/EREBP*-like genes control panicle architecture.
 Mutant generation in rice takes up to **x** months/years (**reference**), so we chose to start by phenotyping panicles in mutants that were publicly available.
-A **knockout?** mutant of *PLETHORA 8* (*PLT8*), an AP2-like gene characterised in (**ref**), produces a shorter rachis with fewer primary branches than the background accession (Figure 5 **panicle-mutants**), consistent with its reported peak in expression in rachis meristem tissue in *O. sativa japonica* cv. Nipponbare [Figure S9 **lmd-paper-ap2**; @harropGeneExpressionProfiling2016].
+A **knockout?** mutant of *PLETHORA 8* (*PLT8*), an *AP2*-like gene characterised in (**ref**), produces a shorter rachis with fewer primary branches than the background accession (Figure 5 **panicle-mutants**), consistent with its reported peak in expression in rachis meristem tissue in *O. sativa japonica* cv. Nipponbare [Figure S9 **lmd-paper-ap2**; @harropGeneExpressionProfiling2016].
 *ERF142* and *DLT* mutants, reported in (**ref**), produce fewer primary and secondary branches and fewer spikelets (Figure 5).
 
 >**in discussion**: We detected all three genes at both stages of all five accessions in our RNAseq dataset, but none of them were differentially expressed. Although this suggests that they were not targets of domestication, the phenotypes support a role for AP2/EREBP-like genes in panicle architecture.
