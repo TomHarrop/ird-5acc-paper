@@ -2,7 +2,8 @@
 bibliography: ../bib/references.bib
 ---
 
-# Introduction
+## Introduction
+
 >suggestion for an introduction plan
 - general sentence about importance of rice and so panicle architecture
 - how the panicle is formed : description of morphological step
@@ -27,19 +28,19 @@ Two cultivated rice species were domesticated independantly from the AA genome w
 >HA : Please ref to recent paper : Stein et al., 2018 (10.1038/s41588-018-0040-0) and cubry et al., 2018 : 10.1016/j.cub.2018.05.066 : Convergent selection occured during African and Aqsian rice domestications 
 
 
-Asian and African clades of rice split around two millions years ago and were domesticated independently [@zhu2005phylogenetic].
+Asian and African clades of rice split around two millions years ago and were domesticated independently [@zhuPhylogeneticRelationshipsAgenome2005].
 The domesticated Asian rice *Oryza sativa* appeared 10,000 years ago and went through a convoluted domestication history that involves a network of subspecies, most importantly *O. sativa* ssp. *indica* and *O. sativa* ssp. *japonica*, and frequent introgressions of its wild relative *Oryza rufipogon*.
 
-The domesticated African rice *Oryza glaberrima* has a simpler history. It was domesticated 3000 years ago, and introgressions from its wild relative, *Oryza barthii*, have not been detected [Reviewed by @vaughan2008evolving].
+The domesticated African rice *Oryza glaberrima* has a simpler history. It was domesticated 3000 years ago, and introgressions from its wild relative, *Oryza barthii*, have not been detected [Reviewed by @vaughanEvolvingStoryRice2008].
 Rice species in the African clade tend to produce simpler panicles, with mostly primary branches [**I am not sure how much of this is already known and how much is our finding, I'll search bibliography a bit more, any suggestion?**].
 **HA : >i suggest to put this in the results, because our data could show it**
 In both African and Asian clades, when compared to their wild relatives, domesticated species tend to produce panicles that are more complex and ramified (**ref to DOI 10.1186/s13227-017-0065-y and another one for asia; refer also to GWAS paper in vietnamese collecte**).
 
 The topology and quantity of panicle branches are controlled by genes that determine the size, rate of maturation and identity of reproductive and axillary meristems
 Many of those genes have been described.
-The branching gene *G1L5* (*TAWAWA1*) is an ALOG transcription factor that promotes indeterminate apical meristem [@yoshida2013tawawa1].
-In contrast, the genes *LAX PANICLE 1* and *LAX PANICLE 2* encode for a bHLH and a novel domain protein and determine the establishment of axillary meristem, which affects both vegetative and panicle branching [@komatsu2001lax1, @tabuchi2011lax].
-The rice homologs of *Arabidopsis* *UFO*, *ABERRANT PANICLE ORGANIZATION 1* and *Aberrant Panicle organization 2* (**is APO2 *RFL*/*FLO-LFY HOMOLOG OF RICE*?**), control meristem phase transitions. In the *APO1* or *RFL* mutants, axillary meristem differentiate into spikelets more frequently. This reduces branching [@ikeda2012aberrant].
+The branching gene *G1L5* (*TAWAWA1*) is an ALOG transcription factor that promotes indeterminate apical meristem [@yoshidaTAWAWA1RegulatorRice2013].
+In contrast, the genes *LAX PANICLE 1* and *LAX PANICLE 2* encode for a bHLH and a novel domain protein and determine the establishment of axillary meristem, which affects both vegetative and panicle branching [@komatsuLAX1FRIZZYPANICLE2001, @tabuchiLAXPANICLE2Rice2011].
+The rice homologs of *Arabidopsis* *UFO*, *ABERRANT PANICLE ORGANIZATION 1* and *Aberrant Panicle organization 2* (**is APO2 *RFL*/*FLO-LFY HOMOLOG OF RICE*?**), control meristem phase transitions. In the *APO1* or *RFL* mutants, axillary meristem differentiate into spikelets more frequently. This reduces branching [@ikeda-kawakatsuABERRANTPANICLEORGANIZATION2012].
 
 > HA : REf to a review article : 10.1016/j.gene.2013.11.058; 10.1016/j.pbi.2010.11.002
 ***I am not sure which other gene to discuss here, which one do we consider focal for our paper? If we include more genes we could consider dividing them in -indeterminate apical meristem, establishment of axyllary meristem, progression to spikelet.***

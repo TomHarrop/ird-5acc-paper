@@ -38,11 +38,12 @@ DOCX_EXE = pandoc --reference-doc=template/reference.docx \
 
 manuscript: docx/manuscript.docx 
 
-docx/manuscript.docx: ms/front_matter.md ms/introduction.md ms/results.md ms/methods.md ms/figure_table_legends.md bib/references.bib template/reference.docx template/genome-research.csl template/ref_loc.md
+docx/manuscript.docx: ms/front_matter.md ms/introduction.md ms/results.md ms/methods.md ms/figure_table_legends.md bib/references.bib template/reference.docx template/pnas.csl template/ref_loc.md
 	pandoc --reference-doc=template/reference.docx \
 		--from=markdown \
 		--to=docx \
 		--bibliography=bib/references.bib \
+		--csl template/pnas.csl \
 		-o docx/manuscript.docx \
 		ms/front_matter.md \
 		ms/introduction.md \
