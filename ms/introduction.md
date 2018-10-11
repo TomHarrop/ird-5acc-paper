@@ -22,9 +22,9 @@ The number of grains is one of the important characters specifying rice yield.
 > TH: Worth mentioning explicitly IMO.
 Panicle branching and the number of grains per panicle change among the clades, species and varieties of rice, especially between wild and domesticated varieties.(**Panicule diversity (yamaki et al., 2010 10.1270/jsbbs.60.586 ; Taguch)-Shiobara et al., 2011 10.1270/jsbbs.61.52**)
 Two rice species were domesticated independently from the AA genome wild Oryza rice in Africa and in Asia (REF..).
-Asian and African clades of rice split around two millions years ago and were domesticated independently [@zhu2005phylogenetic].
+Asian and African clades of rice split around two millions years ago and were domesticated independently [@zhuPhylogeneticRelationshipsAgenome2005].
 The domesticated Asian rice *Oryza sativa* appeared 10,000 years ago and went through a convoluted domestication history that involves a network of subspecies, most importantly *O. sativa* ssp. *indica* and *O. sativa* ssp. *japonica*, and frequent introgressions of its wild relative *Oryza rufipogon*.
-The domesticated African rice *Oryza glaberrima* has a simpler history. It was domesticated 3000 years ago, without introgressions from its wild relative, *Oryza barthii*[Reviewed by @vaughan2008evolving].
+The domesticated African rice *Oryza glaberrima* has a simpler history. It was domesticated 3000 years ago, without introgressions from its wild relative, *Oryza barthii*[Reviewed by @vaughanEvolvingStoryRice2008].
 In both African and Asian clades, when compared to their wild relatives, domesticated species tend to produce panicles that are more complex and ramified.
 Compared with wild relatives, domesticated rice species share similar traits, such as loss of seed shattering, an erect growth tiller, short awn or awnless seed (…ref)
 > *Again, we never deal with those traits, I agree that it might be interesting to mention them, but it might also complicate things when not necessary.*.
@@ -36,7 +36,7 @@ The topology and quantity of panicle branches are controlled by genes that deter
 Many of those genes have been described.
 The branching gene *G1L5* (*TAWAWA1*) is an ALOG transcription factor that promotes indeterminate apical meristem [@yoshidaTAWAWA1RegulatorRice2013].
 In contrast, the genes *LAX PANICLE 1* and *LAX PANICLE 2* encode for a bHLH and a novel domain protein and determine the establishment of axillary meristem, which affects both vegetative and panicle branching [@komatsuLAX1FRIZZYPANICLE2001, @tabuchiLAXPANICLE2Rice2011].
-The rice homologs of *Arabidopsis* *UFO*, *ABERRANT PANICLE ORGANIZATION 1* and *Aberrant Panicle organization 2* (**is APO2 *RFL*/*FLO-LFY HOMOLOG OF RICE*?**), control meristem phase transitions. In the *APO1* or *RFL* mutants, axillary meristem differentiate into spikelets more frequently. This reduces branching [@ikeda2012aberrant].
+The rice homologs of *Arabidopsis* *UFO*, *ABERRANT PANICLE ORGANIZATION 1* and *Aberrant Panicle organization 2* (**is APO2 *RFL*/*FLO-LFY HOMOLOG OF RICE*?**), control meristem phase transitions. In the *APO1* or *RFL* mutants, axillary meristem differentiate into spikelets more frequently. This reduces branching [@ikeda-kawakatsuABERRANTPANICLEORGANIZATION2012].
 Also the gene *Frizzy Panicle* (*FZP*) determines the spikelet meristem identity and in its absence the panicle produces a massive number of axillary meristems which do not develop into spikelets [Komatsu et al., 2003; doi: 10.1242/dev.00564]. Moreover, The *FZP* gene is connected to grain yield, high order branching and domestication [Bai et al. 2017, 10.1038/s41477-017-0042-4; Ren et al., 2018 10.1093/jxb/ery264; Huang et al., 2018, 10.1111/tpj.14062, Fujishiro et al., 2018  10.1038/s41598-018-30395-9].
 
 > HA : REf to a review article : 10.1016/j.gene.2013.11.058; 10.1016/j.pbi.2010.11.002
