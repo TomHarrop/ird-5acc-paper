@@ -6,7 +6,15 @@ load("../data/phenotypes.Rdata")
 
 # Test and plot three correlations ----------------------------------------
 
+
+
 pbn_spn <- pheno_cali %>% 
+  group_by(Species) %>%
+  mutate(cors = cor(pbn, spn) %>%
+           round(2) %>%
+           {paste0("r = ", .)}) %>%
+  ungroup() %>%
+  mutate(Species = paste(Species, cors, sep = " | ")) %>%
   ggplot(aes(x = pbn, y = spn)) +
   # geom_point(alpha = .2) +
   geom_hex(bins = 20) +
@@ -14,6 +22,8 @@ pbn_spn <- pheno_cali %>%
              nrow = 1) +
   theme_bw() +
   scale_fill_gradient(high = "#001a33", low = "#cce6ff") 
+
+pbn_spn
 
 sbn_spn <- pheno_cali %>% 
   ggplot(aes(x = sbn, y = spn)) +
