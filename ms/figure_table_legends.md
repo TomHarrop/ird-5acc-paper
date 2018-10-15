@@ -1,6 +1,7 @@
 ## Figure legends
 
-**Figure 1 phenotype-pca**. Panicle complexity of 93 rice accessions. We used spread panicles from **A** *O. rufipogon*, **B** *O. sativa*, **C** *O. barthii* and **D** *O. glaberrima* to measure panicle phenotypes with P-TRAP [@al-tamPTRAPPanicleTrait2013]. The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**E**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 ( **F**). RL: Rachis length; PBL: Primary branch length; PBIL: Primary branch internode length; SBL: Secondary branch length; SBIL: Secondary branch internode length; TBN: Tertiary branch number; PL: Panicle length.
+**Figure 1 phenotype-pca**. Panicle complexity of 93 rice accessions. **A**Spread mature rice panicule from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima*. We used spread panicles to measure panicle traits with P-TRAP [@al-tamPTRAPPanicleTrait2013]. The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**B**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 ( **F**). RL: Rachis length; PBL: Primary branch length; PBIntL: Primary branch internode length; SBL: Secondary branch length; SBIntL: Secondary branch internode length; TBN: Tertiary branch number.
+>i update this figure..i put on the dropbox : Fig01propositionupdate.tiff
 
 **Figure 2 transcriptome-pca**. Principal comonents analysis of transformed read counts for each library. Principal component 5 (PC5) separates RNAseq samples by developmental stage, and explains 5.4% of total variability. The first four components explain 51.7% of variability, and separate RNAseq samples by species.
 
@@ -10,8 +11,6 @@
 
 **Figure 5 panicle-mutants**. Mutants in three AP2/EREBP-like genes, *PLT8*, *ERF142* and *DLT*, have defects in panicle architecture compared to their background accessions. The *PLT8* mutant produces fewer primary branches and spikelets. The mutants of *ERF142* and *DLT* both produce fewer primary branches, secondary branches and spikelets.
 
-**Figure S? PanicleStructure**. Spread mature rice panicule.RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBintL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBintL: Secondary branch internode length; Sp : Spikelet.
-> **What is this figure?**
 
 ## Supplementary figures
 
