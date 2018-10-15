@@ -7,6 +7,7 @@ library(viridis)
 source("helper-functions.R")
 dds <- readRDS("../data-raw/dds.Rds")
 filter_abs_pc <- .00185
+set.seed(1)
 # filter_abs_pc <- .002
 
 # Load PCA and TF families ------------------------------------------------
@@ -123,7 +124,8 @@ p_enr <- ggplot(pcx_tf %>%
                                               TRUE ~ "No")) %>%
                   mutate(facet = paste0(Family,
                                         ", adjusted p-value = ",
-                                        round(padj, 3))) %>%
+                                        round(padj,
+                                              digits = 4))) %>%
                   mutate(facet = as_factor(facet)),
                 aes(x = rank_pc5,
                     y = PC5,
@@ -142,7 +144,7 @@ p_enr <- ggplot(pcx_tf %>%
   labs(x = "Ranks of genes on PC5",
        y = "PC5 Value")
 
-# p_enr
+p_enr
 
 
 # Define functions for heatmap --------------------------------------------
@@ -216,32 +218,38 @@ heat_hb <- plot_heatmap("Homeobox")
 
 # Save plots --------------------------------------------------------------
 
-pdf("../fig/fig-03-TFs-in-PCA-locusid_subfams.pdf",
+pdf("../fig/fig-HB-AP2-heatmap.pdf",
     height = 8,
-    width = 12)
+    width = 10)
 heats <- cowplot::plot_grid(heat_ap2[[4]],
                             heat_hb[[4]],
                             labels = c("B", "C"))
-cowplot::plot_grid(p_enr, heats,
-                   nrow = 2,
-                   rel_heights = c(2,5),
-                   labels = c("A", "")) %>%
-  cowplot::add_sub(., str_wrap("AP2-EREBP and HB transcription factor change expression 
-                               between BM and SM. 
-                               A. AP2 and HB genes are distributed toward the extremes ofPC5 
-                               (with adjusted p-values of 0.004 and 0.021 from a GSEA test).
-                               We set an experimental cutoff that retains approximately 10% of
-                               genes from any of the two extremes (in red).
-                               B. Most of AP2-EREBP genes that pass the cutoff are more expressed
-                               in the BM. Although only four AP2-EREBP genes are more expressed in
-                               the SM, three of them belong to the AP2 subfamily. Instead, genes
-                               at the opposite extreme of PC5 belong preferentially to RAV, DREB
-                               and ERF subfamilies.
-                               C. HB genes that pass the cutoff are prefertially more expressed
-                               in the SM. Those genes belong preferentially to the HD-ZIP IV 
-                               subfamily",
-                   width = 80)) %>%
+p <- cowplot::plot_grid(p_enr, heats,
+                        nrow = 2,
+                        rel_heights = c(2,5),
+                        labels = c("A", "")) %>%
+  cowplot::add_sub(., str_wrap("AP2/EREBP and homeobox (HB) transcription factors
+                               change expression between BM and SM. A. AP2/EREBP
+                               and HB genes are distributed at the extremes of
+                               genes ranked on PC5 (Enrichment is estimated with the
+                               the GSEA method, which returns a permutation based
+                               adjusted pvalue of respectively 0.0037 and 0.0044).
+                               For the heatmap, we used the 10% of genes that
+                               have the highest absolute loading on PC5 (shown
+                               in red in the enrichment plot). B. Most AP2/EREBP
+                               genes that pass the cutoff are more highly expressed
+                               in the BM. Three of the four
+                               AP2/EREBP genes that are more highly expressed in the
+                               SM belong to the AP2 subfamily. Genes that are more highly
+                               expressed in BM mainly belong to RAV, DREB and ERF subfamilies. C. 
+                               Most HB genes that pass the cutoff are more highly expressed in
+                               the SM. May of those genes belong to the HD-ZIP IV and the ZF-HD
+                               subfamilies. In the heatmaps represent normalized RNAseq counts
+                               which have been scaled independently for each species",
+                               width = 80)) %>%
   cowplot::ggdraw()
+
+print(p)
 
 dev.off()
 
