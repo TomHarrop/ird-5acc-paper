@@ -1,8 +1,8 @@
 library(tidyverse)
 library(glue)
 
-pc <- readRDS("data/tmp_rlog_pca_output/pc.Rds")
-pcx <- readRDS("data/tmp_rlog_pca_output/pcx.Rds")
+pc <- readRDS("../data/tmp_rlog_pca_output/pc.Rds")
+pcx <- readRDS("../data/tmp_rlog_pca_output/pcx.Rds")
 color_palette <- c("blue", "goldenrod")
 
 # Only the first 5 PC are interesting? ------------------------------------
@@ -53,7 +53,8 @@ p <- ggplot(pcx,
   scale_fill_manual(values = color_palette) +
   # scale_fill_viridis_d(begin = .2, end = .8) +
   theme_bw() +
-  labs(x = "Sample ID",
+  labs(title = "Transcriptome Principal Components",
+       x = "Sample ID",
        y = "Loading Vector",
        fill = "Stage",
        caption = glue("Fig 2: Grafical representation of PC loadings
@@ -70,7 +71,8 @@ p <- ggplot(pcx,
         strip.text.x = element_text(face = "italic")) 
   
 
-pdf("fig/fig-02-PCA-rlog-VISUAL.pdf")
+pdf("../fig/fig-transcriptome-pca.pdf",
+    width = 6.7)
 print(p)
 dev.off()
 
