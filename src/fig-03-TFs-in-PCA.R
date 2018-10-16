@@ -219,7 +219,7 @@ heat_hb <- plot_heatmap("Homeobox")
 # Save plots --------------------------------------------------------------
 
 pdf("../fig/fig-HB-AP2-heatmap.pdf",
-    height = 8,
+    height = 9,
     width = 10)
 heats <- cowplot::plot_grid(heat_ap2[[4]],
                             heat_hb[[4]],
@@ -244,7 +244,7 @@ p <- cowplot::plot_grid(p_enr, heats,
                                expressed in BM mainly belong to RAV, DREB and ERF subfamilies. C. 
                                Most HB genes that pass the cutoff are more highly expressed in
                                the SM. May of those genes belong to the HD-ZIP IV and the ZF-HD
-                               subfamilies. In the heatmaps represent normalized RNAseq counts
+                               subfamilies. Heatmaps represent normalized RNAseq counts
                                which have been scaled independently for each species",
                                width = 80)) %>%
   cowplot::ggdraw()
