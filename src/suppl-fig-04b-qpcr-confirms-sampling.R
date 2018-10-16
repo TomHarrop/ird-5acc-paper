@@ -71,16 +71,39 @@ p_img <- ggdraw() +
 p_comb <- plot_grid(p_img, p,
                     labels = "AUTO",
                     nrow = 2,
-                    rel_heights = c(1, 2))
+                    rel_heights = c(1, 2)) %>%
+  add_sub(str_wrap("A. Developmental stages of immature panicles
+                   collected for expression analysis. 
+                   Stage 1: rachis meristem;
+                   Stage2: formation of primary branch meristems,
+                   elongation of primary branch meristem and formation
+                   of axillary meristem; 
+                   Stage3, spikelet meristem and floret differentitaion;
+                   Stage 4, floral organ differenciation/development.
+                   M, axillary merisyem, Fl, flower; Sp, spikelet,
+                   RM, Rachis meristem; PbM, primary branch meristem;
+                   ePbM, primary branch elongated;
+                   Flm, floret meristem; St, stamen;
+                   p, palea; l, lemma. 
+                   B. In our RNA-seq samples, five selected marker genes
+                   behave as expected.
+                   This plot represents the fluidigm qPCR expression values
+                   for each RNAseq sample relative and samples from two additional
+                   developmental stages (In the RNAseq we have sequenced the samples
+                   from developmental stages 2 and 3).
+                   Each expression value is relative to the geometric mean expression
+                   of 4 normalizers."),
+          size = 11)
 
 pdf("../fig/suppl-fig-qpcr-confirms-sampling.pdf",
     height = 10, width = 6.2,
     paper = "a4")
-p_comb %>% print()
+
+p_comb %>%
+  ggdraw() %>%
+  print()
+
 dev.off()
-
-
-
 # OLD ---------------------------------------------------------------------
 
  
