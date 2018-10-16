@@ -1,9 +1,10 @@
 library(tidyverse)
-library(viridis)
-library(pheatmap)
-library(grid)
-library(gridExtra) 
+# library(viridis)
+# library(pheatmap)
+# library(grid)
+# library(gridExtra) 
 library(magrittr)
+library(cowplot)
 
 
 source("../analyze-fluidigm/helper_functions_fluidigm.R")  
@@ -54,11 +55,30 @@ p <-
   scale_y_log10() +
   labs(title = "Marker genes behave as expected [semi-log plot]")
 
+
+# Add tiff figure to plot -------------------------------------------------
+
+# Note
+#
+# compressed with:
+# tiffcp -c zip \
+#     data-raw/FigMeristemCollect.tif \
+#     data-raw/FigMeristemCollect-compr.tif 
+
+p_img <- ggdraw() +  
+  draw_image("../data-raw/FigMeristemCollect-compr.tif")
+
+p_comb <- plot_grid(p_img, p,
+                    labels = "AUTO",
+                    nrow = 2,
+                    rel_heights = c(1, 2))
+
 pdf("../fig/suppl-fig-qpcr-confirms-sampling.pdf",
-    height = 6, width = 6,
+    height = 10, width = 6.2,
     paper = "a4")
-p %>% print()
+p_comb %>% print()
 dev.off()
+
 
 
 # OLD ---------------------------------------------------------------------
