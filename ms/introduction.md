@@ -1,6 +1,6 @@
 ## Introduction
 
-Rice produces grains on complex racemo inflorescences called panicles (**suppl-figure-panicle**).
+Rice produces grains on complex raceme inflorescences called panicles (**suppl-figure-panicle**).
 The architecture of the rice panicle results from the establishment and activity of apical and axillary meristems derived from the vegetative shoot apical meristem (SAM) (Ikeda et al., 2004; Breeding Science 54, 147-156).
 *If you close this sentence with "Vegetative shoot apical meristems", it seems that this is going to be the topic of the next sentences. Moreover, we never deal with the vegetative shoot apical meristem, so I don't see why we should mention it*
 
@@ -12,9 +12,6 @@ The axillary meristems on the rachis all develop as primary branches.
 Primary branches produce then an indeterminate number of axillary meristems. The axillary meristems on the primary branches either grow as secondary branches or differentiate into spikelets.
 Secondary branches also produce an indeterminate but smaller number of axillary meristems, which very rarely grow into tertiary branches and most likely differentiate into spikelets. Each rice grain is produced from a single spikelet.
 These developmental decisions shape the complexity of rice panicles; the morphology of panicle development is reviewed in detail by [Itoh et al, 2005, https://doi.org/10.1093/pcp/pci501].
-
->HA : Ref to ikeda et al., 2004 (Breeding Science 54, 147-156) ; itho et al. 2005 (doi:10.1093/pcp/pci501 )
-
 Morphologically, the full panicle architecture is developed and determined quickly after its appearance. Panicle development starts from the rachis meristem.
 The rachis meristem elongates and, starting from its base, it produces an undetermined number of primary branch meristems. In turn the primary branches elongate and produce an undetermined number of axillary meristems which grow into secondary branches or differentiate into spikelets.
 The morphology of panicle development is described by Ikeda et al. (2004  https://doi.org/10.1270/jsbbs.54.147)
