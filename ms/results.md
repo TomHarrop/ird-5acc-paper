@@ -28,17 +28,18 @@ Pairwise distances between libraries were lower for samples from the same stage,
 We used differential expression (DE) analysis to identify genes that were up- or down-regulated between stages across all accessions.
 Genes with positive L~2~FC values have higher expression in SM than in BM.
 193 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1 (Table S6 **DE-genes-stages**).
-There was an enrichment of TF genes in the list of 193 DE genes (38 genes; hypergeometric test, *p* = 1.9 × 10^-9^).
-DE TF genes include *FZP*, *LHS1*, *LAX1*, *PAP2*, and *MFO1*, which control inflorescence architecture in rice [@komatsuLAX1FRIZZYPANICLE2001; @baiRegulatoryRoleFZP2016; @baiDuplicationUpstreamSilencer2017; @kobayashiPANICLEPHYTOMER2PAP22010; @kobayashiInflorescenceMeristemIdentity2012; @khandayRiceLHS1OsMADS12013; @ohmoriMOSAICFLORALORGANS12009a], [**check Huang et al., 2018, 10.1038/ncomms3200**], indicating that RNAseq of developing panicles at the BM and SM stage identifies genes that control branching.
+There was an enrichment of TF genes in the list of 193 DE genes (38 TF genes; *p* = 1.9 × 10^-9^, hypergeometric test).
+Differentially expressed TF genes include *FZP*, *LHS1*, *LAX1*, *PAP2*, and *MFO1*, which control inflorescence architecture in rice [@komatsuLAX1FRIZZYPANICLE2001; @baiRegulatoryRoleFZP2016; @baiDuplicationUpstreamSilencer2017; @kobayashiPANICLEPHYTOMER2PAP22010; @kobayashiInflorescenceMeristemIdentity2012; @khandayRiceLHS1OsMADS12013; @ohmoriMOSAICFLORALORGANS12009a], [**check Huang et al., 2018, 10.1038/ncomms3200**], indicating that RNAseq of developing panicles at the BM and SM stage identifies genes that control branching.
 
 We used PCA on transformed raw counts to investigate the patterns of variation in the transcriptomes associated with differences in panicle architecture. 
 The first four PCs split different combinations of rice species (Figure 2 **transcriptome-pca**).
 PC1–PC4 may relate to species-specific differences unrelated to panicle architecture, or mapping biases introduced by mapping all libraries against the *O. sativa japonica* reference.
 In contrast, PC5 separates developmental stages across all five accessions, although separation is weaker in *O. sativa indica* (Figure 2 **transcriptome-pca**).
-The family of *APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes are enriched at the extremes of PC5, suggesting that they contribute to phenotypic differences between BM and SM (Figure 3 **HB-AP2-heatmap**).
-Homeobox, MADS, NAC and SBP genes are also enriched in PC5 (Figure 3 **HB-AP2-heatmap**; Figure S8 **NAC-MADS-SPL-heatmap**; Table S7 **PC5-TF-enrichment-gsea**).
+The families of *APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes and homeobox (HB) are enriched at the extremes of PC5, suggesting that they contribute to phenotypic differences between BM and SM ((*p*~adj~ = 0.004 for both, GSEA permutation *t*-test; Figure 3 **HB-AP2-heatmap**).
+MADS, NAC and SBP genes are also enriched in PC5 (Figure S8 **NAC-MADS-SPL-heatmap**; Table S7 **PC5-TF-enrichment-gsea**).
 
-### *AP2/EREBP*-like transcription factors are differentially expressed between stages, and associated with domesticated accessions
+
+### *AP2/EREBP*-like and homeobox transcription factors are differentially expressed between stages, and associated with domesticated accessions
 
 > When discussing enrichment in clusters, give number of genes and *p*~adj~.
 

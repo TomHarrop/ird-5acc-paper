@@ -2,7 +2,7 @@
 
 **Figure 1 phenotype-pca**.
 Panicle complexity of 93 rice accessions.
-**A** We measured phenotypes of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima* with P-TRAP [@al-tamPTRAPPanicleTrait2013].
+**A** We measured phenotypes of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima* with `P-TRAP` [@al-tamPTRAPPanicleTrait2013].
 The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**E**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 ( **F**).
 RL: Rachis length; PBL: Primary branch length; PBIL: Primary branch internode length; SBL: Secondary branch length; SBIL: Secondary branch internode length; TBN: Tertiary branch number; PL: Panicle length.
 
@@ -11,9 +11,11 @@ Principal comonents analysis of transformed read counts for each library.
 Principal component 5 (PC5) separates RNAseq samples by developmental stage, and explains 5.4% of total variability.
 The first four components explain 51.7% of variability, and separate RNAseq samples by species.
 
+>TH to reformat: Change the labels on the x-axis to match the stages in the paper. Remove the species codes from the x-axis labels & use full species names in the facet labels. Remove the guide for the bar colour. Use brackets rather than ~ to separate PC number from percent variability.
+
 **Figure 3 HB-AP2-heatmap**.
 *AP2/EREBP*-like and homeobox (HB) transcription factors change expression between BM and SM.
-**A** *AP2/EREBP*-like and HB genes are distributed at the extremes of genes ranked on PC5 (*p*~adj~ = 0.004 for both, GSEA permutation *t*-test [**citation for GSEA**]).
+**A** *AP2/EREBP*-like and HB genes are distributed at the extremes of genes ranked on PC5 (*p*~adj~ = 0.004 for both, GSEA permutation *t*-test).
 For the heatmap, we used the 10% of genes that have the highest absolute loading on PC5, shown in red in the enrichment plot.
 **B** Most *AP2/EREBP*-like genes that pass the cutoff are more highly expressed in the BM.
 Three of the four *AP2/EREBP*-like genes that are more highly expressed in the SM belong to the *AP2* subfamily.
@@ -21,7 +23,7 @@ Genes that are more highly expressed in BM mainly belong to RAV, DREB and ERF su
 **C** Most HB genes that pass the cutoff are more highly expressed in the SM.
 Ten out of twenty of these genes belong to the HD−ZIP IV subfamily.
 
-> TH: Otho, can you explain what's on the scale bar in figure 3B and tell me which paper to cite for the permutation test? Do you have any stats for Figure 3C? I could do a hypergeometric test if you like.
+> TH: Otho, can you explain what's on the scale bar in figure 3B? Do we need a citation for the permutation test? Do you have any stats for Figure 3C? I could do a hypergeometric test if you like.
 
 **Figure 4 cluster-phenotype-corr**.
 Genes with a high log~2~-fold change (L~2~FC) in *O. sativa indica* are correlated with increased production of primary branches (PBN), secondary branches (SBN) and spikelets (SpN).
