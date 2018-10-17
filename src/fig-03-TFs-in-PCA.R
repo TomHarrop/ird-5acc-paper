@@ -173,7 +173,9 @@ plot_heatmap <- function(family = "AP2-EREBP",
     # left_join(annos) %>% #### ADD GENE NAME
     left_join(pcx_tf %>% select(locus_id, PC5, rank_pc5)) %>%
     as.data.frame() %>%
-    mutate(locus_id = paste(rank_pc5, locus_id, symbol)) %>%
+    mutate(symbol = case_when(is.na(symbol) ~ "",
+                              TRUE ~ symbol),
+           locus_id = paste(rank_pc5, locus_id, symbol)) %>%
     select(-symbol) %>%
     arrange(desc(PC5)) %>%
     distinct() %>%

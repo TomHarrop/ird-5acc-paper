@@ -17,11 +17,11 @@ cl5 <- cls %>% filter(cluster == 5)
 
 # Dot plot ---------------------------------------------------------------
 
-dat <- list(hb_cl4 = hb_exp %>%
+dat <- list(`Cluster 4 - HB` = hb_exp %>%
               filter(locus_id %in% cl4$locus_id),
-            ap2_cl4 = ap2_exp %>%
+            `Cluster 4 - AP2` = ap2_exp %>%
               filter(locus_id %in% cl4$locus_id),
-            ap2_cl5 = ap2_exp %>%
+            `Cluster 5 - AP2` = ap2_exp %>%
               filter(locus_id %in% cl5$locus_id)) %>%
   map(., ~scale_tidy_fluidigm(.) %>%
         mutate(species = factor(species,
@@ -30,35 +30,24 @@ dat <- list(hb_cl4 = hb_exp %>%
                                            "Or", "Osi"))))
 
 
-# Vertical arrangement ----------------------------------------------------
+
+# Plot in two columns -----------------------------------------------------
 
 
 plts <- names(dat) %>%
   map(., ~lineplot_fluidigm(nm = .,
                             dat = dat[[.]],
-                            alpha = .8))
+                            alpha = .8) +
+        theme(strip.text = element_text(size = 5)))
 
+# +
+#   theme(text = element_text(size = 8),
+#         strip.text = element_text(size = 4))
 
-pdf("../fig/fig-05-fluidigm-ap2-hb-dotline.pdf",
-    height = 14)
-
-g <- plts %>%
-  map(., ggplotGrob) 
-rbind(g[[1]], g[[2]], g[[3]],
-           size = "first") %>%
-  grid.draw()
-
-dev.off()
-
-# two columns -------------------------------------------------------------
-
-
-pdf("../fig/fig-05-fluidigm-ap2-hb-TEST-ratio.pdf",
-    height = 9, width = 9)
-cowplot::plot_grid(plts[[2]], plts[[3]],
-                   nrow = 2,
-                   rel_heights = c(3, 4) + 1.5,
-                   labels = c("A", "C")) %>%
+p <- cowplot::plot_grid(plts[[2]], plts[[3]],
+                        nrow = 2,
+                        rel_heights = c(3, 4) + 1.5,
+                        labels = c("A", "C")) %>%
   cowplot::plot_grid(., plts[[1]],
                      labels = c("", "B")) %>%
   cowplot::add_sub(., str_wrap("qPCR confirms the behaviour of selected
@@ -67,58 +56,18 @@ cowplot::plot_grid(plts[[2]], plts[[3]],
                                additional developmental stages. Stage 1 is a Rachis
                                Meristem, Stage2 is a Branch Meristem, Stage 3
                                is a Spikelet Meristem, Stage 4 is a Developing
-                               Spikelet.")) %>%
+                               Spikelet."),
+                   size = 11) %>%
   cowplot::ggdraw()
+
+
+pdf("../fig/suppl-fig-fluidigm-ap2-hb.pdf",
+    height = 9, width = 9,
+    paper = "a4")
+# do the inches really matter?
+# PDF rescales (vector)
+p %>% print()
 dev.off()
 
-
-# ggpubr::ggarrange(plts[[1]], plts[[2]], plts[[3]], ncol = 3)
-# 
-# # grid.arrange(plts[[1]], plts[[2]], plts[[3]])
-# 
-# grid.draw(gtable:::rbind_gtable(plts[[1]],
-#                                 plts[[2]], "first"))
-# 
-# 
-# pdf("../fig/fig-06-TEST.pdf", height = 20)
-# grid.arrange(grobs = lapply(
-#   list(plts[[1]],
-#        plts[[2]],
-#        plts[[3]]),
-#   egg::set_panel_size,
-#   width = unit(2, "cm"),
-#   height = unit(1, "in")
-# ))
-# dev.off()
-# 
-# library(grid)
-# library(gtable)
-# g1 <- ggplotGrob(plts[[1]])
-# g2 <- ggplotGrob(plts[[2]])
-# g <- cbind(g1, g2, size = "first")
-# 
-# tst <- hb_exp %>%
-#   filter(locus_id %in% cl4$locus_id) %>%
-#   scale_tidy_fluidigm() %>%
-#   mutate(species = factor(species,
-#                           levels = c("Osj",
-#                                      "Ob", "Og",
-#                                      "Or", "Osi")))
-# 
-# 
-#   ggplot(tst, aes(x = stage,
-#              y = expression)) +
-#   geom_point(size = 2, col = "darkgrey") +
-#   geom_smooth(aes(x = stage %>%
-#                     as_factor(.) %>%
-#                     as.numeric(.)),
-#               se = FALSE,
-#               colour = "black") +
-#   facet_grid(target_name ~ species, scales = "free_y") +
-#   theme_bw() +
-#   theme(axis.text.x = element_text(hjust = 0,
-#                                    vjust = .5,
-#                                    angle = 270))
-# 
 
   

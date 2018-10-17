@@ -319,7 +319,7 @@ lineplot_fluidigm <- function(nm, dat,
                                      vjust = .5,
                                      angle = 270),
           strip.text = element_text(size = 6)) +
-    labs(title = paste("cluster", nm),
+    labs(title = nm,
          y = "Relative Expression")
   return(p)
 }

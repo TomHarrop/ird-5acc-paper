@@ -87,12 +87,12 @@ write_family("SBP")
 
 }
   
-  pcx_tf %>%
-    filter(Family == "MADS") %>%
-    select(locus_id, Family) %>%
-    mutate(symbol = oryzr::LocToGeneName(locus_id) %$%
-             symbols) %>%
-    write_csv("../fix_gene_names/MADS.csv")
+pcx_tf %>%
+  filter(Family == "MADS") %>%
+  select(locus_id, Family) %>%
+  mutate(symbol = oryzr::LocToGeneName(locus_id) %$%
+           symbols) %>%
+  write_csv("../fix_gene_names/MADS.csv")
 
 # Plot Enrichement --------------------------------------------------------
 
@@ -159,9 +159,14 @@ plot_heatmap <- function(family = "AP2-EREBP",
     # left_join(annos) %>% #### ADD GENE NAME
     left_join(pcx_tf %>% select(locus_id, PC5, rank_pc5)) %>%
     as.data.frame() %>%
-    # mutate(locus_id = paste(rank_pc5, locus_id, symbol)) %>%
-    mutate(locus_id = paste(rank_pc5, locus_id)) %>%
-    # select(-symbol) %>%
+    mutate(symbol = locus_id %>%
+             oryzr::LocToGeneName() %$% 
+             symbols,
+           symbol = case_when(is.na(symbol) ~ "",
+                              TRUE ~ symbol),
+           locus_id = paste(rank_pc5, locus_id, symbol)) %>%
+    select(-symbol) %>%
+    # mutate(locus_id = paste(rank_pc5, locus_id)) %>%
     arrange(desc(PC5)) %>%
     distinct() %>%
     column_to_rownames("locus_id")
