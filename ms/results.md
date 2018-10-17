@@ -1,11 +1,10 @@
 ## Results
 
-To reveal gene expression patterns associated with diversity of inflorescence architecture, we used detailed phenotyping of panicles from domesticated and wild accessions of Asian and African rice, followed by whole-transcriptome sequencing (RNASeq) [and analysis of single-gene mutants with defects in panicle branching].
-**expand slightly**
+To reveal gene expression patterns associated with diversity of inflorescence architecture, we used detailed phenotyping of panicles from domesticated and wild accessions of Asian and African rice. We selected five accessions for whole-transcriptome sequencing (RNASeq), and our analysis reveals an association between expression of *AP2/EREBP*-like genes, homeobox (HB) genes and panicle architecture. We phenotyped previously reported single-gene *AP2/EREBP*-like mutants to confirm the role of those genes in branching.
 
 ### Parallel changes in panicle architecture in domesticated accessions
 
-To measure the diversity of panicle architecture, we phenotyped 93 accessions of wild Asian rice (*Oryza rufipogon*), domesticated Asian rice (*Oryza sativa*), wild African rice (*Oryza barthii*) and domesticated African rice (*Oryza glaberrima*), using `P-TRAP` for automated measurement of traits (Figure 1A **phenotype-pca**; Table S3 **PanicleTraitsPhenotyping**; @al-tamPTRAPPanicleTrait2013).
+To measure the diversity of panicle architecture, we phenotyped 93 accessions of wild Asian rice (*Oryza rufipogon*), domesticated Asian rice (*Oryza sativa*), wild African rice (*Oryza barthii*) and domesticated African rice (*Oryza glaberrima*), using `P-TRAP` for automated measurement of traits [Figure 1A **phenotype-pca**; Table S3 **PanicleTraitsPhenotyping**; @al-tamPTRAPPanicleTrait2013].
 There was a stronger correlation between secondary branch number and spikelet number in the domesticated accessions than in the wild accessions (Figure S2 **correlation-pbn-spn**).
 The first principal component (PC1) in the phenotyping data accounts for 46.5% of variability.
 PC1 separates domesticated and wild accessions, but not Asian and African accessions (Figure 1E **phenotype-pca**).
