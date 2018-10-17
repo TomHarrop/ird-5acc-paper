@@ -4,6 +4,8 @@ dds <- readRDS("../data-raw/dds.Rds")
 source("helper-functions.R")
 filter_abs_pc <- .00185
 
+set.seed(1)
+
 # Load PCA and TF families ------------------------------------------------
 
 # load("../data/all-sep-deseq.Rdata")

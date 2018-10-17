@@ -22,9 +22,9 @@ Primary and secondary branch numbers don't correlate, suggesting that they
 are controlled by different genetic mechanisms.
 > could you add the correlation value on each panel
 
-**Figure S2 suppl-phenotype-pca-all-pc**. Principal component analysis (PCA) of panicle phenotyping data showing components 1–4. PC1 accounts for 46.5% of variability and separates panicles from domesticated and wild accessions. The lower ordinates do not separate panicles by species.
+**Figure S2 phenotype-pca-all-pc**. Principal component analysis (PCA) of panicle phenotyping data showing components 1–4. PC1 accounts for 46.5% of variability and separates panicles from domesticated and wild accessions. The lower ordinates do not separate panicles by species.
 
-**Figure S3 suppl-phenotype-all-varieties**. The accessions used for RNAseq are consistent with species-wide patterns of panicle architecture. Scores on PC1 for the accessions chosen for RNAseq are shown in red. (**Describe what the boxplot shows. How many points are there for each accession?**)
+**Figure S3 phenotype-all-varieties**. The accessions used for RNAseq are consistent with species-wide patterns of panicle architecture. Scores on PC1 for the accessions chosen for RNAseq are shown in red. (**Describe what the boxplot shows. How many points are there for each accession?**)
 
 **Figure S4 qpcr-confirms-sampling**. **A** Developmental stages of immature panicles collected for expression analysis. Stage 1  : rachis meristem; Stage2 : formation of primary branch meristems, elongation of primary branch meristem and formation of axillary meristem; Stage3, spikelet meristem  and floret differentitaion; Stage 4, floral organ differenciation/development. M, axillary merisyem, Fl, flower; Sp, spikelet, RM, Rachis meristem; PbM, primary branch meristem; ePbM, primary branch elongated; Flm, floret meristem; St, stamen; p, palea; l, lemma. **B** Quantitative RT-PCR using meristem stage specific marker genes for validation of all stages among species. OsMADS1/LHS1 is used as a markers of Spikelet meristem differentiation. FZP is used as... LAX1....TAW .... osMADS14.....
 > Relabel the x-axis to match stage abbreviations from results
@@ -58,4 +58,5 @@ We have also measured gene expressio in two additional developmental stages. Sta
 
 **Table S7 DE-genes-interaction**. stage × accession DE genes
 
+**Table S8 PC5-TF-enrichment-gsea.csv** Transcription factor families that are enriched along PC5.
  
