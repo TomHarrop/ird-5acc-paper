@@ -13,14 +13,13 @@ The sum of contributions of the top four components accounted for more than 87% 
 Spikelet number, secondary branch number and primary branch number have the highest loadings on PC1.
 This indicates that these phenotypes, which are all related to axillary meristem formation and fate transition, are the main differences between panicles from wild and domesticated accessions.
 
-### Measurement of gene expression differences underlying variation between wild and domesticated panicles
+### Measurement of gene expression in developing panicles
 
 To investigate gene expression differences underlying variation in panicle architecture, we chose a single accession for each of *O. rufipogon* (W1654), *O. sativa japonica* (Nipponbare), *O. sativa indica* (IR64), *O. barthii* (B88) and *O. glaberrima* (Tog5681) for RNA sequencing (RNAseq).
 Based on the extensive phenotyping described above, the chosen accessions are consistent with species-wide patterns of panicle architecture (Figure S3 **suppl-phenotype-all-varieties**), except for *O. sativa japonica* cv. Nipponbare, which we included as the reference accession for *O. sativa japonica*.
 The three domesticated accessions produce more spikelets than their wild relatives (Figure S4 **phenotyping-mpl**; Table S4 **PanicleTraitsPhenotypingPlantsSequenced**).
-**Model of panicles goes here.**
 
-To measure whole-transcriptome gene expression in these accessions, we collected immature panicles from each accession at four developmental stages: rachis meristem (RM); branch meristem (BM), composed of immature panicle displaying primary branch initiation, elongation of primary branches and axillary meristem initiation; spikelet meristem (SM), which includes panicles with spikelet meristem, but not floret meristem; and flower meristem (FM) (**S5a qpcr-confirms-sampling**).
+To measure whole-transcriptome gene expression in these accessions, we collected immature panicles from each accession at four developmental stages: rachis meristem (RM); branch meristem (BM), composed of immature panicle displaying primary branch initiation, elongation of primary branches and axillary meristem initiation; spikelet meristem (SM), which includes panicles with spikelet meristem; and floret meristem (FM) (**S5a qpcr-confirms-sampling**).
 We first confirmed staging of the panicles by extracting RNA from pooled meristems at each stage and measuring expression of *LHS1*, *G1L5* (*TAWAWA*), *FZP*, *LAX1* and *MADS14* with quantitative RT-PCR (qRT-PCR) (Figure S5b **qpcr-confirms-sampling**).
 Because branching complexity is related to branch meristem establishment and meristem fate transition [**ref**], we chose the BM and SM stages for RNAseq.
 cDNA libraries for sequencing were constucted from rRNA-depleted RNA from these stages for all five accessions.
@@ -30,10 +29,8 @@ Pairwise distances between libraries were lower for samples from the same stage,
 We used differential expression (DE) analysis to identify genes that were up- or down-regulated between stages across all accessions.
 Genes with positive L~2~FC values have higher expression in SM than in BM.
 193 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1 (Table S6 **DE-genes-stages**).
-**Specifically mention enrichment of TFs here?**
-This list includes **TFs x, y and z** [e.g. pick from *FZP*, *LHS1*, *LAX1*, *PAP2*, *MFO1*, ...], which control inflorescence architecture in rice [**add citations for chosen genes**], indicating that RNAseq of developing panicles at the BM and SM stage identifies genes that control branching.
-
-### *AP2/EREBP*-like transcription factors are differentially expressed between stages, and associated with domesticated accessions
+There was an enrichment of TF genes in the list of 193 DE genes (38 genes; hypergeometric test, *p* = 1.9 × 10^-9^).
+DE TF genes include *FZP*, *LHS1*, *LAX1*, *PAP2*, and *MFO1*, which control inflorescence architecture in rice [@komatsuLAX1FRIZZYPANICLE2001; @baiRegulatoryRoleFZP2016; @baiDuplicationUpstreamSilencer2017; @kobayashiPANICLEPHYTOMER2PAP22010; @kobayashiInflorescenceMeristemIdentity2012; @khandayRiceLHS1OsMADS12013; @ohmoriMOSAICFLORALORGANS12009a], [**check Huang et al., 2018, 10.1038/ncomms3200**], indicating that RNAseq of developing panicles at the BM and SM stage identifies genes that control branching.
 
 We used PCA on transformed raw counts to investigate the patterns of variation in the transcriptomes associated with differences in panicle architecture. 
 The first four PCs split different combinations of rice species (Figure 2 **transcriptome-pca**).
@@ -42,23 +39,27 @@ In contrast, PC5 separates developmental stages across all five accessions, alth
 The family of *APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes are enriched at the extremes of PC5, suggesting that they contribute to phenotypic differences between BM and SM (Figure 3 **HB-AP2-heatmap**).
 Homeobox, MADS, NAC and SBP genes are also enriched in PC5 (Figure 3 **HB-AP2-heatmap**; Figure S7 **NAC-MADS-SPL-heatmap**).
 
+### *AP2/EREBP*-like transcription factors are differentially expressed between stages, and associated with domesticated accessions
+
 Because of the prominence of transcription factor (TF) genes and *AP2/EREBP*-like genes in PC5 and in DE genes between stages (Figure 3 **HB-AP2-heatmap**; Table S6 **DE-genes-stages**), we used soft clustering of scaled log~2~-fold change values (L~2~FCs) between BM and SM to find common patterns of expression of the subset of annotated TF genes that were expressed in our RNAseq dataset.
 We recovered six clusters.
 Three clusters contained genes with the highest L~2~FC in *O. sativa indica*. 
 These three clusters were all correlated with secondary branch number and spikelet number (Figure 4 **cluster-phenotype-corr**).
-Cluster 5, which had the highest core L~2~FC in *O. sativa indica* and the highest correlations with secondary branch number and spikelet number, had an enrichment of *AP2/EREBP*-like genes (two-tailed hypergeometric test; *p*~adj~ == **x**).
+**HB cluster here**.
+Cluster 5, which had the highest core L~2~FC in *O. sativa indica* and the highest correlations with secondary branch number and spikelet number, had an enrichment of *AP2/EREBP*-like genes (hypergeometric test, *p*~adj~ == **x**; Table SX **clustered-genes**; Table SX **tf-hypergeom**).
 Most of the genes in cluster 5 have L~2~FCs close to zero in *O. sativa indica*, and negative L~2~FCs in the other accessions (Figure S8 **cluster-5-details**).
 This suggests that the expression of these genes decreases in SM in all accessions except *O. sativa indica*.
+To confirm this pattern, we used qPCR on all four stages of each accession for all *AP2/EREBP*-like genes in cluster 5 (Figure SX **fluidigm-ap2-hb**).
+**Fluidigm conclusion**.
 Delayed or lacking repression in *O. sativa indica* and correlation with spikelets and higher-order branch number could mean that genes in cluster 5 specify SM, and their delayed repression in *O. sativa indica* results in more branching in this species.
 The enrichment of *AP2/EREBP*-like genes in cluster 5 suggests that they are involved in this process.
-**Mention other clusters?**.
 
 To find TF genes associated with changes in panicle architecture during domestication, we tested the stage × accession interaction for African and Asian accessions separately at an FDR of 0.1 (Table S7 **DE-genes-interaction**).
 For Asian accessions (*O. rufipogon* and *O. sativa indica*), there was a significant interaction for 85 genes, including 12 *AP2/EREBP*-like genes.
 In African accessions, the stage × accession interaction was significant for 50 genes, including 8 *AP2/EREBP*-like genes (**check ap2 numbers**).
-*INDETERMINATE SPIKELET 1* (*IDS1*), which controls inflorescence architecture (**ref**), was DE in both comparisons, [**consistent with its importance in rice domestication (check if IDS1 paper mentions domestication)**].
-The other genes in these lists are candidate targets of artificial selection for changes in panicle architecture.
-Expression of the 10 genes that appear in both comparisons, including *IDS1* and the *AP2/EREBP*-like gene *ERF74*, may have evolved in parallel in the separate domestication of Asian and African rice.
+The genes in these lists are candidate targets of artificial selection for changes in panicle architecture.
+*INDETERMINATE SPIKELET 1* (*IDS1*), which controls inflorescence architecture [@chuckFloralMeristemInitiation2008; @leeTwoAP2Family2012], (**check** @chengINDETERMINATESPIKELET1Recruits2018), was DE in both comparisons.
+Expression of the 10 genes whose expression is dependent on the stage × accession interaction in both species, including *IDS1* and the *AP2/EREBP*-like gene *ERF74*, may have a parallel role in the separate domestication of Asian and African rice.
 
 ### *AP2/EREBP* mutants have defects in panicle branching
 
