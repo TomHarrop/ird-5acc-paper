@@ -18,6 +18,8 @@ This research was supported by Agropolis Foundation through the *Investissements
 
 ### Acknowledgments
 
+celine cardi & Hélène Vignes from Cirad ; Sophie Cherron & Harrold Chresting for plantCare ; Christine & Axel verdier for Bio-informatic support
+
 ### List of abbreviations
 
 BM, Branch meristem;
@@ -35,6 +37,7 @@ SBIL, Secondary branch internode length;
 SBL, Secondary branch length;
 SBN, Secondary branch number;
 SM, spikelet meristem;
+Sp, spikelet;
 SpN, Spikelet number;
 St, stamen;
 TBN, Tertiary branch number.
