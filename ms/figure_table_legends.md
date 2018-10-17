@@ -12,22 +12,22 @@ Principal component 5 (PC5) separates RNAseq samples by developmental stage, and
 The first four components explain 51.7% of variability, and separate RNAseq samples by species.
 
 **Figure 3 HB-AP2-heatmap**.
-AP2/EREBP and homeobox (HB) transcription factors change expression between BM and SM.
-**A** AP2/EREBP and HB genes are distributed at the extremes of genes ranked on PC5 (GSEA permutation *t*-test: *p*~adj~ == 0.004 for both [**citation for GSEA**]).
-For the heatmap, we used the 10% of genes that have the highest absolute loading on PC5 (shown in red in the enrichment plot).
-**B** Most AP2/EREBP genes that pass the cutoff are more highly expressed (**what's on the scale bar?**) in the BM.
-Three of the four AP2/EREBP genes that are more highly expressed in the SM belong to the AP2 subfamily.
+*AP2/EREBP*-like and homeobox (HB) transcription factors change expression between BM and SM.
+**A** *AP2/EREBP*-like and HB genes are distributed at the extremes of genes ranked on PC5 (*p*~adj~ = 0.004 for both, GSEA permutation *t*-test [**citation for GSEA**]).
+For the heatmap, we used the 10% of genes that have the highest absolute loading on PC5, shown in red in the enrichment plot.
+**B** Most *AP2/EREBP*-like genes that pass the cutoff are more highly expressed in the BM.
+Three of the four *AP2/EREBP*-like genes that are more highly expressed in the SM belong to the *AP2* subfamily.
 Genes that are more highly expressed in BM mainly belong to RAV, DREB and ERF subfamilies.
 **C** Most HB genes that pass the cutoff are more highly expressed in the SM.
 Ten out of twenty of these genes belong to the HD−ZIP IV subfamily.
 
-> TH: Otho, do you have stats for Figure 3C? Let me know if you want me to check for enrichment.
+> TH: Otho, can you explain what's on the scale bar in figure 3B and tell me which paper to cite for the permutation test? Do you have any stats for Figure 3C? I could do a hypergeometric test if you like.
 
 **Figure 4 cluster-phenotype-corr**.
 Genes with a high log~2~-fold change (L~2~FC) in *O. sativa indica* are correlated with increased production of primary branches (PBN), secondary branches (SBN) and spikelets (SpN).
 
 **Figure 5 panicle-mutants**.
-Mutants in three AP2/EREBP-like genes, *PLT8*, *ERF142* and *DLT*, have defects in panicle architecture compared to their background accessions.
+Mutants in three *AP2/EREBP*-like genes, *PLT8*, *ERF142* and *DLT*, have defects in panicle architecture compared to their background accessions.
 The *PLT8* mutant produces fewer primary branches and spikelets.
 The mutants of *ERF142* and *DLT* both produce fewer primary branches, secondary branches and spikelets.
 
@@ -86,8 +86,10 @@ qPCR confirms the behaviour of selected genes of cluster 4 and cluster 5.
 We have also measured gene expressio in two additional developmental stages.
 Stage 1 is a Rachis Meristem, Stage2 is a Branch Meristem, Stage 3 is a Spikelet Meristem, Stage 4 is a Developing Spikelet.
 
+> TH: Relabel to match stage abbreviations from results
+
 **Figure S11 lmd-paper-ap2**.
-Expression of AP2/EREBP-like genes in *O. sativa japonica* cv. Nipponbare meristems.
+Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems.
 Data from [@harropGeneExpressionProfiling2016].
 
 ## Supplementary tables
