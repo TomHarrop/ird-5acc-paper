@@ -69,10 +69,10 @@ p_img <- ggdraw() +
   draw_image("../data-raw/FigMeristemCollect-compr.tif")
 
 p_comb <- plot_grid(p_img, p,
-                    labels = "AUTO",
+                    labels = c("1.", "2."),
                     nrow = 2,
                     rel_heights = c(1, 2)) %>%
-  add_sub(str_wrap("A. Developmental stages of immature panicles
+  add_sub(str_wrap("1. Developmental stages of immature panicles
                    collected for expression analysis. 
                    Stage 1: rachis meristem;
                    Stage2: formation of primary branch meristems,
@@ -85,7 +85,7 @@ p_comb <- plot_grid(p_img, p,
                    ePbM, primary branch elongated;
                    Flm, floret meristem; St, stamen;
                    p, palea; l, lemma. 
-                   B. In our RNA-seq samples, five selected marker genes
+                   2. In our RNA-seq samples, five selected marker genes
                    behave as expected.
                    This plot represents the fluidigm qPCR expression values
                    for each RNAseq sample relative and samples from two additional
