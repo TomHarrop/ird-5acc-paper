@@ -10,37 +10,37 @@
 
 **Figure 5 panicle-mutants**. Mutants in three AP2/EREBP-like genes, *PLT8*, *ERF142* and *DLT*, have defects in panicle architecture compared to their background accessions. The *PLT8* mutant produces fewer primary branches and spikelets. The mutants of *ERF142* and *DLT* both produce fewer primary branches, secondary branches and spikelets.
 
-**Figure S? PanicleStructure**. Spread mature rice panicule.RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBintL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBintL: Secondary branch internode length; Sp : Spikelet.
-> **What is this figure?**
-
 ## Supplementary figures
 
-**Figure S1 correlation-pbn-spn**.
+**Figure S1 PanicleStructure**. Spread mature rice panicule.RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBintL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBintL: Secondary branch internode length; Sp : Spikelet.
+> **What is this figure?**
+
+**Figure S2 correlation-pbn-spn**.
 Correlation between the main panicle traits that contribute to panicle architecture diversity.
 Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number correlate more in cultivated species than in wild species.
 Primary and secondary branch numbers don't correlate, suggesting that they
 are controlled by different genetic mechanisms.
 > could you add the correlation value on each panel
 
-**Figure S2 phenotype-pca-all-pc**. Principal component analysis (PCA) of panicle phenotyping data showing components 1–4. PC1 accounts for 46.5% of variability and separates panicles from domesticated and wild accessions. The lower ordinates do not separate panicles by species.
+**Figure S3 phenotype-pca-all-pc**. Principal component analysis (PCA) of panicle phenotyping data showing components 1–4. PC1 accounts for 46.5% of variability and separates panicles from domesticated and wild accessions. The lower ordinates do not separate panicles by species.
 
-**Figure S3 phenotype-all-varieties**. The accessions used for RNAseq are consistent with species-wide patterns of panicle architecture. Scores on PC1 for the accessions chosen for RNAseq are shown in red. (**Describe what the boxplot shows. How many points are there for each accession?**)
-
-**Figure S4 qpcr-confirms-sampling**. **A** Developmental stages of immature panicles collected for expression analysis. Stage 1  : rachis meristem; Stage2 : formation of primary branch meristems, elongation of primary branch meristem and formation of axillary meristem; Stage3, spikelet meristem  and floret differentitaion; Stage 4, floral organ differenciation/development. M, axillary merisyem, Fl, flower; Sp, spikelet, RM, Rachis meristem; PbM, primary branch meristem; ePbM, primary branch elongated; Flm, floret meristem; St, stamen; p, palea; l, lemma. **B** Quantitative RT-PCR using meristem stage specific marker genes for validation of all stages among species. OsMADS1/LHS1 is used as a markers of Spikelet meristem differentiation. FZP is used as... LAX1....TAW .... osMADS14.....
-> Relabel the x-axis to match stage abbreviations from results
+**Figure S4 phenotype-all-varieties**. The accessions used for RNAseq are consistent with species-wide patterns of panicle architecture. Scores on PC1 for the accessions chosen for RNAseq are shown in red. (**Describe what the boxplot shows. How many points are there for each accession?**)
 
 **Figure S5 phenotyping-mpl**. Detailed phenotyping of five Oryza accessions. The three domesticated accessions produce more spikelets than their wild relatives. In comparison to *O. sativa japonica*, *O sativa indica* produces more secondary branches.
 
-**Figure S6 distance-heatmap**. Heatmap of pairwise distances between libraries.
+**Figure S6 qpcr-confirms-sampling**. **A** Developmental stages of immature panicles collected for expression analysis. Stage 1  : rachis meristem; Stage2 : formation of primary branch meristems, elongation of primary branch meristem and formation of axillary meristem; Stage3, spikelet meristem  and floret differentitaion; Stage 4, floral organ differenciation/development. M, axillary merisyem, Fl, flower; Sp, spikelet, RM, Rachis meristem; PbM, primary branch meristem; ePbM, primary branch elongated; Flm, floret meristem; St, stamen; p, palea; l, lemma. **B** Quantitative RT-PCR using meristem stage specific marker genes for validation of all stages among species. OsMADS1/LHS1 is used as a markers of Spikelet meristem differentiation. FZP is used as... LAX1....TAW .... osMADS14.....
+> Relabel the x-axis to match stage abbreviations from results
 
-**Figure S7 NAC-MADS-SPL-heatmap**. MADS and SBP genes are more highly expressed in the SM. NAC genes are more highly expressed in the BM.
+**Figure S7 distance-heatmap**. Heatmap of pairwise distances between libraries.
 
-**Figure S8 cluster-5-details**. Most genes in cluster 5 have negative L~2~FCs between BM and SM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* that are of smaller magnitude and closer to zero. This cluster has an enrichment of AP2/EREBP genes.
+**Figure S8 NAC-MADS-SPL-heatmap**. MADS and SBP genes are more highly expressed in the SM. NAC genes are more highly expressed in the BM.
 
-**Figure S9 lmd-paper-ap2**. Expression of AP2/EREBP-like genes in *O. sativa japonica* cv. Nipponbare meristems. Data from [@harropGeneExpressionProfiling2016].
+**Figure S9 cluster-5-details**. Most genes in cluster 5 have negative L~2~FCs between BM and SM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* that are of smaller magnitude and closer to zero. This cluster has an enrichment of AP2/EREBP genes.
 
-**Figure SX fluidigm-ap2-hb**. qPCR confirms the behaviour of selected genes of cluster 4 and cluster 5. 
+**Figure S10 fluidigm-ap2-hb**. qPCR confirms the behaviour of selected genes of cluster 4 and cluster 5. 
 We have also measured gene expressio in two additional developmental stages. Stage 1 is a Rachis Meristem, Stage2 is a Branch Meristem, Stage 3 is a Spikelet Meristem, Stage 4 is a Developing Spikelet. 
+
+**Figure S11 lmd-paper-ap2**. Expression of AP2/EREBP-like genes in *O. sativa japonica* cv. Nipponbare meristems. Data from [@harropGeneExpressionProfiling2016].
 
 ## Supplementary tables
 
@@ -56,7 +56,10 @@ We have also measured gene expressio in two additional developmental stages. Sta
 
 **Table S6 DE-genes-stages**. Genes diffentially expressed between stages across all species.
 
-**Table S7 DE-genes-interaction**. stage × accession DE genes
+**Table S7 PC5-TF-enrichment-gsea** Transcription factor families that are enriched along PC5.
 
-**Table S8 PC5-TF-enrichment-gsea.csv** Transcription factor families that are enriched along PC5.
+**Table S8 clustered-genes**. Clustered genes.
+
+**Table S9 DE-genes-interaction**. stage × accession DE genes
+
  
