@@ -8,6 +8,8 @@ source("helper-functions.R")
 dds <- readRDS("../data-raw/dds.Rds")
 filter_abs_pc <- .00185
 
+set.seed(1)
+
 
 # Load PCA and TF families ------------------------------------------------
 
@@ -91,7 +93,6 @@ write_family("SBP")
     mutate(symbol = oryzr::LocToGeneName(locus_id) %$%
              symbols) %>%
     write_csv("../fix_gene_names/MADS.csv")
-}
 
 # Plot Enrichement --------------------------------------------------------
 
@@ -204,9 +205,10 @@ heat_sbp <- plot_heatmap("SBP", cutree_rows = 1)
 
 # Save plots --------------------------------------------------------------
 
-pdf("../fig/suppl-fig-04-TFs-in-PCA-NACS-MADS-SBP.pdf",
-    height = 5,
-    width = 12)
+pdf("../fig/suppl-fig-NAC-MADS-SPL-heatmap.pdf",
+    height = 6.2,
+    width = 11,
+    paper = "a4r")
 heats <- cowplot::plot_grid(heat_mads[[4]],
                             heat_nac[[4]],
                             heat_sbp[[4]],
@@ -218,9 +220,18 @@ cowplot::plot_grid(p_enr, heats,
                    labels = c("A", "")) %>%
   cowplot::add_sub(., str_wrap("While MADS and SBP genes are expressed 
                                preferentially in the SM, NAC are more
-                               expressed in the BM.",
+                               expressed in the BM.
+                               A: Enrichment is estimated with the
+                               the GSEA method, which returns a permutation based
+                               adjusted pvalue of 0.0037 for MADS box genes,
+                               of 0.0.0055 for NAC genes and of 0.0245 for SBP genes.
+                               B-D: For the heatmap, we used the 10% of genes that
+                               have the highest absolute loading on PC5 (shown
+                               in red in the enrichment plot).
+                               Heatmaps display normalized RNAseq counts
+                               which have been z-score scaled independently for each species",
                                width = 80)) %>%
-  cowplot::ggdraw()
+  cowplot::ggdraw() %>% print()
 
 dev.off()
 
