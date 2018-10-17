@@ -39,6 +39,9 @@ are controlled by different genetic mechanisms.
 
 **Figure S9 lmd-paper-ap2**. Expression of AP2/EREBP-like genes in *O. sativa japonica* cv. Nipponbare meristems. Data from [@harropGeneExpressionProfiling2016].
 
+**Figure SX fluidigm-ap2-hb**. qPCR confirms the behaviour of selected genes of cluster 4 and cluster 5. 
+We have also measured gene expressio in two additional developmental stages. Stage 1 is a Rachis Meristem, Stage2 is a Branch Meristem, Stage 3 is a Spikelet Meristem, Stage 4 is a Developing Spikelet. 
+
 ## Supplementary tables
 
 **Table S1 Plantinfo**. List of rice accessions phenotyped for panicle diversity
