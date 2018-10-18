@@ -3,15 +3,15 @@
 **Figure 1 phenotype-pca**.
 Panicle complexity of 93 rice accessions.
 **A** We measured phenotypes of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima* with `P-TRAP` [@al-tamPTRAPPanicleTrait2013].
-The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**E**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 ( **F**).
+The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**B**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 (**C**).
 RL: Rachis length; PBL: Primary branch length; PBIL: Primary branch internode length; SBL: Secondary branch length; SBIL: Secondary branch internode length; TBN: Tertiary branch number; PL: Panicle length.
 
 **Figure 2 transcriptome-pca**.
-Principal comonents analysis of transformed read counts for each library.
+Principal components analysis of transformed read counts for each library.
 Principal component 5 (PC5) separates RNAseq samples by developmental stage, and explains 5.4% of total variability.
 The first four components explain 51.7% of variability, and separate RNAseq samples by species.
 
->TH to reformat: Change the labels on the x-axis to match the stages in the paper. Remove the species codes from the x-axis labels & use full species names in the facet labels. Remove the guide for the bar colour. Use brackets rather than ~ to separate PC number from percent variability.
+>TH. Reformat: Change the labels on the x-axis to match the stages in the paper. Remove the species codes from the x-axis labels & use full species names in the facet labels. Remove the guide for the bar colour. Use brackets rather than ~ to separate PC number from percent variability.
 
 **Figure 3 HB-AP2-heatmap**.
 *AP2/EREBP*-like and homeobox (HB) transcription factors change expression between BM and SM.
@@ -26,7 +26,7 @@ Ten out of twenty of these genes belong to the HD−ZIP IV subfamily.
 > TH: Otho, can you explain what's on the scale bar in figure 3B? Do we need a citation for the permutation test? Do you have any stats for Figure 3C? I could do a hypergeometric test if you like.
 
 **Figure 4 cluster-phenotype-corr**.
-Gene expression clusters all correlate with number of secondary branches (SBN) and spikelets (SpN).
+Gene expression clusters correlate with number of secondary branches (SBN) and spikelets (SpN).
 Clusters with a high log~2~-fold change (L~2~FC) in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters with a low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
 The genes in clusters 1 and 2 may be related to domestication, because L~2~FCs in those clusters are higher or lower in domesticated accessions, respectively, and both clusters correlate with SpN.
 Six of the 17 genes in Cluster 5, which has the highest L~2~FC in *O. sativa indica* and the highest correlation with SBN, are *AP2/EREBP*-like genes (*p*~adj~ = 7.6 × 10^-3^, hypergeometric test; Table S8 **clustered-genes**).
@@ -35,14 +35,15 @@ Conversely, nine of the 31 genes in Cluster 4, which has the lowest L~2~FC in *O
 > TH: I'm having difficulty explaining cluster 4, because of the big difference between indica and glaberrima. The L~2~FCs of these genes are all around zero in indica, and there is a strong negative correlation with SBN. So we can say that they might specify SM / promote determinacy, but are being switched on later in indica. However, they all have positive L~2~FC in glaberrima. Can anyone propose a functional explanation for what these genes do?
 
 **Figure 5 panicle-mutants**.
-Mutants in three *AP2/EREBP*-like genes, *PLT8*, *ERF142* and *DLT*, have defects in panicle architecture compared to their background accessions.
-The *PLT8* mutant produces fewer primary branches and spikelets.
-The mutants of *ERF142* and *DLT* both produce fewer primary branches, secondary branches and spikelets.
+Mutants in two *AP2/EREBP*-like genes, *PLT8* and *ERF142*, have defects in panicle architecture compared to their background accessions.
+The *PLT8* mutant produces fewer primary branches and spikelets, and the *ERF142* mutant produces fewer primary branches, secondary branches and spikelets.
+
+> TH: Otho, can you use the official gene names for the figures? *PLT8* and *ERF142*.
 
 ## Supplementary figures
 
 **Figure S1 PanicleStructure**.
-Spread mature rice panicule.RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBintL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBintL: Secondary branch internode length; Sp : Spikelet.
+Spread mature rice panicle. RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBintL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBintL: Secondary branch internode length; Sp : Spikelet.
 
 **Figure S2 correlation-pbn-spn**.
 Correlation between the main panicle traits that contribute to panicle architecture diversity.
@@ -61,7 +62,7 @@ The lower ordinates do not separate panicles by species.
 The accessions used for RNAseq are consistent with species-wide patterns of panicle architecture.
 Scores on PC1 for the accessions chosen for RNAseq are shown in red.
 
-> TH: Describe what the boxplot shows. How many points are there for each accession?
+> TH: Describe what the boxplot shows and the number of points for each accession?
 
 **Figure S5 phenotyping-mpl**.
 Detailed phenotyping of five Oryza accessions.
@@ -99,8 +100,7 @@ Stage 1 is a Rachis Meristem, Stage2 is a Branch Meristem, Stage 3 is a Spikelet
 > TH: I'm not sure if the qPCR helps for cluster 4. Most of the time, indica and rufipogon look the same (to me). 
 
 **Figure S11 lmd-paper-ap2**.
-Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems.
-Data from [@harropGeneExpressionProfiling2016].
+Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
 
 ## Supplementary tables
 
@@ -108,13 +108,13 @@ Data from [@harropGeneExpressionProfiling2016].
 Rice accessions phenotyped for panicle diversity.
 
 **Table S2 supp-table-PrimerList**.
-Sequences of pirmers used.
+Sequences of primers used.
 
 **Table S3 PanicleTraitsPhenotyping**.
-Panicle phenotyping data from `P-TRAP` analysis measured in 93 accessions from wild and domesticated Asian and African rice species.
+Detailed quantification of panicle traits in 93 accessions from wild and domesticated Asian and African rice species.
 
 **Table S4 PanicleTraitsPhenotypingPlantsSequenced**.
-Panicle traits data from `P-TRAP` analysis of rice accessions used for sequencing analysis.
+Detailed quantification of panicle traits from rice accessions used for sequencing analysis.
 
 **Table S5 mapping-statistics**.
 Read and mapping statistics for all RNAseq samples.
