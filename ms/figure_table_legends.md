@@ -26,7 +26,13 @@ Ten out of twenty of these genes belong to the HD−ZIP IV subfamily.
 > TH: Otho, can you explain what's on the scale bar in figure 3B? Do we need a citation for the permutation test? Do you have any stats for Figure 3C? I could do a hypergeometric test if you like.
 
 **Figure 4 cluster-phenotype-corr**.
-Genes with a high log~2~-fold change (L~2~FC) in *O. sativa indica* are correlated with increased production of primary branches (PBN), secondary branches (SBN) and spikelets (SpN).
+Gene expression clusters all correlate with number of secondary branches (SBN) and spikelets (SpN).
+Clusters with a high log~2~-fold change (L~2~FC) in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters with a low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
+The genes in clusters 1 and 2 may be related to domestication, because L~2~FCs in those clusters are higher or lower in domesticated accessions, respectively, and both clusters correlate with SpN.
+Six of the 17 genes in Cluster 5, which has the highest L~2~FC in *O. sativa indica* and the highest correlation with SBN, are *AP2/EREBP*-like genes (*p*~adj~ = 7.6 × 10^-3^, hypergeometric test; Table S8 **clustered-genes**).
+Conversely, nine of the 31 genes in Cluster 4, which has the lowest L~2~FC in *O. sativa indica* and the strongest negative correlation with SBN, are homeobox genes (*p*~adj~ = 2.17 x 10^-5^, hypergeometric test; Table S8 **clustered-genes**).
+
+> TH: I'm having difficulty explaining cluster 4, because of the big difference between indica and glaberrima. The L~2~FCs of these genes are all around zero in indica, and there is a strong negative correlation with SBN. So we can say that they might specify SM / promote determinacy, but are being switched on later in indica. However, they all have positive L~2~FC in glaberrima. Can anyone propose a functional explanation for what these genes do?
 
 **Figure 5 panicle-mutants**.
 Mutants in three *AP2/EREBP*-like genes, *PLT8*, *ERF142* and *DLT*, have defects in panicle architecture compared to their background accessions.
@@ -88,7 +94,9 @@ qPCR confirms the behaviour of selected genes of cluster 4 and cluster 5.
 We have also measured gene expressio in two additional developmental stages.
 Stage 1 is a Rachis Meristem, Stage2 is a Branch Meristem, Stage 3 is a Spikelet Meristem, Stage 4 is a Developing Spikelet.
 
-> TH: Relabel to match stage abbreviations from results
+> TH: Relabel to match stage abbreviations from results, and remove japonica.
+> 
+> TH: I'm not sure if the qPCR helps for cluster 4. Most of the time, indica and rufipogon look the same (to me). 
 
 **Figure S11 lmd-paper-ap2**.
 Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems.

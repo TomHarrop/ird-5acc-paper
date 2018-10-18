@@ -45,15 +45,18 @@ MADS, NAC and SBP genes are also enriched in PC5 (Figure S8 **NAC-MADS-SPL-heatm
 
 Because of the prominence of transcription factor (TF) genes and *AP2/EREBP*-like genes in PC5 and in DE genes between stages (Figure 3 **HB-AP2-heatmap**; Table S6 **DE-genes-stages**), we used soft clustering of scaled log~2~-fold change values (L~2~FCs) between BM and SM to find common patterns of expression of the subset of annotated TF genes that were expressed in our RNAseq dataset.
 We recovered six clusters.
-Three clusters contained genes with the highest L~2~FC in *O. sativa indica*. 
-These three clusters were all correlated with secondary branch number and spikelet number (Figure 4 **cluster-phenotype-corr**).
-**HB cluster here**.
-Cluster 5, which had the highest core L~2~FC in *O. sativa indica* and the highest correlations with secondary branch number and spikelet number, had an enrichment of *AP2/EREBP*-like genes (hypergeometric test, *p*~adj~ == **x**; Table S8 **clustered-genes**).
+Three clusters had low L~2~FCs in *O. sativa indica* and a negative correlation with PBN, SBN and SpN.
+The genes in these clusters may [**promote SM activity**/**determinate meristem state**], and their lack of induction in *O. sativa indica* SM samples could result in more branching activity.
+Cluster 4 had the lowest L~2~FC in *O. sativa indica*, and the strongest negative correlation with SBN, had an enrichment of HB genes (9 genes; *p*~adj~ = 2.17 x 10^-5^).
+Cluster 4 also contains three *AP2/EREBP*-like genes
+The other three clusters contained genes with the highest L~2~FC in *O. sativa indica* and had a positive correlation with secondary branch number and spikelet number (Figure 4 **cluster-phenotype-corr**).
+These genes may promote [**axillary meristem activity**/**indeterminate meristem state**]. 
+Cluster 5, which had the highest core L~2~FC in *O. sativa indica* and the highest correlations with secondary branch number and spikelet number, had an enrichment of *AP2/EREBP*-like genes (6 genes; *p*~adj~ = 7.6 × 10^-3^, hypergeometric test; Table S8 **clustered-genes**).
 Most of the genes in cluster 5 have L~2~FCs close to zero in *O. sativa indica*, and negative L~2~FCs in the other accessions (Figure S9 **cluster-5-details**).
 This suggests that the expression of these genes decreases in SM in all accessions except *O. sativa indica*.
-To confirm this pattern, we used qPCR on all four stages of each accession for all *AP2/EREBP*-like genes in cluster 5 (Figure S10 **fluidigm-ap2-hb**).
-**Fluidigm conclusion**.
-Delayed or lacking repression in *O. sativa indica* and correlation with spikelets and higher-order branch number could mean that genes in cluster 5 specify SM, and their delayed repression in *O. sativa indica* results in more branching in this species.
+To confirm these patterns, we used qPCR on all four stages of each accession for all *AP2/EREBP*-like genes in clusters 4 and 5, and all HB genes in cluster 4 (Figure S10 **fluidigm-ap2-hb**).
+**Interpret fluidigm results**.
+Lack of repression in *O. sativa indica* and correlation with spikelets and higher-order branch number could mean that genes in cluster 5 specify SM, and their delayed repression in *O. sativa indica* results in more branching in this species.
 The enrichment of *AP2/EREBP*-like genes in cluster 5 suggests that they are involved in this process.
 
 To find TF genes associated with changes in panicle architecture during domestication, we tested the stage × accession interaction for African and Asian accessions separately at an FDR of 0.1 (Table S9 **DE-genes-interaction**).
@@ -62,6 +65,7 @@ In African accessions, the stage × accession interaction was significant for 50
 The genes in these lists are candidate targets of artificial selection for changes in panicle architecture.
 *INDETERMINATE SPIKELET 1* (*IDS1*), which controls inflorescence architecture [@chuckFloralMeristemInitiation2008; @leeTwoAP2Family2012], (**check** @chengINDETERMINATESPIKELET1Recruits2018), was DE in both comparisons.
 Expression of the 10 genes whose expression is dependent on the stage × accession interaction in both species, including *IDS1* and the *AP2/EREBP*-like gene *ERF74*, may have a parallel role in the separate domestication of Asian and African rice.
+**more about HB genes**.
 
 ### *AP2/EREBP* mutants have defects in panicle branching
 
