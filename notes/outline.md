@@ -88,6 +88,8 @@ Global to TF enrichment : supp data
 
 4. What does the AP2 story us about the evolution/development of branching architecture?
 
+> some graphical model of the [parallel] changes in panicle architecture during domestication?
+
 ## Notes
 
 - What about the ARF genes?

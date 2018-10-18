@@ -41,3 +41,5 @@ Sp, spikelet;
 SpN, Spikelet number;
 St, stamen;
 TBN, Tertiary branch number.
+
+> TH: Question - is it normal to include abbreviations that we never mention in the text? e.g. lemma, palea and stamen only appear in figures and the abbreviation will be explained in the legend. 
