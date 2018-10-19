@@ -2,7 +2,7 @@
 
 **Figure 1 phenotype-pca**.
 Panicle complexity of 93 rice accessions.
-**A** We measured phenotypes of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima* with `P-TRAP` [@al-tamPTRAPPanicleTrait2013].
+**A** We measured traits of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima*.
 The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**B**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 (**C**).
 RL: Rachis length; PBL: Primary branch length; PBIL: Primary branch internode length; SBL: Secondary branch length; SBIL: Secondary branch internode length; TBN: Tertiary branch number; PL: Panicle length.
 
@@ -124,7 +124,7 @@ Detailed quantification of panicle traits from rice accessions used for sequenci
 Read and mapping statistics for all RNAseq samples.
 
 **Table S6 DE-genes-stages**.
-Genes diffentially expressed between stages across all species.
+Differential expression test results between stages across all species.
 
 **Table S7 PC5-TF-enrichment-gsea**.
 Transcription factor families that are enriched along PC5.
@@ -133,4 +133,4 @@ Transcription factor families that are enriched along PC5.
 Clustered genes.
 
 **Table S9 DE-genes-interaction**.
-stage × accession DE genes.
+Differential expression test results for the stage × accession interaction in Asian and African accessions.
