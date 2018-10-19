@@ -80,7 +80,9 @@ FZP is used as... LAX1....TAW .... osMADS14.....
 > TH: Relabel the x-axis to match stage abbreviations from results
 
 **Figure S7 distance-heatmap**.
-Heatmap of pairwise distances between libraries.
+Heatmap of pairwise distances between RNAseq samples. Distances cluster by continent, species then stage, in that order. ob, *O. barthii*; og, *O. glaberrima*; osj, *O. sativa japonica*; osi, *O. sativa indica*; or, *O. rufipogon*; PBM, branch meristem; SM, spikelet meristem
+
+> TH: (fixme) Relabel axes to make them human-readable and to match abbreviations from results
 
 **Figure S8 NAC-MADS-SPL-heatmap**.
 MADS and SBP genes are more highly expressed in the SM.
@@ -100,7 +102,9 @@ Stage 1 is a Rachis Meristem, Stage2 is a Branch Meristem, Stage 3 is a Spikelet
 > TH: I'm not sure if the qPCR helps for cluster 4. Most of the time, indica and rufipogon look the same (to me). 
 
 **Figure S11 lmd-paper-ap2**.
-Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
+Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016]. Both genes are expressed at all stages. *PLT8* expression peaks in RM. RM, rachis meristem; PBM, primary branch meristem; ePBM/AM, extending primary branch meristem and axillary meristem; SM, spikelet meristem.
+
+> TH: (fixme) make this look nicer
 
 ## Supplementary tables
 
