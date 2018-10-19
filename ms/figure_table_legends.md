@@ -2,7 +2,7 @@
 
 **Figure 1 phenotype-pca**.
 Panicle complexity of 93 rice accessions.
-**A** We measured phenotypes of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima* with `P-TRAP` [@al-tamPTRAPPanicleTrait2013].
+**A** We measured traits of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima*.
 The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**B**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 (**C**).
 RL: Rachis length; PBL: Primary branch length; PBIL: Primary branch internode length; SBL: Secondary branch length; SBIL: Secondary branch internode length; TBN: Tertiary branch number; PL: Panicle length.
 
@@ -80,7 +80,9 @@ FZP is used as... LAX1....TAW .... osMADS14.....
 > TH: Relabel the x-axis to match stage abbreviations from results
 
 **Figure S7 distance-heatmap**.
-Heatmap of pairwise distances between libraries.
+Heatmap of pairwise distances between RNAseq samples. Distances cluster by continent, species then stage, in that order. ob, *O. barthii*; og, *O. glaberrima*; osj, *O. sativa japonica*; osi, *O. sativa indica*; or, *O. rufipogon*; PBM, branch meristem; SM, spikelet meristem
+
+> TH: (fixme) Relabel axes to make them human-readable and to match abbreviations from results
 
 **Figure S8 NAC-MADS-SPL-heatmap**.
 MADS and SBP genes are more highly expressed in the SM.
@@ -100,7 +102,9 @@ Stage 1 is a Rachis Meristem, Stage2 is a Branch Meristem, Stage 3 is a Spikelet
 > TH: I'm not sure if the qPCR helps for cluster 4. Most of the time, indica and rufipogon look the same (to me). 
 
 **Figure S11 lmd-paper-ap2**.
-Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
+Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016]. Both genes are expressed at all stages. *PLT8* expression peaks in RM. RM, rachis meristem; PBM, primary branch meristem; ePBM/AM, extending primary branch meristem and axillary meristem; SM, spikelet meristem.
+
+> TH: (fixme) make this look nicer
 
 ## Supplementary tables
 
@@ -120,7 +124,7 @@ Detailed quantification of panicle traits from rice accessions used for sequenci
 Read and mapping statistics for all RNAseq samples.
 
 **Table S6 DE-genes-stages**.
-Genes diffentially expressed between stages across all species.
+Differential expression test results between stages across all species.
 
 **Table S7 PC5-TF-enrichment-gsea**.
 Transcription factor families that are enriched along PC5.
@@ -129,4 +133,4 @@ Transcription factor families that are enriched along PC5.
 Clustered genes.
 
 **Table S9 DE-genes-interaction**.
-stage × accession DE genes.
+Differential expression test results for the stage × accession interaction in Asian and African accessions.
