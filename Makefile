@@ -38,12 +38,13 @@ DOCX_EXE = pandoc --reference-doc=template/reference.docx \
 
 manuscript: docx/manuscript.docx 
 
-docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/results.md ms/discussion.md ms/methods.md ms/figure_table_legends.md bib/references.bib template/reference.docx template/pnas.csl template/ref_loc.md
+docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/results.md ms/discussion.md ms/methods.md ms/figure_table_legends.md bib/references.bib template/reference.docx template/new-phytologist.csl template/ref_loc.md
 	pandoc --reference-doc=template/reference.docx \
+		--filter pandoc-citeproc \
 		--from=markdown \
 		--to=docx \
 		--bibliography=bib/references.bib \
-		--csl template/pnas.csl \
+		--csl template/new-phytologist.csl \
 		-o docx/manuscript.docx \
 		ms/front_matter.md \
 		ms/abstract.md \
