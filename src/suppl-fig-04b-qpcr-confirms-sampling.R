@@ -86,7 +86,7 @@ p_comb <- plot_grid(p_img, p,
                    Flm, floret meristem; St, stamen;
                    p, palea; l, lemma. 
                    2. In our RNA-seq samples, five selected marker genes
-                   behave as expected.
+                   are expressed as expected.
                    This plot represents the fluidigm qPCR expression values
                    for each RNAseq sample relative and samples from two additional
                    developmental stages (In the RNAseq we have sequenced the samples

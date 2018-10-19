@@ -223,7 +223,8 @@ cowplot::plot_grid(p_enr, heats,
                    nrow = 2,
                    rel_heights = c(2,3),
                    labels = c("A", "")) %>%
-  cowplot::add_sub(., str_wrap("While MADS and SBP genes are expressed 
+  cowplot::add_sub(., str_wrap("RNA-seq expression of genes from selected transcription families.
+                               While MADS and SBP genes are expressed 
                                preferentially in the SM, NAC are more
                                expressed in the BM.
                                A: Enrichment is estimated with the
@@ -234,7 +235,7 @@ cowplot::plot_grid(p_enr, heats,
                                have the highest absolute loading on PC5 (shown
                                in red in the enrichment plot).
                                Heatmaps display normalized RNAseq counts
-                               which have been z-score scaled independently for each species",
+                               which have been z-score scaled independently for each species.",
                                width = 80)) %>%
   cowplot::ggdraw() %>% print()
 
