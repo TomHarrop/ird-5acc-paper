@@ -137,8 +137,8 @@ p_enr <- ggplot(pcx_tf %>%
   scale_color_manual(values = c("black", "red")) +
   scale_x_continuous(limits = c(1, max(pcx_tf$rank_pc5)),
                      breaks = c(1, 5000, 10000, 15000, 20000, max(pcx_tf$rank_pc5)),
-                     labels = c("1\n [BM]", "5000", "10000", "15000", "20000",
-                                paste0(max(pcx_tf$rank_pc5), "\n [SM]"))) +
+                     labels = c("1\n [IM]", "5000", "10000", "15000", "20000",
+                                paste0(max(pcx_tf$rank_pc5), "\n [DM]"))) +
   facet_grid(. ~ facet) +
   theme_bw() +
   labs(x = "Ranks of genes on PC5",
@@ -164,9 +164,11 @@ plot_heatmap <- function(family = "AP2-EREBP",
     summarise(to_plot = median(!!norm)) %>%
     ungroup() %>%
     mutate(stage = as.character(stage)) %>%
-    mutate(stage = case_when(stage == "PBM" ~ "BM",
-                             TRUE ~ stage)) %>%
-    mutate(stage_species = paste(stage, species, sep = "_")) %>%
+    mutate(stage = case_when(stage == "PBM" ~ "1 IM",
+                             stage == "SM" ~ "2 DM",
+                             TRUE ~ stage) %>%
+             as_factor()) %>%
+    mutate(stage_species = paste(stage, species, sep = " ")) %>%
     select(locus_id, stage_species, to_plot) %>%
     spread(key = stage_species, value = to_plot) %>%
     left_join(subfams) %>% #### ADD SUBFAMILY!
@@ -199,7 +201,9 @@ plot_heatmap <- function(family = "AP2-EREBP",
            cellheight = 5,
            main = family,
            fontsize_row = 5,
-           annotation_row = to_heat[, "subfamily", drop = F]) #### ADD SUBFAMILY!
+           annotation_row = to_heat[, "subfamily", drop = F],
+           annotation_legend = T,
+           legend = T) #### ADD SUBFAMILY!
   
   return(p)
 }
@@ -221,34 +225,33 @@ heat_hb <- plot_heatmap("Homeobox")
 # Save plots --------------------------------------------------------------
 
 pdf("../fig/fig-HB-AP2-heatmap.pdf",
-    height = 9,
+    height = 6.5,
     width = 10)
 heats <- cowplot::plot_grid(heat_ap2[[4]],
-                            heat_hb[[4]],
-                            labels = c("B", "C"))
+                            heat_hb[[4]])
 p <- cowplot::plot_grid(p_enr, heats,
                         nrow = 2,
                         rel_heights = c(2,5),
-                        labels = c("A", "")) %>%
-  cowplot::add_sub(., str_wrap("AP2/EREBP and homeobox (HB) transcription factors
-                               change expression between BM and SM. A. AP2/EREBP
-                               and HB genes are distributed at the extremes of
-                               genes ranked on PC5 (Enrichment is estimated with the
-                               the GSEA method, which returns a permutation based
-                               adjusted pvalue of respectively 0.0037 and 0.0044).
-                               For the heatmap, we used the 10% of genes that
-                               have the highest absolute loading on PC5 (shown
-                               in red in the enrichment plot). B. Most AP2/EREBP
-                               genes that pass the cutoff are more highly expressed
-                               in the BM. Three of the four
-                               AP2/EREBP genes that are more highly expressed in the
-                               SM belong to the AP2 subfamily. Genes that are more highly
-                               expressed in BM mainly belong to RAV, DREB and ERF subfamilies. C. 
-                               Most HB genes that pass the cutoff are more highly expressed in
-                               the SM. May of those genes belong to the HD-ZIP IV and the ZF-HD
-                               subfamilies. Heatmaps displays normalized RNAseq counts
-                               which have been z-score scaled independently for each species",
-                               width = 80)) %>%
+                        labels = c("A", "B")) %>%
+  # cowplot::add_sub(., str_wrap("AP2/EREBP and homeobox (HB) transcription factors
+  #                              change expression between BM and SM. A. AP2/EREBP
+  #                              and HB genes are distributed at the extremes of
+  #                              genes ranked on PC5 (Enrichment is estimated with the
+  #                              the GSEA method, which returns a permutation based
+  #                              adjusted pvalue of respectively 0.0037 and 0.0044).
+  #                              For the heatmap, we used the 10% of genes that
+  #                              have the highest absolute loading on PC5 (shown
+  #                              in red in the enrichment plot). B. Most AP2/EREBP
+  #                              genes that pass the cutoff are more highly expressed
+  #                              in the BM. Three of the four
+  #                              AP2/EREBP genes that are more highly expressed in the
+  #                              SM belong to the AP2 subfamily. Genes that are more highly
+  #                              expressed in BM mainly belong to RAV, DREB and ERF subfamilies. C. 
+  #                              Most HB genes that pass the cutoff are more highly expressed in
+  #                              the SM. May of those genes belong to the HD-ZIP IV and the ZF-HD
+  #                              subfamilies. Heatmaps displays normalized RNAseq counts
+  #                              which have been z-score scaled independently for each species",
+  #                              width = 80)) %>%
   cowplot::ggdraw()
 
 print(p)
