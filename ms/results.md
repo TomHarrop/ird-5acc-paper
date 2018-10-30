@@ -4,44 +4,86 @@ To reveal gene expression patterns associated with diversity of inflorescence ar
 
 ### Parallel changes in panicle architecture in domesticated accessions
 
-To measure the diversity of panicle architecture, we phenotyped 93 accessions of wild Asian rice (*Oryza rufipogon*), domesticated Asian rice (*Oryza sativa*), wild African rice (*Oryza barthii*) and domesticated African rice (*Oryza glaberrima*), using `P-TRAP` for automated measurement of traits [Figure 1A **phenotype-pca**; Table S3 **PanicleTraitsPhenotyping**; @al-tamPTRAPPanicleTrait2013].
-There was a stronger correlation between secondary branch number and spikelet number in the domesticated accessions than in the wild accessions (Figure S2 **correlation-pbn-spn**).
+To measure the diversity of panicle architecture, we phenotyped 91 accessions of wild Asian rice (*Oryza rufipogon*), domesticated Asian rice (*Oryza sativa*), wild African rice (*Oryza barthii*) and domesticated African rice (*Oryza glaberrima*), using `P-TRAP` image analysis software for automated measurement of traits [Figure 1A **phenotype-pca**; Figure S1 **PanicleStructure**; Table S3 **PanicleTraitsPhenotyping**; @al-tamPTRAPPanicleTrait2013].
 The first principal component (PC1) in the phenotyping data accounts for 46.5% of variability.
-PC1 separates domesticated and wild accessions, but not Asian and African accessions (Figure 1E **phenotype-pca**).
-The sum of contributions of the top four components accounted for more than 87% of the total variance, but components other than PC1 do not separate panicles from different accessions (Figure S3 **phenotype-pca-all-pc**), and PC1 is the only component that splits the accessions by domestication status.
-Spikelet number, secondary branch number and primary branch number have the highest loadings on PC1.
-This indicates that these phenotypes, which are all related to axillary meristem formation and fate transition, are the main differences between panicles from wild and domesticated accessions.
+The sum of contributions of the top four components accounted for more than 87% of the total variance, and components other than PC1 do not separate panicles from different accessions (Figure S3 **phenotype-pca-all-pc**).
+PC1 separates domesticated and wild accessions, but not Asian and African accessions.
+PC1 is the only component that splits the accessions by domestication status, and spikelet number, secondary branch number and primary branch number have the highest loadings on PC1 (Figure 1B **phenotype-pca**).
+For all species, spikelet number correlates more with secondary branch number than it does with primary branch number.
+Primary branch number correlates with spikelet number more in wild than domesticated species, but this correlation is weaker in Asian species than in African species.
+Primary and secondary branch number do not correlate (**what's the cutoff for this?**), suggesting they are controlled by different genetic mechanisms (Figure S2 **correlation-pbn-spn**).
+The phenotypic analysis indicates similar changes in panicle architecture between wild and domesticated accessions in the independent African and Asian domestication processes.
+Spikelet number, secondary branch number and primary branch number are the main contributors to differences in panicle architecture, and these phenotypes are all related to axillary meristem formation and fate transition.
+These differences may be the result of parallel, artificial selection on panicle architecture (**in discussion**?).
+
+> TH: I'm wondering if we should add the correlation plot to figure 1, since we are relying on it a lot in this paragraph?
 
 ### Measurement of gene expression in developing panicles
 
-To investigate gene expression differences underlying variation in panicle architecture, we chose a single accession for each of *O. rufipogon* (W1654), *O. sativa japonica* (Nipponbare), *O. sativa indica* (IR64), *O. barthii* (B88) and *O. glaberrima* (Tog5681) for RNA sequencing (RNAseq).
-Based on the extensive phenotyping described above, the chosen accessions are consistent with species-wide patterns of panicle architecture (Figure S4 **phenotype-all-varieties**), except for *O. sativa japonica* cv. Nipponbare, which we included as the reference accession for *O. sativa japonica*.
-The three domesticated accessions produce more spikelets than their wild relatives (Figure S5 **phenotyping-mpl**; Table S4 **PanicleTraitsPhenotypingPlantsSequenced**).
+We investigated gene expression differences underlying diversity of panicle architecture and differences related to the Asian and African domestication processes via RNA sequencing (RNAseq).
+We used a single accession each of domesticated Asian rice (*O sativa indica* IR64) and its wild relative (*O. rufipogon* W1654), and domesticated African rice (*O. glaberrima* Tog5681) and its wild relative (*O. barthii* B88).
+We also included *O. sativa japonica* cv. Nipponbare as the genomic reference accession for Asian rice.
+Based on the extensive phenotyping described above, the chosen accessions are consistent with species-wide patterns of panicle architecture (Figure S4 **phenotype-all-varieties**).
+To confirm the phenotypes of the accessions used for this analysis, we repeated panicle phenotyping for these accessions in **different/consistent** conditions (**to discuss: why did we do this? to control for different environments? to make sure any differences in architecture were genetic?**).
+The three domesticated accessions produce more spikelets and secondary branches than their wild relatives (Figure S5 **phenotyping-mpl**; Table S4 **PanicleTraitsPhenotypingPlantsSequenced**).
+The domesticated accessions have a similar number of primary branches, but Asian domesticated species have more secondary branches and spikelets than domesticated African accessions.
 
-To measure whole-transcriptome gene expression in these accessions, we collected immature panicles from each accession at four developmental stages: rachis meristem (RM); branch meristem (BM), composed of immature panicle displaying primary branch initiation, elongation of primary branches and axillary meristem initiation; spikelet meristem (SM); and floret meristem (FM) (Figure S6a **qpcr-confirms-sampling**).
-We first confirmed staging of the panicles by extracting RNA from pooled meristems at each stage and measuring expression of *LHS1*, *G1L5* (*TAWAWA*), *FZP*, *LAX1* and *MADS14* with quantitative RT-PCR (qRT-PCR) (Figure S6b **qpcr-confirms-sampling**).
-Because branching complexity is related to branch meristem establishment and meristem fate transition [**ref**], we chose the BM and SM stages for RNAseq.
-cDNA libraries for sequencing were constucted from rRNA-depleted RNA samples from three replicate [**plants/panicles**] at both stages for all five accessions.
+To measure whole-transcriptome gene expression in these accessions, we collected immature panicles from each accession at four developmental stages:
+rachis meristem (RM);
+indeterminate meristem (IM), including panicles displaying primary branch initiation, elongation of primary branches and axillary meristem initiation;
+determinate meristem (DM), including panicles where **some/most** axillary meristems had transitioned into early spikelet differentiation;
+and floret meristem (FM), with early differentiation of floral organs
+(Figure S6a **qpcr-confirms-sampling**).
+
+> I found the description of the stages complicated and confusing. I tried to make it simpler, but I'm not sure if some of the details I removed were essential. We can put more info in the figure/methods. Also, we never refer to the stages by number, so I'm not sure if we should give numbers here.
+
+We first confirmed staging of the panicles by extracting RNA from pooled immature panicles at each stage and measuring expression of markers of panicle development by quantitative real-time RT-PCR (qPCR) (Figure S6b **qpcr-confirms-sampling**).
+
+> Actually I don't think we even need to name the genes here, it's not the main point of the paper. We can compare them to their expected expression in the figure legend.  *LHS1*, *G1L5* (*TAWAWA*), *FZP*, *LAX1* and *MADS14*
+
+Because branching complexity is related to branch meristem establishment and meristem fate transition [**ref**], we chose the IM and DM stages for RNAseq.
+cDNA libraries for sequencing were constucted from rRNA-depleted RNA samples from three biological replicates at both stages for all five accessions.
 We mapped reads against the MSU Release 7.0 of the annotation of the *O. sativa japonica* cv. Nipponbare reference genome [@ouyangTIGRRiceGenome2007].
-We obtained an average of more than 20 million uniquely mapped reads within exons for each accession, including African rice species (Table S5 **mapping-statistics**).
-Pairwise distances between libraries were lower for samples from the same stage, accession and continent, in that order (Figure S7 **distance-heatmap**), indicating that transcriptomic changes during domestication are subtle compared to differences between species.
+We observed an equivalent mapping for all the species
 
-We used differential expression (DE) analysis to identify genes that were up- or down-regulated between stages across all accessions.
-Genes with positive L~2~FC values have higher expression in SM than in BM.
+> **this is not really true :(** I was trying to find a tactical way of saying "we had enough mapped reads for quantification" (next sentence).
+
+We obtained an average of more than 20 million uniquely mapped reads within exons for each accession, including African rice species (Table S5 **mapping-statistics**).
+Pairwise distances between samples, calculated on the number of reads per gene from all detected genes, grouped samples first by stage, then by accession, and then by continent (Figure S7 **distance-heatmap**).
+We did not observe grouping by domestication status, suggesting that transcriptome-wide changes during domestication are subtle compared to differences between species.
+
+### Core genes related to meristem determination and/or branching
+
+
+To identify the core set of genes that is involved in axillary meristem determination in all five accessions, we used differential expression (DE) tests to find genes that were up- or down-regulated between stages across all accessions.
+Genes with positive L~2~FC values have higher expression in DM than in IM.
 193 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1 (Table S6 **DE-genes-stages**).
-There was an enrichment of transcription factor (TF) genes in the list of 193 DE genes (38 TF genes; *p* = 1.9 × 10^-9^, hypergeometric test).
-Differentially expressed TF genes include *FZP*, *LHS1*, *LAX1*, *PAP2*, and *MFO1*, which control inflorescence architecture in rice [@komatsuLAX1FRIZZYPANICLE2001; @baiRegulatoryRoleFZP2016; @baiDuplicationUpstreamSilencer2017; @kobayashiPANICLEPHYTOMER2PAP22010; @kobayashiInflorescenceMeristemIdentity2012; @khandayRiceLHS1OsMADS12013; @ohmoriMOSAICFLORALORGANS12009], [**check Huang et al., 2018, 10.1038/ncomms3200**], indicating that RNAseq of developing panicles at the BM and SM stage identifies genes that control branching.
+There was an enrichment of transcription factor (TF) genes in the list of 193 DE genes (38 TF genes; *p* = 1.9 × 10^-9^, hypergeometric test), including *FZP*, *LHS1*, *LAX1*, *PAP2*, and *MFO1*, which control inflorescence architecture in rice [@komatsuLAX1FRIZZYPANICLE2001; @baiRegulatoryRoleFZP2016; @baiDuplicationUpstreamSilencer2017; @kobayashiPANICLEPHYTOMER2PAP22010; @kobayashiInflorescenceMeristemIdentity2012; @khandayRiceLHS1OsMADS12013; @ohmoriMOSAICFLORALORGANS12009a], [**check Huang et al., 2018, 10.1038/ncomms3200**].
+This indicates that RNAseq of developing panicles at the IM and DM stage identifies genes that control branching.
+The list of DE genes included 9 *MADS* genes and 10 *APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes (*p*~adj~ 5.2 × 10^-11^ and 1.4 × 10^-8^ respectively, hypergeometric test; Table S6 **DE-genes-stages**).
+These genes, and the other DE genes, are candidate core regulators of axillary meristem determination and branching in rice.
+
+> TH: **To discuss**. HB genes are not enriched here. Because of this and the weirdness of cluster 4, I'm worried about the emphasis on HB.
+
+PCA on transformed raw counts also indicated that *AP2/EREBP*-like genes and homeobox (HB) genes are enriched at the extremes of a component that separates developmental stages across all five accessions (*p*~adj~ = 0.004 for both, GSEA permutation *t*-test; Figure 2 **transcriptome-pca**; Figure 3 **HB-AP2-heatmap**).
+Generally, *AP2/EREBP*-like genes that contribute PC5 are more highly expressed at the IM stage (Figure 3 **HB-AP2-heatmap**).
+
 
 We used PCA on transformed raw counts to investigate the patterns of variation in the transcriptomes associated with differences in panicle architecture. 
 The first four PCs split different combinations of rice species (Figure 2 **transcriptome-pca**).
 PC1–PC4 may relate to species-specific differences unrelated to panicle architecture, or mapping biases introduced by mapping all libraries against the *O. sativa japonica* reference.
 In contrast, PC5 separates developmental stages across all five accessions, although separation is weaker in *O. sativa indica* (Figure 2 **transcriptome-pca**).
-The families of *APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes and homeobox (HB) genes are enriched at the extremes of PC5, suggesting that they contribute to phenotypic differences between BM and SM (*p*~adj~ = 0.004 for both, GSEA permutation *t*-test; Figure 3 **HB-AP2-heatmap**).
 MADS, NAC and SBP genes are also enriched in PC5 (Figure S8 **NAC-MADS-SPL-heatmap**; Table S7 **PC5-TF-enrichment-gsea**).
+
+> SJ: Indicate the objective of this to begin the paragraph. What is the additive information compared to DE analysis..(for the reader)
+
+> TH: IMO, PCA doesn't add anything different (at the gene level) to DE analysis. It's an exploration of the results. I think we could show the component we care about (PC5) in figure 3, and move figure 2 to SI.
+> **To discuss**. I think this section may be too detailed and repetitive. I've rewritten it to focus on the HB/AP2 heatmap only. 
+
 The DE and PCA results are consistent with the role of transcriptional regulation in panicle branching.
 
 
-### *AP2/EREBP*-like and homeobox transcription factors are differentially expressed between stages, and associated with domesticated accessions
+### *AP2/EREBP*-like [and homeobox] transcription factors are differentially expressed between stages, and associated with domesticated accessions
 
 Because of the prominence of TFs, including *AP2/EREBP*-like and HB genes, in PC5 and in DE genes between stages (Figure 3 **HB-AP2-heatmap**; Table S6 **DE-genes-stages**), we used soft clustering of scaled log~2~-fold change values (L~2~FCs) between BM and SM to find common patterns of expression of the subset of annotated TF genes that were detected in our RNAseq dataset.
 We recovered six clusters.

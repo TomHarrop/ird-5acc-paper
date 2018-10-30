@@ -1,6 +1,8 @@
 
 ## Materials and Methods
 
+> n.b. I haven't added any changes from this section to the MS file
+
 ### Plant Material and Growth Conditions
 
 Panicle traits diversity were investigated in accessions (**Table S1 Plantinfo**;) of wild and domesticated, Asian and African rice.  O. sativa, O. glaberrima, O. barthii  and o. plants were grown in Cali (Colombia) and in Montpellier (France) for O. rufipogon.

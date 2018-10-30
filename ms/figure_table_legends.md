@@ -1,5 +1,7 @@
 ## Figure legends
 
+> n.b. I haven't added any changes from this section to the MS file
+
 **Figure 1 phenotype-pca**.
 Panicle complexity of 93 rice accessions.
 **A** We measured traits of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima*.
@@ -80,7 +82,7 @@ FZP is used as... LAX1....TAW .... osMADS14.....
 > TH: Relabel the x-axis to match stage abbreviations from results
 
 **Figure S7 distance-heatmap**.
-Heatmap of pairwise distances between RNAseq samples. Distances cluster by continent, species then stage, in that order. ob, *O. barthii*; og, *O. glaberrima*; osj, *O. sativa japonica*; osi, *O. sativa indica*; or, *O. rufipogon*; PBM, branch meristem; SM, spikelet meristem
+Heatmap of pairwise distances between RNAseq samples. Samples group by stage, species and continent. ob, *O. barthii*; og, *O. glaberrima*; osj, *O. sativa japonica*; osi, *O. sativa indica*; or, *O. rufipogon*; PBM, branch meristem; SM, spikelet meristem
 
 > TH: (fixme) Relabel axes to make them human-readable and to match abbreviations from results
 

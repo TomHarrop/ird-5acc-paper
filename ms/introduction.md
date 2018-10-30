@@ -1,5 +1,7 @@
 ## Introduction
 
+> n.b. I haven't added any changes from this section to the MS file
+
 Rice produces grains on complex raceme inflorescences called panicles (**suppl-figure-panicle**).
 The architecture of the rice panicle results from the establishment and activity of apical and axillary meristems derived from the vegetative shoot apical meristem (SAM) (Ikeda et al., 2004; Breeding Science 54, 147-156).
 *If you close this sentence with "Vegetative shoot apical meristems", it seems that this is going to be the topic of the next sentences. Moreover, we never deal with the vegetative shoot apical meristem, so I don't see why we should mention it*

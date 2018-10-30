@@ -1,5 +1,5 @@
 
-# *AP2*-like transcription factors are associated with changes in panicle architecture during domestication
+# *AP2*-like and homeobox transcription factors are associated with changes in rice panicle architecture during domestication
 
 Thomas W.R. Harrop^§,1^, Otho Mantegazza^1^, Ai My Luong, Kevin Bethume, Mathias Lorieux^¶^, Other person from CIAT^¶^, Stefan Jouannic, Hélène Adam^2^
 
@@ -18,17 +18,19 @@ This research was supported by Agropolis Foundation through the *Investissements
 
 ### Acknowledgments
 
-celine cardi & Hélène Vignes from Cirad ; Sophie Cherron & Harrold Chresting for plantCare ; Christine & Axel verdier for Bio-informatic support
+We thank Celine Cardi and Hélène Vignes (Grand plateau technique régional de génotypage, CIRAD, Montpellier) for technical support with high-throughput qPCR and cDNA library preparation. Sophie Cherron & Harrold Chresting for plantCare ; Christine & Axel verdier for Bio-informatic support
+
+>SJ: add acknowledgment for crl5 and smos1 mutant seeds
 
 ### List of abbreviations
 
 BM, Branch meristem;
+DM, Determinate meristem; 
 FM, floret meristem;
-l, lemma;
+IM, Indeterminate meristem; 
 PBIL, Primary branch internode length;
 PBL, Primary branch length;
 PCA, Principal component analysis;
-p, palea;
 PBN, Primary branch number;
 PL, Panicle length;
 RL, Rachis length;
@@ -39,7 +41,4 @@ SBN, Secondary branch number;
 SM, spikelet meristem;
 Sp, spikelet;
 SpN, Spikelet number;
-St, stamen;
 TBN, Tertiary branch number.
-
-> TH: Question - is it normal to include abbreviations that we never mention in the text? e.g. lemma, palea and stamen only appear in figures and the abbreviation will be explained in the legend. 
