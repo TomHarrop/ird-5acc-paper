@@ -93,6 +93,8 @@ Most of the genes in cluster 5 have L~2~FCs close to zero in *O. sativa indica*,
 In contrast to cluster 2 genes, the lack of repression of cluster 5 and to a lesser extent cluster 1 genes at the DM stage in *O. sativa indica* could result in more branching via the promotion of **indeterminate/axillary** meristem identity.
 The enrichment of *AP2/EREBP*-like genes in cluster 5 and the presence of 3 *AP2/EREBP*-like genes in cluster 1 suggests that their pattern of expression is associated with differences in panicle architecture across wild and domesticated accessions.
 
+> TH: sorry, ran out of time here!
+
 To find TF genes associated with changes in panicle architecture during domestication, we tested the stage × accession interaction for African and Asian accessions separately at an FDR of 0.1 (Table S9 **DE-genes-interaction**).
 For Asian accessions (*O. rufipogon* and *O. sativa indica*), there was a significant interaction for 85 genes, including 12 *AP2/EREBP*-like genes.
 In African accessions, the stage × accession interaction was significant for 50 genes, including 8 *AP2/EREBP*-like genes (**check hb + ap2 numbers**).
