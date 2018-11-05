@@ -8,21 +8,19 @@ To measure the diversity of panicle architecture, we phenotyped 91 accessions of
 The first principal component (PC1) in the phenotyping data accounts for 46.5% of variability.
 The sum of contributions of the top four components accounted for more than 87% of the total variance, and components other than PC1 do not separate panicles from different accessions (Figure S3 **phenotype-pca-all-pc**).
 PC1 separates domesticated and wild accessions, but not Asian and African accessions.
-PC1 is the only component that splits the accessions by domestication status, and spikelet number, secondary branch number and primary branch number have the highest loadings on PC1 (Figure 1B **phenotype-pca**).
+PC1 is the only component that splits the accessions by domestication status, and spikelet number, secondary branch number and primary branch number have the highest loadings on PC1 (Figure 1B–C **phenotype-pca**).
 For all species, spikelet number correlates more with secondary branch number than it does with primary branch number.
 Primary branch number correlates with spikelet number more in wild than domesticated species, but this correlation is weaker in Asian species than in African species.
-Primary and secondary branch number do not correlate (**what's the cutoff for this?**), suggesting they are controlled by different genetic mechanisms (Figure S2 **correlation-pbn-spn**).
+Primary and secondary branch number do not correlate strongly, suggesting they are controlled by different genetic mechanisms (Figure 1D **phenotype-pca**).
 The phenotypic analysis indicates similar changes in panicle architecture between wild and domesticated accessions in the independent African and Asian domestication processes.
 Spikelet number, secondary branch number and primary branch number are the main contributors to differences in panicle architecture, and these phenotypes are all related to axillary meristem formation and fate transition.
 These differences may be the result of parallel, artificial selection on panicle architecture (**in discussion**?).
-
-> TH: I'm wondering if we should add the correlation plot to figure 1, since we are relying on it a lot in this paragraph?
 
 ### Measurement of gene expression in developing panicles
 
 We investigated gene expression differences underlying diversity of panicle architecture and differences related to the Asian and African domestication processes via RNA sequencing (RNAseq).
 We used a single accession each of domesticated Asian rice (*O sativa indica* IR64) and its wild relative (*O. rufipogon* W1654), and domesticated African rice (*O. glaberrima* Tog5681) and its wild relative (*O. barthii* B88).
-We also included *O. sativa japonica* cv. Nipponbare as the genomic reference accession for Asian rice.
+We also included *O. sativa japonica* cv. Nipponbare as the genomic reference accession.
 Based on the extensive phenotyping described above, the chosen accessions are consistent with species-wide patterns of panicle architecture (Figure S4 **phenotype-all-varieties**).
 To confirm the phenotypes of the accessions used for this analysis, we repeated panicle phenotyping for these accessions in **different/consistent** conditions (**to discuss: why did we do this? to control for different environments? to make sure any differences in architecture were genetic?**).
 The three domesticated accessions produce more spikelets and secondary branches than their wild relatives (Figure S5 **phenotyping-mpl**; Table S4 **PanicleTraitsPhenotypingPlantsSequenced**).

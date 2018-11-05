@@ -3,9 +3,12 @@
 > n.b. I haven't added any changes from this section to the MS file
 
 **Figure 1 phenotype-pca**.
-Panicle complexity of 93 rice accessions.
-**A** We measured traits of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima*.
-The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions (**B**), and spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1 (**C**).
+The main component of variablity in panicle phenotypes from 91 rice accessions splits accessions by domestication status, and is related to spikelet number, secondary branch number and primary branch number.
+(**A**) We measured traits of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima*.
+(**B**) The first principal component (PC1) in the panicle phenotye data accounts for 46.5% of variability and separates wild and domesticated accessions, and (**C**) spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) had the highest loadings on PC1.
+(**D**) Correlation between the main panicle traits that contribute to panicle architecture diversity.
+Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number correlate more in cultivated species than in wild species.
+Primary and secondary branch numbers don't correlate.
 RL: Rachis length; PBL: Primary branch length; PBIL: Primary branch internode length; SBL: Secondary branch length; SBIL: Secondary branch internode length; TBN: Tertiary branch number; PL: Panicle length.
 
 **Figure 2 transcriptome-pca**.
@@ -48,12 +51,7 @@ The *PLT8* mutant produces fewer primary branches and spikelets, and the *ERF142
 Spread mature rice panicle. RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBintL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBintL: Secondary branch internode length; Sp : Spikelet.
 
 **Figure S2 correlation-pbn-spn**.
-Correlation between the main panicle traits that contribute to panicle architecture diversity.
-Primary branch number and spikelet number correlate in wild species. Secondary branch number and spikelet number correlate more in cultivated species than in wild species.
-Primary and secondary branch numbers don't correlate, suggesting that they
-are controlled by different genetic mechanisms.
-
-> could you add the correlation value on each panel
+Moved to figure 1D.
 
 **Figure S3 phenotype-pca-all-pc**.
 Principal component analysis (PCA) of panicle phenotyping data showing components 1–4.
