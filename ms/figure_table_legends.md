@@ -37,6 +37,8 @@ The genes in clusters 1 and 2 may be related to domestication, because L~2~FCs i
 Six of the 17 genes in Cluster 5, which has the highest L~2~FC in *O. sativa indica* and the highest correlation with SBN, are *AP2/EREBP*-like genes (*p*~adj~ = 7.6 × 10^-3^, hypergeometric test; Table S8 **clustered-genes**).
 Conversely, nine of the 31 genes in Cluster 4, which has the lowest L~2~FC in *O. sativa indica* and the strongest negative correlation with SBN, are homeobox genes (*p*~adj~ = 2.17 x 10^-5^, hypergeometric test; Table S8 **clustered-genes**).
 
+The correlations with SBN and SpN are based on repeat panicle phenotyping for these accessions in consistent conditions (Figure S5 **phenotyping-mpl**; Table S4 **PanicleTraitsPhenotypingPlantsSequenced**).
+
 > TH: I'm having difficulty explaining cluster 4, because of the big difference between indica and glaberrima. The L~2~FCs of these genes are all around zero in indica, and there is a strong negative correlation with SBN. So we can say that they might specify SM / promote determinacy, but are being switched on later in indica. However, they all have positive L~2~FC in glaberrima. Can anyone propose a functional explanation for what these genes do?
 
 **Figure 5 panicle-mutants**.
@@ -66,7 +68,8 @@ Scores on PC1 for the accessions chosen for RNAseq are shown in red.
 
 **Figure S5 phenotyping-mpl**.
 Detailed phenotyping of five Oryza accessions.
-The three domesticated accessions produce more spikelets than their wild relatives.
+The three domesticated accessions produce more spikelets and secondary branches than their wild relatives.
+The domesticated accessions have a similar number of primary branches, but Asian domesticated species have more secondary branches and spikelets than domesticated African accessions.
 In comparison to *O. sativa japonica*, *O. sativa indica* produces more secondary branches.
 
 **Figure S6 qpcr-confirms-sampling**.
