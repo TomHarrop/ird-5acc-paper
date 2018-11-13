@@ -84,6 +84,7 @@ write_family <- function(family_id) {
 write_family("MADS")
 write_family("NAC")
 write_family("SBP")             
+write_family("HB")
 
 }
   
@@ -96,10 +97,13 @@ pcx_tf %>%
 
 # Plot Enrichement --------------------------------------------------------
 
-families <- c(mads = "MADS",
-              nac = "NAC",
-              # myb = "MYB",
-              sbp = "SBP")
+families <- c(
+  hb = "HB",
+  # mads = "MADS",
+  nac = "NAC",
+  # myb = "MYB",
+  sbp = "SBP"
+  )
 
 p_enr <- ggplot(pcx_tf %>%
                   filter(Family %in% families) %>%
@@ -130,7 +134,7 @@ p_enr <- ggplot(pcx_tf %>%
   labs(x = "Ranks of genes on PC5",
        y = "PC5 Value")
 
-# p_enr
+p_enr
 
 
 # Define functions for heatmap --------------------------------------------
@@ -160,7 +164,8 @@ plot_heatmap <- function(family = "AP2-EREBP",
     left_join(pcx_tf %>% select(locus_id, PC5, rank_pc5)) %>%
     as.data.frame() %>%
     mutate(symbol = locus_id %>%
-             oryzr::LocToGeneName() %$% 
+             oryzr::LocToGeneName() %>%
+             distinct(MsuID, .keep_all = T) %$% 
              symbols,
            symbol = case_when(is.na(symbol) ~ "",
                               TRUE ~ symbol),
@@ -197,9 +202,9 @@ plot_heatmap <- function(family = "AP2-EREBP",
 # Plot families -----------------------------------------------------------
 
 # heat_ap2 <- plot_heatmap("AP2-EREBP")
-heat_mads <- plot_heatmap("MADS")
+# heat_mads <- plot_heatmap("MADS")
 # plot_heatmap("WRKY")
-# heat_hb <- plot_heatmap("HB")
+heat_hb <- plot_heatmap("HB")
 heat_nac <- plot_heatmap("NAC")
 heat_sbp <- plot_heatmap("SBP", cutree_rows = 1)
 # heat_tcp <- plot_heatmap("TCP", cutree_rows = 1)
@@ -210,33 +215,36 @@ heat_sbp <- plot_heatmap("SBP", cutree_rows = 1)
 
 # Save plots --------------------------------------------------------------
 
-pdf("../fig/suppl-fig-NAC-MADS-SPL-heatmap.pdf",
-    height = 6.2,
+pdf("../fig/suppl-fig-NAC-HB-SPL-heatmap.pdf",
+    height = 5.2,
     width = 11,
     paper = "a4r")
-heats <- cowplot::plot_grid(heat_mads[[4]],
-                            heat_nac[[4]],
-                            heat_sbp[[4]],
-                            labels = c("B", "C", "D"),
-                            ncol = 3)
+heats <- cowplot::plot_grid(
+  # heat_mads[[4]],
+  heat_nac[[4]],
+  heat_sbp[[4]],
+  heat_hb[[4]],
+  labels = c("B", "C", "D"),
+  ncol = 3
+  )
 cowplot::plot_grid(p_enr, heats,
                    nrow = 2,
                    rel_heights = c(2,3),
                    labels = c("A", "")) %>%
-  cowplot::add_sub(., str_wrap("RNA-seq expression of genes from selected transcription families.
-                               While MADS and SBP genes are expressed 
-                               preferentially in the SM, NAC are more
-                               expressed in the BM.
-                               A: Enrichment is estimated with the
-                               the GSEA method, which returns a permutation based
-                               adjusted pvalue of 0.0037 for MADS box genes,
-                               of 0.0.0055 for NAC genes and of 0.0245 for SBP genes.
-                               B-D: For the heatmap, we used the 10% of genes that
-                               have the highest absolute loading on PC5 (shown
-                               in red in the enrichment plot).
-                               Heatmaps display normalized RNAseq counts
-                               which have been z-score scaled independently for each species.",
-                               width = 80)) %>%
+  # cowplot::add_sub(., str_wrap("RNA-seq expression of genes from selected transcription families.
+  #                              While MADS and SBP genes are expressed 
+  #                              preferentially in the SM, NAC are more
+  #                              expressed in the BM.
+  #                              A: Enrichment is estimated with the
+  #                              the GSEA method, which returns a permutation based
+  #                              adjusted pvalue of 0.0037 for MADS box genes,
+  #                              of 0.0.0055 for NAC genes and of 0.0245 for SBP genes.
+  #                              B-D: For the heatmap, we used the 10% of genes that
+  #                              have the highest absolute loading on PC5 (shown
+  #                              in red in the enrichment plot).
+  #                              Heatmaps display normalized RNAseq counts
+  #                              which have been z-score scaled independently for each species.",
+  #                              width = 80)) %>%
   cowplot::ggdraw() %>% print()
 
 dev.off()
