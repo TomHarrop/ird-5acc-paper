@@ -1,7 +1,5 @@
 ## Figure legends
 
-> n.b. I haven't added any changes from this section to the MS file
-
 **Figure 1 phenotype-pca**.
 The main component of variablity in panicle phenotypes from 91 rice accessions splits accessions by domestication status, and is related to spikelet number, secondary branch number and primary branch number.
 (**A**) We measured traits of spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima*.
@@ -31,7 +29,7 @@ Ten out of twenty of these genes belong to the HD−ZIP IV subfamily.
 > TH: Otho, can you explain what's on the scale bar in figure 3B? Do we need a citation for the permutation test? Do you have any stats for Figure 3C? I could do a hypergeometric test if you like.
 
 **Figure 4 cluster-phenotype-corr**.
-Gene expression clusters correlate with number of secondary branches (SBN) and spikelets (SpN).
+Gene expression clusters correlate with the main component of divesity of panicle architecture (PC1), the number of secondary branches (SBN) and spikelets (SpN).
 Clusters with a high log~2~-fold change (L~2~FC) in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters with a low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
 The genes in clusters 1 and 2 may be related to domestication, because L~2~FCs in those clusters are higher or lower in domesticated accessions, respectively, and both clusters correlate with SpN.
 Six of the 17 genes in Cluster 5, which has the highest L~2~FC in *O. sativa indica* and the highest correlation with SBN, are *AP2/EREBP*-like genes (*p*~adj~ = 7.6 × 10^-3^, hypergeometric test; Table S8 **clustered-genes**).
