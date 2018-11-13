@@ -62,11 +62,16 @@ hb_shain <- read_csv("../data-raw/hb_genes_jain2008.csv") %>%
   select(locus_id, subfamily, symbol) 
 
 
-# mads_arora <- read_excel("../data-raw/mads_subfam-copyandpasted_arora_2007.xlsx") %>%
-#   select(locus_id, subfamily)
+mads_arora <- read_excel("../data-raw/mads_subfam-copyandpasted_arora_2007.xlsx") %>%
+  select(locus_id, subfamily) %>%
+  mutate(symbol = locus_id %>%
+           oryzr::LocToGeneName() %$% 
+           symbols,
+         symbol = case_when(is.na(symbol) ~ "",
+                            TRUE ~ symbol))
 
 subfams <- bind_rows(ap2_sharoni,
-                     # mads_arora,
+                     mads_arora,
                      hb_shain)
 
 
@@ -79,7 +84,11 @@ pcx <- pcro %>%
   arrange(desc(PC5)) %>%
   mutate(rank_pc5 = 1:nrow(.)) %>%
   mutate(Family = ifelse(is.na(Family), "none", Family)) %>%
+  # The Family definition in tfdb is not comprehensive
+  # why? 
+  # Extend it
   mutate(Family = case_when(locus_id %in% hb_shain$locus_id ~ "Homeobox",
+                            locus_id %in% mads_arora$locus_id ~ "MADS",
                             TRUE ~ Family))
 
 
@@ -110,12 +119,14 @@ pcx_tf <- pcx %>%
 
 # Plot Enrichement --------------------------------------------------------
 
-families <- c(ap2 = "AP2-EREBP", 
-              # mads = "MADS",
-              # nac = "NAC",
-              hb = "Homeobox")#,
-              # sbp = "SBP",
-              # bhlh = "bHLH")
+families <- c(
+  ap2 = "AP2-EREBP", 
+  mads = "MADS"
+  # nac = "NAC",
+  # hb = "Homeobox",
+  # sbp = "SBP",
+  # bhlh = "bHLH"
+)
 
 p_enr <- ggplot(pcx_tf %>%
                   filter(Family %in% families) %>%
@@ -154,7 +165,7 @@ plot_heatmap <- function(family = "AP2-EREBP",
                          cutree_rows = 2,
                          filter_abs_pc = .002) {
   norm <- enquo(norm)
-  to_heat <- pcx_tf %>%
+  to_heat <- pcx %>%
     filter(Family == family) %>%
     mutate(abs_pc5 = abs(PC5)) %>%
     filter(abs_pc5 > filter_abs_pc) %>%
@@ -211,9 +222,9 @@ plot_heatmap <- function(family = "AP2-EREBP",
 # Plot families -----------------------------------------------------------
 
 heat_ap2 <- plot_heatmap("AP2-EREBP")
-# heat_mads <- plot_heatmap("MADS")
+heat_mads <- plot_heatmap("MADS")
 # plot_heatmap("WRKY")
-heat_hb <- plot_heatmap("Homeobox")
+# heat_hb <- plot_heatmap("Homeobox")
 # heat_nac <- plot_heatmap("NAC")
 # heat_sbp <- plot_heatmap("SBP", cutree_rows = 1)
 # heat_tcp <- plot_heatmap("TCP", cutree_rows = 1)
@@ -224,11 +235,11 @@ heat_hb <- plot_heatmap("Homeobox")
 
 # Save plots --------------------------------------------------------------
 
-pdf("../fig/fig-HB-AP2-heatmap.pdf",
+pdf("../fig/fig-MADS-AP2-heatmap.pdf",
     height = 6.5,
     width = 10)
 heats <- cowplot::plot_grid(heat_ap2[[4]],
-                            heat_hb[[4]])
+                            heat_mads[[4]])
 p <- cowplot::plot_grid(p_enr, heats,
                         nrow = 2,
                         rel_heights = c(2,5),

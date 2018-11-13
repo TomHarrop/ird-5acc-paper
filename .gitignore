@@ -50,3 +50,6 @@ src/Rplots.*
 
 # temporary files
 fix_gene_names/*
+
+# fluidigm
+analyze-fluidigm/extra-data/*
