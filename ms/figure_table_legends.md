@@ -53,6 +53,11 @@ The *PLT8* mutant produces fewer primary branches and spikelets, and the *ERF142
 
 > TH: Otho, can you use the official gene names for the figures? *PLT8* and *ERF142*.
 
+**Figure 6 dom-genes**.
+Parallel and divergent evolution of gene expression during domestication.
+(**A**) Expression of genes with a stage × domestication interaction when both domestications are considered have parallel changes in expression pattern in panicles at indeterminate (IM) and determinate (DM) meristem stage.
+(**B**) Some of the genes with a stage × accession interaction in both domestications, when African and Asian accessions are tested separately, have divergent changes in expression between wild and domesticated accessions.
+
 ## Supplementary figures
 
 **Figure S1 PanicleStructure**.
