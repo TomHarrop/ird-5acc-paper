@@ -51,6 +51,7 @@ qpcr_imputed <-
 
 p <- 
   qpcr_imputed %>%
+  filter(target_name != "OsMADS14") %>% 
   {lineplot_fluidigm(nm = "Sampling Check", dat = .)} +
   scale_y_log10() +
   labs(title = "Marker genes behave as expected [semi-log plot]")
