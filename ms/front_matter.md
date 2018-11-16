@@ -1,5 +1,5 @@
 
-# *AP2*-like and homeobox transcription factors are associated with changes in rice panicle architecture during domestication
+# *AP2*-like transcription factors are associated with changes in rice panicle architecture during domestication
 
 Thomas W.R. Harrop^§,1^, Otho Mantegazza^1^, Ai My Luong, Kevin Bethume, Mathias Lorieux^¶^, Other person from CIAT^¶^, Stefan Jouannic, Hélène Adam^2^
 
