@@ -75,6 +75,7 @@ subfams <- bind_rows(ap2_sharoni,
                      hb_shain)
 
 
+save(ap2_sharoni, mads_arora, hb_shain, file = "../data/subfams.Rdata")
 
 # Prepare data - merge PC and TF ------------------------------------------
 
