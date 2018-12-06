@@ -148,11 +148,11 @@ p_enr <- ggplot(pcx_tf %>%
   geom_hline(yintercept = 0,
              lwd = .05,
              colour = "grey") +
-  scale_color_manual(values = c("black", "red")) +
+  scale_color_manual(values = c("black", "red"), guide = FALSE) +
   scale_x_continuous(limits = c(1, max(pcx_tf$rank_pc5)),
-                     breaks = c(1, 5000, 10000, 15000, 20000, max(pcx_tf$rank_pc5)),
-                     labels = c("1\n [IM]", "5000", "10000", "15000", "20000",
-                                paste0(max(pcx_tf$rank_pc5), "\n [DM]"))) +
+                     breaks = c(1, 5000, 10000, 15000, 20000),
+                     labels = c("1\n [IM]", "5000", "10000",
+                                "15000", "20000\n [DM]")) +
   facet_grid(. ~ facet) +
   theme_bw() +
   labs(x = "Ranks of genes on PC5",
@@ -160,6 +160,7 @@ p_enr <- ggplot(pcx_tf %>%
 
 p_enr
 
+readr::write_rds(x = p_enr, path = "../data/plot-enrichment-ap2-mads.Rds")
 
 # Define functions for heatmap --------------------------------------------
 
