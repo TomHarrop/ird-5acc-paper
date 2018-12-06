@@ -75,7 +75,9 @@ subfams <- bind_rows(ap2_sharoni,
                      hb_shain)
 
 
-save(ap2_sharoni, mads_arora, hb_shain, file = "../data/subfams.Rdata")
+# save(ap2_sharoni, mads_arora, hb_shain, file = "../data/subfams.Rdata")
+
+# subfams %>% filter(! locus_id %in% tf_fam$locus_id)
 
 # Prepare data - merge PC and TF ------------------------------------------
 

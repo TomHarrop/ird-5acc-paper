@@ -83,6 +83,11 @@ cont <-
          k = rels) %>% # balls drawn
   mutate(pval = pmap(., .f = phyper2, lower.tail = FALSE),
          pval = as.numeric(pval),
+         padj = pval %>% p.adjust(method = "fdr"),
          genes = family %>% map(get_ids))  %>%
-  arrange(pval)
+  arrange(pval) 
   
+# Save
+cont %>%
+  mutate(genes = flatten_chr(genes)) %>%
+  write_csv("../tables/tfs-of-pc5-hypergeom.csv")
