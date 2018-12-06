@@ -156,7 +156,7 @@ p_enr <- ggplot(pcx_tf %>%
   facet_grid(. ~ facet) +
   theme_bw() +
   labs(x = "Ranks of genes on PC5",
-       y = "PC5 Value")
+       y = "PC5 Loadings")
 
 p_enr
 
