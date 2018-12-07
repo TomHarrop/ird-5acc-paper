@@ -125,9 +125,9 @@ p_enr <- ggplot(pcx_tf %>%
              colour = "grey") +
   scale_color_manual(values = c("black", "red")) +
   scale_x_continuous(limits = c(1, max(pcx_tf$rank_pc5)),
-                     breaks = c(1, 5000, 10000, 15000, 20000, max(pcx_tf$rank_pc5)),
-                     labels = c("1\n [BM]", "5000", "10000", "15000", "20000",
-                                paste0(max(pcx_tf$rank_pc5), "\n [SM]"))) +
+                     breaks = c(1, 5000, 10000, 15000, 20000),
+                     labels = c("1\n [BM]", "5000", "10000",
+                                "15000", "20000", "\n [SM]")) +
   facet_grid(. ~ facet) +
   theme_bw() +
   theme(axis.text.x = element_text(size = 6)) +

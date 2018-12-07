@@ -29,8 +29,7 @@ pcx <- pcx %>%
                                accession == "rufipogon" ~ "O. rufipogon",
                                accession == "indica" ~ "O. sativa indica",
                                TRUE ~ accession)) %>%
-  mutate(ID = paste0(ID, " (",
-                    stage, ")"),
+  mutate(ID = paste(stage, str_sub(ID, -1, -1), sep = " - "),
          accession = factor(accession,
                             levels = c("O. rufipogon",
                                        "O. sativa indica",
@@ -77,7 +76,7 @@ p <- ggplot(pcx,
 
 pdf("../fig/fig-transcriptome-pca.pdf",
     width = 6.7,
-    height = 7.4)
+    height = 7)
 print(p)
 dev.off()
 
