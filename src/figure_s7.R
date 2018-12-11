@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-# Figure S11: Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv.
+# Figure S7: Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv.
 # Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
 
 library(data.table)
@@ -55,7 +55,7 @@ gp <- ggplot(goi_pd, aes(x = stage, y = `Expression (TPM)`, group = symbol)) +
     stat_smooth(se = FALSE, colour = "grey", size = 0.5) + 
     geom_point(shape = 16, position = position_jitter(width = 0.2))
 
-ggsave("figures/Figure_S11.pdf",
+ggsave("figures/Figure_S7.pdf",
        gp,
        device = cairo_pdf,
        width = 114,
