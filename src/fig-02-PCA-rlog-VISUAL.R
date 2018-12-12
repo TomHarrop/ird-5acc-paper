@@ -29,8 +29,7 @@ pcx <- pcx %>%
                                accession == "rufipogon" ~ "O. rufipogon",
                                accession == "indica" ~ "O. sativa indica",
                                TRUE ~ accession)) %>%
-  mutate(ID = paste0(ID, " (",
-                    stage, ")"),
+  mutate(ID = paste(stage, str_sub(ID, -1, -1), sep = " - "),
          accession = factor(accession,
                             levels = c("O. rufipogon",
                                        "O. sativa indica",
@@ -53,12 +52,12 @@ p <- ggplot(pcx,
   facet_grid(PC_id ~ accession,
              scales = "free", 
              labeller = labeller(accession = label_wrap_gen(width = 14))) +
-  scale_fill_manual(values = color_palette) +
+  scale_fill_manual(values = color_palette, guide = FALSE) +
   # scale_fill_viridis_d(begin = .2, end = .8) +
   theme_bw() +
   labs(# title = "Transcriptome Principal Components",
        x = "Sample ID",
-       y = "Loading Vector",
+       y = "Principal Component Score Vector",
        # caption = glue("Fig 2: Grafical representation of PC loadings
        #                 for all RNA-seq samples. The first 4 components
        #                 collect {sum(pc_var$var[1:4])}% of the variance
@@ -77,7 +76,7 @@ p <- ggplot(pcx,
 
 pdf("../fig/fig-transcriptome-pca.pdf",
     width = 6.7,
-    height = 6.5)
+    height = 7)
 print(p)
 dev.off()
 

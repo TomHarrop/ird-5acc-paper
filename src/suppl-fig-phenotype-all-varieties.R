@@ -35,10 +35,10 @@ p2 <-
          in_rnaseq = case_when(Name %in%
                                  pheno_mnp$species ~ "yes",
                                TRUE ~ "no"),
-         Origin = case_when(Origin == "Ob" ~ "O. barthii \n African - Wild",
-                            Origin == "Og" ~ "O. glaberrima \n African - Domesticated",
-                            Origin == "Or" ~ "O. rufipogon \n Asian - Wild",
-                            Origin == "Os" ~ "O. sativa \n Asian - Domesticated")) %>%
+         Origin = case_when(Origin == "Ob" ~ "O. barthii",
+                            Origin == "Og" ~ "O. glaberrima",
+                            Origin == "Or" ~ "O. rufipogon",
+                            Origin == "Os" ~ "O. sativa")) %>%
   ggplot(aes(x = reorder(Name, PC1), 
              y = PC1,
              fill = in_rnaseq)) +
@@ -48,23 +48,20 @@ p2 <-
              space = "free_x") +
   scale_fill_manual(values = c("white", "red")) +
   # coord_flip() +
-  labs(title = paste0("Loadings of PC1 for all varieties of rice ",
-                        "that we phenotyped"), 
-       x = "Rice Variety",
-       y = "Loading on PC1",
-       fill = "In RNA-seq", 
-       caption = str_wrap("Principal component analysis (PCA) of panicle phenotyping.
-                          PC1 splits wild and domesticated varieties.
-                          The varieties included in the RNAseq experiment are displayed 
-                          in red. Those varieties tend to average the characterstic
-                          of their species of origin (all but Nipponbare, which was
-                          included because as reference). 
-                          For each variety, we have measured from 3 to 9 panicles
-                          (3 panicles from each of 1 to 3 plants).")) +
+  labs(x = "Rice Accessions",
+       y = "Score Vectors on Principal Component 1",
+       fill = "In RNAseq", 
+       caption = str_wrap("The accessions used for RNAseq are consistent
+                          with species-wide patterns of panicle architecture.
+                          The y-axis shows the projection of each panicle on
+                          principal component 1 (PC1), which separates wild and
+                          domesticated accessions (Figure 1). Scores on PC1 for
+                          the accessions chosen for RNAseq are shown in red.")) +
   theme_bw() +
   theme(axis.text.x = element_text(hjust = 0,
                                    vjust = .5,
-                                   angle = 270)) 
+                                   angle = 270),
+        strip.text = element_text(face = "italic")) 
 
 # a4 = 8.27 × 11.69 inches
 pdf(file = "../fig/suppl-fig-phenotype-all-varieties.pdf",

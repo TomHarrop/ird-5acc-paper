@@ -18,12 +18,22 @@ load(file = "../data/fluidigm-confim-sampling.Rdata")
 
 qpcr_exp <- bind_rows(chip3_exp, chip4_exp) %>%
   scale_tidy_fluidigm() %>%
-  mutate(species = factor(species,
-                          levels = c("Osj",
-                                     "Ob", "Og",
-                                     "Or", "Osi")))
-
-
+  mutate(species = case_when(species == "Or" ~ "O. rufipogon",
+                             species == "Osi" ~ "O. sativa indica",
+                             species == "Osj" ~ "O. sativa japonica",
+                             species == "Ob" ~ "O. barthii",
+                             species == "Og" ~ "O. glaberrima"),
+         species = factor(species,
+                          levels = c("O. rufipogon",
+                                     "O. sativa indica",
+                                     "O. sativa japonica",
+                                     "O. barthii",
+                                     "O. glaberrima")),
+         stage = case_when(stage == "stage_1" ~ "Stage 1: RM",
+                           stage == "stage_2" ~ "Stage 2: IM",
+                           stage == "stage_3" ~ "Stage 3: DM",
+                           stage == "stage_4" ~ "Stage 4: Floret"))
+         
 # Impute 0/ND -------------------------------------------------------------
 
 # What is a the minimal expression besides 0?
@@ -54,7 +64,8 @@ p <-
   filter(target_name != "OsMADS14") %>% 
   {lineplot_fluidigm(nm = "Sampling Check", dat = .)} +
   scale_y_log10() +
-  labs(title = "Marker genes behave as expected [semi-log plot]")
+  theme(strip.text = element_text(face = "italic")) +
+  labs(title = "qPCR expression of selected marker genes [semi-log plot]")
 
 
 # Add tiff figure to plot -------------------------------------------------
@@ -67,7 +78,7 @@ p <-
 #     data-raw/FigMeristemCollect-compr.tif 
 
 p_img <- ggdraw() +  
-  draw_image("../data-raw/FigMeristemCollect-compr.tif")
+  draw_image("../data-raw/FigXX MeristemCollect.tif")
 
 p_comb <- plot_grid(p_img, p,
                     labels = c("1.", "2."),
