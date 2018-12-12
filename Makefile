@@ -49,11 +49,13 @@ docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/re
 		ms/front_matter.md \
 		ms/abstract.md \
 		ms/introduction.md \
+		ms/methods.md \
 		ms/results.md \
 		ms/discussion.md \
-		ms/methods.md \
-		ms/figure_table_legends.md \
-		template/ref_loc.md
+		ms/end_matter.md \
+		template/ref_loc.md \
+		ms/figure_legends.md \
+		ms/si_list.md
 
 
 ################# MAKE FIGURES ####################

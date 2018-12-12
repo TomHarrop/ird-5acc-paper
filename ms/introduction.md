@@ -30,5 +30,3 @@ Panicle complexity in *O. sativa* is governed by fine-tuning of meristem fate tr
 Despite advances in understanding the molecular mechanisms that regulate panicle branching in rice (Furutani et al., 2006; Harrop et al., 2016) and  characterization of individual genes associated with variation in panicle branching, the transcriptional regulation that underlies phenotypic diversity of branching across rice species has not been reported.
 The independent domestications of African and Asian rice in the genus Oryza provide a comparative context to study the evolution of agronomic traits such as panicle architecture, and the mechanisms underlying parallel evolution of phenotype.
 Here, we survey rice panicle phenotypes and use trancriptomics to reveal gene expression patterns associated with diversity of panicle architecture and domestication in the Oryza genus.
-
-
