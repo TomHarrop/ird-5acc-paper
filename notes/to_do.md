@@ -1,10 +1,6 @@
 
 ## Tom's to do list
 
-- general qc stuff
-- Results clusters: break AP2 into family and re-try enrichment analysis.
-- Intersperse HB and ARF genes into results
-
 ### analysis / results to move to 5acc repo
 
 - Figure 2: Otho's PCA on transcriptomes (analyze-rlog-pca.R)
@@ -24,7 +20,9 @@
 - Figure S1 (with figure 1)
 - Figure S2: phenotyping MTP
 
-## Other things in progress
+## notes for mtg
 
-- promoter analysis AP2 genes DE
+- Figure S4 phenotype-all-varieties:
+    + If we delete the statement about the number of panicles, we have to show all data
+    + 
 
