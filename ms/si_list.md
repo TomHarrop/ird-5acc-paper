@@ -28,7 +28,7 @@ Expression analysis along early panicle development of AP2-like and Homeobox gen
 Most genes in cluster 5 have negative L~2~FCs between BM and SM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
 
 **Figure S10 phenotyping-mpl**.
-Detailed phenotyping of the five Oryza accessions used for RNAseq.
+Phenotyping of the five *Oryza* accessions used for RNAseq.
 
 **Table S1 Plantinfo**.
 Rice accessions used in this study.
@@ -58,4 +58,4 @@ Clustered genes.
 Differential expression test results for the stage × accession interaction in Asian and African accessions.
 
 **Table S10 PanicletraitsPhenotypingAP2**.
-Detailed quantification of panicle traits from crl5 and smos1 mutants.
+Quantification of panicle traits from crl5 and smos1 mutants.
