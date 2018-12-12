@@ -21,10 +21,21 @@ dat <-
   ap2_exp %>%
   filter(locus_id %in% cl5$locus_id) %>%
   scale_tidy_fluidigm() %>%
-  mutate(species = factor(species,
-                          levels = c("Osj",
-                                     "Ob", "Og",
-                                     "Or", "Osi")))
+  mutate(species = case_when(species == "Or" ~ "O. rufipogon",
+                             species == "Osi" ~ "O. sativa indica",
+                             species == "Osj" ~ "O. sativa japonica",
+                             species == "Ob" ~ "O. barthii",
+                             species == "Og" ~ "O. glaberrima"),
+         species = factor(species,
+                          levels = c("O. rufipogon",
+                                     "O. sativa indica",
+                                     "O. sativa japonica",
+                                     "O. barthii",
+                                     "O. glaberrima")),
+         stage = case_when(stage == "stage_1" ~ "Stage 1: RM",
+                           stage == "stage_2" ~ "Stage 2: IM",
+                           stage == "stage_3" ~ "Stage 3: DM",
+                           stage == "stage_4" ~ "Stage 4: Floret"))
 
 
 
@@ -36,7 +47,8 @@ plts <-
   {lineplot_fluidigm(nm = "",
                     dat = .,
                     alpha = .8)} +
-  theme(strip.text = element_text(size = 8))
+  theme(strip.text = element_text(size = 8,
+                                  face = "italic"))
 
 # +
 #   theme(text = element_text(size = 8),
@@ -59,7 +71,7 @@ plts <-
 #   cowplot::ggdraw()
 
 
-pdf("../fig/suppl-fig-fluidigm-ap2-hb.pdf",
+pdf("../fig/Figure_S8-suppl-fig-fluidigm-ap2.pdf",
     height = 9, width = 9,
     paper = "a4")
 # do the inches really matter?
