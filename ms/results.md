@@ -2,8 +2,8 @@
 
 ### Parallel changes in panicle architecture between wild and domesticated accessions
 
-To measure the diversity of panicle architecture, we phenotyped 91 accessions of wild Asian rice (*Oryza rufipogon*), domesticated Asian rice (*Oryza sativa*), wild African rice (*Oryza barthii*) and domesticated African rice (*Oryza glaberrima*), using `P-TRAP` image analysis software for automated measurement of traits [Figure 1A **phenotype-pca**; Figure S1 **PanicleStructure**; Table S1 **Plantinfo**; Table S3 **PanicleTraitsPhenotyping**; @al-tamPTRAPPanicleTrait2013].
-The first principal component (PC1) in the phenotyping data accounts for 46.5% of variability (Figure 1B **phenotype-pca**).
+To measure the diversity of panicle architecture, we phenotyped 91 rice accessions (Table S1), including wild Asian rice (*Oryza rufipogon*), domesticated Asian rice (*Oryza sativa*), wild African rice (*Oryza barthii*) and domesticated African rice (*Oryza glaberrima*), using `P-TRAP` image analysis software for automated measurement of traits [Figure 1A **phenotype-pca**; Figure S1 **PanicleStructure**; Table S1 **Plantinfo**; Table S3 **PanicleTraitsPhenotyping**; @al-tamPTRAPPanicleTrait2013].
+Principal components analysis (PCA) of the phenotyping data identified a major coordinate (PC1) that accounts for 46.5% of variability (Figure 1B **phenotype-pca**).
 PC1 separates domesticated and wild accessions, but not Asian and African accessions, and is the only component that separates panicles from different accessions (Figure S2 **phenotype-pca-all-pc**).
 Spikelet number, secondary branch number and primary branch number have the highest loadings on PC1, whereas length traits have lower absolute loading on PC1 (Figure 1C **phenotype-pca**).
 For all species, spikelet number correlates more with secondary branch number than it does with primary branch number.
@@ -25,7 +25,7 @@ determinate meristem (DM), including panicles wherein axillary meristems had tra
 and floret meristem (FM), with early differentiation of floral organs
 (Figure S4a **qpcr-confirms-sampling**).
 We first confirmed staging of the panicles by extracting RNA from pooled immature panicles at each stage and measuring expression of markers of panicle development by quantitative real-time RT-PCR (qPCR) (Figure S4b **qpcr-confirms-sampling**).
-Because branching complexity is related to branch meristem establishment and meristem fate transition [**ref - cant find Kyozuko et al 2014**], and secondary branch number and spikelet number contribute to differences between wild and domsticated accessions, we chose the IM and DM stages for RNAseq.
+Because branching complexity is related to branch meristem establishment and meristem fate transition [@kyozukaControlGrassInflorescence2014], and secondary branch number and spikelet number contribute to differences between wild and domsticated accessions (Figure 1), we chose the IM and DM stages for RNAseq.
 cDNA libraries for sequencing were constructed from rRNA-depleted RNA samples from three biological replicates at both stages for all five accessions.
 After mapping the reads against the *O. sativa japonica* cv. Nipponbare reference genome [@ouyangTIGRRiceGenome2007], we obtained an average of more than 20 million uniquely mapped reads within exons for each accession, including African rice species (Table S5 **mapping-statistics**).
 Pairwise distances between samples, calculated on the number of reads per gene from all detected genes, grouped samples first by stage, then by accession, and then by continent (Figure S5 **distance-heatmap**).
@@ -90,8 +90,8 @@ Although these genes may be involved in regulation of panicle complexity, their 
 
 L~2~FCs of genes in clusters 3 and 6 change between accessions from the two continents.
 In cluster 3, L~2~FCs are higher in African species than in Asian species, meaning that the genes are more highly expressed in DM stages in African species.
-The genes in cluster 6 display the opposite pattern with a higher L~2~FCs in Asian species compared to African species.
-Cluster 3 contains the orthologs [**homologs?**] of the *Arabidopsis thaliana* transcription factor *LEAFY*, *LAX PANICLE 1* (*LAX1*) and *FLO-LFY HOMOLOG OF RICE* (*RFL*), which are involved in axillary meristem establishment and outgrowth and promotion of indeterminate meristematic activity in rice [@komatsuLAX1FRIZZYPANICLE2001; **RFL ref**]
+Genes in cluster 6 have the opposite pattern, with higher L~2~FCs in Asian species compared to African species.
+Cluster 3 contains the *LAX PANICLE 1* (*LAX1*) and *FLO-LFY HOMOLOG OF RICE* (*RFL*), which are involved in axillary meristem establishment and outgrowth and promotion of indeterminate meristematic activity in rice respectively [@komatsuLAX1FRIZZYPANICLE2001; @ikeda-kawakatsuABERRANTPANICLEORGANIZATION2012]
 Their higher expression at the DM stage in panicles from both wild and domsticated African accessions could be associated with a reduced number of spikelets.
 
 > TH: I'm not sure about the previous two paragraphs. It's all interesting, but is it too much detail? It's a bit of a laundry list: "here are all the interesting things about the clusters". Will it be boring to read? It is also not 100% relevant to this section, "*AP2/EREBP*-like gene expression is associated with panicle diversity and domestication".
