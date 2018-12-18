@@ -35,7 +35,7 @@ We did not observe grouping by domestication status, suggesting that transcripto
 
 We used PCA on transformed raw counts to investigate general patterns of variation in the transcriptomes that may be associated with differences in panicle architecture. The first four PCs split different combinations of rice species (Figure 2 **transcriptome-pca**).
 PC1–PC4 may relate to species-specific differences unrelated to panicle architecture, or mapping biases introduced by mapping all libraries against the *O. sativa japonica* reference.
-In contrast, PC5 separates developmental stages across all five accessions, although separation is weaker in *O. sativa indica* (Figure 2 **transcriptome-pca***). 
+In contrast, PC5 separates developmental stages across all five accessions, although separation is weaker in *O. sativa indica* (Figure 2 **transcriptome-pca**). 
 *APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes and MADS-box genes are enriched at the extremes of PC5 (*p*~adj~ = 0.004 for both, GSEA permutation *t*-test; Figure 3 **HB-AP2-heatmap**; Table S7 **PC5-TF-enrichment-gsea**).
 Generally, *AP2/EREBP*-like genes that contribute to PC5 are more highly expressed at the IM stage, and MADS-box genes are more highly expressed at the DM stage (Figure 3 **HB-AP2-heatmap**).
 Most of the *AP2/EREBP*-like genes that are highly expressed at the IM stage belong to the ERF clade.
@@ -90,7 +90,7 @@ Although these genes may be involved in regulation of panicle complexity, their 
 L~2~FCs of genes in clusters 3 and 6 change between accessions from the two continents.
 In cluster 3, L~2~FCs are higher in African species than in Asian species, meaning that the genes are more highly expressed in DM stages in African species.
 Genes in cluster 6 have the opposite pattern, with higher L~2~FCs in Asian species compared to African species.
-Cluster 3 contains the *LAX PANICLE 1* (*LAX1*) and *FLO-LFY HOMOLOG OF RICE* (*RFL*), which are involved in axillary meristem establishment and outgrowth and promotion of indeterminate meristematic activity in rice respectively [@komatsuLAX1FRIZZYPANICLE2001; @ikeda-kawakatsuABERRANTPANICLEORGANIZATION2012]
+Cluster 3 contains the *LAX PANICLE 1* (*LAX1*) and *FLO-LFY HOMOLOG OF RICE* (*RFL*), which are involved in axillary meristem establishment and outgrowth and promotion of indeterminate meristematic activity in rice respectively [@komatsuLAX1FRIZZYPANICLE2001; @ikeda-kawakatsuABERRANTPANICLEORGANIZATION2012].
 Their higher expression at the DM stage in panicles from both wild and domsticated African accessions could be associated with a reduced number of spikelets.
 
 To find TF genes associated with parallel changes in panicle architecture during domestication, we tested the stage × domestication interaction for *O. rufipogon*, *O. sativa indica*, *O. barthii* and *O. glaberrima* at an FDR of 0.1 (Table S9 **DE-genes-interaction**).

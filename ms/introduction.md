@@ -3,10 +3,10 @@
 Rice produces grains on complex raceme inflorescences called panicles, which consist of a series of branches of different orders.
 The rachis is the main axis, and primary, secondary and tertiary branches form higher-order axes (Figure S1 **suppl-figure-panicle**).
 Grain yield in rice is linked to inflorescence branching, because the number of spikelets produced on the higher-order branches determines the number of grains per panicle [@doebleyMolecularGeneticsCrop2006; @xingGeneticMolecularBases2010; @olsenCropPlantsModels2013].
-Inflorescence size and architecture are key targets in selective breeding for improved rice grain yield and quality [@doustArchitecturalEvolutionIts2007; @wangBranchingRice2011], and as a result, these characteristics have changed during domestication.
+Inflorescence size and architecture are key targets in selective breeding for improved rice grain yield and quality [@doustArchitecturalEvolutionIts2007; @wangBranchingRice2011], and as a result, these characteristics are different between domesticated and wild accessions.
 
 Inflorescence branching and the number of grains per inflorescence varies between clades, species and accessions of rice in the genus *Oryza* [@yamakiDiversityPanicleBranching2010; @taguchi-shiobaraVariationDomesticatedRice2011].
-Asian and African clades of rice diverged around two million years ago and were domesticated independently [@zhuPhylogeneticRelationshipsAgenome2005].
+Asian and African clades diverged around two million years ago and were domesticated independently [@zhuPhylogeneticRelationshipsAgenome2005].
 Domesticated Asian rice, *Oryza sativa*, diverged 10,000 years ago via a complex domestication process from the wild Asian rice species, *Oryza rufipogon*.
 The *O. sativa* species complex involves a network of subspecies, including *O. sativa indica* and *O. sativa japonica* [@huangMapRiceGenome2012; @choiRiceParadoxMultiple2017; @steinGenomes13Domesticated2018].
 Domesticated African rice, *Oryza glaberrima*, has a simpler history.
@@ -23,9 +23,9 @@ Each rice grain is produced from a single spikelet [reviewed by @itohRicePlantDe
 
 The complexity of panicle branching and the number of grains are determined by two basic developmental outcomes: firstly, how many axillary meristems are produced, and secondly, the meristem maturation rate, which determines whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and gives rise to a grain. 
 The maturation rate and identity of reproductive and axillary meristems are controlled by transcriptional regulators, some of which have been identified in *O. sativa* [@xingGeneticMolecularBases2010; @wangBranchingRice2011].
-Genes including *G1L5* (*TAWAWA*), *LAX1* and *LAX2* control the branching phase via establishment and activity of indeterminate meristems 
+Genes including *G1 LIKE PROTEIN 5* (*TAWAWA*), *LAX PANICLE 1* and *LAX PANICLE 2* control the branching phase via establishment and activity of indeterminate meristems 
 [@yoshidaTAWAWA1RegulatorRice2013; @komatsuLAX1FRIZZYPANICLE2001; @tabuchiLAXPANICLE2Rice2011].
-Genes such as *SNB*, *FZP* and  *LHS1* regulate the transition from indeterminate meristems to determinate spikelet meristems and the subsequent transition from spikelet to floret meristem [@jeonLeafyHullSterile12000; @komatsuLAX1FRIZZYPANICLE2001; @agrawalConservationEfunctionFloral2005]. [**can't find refs chen et al., 2006; Lee et al., 2006**]
+Genes such as *SUPERNUMERARY BRACT GENE*, *FRIZZY PANICLE* and  *LEAFY HULL STERILE 1* regulate the transition from indeterminate meristems to determinate spikelet meristems and the subsequent transition from spikelet to floret meristem [@jeonLeafyHullSterile12000; @komatsuLAX1FRIZZYPANICLE2001; @agrawalConservationEfunctionFloral2005]. [**can't find refs chen et al., 2006; Lee et al., 2006**]
 
 Despite advances in understanding molecular mechanisms that regulate panicle branching in rice [@furutaniGenomewideAnalysisSpatial2006; @harropGeneExpressionProfiling2016], and  characterization of individual genes associated with variation in panicle branching, the transcriptional regulation that underlies the phenotypic diversity of branching across rice species has not been reported.
 The independent domestications of African and Asian rice in the genus *Oryza* provide a comparative context to study the evolution of agronomic traits such as panicle architecture, and the mechanisms underlying parallel evolution of phenotype.

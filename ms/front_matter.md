@@ -14,7 +14,7 @@ Institut de Recherche pour le Développement, UMR DIADE, 911 Avenue Agropolis, 3
 
 BM, Branch meristem;
 DM, Determinate meristem; 
-FM, floret meristem;
+FM, Floret meristem;
 IM, Indeterminate meristem; 
 PBIL, Primary branch internode length;
 PBL, Primary branch length;
