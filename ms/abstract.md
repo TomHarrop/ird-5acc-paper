@@ -10,3 +10,8 @@
 4. the main conclusion, including the key points of discussion
 
 ### Five to eight key words
+
+- inflorescence
+- domestication
+- AP2
+- transcriptome

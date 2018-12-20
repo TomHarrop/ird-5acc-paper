@@ -9,8 +9,6 @@ We also thank James Tregear for useful feedback on the manuscript.
 ### Funding
 
 This research was funded by Agropolis Foundation through the *Investissements d’avenir* programme (ANR-10-LABX-0001-01), Fondazione Cariplo (EVOREPRICE 1201-004) and the CGIAR Research Program on Rice.
-We also received support from the ARTS program and the Excellence Scholarship Programme of the Embassy of France in Vietnam.
-
-> No need to mention institutional funding - it's in the address. Might need the full name for ARTS programme.
+We also received support from the Excellence Scholarship Programme of the Embassy of France in Vietnam.
 
 ### Authors’ contributions

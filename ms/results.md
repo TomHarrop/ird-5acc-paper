@@ -10,7 +10,8 @@ For all species, spikelet number correlates more with secondary branch number th
 Primary branch number correlates with spikelet number more in wild than domesticated species, but this correlation is weaker in Asian species than in African species.
 Primary and secondary branch numbers do not correlate, suggesting they are controlled by different genetic mechanisms (Figure 1D **phenotype-pca**).
 Our phenotypic analysis indicates similar changes in panicle architecture between wild and domesticated accessions in the independent African and Asian domestication processes, which presumably result from parallel, artificial selection on panicle architecture.
-Spikelet number, secondary branch number and primary branch number are the main contributors to these differences in panicle architecture, and these phenotypes are all related to axillary meristem formation and fate transition [**ref**].
+Spikelet number, secondary branch number and primary branch number are the main contributors to these differences in panicle architecture, and these phenotypes are all related to axillary meristem formation and fate transition 
+[@teoNewInsightsRegulation2014; @zhangMolecularControlGrass2014].
 
 ### Measurement of gene expression in developing panicles
 
@@ -66,6 +67,18 @@ To identify common patterns of expression of transcriptional regulators related 
 We did not include the reference accession, *O. sativa japonica* cv. Nipponbare, because it is not a high-yielding cultivar compared to other Asian rice accessions (Figure S3 **phenotype-all-varieties**).
 We recovered six clusters comprised of a total of 119 genes (Figure 5 **cluster-phenotype-corr**; Table S8 **clustered-genes**).
 
+Clusters 3, 4 and 6 correlate with spikelet number and secondary branch number, but not with PC1, meaning that the L~2~FC of genes in those clusters does not correlate with the phenotypic differences between wild and domesticated accessions.
+Clusters of genes with high L~2~FC in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters of genes with low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
+Cluster 4 had an enrichment of HB genes (9 out of 31 genes; *p*~adj~ = 2.5 × 10^-4^).
+It also contained three MIKC^C^-type MADS-box genes (*LHS1*, *MFO1* and *MADS14*), which promote spikelet meristem determination [@jeonLeafyHullSterile12000; @ohmoriMOSAICFLORALORGANS12009a; @kobayashiInflorescenceMeristemIdentity2012], and three *AP2/EREBP*-like genes including *INDETERMINATE SPIKELET 1* (*IDS1*), which also controls inflorescence architecture [@chuckFloralMeristemInitiation2008; @leeTwoAP2Family2012]. 
+L~2~FCs of genes in this cluster are low in *O. sativa indica*, high in *O. glaberrima* and intermediate in the two wild accessions.
+Although these genes may be involved in regulation of panicle complexity, their expression does not appear to have changed in parallel in the two domestications.
+L~2~FCs of genes in clusters 3 and 6 change between accessions from the two continents.
+In cluster 3, L~2~FCs are higher in African species than in Asian species, meaning that the genes are more highly expressed in DM stages in African species.
+Genes in cluster 6 have the opposite pattern, with higher L~2~FCs in Asian species compared to African species.
+Cluster 3 contains the *LAX PANICLE 1* (*LAX1*) and *FLO-LFY HOMOLOG OF RICE* (*RFL*), which are involved in axillary meristem establishment and outgrowth and promotion of indeterminate meristematic activity in rice respectively [@komatsuLAX1FRIZZYPANICLE2001; @ikeda-kawakatsuABERRANTPANICLEORGANIZATION2012].
+Their higher expression at the DM stage in panicles from both wild and domsticated African accessions could be associated with a reduced number of spikelets.
+
 Clusters 1, 2 and 5 correlated with the main principal component (PC1) in the phenotyping data, which separates wild and domesticated species independent of continent.
 Clusters 1 and 5 are also positively correlated with spikelet number and secondary branch number, whereas cluster 2 is negatively correlated. 
 The correlation of L~2~FC patterns with PC1 suggests that genes in these clusters may be associated with changes in panicle architecture between wild and domesticated species.
@@ -80,18 +93,6 @@ The lack of repression of cluster 5 genes and to a lesser extent cluster 1 genes
 Cluster 5, which had the highest mean L~2~FC in *O. sativa indica*, had an enrichment of *AP2/EREBP*-like genes (6 out of 17 genes; *p*~adj~ = 7.6 × 10^-3^, hypergeometric test), and cluster 1 also contains 3 *AP2/EREBP*-like genes (Table S8 **clustered-genes**).
 We used qPCR to confirm these patterns in all four stages of each accession for all *AP2/EREBP*-like genes in cluster 5 (Figure S8 **fluidigm-ap2-hb**).
 The enrichment of *AP2/EREBP*-like genes in cluster 5 and the presence of 3 *AP2/EREBP*-like genes in cluster 1 suggests that their pattern of expression is associated with differences in panicle architecture across wild and domesticated accessions.
-
-Clusters 3, 4 and 6 correlate with spikelet number and secondary branch number, but not with PC1, meaning that the L~2~FC of genes in those clusters does not correlate with the phenotypic differences between wild and domesticated accessions.
-Clusters of genes with high L~2~FC in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters of genes with low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
-Cluster 4 had an enrichment of HB genes (9 out of 31 genes; *p*~adj~ = 2.5 × 10^-4^).
-It also contained three MIKC^C^-type MADS-box genes (*LHS1*, *MFO1* and *MADS14*), which promote spikelet meristem determination [@jeonLeafyHullSterile12000; @ohmoriMOSAICFLORALORGANS12009a; @kobayashiInflorescenceMeristemIdentity2012], and three *AP2/EREBP*-like genes including *INDETERMINATE SPIKELET 1* (*IDS1*), which also controls inflorescence architecture [@chuckFloralMeristemInitiation2008; @leeTwoAP2Family2012]. 
-L~2~FCs of genes in this cluster are low in *O. sativa indica*, high in *O. glaberrima* and intermediate in the two wild accessions.
-Although these genes may be involved in regulation of panicle complexity, their expression does not appear to have changed in parallel in the two domestications.
-L~2~FCs of genes in clusters 3 and 6 change between accessions from the two continents.
-In cluster 3, L~2~FCs are higher in African species than in Asian species, meaning that the genes are more highly expressed in DM stages in African species.
-Genes in cluster 6 have the opposite pattern, with higher L~2~FCs in Asian species compared to African species.
-Cluster 3 contains the *LAX PANICLE 1* (*LAX1*) and *FLO-LFY HOMOLOG OF RICE* (*RFL*), which are involved in axillary meristem establishment and outgrowth and promotion of indeterminate meristematic activity in rice respectively [@komatsuLAX1FRIZZYPANICLE2001; @ikeda-kawakatsuABERRANTPANICLEORGANIZATION2012].
-Their higher expression at the DM stage in panicles from both wild and domsticated African accessions could be associated with a reduced number of spikelets.
 
 To find TF genes associated with parallel changes in panicle architecture during domestication, we tested the stage × domestication interaction for *O. rufipogon*, *O. sativa indica*, *O. barthii* and *O. glaberrima* at an FDR of 0.1 (Table S9 **DE-genes-interaction**).
 We detected 19 genes with a stage × domestication interaction, including nine *AP2/EREBP*-like genes (*p* = 4.4 × 10^-7^, hypergeometric test; Figure 6A **dom-genes-plot**).

@@ -3,22 +3,22 @@
 
 ### Plant material and growth conditions
 
-Panicle traits were measured in 91 accessions of *O. rufipgon*, *O. sativa*, *O. glaberrima*, *O. barthii* (Table S1 **Plantinfo**; **needs tidy**). Plants were grown in Cali, Colombia and Montpellier, France [**move grow location to table S1**].
+Panicle traits were measured in 91 accessions of *O. rufipgon*, *O. sativa*, *O. glaberrima*, *O. barthii*, grown in Cali, Colombia and Montpellier, France (Table S1 **Plantinfo**; **needs tidy**).
 At panicle maturity, we collected the three main panicles from three plants per accession, per replicate (*i.e.* 18 panicles/ accession).
 We used five accessions for expression analysis: *O. sativa japonica*  Nipponbare, *O sativa indica* IR64, *O. rufipogon* W1654, *O. glaberrima* Tog5681 and *O. barthii* B88.
 These accessions were grown in a greenhouse in Montpellier, France, in June 2014, under long day conditions (14h light:10h dark).
-After 6 to 8 weeks they were transferred to short day conditions (10h light:10h dark **is this right? 10 + 10 =/= 24**) to induce flowering.
+After 6 to 8 weeks they were transferred to short day conditions (11h light:13h dark) to induce flowering.
 To confirm panicle phenotypes in the growth conditions used for RNAseq, we evaluated panicle traits for 9 panicles from each accession that was grown in the greenhouse, under the same growth conditions.
-The *crl5* and *smos1-3* mutants [@ayaNovelAP2TypeTranscription2014; @kitomiAuxinResponsiveAP22011] were grown in a greenhouse in Montpellier, France, in October 2017 under short day conditions (11h light:10h dark **is this right? 11 + 10 =/= 24**).
+The *crl5* and *smos1-3* mutants [@ayaNovelAP2TypeTranscription2014; @kitomiAuxinResponsiveAP22011] were grown in a greenhouse in Montpellier, France, in October 2017 under short day conditions (11h light:13h dark).
 At least 18 panicles were used for panicle phenotyping.
 All greenhouse plants were grown at 30°C with 80% relative humidity.
 For phenotyping analyses, each panicle was spread out and fixed on white paper using adhesive tape.
-Panicles were photographed with **camera** and the images were used for panicle structure and seed number analysis with `P-TRAP` software [@al-tamPTRAPPanicleTrait2013].
+Panicles were photographed and the images were used for panicle structure and seed number analysis with `P-TRAP` software [@al-tamPTRAPPanicleTrait2013].
 
 ### Tissue collection and RNA sequencing
 
 For expression analysis, we collected three biological replicates of approximately 15 immature panicles each from at least 10 plants per accession, per stage, from 4 days to 15 days after floral induction.
-For sample collection, leaves surrounding the young panicle were removed by hand and the reproductive tissue was cut with a sharp blade under a (**brand, model**) stereomicroscope.
+For sample collection, leaves surrounding the young panicle were removed by hand and the reproductive tissue was cut with a sharp blade under a Stemi 508 (Zeiss, Germany) stereo microscope.
 The reproductive tissues were immediately frozen in liquid nitrogen, and total RNA including small RNA was extracted using the RNeasy Plant Mini kit with RLT and RWT buffers (QIAGEN, Germany).
 DNase treatments were performed using the RNAeasy-free DNase set (QIAGEN, Germany).
 RNA integrity numbers of the extracted RNA, measured using a 2100 Bioanalyzer (Agilent, U.S.A.), varied from 8.6–10.
