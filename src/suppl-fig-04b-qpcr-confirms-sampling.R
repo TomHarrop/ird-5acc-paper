@@ -18,15 +18,16 @@ load(file = "../data/fluidigm-confim-sampling.Rdata")
 
 qpcr_exp <- bind_rows(chip3_exp, chip4_exp) %>%
   scale_tidy_fluidigm() %>%
+  filter(species != "Osj") %>% 
   mutate(species = case_when(species == "Or" ~ "O. rufipogon",
                              species == "Osi" ~ "O. sativa indica",
-                             species == "Osj" ~ "O. sativa japonica",
+                             # species == "Osj" ~ "O. sativa japonica",
                              species == "Ob" ~ "O. barthii",
                              species == "Og" ~ "O. glaberrima"),
          species = factor(species,
                           levels = c("O. rufipogon",
                                      "O. sativa indica",
-                                     "O. sativa japonica",
+                                     # "O. sativa japonica",
                                      "O. barthii",
                                      "O. glaberrima")),
          stage = case_when(stage == "stage_1" ~ "Stage 1: RM",
@@ -83,29 +84,29 @@ p_img <- ggdraw() +
 p_comb <- plot_grid(p_img, p,
                     labels = c("1.", "2."),
                     nrow = 2,
-                    rel_heights = c(1, 2)) %>%
-  add_sub(str_wrap("1. Developmental stages of immature panicles
-                   collected for expression analysis. 
-                   Stage 1: rachis meristem;
-                   Stage2: formation of primary branch meristems,
-                   elongation of primary branch meristem and formation
-                   of axillary meristem; 
-                   Stage3, spikelet meristem and floret differentitaion;
-                   Stage 4, floral organ differenciation/development.
-                   M, axillary merisyem, Fl, flower; Sp, spikelet,
-                   RM, Rachis meristem; PbM, primary branch meristem;
-                   ePbM, primary branch elongated;
-                   Flm, floret meristem; St, stamen;
-                   p, palea; l, lemma. 
-                   2. In our RNA-seq samples, five selected marker genes
-                   are expressed as expected.
-                   This plot represents the fluidigm qPCR expression values
-                   for each RNAseq sample relative and samples from two additional
-                   developmental stages (In the RNAseq we have sequenced the samples
-                   from developmental stages 2 and 3).
-                   Each expression value is relative to the geometric mean expression
-                   of 4 normalizers."),
-          size = 11)
+                    rel_heights = c(1, 2))
+  # add_sub(str_wrap("1. Developmental stages of immature panicles
+  #                  collected for expression analysis. 
+  #                  Stage 1: rachis meristem;
+  #                  Stage2: formation of primary branch meristems,
+  #                  elongation of primary branch meristem and formation
+  #                  of axillary meristem; 
+  #                  Stage3, spikelet meristem and floret differentitaion;
+  #                  Stage 4, floral organ differenciation/development.
+  #                  M, axillary merisyem, Fl, flower; Sp, spikelet,
+  #                  RM, Rachis meristem; PbM, primary branch meristem;
+  #                  ePbM, primary branch elongated;
+  #                  Flm, floret meristem; St, stamen;
+  #                  p, palea; l, lemma. 
+  #                  2. In our RNA-seq samples, five selected marker genes
+  #                  are expressed as expected.
+  #                  This plot represents the fluidigm qPCR expression values
+  #                  for each RNAseq sample relative and samples from two additional
+  #                  developmental stages (In the RNAseq we have sequenced the samples
+  #                  from developmental stages 2 and 3).
+  #                  Each expression value is relative to the geometric mean expression
+  #                  of 4 normalizers."),
+  #         size = 11)
 
 pdf("../fig/suppl-fig-qpcr-confirms-sampling.pdf",
     height = 10, width = 6.2,
