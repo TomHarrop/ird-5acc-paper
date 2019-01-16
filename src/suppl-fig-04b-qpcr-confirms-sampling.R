@@ -18,16 +18,16 @@ load(file = "../data/fluidigm-confim-sampling.Rdata")
 
 qpcr_exp <- bind_rows(chip3_exp, chip4_exp) %>%
   scale_tidy_fluidigm() %>%
-  filter(species != "Osj") %>% 
+  # filter(species != "Osj") %>% 
   mutate(species = case_when(species == "Or" ~ "O. rufipogon",
                              species == "Osi" ~ "O. sativa indica",
-                             # species == "Osj" ~ "O. sativa japonica",
+                             species == "Osj" ~ "O. sativa japonica",
                              species == "Ob" ~ "O. barthii",
                              species == "Og" ~ "O. glaberrima"),
          species = factor(species,
                           levels = c("O. rufipogon",
                                      "O. sativa indica",
-                                     # "O. sativa japonica",
+                                     "O. sativa japonica",
                                      "O. barthii",
                                      "O. glaberrima")),
          stage = case_when(stage == "stage_1" ~ "Stage 1: RM",

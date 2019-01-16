@@ -6,8 +6,7 @@ library(gridExtra)
 source("../analyze-fluidigm/helper_functions_fluidigm.R")  
 
 
-load("../data/ap2_fluidigm.R")
-load("../data/hb_fluidigm.R")
+load("../data/ap2_fluidigm.Rdata")
 
 cls <- read_csv("../data-raw/annotated_clusters_scaled_l2fc.csv") %>%
   dplyr::rename(locus_id = "MsuID")
@@ -21,15 +20,16 @@ dat <-
   ap2_exp %>%
   filter(locus_id %in% cl5$locus_id) %>%
   scale_tidy_fluidigm() %>%
+  filter(species != "Osj") %>% 
   mutate(species = case_when(species == "Or" ~ "O. rufipogon",
                              species == "Osi" ~ "O. sativa indica",
-                             species == "Osj" ~ "O. sativa japonica",
+                             # species == "Osj" ~ "O. sativa japonica",
                              species == "Ob" ~ "O. barthii",
                              species == "Og" ~ "O. glaberrima"),
          species = factor(species,
                           levels = c("O. rufipogon",
                                      "O. sativa indica",
-                                     "O. sativa japonica",
+                                     # "O. sativa japonica",
                                      "O. barthii",
                                      "O. glaberrima")),
          stage = case_when(stage == "stage_1" ~ "Stage 1: RM",

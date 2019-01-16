@@ -26,4 +26,4 @@ ap2_exp <- fluidigms$ap2_exp %>%
 
 # Save --------------------------------------------------------------------
 
-save(ap2_exp, file = "../data/ap2_fluidigm.R")
+save(ap2_exp, file = "../data/ap2_fluidigm.Rdata")
