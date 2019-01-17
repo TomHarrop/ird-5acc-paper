@@ -1,7 +1,12 @@
 ## Supplementary figures
 
+![](figures/Figure_S7.pdf)
+
+
 **Figure S1 PanicleStructure**.
 Spread mature rice panicle. RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBIL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBIL: Secondary branch internode length; Sp : Spikelet.
+
+\clearpage
 
 **Figure S2 phenotype-pca-all-pc**.
 Principal component analysis (PCA) of panicle phenotyping data showing components 1–4.
