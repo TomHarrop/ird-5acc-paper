@@ -22,7 +22,7 @@ For sample collection, leaves surrounding the young panicle were removed by hand
 The reproductive tissues were immediately frozen in liquid nitrogen, and total RNA including small RNA was extracted using the RNeasy Plant Mini kit with RLT and RWT buffers (QIAGEN, Germany).
 DNase treatments were performed using the RNAeasy-free DNase set (QIAGEN, Germany).
 RNA integrity numbers of the extracted RNA, measured using a 2100 Bioanalyzer (Agilent, U.S.A.), varied from 8.6–10.
-Stage and meristem specificity were validated with quantitative real-time RT-PCR (qPCR) using stage-specific marker genes (Table S2).
+Stage and meristem specificity were validated with quantitative real-time RT-PCR (qPCR) using stage-specific marker genes (Table S2 **supp-table-PrimerList** **needs tidy**).
 400 ng of total RNA was used for each sample for RNAseq library preparation with the TruSeq Stranded Total RNA with Ribo-Zero Plant kit (Illumina, U.S.A.).
 After quantification with a 2100 Bioanalyzer, 125-base paired-end reads were generated on a HiSeq 2500 (Illumina, U.S.A.) by the GeT Platform (Toulouse, Montpellier).
 

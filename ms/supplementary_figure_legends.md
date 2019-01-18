@@ -1,23 +1,26 @@
-## Supplementary figures
+### Supplementary figures
 
-![](figures/Figure_S7.pdf)
-
+![](figures/Figure_S1.pdf)
 
 **Figure S1 PanicleStructure**.
 Spread mature rice panicle. RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBIL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBIL: Secondary branch internode length; Sp : Spikelet.
 
-\clearpage
+![](figures/Figure_S2.pdf)
 
 **Figure S2 phenotype-pca-all-pc**.
 Principal component analysis (PCA) of panicle phenotyping data showing components 1–4.
 PC1 accounts for 46.5% of variability and separates panicles from domesticated and wild accessions.
 The lower ordinates do not separate panicles by species.
 
+![](figures/Figure_S3.pdf)
+
 **Figure S3 phenotype-all-varieties**.
 The accessions used for RNAseq are consistent with species-wide patterns of panicle architecture.
 The *y*-axis shows the projection of each panicle on principal component 1 (PC1), which separates wild and domesticated accessions (**Figure 1**).
 Scores on PC1 for the accessions chosen for RNAseq are shown in red.
 Accessions used for phenotyping are listed in **Table S1**.
+
+![](figures/Figure_S4.pdf)
 
 **Figure S4 qpcr-confirms-sampling**.
 Early stages of rice panicle development used for gene expression analysis.
@@ -38,11 +41,15 @@ St, stamen;
 p, palea;
 l, lemma.
 
+![](figures/Figure_S5.pdf)
+
 **Figure S5 distance-heatmap**.
 Heatmap of pairwise distances between RNAseq samples.
 Samples group by stage, species and continent.
 The numbers indicate single samples (three replicates per accession per stage).
 The axes are ordered by hierarchical clustering of Minkowski distances between samples.
+
+![](figures/Figure_S6.pdf)
 
 **Figure S6 NAC-HB-SPL-heatmap**.
 Homeobox, NAC and SBP transcription factors change expression between IM and DM.
@@ -51,23 +58,31 @@ While Homeobox and SBP genes are expressed preferentially in the DM, NAC are mor
 Genes in the upper panels have a positive loading on PC5 (corresponding to higher expression at the IM stage), whilst genes in the lower panels have a negative loading
 Clades for Homeobox genes are from the Plant Transcription Factor Database v4.0 [@jinPlantTFDBCentralHub2017].
 
+![](figures/Figure_S7.pdf)
+
 **Figure S7 lmd-paper-ap2**.
 Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
 Both genes are expressed at all stages.
 *PLT8* expression peaks in RM.
 RM, rachis meristem; PBM, primary branch meristem; ePBM/AM, extending primary branch meristem and axillary meristem; SM, spikelet meristem.
 
-**Figure S8 fluidigm-ap2-hb**.
-Expression analysis along early panicle development of *AP2/EREBP*-like and Homeobox genes present in cluster 5.
-**Label stages on x-axis.**
+![](figures/Figure_S8.pdf)
 
-**Figure S9 cluster-5-details**.
-Most genes in cluster 5 have negative L~2~FCs between IM and DM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
-This cluster has an enrichment of *AP2/EREBP*-like genes.
-
-**Figure S10 phenotyping-mpl**.
+**Figure S8 phenotyping-mpl**.
 Phenotyping of the five *Oryza* accessions used for RNAseq.
 Plants for this dataset were grown together in controlled, greenhouse conditions, separately to the plants used for the 91-accession survey, using the same conditions as plants that were used for RNAseq.
 The three domesticated accessions produce more spikelets and secondary branches than their wild relatives.
 The domesticated accessions have a similar number of primary branches, but Asian domesticated species have more secondary branches and spikelets than domesticated African accessions.
 In comparison to *O. sativa japonica*, *O. sativa indica* produces more secondary branches.
+
+![](figures/Figure_S9.pdf)
+
+**Figure S9 cluster-5-details**.
+Most genes in cluster 5 have negative L~2~FCs between IM and DM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
+This cluster has an enrichment of *AP2/EREBP*-like genes.
+
+![](figures/Figure_S10.pdf)
+
+**Figure S10 fluidigm-ap2-hb**.
+Expression analysis along early panicle development of *AP2/EREBP*-like and Homeobox genes present in cluster 5.
+**Label stages on x-axis.**

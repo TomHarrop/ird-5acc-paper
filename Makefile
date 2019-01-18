@@ -58,11 +58,12 @@ docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/me
 		ms/figure_legends.md \
 		ms/si_list.md
 
-pdf/supporting_information.pdf: ms/supplementary_figure_legends.md ms/supplementary_table_captions.md template/Wiley-AuthoringTemplate.sty
+pdf/supporting_information.pdf: ms/supplementary_figure_legends.md ms/supplementary_table_captions.md
 	pandoc \
 		--from=markdown \
 		--to=latex \
 		--pdf-engine=xelatex \
+		--include-in-header=template/si_header.tex \
 		--bibliography=bib/references.bib \
 		--csl=template/new-phytologist.csl \
 		-o pdf/supporting_information.pdf \

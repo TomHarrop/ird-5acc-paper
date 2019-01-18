@@ -1,0 +1,19 @@
+% Choose font
+\setmainfont{Georgia}
+
+% Set margins
+\usepackage[a4paper,includeheadfoot,margin=2cm]{geometry}
+
+% Centre all images
+\usepackage{letltxmacro}
+
+% Save the meaning of \includegraphics
+\LetLtxMacro\latexincludegraphics\includegraphics
+
+% Update the include graphics command to include centering
+\renewcommand{\includegraphics}[2][]%
+  {\clearpage
+  \begin{center}
+  \latexincludegraphics[#1]{#2}
+  \end{center}}
+  

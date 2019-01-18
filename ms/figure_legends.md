@@ -35,11 +35,11 @@ The *crl5* mutant of *PLT8* (*LOC_Os07g03250*) produces fewer primary branches a
 
 **Figure 5 cluster-phenotype-corr**.
 Gene expression clusters correlate with the main component of diversity of panicle architecture (PC1) and the number of secondary branches (SBN) and spikelets (SpN).
-Clusters contained 19–31 genes each (**Table S8**).
+Clusters contained 19–31 genes each (Table S8 **clustered-genes**).
 (**a**) Mean, scaled log~2~-fold change (L~2~FC) of genes by cluster and accession.
 (**b**) Pearson correlation with PC1, SBN and SpN.
 PC1 is the main principal component that separates panicles from domesticated and wild accessions of rice (**Figure 1**).
-Correlations with SBN and SpN are based on repeat panicle phenotyping for the accessions used for RNAseq in greenhouse conditions (Figure S10 **phenotyping-mpl**; Table S4 **PanicleTraitsPhenotypingPlantsSequenced**).
+Correlations with SBN and SpN are based on repeat panicle phenotyping for the accessions used for RNAseq in greenhouse conditions (Figure S10 **phenotyping-mpl**; Table S10 **PanicleTraitsPhenotypingPlantsSequenced**).
 
 **Figure 6 dom-genes**.
 Parallel and divergent evolution of gene expression during domestication.

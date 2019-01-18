@@ -21,14 +21,14 @@ Expression of genes from selected transcription families.
 **Figure S7 lmd-paper-ap2**.
 Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
 
-**Figure S8 fluidigm-ap2-hb**.
-Expression analysis along early panicle development of AP2-like and Homeobox genes present in Cluster 4 and 5.
+**Figure S8 phenotyping-mpl**.
+Phenotyping of the five *Oryza* accessions used for RNAseq.
 
 **Figure S9 cluster-5-details**.
 Most genes in cluster 5 have negative L~2~FCs between BM and SM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
 
-**Figure S10 phenotyping-mpl**.
-Phenotyping of the five *Oryza* accessions used for RNAseq.
+**Figure S10 fluidigm-ap2-hb**.
+Expression analysis along early panicle development of AP2-like and Homeobox genes present in Cluster 4 and 5.
 
 **Table S1 Plantinfo**.
 Rice accessions used in this study.
@@ -39,17 +39,17 @@ Sequences of primers used.
 **Table S3 PanicleTraitsPhenotyping**.
 Quantification of panicle traits in 91 accessions from wild and domesticated Asian and African rice species.
 
-**Table S4 PanicleTraitsPhenotypingPlantsSequenced**.
-Detailed quantification of panicle traits from rice accessions used for sequencing analysis.
-
-**Table S5 mapping-statistics**.
+**Table S4 mapping-statistics**.
 Read and mapping statistics for all RNAseq samples.
+
+**Table S5 PC5-TF-enrichment-gsea**.
+Transcription factor families that are enriched along PC5.
 
 **Table S6 DE-genes-stages**.
 Differential expression test results between stages across all species.
 
-**Table S7 PC5-TF-enrichment-gsea**.
-Transcription factor families that are enriched along PC5.
+**Table S7 PanicletraitsPhenotypingAP2**.
+Quantification of panicle traits from crl5 and smos1 mutants.
 
 **Table S8 clustered-genes**.
 Clustered genes.
@@ -57,5 +57,5 @@ Clustered genes.
 **Table S9 DE-genes-interaction**.
 Differential expression test results for the stage × accession interaction in Asian and African accessions.
 
-**Table S10 PanicletraitsPhenotypingAP2**.
-Quantification of panicle traits from crl5 and smos1 mutants.
+**Table S10 PanicleTraitsPhenotypingPlantsSequenced**.
+Detailed quantification of panicle traits from rice accessions used for sequencing analysis.

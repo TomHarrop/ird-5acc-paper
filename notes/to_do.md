@@ -20,9 +20,12 @@
 - Figure S1 (with figure 1)
 - Figure S2: phenotyping MTP
 
-## notes for mtg
+## Tables to rename 
 
-- Figure S4 phenotype-all-varieties:
-    + If we delete the statement about the number of panicles, we have to show all data
-    + 
+PC5-TF-enrichment-gsea -> S5
+PanicletraitsPhenotypingAP2 -> S7
+PanicleTraitsPhenotypingPlantsSequenced -> S10
 
+## Figs to rename
+
+fluidigm-ap2-hb -> S10

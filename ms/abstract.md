@@ -13,5 +13,6 @@
 
 - inflorescence
 - domestication
-- AP2
+- *AP2/EREBP*-like genes
 - transcriptome
+- rice

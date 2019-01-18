@@ -1,7 +1,7 @@
 ## Introduction
 
 Rice produces grains on complex raceme inflorescences called panicles, which consist of a series of branches of different orders.
-The rachis is the main axis, and primary, secondary and tertiary branches form higher-order axes (Figure S1 **suppl-figure-panicle**).
+The rachis is the main axis, and primary, secondary and tertiary branches form higher-order axes (Figure S1 **PanicleStructure**).
 Grain yield in rice is linked to inflorescence branching, because the number of spikelets produced on the higher-order branches determines the number of grains per panicle [@doebleyMolecularGeneticsCrop2006; @xingGeneticMolecularBases2010; @olsenCropPlantsModels2013].
 Inflorescence size and architecture are key targets in selective breeding for improved rice grain yield and quality [@doustArchitecturalEvolutionIts2007; @wangBranchingRice2011], and as a result, these characteristics are different between domesticated and wild accessions.
 
@@ -29,5 +29,5 @@ Genes such as *SUPERNUMERARY BRACT GENE*, *FRIZZY PANICLE* and  *LEAFY HULL STER
 
 Despite advances in understanding molecular mechanisms that regulate panicle branching in rice [@furutaniGenomewideAnalysisSpatial2006; @harropGeneExpressionProfiling2016], and  characterization of individual genes associated with variation in panicle branching [**add review**], the transcriptional regulation that underlies the phenotypic diversity of branching across rice species has not been reported.
 The independent domestications of African and Asian rice in the genus *Oryza* provide a comparative context to study the evolution of agronomic traits such as panicle architecture, and the mechanisms underlying parallel evolution of phenotype.
-We phenotyped panicles from domesticated and wild accessions of Asian and African rice, and used whole-transcriptome sequencing (RNAseq) to reveal gene expression patterns associated with the diversity of inflorescence architecture.
+Here, we phenotyped panicles from domesticated and wild accessions of Asian and African rice, and used whole-transcriptome sequencing (RNAseq) to reveal gene expression patterns associated with the diversity of inflorescence architecture.
 Our analysis reveals an association between expression of *AP2/EREBP*-like genes and panicle architecture.
