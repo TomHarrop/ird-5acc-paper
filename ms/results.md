@@ -26,7 +26,7 @@ determinate meristem (DM), including panicles wherein axillary meristems had tra
 and floret meristem (FM), with early differentiation of floral organs
 (Figure S4a **qpcr-confirms-sampling**).
 We first confirmed staging of the panicles by extracting RNA from pooled immature panicles at each stage and measuring expression of markers of panicle development by quantitative real-time RT-PCR (qPCR) (Figure S4b **qpcr-confirms-sampling**).
-Because branching complexity is related to branch meristem establishment and meristem fate transition [@kyozukaControlGrassInflorescence2014], and secondary branch number and spikelet number contribute to differences between wild and domsticated accessions (Figure 1), we chose the IM and DM stages for RNAseq.
+Because branching complexity is related to branch meristem establishment and meristem fate transition [@kyozukaControlGrassInflorescence2014], and secondary branch number and spikelet number contribute to differences between wild and domesticated accessions (Figure 1), we chose the IM and DM stages for RNAseq.
 cDNA libraries for sequencing were constructed from rRNA-depleted RNA samples from three biological replicates at both stages for all five accessions.
 After mapping the reads against the *O. sativa japonica* cv. Nipponbare reference genome [@ouyangTIGRRiceGenome2007], we obtained an average of more than 20 million uniquely mapped reads within exons for each accession, including African rice species (Table S4 **mapping-statistics**).
 Pairwise distances between samples, calculated on the number of reads per gene from all detected genes, grouped samples first by stage, then by accession, and then by continent (Figure S5 **distance-heatmap**).
@@ -37,7 +37,7 @@ We did not observe grouping by domestication status, suggesting that transcripto
 We used PCA on transformed raw counts to investigate general patterns of variation in the transcriptomes that may be associated with differences in panicle architecture. The first four PCs split different combinations of rice species (Figure 2 **transcriptome-pca**).
 PC1–PC4 may relate to species-specific differences unrelated to panicle architecture, or mapping biases introduced by mapping all libraries against the *O. sativa japonica* reference.
 In contrast, PC5 separates developmental stages across all five accessions, although separation is weaker in *O. sativa indica* (Figure 2 **transcriptome-pca**). 
-*APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes and MADS-box genes are enriched at the extremes of PC5 (*p*~adj~ = 0.004 for both, GSEA permutation *t*-test; Figure 3 **HB-AP2-heatmap**; Table S5 **PC5-TF-enrichment-gsea**).
+*APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes and MADS-box genes are enriched at the extremes of PC5 (*p*~adj~ = 0.004 for both, GSEA permutation *t*-test; Table S5 **PC5-TF-enrichment-gsea**).
 Generally, *AP2/EREBP*-like genes that contribute to PC5 are more highly expressed at the IM stage, and MADS-box genes are more highly expressed at the DM stage (Figure 3 **HB-AP2-heatmap**).
 Most of the *AP2/EREBP*-like genes that are highly expressed at the IM stage belong to the ERF clade.
 *NAM*, *ATAF1* and *CUC2*-domain (NAC) TF genes are also more highly expressed at the IM stage, and *SQUAMOSA* promoter binding protein (SBP) genes including *WFP* and *SPL7* are more highly expressed at the DM stage [@miuraOsSPL14PromotesPanicle2010; @wangCoordinatedRegulationVegetative2015].
@@ -66,7 +66,7 @@ Although neither gene was differentially expressed in our RNAseq dataset, these 
 To identify common patterns of expression of transcriptional regulators related to variation in panicle phenotypes, we used soft clustering of scaled L~2~FCs between IM and DM using the subset of annotated TF genes that were detected in our RNAseq dataset.
 We did not include the reference accession, *O. sativa japonica* cv. Nipponbare, because it is not a high-yielding cultivar compared to other Asian rice accessions (Figure S3 **phenotype-all-varieties**).
 We recovered six clusters comprised of a total of 119 genes (Figure 5 **cluster-phenotype-corr**; Table S8 **clustered-genes**).
-We calculate correlations between the mean L~2~FC value of genes in each cluster and PC1 in the phenotyping data, and between mean L~2~FC  and the number of secondary branches and spikelets from repeat panicle phenotyping for the accessions used for RNAseq (Figure 5b **cluster-phenotype-corr**; Figure 1 **phenotype-pca**; Figure S8 **phenotyping-mpl**).
+We calculated correlations between the mean L~2~FC value of genes in each cluster and PC1 in the phenotyping data, and between mean L~2~FC and the number of secondary branches and spikelets from repeat panicle phenotyping for the accessions used for RNAseq (Figure 5b **cluster-phenotype-corr**; Figure 1 **phenotype-pca**; Figure S8 **phenotyping-mpl**).
 
 Clusters 3, 4 and 6 correlate with spikelet number and secondary branch number, but not with PC1, meaning that the L~2~FC of genes in those clusters does not correlate with the phenotypic differences between wild and domesticated accessions.
 Clusters of genes with high L~2~FC in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters of genes with low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
@@ -97,6 +97,7 @@ The enrichment of *AP2/EREBP*-like genes in cluster 5 and the presence of 3 *AP2
 
 To find TF genes associated with parallel changes in panicle architecture during domestication, we tested the stage × domestication interaction for *O. rufipogon*, *O. sativa indica*, *O. barthii* and *O. glaberrima* at an FDR of 0.1 (Table S9 **DE-genes-interaction**).
 We detected 19 genes with a stage × domestication interaction, including nine *AP2/EREBP*-like genes (*p* = 4.4 × 10^-7^, hypergeometric test; Figure 6A **dom-genes-plot**).
+Seven of these *AP2/EREBP*-like genes are in the top 10% of all genes by absolute loading on PC5, with higher expression in IM than DM (Figure 3 **MADS-AP2-heatmap**), and higher L~2~FC in wild than domesticated species (Figure 6A **dom-genes-plot**).
 These genes are putative targets of parallel selection on panicle architecture that occurred during domestication.
 *AP2/EREBP*-like genes were also prominent when we tested the stage × accession interaction separately for each domestication (12 out of 85 genes in Asian accessions; 8 out of 50 genes in African accessions; Table S9 **DE-genes-interaction**).
 Consistent with the presence of *IDS1* in cluster 4, it was also was DE in both Asian and African domestications, although the direction of change was different (Figure 6B **dom-genes-plot**).
