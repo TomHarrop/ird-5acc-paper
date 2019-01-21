@@ -3,7 +3,7 @@
 
 ### Plant material and growth conditions
 
-Panicle traits were measured in 91 accessions of *O. rufipgon*, *O. sativa*, *O. glaberrima*, *O. barthii*, grown in Cali, Colombia and Montpellier, France (Table S1 **Plantinfo**; **needs tidy**).
+Panicle traits were measured in 91 accessions of *O. rufipogon*, *O. sativa*, *O. glaberrima* and *O. barthii*, grown in Cali, Colombia and Montpellier, France (Table S1 **Plantinfo**; **needs tidy**).
 At panicle maturity, we collected the three main panicles from three plants per accession, per replicate (*i.e.* 18 panicles/ accession).
 We used five accessions for expression analysis: *O. sativa japonica*  Nipponbare, *O sativa indica* IR64, *O. rufipogon* W1654, *O. glaberrima* Tog5681 and *O. barthii* B88.
 These accessions were grown in a greenhouse in Montpellier, France, in June 2014, under long day conditions (14h light:10h dark).
@@ -21,10 +21,10 @@ For expression analysis, we collected three biological replicates of approximate
 For sample collection, leaves surrounding the young panicle were removed by hand and the reproductive tissue was cut with a sharp blade under a Stemi 508 (Zeiss, Germany) stereo microscope.
 The reproductive tissues were immediately frozen in liquid nitrogen, and total RNA including small RNA was extracted using the RNeasy Plant Mini kit with RLT and RWT buffers (QIAGEN, Germany).
 DNase treatments were performed using the RNAeasy-free DNase set (QIAGEN, Germany).
-RNA integrity numbers of the extracted RNA, measured using a 2100 Bioanalyzer (Agilent, U.S.A.), varied from 8.6–10.
-Stage and meristem specificity were validated with quantitative real-time RT-PCR (qPCR) using stage-specific marker genes (Table S2 **supp-table-PrimerList** **needs tidy**).
+RNA integrity numbers of the extracted RNA, measured using a 2100 Bioanalyzer (Agilent, U.S.A.), was between 8.6 and 10.
+Stage specificity was validated with quantitative real-time RT-PCR (qPCR) using stage-specific marker genes (Table S2 **supp-table-PrimerList** **needs tidy**).
 400 ng of total RNA was used for each sample for RNAseq library preparation with the TruSeq Stranded Total RNA with Ribo-Zero Plant kit (Illumina, U.S.A.).
-After quantification with a 2100 Bioanalyzer, 125-base paired-end reads were generated on a HiSeq 2500 (Illumina, U.S.A.) by the GeT Platform (Toulouse, Montpellier).
+After quantification with a 2100 Bioanalyzer, 125-base paired-end reads were generated on a HiSeq 2500 (Illumina, U.S.A.) by the GeT Platform (Toulouse, France).
 
 ### qPCR
 
@@ -35,10 +35,12 @@ A 96 × 96 Dynamic Array Integrated Fluidic Circuit (Fluidigm, U.S.A.) was loade
 A fast cycling protocol and EvaGreen dye (Bio-Rad Laboratories, U.S.A.) were was used for amplification.
 Three biological replicates were performed for each sample.
 Data were normalized using 4 genes (*LOC_Os06g11170*, *LOC_Os06g48970*, *LOC_Os01g16970*, *LOC_Os03g61680*) **that were selected using the geNorm method [@vandesompeleAccurateNormalizationRealtime2002] (Otho, please confirm)**.
-Relative gene expression was estimated using the $2^{- \Delta \Delta C_{T}}$ method [@livakAnalysisRelativeGene2001].
+Gene expression relative to the normalisation factors was estimated using the $2^{- \Delta \Delta C_{T}}$ method without a calibrator sample [@livakAnalysisRelativeGene2001].
 Primer sequences are listed in Table S2 **supp-table-PrimerList** **needs tidy**.
 
-> TH: Otho, is the $2^{- \Delta \Delta C_{T}}$ method [@livakAnalysisRelativeGene2001] what you were referring to? Can you please make sure the qPCR analysis is reproducible as below?
+> TH: Can you remind me where the HK genes came from? I don't *think* these are the ones I designed from the LMD results but I'm not sure about that. Did you test the stability in our samples? Does it even matter?
+
+> Can you please make sure the qPCR analysis is reproducible as below? (Tom to update once the repo is ready)
 
 ### Data analysis
 

@@ -25,10 +25,10 @@ Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meri
 Phenotyping of the five *Oryza* accessions used for RNAseq.
 
 **Figure S9 cluster-5-details**.
-Most genes in cluster 5 have negative L~2~FCs between BM and SM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
+Most genes in cluster 5 have negative L~2~FCs between IM and DM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
 
 **Figure S10 fluidigm-ap2-hb**.
-Expression analysis along early panicle development of AP2-like and Homeobox genes present in Cluster 4 and 5.
+Expression analysis along early panicle development of *AP2/EREBP*-like and Homeobox genes present in cluster and 5.
 
 **Table S1 Plantinfo**.
 Rice accessions used in this study.

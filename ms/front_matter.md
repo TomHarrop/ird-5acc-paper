@@ -6,8 +6,8 @@ Thomas W.R. Harrop^1,§^, Otho Mantegazza^§^, Ai My Luong, Kevin Béthune, Math
 ^§^ These authors contributed equally to this work.  
 ^¶^ To whom correspondence should be addressed: helene.adam@ird.fr.
 
-Institut de Recherche pour le Développement, UMR DIADE, 911 Avenue Agropolis, 34394 Montpellier, France.  
-^1^ Laboratory for Evolution and Development, Department of Biochemistry, University of Otago, PO Box 56, Dunedin 9054, Aotearoa - New Zealand.  
+University of Montpellier, DIADE, IRD, France.  
+^1^ Laboratory for Evolution and Development, Department of Biochemistry, University of Otago, PO Box 56, Dunedin 9054, Aotearoa New Zealand.  
 ^2^ Rice genetics and Genomics Laboratory, International Center for Tropical Agriculture, Cali 6713, Colombia.
 
 ### List of abbreviations

@@ -21,7 +21,7 @@ Axillary meristems on the primary branches can also differentiate directly into 
 Finally, all axillary meristems and terminal meristems differentiate gradually from the top to the base of the panicle into spikelet meristems and then florets.
 Each rice grain is produced from a single spikelet [reviewed by @itohRicePlantDevelopment2005].
 
-The complexity of panicle branching and the number of grains are determined by two basic developmental outcomes: firstly, how many axillary meristems are produced, and secondly, the meristem maturation rate, which determines whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and gives rise to a grain. 
+The complexity of panicle branching and the number of grains are determined by two basic developmental outcomes: firstly, the number of axillary meristems produced, and secondly, the meristem maturation rate, which determines whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and gives rise to a grain. 
 The maturation rate and identity of reproductive and axillary meristems are controlled by transcriptional regulators, some of which have been identified in *O. sativa* [@xingGeneticMolecularBases2010; @wangBranchingRice2011].
 Genes including *G1 LIKE PROTEIN 5* (*TAWAWA*), *LAX PANICLE 1* and *LAX PANICLE 2* control the branching phase via establishment and activity of indeterminate meristems 
 [@yoshidaTAWAWA1RegulatorRice2013; @komatsuLAX1FRIZZYPANICLE2001; @tabuchiLAXPANICLE2Rice2011].

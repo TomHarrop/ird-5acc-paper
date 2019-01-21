@@ -40,9 +40,9 @@ In contrast, PC5 separates developmental stages across all five accessions, alth
 *APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes and MADS-box genes are enriched at the extremes of PC5 (*p*~adj~ = 0.004 for both, GSEA permutation *t*-test; Table S5 **PC5-TF-enrichment-gsea**).
 Generally, *AP2/EREBP*-like genes that contribute to PC5 are more highly expressed at the IM stage, and MADS-box genes are more highly expressed at the DM stage (Figure 3 **HB-AP2-heatmap**).
 Most of the *AP2/EREBP*-like genes that are highly expressed at the IM stage belong to the ERF clade.
-*NAM*, *ATAF1* and *CUC2*-domain (NAC) TF genes are also more highly expressed at the IM stage, and *SQUAMOSA* promoter binding protein (SBP) genes including *WFP* and *SPL7* are more highly expressed at the DM stage [@miuraOsSPL14PromotesPanicle2010; @wangCoordinatedRegulationVegetative2015].
-There is a group of homeobox genes that is highly expressed in the DM samples, and a larger group that is highly expressed at the IM stage, and ten out of twenty of these genes belong to the HD-ZIP clade [Figure S6 **NAC-HB-SPL-heatmap**; @jainGenomewideIdentificationClassification2008].
-Co-regulation of members of TF families, sometimes at the clade level, highlights the redundant or overlapping functions of TF families in meristem establishment and fate transition.
+*NAM*, *ATAF1* and *CUC2*-domain (NAC) transcription factor genes are also more highly expressed at the IM stage, and *SQUAMOSA* PROMOTER BINDING PROTEIN-like (SBP) genes including *WFP* and *SPL7* are more highly expressed at the DM stage [@miuraOsSPL14PromotesPanicle2010; @wangCoordinatedRegulationVegetative2015].
+There is a group of homeobox (HB) genes that is highly expressed in the DM samples, and a larger group that is highly expressed at the IM stage, and ten out of twenty of these genes belong to the HD-ZIP clade [Figure S6 **NAC-HB-SPL-heatmap**; @jainGenomewideIdentificationClassification2008].
+Co-regulation of members of transcription factor (TF) families, sometimes at the clade level, highlights the redundant or overlapping functions of TF families in meristem establishment and fate transition.
 
 To identify the core set of genes involved in axillary meristem determination in all five accessions, we used differential expression (DE) tests to find genes that were up- or down-regulated between stages across all accessions.
 Positive log~2~-fold change values (L~2~FCs) indicate higher expression in DM than in IM.
@@ -56,7 +56,7 @@ The pattern of expression of *AP2/EREBP*-like genes may indicate a role in the p
 MADS-box and HB genes may have an inverse role as promoters of determinate meristem.
 
 To test the role of *AP2/EREBP*-like genes in the control of panicle architecture, we phenotyped panicles from two loss-of-function mutants.
-The *crl5* mutant of the *AP2*-like gene *PLETHORA 8* [*PLT8*; @kitomiAuxinResponsiveAP22011] produces panicles with a shorter rachis with fewer primary branches (Figure 4 **panicle-mutants**; Table S7 **PanicletraitsPhenotypingAP2**), consistent with a peak of *PLT8* expression in rachis meristem tissues from *O. sativa japonica* [Figure S7 **lmd-paper-ap2**; @harropGeneExpressionProfiling2016].
+The *crl5* mutant of the *AP2*-like gene *PLETHORA 8* [*PLT8*; @kitomiAuxinResponsiveAP22011] produced panicles with a shorter rachis with fewer primary branches (Figure 4 **panicle-mutants**; Table S7 **PanicletraitsPhenotypingAP2**), consistent with a peak of *PLT8* expression in rachis meristem tissues from *O. sativa japonica* [Figure S7 **lmd-paper-ap2**; @harropGeneExpressionProfiling2016].
 Panicles from the *smos1* mutant of *ERF142* [@ayaNovelAP2TypeTranscription2014] have a reduced number of primary and secondary branches, and fewer spikelets (Figure 4 **panicle-mutants**; Table S7 **PanicletraitsPhenotypingAP2**).
 *ERF142* expression is highest in primary branch and elongating primary branch meristem tissues in *O. sativa japonica* [Figure S7 **lmd-paper-ap2**; @harropGeneExpressionProfiling2016].
 Although neither gene was differentially expressed in our RNAseq dataset, these phenotypes support the involvement of *AP2/EREBP*-like genes in control of panicle architecture.
@@ -71,9 +71,9 @@ We calculated correlations between the mean L~2~FC value of genes in each cluste
 Clusters 3, 4 and 6 correlate with spikelet number and secondary branch number, but not with PC1, meaning that the L~2~FC of genes in those clusters does not correlate with the phenotypic differences between wild and domesticated accessions.
 Clusters of genes with high L~2~FC in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters of genes with low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
 Cluster 4 had an enrichment of HB genes (9 out of 31 genes; *p*~adj~ = 2.5 × 10^-4^).
-It also contained three MIKC^C^-type MADS-box genes (*LHS1*, *MFO1* and *MADS14*), which promote spikelet meristem determination [@jeonLeafyHullSterile12000; @ohmoriMOSAICFLORALORGANS12009a; @kobayashiInflorescenceMeristemIdentity2012], and three *AP2/EREBP*-like genes including *INDETERMINATE SPIKELET 1* (*IDS1*), which also controls inflorescence architecture [@chuckFloralMeristemInitiation2008; @leeTwoAP2Family2012]. 
+It also contained three MIKC^C^-type MADS-box genes (*LHS1*, *MFO1* and *OsMADS14*), which promote spikelet meristem determination [@jeonLeafyHullSterile12000; @ohmoriMOSAICFLORALORGANS12009a; @kobayashiInflorescenceMeristemIdentity2012], and three *AP2/EREBP*-like genes including *INDETERMINATE SPIKELET 1* (*OsIDS1*), which also controls inflorescence architecture [@chuckFloralMeristemInitiation2008; @leeTwoAP2Family2012]. 
 L~2~FCs of genes in this cluster are low in *O. sativa indica*, high in *O. glaberrima* and intermediate in the two wild accessions.
-Although these genes may be involved in regulation of panicle complexity, their expression does not appear to have changed in parallel in the two domestications.
+Although these genes may be involved in regulation of panicle complexity, their expression did not appear to have changed in parallel in the two domestications.
 L~2~FCs of genes in clusters 3 and 6 change between accessions from the two continents.
 In cluster 3, L~2~FCs are higher in African species than in Asian species, meaning that the genes are more highly expressed in DM stages in African species.
 Genes in cluster 6 have the opposite pattern, with higher L~2~FCs in Asian species compared to African species.
@@ -100,7 +100,7 @@ We detected 19 genes with a stage × domestication interaction, including nine *
 Seven of these *AP2/EREBP*-like genes are in the top 10% of all genes by absolute loading on PC5, with higher expression in IM than DM (Figure 3 **MADS-AP2-heatmap**), and higher L~2~FC in wild than domesticated species (Figure 6A **dom-genes-plot**).
 These genes are putative targets of parallel selection on panicle architecture that occurred during domestication.
 *AP2/EREBP*-like genes were also prominent when we tested the stage × accession interaction separately for each domestication (12 out of 85 genes in Asian accessions; 8 out of 50 genes in African accessions; Table S9 **DE-genes-interaction**).
-Consistent with the presence of *IDS1* in cluster 4, it was also was DE in both Asian and African domestications, although the direction of change was different (Figure 6B **dom-genes-plot**).
+Consistent with the presence of *OsIDS1* in cluster 4, it was also was DE in both Asian and African domestications, although the direction of change was different (Figure 6B **dom-genes-plot**).
 Genes with this pattern of expression in the four accessions may have also been targets of selection on panicle architecture, but evolved divergently.
 
 The prominence of *AP2/EREBP*-like genes among putative core regulators of branching in all four *Oryza* species, and among genes associated with differences between wild and cultivated accessions, suggest that they were key targets of artificial selection for improvement in panicle architecture, and had a role in the **reshaping of the rice transcriptome** during domestication.
