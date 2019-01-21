@@ -47,7 +47,9 @@ PC1 is the main principal component that separates panicles from domesticated an
 Correlations with SBN and SpN are based on repeat panicle phenotyping for the accessions used for RNAseq in greenhouse conditions (Figure S8 **phenotyping-mpl**; Table S10 **PanicleTraitsPhenotypingPlantsSequenced**).
 
 **Figure 6 dom-genes**.
-Parallel and divergent evolution of gene expression during domestication.
-(**a**) Expression of genes with a stage × domestication interaction when both domestications were considered have parallel changes in expression pattern in panicles at indeterminate (IM) and determinate (DM) meristem stage.
-(**b**) Expression of genes with a stage × accession interaction in both domestications when tested separately, but not a stage × domestication interaction when both domestications were tested together.
-These genes have divergent changes in expression between wild and domesticated accessions.
+Parallel and divergent evolution of gene expression associated with domestication.
+(**a**) Expression of genes with a stage × domestication interaction when all four accessions were tested together.
+We used this test to identify genes where the change in L~2~FC between indeterminate (IM) and determinate (DM) stages changed in the same direction in both African and Asian domesticated accessions.
+Put another way, these genes are consistent with parallel evolution of gene expression between the two domestications.
+(**b**) To find genes with divergent changes between wild and domesticated accessions, we tested the stage × domestication interaction separately for African and Asian accessions.
+The genes plotted on panel **b** had an interaction in both of these separate tests, but not in the single test used to identify the genes in panel **a**.
