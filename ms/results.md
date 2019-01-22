@@ -71,7 +71,7 @@ We calculated correlations between the mean L~2~FC value of genes in each cluste
 Clusters 3, 4 and 6 correlate with spikelet number and secondary branch number, but not with PC1, meaning that the L~2~FC of genes in those clusters does not correlate with the phenotypic differences between wild and domesticated accessions.
 Clusters of genes with high L~2~FC in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters of genes with low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
 Cluster 4 had an enrichment of HB genes (9 out of 31 genes; *p*~adj~ = 2.5 × 10^-4^).
-It also contained three MIKC^C^-type MADS-box genes (*LHS1*, *MFO1* and *OsMADS14*), which promote spikelet meristem determination [@jeonLeafyHullSterile12000; @ohmoriMOSAICFLORALORGANS12009a; @kobayashiInflorescenceMeristemIdentity2012], and three *AP2/EREBP*-like genes including *INDETERMINATE SPIKELET 1* (*OsIDS1*), which also controls inflorescence architecture [@chuckFloralMeristemInitiation2008; @leeTwoAP2Family2012]. 
+It also contained three MIKC^C^-type MADS-box genes (*LHS1*, *MFO1* and *MADS14*), which promote spikelet meristem determination [@jeonLeafyHullSterile12000; @ohmoriMOSAICFLORALORGANS12009a; @kobayashiInflorescenceMeristemIdentity2012], and three *AP2/EREBP*-like genes including *INDETERMINATE SPIKELET 1* (*IDS1*), which also controls inflorescence architecture [@chuckFloralMeristemInitiation2008; @leeTwoAP2Family2012]. 
 L~2~FCs of genes in this cluster are low in *O. sativa indica*, high in *O. glaberrima* and intermediate in the two wild accessions.
 Although these genes may be involved in regulation of panicle complexity, their expression did not appear to have changed in parallel in the two domestications.
 L~2~FCs of genes in clusters 3 and 6 change between accessions from the two continents.
@@ -100,7 +100,7 @@ We detected 19 genes with a stage × domestication interaction, including nine *
 Seven of these *AP2/EREBP*-like genes are in the top 10% of all genes by absolute loading on PC5, with higher expression in IM than DM (Figure 3 **MADS-AP2-heatmap**), and higher L~2~FC in wild than domesticated species (Figure 6A **dom-genes-plot**).
 These genes are putative targets of parallel selection on panicle architecture that occurred during domestication.
 *AP2/EREBP*-like genes were also prominent when we tested the stage × accession interaction separately for each domestication (12 out of 85 genes in Asian accessions; 8 out of 50 genes in African accessions; Table S9 **DE-genes-interaction**).
-Consistent with the presence of *OsIDS1* in cluster 4, it was also was DE in both Asian and African domestications, although the direction of change was different (Figure 6B **dom-genes-plot**).
+Consistent with the presence of *IDS1* in cluster 4, it was also was DE in both Asian and African domestications, although the direction of change was different (Figure 6B **dom-genes-plot**).
 Genes with this pattern of expression in the four accessions may have also been targets of selection on panicle architecture, but evolved divergently.
 
 The prominence of *AP2/EREBP*-like genes among putative core regulators of branching in all four *Oryza* species, and among genes associated with differences between wild and cultivated accessions, suggest that they were key targets of artificial selection for improvement in panicle architecture, and had a role in the **reshaping of the rice transcriptome** during domestication.
