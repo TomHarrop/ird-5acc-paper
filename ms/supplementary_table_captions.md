@@ -10,17 +10,17 @@ Sequences of primers used.
 
 **Table S3 PanicleTraitsPhenotyping**.
 Quantification of panicle traits in 91 accessions from wild and domesticated Asian and African rice species.
-ob, *O. barthii*;
-og, *O. glaberrima*;
-os, *O. sativa*;
-or, *O. rufipogon*;
-RL, Rachis length;
+Ob, *O. barthii*;
+Og, *O. glaberrima*;
+Os, *O. sativa*;
+Or, *O. rufipogon*;
 PBN,Primary branch;
-PBL, Primary branch length;
 PBIL, Primary branch internode length;
+PBL, Primary branch length;
+RL, Rachis length;
 SBN, Secondary branch;
-SBL,Secondary branch length;
 SBIL, Secondary branch internode length;
+SBL,Secondary branch length;
 SpN, Spikelet number;
 TBN, Tertiary branch number.
 
@@ -34,14 +34,14 @@ Transcription factor families that are enriched along PC5.
 Differential expression test results between stages across all species.
 
 **Table S7 PanicletraitsPhenotypingAP2**.
-Detailed quantification of panicle traits from crl5 and smos1 mutants.
-RL, Rachis length;
+Detailed quantification of panicle traits from *crl5* and *smos1* mutants.
 PBN,Primary branch;
-PBL, Primary branch length;
 PBIL, Primary branch internode length;
+PBL, Primary branch length;
+RL, Rachis length;
 SBN, Secondary branch;
-SBL,Secondary branch length;
 SBIL, Secondary branch internode length;
+SBL,Secondary branch length;
 SpN, Spikelet number;
 TBN, Tertiary branch number
 

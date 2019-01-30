@@ -4,7 +4,7 @@
 Dr. Ko Hirano and Prof. Yoshiaki Inukai from Nagoya University, Japan, kindly provided *smos1-3* and *crl5* mutant seeds, respectively.
 We thank Lady Johanna Arbelaez Rivera (CIAT, Colombia) for plant care and Céline Cardi and Hélène Vignes (Grand plateau technique régional de génotypage, CIRAD, Montpellier) for support with high-throughput qPCR and cDNA library preparation.
 Sophie Chéron and Harold Chrestin assisted with plant care and phenotyping, and Christine Tranchant-Dubreuil, Axel Verdier and the IRD bioinformatics platform assisted with technical support in Montpellier.
-We also thank James Tregear for useful feedback on the manuscript.
+We also thank James Tregear for feedback on the manuscript and Alain Ghesquière for discussion on the project.
 
 ### Funding
 
@@ -12,3 +12,13 @@ This research was funded by Agropolis Foundation through the *Investissements d�
 We also received support from the Excellence Scholarship Program of the Embassy of France in Vietnam (LAM).
 
 ### Authors’ contributions
+
+HA and SJ initiated and led the project and designed experiments with TWRH and OM.
+HA performed panicle dissections, sample preparation and phenotypic analysis.
+TWRH extracted nucleic acids for sequencing.
+KB and AML performed the high throughput qPCR analyses.
+TWRH and OM performed all bioinformatic and statistical analyses and script development.
+ML supervised the field experiment and phenotyping in Columbia.
+AML contributed to *AP2/EREBP*-like gene characterization and mutant analysis. 
+TWRH, OM, SJ and HA wrote the manuscript together.
+All the authors read and approved the final manuscript.

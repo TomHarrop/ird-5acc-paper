@@ -1,9 +1,17 @@
 ### Supplementary figures
 
-![](figures/Figure_S1.pdf)
+![](figures/Figure_S1.tif){ height=50% }
 
 **Figure S1 PanicleStructure**.
-Spread mature rice panicle. RL: Rachis length; PB: Primary branch; PBL: Primary branch length; PBIL: Primary branch internode length; SB, Secondary branch; SBL: Secondary branch length; SBIL: Secondary branch internode length; Sp : Spikelet.
+Spread mature rice panicle.
+PB: Primary branch;
+PBIL: Primary branch internode length;
+PBL: Primary branch length;
+RL: Rachis length;
+SB, Secondary branch;
+SBIL: Secondary branch internode length;
+SBL: Secondary branch length;
+Sp : Spikelet.
 
 ![](figures/Figure_S2.pdf)
 
@@ -31,15 +39,15 @@ Stage 3: determinate meristem (DM) stage with spikelet meristem and floret diffe
 Stage 4: floret displaying early floral organ differentiation.
 The scale bar indicates 100 μm.
 (**B**) Quantitative RT-PCR using meristem stage-specific marker genes for validation of staging.
-AM, axillary meristem;
-SpM, spikelet meristem;
-RM, Rachis meristem;
-PBM, primary branch meristem;
-ePBM, elongating primary branch meristem;
-FlM, floret meristem;
-St, stamen;
-p, palea;
-l, lemma.
+AM: axillary meristem;
+ePBM: elongating primary branch meristem;
+FlM: floret meristem;
+l: lemma; 
+p: palea;
+PBM: primary branch meristem;
+RM: Rachis meristem;
+SpM: spikelet meristem;
+St: stamen.
 
 ![](figures/Figure_S5.pdf)
 
@@ -70,7 +78,7 @@ RM, rachis meristem; PBM, primary branch meristem; ePBM/AM, extending primary br
 
 **Figure S8 phenotyping-mpl**.
 Phenotyping of the five *Oryza* accessions used for RNAseq.
-Plants for this dataset were grown together in controlled, greenhouse conditions, separately to the plants used for the 91-accession survey, using the same conditions as plants that were used for RNAseq.
+These plants were grown at the same time and in the same conditions as the plants used for gene expression analysis.
 The three domesticated accessions produce more spikelets and secondary branches than their wild relatives.
 The domesticated accessions have a similar number of primary branches, but Asian domesticated species have more secondary branches and spikelets than domesticated African accessions.
 In comparison to *O. sativa japonica*, *O. sativa indica* produces more secondary branches.
@@ -84,5 +92,5 @@ This cluster has an enrichment of *AP2/EREBP*-like genes.
 ![](figures/Figure_S10.pdf)
 
 **Figure S10 fluidigm-ap2-hb**.
-Expression analysis along early panicle development of *AP2/EREBP*-like and Homeobox genes present in cluster 5.
-**Label stages on x-axis.**
+Expression analysis along early panicle development of *AP2/EREBP*-like and genes present in cluster 5.
+

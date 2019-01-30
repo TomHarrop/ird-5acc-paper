@@ -14,5 +14,5 @@
 - inflorescence
 - domestication
 - *AP2/EREBP*-like genes
-- transcriptome
+- transcriptomics
 - rice

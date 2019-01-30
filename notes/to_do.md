@@ -29,3 +29,6 @@ PanicleTraitsPhenotypingPlantsSequenced -> S10
 ## Figs to rename
 
 fluidigm-ap2-hb -> S10
+
+## Meeting 28/1/19
+- try to add HB in disco somewhere, maybe in l 434 or after mads box (>500)
