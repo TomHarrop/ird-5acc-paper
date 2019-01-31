@@ -1,6 +1,6 @@
 ### Supplementary figures
 
-![](figures/Figure_S1.tif){ height=50% }
+![](figures/Figure_S1.tif){ height=180mm }
 
 **Figure S1 PanicleStructure**.
 Spread mature rice panicle.
