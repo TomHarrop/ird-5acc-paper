@@ -21,7 +21,7 @@ For expression analysis, we collected three biological replicates of approximate
 For sample collection, leaves surrounding the young panicle were removed by hand and the reproductive tissue was cut with a sharp blade under a Stemi 508 (Zeiss, Germany) stereo microscope.
 The reproductive tissues were immediately frozen in liquid nitrogen, and total RNA including small RNA was extracted using the RNeasy Plant Mini kit with RLT and RWT buffers (QIAGEN, Germany).
 DNase treatments were performed using the RNAeasy-free DNase set (QIAGEN, Germany).
-RNA integrity numbers of the extracted RNA, measured using a 2100 Bioanalyzer (Agilent, U.S.A.), was between 8.6 and 10.
+RNA integrity numbers of the extracted RNA, measured using a 2100 Bioanalyzer (Agilent, U.S.A.), were between 8.6 and 10.
 Stage specificity was validated with quantitative real-time RT-PCR (qPCR) using stage-specific marker genes (Supporting information Table S2 **supp-table-PrimerList** **needs tidy**).
 400 ng of total RNA was used for each sample for RNAseq library preparation with the TruSeq Stranded Total RNA with Ribo-Zero Plant kit (Illumina, U.S.A.).
 After quantification with a 2100 Bioanalyzer, 125-base paired-end reads were generated on a HiSeq 2500 (Illumina, U.S.A.) by the GeT Platform (Toulouse, France).
@@ -42,6 +42,10 @@ Primer sequences are listed in Supporting information Table S2 **supp-table-Prim
 
 Raw sequence data are hosted at the NCBI SRA ... (**tom to do**).
 We used reproducible practices for all data analysis.
+The source for this manuscript is hosted at https://github.com/tomharrop/ird-5acc-paper.
+Code for qPCR analysis is at https://github.com/othomantegazza/5acc-qpcr.
+The code we used to analyse the RNAseq data and panicle phenotype data is hosted at https://github.com/tomharrop/5acc.
+
 The code we used to analyse the RNAseq data and panicle phenotype data is hosted at https://github.com/tomharrop/5acc.
 We used `snakemake` [@kosterSnakemakeScalableBioinformatics2012] to arrange analysis steps into workflows and monitor dependencies, and `Singularity` [@kurtzerSingularityScientificContainers2017] to capture the computing environment.
 The final results and all intermediate steps can be exactly reproduced from the raw data with a single command using `snakemake` and `Singularity`.

@@ -12,7 +12,7 @@ A set of *AP2/EREBP*-like genes decrease expression over the course of wheat spi
 *OsIDS1* controls panicle branching in rice, and positively regulates branch meristem identity by repressing genes that specify spikelet identity [@leeTwoAP2Family2012].
 The *PLETHORA*-like gene *PLT9* is related to *Arabidopsis thaliana* genes *AIL5* and *AIL6*, which are are involved in floral organ initiation and identity [@liStructuralCharacterizationExpression2011; @krizekAINTEGUMENTALIKEGenesHave2015].
 Along with *AP2/EREBP85* and *AP2/EREBP86*, *OsIDS1* and *PLT9* were more highly expressed at the DM stage and had a high loading on the principal component that differentiates stage in all five accessions, consistent with a role in the promotion of determinate axillary meristems.
-Most of the detected *AP2/EREBP*-like genes in our dataset that contribute to differences between stage had lower expression in DM than in IM, including mainly ERF and DREB clade genes and three *RAV*-like genes.
+Conversely, most of the detected *AP2/EREBP*-like genes in our dataset that contribute to differences between stage had lower expression in DM than in IM, including mainly ERF and DREB clade genes and three *RAV*-like genes.
 In *Arabidopsis*, *RAV* orthologs repress flowering genes [@matias-hernandezRAVGenesRegulation2014], and *ERF3* interacts with the HB gene *WOX11* to promote crown root development [@zhaoInteractionRiceERF32015].
 Our results suggest additional roles for these genes in promoting reproductive axillary meristem initiation.
 This family- and clade-level view of *AP2/EREBP*-like expression suggests that they play a central role in the regulation of phase transition from indeterminate to determinate state.

@@ -30,9 +30,9 @@ Genes in the upper panels had a positive loading on PC5 (corresponding to higher
 Most *AP2/EREBP*-like genes that pass the 10% cutoff were more highly expressed in the IM.
 Three of the four *AP2/EREBP*-like genes that were more highly expressed in the DM belong to the AP2 clade.
 *AP2/EREBP*-like genes that were more highly expressed in IM mainly belong to the ERF and DREB clades.
-In contrast, most MADS-box genes that pass the cutoff were more highly expressed at the DM stage.
+In contrast, most *MADS*-box genes that pass the cutoff were more highly expressed at the DM stage.
 Clades for *AP2/EREBP*-like genes are from the Plant Transcription Factor Database v4.0 [@jinPlantTFDBCentralHub2017] and @sharoniGeneStructuresClassification2011.
-MADS-box clades were manually tabulated from @aroraMADSboxGeneFamily2007.
+*MADS*-box clades were manually tabulated from @aroraMADSboxGeneFamily2007.
 
 **Figure 4 panicle-mutants**.
 Mutants in two *AP2/EREBP*-like genes, *PLT8* and *ERF142*, have defects in panicle architecture compared to their background accessions.
