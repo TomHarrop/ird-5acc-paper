@@ -1,6 +1,9 @@
 % Choose font
 \setmainfont{Georgia}
 
+% Left justify
+\raggedright
+
 % Set margins
 \usepackage[a4paper,includeheadfoot,margin=2cm]{geometry}
 
@@ -12,8 +15,7 @@
 
 % Update the include graphics command to include centering
 \renewcommand{\includegraphics}[2][]%
-  {\clearpage
-  \begin{center}
+  {\begin{center}
   \latexincludegraphics[#1]{#2}
   \end{center}}
   

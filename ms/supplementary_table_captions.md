@@ -1,6 +1,4 @@
-\clearpage
-
-### Supplementary table captions
+### Supporting information table captions
 
 **Table S1 Plantinfo**.
 Rice accessions used in this study.
@@ -54,7 +52,5 @@ Differential expression test results for the stage × accession interaction in A
 **Table S10 PanicleTraitsPhenotypingPlantsSequenced**.
 Detailed quantification of panicle traits from rice accessions used for sequencing analysis.
 These plants were grown at the same time and in the same conditions as the plants used for gene expression analysis. 
-
-\clearpage
 
 ### References for supporting information
