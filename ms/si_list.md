@@ -28,7 +28,7 @@ Phenotyping of the five *Oryza* accessions used for RNAseq.
 Most genes in cluster 5 have negative L~2~FCs between IM and DM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
 
 **Figure S10 fluidigm-ap2-hb**.
-Expression analysis along early panicle development of *AP2/EREBP*-like and Homeobox genes present in cluster and 5.
+Expression analysis along early panicle development of *AP2/EREBP*-like genes present in cluster 5.
 
 **Table S1 Plantinfo**.
 Rice accessions used in this study.

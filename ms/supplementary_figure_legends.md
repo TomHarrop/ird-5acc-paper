@@ -92,5 +92,8 @@ This cluster has an enrichment of *AP2/EREBP*-like genes.
 ![](figures/Figure_S10.pdf)
 
 **Figure S10 fluidigm-ap2-hb**.
-Expression analysis along early panicle development of *AP2/EREBP*-like and genes present in cluster 5.
-
+Expression analysis along early panicle development of *AP2/EREBP*-like genes present in cluster 5.
+DM: determinate meristem;
+FM: floret meristem;
+IM: indeterminate meristem;
+RM: rachis meristem.
