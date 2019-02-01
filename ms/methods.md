@@ -40,12 +40,10 @@ Primer sequences are listed in Supporting information Table S2 **supp-table-Prim
 
 ### Data analysis
 
-Raw sequence data are hosted at the NCBI SRA ... (**tom to do**).
 We used reproducible practices for all data analysis.
 The source for this manuscript is hosted at https://github.com/tomharrop/ird-5acc-paper.
+Raw sequence data are hosted at the National Center for Biotechnology Information Sequence Read Archive (NCBI SRA) under accession [PRJNA518559](http://www.ncbi.nlm.nih.gov/bioproject/518559).
 Code for qPCR analysis is at https://github.com/othomantegazza/5acc-qpcr.
-The code we used to analyse the RNAseq data and panicle phenotype data is hosted at https://github.com/tomharrop/5acc.
-
 The code we used to analyse the RNAseq data and panicle phenotype data is hosted at https://github.com/tomharrop/5acc.
 We used `snakemake` [@kosterSnakemakeScalableBioinformatics2012] to arrange analysis steps into workflows and monitor dependencies, and `Singularity` [@kurtzerSingularityScientificContainers2017] to capture the computing environment.
 The final results and all intermediate steps can be exactly reproduced from the raw data with a single command using `snakemake` and `Singularity`.
