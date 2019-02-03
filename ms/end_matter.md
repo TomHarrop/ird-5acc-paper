@@ -13,12 +13,7 @@ We also received support from the Excellence Scholarship Program of the Embassy 
 
 ### Authors’ contributions
 
-HA and SJ initiated and led the project and designed experiments with TWRH and OM.
-HA performed panicle dissections, sample preparation and phenotypic analysis.
-TWRH extracted nucleic acids for sequencing.
-KB and AML performed the high throughput qPCR analyses.
-TWRH and OM performed all bioinformatic and statistical analyses and script development.
-ML supervised the field experiment and phenotyping in Columbia.
-AML contributed to *AP2/EREBP*-like gene characterization and mutant analysis. 
-TWRH, OM, SJ and HA wrote the manuscript together.
-All the authors read and approved the final manuscript.
+HA and SJ designed the research with input from TWRH and OM;
+HA, TWRH, OM, KB and AML performed the research;
+TWRH, OM, HA and ML performed data analysis, collection and interpretation;
+TWRH, SJ and HA wrote the manuscript.

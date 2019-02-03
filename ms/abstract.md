@@ -1,7 +1,5 @@
 ## Summary
 
-> New phytol requires four bullet points, limit 200 words: **1.** the research conducted, including the rationale; **2.** methods; **3.** key results; **4.** the main conclusion, including the key points of discussion
-
 - Rice yield is influenced by inflorescence size and architecture.
 Inflorescences from domesticated accessions produce more branches and grains.
 Neither the molecular control of branching nor the developmental differences between wild and domesticated rice accessions are fully understood.
@@ -10,12 +8,12 @@ We surveyed phenotypes across 91 wild and domesticated African and Asian accessi
 - Characteristics related to axillary meristem identity were the main phenotypic differences between inflorescences from wild and domesticated accessions.
 We identified a core set of genes associated with axillary meristem identity in Asian and African rice, and another set associated with phenotypic variability between wild and domesticated accessions.
 *AP2/EREBP*-like genes were enriched in both sets, suggesting that they are key factors in inflorescence branching and rice domestication.
-- Our work has identified new candidates in the molecular control of inflorescence development, and provides an overview of the effects of domestication on phenotype and gene expression.
+- Our work has identified new candidates in the molecular control of inflorescence development and yield, and provides an overview of the effects of domestication on phenotype and gene expression.
 
-### Five to eight key words
+**Keywords**:
 
-- inflorescence
-- domestication
 - *AP2/EREBP*-like genes
-- transcriptomics
+- development
+- domestication
+- inflorescence
 - rice
