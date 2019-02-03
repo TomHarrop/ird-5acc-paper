@@ -17,6 +17,7 @@ In *Arabidopsis*, *RAV* orthologs repress flowering genes [@matias-hernandezRAVG
 Our results suggest additional roles for these genes in promoting reproductive axillary meristem initiation.
 This family- and clade-level view of *AP2/EREBP*-like expression suggests that they play a central role in the regulation of phase transition from indeterminate to determinate state.
 
+*AP2/EREBP*-like genes are also associated with domestication.
 A homolog of *OsIDS1*, the wheat domestication gene *Q*, regulates inflorescence and glume shape and spike length, and has variation in binding sites for microRNA miR172 between wild and domesticated species [@simonsMolecularCharacterizationMajor2006; @debernardiMicroRNA172PlaysCrucial2017; @greenwoodNewAllelesWheat2017].
 Recently, characterisation of a quantitative trait locus associated with grain yield and panicle branching and variation in the promoter region showed that the *AP2/EREBP*-like gene *FZP* regulates panicle architecture and is associated with rice domestication [@huangVariationRegulatoryRegion2018; @fujishiroComprehensivePaniclePhenotyping2018; @baiDuplicationUpstreamSilencer2017]. 
 *FZP* represses the formation of axillary meristem and induces transition from spikelet to floral meristem 
