@@ -1,0 +1,10 @@
+
+![](figures/Figure_6.pdf)
+
+**Figure 6**.
+Parallel and divergent evolution of gene expression associated with domestication.
+(**a**) Expression of genes with a stage × domestication interaction when all four accessions were tested together.
+We used this test to identify genes where the change in L~2~FC between indeterminate (IM) and determinate (DM) stages changed in the same direction in both African and Asian domesticated accessions.
+(**b**) Expression of genes with a stage × domestication interaction when tested separately for African and Asian accessions.
+These genes have divergent changes between wild and domesticated accessions.
+The genes plotted on panel **b** had an interaction in both of the separate tests, but not in the single test used to identify the genes in panel **a**.

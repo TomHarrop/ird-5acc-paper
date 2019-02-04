@@ -1,0 +1,21 @@
+
+![](figures/Figure_1.pdf)
+
+\clearpage
+
+**Figure 1**.
+Panicle complexity of 91 rice accessions.
+The main component of variablity in panicle phenotypes splits accessions by domestication status, and is related to spikelet number, secondary branch number and primary branch number.
+(**a**) We measured traits using spread panicles from *O. rufipogon*, *O. sativa*, *O. barthii* and *O. glaberrima*.
+(**b**) The first principal component (PC1) in the panicle phenotype data accounts for 46.5% of variability and separates wild and domesticated accessions independently of continent.
+(**c**) Spikelet number (SpN), secondary branch number (SBN) and primary branch number (PBN) have the highest loadings on PC1.
+(**d**) Correlation between the main panicle traits that contribute to panicle architecture diversity.
+Primary branch number and spikelet number correlate in wild species.
+Secondary branch number and spikelet number correlate more in cultivated species than in wild species.
+Primary and secondary branch numbers do not correlate.
+RL: Rachis length;
+PBL: Primary branch length;
+PBIL: Primary branch internode length;
+SBL: Secondary branch length;
+SBIL: Secondary branch internode length; 
+TBN: Tertiary branch number.
