@@ -13,6 +13,8 @@ Our phenotypic analysis indicates similar changes in panicle architecture betwee
 Spikelet number, secondary branch number and primary branch number are the main contributors to these differences in panicle architecture, and these phenotypes are all related to axillary meristem formation and fate transition 
 [@teoNewInsightsRegulation2014; @zhangMolecularControlGrass2014].
 
+!include ./ms/figs/1.md
+
 ### Measurement of gene expression in developing panicles
 
 We investigated gene expression changes associated with the diversity of panicle architecture and differences between the Asian and African domestication processes via RNAseq.
@@ -44,6 +46,10 @@ Most of the *AP2/EREBP*-like genes that are highly expressed at the IM stage bel
 There is a group of homeobox (HB) genes that is highly expressed in the DM samples, and a larger group that is highly expressed at the IM stage, and ten out of twenty of these genes belong to the HD-ZIP clade [Supporting information Fig. S6; @jainGenomewideIdentificationClassification2008].
 Co-regulation of members of transcription factor (TF) families, sometimes at the clade level, highlights the redundant or overlapping functions of TF families in meristem establishment and fate transition.
 
+!include ./ms/figs/2.md
+
+!include ./ms/figs/3.md
+
 To identify the core set of genes involved in axillary meristem determination in all five accessions, we used differential expression (DE) tests to find genes that were up- or down-regulated between stages across all accessions.
 Positive log~2~-fold change values (L~2~FCs) indicate higher expression in DM than in IM.
 193 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1, including 115 genes up-regulated in DM samples and 78 genes down-regulated in DM samples (Supporting information Table S6).
@@ -61,12 +67,16 @@ Panicles from the *smos1* mutant of *ERF142* [@ayaNovelAP2TypeTranscription2014]
 *ERF142* expression is highest in primary branch and elongating primary branch meristem tissues in *O. sativa japonica* [Supporting information Fig. S7; @harropGeneExpressionProfiling2016].
 Although neither gene was differentially expressed in our RNAseq dataset, these phenotypes support the involvement of *AP2/EREBP*-like genes in control of panicle architecture.
 
+!include ./ms/figs/4.md
+
 ### *AP2/EREBP*-like gene expression is associated with panicle diversity and domestication
 
 To identify common patterns of expression of transcriptional regulators related to variation in panicle phenotypes, we used soft clustering of scaled L~2~FCs between IM and DM using the subset of annotated TF genes that were detected in our RNAseq dataset.
 We did not include the reference accession, *O. sativa japonica* cv. Nipponbare, because it is not a high-yielding cultivar compared to other Asian rice accessions (Supporting information Fig. S3).
 We recovered six clusters comprised of a total of 119 genes (Fig. 5 , Supporting information Table S8).
 We calculated correlations between the mean L~2~FC value of genes in each cluster and PC1 in the phenotyping data, and between mean L~2~FC and the number of secondary branches and spikelets from repeat panicle phenotyping for the accessions used for RNAseq (Fig. 5b, Fig. 1, Supporting information Fig. S8).
+
+!include ./ms/figs/5.md
 
 Clusters 3, 4 and 6 correlated with spikelet number (SpN) and secondary branch number (SBN), but not with PC1, meaning that the L~2~FC of genes in those clusters does not correlate with the phenotypic differences between wild and domesticated accessions.
 Clusters of genes with high L~2~FC in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters of genes with low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
@@ -102,5 +112,7 @@ These genes are putative targets of parallel selection on panicle architecture t
 *AP2/EREBP*-like genes were also prominent when we tested the stage × accession interaction separately for each domestication (12 out of 85 genes in Asian accessions; 8 out of 50 genes in African accessions; Supporting information Table S9).
 Consistent with the presence of *OsIDS1* in cluster 4, it was also DE in both Asian and African domestications, although the direction of change was different (Fig. 6b).
 Genes with this pattern of expression in the four accessions may have also been targets of selection on panicle architecture, but evolved divergently.
+
+!include ./ms/figs/6.md
 
 The prominence of *AP2/EREBP*-like genes among putative core regulators of branching in all four *Oryza* species, and among genes associated with differences between wild and cultivated accessions, suggest that they were key targets of artificial selection for improvement in panicle architecture, and were involved in changes to the regulatory network controlling branching that occurred during domestication.

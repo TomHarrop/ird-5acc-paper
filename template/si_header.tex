@@ -5,19 +5,35 @@
 \raggedright
 
 % Set margins
-\usepackage[a4paper,includeheadfoot,margin=2cm]{geometry}
+\usepackage[a4paper,margin=2cm]{geometry}
 
-% Centre all images
+% Centre all images, wrap text
 \usepackage{letltxmacro}
-
-
 % Save the meaning of \includegraphics
 \usepackage{graphicx}
 \LetLtxMacro\latexincludegraphics\includegraphics
-
 % Update the include graphics command to include centering
 \renewcommand{\includegraphics}[2][]%
   {\begin{center}
   \latexincludegraphics[#1]{#2}
   \end{center}}
+
+% sections on new page
+\let\stdsubsection\subsection
+    \renewcommand\subsection{\clearpage\stdsubsection}
   
+% format captions
+\usepackage[labelfont=bf,%
+    font=small,%
+    justification=centering,%
+    width=.9\textwidth]{caption}
+
+% linenumbers
+\usepackage{etoolbox}
+\usepackage[left]{lineno}
+\makeatletter
+% \patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
+\patchcmd{\@startsection}{\@ifstar}{\nolinenumbers\@ifstar}{}{}
+\patchcmd{\@xsect}{\ignorespaces}{\linenumbers\ignorespaces}{}{}
+\makeatother
+\linenumbers

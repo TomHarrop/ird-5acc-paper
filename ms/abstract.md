@@ -10,7 +10,7 @@ We identified a core set of genes associated with axillary meristem identity in 
 *AP2/EREBP*-like genes were enriched in both sets, suggesting that they are key factors in inflorescence branching and rice domestication.
 - Our work has identified new candidates in the molecular control of inflorescence development and yield, and provides an overview of the effects of domestication on phenotype and gene expression.
 
-**Keywords**:
+### Keywords:
 
 - *AP2/EREBP*-like genes
 - development

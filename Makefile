@@ -3,14 +3,27 @@ si: pdf/supporting_information.pdf docx/supporting_information.docx
 ms_pdf: pdf/manuscript.pdf
 
 
+# docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/methods.md ms/results.md ms/discussion.md ms/end_matter.md template/ref_loc.md ms/figure_legends.md ms/si_list.md bib/references.bib template/reference.docx template/new-phytologist.csl template/ref_loc.md
+# 	pandoc --reference-doc=template/reference.docx \
+# 		--filter pandoc-citeproc \
+# 		--from=markdown \
+# 		--to=docx \
+# 		--bibliography=bib/references.bib \
+# 		--csl=template/new-phytologist.csl \
+# 		-o docx/manuscript.docx \
+# 		ms/front_matter.md \
+# 		ms/abstract.md \
+# 		ms/introduction.md \
+# 		ms/methods.md \
+# 		ms/results.md \
+# 		ms/discussion.md \
+# 		ms/end_matter.md \
+# 		template/ref_loc.md \
+# 		ms/figure_legends.md \
+# 		ms/si_list.md
+
 docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/methods.md ms/results.md ms/discussion.md ms/end_matter.md template/ref_loc.md ms/figure_legends.md ms/si_list.md bib/references.bib template/reference.docx template/new-phytologist.csl template/ref_loc.md
-	pandoc --reference-doc=template/reference.docx \
-		--filter pandoc-citeproc \
-		--from=markdown \
-		--to=docx \
-		--bibliography=bib/references.bib \
-		--csl=template/new-phytologist.csl \
-		-o docx/manuscript.docx \
+	pandoc --from=markdown --to=markdown \
 		ms/front_matter.md \
 		ms/abstract.md \
 		ms/introduction.md \
@@ -20,14 +33,23 @@ docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/me
 		ms/end_matter.md \
 		template/ref_loc.md \
 		ms/figure_legends.md \
-		ms/si_list.md
+		ms/si_list.md \
+		| grep -vh "^!" \
+		| pandoc --reference-doc=template/reference.docx \
+		--filter pandoc-citeproc \
+		--from=markdown \
+		--to=docx \
+		--bibliography=bib/references.bib \
+		--csl=template/new-phytologist.csl \
+		-o docx/manuscript.docx
 
-pdf/manuscript.pdf: ms/front_matter.md ms/abstract.md ms/introduction.md ms/methods.md ms/results.md ms/discussion.md ms/end_matter.md template/ref_loc.md ms/figure_legends.md ms/si_list.md bib/references.bib template/reference.docx template/new-phytologist.csl template/ref_loc.md
+pdf/manuscript.pdf: ms/front_matter.md ms/abstract.md ms/introduction.md ms/methods.md ms/results.md ms/discussion.md ms/end_matter.md template/ref_loc.md ms/si_list.md bib/references.bib template/reference.docx template/new-phytologist.csl template/ref_loc.md
 	pandoc \
 		--from=markdown \
 		--to=latex \
 		--pdf-engine=xelatex \
 		--include-in-header=template/si_header.tex \
+		--filter pandoc-include \
 		--bibliography=bib/references.bib \
 		--csl=template/new-phytologist.csl \
 		-o pdf/manuscript.pdf \
@@ -39,7 +61,6 @@ pdf/manuscript.pdf: ms/front_matter.md ms/abstract.md ms/introduction.md ms/meth
 		ms/discussion.md \
 		ms/end_matter.md \
 		template/ref_loc.md \
-		ms/figure_legends.md \
 		ms/si_list.md
 
 
