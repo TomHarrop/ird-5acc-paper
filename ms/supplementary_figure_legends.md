@@ -1,7 +1,8 @@
+## Supporting information
 
-![](figures/Figure_S1.tif){ height=180mm }
+\vspace*{\fill}
 
-**Figure S1**.
+![**Figure S1**.
 Spread mature rice panicle.
 PB: Primary branch;
 PBIL: Primary branch internode length;
@@ -11,29 +12,39 @@ SB, Secondary branch;
 SBIL: Secondary branch internode length;
 SBL: Secondary branch length;
 Sp : Spikelet.
+](figures/Figure_S1.tif){ height=180mm }
+
+\vspace*{\fill}
 
 \clearpage
 
-![](figures/Figure_S2.pdf)
+\vspace*{\fill}
 
-**Figure S2**.
+![**Figure S2**.
 Principal component analysis (PCA) of panicle phenotyping data showing components 1–4.
 PC1 accounts for 46.5% of variability and separates panicles from domesticated and wild accessions.
-The lower ordinates do not separate panicles by species.
+The lower ordinates do not separate panicles by species.](figures/Figure_S2.pdf)
+
+\vspace*{\fill}
 
 \clearpage
 
-![](figures/Figure_S3.pdf)
+\vspace*{\fill}
 
-**Figure S3**.
+![**Figure S3**.
 The accessions used for RNAseq are consistent with species-wide patterns of panicle architecture.
 The *y*-axis shows the projection of each panicle on principal component 1 (PC1), which separates wild and domesticated accessions (Fig. 1).
 The accessions chosen for RNAseq are shown in red.
 Accessions used for phenotyping are listed in supporting information Table S1.
+](figures/Figure_S3.pdf)
 
-![](figures/Figure_S4.pdf)
+\vspace*{\fill}
 
-**Figure S4**.
+\clearpage
+
+\vspace*{\fill}
+
+![**Figure S4**.
 Early stages of rice panicle development used for gene expression analysis.
 (**a**) Developmental stages of immature panicles collected for expression analysis.
 Stage 1: rachis meristem;
@@ -51,66 +62,87 @@ PBM: primary branch meristem;
 RM: Rachis meristem;
 SpM: spikelet meristem;
 St: stamen.
+](figures/Figure_S4.pdf)
+
+\vspace*{\fill}
 
 \clearpage
 
-![](figures/Figure_S5.pdf)
+\vspace*{\fill}
 
-**Figure S5**.
+![**Figure S5**.
 Heatmap of pairwise distances between RNAseq samples.
 Samples group by stage, species and continent.
 The numbers indicate single samples (three replicates per accession per stage).
 The axes are ordered by hierarchical clustering of Minkowski distances between samples.
+](figures/Figure_S5.pdf)
+
+\vspace*{\fill}
 
 \clearpage
 
-![](figures/Figure_S6.pdf)
+\vspace*{\fill}
 
-**Figure S6**.
+![**Figure S6**.
 Homeobox, NAC and SBP transcription factors change expression between IM and DM.
 For each family, we plotted genes that were in the top 10% of all genes by absolute loading on PC5.
 While Homeobox and SBP genes are expressed preferentially in the DM, NAC are more expressed in the IM.
 Genes in the upper panels have a positive loading on PC5 (corresponding to higher expression at the IM stage), whilst genes in the lower panels have a negative loading
 Clades for Homeobox genes are from the Plant Transcription Factor Database v4.0 [@jinPlantTFDBCentralHub2017].
+](figures/Figure_S6.pdf)
+
+\vspace*{\fill}
 
 \clearpage
 
-![](figures/Figure_S7.pdf)
+\vspace*{\fill}
 
-**Figure S7**.
+![**Figure S7**.
 Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
 Both genes are expressed at all stages.
 *PLT8* expression peaks in RM.
 RM, rachis meristem; PBM, primary branch meristem; ePBM/AM, extending primary branch meristem and axillary meristem; SM, spikelet meristem.
+](figures/Figure_S7.pdf)
+
+\vspace*{\fill}
 
 \clearpage
 
-![](figures/Figure_S8.pdf)
+\vspace*{\fill}
 
-**Figure S8**.
+![**Figure S8**.
 Phenotyping of the five *Oryza* accessions used for RNAseq.
 These plants were grown at the same time and in the same conditions as the plants used for gene expression analysis.
 The three domesticated accessions produce more spikelets and secondary branches than their wild relatives.
 The domesticated accessions have a similar number of primary branches, but Asian domesticated species have more secondary branches and spikelets than domesticated African accessions.
 In comparison to *O. sativa japonica*, *O. sativa indica* produces more secondary branches.
+](figures/Figure_S8.pdf)
+
+\vspace*{\fill}
 
 \clearpage
 
-![](figures/Figure_S9.pdf)
+\vspace*{\fill}
 
-**Figure S9**.
+![**Figure S9**.
 Most genes in cluster 5 have negative L~2~FCs between IM and DM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
 This cluster has an enrichment of *AP2/EREBP*-like genes.
+](figures/Figure_S9.pdf)
+
+\vspace*{\fill}
 
 \clearpage
 
-![](figures/Figure_S10.pdf)
+\vspace*{\fill}
 
-**Figure S10**.
+![**Figure S10**.
 Expression analysis along early panicle development of *AP2/EREBP*-like genes present in cluster 5.
 DM: determinate meristem;
 FM: floret meristem;
 IM: indeterminate meristem;
 RM: rachis meristem.
+](figures/Figure_S10.pdf)
+
+\vspace*{\fill}
 
 \clearpage
