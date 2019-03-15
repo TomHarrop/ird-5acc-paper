@@ -19,7 +19,6 @@ Spikelet number, secondary branch number and primary branch number are the main 
 
 We investigated gene expression changes associated with the diversity of panicle architecture and differences between the Asian and African domestication processes via RNAseq.
 We used a single accession each of domesticated Asian rice (*O. sativa indica* IR64) and its wild relative (*O. rufipogon* W1654), and domesticated African rice (*O. glaberrima* Tog5681) and its wild relative (*O. barthii* B88).
-We also included *O. sativa japonica* cv. Nipponbare as the genomic reference accession.
 Based on the extensive phenotyping described above, the chosen accessions are consistent with species-wide patterns of panicle architecture (Supporting information Fig. S3).
 To measure whole-transcriptome gene expression in these accessions, we collected immature panicles from each accession at four developmental stages:
 rachis meristem (RM);
@@ -36,14 +35,15 @@ We did not observe grouping by domestication status, suggesting that transcripto
 
 ### *AP2/EREBP*-like transcription factors are core regulators of panicle branching
 
-We used PCA on transformed raw counts to investigate general patterns of variation in the transcriptomes that may be associated with differences in panicle architecture. The first four PCs split different combinations of rice species (Fig. 2).
-PC1–PC4 may relate to species-specific differences unrelated to panicle architecture, or mapping biases introduced by mapping all libraries against the *O. sativa japonica* reference.
-In contrast, PC5 separates developmental stages across all five accessions, although separation is weaker in *O. sativa indica* (Fig. 2). 
-*APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes and MADS-box genes are enriched at the extremes of PC5 (*p*~adj~ = 0.004 for both, GSEA permutation *t*-test; Supporting information Table S5).
-Generally, *AP2/EREBP*-like genes that contribute to PC5 are more highly expressed at the IM stage, and MADS-box genes are more highly expressed at the DM stage (Fig. 3).
+We used PCA on transformed raw counts to investigate general patterns of variation in the transcriptomes that may be associated with differences in panicle architecture.
+The first three PCs split different combinations of rice species (Fig. 2).
+PC1–PC3 may relate to species-specific differences unrelated to panicle architecture, or mapping biases introduced by mapping all libraries against the *O. sativa japonica* reference.
+In contrast, PC4 separates developmental stages across all five accessions, although separation is weaker in *O. sativa indica* (Fig. 2). 
+*APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes and MADS-box genes are enriched at the extremes of PC4 (*p*~adj~ = 0.018 and 0.020 respectively, GSEA permutation *t*-test; Supporting information Table S5).
+Generally, *AP2/EREBP*-like genes that contribute to PC4 are more highly expressed at the IM stage, and MADS-box genes are more highly expressed at the DM stage (Fig. 3).
 Most of the *AP2/EREBP*-like genes that are highly expressed at the IM stage belong to the ERF and DREB clades.
-*NAM*, *ATAF1* and *CUC2*-domain (NAC) transcription factor genes are also more highly expressed at the IM stage, and *SQUAMOSA PROMOTER BINDING PROTEIN*-like (SBP) genes including *WEALTHY FARMER'S PANICLE* (*WFP*) and *RICE SQUAMOSA PROMOTER-BINDING-LIKE 7* (*SPL7*) are more highly expressed at the DM stage [@miuraOsSPL14PromotesPanicle2010; @wangCoordinatedRegulationVegetative2015].
-There is a group of homeobox (HB) genes that is highly expressed in the DM samples, and a larger group that is highly expressed at the IM stage, and ten out of twenty of these genes belong to the HD-ZIP clade [Supporting information Fig. S6; @jainGenomewideIdentificationClassification2008].
+*NAM*, *ATAF1* and *CUC2*-domain (NAC) transcription factor genes are also more highly expressed at the IM stage, and *SQUAMOSA PROMOTER BINDING PROTEIN*-like (SBP) genes including *WEALTHY FARMER'S PANICLE* (*WFP*) and *RICE SQUAMOSA PROMOTER-BINDING-LIKE 7* (*SPL7*) are more highly expressed at the DM stage [@miuraOsSPL14PromotesPanicle2010; @wangCoordinatedRegulationVegetative2015; Supporting information Fig. S6].
+There is a group of homeobox (HB) genes that is highly expressed in the DM samples, and a larger group that is highly expressed at the IM stage, and nine out of 14 of these genes belong to the HD-ZIP clade [Supporting information Fig. S6; @jainGenomewideIdentificationClassification2008].
 Co-regulation of members of transcription factor (TF) families, sometimes at the clade level, highlights the redundant or overlapping functions of TF families in meristem establishment and fate transition.
 
 !include ./ms/figs/2.md
@@ -52,10 +52,10 @@ Co-regulation of members of transcription factor (TF) families, sometimes at the
 
 To identify the core set of genes involved in axillary meristem determination in all five accessions, we used differential expression (DE) tests to find genes that were up- or down-regulated between stages across all accessions.
 Positive log~2~-fold change values (L~2~FCs) indicate higher expression in DM than in IM.
-193 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1, including 115 genes up-regulated in DM samples and 78 genes down-regulated in DM samples (Supporting information Table S6).
-There was an enrichment of transcription factor (TF) genes in the list of 193 DE genes (38 TF genes; *p* = 1.9 × 10^-9^, hypergeometric test), including *FZP*, *LHS1*, *LAX1*, *PANICLE PHYTOMER2* (*PAP2*), and *MOSAIC FLORAL ORGANS 1* (*MFO1*), which regulate inflorescence architecture in rice [@komatsuLAX1FRIZZYPANICLE2001; @baiRegulatoryRoleFZP2016; @baiDuplicationUpstreamSilencer2017; @kobayashiPANICLEPHYTOMER2PAP22010; @kobayashiInflorescenceMeristemIdentity2012; @khandayRiceLHS1OsMADS12013; @ohmoriMOSAICFLORALORGANS12009; @huangVariationRegulatoryRegion2018].
+153 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1, including 88 genes up-regulated in DM samples and 65 genes down-regulated in DM samples (Supporting information Table S6).
+There was an enrichment of transcription factor (TF) genes in the list of 153 DE genes (37 TF genes; *p* = 6.0 × 10^-12^, hypergeometric test), including *FZP*, *LHS1*, *LAX1*, *PANICLE PHYTOMER2* (*PAP2*), and *MOSAIC FLORAL ORGANS 1* (*MFO1*), which regulate inflorescence architecture in rice [@komatsuLAX1FRIZZYPANICLE2001; @kobayashiPANICLEPHYTOMER2PAP22010; @kobayashiInflorescenceMeristemIdentity2012; @khandayRiceLHS1OsMADS12013; @ohmoriMOSAICFLORALORGANS12009a].
 This indicates that RNAseq of developing panicles at the IM and DM stage identifies genes that control branching.
-The list of 193 DE genes included 9 *MADS*-box genes and 10 *AP2/EREBP*-like genes (*p*~adj~ 5.2 × 10^-11^ and 1.4 × 10^-8^ respectively, hypergeometric test; Supporting information Table S6), in agreement with the prominence of those families in PC5.
+The list of 153 DE genes included 10 *MADS*-box genes and 7 *AP2/EREBP*-like genes (*p*~adj~ 1.1 × 10^-13^ and 6.4 × 10^-6^ respectively, hypergeometric test; Supporting information Table S6), in agreement with the prominence of those families in PC4.
 
 The DE and PCA results are consistent with the role of transcriptional regulation in panicle branching, and highlight a set of candidate core regulators of axillary meristem determination and branching that are conserved between rice species.
 The pattern of expression of *AP2/EREBP*-like genes may indicate a role in the promotion of indeterminate axillary meristem identity or suppression of the transition from axillary meristem to spikelet meristem.
@@ -81,7 +81,7 @@ We calculated correlations between the mean L~2~FC value of genes in each cluste
 Clusters 3, 4 and 6 correlated with spikelet number (SpN) and secondary branch number (SBN), but not with PC1, meaning that the L~2~FC of genes in those clusters does not correlate with the phenotypic differences between wild and domesticated accessions.
 Clusters of genes with high L~2~FC in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters of genes with low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
 Cluster 4 had an enrichment of HB genes (9 out of 31 genes; *p*~adj~ = 2.5 × 10^-4^).
-It also contained three MIKC^C^-type *MADS*-box genes (*LHS1*, *MFO1* and *MADS14*), which promote spikelet meristem determination [@jeonLeafyHullSterile12000; @ohmoriMOSAICFLORALORGANS12009; @kobayashiInflorescenceMeristemIdentity2012], and three *AP2/EREBP*-like genes including *OsINDETERMINATE SPIKELET 1* (*OsIDS1*), which also controls inflorescence architecture [@chuckFloralMeristemInitiation2008; @leeTwoAP2Family2012]. 
+It also contained three MIKC^C^-type *MADS*-box genes (*LHS1*, *MFO1* and *MADS14*), which promote spikelet meristem determination [@jeonLeafyHullSterile12000; @ohmoriMOSAICFLORALORGANS12009a; @kobayashiInflorescenceMeristemIdentity2012], and three *AP2/EREBP*-like genes including *OsINDETERMINATE SPIKELET 1* (*OsIDS1*), which also controls inflorescence architecture [@chuckFloralMeristemInitiation2008; @leeTwoAP2Family2012]. 
 L~2~FCs of genes in this cluster are low in *O. sativa indica*, high in *O. glaberrima* and intermediate in the two wild accessions.
 Although these genes may be involved in regulation of panicle complexity, their expression did not appear to have changed in parallel in the two domestications.
 L~2~FCs of genes in clusters 3 and 6 change between accessions from the two continents.

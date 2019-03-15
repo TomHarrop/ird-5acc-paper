@@ -1,5 +1,6 @@
 
-# Expression of *AP2*-like transcription factors is associated with inflorescence branching diversity in wild and domesticated rice
+# A set of *AP2*-like genes associated with inflorescence branching and architecture in domesticated rice
+
 
 Thomas W.R. Harrop^1^, Otho Mantegazza, Ai My Luong, Kevin Béthune, Mathias Lorieux^2^, Stefan Jouannic, Hélène Adam^¶^
 
@@ -11,7 +12,7 @@ University of Montpellier, DIADE, IRD, France.
 
 ### Running title:
 
-*AP2*-like genes associated with panicle diversity
+*AP2*-like genes associated with rice panicle diversity
 
 <!-- Total word count: 5538  
 Introduction: 752  
