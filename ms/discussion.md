@@ -11,7 +11,7 @@ As well as basic insights into molecular control of branching in rice, this work
 A set of *AP2/EREBP*-like genes decrease expression over the course of wheat spike development [@liGenomewideViewTranscriptome2018], and the molecular function of some individual *AP2/EREBP*-like genes has been reported in relation to inflorescence or root development.
 *OsIDS1* controls panicle branching in rice, and positively regulates branch meristem identity by repressing genes that specify spikelet identity [@leeTwoAP2Family2012].
 The *PLETHORA*-like gene *PLT9*, a paralog of *PLT8* [@kitomiAuxinResponsiveAP22011], is related to *Arabidopsis thaliana* genes *AIL5* and *AIL6*, which are are involved in floral organ initiation and identity [@liStructuralCharacterizationExpression2011; @krizekAINTEGUMENTALIKEGenesHave2015].
-Along with *AP2/EREBP85* and *AP2/EREBP86*, *OsIDS1* and *PLT9* were more highly expressed at the DM stage and had a high loading on the principal component that differentiates stage in all five accessions, consistent with a role in the regulation of axillary meristem identity.
+Along with *AP2/EREBP85*, *OsIDS1* and *PLT9* were more highly expressed at the DM stage and had a high loading on the principal component that differentiates stage in all five accessions, consistent with a role in the regulation of axillary meristem identity.
 Conversely, most of the detected *AP2/EREBP*-like genes in our dataset that contribute to differences between stage had lower expression in DM than in IM, including mainly ERF and DREB clade genes and three *RAV*-like genes.
 In *Arabidopsis*, *RAV* orthologs repress flowering genes [@matias-hernandezRAVGenesRegulation2014], and *ERF3* interacts with the HB gene *WOX11* to promote crown root development [@zhaoInteractionRiceERF32015].
 Our results suggest additional roles for these genes in promoting reproductive axillary meristem initiation.
@@ -40,13 +40,13 @@ This suggests that increased production of secondary branches from axillary meri
 
 Microarray analysis of developing panicles has identified a small set of genes, enriched for TFs, that is differentially expressed during rice panicle development [@furutaniGenomewideAnalysisSpatial2006].
 In microdissected meristem tissues, gene expression changes gradually during transition in axillary meristem identity [@harropGeneExpressionProfiling2016], similar to the gradual meristem maturation during tomato inflorescence development [@parkRateMeristemMaturation2012].
-We also observed a small set of genes that were differentially expressed between IM and DM consistently in all accessions (193 of 25,229 tested), with an enrichment of TFs (38 of 193 genes).
+We also observed a small set of genes that were differentially expressed between IM and DM consistently in all accessions (153 of 25,229 tested), with an enrichment of TFs (37 of 153 genes).
 More genes were upregulated in DM than down-regulated, as in wheat spike development [@wangTranscriptomeAssociationIdentifies2017].
 These results suggest that the gene regulatory network controlling phase transition from IM to DM is controlled by a small subset of core, conserved genes in Asian and African rice.
 
 Because of redundant and overlapping activities of TFs, gene regulatory networks are robust to perturbations in single genes, allowing them to produce a stable transcriptional output in variable cellular and environmental conditions [@wuFunctionalRedundancyTranscription2015; @gitterBackupGeneRegulatory2009; @daiRobustnessTranscriptionalRegulatory2009].
 *AP2/EREBP*-like, *MADS*-box, *HB*, *NAC* and *SBP* TF genes were all enriched either in the list of differentially expressed genes or the list of genes that had a high loading on the component of variability that separated RNAseq samples by stage.
-Expression of *AGL6*-like, *AP1*/*FUL*-like, and four of the five *SEPELATTA*-like *MADS*-box genes all increased between indeterminate and determinate stage, as expected given their roles in spikelet determination and inflorescence development [@yoshidaTAWAWA1RegulatorRice2013; @zhangMolecularControlGrass2014].
+Expression of *AGL6*-like, *AP1*/*FUL*-like, and four of the five *SEPALATTA*-like *MADS*-box genes all increased between indeterminate and determinate stage, as expected given their roles in spikelet determination and inflorescence development [@yoshidaTAWAWA1RegulatorRice2013; @zhangMolecularControlGrass2014].
 This suggests family-level or clade-level co-regulation of TFs in rice panicle development.
 Our observation that some genes appear to be co-expressed at the family or clade level may indiciate partial functional redundancy between groups of homologous TFs in the rice genome that act in the gene regulatory network controlling axillary meristem determination.
 
