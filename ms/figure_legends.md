@@ -19,14 +19,14 @@ TBN: Tertiary branch number.
 
 **Figure 2**.
 Principal components analysis of transformed read counts for each library.
-Principal component 5 (PC5) separates RNAseq samples by developmental stage, and explains 3.5% of total variability.
-The first four components explain 86.3% of variability, and separate RNAseq samples by species.
+Principal component 4 (PC4) separates RNAseq samples by developmental stage, and explains 4.8% of total variability.
+The first three components explain 83.1% of variability, and separate RNAseq samples by species.
 Bars show single samples (three replicates per accession per stage).
 
 **Figure 3**.
 *AP2/EREBP*-like and MADS-box transcription factors change expression between IM and DM.
-For each family, we plotted genes that were in the top 10% of all genes by absolute loading on PC5.
-Genes in the upper panels had a positive loading on PC5 (corresponding to higher expression at the IM stage), whilst genes in the lower panels had a negative loading.
+For each family, we plotted genes that were in the top 10% of all genes by absolute loading on PC4.
+Genes in the upper panels had a positive loading on PC4 (corresponding to higher expression at the IM stage), whilst genes in the lower panels had a negative loading.
 Most *AP2/EREBP*-like genes that pass the 10% cutoff were more highly expressed in the IM.
 Three of the four *AP2/EREBP*-like genes that were more highly expressed in the DM belong to the AP2 clade.
 *AP2/EREBP*-like genes that were more highly expressed in IM mainly belong to the ERF and DREB clades.

@@ -12,13 +12,13 @@ Ob, *O. barthii*;
 Og, *O. glaberrima*;
 Os, *O. sativa*;
 Or, *O. rufipogon*;
-PBN,Primary branch;
+PBN, Primary branch;
 PBIL, Primary branch internode length;
 PBL, Primary branch length;
 RL, Rachis length;
 SBN, Secondary branch;
 SBIL, Secondary branch internode length;
-SBL,Secondary branch length;
+SBL, Secondary branch length;
 SpN, Spikelet number;
 TBN, Tertiary branch number.
 
@@ -26,7 +26,7 @@ TBN, Tertiary branch number.
 Read and mapping statistics for all RNAseq samples.
 
 **Table S5**.
-Transcription factor families that are enriched along PC5.
+Transcription factor family enrichment in PC1–4.
 
 **Table S6**.
 Differential expression test results between stages across all species.

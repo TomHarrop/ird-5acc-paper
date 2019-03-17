@@ -85,9 +85,9 @@ The axes are ordered by hierarchical clustering of Minkowski distances between s
 
 ![**Figure S6**.
 Homeobox, NAC and SBP transcription factors change expression between IM and DM.
-For each family, we plotted genes that were in the top 10% of all genes by absolute loading on PC5.
+For each family, we plotted genes that were in the top 10% of all genes by absolute loading on PC4.
 While Homeobox and SBP genes are expressed preferentially in the DM, NAC are more expressed in the IM.
-Genes in the upper panels have a positive loading on PC5 (corresponding to higher expression at the IM stage), whilst genes in the lower panels have a negative loading
+Genes in the upper panels have a positive loading on PC4 (corresponding to higher expression at the IM stage), whilst genes in the lower panels have a negative loading.
 Clades for Homeobox genes are from the Plant Transcription Factor Database v4.0 [@jinPlantTFDBCentralHub2017].
 ](figures/Figure_S6.pdf)
 
@@ -113,10 +113,8 @@ RM, rachis meristem; PBM, primary branch meristem; ePBM/AM, extending primary br
 ![**Figure S8**.
 Phenotyping of the five *Oryza* accessions used for RNAseq.
 These plants were grown at the same time and in the same conditions as the plants used for gene expression analysis.
-The three domesticated accessions produce more spikelets and secondary branches than their wild relatives.
-The domesticated accessions have a similar number of primary branches, but Asian domesticated species have more secondary branches and spikelets than domesticated African accessions.
-In comparison to *O. sativa japonica*, *O. sativa indica* produces more secondary branches.
-](figures/Figure_S8.pdf)
+The domesticated accessions produce more spikelets and secondary branches than their wild relatives.
+The domesticated accessions have a similar number of primary branches, but the Asian domesticated species has more secondary branches and spikelets than the domesticated African species.](figures/Figure_S8.pdf)
 
 \vspace*{\fill}
 
