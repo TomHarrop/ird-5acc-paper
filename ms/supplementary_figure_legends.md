@@ -1,3 +1,16 @@
+
+!include ./ms/figs/1.md
+
+!include ./ms/figs/2.md
+
+!include ./ms/figs/3.md
+
+!include ./ms/figs/4.md
+
+!include ./ms/figs/5.md
+
+!include ./ms/figs/6.md
+
 ## Supporting information
 
 \vspace*{\fill}
@@ -8,10 +21,10 @@ PB: Primary branch;
 PBIL: Primary branch internode length;
 PBL: Primary branch length;
 RL: Rachis length;
-SB, Secondary branch;
+SB: Secondary branch;
 SBIL: Secondary branch internode length;
 SBL: Secondary branch length;
-Sp : Spikelet.
+Sp: Spikelet.
 ](figures/Figure_S1.tif){ height=180mm }
 
 \vspace*{\fill}
@@ -40,8 +53,6 @@ Accessions used for phenotyping are listed in supporting information Table S1.
 
 \vspace*{\fill}
 
-\clearpage
-
 \vspace*{\fill}
 
 ![**Figure S4**.
@@ -62,7 +73,7 @@ PBM: primary branch meristem;
 RM: Rachis meristem;
 SpM: spikelet meristem;
 St: stamen.
-](figures/Figure_S4.pdf)
+](figures/Figure_S4.pdf){height=80%}
 
 \vspace*{\fill}
 
@@ -111,7 +122,7 @@ RM, rachis meristem; PBM, primary branch meristem; ePBM/AM, extending primary br
 \vspace*{\fill}
 
 ![**Figure S8**.
-Phenotyping of the five *Oryza* accessions used for RNAseq.
+Phenotyping of the four *Oryza* accessions used for RNAseq.
 These plants were grown at the same time and in the same conditions as the plants used for gene expression analysis.
 The domesticated accessions produce more spikelets and secondary branches than their wild relatives.
 The domesticated accessions have a similar number of primary branches, but the Asian domesticated species has more secondary branches and spikelets than the domesticated African species.](figures/Figure_S8.pdf)

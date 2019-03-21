@@ -1,26 +1,6 @@
 manuscript: docx/manuscript.docx 
 si: pdf/supporting_information.pdf docx/supporting_information.docx
-ms_pdf: pdf/manuscript.pdf pdf/manuscript_mp.pdf
-
-
-# docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/methods.md ms/results.md ms/discussion.md ms/end_matter.md template/ref_loc.md ms/figure_legends.md ms/si_list.md bib/references.bib template/reference.docx template/new-phytologist.csl template/ref_loc.md
-# 	pandoc --reference-doc=template/reference.docx \
-# 		--filter pandoc-citeproc \
-# 		--from=markdown \
-# 		--to=docx \
-# 		--bibliography=bib/references.bib \
-# 		--csl=template/new-phytologist.csl \
-# 		-o docx/manuscript.docx \
-# 		ms/front_matter.md \
-# 		ms/abstract.md \
-# 		ms/introduction.md \
-# 		ms/methods.md \
-# 		ms/results.md \
-# 		ms/discussion.md \
-# 		ms/end_matter.md \
-# 		template/ref_loc.md \
-# 		ms/figure_legends.md \
-# 		ms/si_list.md
+ms_pdf: pdf/manuscript.pdf
 
 docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/methods.md ms/results.md ms/discussion.md ms/end_matter.md template/ref_loc.md ms/figure_legends.md ms/si_list.md bib/references.bib template/reference.docx template/molecular-plant.csl template/ref_loc.md
 	pandoc --from=markdown --to=markdown \
@@ -30,10 +10,10 @@ docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/me
 		ms/methods.md \
 		ms/results.md \
 		ms/discussion.md \
+		ms/si_list.md \
 		ms/end_matter.md \
 		template/ref_loc.md \
 		ms/figure_legends.md \
-		ms/si_list.md \
 		| grep -vh "^!" \
 		| pandoc --reference-doc=template/reference.docx \
 		--filter pandoc-citeproc \

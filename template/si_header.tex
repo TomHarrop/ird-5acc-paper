@@ -15,9 +15,8 @@
 \LetLtxMacro\latexincludegraphics\includegraphics
 % Update the include graphics command to include centering
 \renewcommand{\includegraphics}[2][]%
-  {\begin{center}
-  \latexincludegraphics[#1]{#2}
-  \end{center}}
+  {\centering
+  \latexincludegraphics[#1]{#2}}
 
 % sections on new page
 \let\stdsubsection\subsection

@@ -1,6 +1,6 @@
 ## Discussion
 
-The purpose of this study was to explore the genetic factors underlying the diversity of panicle architecture, which influences grain number in rice.
+The purpose of this study was to identify genetic factors underlying the diversity of panicle architecture, which influences grain number in rice.
 Our transcriptomic comparison of panicles at indeterminate and determinate stages of axillary meristem development revealed a core set of transcription factors associated with axillary meristem phase transition in wild and domesticated African and Asian rice.
 Some of these transcription factors, including *AP2/EREBP*-like, MIKC^C^-type *MADS* box, *NAC*, *SBP* and homeobox genes, appear to be co-regulated at the family or clade level.
 Our phenotypic survey of 91 accessions showed that characteristics related to axillary meristem formation and fate transition are the main factors separating wild and domesticated rice.
@@ -11,7 +11,7 @@ As well as basic insights into molecular control of branching in rice, this work
 A set of *AP2/EREBP*-like genes decrease expression over the course of wheat spike development [@liGenomewideViewTranscriptome2018], and the molecular function of some individual *AP2/EREBP*-like genes has been reported in relation to inflorescence or root development.
 *OsIDS1* controls panicle branching in rice, and positively regulates branch meristem identity by repressing genes that specify spikelet identity [@leeTwoAP2Family2012].
 The *PLETHORA*-like gene *PLT9*, a paralog of *PLT8* [@kitomiAuxinResponsiveAP22011], is related to *Arabidopsis thaliana* genes *AIL5* and *AIL6*, which are are involved in floral organ initiation and identity [@liStructuralCharacterizationExpression2011; @krizekAINTEGUMENTALIKEGenesHave2015].
-Along with *AP2/EREBP85*, *OsIDS1* and *PLT9* were more highly expressed at the DM stage and had a high loading on the principal component that differentiates stage in all five accessions, consistent with a role in the regulation of axillary meristem identity.
+Along with *AP2/EREBP85*, *OsIDS1* and *PLT9* were more highly expressed at the DM stage and had a high loading on the principal component that differentiates stage in all four accessions, consistent with a role in the regulation of axillary meristem identity.
 Conversely, most of the detected *AP2/EREBP*-like genes in our dataset that contribute to differences between stage had lower expression in DM than in IM, including mainly ERF and DREB clade genes and three *RAV*-like genes.
 In *Arabidopsis*, *RAV* orthologs repress flowering genes [@matias-hernandezRAVGenesRegulation2014], and *ERF3* interacts with the HB gene *WOX11* to promote crown root development [@zhaoInteractionRiceERF32015].
 Our results suggest additional roles for these genes in promoting reproductive axillary meristem initiation.

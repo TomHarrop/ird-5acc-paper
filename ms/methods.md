@@ -30,7 +30,6 @@ After quantification with a 2100 Bioanalyzer, 125-base paired-end reads were gen
 
 cDNA was synthesized from 1 μg of DNase-treated total RNA using the SuperScript III First-Strand Synthesis System (Invitrogen, U.S.A.). 
 A Biomark HD Microfluidic Dynamic Array (Fluidigm, U.S.A.) was used for large-scale qPCR.
-Before performing qPCR, the sample mixture and assay mixture were prepared individually.
 A 96 × 96 Dynamic Array Integrated Fluidic Circuit (Fluidigm, U.S.A.) was loaded with cDNA and primer combinations after 15 cycles of specific target amplification and exonuclease I treatment.
 A fast cycling protocol with EvaGreen dye (Bio-Rad Laboratories, U.S.A.) was was used for amplification.
 Three biological replicates were performed for each sample.
