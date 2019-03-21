@@ -21,7 +21,7 @@ twharrop@gmail.com; otho.mantegazza@gmail.com; ai-my.luong@ird.fr; kevin.bethune
 
 We report a set of genes controlling the diversity of rice panicle structure, in the context of two parallel domestications. These genes are new targets for crop improvement.
 
-Total word count: 5538  
+Total word count: 5785  
 
 Including 6 figures (Figs 1 to 6), 10 supporting information figures and 10 supporting information tables.
 
