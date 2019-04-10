@@ -1,7 +1,5 @@
 
-# A set of *AP2*-like genes regulates inflorescence branching and architecture in domesticated rice
-
-> TH: I changed "associated with" to "regulates": too much?
+# A set of *AP2*-like genes is associated with inflorescence branching and architecture in domesticated rice
 
 Thomas W.R. Harrop^1^, Otho Mantegazza, Ai My Luong, Kevin Béthune, Mathias Lorieux^2^, Stefan Jouannic, Hélène Adam^¶^
 

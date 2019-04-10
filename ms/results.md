@@ -31,25 +31,25 @@ After mapping the reads against the *O. sativa japonica* cv. Nipponbare referenc
 Pairwise distances between samples, calculated on the number of reads per gene from all detected genes, grouped samples first by stage, then by accession, and then by continent (Supporting information Fig. S5).
 We did not observe grouping by domestication status, suggesting that transcriptome-wide changes during domestication are subtle compared to differences between species.
 
-### *AP2/EREBP*-like transcription factors are core regulators of panicle branching
-
-We used PCA on transformed raw counts to investigate general patterns of variation in the transcriptomes that may be associated with differences in panicle architecture.
-The first three PCs split different combinations of rice species (Fig. 2).
+We used PCA on transformed raw counts to investigate general patterns of variation in the transcriptomes (**Supporting information Fig. X**).
+PC1 separates African and Asian accessions, and PC2 and PC3 separate wild and domesticated accessions in Asian and African samples respectively.
 PC1–PC3 may relate to species-specific differences unrelated to panicle architecture, or mapping biases introduced by mapping all libraries against the *O. sativa japonica* reference.
-In contrast, PC4 separates developmental stages across all five accessions, although separation is weaker in *O. sativa indica* (Fig. 2). 
-*APETALA2* and ethylene-responsive element binding protein (*AP2/EREBP*)-like genes and *MADS*-box genes are enriched at the extremes of PC4 (*p*~adj~ = 0.018 and 0.020 respectively, GSEA permutation *t*-test; Supporting information Table S5).
-Generally, *AP2/EREBP*-like genes that contribute to PC4 are more highly expressed at the IM stage, and *MADS*-box genes are more highly expressed at the DM stage (Fig. 3).
-Most of the *AP2/EREBP*-like genes that are highly expressed at the IM stage belong to the ERF and DREB clades.
-*NAM*, *ATAF1* and *CUC2*-domain (NAC) transcription factor genes are also more highly expressed at the IM stage, and *SQUAMOSA PROMOTER BINDING PROTEIN*-like (SBP) genes including *WEALTHY FARMER'S PANICLE* (*WFP*) and *RICE SQUAMOSA PROMOTER-BINDING-LIKE 7* (*SPL7*) are more highly expressed at the DM stage [Supporting information Fig. S6; @miuraOsSPL14PromotesPanicle2010; @wangCoordinatedRegulationVegetative2015].
-There is a group of homeobox (HB) genes that is highly expressed in the DM samples, and a larger group that is highly expressed at the IM stage, and nine out of 14 of these genes belong to the HD-ZIP clade [Supporting information Fig. S6; @jainGenomewideIdentificationClassification2008].
-Co-regulation of members of transcription factor (TF) families, sometimes at the clade level, highlights the redundant or overlapping functions of TF families in meristem establishment and fate transition.
+In contrast, PC4 separates developmental stages across all five accessions, although separation is weaker in *O. sativa indica*. 
+This suggests a conserved mechanism that controls the transition from indeterminate to determinate phase of axillary meristem development in all accessions.
+
+### *AP2/EREBP*-like transcription factors are core regulators of panicle branching
 
 To identify the core set of genes involved in axillary meristem determination in all four accessions, we used differential expression (DE) tests to find genes that were up- or down-regulated between stages across all accessions.
 Positive log~2~-fold change values (L~2~FCs) indicate higher expression in DM than in IM.
 153 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1, including 88 genes up-regulated in DM samples and 65 genes down-regulated in DM samples (Supporting information Table S6).
 There was an enrichment of transcription factor (TF) genes in the list of 153 DE genes (37 TF genes; *p* = 6.0 × 10^-12^, hypergeometric test), including *LHS1*, *LAX1*, *PANICLE PHYTOMER2* (*PAP2*), and *MOSAIC FLORAL ORGANS 1* (*MFO1*), which regulate inflorescence architecture in rice [@komatsuLAX1FRIZZYPANICLE2001; @kobayashiPANICLEPHYTOMER2PAP22010; @kobayashiInflorescenceMeristemIdentity2012; @khandayRiceLHS1OsMADS12013; @ohmoriMOSAICFLORALORGANS12009a].
-This indicates that RNAseq of developing panicles at the IM and DM stage identifies genes that control branching.
-The list of 153 DE genes included 10 *MADS*-box genes and 7 *AP2/EREBP*-like genes (*p*~adj~ 1.1 × 10^-13^ and 6.4 × 10^-6^ respectively, hypergeometric test; Supporting information Table S6), in agreement with the prominence of those families in PC4.
+This indicates that RNAseq of developing panicles at the IM and DM stage identifies genes that control branching, and suggests that transcription factors are prominent among these genes.
+
+We used gene set enrichment analysis [GSEA; @sergushichevAlgorithmFastPreranked2016; @subramanianGeneSetEnrichment2005] to test for family-level enrichment among transcription factor genes.
+*AP2/EREBP*-like genes and *MADS*-box genes were both enriched at the extremes of the distribution of L~2~FC values (*p*~adj~ = 3.5 × 10^-5^ and *p*~adj~ =  4.0 × 10^-4^ respectively, GSEA permutation *t*-test; **Supporting information table x**).
+Correspondingly, the list of 153 DE genes included 10 *MADS*-box genes and 7 *AP2/EREBP*-like genes (Supporting information Table S6).
+
+Co-regulation of members of transcription factor (TF) families, sometimes at the clade level, highlights the redundant or overlapping functions of TF families in meristem establishment and fate transition.
 
 The DE and PCA results are consistent with the role of transcriptional regulation in panicle branching, and highlight a set of candidate core regulators of axillary meristem determination and branching that are conserved between rice species.
 The pattern of expression of *AP2/EREBP*-like genes may indicate a role in the promotion of indeterminate axillary meristem identity or suppression of the transition from axillary meristem to spikelet meristem.
