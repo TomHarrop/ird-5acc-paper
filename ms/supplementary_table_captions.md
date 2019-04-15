@@ -26,7 +26,7 @@ TBN, Tertiary branch number.
 Read and mapping statistics for all RNAseq samples.
 
 **Table S5**.
-Transcription factor family enrichment in PC1–4.
+Transcription factor family enrichment by L~2~FC.
 
 **Table S6**.
 Differential expression test results between stages across all species.

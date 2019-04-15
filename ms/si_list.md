@@ -18,6 +18,8 @@ Heatmap of pairwise distances between RNAseq samples.
 **Figure S6**.
 Expression of genes from selected transcription factor families.
 
+> To remove
+
 **Figure S7**.
 Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
 
@@ -43,7 +45,7 @@ Quantification of panicle traits in 91 accessions from wild and domesticated Asi
 Read and mapping statistics for all RNAseq samples.
 
 **Table S5**.
-Transcription factor family enrichment in PC1–4.
+Transcription factor family enrichment by L~2~FC.
 
 **Table S6**.
 Differential expression test results between stages across all species.

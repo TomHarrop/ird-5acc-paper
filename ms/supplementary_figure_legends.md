@@ -95,6 +95,7 @@ The axes are ordered by hierarchical clustering of Minkowski distances between s
 \vspace*{\fill}
 
 ![**Figure S6**.
+**TO REMOVE**.
 Homeobox, NAC and SBP transcription factors change expression between IM and DM.
 For each family, we plotted genes that were in the top 10% of all genes by absolute loading on PC4.
 While Homeobox and SBP genes are expressed preferentially in the DM, NAC are more expressed in the IM.
