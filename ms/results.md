@@ -26,7 +26,7 @@ and floret meristem (FM), with early differentiation of floral organs
 (Supporting information Fig. S4a).
 We first confirmed staging of the panicles by extracting RNA from pooled immature panicles at each stage and measuring expression of markers of panicle development by quantitative real-time RT-PCR (qPCR) (Supporting information Fig. S4b).
 Because branching complexity is related to branch meristem establishment and meristem fate transition [@kyozukaControlGrassInflorescence2014], and secondary branch number and spikelet number contribute to differences between wild and domesticated accessions (Fig. 1), we chose the IM and DM stages for RNAseq.
-cDNA libraries for sequencing were constructed from rRNA-depleted RNA samples from three biological replicates at both stages for all five accessions.
+cDNA libraries for sequencing were constructed from rRNA-depleted RNA samples from three biological replicates at both stages for all four accessions.
 After mapping the reads against the *O. sativa japonica* cv. Nipponbare reference genome [@ouyangTIGRRiceGenome2007], we obtained an average of more than 20 million uniquely mapped reads within exons for each accession, including African rice species (Supporting information Table S4).
 Pairwise distances between samples, calculated on the number of reads per gene from all detected genes, grouped samples first by stage, then by accession, and then by continent (Supporting information Fig. S5).
 We did not observe grouping by domestication status, suggesting that transcriptome-wide changes during domestication are subtle compared to differences between species.
@@ -34,20 +34,20 @@ We did not observe grouping by domestication status, suggesting that transcripto
 We used PCA on transformed raw counts to investigate general patterns of variation in the transcriptomes (Fig. 2).
 PC1 separates African and Asian accessions, and PC2 and PC3 separate wild and domesticated accessions in Asian and African samples respectively.
 PC1–PC3 may relate to species-specific differences unrelated to panicle architecture, or mapping biases introduced by mapping all libraries against the *O. sativa japonica* reference.
-While the first three PCs separate different combinations of accessions, PC4 separates developmental stages across all five accessions, although separation is weaker in *O. sativa indica*. 
+While the first three PCs separate different combinations of accessions, PC4 separates developmental stages across all four accessions, although separation is weaker in *O. sativa indica*. 
 This suggests a conserved mechanism that controls the transition from indeterminate to determinate phase of axillary meristem development in all accessions.
 
 ### *AP2/EREBP*-like transcription factors are core regulators of panicle branching
 
 To identify the core set of genes involved in axillary meristem determination in all four accessions, we used differential expression (DE) tests to find genes that were up- or down-regulated between stages across all accessions.
 Positive log~2~-fold change values (L~2~FCs) indicate higher expression in DM than in IM.
-153 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1, including 88 genes up-regulated in DM samples and 65 genes down-regulated in DM samples (Supporting information Table S6).
+153 genes were at least 1.5-fold DE between stages in all species at a false-discovery rate of 0.1, including 88 genes up-regulated in DM samples and 65 genes down-regulated in DM samples (Supporting information Table S5).
 There was an enrichment of transcription factor (TF) genes in the list of 153 DE genes (37 TF genes; *p* = 6.0 × 10^-12^, hypergeometric test), including *LHS1*, *LAX1*, *PANICLE PHYTOMER2* (*PAP2*), and *MOSAIC FLORAL ORGANS 1* (*MFO1*), which regulate inflorescence architecture in rice [@komatsuLAX1FRIZZYPANICLE2001; @kobayashiPANICLEPHYTOMER2PAP22010; @kobayashiInflorescenceMeristemIdentity2012; @khandayRiceLHS1OsMADS12013; @ohmoriMOSAICFLORALORGANS12009a].
 This indicates that RNAseq of developing panicles at the IM and DM stage identifies genes that control branching, and suggests that transcription factors are prominent among these genes.
 
 We used gene set enrichment analysis [GSEA; @subramanianGeneSetEnrichment2005; @sergushichevAlgorithmFastPreranked2016] on genes ranked by L~2~FC to test for family-level enrichment among transcription factors.
-*AP2/EREBP*-like genes and *MADS*-box genes were both enriched (*p*~adj~ = 3.5 × 10^-5^ and *p*~adj~ =  4.0 × 10^-4^ respectively, GSEA permutation *t*-test; Supporting information table S5).
-Correspondingly, the list of 153 DE genes included 10 *MADS*-box genes and 7 *AP2/EREBP*-like genes (Supporting information Table S6).
+*AP2/EREBP*-like genes and *MADS*-box genes were both enriched (*p*~adj~ = 3.5 × 10^-5^ and *p*~adj~ =  4.0 × 10^-4^ respectively, GSEA permutation *t*-test; Supporting information Table S6).
+Correspondingly, the list of 153 DE genes included 10 *MADS*-box genes and 7 *AP2/EREBP*-like genes (Supporting information Table S5).
 Most DE *MADS*-box genes are more highly expressed at the DM stage, whereas most DE *AP2/EREBP*-like genes are more highly expressed at the IM stage.
 The majority of *AP2/EREBP*-like genes that have higher expression at the IM stage are from the ERF and DREB clades (Fig. 3).
 The DE results are consistent with the role of transcriptional regulation in panicle branching, and highlight a set of candidate core regulators of axillary meristem determination and branching that are conserved between rice species.
@@ -56,16 +56,16 @@ The pattern of expression of *AP2/EREBP*-like genes may indicate a role in the p
 Co-regulation of members of transcription factor (TF) families, sometimes at the clade level, highlights the redundant or overlapping functions of TF families in meristem establishment and fate transition.
 
 To test the role of *AP2/EREBP*-like genes in the control of panicle architecture, we phenotyped panicles from two loss-of-function mutants.
-The *crown rootless5* (*crl5*) mutant of the *AP2*-like gene *PLETHORA 8* [*PLT8*; @kitomiAuxinResponsiveAP22011] produced panicles with a shorter rachis with fewer primary branches (Fig. 4, Supporting information Table S7), consistent with a peak of *PLT8* expression in rachis meristem tissues from *O. sativa japonica* [Supporting information Fig. S7; @harropGeneExpressionProfiling2016].
+The *crown rootless5* (*crl5*) mutant of the *AP2*-like gene *PLETHORA 8* [*PLT8*; @kitomiAuxinResponsiveAP22011] produced panicles with a shorter rachis with fewer primary branches (Fig. 4, Supporting information Table S7), consistent with a peak of *PLT8* expression in rachis meristem tissues from *O. sativa japonica* [Supporting information Fig. S6; @harropGeneExpressionProfiling2016].
 Panicles from the *small organ size1* (*smos1*) mutant of *ERF142* [@ayaNovelAP2TypeTranscription2014] have a reduced number of primary and secondary branches, and fewer spikelets (Fig. 4; Supporting information Table S7).
-*ERF142* expression is highest in primary branch and elongating primary branch meristem tissues in *O. sativa japonica* [Supporting information Fig. S7; @harropGeneExpressionProfiling2016].
+*ERF142* expression is highest in primary branch and elongating primary branch meristem tissues in *O. sativa japonica* [Supporting information Fig. S6; @harropGeneExpressionProfiling2016].
 Although neither gene was differentially expressed in our RNAseq dataset, these phenotypes support the involvement of *AP2/EREBP*-like genes in control of panicle architecture.
 
 ### *AP2/EREBP*-like gene expression is associated with panicle diversity and domestication
 
-To identify common patterns of expression of transcriptional regulators related to variation in panicle phenotypes, we used soft clustering of scaled L~2~FCs between IM and DM using the subset of annotated TF genes that were detected in our RNAseq dataset.
+To identify common patterns of expression of transcriptional regulators related to variation in panicle phenotypes, we used soft clustering of scaled L~2~FCs between IM and DM on the subset of annotated TF genes that were detected in our RNAseq dataset.
 We recovered six clusters comprised of a total of 119 genes (Fig. 5 , Supporting information Table S8).
-To determine which clusters were related to domestication, we calculated correlations between the mean L~2~FC value of genes in each cluster and PC1 in the phenotyping data, and between mean L~2~FC and the number of secondary branches and spikelets from repeat panicle phenotyping for the accessions used for RNAseq (Fig. 5b, Fig. 1, Supporting information Fig. S8).
+To determine which clusters were related to domestication, we calculated correlations between the mean L~2~FC value of genes in each cluster and PC1 in the phenotyping data, and between mean L~2~FC and the number of secondary branches and spikelets from repeat panicle phenotyping for the accessions used for RNAseq (Fig. 5b, Fig. 1, Supporting information Fig. S7).
 
 Clusters 3, 4 and 6 correlated with spikelet number (SpN) and secondary branch number (SBN), but not with PC1, meaning that the L~2~FC of genes in those clusters does not correlate with the phenotypic differences between wild and domesticated accessions.
 Clusters of genes with high L~2~FC in *O. sativa indica* have a positive correlation with SBN and SpN, whereas clusters of genes with low L~2~FC in *O. sativa indica* have a negative correlation with SBN and SpN.
@@ -88,10 +88,10 @@ Genes in cluster 2 have lower L~2~FCs in domesticated accessions, meaning that t
 Cluster 2 also had the strongest negative correlation with PC1, and low L~2~FCs in *O. sativa indica*. 
 The lower L~2~FCs in domesticated accessions could implicate cluster 2 genes in promotion of determinate meristem fate, because their lower expression at the DM stage may result in more activity of indeterminate axillary meristems.
 Eight *GROWTH-REGULATING FACTOR1* (GRF) family genes, which are involved in the regulation of cell proliferation [@kimRegulationPlantGrowth2015], were detected in our dataset, and three of them were present in cluster 2 (*p*~adj~ = 7.6 × 10^-3^, hypergeometric test).
-In contrast to cluster 2, most of the genes in cluster 5 have L~2~FCs close to zero in *O. sativa indica*, and negative L~2~FCs in the other accessions (Supporting information Fig. S9), meaning that the expression of these genes decreases at the DM stage in all accessions except *O. sativa indica*.
+In contrast to cluster 2, most of the genes in cluster 5 have L~2~FCs close to zero in *O. sativa indica*, and negative L~2~FCs in the other accessions (Supporting information Fig. S8), meaning that the expression of these genes decreases at the DM stage in all accessions except *O. sativa indica*.
 The lack of repression of cluster 5 genes and to a lesser extent cluster 1 genes at the DM stage in *O. sativa indica* could result in more branching via the promotion of indeterminate axillary meristem identity.
 Cluster 5, which had the highest mean L~2~FC in *O. sativa indica*, had an enrichment of *AP2/EREBP*-like genes (6 out of 17 genes; *p*~adj~ = 7.6 × 10^-3^, hypergeometric test), and cluster 1 also contains 3 *AP2/EREBP*-like genes (Supporting information Table S8).
-We used qPCR to confirm these patterns in all four stages of each accession for all *AP2/EREBP*-like genes in cluster 5 (Supporting information Fig. S10).
+We used qPCR to confirm these patterns in all four stages of each accession for all *AP2/EREBP*-like genes in cluster 5 (Supporting information Fig. S9).
 The enrichment of *AP2/EREBP*-like genes in cluster 5 and the presence of 3 *AP2/EREBP*-like genes in cluster 1 suggests that their pattern of expression is associated with differences in panicle architecture across wild and domesticated accessions.
 
 To find TF genes associated with parallel changes in panicle architecture during domestication, we tested the stage × domestication interaction for *O. rufipogon*, *O. sativa indica*, *O. barthii* and *O. glaberrima* at a false discovery rate of 0.1 (Supporting information Table S9).

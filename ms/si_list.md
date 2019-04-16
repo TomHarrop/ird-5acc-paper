@@ -16,20 +16,15 @@ Early stages of rice panicle development used for gene expression analysis.
 Heatmap of pairwise distances between RNAseq samples.
 
 **Figure S6**.
-Expression of genes from selected transcription factor families.
-
-> To remove
-
-**Figure S7**.
 Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
 
-**Figure S8**.
+**Figure S7**.
 Phenotyping of the five *Oryza* accessions used for RNAseq.
 
-**Figure S9**.
+**Figure S8**.
 Most genes in cluster 5 have negative L~2~FCs between IM and DM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
 
-**Figure S10**.
+**Figure S9**.
 Expression analysis along early panicle development of *AP2/EREBP*-like genes present in cluster 5.
 
 **Table S1**.
@@ -45,10 +40,10 @@ Quantification of panicle traits in 91 accessions from wild and domesticated Asi
 Read and mapping statistics for all RNAseq samples.
 
 **Table S5**.
-Transcription factor family enrichment by L~2~FC.
+Differential expression test results between stages across all species.
 
 **Table S6**.
-Differential expression test results between stages across all species.
+Transcription factor family enrichment by L~2~FC.
 
 **Table S7**.
 Quantification of panicle traits from crl5 and smos1 mutants.

@@ -95,12 +95,10 @@ The axes are ordered by hierarchical clustering of Minkowski distances between s
 \vspace*{\fill}
 
 ![**Figure S6**.
-**TO REMOVE**.
-Homeobox, NAC and SBP transcription factors change expression between IM and DM.
-For each family, we plotted genes that were in the top 10% of all genes by absolute loading on PC4.
-While Homeobox and SBP genes are expressed preferentially in the DM, NAC are more expressed in the IM.
-Genes in the upper panels have a positive loading on PC4 (corresponding to higher expression at the IM stage), whilst genes in the lower panels have a negative loading.
-Clades for Homeobox genes are from the Plant Transcription Factor Database v4.0 [@jinPlantTFDBCentralHub2017].
+Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
+Both genes are expressed at all stages.
+*PLT8* expression peaks in RM.
+RM, rachis meristem; PBM, primary branch meristem; ePBM/AM, extending primary branch meristem and axillary meristem; SM, spikelet meristem.
 ](figures/Figure_S6.pdf)
 
 \vspace*{\fill}
@@ -110,11 +108,10 @@ Clades for Homeobox genes are from the Plant Transcription Factor Database v4.0 
 \vspace*{\fill}
 
 ![**Figure S7**.
-Expression of *AP2/EREBP*-like genes in *O. sativa japonica* cv. Nipponbare meristems [data from @harropGeneExpressionProfiling2016].
-Both genes are expressed at all stages.
-*PLT8* expression peaks in RM.
-RM, rachis meristem; PBM, primary branch meristem; ePBM/AM, extending primary branch meristem and axillary meristem; SM, spikelet meristem.
-](figures/Figure_S7.pdf)
+Phenotyping of the four *Oryza* accessions used for RNAseq.
+These plants were grown at the same time and in the same conditions as the plants used for gene expression analysis.
+The domesticated accessions produce more spikelets and secondary branches than their wild relatives.
+The domesticated accessions have a similar number of primary branches, but the Asian domesticated species has more secondary branches and spikelets than the domesticated African species.](figures/Figure_S7.pdf)
 
 \vspace*{\fill}
 
@@ -123,10 +120,9 @@ RM, rachis meristem; PBM, primary branch meristem; ePBM/AM, extending primary br
 \vspace*{\fill}
 
 ![**Figure S8**.
-Phenotyping of the four *Oryza* accessions used for RNAseq.
-These plants were grown at the same time and in the same conditions as the plants used for gene expression analysis.
-The domesticated accessions produce more spikelets and secondary branches than their wild relatives.
-The domesticated accessions have a similar number of primary branches, but the Asian domesticated species has more secondary branches and spikelets than the domesticated African species.](figures/Figure_S8.pdf)
+Most genes in cluster 5 have negative L~2~FCs between IM and DM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
+This cluster has an enrichment of *AP2/EREBP*-like genes.
+](figures/Figure_S8.pdf)
 
 \vspace*{\fill}
 
@@ -135,23 +131,12 @@ The domesticated accessions have a similar number of primary branches, but the A
 \vspace*{\fill}
 
 ![**Figure S9**.
-Most genes in cluster 5 have negative L~2~FCs between IM and DM in *O. rufipogon*, *O. barthii* and *O. glaberrima*, but L~2~FCs in *O. sativa indica* are closer to zero.
-This cluster has an enrichment of *AP2/EREBP*-like genes.
-](figures/Figure_S9.pdf)
-
-\vspace*{\fill}
-
-\clearpage
-
-\vspace*{\fill}
-
-![**Figure S10**.
 Expression analysis along early panicle development of *AP2/EREBP*-like genes present in cluster 5.
 DM: determinate meristem;
 FM: floret meristem;
 IM: indeterminate meristem;
 RM: rachis meristem.
-](figures/Figure_S10.pdf)
+](figures/Figure_S9.pdf)
 
 \vspace*{\fill}
 

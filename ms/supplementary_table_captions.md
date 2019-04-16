@@ -26,10 +26,10 @@ TBN, Tertiary branch number.
 Read and mapping statistics for all RNAseq samples.
 
 **Table S5**.
-Transcription factor family enrichment by L~2~FC.
+Differential expression test results between stages across all species.
 
 **Table S6**.
-Differential expression test results between stages across all species.
+Transcription factor family enrichment by L~2~FC.
 
 **Table S7**.
 Detailed quantification of panicle traits from *crl5* and *smos1* mutants.

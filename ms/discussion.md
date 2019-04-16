@@ -12,7 +12,7 @@ A set of *AP2/EREBP*-like genes decrease expression over the course of wheat spi
 *FZP* represses the formation of axillary meristem and induces transition from spikelet to floral meristem 
 [@komatsuLAX1FRIZZYPANICLE2001].
 Along with the *AP2/EREBP*-like gene *FZP*, *AP2/EREBP85*, *ERF3* and *ERF85* were more highly expressed at the DM stage across all four accessions, consistent with a role in the regulation of axillary meristem identity.
-Conversely, most of the *AP2/EREBP*-like that change expression between stages had lower expression in DM than in IM, including mainly ERF and DREB clade genes and three *RAV*-like genes.
+Conversely, most of the *AP2/EREBP*-like genes that change expression between stages had lower expression in DM than in IM, including mainly ERF and DREB clade genes and three *RAV*-like genes.
 In *Arabidopsis*, *RAV* orthologs repress flowering genes [@matias-hernandezRAVGenesRegulation2014], and *ERF3* interacts with the HB gene *WOX11* to promote crown root development [@zhaoInteractionRiceERF32015].
 Our results suggest additional roles for these genes in promoting reproductive axillary meristem initiation.
 This family- and clade-level view of *AP2/EREBP*-like expression suggests that they play a central role in the regulation of phase transition from indeterminate to determinate state.
@@ -27,7 +27,7 @@ Eight of these nine genes have lower expression in panicles at the DM stage, and
 Among these genes, *ERF130* (*MULTI-FLORET SPIKELET1*, *MFS1*) regulates the timing of the transition of spikelet meristems to termimal spikelets and positively regulates the expression of *OsIDS1* and *SNB* [@renMULTIFLORETSPIKELET1Which2013].
 Taken with the roles of *AP2* mutants in modification of rice panicle architecture [this study; @leeTwoAP2Family2012; @komatsuLAX1FRIZZYPANICLE2001], our results implicate several *AP2/EREBP*-like genes as putative targets of artificial selection during rice domestication resulting in parallel evolution of expression.
 
-*OsIDS1* controls panicle branching in rice, and positively regulates branch meristem identity by repressing genes that specify spikelet identity [@@leeTwoAP2Family2012].
+*OsIDS1* controls panicle branching in rice, and positively regulates branch meristem identity by repressing genes that specify spikelet identity [@leeTwoAP2Family2012].
 We found a stage × domestication interaction in expression of *OsIDS1*, but the change was divergent between African and Asian accessions.
 This suggests that even if genes are involved in similar regulatory networks, their expression may diverge during selection.
 Parallel morphological evolution during Asian and African rice domestication is sometimes associated with different genomic modifications [@cubryRiseFallAfrican2018; @lvGeneticControlSeed2018a; @furutaConvergentLossAwn2015; @huDomesticationPlantArchitecture2018], illustrating that the interaction between genetic variation and the diverse selection pressures associated with domestication can result in diverse genomic outcomes.
