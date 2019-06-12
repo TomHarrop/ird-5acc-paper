@@ -46,7 +46,7 @@ These results suggest that the gene regulatory network controlling phase transit
 
 Because of redundant and overlapping activities of TFs, gene regulatory networks are robust to perturbations in single genes, allowing them to produce a stable transcriptional output in variable cellular and environmental conditions [@wuFunctionalRedundancyTranscription2015; @gitterBackupGeneRegulatory2009; @daiRobustnessTranscriptionalRegulatory2009].
 *AP2/EREBP*-like and *MADS*-box genes were enriched among differentially expressed genes.
-Expression of *AGL6*-like, *AP1*/*FUL*-like, and four of the five *SEPALATTA*-like *MADS*-box genes all increased between indeterminate and determinate stage, as expected given their roles in spikelet determination and inflorescence development [@yoshidaTAWAWA1RegulatorRice2013; @zhangMolecularControlGrass2014].
+Expression of *AGL6*-like, *AP1*/*FUL*-like, and four of the five *SEPALLATA*-like *MADS*-box genes all increased between indeterminate and determinate stage, as expected given their roles in spikelet determination and inflorescence development [@yoshidaTAWAWA1RegulatorRice2013; @zhangMolecularControlGrass2014].
 This suggests family-level or clade-level co-regulation of TFs in rice panicle development.
 Our observation that some genes appear to be co-expressed at the family or clade level may indiciate partial functional redundancy between groups of homologous TFs in the rice genome that act in the gene regulatory network controlling axillary meristem determination.
 

@@ -8,7 +8,7 @@ Inflorescence size and architecture are key targets in selective breeding for im
 Inflorescence branching and the number of grains per inflorescence varies between clades, species and accessions of rice in the genus *Oryza* [@yamakiDiversityPanicleBranching2010; @taguchi-shiobaraVariationDomesticatedRice2011].
 Asian and African clades diverged around two million years ago and were domesticated independently [@zhuPhylogeneticRelationshipsAgenome2005].
 Domesticated Asian rice, *Oryza sativa*, diverged 10,000 years ago via a complex domestication process from the wild Asian rice species, *Oryza rufipogon*.
-The *O. sativa* species complex involves a network of subspecies, including *O. sativa indica* and *O. sativa japonica* [@huangMapRiceGenome2012; @choiRiceParadoxMultiple2017; @steinGenomes13Domesticated2018].
+The *O. sativa* species complex involves a network of subspecies, including *O. sativa* spp. Indica and *O. sativa japonica* [@huangMapRiceGenome2012; @choiRiceParadoxMultiple2017; @steinGenomes13Domesticated2018].
 Domesticated African rice, *Oryza glaberrima*, has a simpler history.
 It was domesticated from its wild relative, *Oryza barthii*, 3,000 years ago, without subsequent introgression [@vaughanEvolvingStoryRice2008; @cubryRiseFallAfrican2018].
 In both African and Asian clades, domesticated species produce inflorescences that are more complex and ramified than their wild relatives [@yamakiDiversityPanicleBranching2010; @linaresAfricanRiceOryza2002; @taDifferencesMeristemSize2017].
@@ -21,7 +21,7 @@ Axillary meristems on the primary branches can also differentiate directly into 
 Finally, all axillary meristems and terminal meristems differentiate gradually from the top to the base of the panicle into spikelet meristems and then florets.
 Each rice grain is produced from a single spikelet [reviewed by @itohRicePlantDevelopment2005].
 
-The complexity of panicle branching and the number of grains are determined by two basic developmental outcomes: firstly, the number of axillary meristems produced, and secondly, the meristem maturation rate, which determines whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and gives rise to a grain. 
+The complexity of panicle branching and the number of grains are determined by two basic developmental outcomes: firstly, the number of primary axillary meristems produced, and secondly, the meristem maturation rate, which determines whether an axillary meristem grows into a higher order branch or differentiates into a spikelet and gives rise to a grain. 
 The maturation rate and identity of reproductive and axillary meristems are controlled by transcriptional regulators, some of which have been identified in *O. sativa* [@xingGeneticMolecularBases2010; @wangBranchingRice2011].
 Genes including *G1 LIKE PROTEIN 5* (*TAWAWA1* / *TAW1*), *LAX PANICLE 1* (*LAX1*) and *LAX PANICLE 2* (*LAX2*) control the branching phase via establishment and activity of indeterminate meristems 
 [@yoshidaTAWAWA1RegulatorRice2013; @komatsuLAX1FRIZZYPANICLE2001; @tabuchiLAXPANICLE2Rice2011].

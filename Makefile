@@ -1,6 +1,7 @@
 manuscript: docx/manuscript.docx 
 si: pdf/supporting_information.pdf docx/supporting_information.docx
 ms_pdf: pdf/manuscript.pdf
+response: docx/response.docx
 
 docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/methods.md ms/results.md ms/discussion.md ms/end_matter.md template/ref_loc.md ms/figure_legends.md ms/si_list.md bib/references.bib template/reference.docx template/molecular-plant.csl template/ref_loc.md
 	pandoc --from=markdown --to=markdown \
@@ -22,6 +23,15 @@ docx/manuscript.docx: ms/front_matter.md ms/abstract.md ms/introduction.md ms/me
 		--bibliography=bib/references.bib \
 		--csl=template/molecular-plant.csl \
 		-o docx/manuscript.docx
+
+docx/response.docx: notes/reviewer_response.md bib/references.bib template/reference.docx template/molecular-plant.csl template/ref_loc.md
+	pandoc \
+		--from=markdown \
+		--to=docx \
+		--reference-doc=template/reference.docx \
+		-o docx/response.docx \
+		notes/reviewer_response.md
+
 
 pdf/manuscript.pdf: ms/front_matter.md ms/abstract.md ms/introduction.md ms/methods.md ms/results.md ms/discussion.md ms/end_matter.md template/ref_loc.md ms/supplementary_figure_legends.md bib/references.bib template/reference.docx template/molecular-plant.csl ms/supplementary_table_captions.md template/ref_loc.md
 	pandoc \
