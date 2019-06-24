@@ -27,9 +27,9 @@ and floret meristem (FM), with early differentiation of floral organs
 We first confirmed staging of the panicles by extracting RNA from pooled immature panicles at each stage and measuring expression of markers of panicle development by quantitative real-time RT-PCR (qPCR) (Supporting information Fig. S4b).
 Because branching complexity is related to branch meristem establishment and meristem fate transition [@kyozukaControlGrassInflorescence2014], and secondary branch number and spikelet number contribute to differences between wild and domesticated accessions (Fig. 1), we chose the IM and DM stages for RNAseq.
 cDNA libraries for sequencing were constructed from rRNA-depleted RNA samples from three biological replicates at both stages for all four accessions.
-We obtained an average of more than 20 million uniquely mapped reads within exons for each accession, including African rice species (Supporting information Table S4).
-Because we used the *O. sativa japonica* cv. Nipponbare reference genome to map reads [@ouyangTIGRRiceGenome2007], transcripts from the four studied accessions that are not similar enough for reads to align to the reference genome would not be detected by our analysis.
-For this reason we only compared genes using between-stage expression differences within accessions, rather than expression differences between accessions.
+Using the *O. sativa japonica* cv. Nipponbare reference genome to map reads [@ouyangTIGRRiceGenome2007], we obtained an average of more than 20 million uniquely mapped reads within exons for each accession, including African rice species (Supporting information Table S4).
+Our analysis was limited to transcripts from the four studied accessions that have homologs in the reference annotation that are similar enough for reads to map unambiguously.
+To allow for differences in mapping between accessions, we compared genes using between-stage read count differences within accessions, rather than read count differences between accessions.
 Pairwise distances between samples, calculated on the number of reads per gene from all detected genes, grouped samples first by stage, then by accession, and then by continent (Supporting information Fig. S5).
 We did not observe grouping by domestication status, suggesting that transcriptome-wide changes during domestication are subtle compared to differences between species.
 
