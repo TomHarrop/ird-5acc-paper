@@ -5,7 +5,7 @@
 
 Panicle morphological traits were measured in 91 accessions of *O. rufipogon*, *O. sativa*, *O. glaberrima* and *O. barthii*, grown in Cali, Colombia and Montpellier, France (Supporting information Table S1).
 At panicle maturity, we collected the three main panicles from three plants per accession, per replicate (*i.e.* 18 panicles per accession).
-We used four accessions for expression analysis: *O. sativa indica* IR64, *O. rufipogon* W1654, *O. glaberrima* Tog5681 and *O. barthii* B88.
+We used four accessions for expression analysis: *O. sativa* ssp. *indica* IR64, *O. rufipogon* W1654, *O. glaberrima* Tog5681 and *O. barthii* B88.
 These accessions were grown in a greenhouse in Montpellier, France, in June 2014, under long day conditions (14h light:10h dark).
 After 6 to 8 weeks they were transferred to short day conditions (11h light:13h dark) to induce flowering.
 To confirm panicle phenotypes in the growth conditions used for RNAseq, we evaluated panicle traits for 9 panicles from each accession that was grown in the greenhouse, under the same growth conditions.
@@ -17,8 +17,8 @@ Panicles were photographed and the images were used for panicle structure and se
 
 ### Tissue collection and RNA sequencing
 
-For expression analysis, we collected three biological replicates of approximately 15 immature panicles each from at least 10 plants per accession, per stage, from 4 days to 15 days after floral induction.
-For sample collection, leaves surrounding the young panicle were removed by hand and the reproductive tissue was cut with a sharp blade under a Stemi 508 (Zeiss, Germany) stereo microscope.
+For expression analysis, we collected 15 immature panicles each from at least 10 plants per accession, per stage, collected from 4 days to 15 days after floral induction (*i.e.* transfer to short day conditions).
+For sample collection, leaves surrounding the young panicle were removed by hand and the reproductive tissue was cut with a sharp blade under a Stemi 508 (Zeiss, Germany) stereo microscope to identify developmental stage.
 The reproductive tissues were immediately frozen in liquid nitrogen, and total RNA including small RNA was extracted using the RNeasy Plant Mini kit with RLT and RWT buffers (QIAGEN, Germany).
 DNase treatments were performed using the RNase-free DNase set (QIAGEN, Germany).
 RNA integrity numbers of the extracted RNA, measured using a 2100 Bioanalyzer (Agilent, U.S.A.), were between 8.6 and 10.
@@ -39,7 +39,7 @@ Primer sequences are listed in Supporting information Table S2.
 
 ### Data analysis
 
-We trimmed reads and removed adaptors with `cutadapt` [@martinCutadaptRemovesAdapter2011], before mapping to the MSU v7 annotation of the *Oryza sativa japonica* cv. Nipponbare reference genome [@ouyangTIGRRiceGenome2007] using `STAR` in 2-pass mode [@dobinSTARUltrafastUniversal2012].
+We trimmed reads and removed adaptors with `cutadapt` [@martinCutadaptRemovesAdapter2011], before mapping to the MSU v7 annotation of the *Oryza sativa* ssp. *japonica* cv. Nipponbare reference genome [@ouyangTIGRRiceGenome2007] using `STAR` in 2-pass mode [@dobinSTARUltrafastUniversal2012].
 To generate per-library gene expression cutoffs, we used the 95th percentile of reads that mapped to intergenic regions of the genome, as described previously [@harropGeneExpressionProfiling2016].
 We used `DESeq2` [@loveModeratedEstimationFold2014] for differential expression analysis of genes that passed the cutoff.
 We used annotations from the PlnTFDB v3.0 [@perez-rodriguezPlnTFDBUpdatedContent2010] and PlantTFDB v4.0 [@jinPlantTFDBCentralHub2017] to analyse expression of transcription factors.

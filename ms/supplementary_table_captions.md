@@ -26,7 +26,7 @@ TBN, Tertiary branch number.
 Read and mapping statistics for all RNAseq samples.
 
 **Table S5**.
-Differential expression test results between stages across all species.
+Differential expression test results between stages across all species. We used an arbitrary differential expression threshold of 1.5-fold change in expression and adjusted *p*-value (false discovery rate) less than 0.1.
 
 **Table S6**.
 Transcription factor family enrichment by L~2~FC.

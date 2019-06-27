@@ -1,16 +1,4 @@
 
-!include ./ms/figs/1.md
-
-!include ./ms/figs/2.md
-
-!include ./ms/figs/3.md
-
-!include ./ms/figs/4.md
-
-!include ./ms/figs/5.md
-
-!include ./ms/figs/6.md
-
 ## Supporting information
 
 \vspace*{\fill}
