@@ -1,4 +1,4 @@
-#### This repository contains the manuscript source for the following article:
+**This repository contains the manuscript source for the following article**:
 
     > Thomas W.R. Harrop, Otho Mantegazza, Ai My Luong, Kevin Béthune, Mathias Lorieux, Stefan Jouannic, Hélène Adam (in prep). A set of *AP2*-like genes is associated with inflorescence branching and architecture in domesticated rice.
 
