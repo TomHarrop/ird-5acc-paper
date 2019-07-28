@@ -1,6 +1,7 @@
 **This repository contains the manuscript source for the following article**:
 
-> Thomas W.R. Harrop, Otho Mantegazza, Ai My Luong, Kevin Béthune, Mathias Lorieux, Stefan Jouannic, Hélène Adam (in prep). A set of *AP2*-like genes is associated with inflorescence branching and architecture in domesticated rice.
+> Thomas W. R. Harrop, Otho Mantegazza, Ai My Luong, Kevin Béthune, Mathias Lorieux, Stefan Jouannic, and Hélène Adam. A Set of *AP2*-like Genes Is Associated with Inflorescence Branching and Architecture in Domesticated Rice.” Journal of Experimental Botany, 2019. [10.1093/jxb/erz340](https://doi.org/10.1093/jxb/erz340).
+
 
 ### Data availability
 
